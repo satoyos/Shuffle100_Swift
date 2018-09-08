@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2018/09/08.
@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
+    let titleName = "百首読み上げ"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.title = titleName
+        self.view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
