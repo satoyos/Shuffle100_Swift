@@ -11,7 +11,6 @@
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* Shuffle100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* Shuffle100Tests.swift */; };
-		923D59322143BB0B000F5E60 /* Shuffle100UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59312143BB0B000F5E60 /* Shuffle100UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		923D59262143BB0B000F5E60 /* Shuffle100Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle100Tests.swift; sourceTree = "<group>"; };
 		923D59282143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		923D59312143BB0B000F5E60 /* Shuffle100UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle100UITests.swift; sourceTree = "<group>"; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 		923D59302143BB0B000F5E60 /* Shuffle100UITests */ = {
 			isa = PBXGroup;
 			children = (
-				923D59312143BB0B000F5E60 /* Shuffle100UITests.swift */,
 				923D59332143BB0B000F5E60 /* Info.plist */,
 			);
 			path = Shuffle100UITests;
@@ -273,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				923D59322143BB0B000F5E60 /* Shuffle100UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
