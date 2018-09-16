@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navi = UINavigationController(rootViewController: homeScreen as UIViewController)
         navi.interactivePopGestureRecognizer?.isEnabled = false
 
+        navi.navigationBar.topItem?.prompt = "百首読み上げ"
+        navi.navigationBar.barTintColor = UIColor(hex: "cee4ae")
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navi

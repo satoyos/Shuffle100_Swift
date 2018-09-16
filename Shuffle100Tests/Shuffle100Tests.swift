@@ -25,7 +25,7 @@ class Shuffle100Tests: XCTestCase {
         let screen = HomeViewController()
         XCTAssertNotNil(screen)
         screen.viewDidLoad()
-        XCTAssertEqual(screen.navigationItem.title, "百首読み上げ")
+        XCTAssertEqual(screen.navigationItem.title, "トップ")
         XCTAssertEqual(screen.view.backgroundColor, UIColor.white)
     }
     
