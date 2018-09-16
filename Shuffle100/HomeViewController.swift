@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    let titleName = "百首読み上げ"
+    let titleName = "トップ"
     
 
     override func viewDidLoad() {
