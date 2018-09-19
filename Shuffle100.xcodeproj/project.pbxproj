@@ -206,14 +206,16 @@
 				TargetAttributes = {
 					923D590D2143BB0A000F5E60 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					923D59212143BB0B000F5E60 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 923D590D2143BB0A000F5E60;
 					};
 					923D592C2143BB0B000F5E60 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 						TestTargetID = 923D590D2143BB0A000F5E60;
 					};
 				};
@@ -433,7 +435,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -451,7 +453,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -471,7 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shuffle100.app/Shuffle100";
 			};
@@ -492,7 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shuffle100.app/Shuffle100";
 			};
@@ -514,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Shuffle100;
 			};
@@ -535,7 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Shuffle100;
 			};
