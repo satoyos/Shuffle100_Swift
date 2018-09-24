@@ -28,10 +28,11 @@ class HomeViewControllerUITest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func test_onLoad() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let app = XCUIApplication()
         XCTAssert(app.navigationBars["トップ"].exists)
+        XCTAssert(app.cells["取り札を用意する歌"].exists)
     }
 }
