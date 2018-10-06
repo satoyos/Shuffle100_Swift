@@ -13,6 +13,12 @@
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* Shuffle100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* Shuffle100Tests.swift */; };
+		92CE520B2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */; };
+		92CE520C2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */; };
+		92CE520D2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */; };
+		92CE52102168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */; };
+		92CE52112168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */; };
+		92CE52122168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,8 @@
 		923D59282143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDataSource.swift; sourceTree = "<group>"; };
+		92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +112,10 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
+				92CE520E2168D6BC00538E01 /* delegates */,
+				92CE52052168D45D00538E01 /* dataSources */,
 				923D593F2143BD50000F5E60 /* screens */,
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
-				923D59132143BB0A000F5E60 /* HomeViewController.swift */,
 				923D59182143BB0B000F5E60 /* Assets.xcassets */,
 				923D591D2143BB0B000F5E60 /* Info.plist */,
 			);
@@ -134,8 +143,25 @@
 		923D593F2143BD50000F5E60 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				923D59132143BB0A000F5E60 /* HomeViewController.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		92CE52052168D45D00538E01 /* dataSources */ = {
+			isa = PBXGroup;
+			children = (
+				92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */,
+			);
+			path = dataSources;
+			sourceTree = "<group>";
+		};
+		92CE520E2168D6BC00538E01 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */,
+			);
+			path = delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CE520B2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */,
+				92CE52102168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
@@ -280,6 +308,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CE520C2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */,
+				92CE52112168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */,
 				923D59272143BB0B000F5E60 /* Shuffle100Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CE520D2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */,
+				92CE52122168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
