@@ -1,5 +1,5 @@
 PODS:
-  - Reveal-SDK (17)
+  - Reveal-SDK (18)
 
 DEPENDENCIES:
   - Reveal-SDK
@@ -9,7 +9,7 @@ SPEC REPOS:
     - Reveal-SDK
 
 SPEC CHECKSUMS:
-  Reveal-SDK: a6df49f47319bd19a110c960c498af32df72c0af
+  Reveal-SDK: cce79388da3fd0bbb6ae19d769b906cfc3a33a89
 
 PODFILE CHECKSUM: 2fa9b3b94b4a3c5af008c3b9c32965eaf44f7384
 

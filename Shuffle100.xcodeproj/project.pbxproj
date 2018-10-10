@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */; };
+		8FBC19A0C5FAC73FC692B4EF /* Pods_Shuffle100.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
-		923D59272143BB0B000F5E60 /* Shuffle100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* Shuffle100Tests.swift */; };
+		923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* HomeScreenTest.swift */; };
 		92CE520B2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */; };
 		92CE520C2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */; };
 		92CE520D2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */; };
-		92CE52102168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */; };
-		92CE52112168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */; };
-		92CE52122168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */; };
+		92CE5218216B6ABA00538E01 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE5214216B5AF000538E01 /* RevealServer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09770476FEA00C752FDABFBB /* Pods-Shuffle100UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.release.xcconfig"; sourceTree = "<group>"; };
+		27FD6DA6CE5138B115160EE7 /* Pods-Shuffle100.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.release.xcconfig"; sourceTree = "<group>"; };
+		3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		923D590E2143BB0A000F5E60 /* Shuffle100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuffle100.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,12 +54,15 @@
 		923D59182143BB0B000F5E60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923D591D2143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D59222143BB0B000F5E60 /* Shuffle100Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		923D59262143BB0B000F5E60 /* Shuffle100Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle100Tests.swift; sourceTree = "<group>"; };
+		923D59262143BB0B000F5E60 /* HomeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTest.swift; sourceTree = "<group>"; };
 		923D59282143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDataSource.swift; sourceTree = "<group>"; };
-		92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegates.swift; sourceTree = "<group>"; };
+		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
+		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FBC19A0C5FAC73FC692B4EF /* Pods_Shuffle100.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +86,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CE5218216B6ABA00538E01 /* RevealServer.framework in Frameworks */,
+				C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C3CD687E0E31257ACF883AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */,
+				4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */,
+				79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		921737F5214E979F0059EAA4 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +115,14 @@
 		923D59052143BB0A000F5E60 = {
 			isa = PBXGroup;
 			children = (
+				92CE5214216B5AF000538E01 /* RevealServer.framework */,
 				921737F5214E979F0059EAA4 /* lib */,
 				923D59102143BB0A000F5E60 /* Shuffle100 */,
 				923D59252143BB0B000F5E60 /* Shuffle100Tests */,
 				923D59302143BB0B000F5E60 /* Shuffle100UITests */,
 				923D590F2143BB0A000F5E60 /* Products */,
+				EDFFE9D58434747A8AD3492F /* Pods */,
+				4C3CD687E0E31257ACF883AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,7 +139,6 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
-				92CE520E2168D6BC00538E01 /* delegates */,
 				92CE52052168D45D00538E01 /* dataSources */,
 				923D593F2143BD50000F5E60 /* screens */,
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
@@ -125,7 +151,7 @@
 		923D59252143BB0B000F5E60 /* Shuffle100Tests */ = {
 			isa = PBXGroup;
 			children = (
-				923D59262143BB0B000F5E60 /* Shuffle100Tests.swift */,
+				923D59262143BB0B000F5E60 /* HomeScreenTest.swift */,
 				923D59282143BB0B000F5E60 /* Info.plist */,
 			);
 			path = Shuffle100Tests;
@@ -156,12 +182,17 @@
 			path = dataSources;
 			sourceTree = "<group>";
 		};
-		92CE520E2168D6BC00538E01 /* delegates */ = {
+		EDFFE9D58434747A8AD3492F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				92CE520F2168D6D800538E01 /* HomeViewControllerDelegates.swift */,
+				7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */,
+				27FD6DA6CE5138B115160EE7 /* Pods-Shuffle100.release.xcconfig */,
+				AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */,
+				FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */,
+				C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */,
+				09770476FEA00C752FDABFBB /* Pods-Shuffle100UITests.release.xcconfig */,
 			);
-			path = delegates;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 923D59362143BB0B000F5E60 /* Build configuration list for PBXNativeTarget "Shuffle100" */;
 			buildPhases = (
+				22EAC5839B794BD057C033D9 /* [CP] Check Pods Manifest.lock */,
 				923D590A2143BB0A000F5E60 /* Sources */,
 				923D590B2143BB0A000F5E60 /* Frameworks */,
 				923D590C2143BB0A000F5E60 /* Resources */,
+				4999C89CA781E41D1B994C02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 923D59392143BB0B000F5E60 /* Build configuration list for PBXNativeTarget "Shuffle100Tests" */;
 			buildPhases = (
+				D69B3E7E0C73291AE408A539 /* [CP] Check Pods Manifest.lock */,
 				923D591E2143BB0B000F5E60 /* Sources */,
 				923D591F2143BB0B000F5E60 /* Frameworks */,
 				923D59202143BB0B000F5E60 /* Resources */,
@@ -206,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 923D593C2143BB0B000F5E60 /* Build configuration list for PBXNativeTarget "Shuffle100UITests" */;
 			buildPhases = (
+				46CF85601A02101031EC1DF8 /* [CP] Check Pods Manifest.lock */,
 				923D59292143BB0B000F5E60 /* Sources */,
 				923D592A2143BB0B000F5E60 /* Frameworks */,
 				923D592B2143BB0B000F5E60 /* Resources */,
@@ -291,13 +326,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22EAC5839B794BD057C033D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shuffle100-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46CF85601A02101031EC1DF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shuffle100UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4999C89CA781E41D1B994C02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D69B3E7E0C73291AE408A539 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shuffle100Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		923D590A2143BB0A000F5E60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				92CE520B2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */,
-				92CE52102168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
@@ -309,8 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92CE520C2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */,
-				92CE52112168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */,
-				923D59272143BB0B000F5E60 /* Shuffle100Tests.swift in Sources */,
+				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +427,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92CE520D2168D4D200538E01 /* HomeViewControllerDataSource.swift in Sources */,
-				92CE52122168D6D800538E01 /* HomeViewControllerDelegates.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +563,7 @@
 		};
 		923D59372143BB0B000F5E60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,6 +582,7 @@
 		};
 		923D59382143BB0B000F5E60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27FD6DA6CE5138B115160EE7 /* Pods-Shuffle100.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -492,6 +601,7 @@
 		};
 		923D593A2143BB0B000F5E60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -513,6 +623,7 @@
 		};
 		923D593B2143BB0B000F5E60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,11 +645,16 @@
 		};
 		923D593D2143BB0B000F5E60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4B4EJ2GHFC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Reveal-SDK/RevealServer-18/iOS",
+				);
 				INFOPLIST_FILE = Shuffle100UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,11 +672,16 @@
 		};
 		923D593E2143BB0B000F5E60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09770476FEA00C752FDABFBB /* Pods-Shuffle100UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4B4EJ2GHFC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Reveal-SDK/RevealServer-18/iOS",
+				);
 				INFOPLIST_FILE = Shuffle100UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
