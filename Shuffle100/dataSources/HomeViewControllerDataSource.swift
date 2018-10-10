@@ -26,7 +26,7 @@ class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UITableViewCell
         
         
-        cell.textLabel?.text = ["bbb", "ccc", "ddd", "取り札を用意する歌"][indexPath.row]
+        cell.textLabel?.text = ["取り札を用意する歌", "読み上げモード", "ddd", "eee"][indexPath.row]
         return cell
     }
     

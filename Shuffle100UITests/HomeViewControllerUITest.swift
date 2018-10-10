@@ -33,7 +33,11 @@ class HomeViewControllerUITest: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let app = XCUIApplication()
         XCTAssert(app.navigationBars["トップ"].exists)
-        XCTAssert(app.tables.cells.staticTexts["取り札を用意する歌"].exists)
-
+        XCTAssert(cellExistsWithText("取り札を用意する歌", in_app: app))
+        XCTAssert(cellExistsWithText("読み上げモード", in_app: app))
+    }
+    
+    fileprivate func cellExistsWithText(_ text: String, in_app app:XCUIApplication) -> Bool {
+        return app.tables.cells.staticTexts[text].exists
     }
 }
