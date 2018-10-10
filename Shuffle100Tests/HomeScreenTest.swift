@@ -9,7 +9,7 @@
 import XCTest
 @testable import Shuffle100
 
-class Shuffle100Tests: XCTestCase {
+class HomeScreenTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
