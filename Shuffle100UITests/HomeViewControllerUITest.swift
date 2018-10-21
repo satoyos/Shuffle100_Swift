@@ -9,6 +9,7 @@
 import XCTest
 
 class HomeViewControllerUITest: XCTestCase {
+    let app = XCUIApplication()
     
     override func setUp() {
         super.setUp()
@@ -29,15 +30,14 @@ class HomeViewControllerUITest: XCTestCase {
     }
     
     func test_onLoad() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let app = XCUIApplication()
         XCTAssert(app.navigationBars["トップ"].exists)
-        XCTAssert(cellExistsWithText("取り札を用意する歌", in_app: app))
-        XCTAssert(cellExistsWithText("読み上げモード", in_app: app))
+        XCTAssert(cellExistsWithText("取り札を用意する歌"))
+        XCTAssert(cellExistsWithText("読み上げモード"))
+        XCTAssert(cellExistsWithText("初心者モード"))
+        XCTAssert(cellExistsWithText("読手"))
     }
     
-    fileprivate func cellExistsWithText(_ text: String, in_app app:XCUIApplication) -> Bool {
+    fileprivate func cellExistsWithText(_ text: String) -> Bool {
         return app.tables.cells.staticTexts[text].exists
     }
 }
