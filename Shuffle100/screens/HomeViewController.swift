@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         self.tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.dataSource = dataSource
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: "HomeScreenTableCell")
         view.addSubview(tableView)
     }
     
