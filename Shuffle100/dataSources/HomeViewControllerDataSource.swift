@@ -8,6 +8,16 @@
 
 import UIKit
 
+struct TableSection {
+    var title: String
+    var dataSources: [DataSource]
+    
+    init(title: String) {
+        self.title = title
+        self.dataSources = [DataSource]()
+    }
+}
+
 struct DataSource {
     var title: String
     
@@ -25,19 +35,23 @@ class HomeScreenTableCell: UITableViewCell {
     }
 }
 
-
-
 class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
-            func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    fileprivate var sections = [TableSection]()
+    
+    override init() {
+        super.init()
+        self.setupDataSources()
     }
     
-    fileprivate var dataSources = [[DataSource]]()
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
     //    ToDo: このDataSourceプロトコルをsetup()メソッドで DataSourceを使って実装していく
 
     func setupDataSources() {
-        dataSources.append(settingSectionDataSources())
+        sections.append(settingSection())
+        sections.append(gameStartSection())
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,22 +59,30 @@ class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ["設定", "試合開始"][section]
+        return sections[section].title
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier) as! UITableViewCell
-        
-        
-        cell.textLabel?.text = ["取り札を用意する歌", "読み上げモード", "初心者モード", "読手"][indexPath.row]
+
+        cell.textLabel?.text = sections[indexPath.section].dataSources[indexPath.row].title
         return cell
     }
     
-    fileprivate func settingSectionDataSources() -> [DataSource] {
-        var dataSources = [DataSource]()
+    fileprivate func settingSection() -> TableSection {
+        var section = TableSection(title: "設定")
+        section.dataSources.append(DataSource(title: "取り札を用意する歌"))
+        section.dataSources.append(DataSource(title: "読み上げモード"))
+        section.dataSources.append(DataSource(title: "初心者モード"))
+        section.dataSources.append(DataSource(title: "読手"))
         
-        
-        return dataSources
+        return section
+    }
+    
+    fileprivate func gameStartSection() -> TableSection {
+        var section = TableSection(title: "試合開始")
+        section.dataSources.append(DataSource(title: "試合開始"))
+        return section
     }
     
 }
