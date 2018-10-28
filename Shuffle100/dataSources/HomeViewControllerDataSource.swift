@@ -32,6 +32,14 @@ class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
         return 2
     }
     
+    fileprivate var dataSources = [[DataSource]]()
+
+    //    ToDo: このDataSourceプロトコルをsetup()メソッドで DataSourceを使って実装していく
+
+    func setupDataSources() {
+        dataSources.append(settingSectionDataSources())
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return [4, 1][section]
     }
@@ -46,6 +54,13 @@ class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
         
         cell.textLabel?.text = ["取り札を用意する歌", "読み上げモード", "初心者モード", "読手"][indexPath.row]
         return cell
+    }
+    
+    fileprivate func settingSectionDataSources() -> [DataSource] {
+        var dataSources = [DataSource]()
+        
+        
+        return dataSources
     }
     
 }
