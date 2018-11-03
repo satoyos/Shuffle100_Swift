@@ -34,6 +34,7 @@ class HomeScreenTableCell: UITableViewCell {
     func configure(dataSource: DataSource) {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
+//        detailTextLabel?.text = "aaa"
     }
 }
 
@@ -60,10 +61,9 @@ class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier, for: indexPath)
-        if let cell = cell as? HomeScreenTableCell {
-            cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
-        } 
+//        let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier, for: indexPath)
+        let cell =  HomeScreenTableCell(style: .value1, reuseIdentifier: HomeScreenTableCell.identifier)
+        cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
         return cell
     }
     
