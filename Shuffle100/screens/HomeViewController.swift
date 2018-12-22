@@ -18,15 +18,15 @@ enum HomeCellType {
 class HomeViewController: UIViewController {
     let titleName = "トップ"
     var tableView: UITableView!
-    var dataSource = HomeViewControllerDataSource()
+    var sections = [TableSection]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = titleName
         self.view.backgroundColor = UIColor.white
         self.tableView = UITableView(frame: view.bounds, style: .grouped)
-        dataSource.setupDataSources(withTypes: homeCells())
-        tableView.dataSource = dataSource
+        setupDataSources(withTypes: homeCells())
+        tableView.dataSource = self
         tableView.delegate = self
         tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: "HomeScreenTableCell")
         view.addSubview(tableView)
@@ -41,15 +41,3 @@ class HomeViewController: UIViewController {
         return [.poems, .reciteMode, .beginnerMode, .singers]
     }
 }
-
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return [30, 20][section]
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
-    }
-}
-
-

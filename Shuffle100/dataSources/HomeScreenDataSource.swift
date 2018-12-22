@@ -28,8 +28,10 @@ struct DataSource {
     }
 }
 
-class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
-    fileprivate var sections = [TableSection]()
+//class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
+//    fileprivate var sections = [TableSection]()
+
+extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
