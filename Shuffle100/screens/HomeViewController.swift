@@ -24,17 +24,22 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = titleName
         self.view.backgroundColor = UIColor.white
-        self.tableView = UITableView(frame: view.bounds, style: .grouped)
-        setupDataSources(withTypes: homeCells())
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: "HomeScreenTableCell")
+        self.tableView = createTableViewForHomeScreen()
         view.addSubview(tableView)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func createTableViewForHomeScreen() -> UITableView {
+        let tableView = UITableView(frame: view.bounds, style: .grouped)
+        setupDataSources(withTypes: homeCells())
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: "HomeScreenTableCell")
+        return tableView
     }
     
     private func homeCells() -> [HomeCellType] {

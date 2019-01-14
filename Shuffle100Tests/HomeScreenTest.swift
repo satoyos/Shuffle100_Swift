@@ -10,21 +10,19 @@ import XCTest
 @testable import Shuffle100
 
 class HomeScreenTest: XCTestCase {
+    var screen: HomeViewController!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.screen = HomeViewController()
+        screen.viewDidLoad()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func test_InitScreen() {
-        let screen = HomeViewController()
-        XCTAssertNotNil(screen)
-        screen.viewDidLoad()
+    func test_InitialHomeScreen() {
         XCTAssertEqual(screen.navigationItem.title, "トップ")
         XCTAssertEqual(screen.view.backgroundColor, UIColor.white)
     }

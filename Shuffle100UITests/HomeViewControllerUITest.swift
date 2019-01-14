@@ -29,7 +29,7 @@ class HomeViewControllerUITest: XCTestCase {
         super.tearDown()
     }
     
-    func test_onLoad() {
+    func test_correctLabelAndCellsAppearOnLoad() {
         XCTAssert(app.navigationBars["トップ"].exists)
         XCTAssert(cellExistsWithText("取り札を用意する歌"))
         XCTAssert(cellExistsWithText("読み上げモード"))
