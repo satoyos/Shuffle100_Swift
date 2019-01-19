@@ -27,4 +27,15 @@ class HomeScreenTest: XCTestCase {
         XCTAssertEqual(screen.view.backgroundColor, UIColor.white)
     }
     
+    func test_allCellsHaveAccessibilityLabel() {
+        let cell_top = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(cell_top.accessibilityLabel, "poemsCell")
+        
+        let cell_2nd = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(cell_2nd.accessibilityLabel, "reciteModeCell")
+        
+        let cell_startGame = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(cell_startGame.accessibilityLabel, "startGameCell")
+    }
+    
 }

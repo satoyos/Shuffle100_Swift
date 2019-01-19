@@ -21,6 +21,7 @@ struct TableSection {
 struct DataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
+    var cellLabel: String!
     
     init(title: String, cellType type: UITableViewCell.AccessoryType) {
         self.title = title
@@ -28,16 +29,11 @@ struct DataSource {
     }
 }
 
-//class HomeViewControllerDataSource: NSObject, UITableViewDataSource {
-//    fileprivate var sections = [TableSection]()
-
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-    
-    //    ToDo: このDataSourceプロトコルをsetup()メソッドで DataSourceを使って実装していく
 
     func setupDataSources(withTypes types: [HomeCellType]) {
         sections.append(settingSection(withTypes: types))
@@ -54,7 +50,6 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier, for: indexPath) as! HomeScreenTableCell
-//        let cell =  HomeScreenTableCell(style: .value1, reuseIdentifier: HomeScreenTableCell.identifier)
         
         cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
         return cell
@@ -63,23 +58,31 @@ extension HomeViewController: UITableViewDataSource {
     fileprivate func settingSection(withTypes types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
         for type in types {
+            var dataSource: DataSource!
+            
             switch type {
             case .poems:
-                section.dataSources.append(poemsDataSource())
+                dataSource = poemsDataSource()
             case .reciteMode:
-                section.dataSources.append(reciteModeDataSource())
+                dataSource = reciteModeDataSource()
             case .beginnerMode:
-                section.dataSources.append(beginnerModeDataSource())
+                dataSource = beginnerModeDataSource()
             case .singers:
-                section.dataSources.append(singerDataSource())
+                dataSource = singerDataSource()
+            case .startGame:
+                dataSource = startGameDataSource()
             }
+            dataSource.cellLabel = type.rawValue
+            section.dataSources.append(dataSource)
         }
         return section
     }
     
     fileprivate func gameStartSection() -> TableSection {
         var section = TableSection(title: "試合開始")
-        section.dataSources.append(DataSource(title: "試合開始", cellType: .none))
+        var dataSource = startGameDataSource()
+        dataSource.cellLabel = HomeCellType.startGame.rawValue
+        section.dataSources.append(dataSource)
         return section
     }
     
@@ -97,5 +100,9 @@ extension HomeViewController: UITableViewDataSource {
     
     fileprivate func singerDataSource() -> DataSource {
         return DataSource(title: "読手", cellType: .disclosureIndicator)
+    }
+    
+    fileprivate func startGameDataSource() -> DataSource {
+        return DataSource(title: "試合開始", cellType: .none)
     }
 }

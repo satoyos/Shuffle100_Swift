@@ -8,11 +8,12 @@
 
 import UIKit
 
-enum HomeCellType {
-    case poems
-    case reciteMode
-    case beginnerMode
-    case singers
+enum HomeCellType: String {
+    case poems = "poemsCell"
+    case reciteMode = "reciteModeCell"
+    case beginnerMode = "beginnerModeCell"
+    case singers = "singersCell"
+    case startGame = "startGameCell"
 }
 
 class HomeViewController: UIViewController {

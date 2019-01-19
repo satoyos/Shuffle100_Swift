@@ -24,5 +24,6 @@ class HomeScreenTableCell: UITableViewCell {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
         detailTextLabel?.text = "aaa"
+        self.accessibilityLabel = dataSource.cellLabel
     }
 }
