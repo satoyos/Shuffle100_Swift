@@ -39,7 +39,7 @@ class HomeScreenTest: XCTestCase {
         XCTAssertEqual(cell_2nd.accessibilityLabel, "reciteModeCell")
         
         let cell_startGame = startGameCell()
-        XCTAssertEqual(cell_startGame.accessibilityLabel, "startGameCell")
+        XCTAssertEqual(cell_startGame.accessibilityLabel, "GameStartCell")
     }
 
     func test_startGameCellTextIsRed() {

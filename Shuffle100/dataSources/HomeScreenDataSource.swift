@@ -21,9 +21,9 @@ struct TableSection {
 struct DataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
-    var cellLabel: String!
+    var accessibilityLabel: String!
     
-    init(title: String, cellType type: UITableViewCell.AccessoryType) {
+    init(title: String, accessoryType type: UITableViewCell.AccessoryType) {
         self.title = title
         self.accessoryType = type
     }
@@ -76,10 +76,8 @@ extension HomeViewController: UITableViewDataSource {
                 dataSource = beginnerModeDataSource()
             case .singers:
                 dataSource = singerDataSource()
-            case .startGame:
-                dataSource = startGameDataSource()
             }
-            dataSource.cellLabel = type.rawValue
+            dataSource.accessibilityLabel = type.rawValue
             section.dataSources.append(dataSource)
         }
         return section
@@ -88,28 +86,28 @@ extension HomeViewController: UITableViewDataSource {
     fileprivate func gameStartSection() -> TableSection {
         var section = TableSection(title: "試合開始")
         var dataSource = startGameDataSource()
-        dataSource.cellLabel = HomeCellType.startGame.rawValue
+        dataSource.accessibilityLabel = GameStartCell.identifier
         section.dataSources.append(dataSource)
         return section
     }
     
     fileprivate func poemsDataSource() -> DataSource {
-        return DataSource(title: "取り札を用意する歌", cellType: .disclosureIndicator)
+        return DataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator)
     }
     
     fileprivate func reciteModeDataSource() -> DataSource {
-        return DataSource(title: "読み上げモード", cellType: .disclosureIndicator)
+        return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator)
     }
     
     fileprivate func beginnerModeDataSource() -> DataSource {
-        return DataSource(title: "初心者モード", cellType: .none)
+        return DataSource(title: "初心者モード", accessoryType: .none)
     }
     
     fileprivate func singerDataSource() -> DataSource {
-        return DataSource(title: "読手", cellType: .disclosureIndicator)
+        return DataSource(title: "読手", accessoryType: .disclosureIndicator)
     }
     
     fileprivate func startGameDataSource() -> DataSource {
-        return DataSource(title: "試合開始", cellType: .none)
+        return DataSource(title: "試合開始", accessoryType: .none)
     }
 }

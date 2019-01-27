@@ -25,15 +25,9 @@ class GameStartCell: UITableViewCell {
     func configure(dataSource: DataSource) {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
-        self.accessibilityLabel = dataSource.cellLabel
-        if dataSource.cellLabel == HomeCellType.startGame.rawValue {
-            textLabel?.textColor = UIColor.red
-            textLabel?.textAlignment = .center
-            
-        }
-        else {
-            detailTextLabel?.text = "aaa"
-        }
+        self.accessibilityLabel = dataSource.accessibilityLabel
+        textLabel?.textColor = UIColor.red
+        textLabel?.textAlignment = .center
     }
 
 }

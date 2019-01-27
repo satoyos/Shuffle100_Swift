@@ -13,7 +13,6 @@ enum HomeCellType: String {
     case reciteMode = "reciteModeCell"
     case beginnerMode = "beginnerModeCell"
     case singers = "singersCell"
-    case startGame = "startGameCell"
 }
 
 class HomeViewController: UIViewController {
@@ -39,8 +38,8 @@ class HomeViewController: UIViewController {
         setupDataSources(withTypes: homeCells())
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: "HomeScreenTableCell")
-        tableView.register(GameStartCell.self, forCellReuseIdentifier: "GameStartCell")
+        tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: HomeScreenTableCell.identifier)
+        tableView.register(GameStartCell.self, forCellReuseIdentifier: GameStartCell.identifier)
         return tableView
     }
     
