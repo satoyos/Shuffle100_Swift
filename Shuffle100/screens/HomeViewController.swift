@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(HomeScreenTableCell.self, forCellReuseIdentifier: "HomeScreenTableCell")
+        tableView.register(GameStartCell.self, forCellReuseIdentifier: "GameStartCell")
         return tableView
     }
     

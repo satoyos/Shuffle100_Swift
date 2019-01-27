@@ -1,26 +1,27 @@
 //
-//  HomeScreenTableCell.swift
+//  GameStartCell.swift
 //  Shuffle100
 //
-//  Created by 里 佳史 on 2018/11/04.
-//  Copyright © 2018 里 佳史. All rights reserved.
+//  Created by 里 佳史 on 2019/01/27.
+//  Copyright © 2019 里 佳史. All rights reserved.
 //
 
 import UIKit
 
-class HomeScreenTableCell: UITableViewCell {
-    static let identifier = "HomeScreenTableCell"
+class GameStartCell: UITableViewCell {
+    static let identifier = "GameStartCell"
     var cellStyle: UITableViewCell.CellStyle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        cellStyle = .value1
+        cellStyle = .default
         super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+
     func configure(dataSource: DataSource) {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
@@ -34,4 +35,5 @@ class HomeScreenTableCell: UITableViewCell {
             detailTextLabel?.text = "aaa"
         }
     }
+
 }

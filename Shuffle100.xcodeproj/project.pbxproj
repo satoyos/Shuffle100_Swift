@@ -15,6 +15,9 @@
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* HomeScreenTest.swift */; };
+		9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
+		9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
+		9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
@@ -66,6 +69,7 @@
 		923D59282143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		4C3CD687E0E31257ACF883AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92CE5214216B5AF000538E01 /* RevealServer.framework */,
 				3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */,
 				4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */,
 				79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */,
@@ -125,7 +130,6 @@
 		923D59052143BB0A000F5E60 = {
 			isa = PBXGroup;
 			children = (
-				92CE5214216B5AF000538E01 /* RevealServer.framework */,
 				921737F5214E979F0059EAA4 /* lib */,
 				923D59102143BB0A000F5E60 /* Shuffle100 */,
 				923D59252143BB0B000F5E60 /* Shuffle100Tests */,
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */,
+				9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -398,7 +403,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-20/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -439,6 +444,7 @@
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
+				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +455,7 @@
 			files = (
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
@@ -461,6 +468,7 @@
 			files = (
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 				925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */,

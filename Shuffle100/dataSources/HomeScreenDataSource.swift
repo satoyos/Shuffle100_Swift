@@ -49,10 +49,17 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier, for: indexPath) as! HomeScreenTableCell
-        
-        cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier, for: indexPath) as! HomeScreenTableCell
+            
+            cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: GameStartCell.identifier, for: indexPath) as! GameStartCell
+            
+            cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
+            return cell
+        }
     }
     
     fileprivate func settingSection(withTypes types: [HomeCellType]) -> TableSection {
