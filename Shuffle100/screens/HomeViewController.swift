@@ -17,6 +17,7 @@ enum HomeCellType: String {
 
 class HomeViewController: UIViewController {
     let titleName = "トップ"
+    let navBarButtonSize = 32
     var tableView: UITableView!
     var sections = [TableSection]()
 
@@ -49,11 +50,25 @@ class HomeViewController: UIViewController {
     }
     
     private func setNavigationBarButtons() {
-        let reSize = CGSize(width: 40, height: 40)
+        let reSize = CGSize(width: navBarButtonSize, height: navBarButtonSize)
+        setSettingsButton(withSize: reSize)
+        setHelpButton(withSize: reSize)
+    }
+    
+    fileprivate func setSettingsButton(withSize reSize: CGSize) {
         let gearButton = UIBarButtonItem(
             image: UIImage(named: "gear-520.png")?.reSizeImage(reSize: reSize),
             style: UIBarButtonItem.Style.plain, target: self, action: nil)
         gearButton.accessibilityLabel = "GearButton"
         self.navigationItem.leftBarButtonItem = gearButton
     }
+    
+    fileprivate func setHelpButton(withSize reSize: CGSize) {
+        let helpButton = UIBarButtonItem(
+            image: UIImage(named: "question_white.png")?.reSizeImage(reSize: reSize),
+            style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        helpButton.accessibilityLabel = "HelpButton"
+        self.navigationItem.rightBarButtonItem = helpButton
+    }
+    
 }

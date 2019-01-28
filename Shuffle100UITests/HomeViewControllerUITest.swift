@@ -39,6 +39,7 @@ class HomeViewControllerUITest: XCTestCase {
     
     func test_navBarButtonsExists() {
         XCTAssert(app.navigationBars.buttons["GearButton"].exists)
+        XCTAssert(app.navigationBars.buttons["HelpButton"].exists)
     }
     
     
