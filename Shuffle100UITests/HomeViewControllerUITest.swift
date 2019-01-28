@@ -37,6 +37,11 @@ class HomeViewControllerUITest: XCTestCase {
         XCTAssert(cellExistsWithText("読手"))
     }
     
+    func test_navBarButtonsExists() {
+        XCTAssert(app.navigationBars.buttons["GearButton"].exists)
+    }
+    
+    
     fileprivate func cellExistsWithText(_ text: String) -> Bool {
         return app.tables.cells.staticTexts[text].exists
     }

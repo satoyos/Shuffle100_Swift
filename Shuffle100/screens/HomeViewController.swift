@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         self.tableView = createTableViewForHomeScreen()
         view.addSubview(tableView)
+        setNavigationBarButtons()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,5 +46,14 @@ class HomeViewController: UIViewController {
     
     private func homeCells() -> [HomeCellType] {
         return [.poems, .reciteMode, .beginnerMode, .singers]
+    }
+    
+    private func setNavigationBarButtons() {
+        let reSize = CGSize(width: 40, height: 40)
+        let gearButton = UIBarButtonItem(
+            image: UIImage(named: "gear-520.png")?.reSizeImage(reSize: reSize),
+            style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        gearButton.accessibilityLabel = "GearButton"
+        self.navigationItem.leftBarButtonItem = gearButton
     }
 }

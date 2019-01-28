@@ -18,6 +18,12 @@
 		9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
+		9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
+		9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
+		9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
+		9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
+		9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
+		9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
@@ -70,6 +76,8 @@
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
+		9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-520.png"; sourceTree = "<group>"; };
+		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				921737F6214E97C00059EAA4 /* UIColorExtention.swift */,
+				9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -153,6 +162,7 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
+				9258FAF321FEAB6C00E4E0B7 /* resources */,
 				92CE52052168D45D00538E01 /* dataSources */,
 				92E6552021CE74E200005F85 /* delegates */,
 				923D593F2143BD50000F5E60 /* screens */,
@@ -188,6 +198,14 @@
 				923D59132143BB0A000F5E60 /* HomeViewController.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		9258FAF321FEAB6C00E4E0B7 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		925CEB51218ED4FF00876E7A /* views */ = {
@@ -339,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +467,7 @@
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
+				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +477,7 @@
 			files = (
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
@@ -468,6 +491,7 @@
 			files = (
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
