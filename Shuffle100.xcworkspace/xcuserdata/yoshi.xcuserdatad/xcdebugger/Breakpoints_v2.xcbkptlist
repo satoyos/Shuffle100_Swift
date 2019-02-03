@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shuffle100UITests/HomeViewControllerUITest.swift"
-            timestampString = "570353258.963941"
+            timestampString = "570876033.326785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shuffle100/dataSources/HomeScreenDataSource.swift"
-            timestampString = "570279745.354147"
+            timestampString = "570876033.326905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>

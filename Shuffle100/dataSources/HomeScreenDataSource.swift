@@ -22,10 +22,12 @@ struct DataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String!
+    var withSwitch: Bool!
     
-    init(title: String, accessoryType type: UITableViewCell.AccessoryType) {
+    init(title: String, accessoryType type: UITableViewCell.AccessoryType, withSwitch: Bool = false) {
         self.title = title
         self.accessoryType = type
+        self.withSwitch = withSwitch
     }
 }
 
@@ -72,8 +74,8 @@ extension HomeViewController: UITableViewDataSource {
                 dataSource = poemsDataSource()
             case .reciteMode:
                 dataSource = reciteModeDataSource()
-            case .beginnerMode:
-                dataSource = beginnerModeDataSource()
+            case .fakeMode:
+                dataSource = fakeModeDataSource()
             case .singers:
                 dataSource = singerDataSource()
             }
@@ -99,8 +101,8 @@ extension HomeViewController: UITableViewDataSource {
         return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator)
     }
     
-    fileprivate func beginnerModeDataSource() -> DataSource {
-        return DataSource(title: "初心者モード", accessoryType: .none)
+    fileprivate func fakeModeDataSource() -> DataSource {
+        return DataSource(title: "空札を加える", accessoryType: .none, withSwitch: true)
     }
     
     fileprivate func singerDataSource() -> DataSource {

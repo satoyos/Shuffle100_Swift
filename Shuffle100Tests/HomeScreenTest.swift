@@ -52,4 +52,8 @@ class HomeScreenTest: XCTestCase {
         XCTAssertEqual(cell_startGame.cellStyle, UITableViewCell.CellStyle.default)
     }
    
+    func test_beginnerModeCellHasSwitch() {
+        let beginnerModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
+        XCTAssertNotNil(beginnerModeCell.accessoryView)
+    }
 }

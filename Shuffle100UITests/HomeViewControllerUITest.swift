@@ -33,7 +33,7 @@ class HomeViewControllerUITest: XCTestCase {
         XCTAssert(app.navigationBars["トップ"].exists)
         XCTAssert(cellExistsWithText("取り札を用意する歌"))
         XCTAssert(cellExistsWithText("読み上げモード"))
-        XCTAssert(cellExistsWithText("初心者モード"))
+        XCTAssert(cellExistsWithText("空札を加える"))
         XCTAssert(cellExistsWithText("読手"))
     }
     

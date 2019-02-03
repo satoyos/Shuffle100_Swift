@@ -11,7 +11,7 @@ import UIKit
 enum HomeCellType: String {
     case poems = "poemsCell"
     case reciteMode = "reciteModeCell"
-    case beginnerMode = "beginnerModeCell"
+    case fakeMode = "fakeModeCell"
     case singers = "singersCell"
 }
 
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
     }
     
     private func homeCells() -> [HomeCellType] {
-        return [.poems, .reciteMode, .beginnerMode, .singers]
+        return [.poems, .reciteMode, .fakeMode, .singers]
     }
     
     private func setNavigationBarButtons() {
