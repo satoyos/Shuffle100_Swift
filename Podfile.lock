@@ -1,16 +1,20 @@
 PODS:
   - Reveal-SDK (20)
+  - SnapKit (4.0.1)
 
 DEPENDENCIES:
   - Reveal-SDK
+  - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Reveal-SDK
+    - SnapKit
 
 SPEC CHECKSUMS:
   Reveal-SDK: 43206a57f575632fd304e85385cc259b5d359e32
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: ebf8ad10eef6919d1ac9fb1b4836188aeed76651
+PODFILE CHECKSUM: 96936d4328674a01b760ee070f1754bc6d526c2a
 
 COCOAPODS: 1.5.2

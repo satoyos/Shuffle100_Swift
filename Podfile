@@ -7,6 +7,7 @@ target 'Shuffle100' do
 
   # Pods for Shuffle100
   pod 'Reveal-SDK', :configurations => ['Debug']
+  pod 'SnapKit', '~> 4.0.0'
 
   target 'Shuffle100Tests' do
     inherit! :search_paths

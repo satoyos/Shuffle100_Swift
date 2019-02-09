@@ -20,6 +20,23 @@ class HomeViewController: UIViewController {
     let navBarButtonSize = 32
     var tableView: UITableView!
     var sections = [TableSection]()
+    var gameSettings: GameSettings!
+    
+    init(gameSettings: GameSettings) {
+        self.gameSettings = gameSettings
+        
+        // クラスの持つ指定イニシャライザを呼び出す
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // 新しく init を定義した場合に必須
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    convenience init() {
+        self.init(gameSettings: GameSettings())
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

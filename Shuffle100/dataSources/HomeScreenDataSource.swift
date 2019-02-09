@@ -23,11 +23,13 @@ struct DataSource {
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String!
     var withSwitch: Bool!
+    var detailLabelText: String!
     
-    init(title: String, accessoryType type: UITableViewCell.AccessoryType, withSwitch: Bool = false) {
+    init(title: String, accessoryType type: UITableViewCell.AccessoryType, detailLabelText: String = "", withSwitch: Bool = false) {
         self.title = title
         self.accessoryType = type
         self.withSwitch = withSwitch
+        self.detailLabelText = detailLabelText
     }
 }
 
@@ -98,7 +100,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     fileprivate func reciteModeDataSource() -> DataSource {
-        return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator)
+        return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: textForReciteMode())
     }
     
     fileprivate func fakeModeDataSource() -> DataSource {
@@ -111,5 +113,19 @@ extension HomeViewController: UITableViewDataSource {
     
     fileprivate func startGameDataSource() -> DataSource {
         return DataSource(title: "試合開始", accessoryType: .none)
+    }
+    
+    fileprivate func textForReciteMode() -> String {
+        var detailLabelText: String
+        
+        switch gameSettings.reciteMode {
+        case .normal:
+            detailLabelText = "通常"
+        case .beginner:
+            detailLabelText = "初心者"
+        case .nonstop:
+            detailLabelText = "ノンストップ"
+        }
+        return detailLabelText
     }
 }

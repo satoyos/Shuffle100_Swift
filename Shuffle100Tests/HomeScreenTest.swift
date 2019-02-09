@@ -52,8 +52,30 @@ class HomeScreenTest: XCTestCase {
         XCTAssertEqual(cell_startGame.cellStyle, UITableViewCell.CellStyle.default)
     }
    
-    func test_beginnerModeCellHasSwitch() {
-        let beginnerModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
-        XCTAssertNotNil(beginnerModeCell.accessoryView)
+    func test_fakeModeCellHasSwitch() {
+        let fakeModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
+        XCTAssertNotNil(fakeModeCell.accessoryView)
+    }
+    
+    func test_defaultReciteModeIsNormal() {
+        let defaultReciteMode = screen.gameSettings.reciteMode
+        XCTAssertEqual(defaultReciteMode, .normal)
+    }
+
+    func test_defaultReciteModeLabelIsNormal() {
+        let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "通常")
+    }
+    
+    func test_beginnerModeLabelIsBeginner() {
+        // given
+        let beginnerModeScreen = HomeViewController(gameSettings: GameSettings(reciteMode: .beginner))
+        beginnerModeScreen.viewDidLoad()
+        
+        // when
+        let reciteModeCell = beginnerModeScreen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        
+        //then
+        XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
     }
 }
