@@ -26,6 +26,10 @@ class SelectModeScreenTest: XCTestCase {
         XCTAssertEqual(rowNum, 3)
     }
 
+    func test_deaultSelectedRowIs0() {
+        let selected = screen.picker.selectedRow(inComponent: 0)
+        XCTAssertEqual(selected, 0)
+    }
 
 
 }
