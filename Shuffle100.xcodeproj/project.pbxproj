@@ -44,6 +44,7 @@
 		92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57158220F063100235717 /* SelectModeScreenTest.swift */; };
 		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
+		92D5715D2211647700235717 /* SelectModeScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5715C2211647700235717 /* SelectModeScreenUITest.swift */; };
 		92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
@@ -97,6 +98,7 @@
 		92D57150220EC87700235717 /* GameSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTest.swift; sourceTree = "<group>"; };
 		92D57154220F03AF00235717 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
+		92D5715C2211647700235717 /* SelectModeScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenUITest.swift; sourceTree = "<group>"; };
 		92E6552121CE753200005F85 /* HomeScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDelegates.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				923D59332143BB0B000F5E60 /* Info.plist */,
 				9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */,
+				92D5715C2211647700235717 /* SelectModeScreenUITest.swift */,
 			);
 			path = Shuffle100UITests;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
+				92D5715D2211647700235717 /* SelectModeScreenUITest.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,

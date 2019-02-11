@@ -14,6 +14,9 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            navigationController?.pushViewController(SelectModeViewController(), animated: true)
+        }
         return
     }
 }
