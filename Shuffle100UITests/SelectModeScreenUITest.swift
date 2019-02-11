@@ -12,6 +12,7 @@ class SelectModeScreenUITest: XCTestCase {
     let app = XCUIApplication()
 
     override func setUp() {
+        super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
     }
