@@ -13,6 +13,19 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     let screenTitle = "読み上げモードを選ぶ"
     let reciteModeTitles = ["通常 (競技かるた)", "初心者 (チラし取り)", "ノンストップ (止まらない)"]
     lazy var picker = UIPickerView()
+    var gameSettings: GameSettings!
+    
+    init(gameSettings: GameSettings = GameSettings()) {
+        self.gameSettings = gameSettings
+        
+        // クラスの持つ指定イニシャライザを呼び出す
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // 新しく init を定義した場合に必須
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
