@@ -31,5 +31,18 @@ class SelectModeScreenTest: XCTestCase {
         XCTAssertEqual(selected, 0)
     }
 
+    func test_beginnerModeIsSelected_whenSetSoInGameSettings() {
+        // given
+        let gameSettingsWithBeginnerMode = GameSettings(reciteMode: .beginner)
+        let screenB = SelectModeViewController(gameSettings: gameSettingsWithBeginnerMode)
+        
+        // when
+        screenB.viewDidLoad()
+        let selected = screenB.picker.selectedRow(inComponent: 0)
+        
+        // then
+        XCTAssertEqual(selected, 1)
+//        ToDo: ↑このテストを通すところから！↑
+    }
 
 }

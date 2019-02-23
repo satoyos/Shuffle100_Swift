@@ -9,9 +9,19 @@
 import UIKit
 import SnapKit
 
+struct ReciteModeHolder {
+    var mode: ReciteMode
+    var title: String
+}
+
 class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let screenTitle = "読み上げモードを選ぶ"
-    let reciteModeTitles = ["通常 (競技かるた)", "初心者 (チラし取り)", "ノンストップ (止まらない)"]
+    let reciteModeHolders = [
+        ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
+        ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
+        ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)")
+    ]
+    
     lazy var picker = UIPickerView()
     var gameSettings: GameSettings!
     
@@ -32,14 +42,7 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
         navigationItem.title = screenTitle
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(picker)
-        picker.dataSource = self
-        picker.delegate = self
-        picker.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
-            make.width.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.height.equalTo(150)
-        }
+        initPicker()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -51,7 +54,36 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return reciteModeTitles[row]
+        return reciteModeHolders[row].title
+    }
+    
+    fileprivate func initPicker() {
+        picker.dataSource = self
+        picker.delegate = self
+        layoutPicker()
+        initialRowSelectInPicker()
+    }
+    
+    fileprivate func layoutPicker() {
+        picker.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            make.width.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.height.equalTo(150)
+        }
+    }
+    
+    fileprivate func initialRowSelectInPicker() {
+        picker.selectRow(row(for: gameSettings.reciteMode)!, inComponent: 0, animated: false)
+    }
+    
+    private func row(for mode: ReciteMode) -> Int? {
+        for i in 0..<(reciteModeHolders.count) {
+            if reciteModeHolders[i].mode == mode {
+                return i
+            }
+        }
+        fatalError("ReciteMode \(mode) is not supported!")
     }
 
 }
