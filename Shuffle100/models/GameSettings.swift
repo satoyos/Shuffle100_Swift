@@ -14,6 +14,11 @@ enum ReciteMode: CaseIterable {
     case nonstop
 }
 
+struct ReciteModeHolder {
+    var mode: ReciteMode
+    var title: String
+}
+
 struct GameSettings {
     var reciteMode: ReciteMode
     

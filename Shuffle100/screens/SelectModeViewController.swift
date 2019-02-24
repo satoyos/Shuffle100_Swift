@@ -9,11 +9,6 @@
 import UIKit
 import SnapKit
 
-struct ReciteModeHolder {
-    var mode: ReciteMode
-    var title: String
-}
-
 class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let screenTitle = "読み上げモードを選ぶ"
     let reciteModeHolders = [
