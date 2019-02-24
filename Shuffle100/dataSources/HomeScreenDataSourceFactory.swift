@@ -8,14 +8,14 @@
 
 import Foundation
 
-fileprivate let reciteModeHolders = [
-    ReciteModeHolder(mode: .normal, title: "通常"),
-    ReciteModeHolder(mode: .beginner, title: "初心者"),
-    ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
-]
-
 struct HomeScreenDataSourceFactory {
-    static func dataSource(for type: HomeCellType, settings: GameSettings) -> DataSource {
+    static let reciteModeHolders = [
+        ReciteModeHolder(mode: .normal, title: "通常"),
+        ReciteModeHolder(mode: .beginner, title: "初心者"),
+        ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
+    ]
+    
+    static func settingsDataSource(for type: HomeCellType, settings: GameSettings) -> DataSource {
         var dataSource: DataSource!
         
         switch type {
@@ -52,10 +52,6 @@ struct HomeScreenDataSourceFactory {
     fileprivate static func singerDataSource() -> DataSource {
         return DataSource(title: "読手", accessoryType: .disclosureIndicator)
     }
-    
-//    fileprivate static func startGameDataSource() -> DataSource {
-//        return DataSource(title: "試合開始", accessoryType: .none)
-//    }
     
     fileprivate static func labelString(for mode: ReciteMode) -> String? {
         for i in 0..<(reciteModeHolders.count) {
