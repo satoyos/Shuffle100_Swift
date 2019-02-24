@@ -1,0 +1,68 @@
+//
+//  HomeScreenDataSourceFactory.swift
+//  Shuffle100
+//
+//  Created by 里 佳史 on 2019/02/24.
+//  Copyright © 2019 里 佳史. All rights reserved.
+//
+
+import Foundation
+
+fileprivate let reciteModeHolders = [
+    ReciteModeHolder(mode: .normal, title: "通常"),
+    ReciteModeHolder(mode: .beginner, title: "初心者"),
+    ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
+]
+
+struct HomeScreenDataSourceFactory {
+    static func dataSource(for type: HomeCellType, settings: GameSettings) -> DataSource {
+        var dataSource: DataSource!
+        
+        switch type {
+        case .poems:
+            dataSource = poemsDataSource()
+        case .reciteMode:
+            dataSource = reciteModeDataSource(for: settings.reciteMode)
+        case .fakeMode:
+            dataSource = fakeModeDataSource()
+        case .singers:
+            dataSource = singerDataSource()
+        }
+        dataSource.accessibilityLabel = type.rawValue
+        return dataSource
+    }
+    
+    static func startGameDataSource() -> DataSource {
+        return DataSource(title: "試合開始", accessoryType: .none)
+    }
+    
+    fileprivate static func poemsDataSource() -> DataSource {
+        return DataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator)
+    }
+    
+    fileprivate static func reciteModeDataSource(for reciteMode: ReciteMode) -> DataSource {
+        return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: labelString(for: reciteMode)!)
+        
+    }
+    
+    fileprivate static func fakeModeDataSource() -> DataSource {
+        return DataSource(title: "空札を加える", accessoryType: .none, withSwitch: true)
+    }
+    
+    fileprivate static func singerDataSource() -> DataSource {
+        return DataSource(title: "読手", accessoryType: .disclosureIndicator)
+    }
+    
+//    fileprivate static func startGameDataSource() -> DataSource {
+//        return DataSource(title: "試合開始", accessoryType: .none)
+//    }
+    
+    fileprivate static func labelString(for mode: ReciteMode) -> String? {
+        for i in 0..<(reciteModeHolders.count) {
+            if reciteModeHolders[i].mode == mode {
+                return reciteModeHolders[i].title
+            }
+        }
+        fatalError("ReciteMode \(mode) is not supported!")
+    }
+}
