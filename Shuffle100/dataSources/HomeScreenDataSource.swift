@@ -33,6 +33,12 @@ struct DataSource {
     }
 }
 
+fileprivate let reciteModeHolders = [
+    ReciteModeHolder(mode: .normal, title: "通常"),
+    ReciteModeHolder(mode: .beginner, title: "初心者"),
+    ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
+]
+
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,22 +75,26 @@ extension HomeViewController: UITableViewDataSource {
     fileprivate func settingSection(withTypes types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
         for type in types {
-            var dataSource: DataSource!
-            
-            switch type {
-            case .poems:
-                dataSource = poemsDataSource()
-            case .reciteMode:
-                dataSource = reciteModeDataSource()
-            case .fakeMode:
-                dataSource = fakeModeDataSource()
-            case .singers:
-                dataSource = singerDataSource()
-            }
-            dataSource.accessibilityLabel = type.rawValue
-            section.dataSources.append(dataSource)
+            section.dataSources.append(dataSource(for: type))
         }
         return section
+    }
+
+    fileprivate func dataSource(for type: HomeCellType) -> DataSource {
+        var dataSource: DataSource!
+        
+        switch type {
+        case .poems:
+            dataSource = poemsDataSource()
+        case .reciteMode:
+            dataSource = reciteModeDataSource()
+        case .fakeMode:
+            dataSource = fakeModeDataSource()
+        case .singers:
+            dataSource = singerDataSource()
+        }
+        dataSource.accessibilityLabel = type.rawValue
+        return dataSource
     }
     
     fileprivate func gameStartSection() -> TableSection {
@@ -100,7 +110,8 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     fileprivate func reciteModeDataSource() -> DataSource {
-        return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: textForReciteMode())
+        return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: labelString(for: gameSettings.reciteMode)!)
+        
     }
     
     fileprivate func fakeModeDataSource() -> DataSource {
@@ -115,17 +126,13 @@ extension HomeViewController: UITableViewDataSource {
         return DataSource(title: "試合開始", accessoryType: .none)
     }
     
-    fileprivate func textForReciteMode() -> String {
-        var detailLabelText: String
-        
-        switch gameSettings.reciteMode {
-        case .normal:
-            detailLabelText = "通常"
-        case .beginner:
-            detailLabelText = "初心者"
-        case .nonstop:
-            detailLabelText = "ノンストップ"
+    fileprivate func labelString(for mode: ReciteMode) -> String? {
+        for i in 0..<(reciteModeHolders.count) {
+            if reciteModeHolders[i].mode == mode {
+                return reciteModeHolders[i].title
+            }
         }
-        return detailLabelText
+        fatalError("ReciteMode \(mode) is not supported!")
     }
+
 }
