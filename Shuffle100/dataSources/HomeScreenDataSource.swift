@@ -74,9 +74,7 @@ extension HomeViewController: UITableViewDataSource {
     
     fileprivate func settingSection(withTypes types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
-        for type in types {
-            section.dataSources.append(dataSource(for: type))
-        }
+        section.dataSources = types.map{dataSource(for: $0)}
         return section
     }
 
@@ -134,5 +132,4 @@ extension HomeViewController: UITableViewDataSource {
         }
         fatalError("ReciteMode \(mode) is not supported!")
     }
-
 }
