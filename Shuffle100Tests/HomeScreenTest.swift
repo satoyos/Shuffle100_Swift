@@ -78,4 +78,16 @@ class HomeScreenTest: XCTestCase {
         //then
         XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
     }
+    
+    func test_fakeModeCellGetsHidden_inBeginnerMode() {
+        // given
+        let beginnerModeScreen = HomeViewController(gameSettings: GameSettings(reciteMode: .beginner))
+        
+        // when
+        beginnerModeScreen.viewDidLoad()
+        
+        // then
+        let rowNum = beginnerModeScreen.tableView(beginnerModeScreen.tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(rowNum, 3)
+    }
 }

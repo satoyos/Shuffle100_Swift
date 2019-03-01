@@ -63,7 +63,11 @@ class HomeViewController: UIViewController {
     }
     
     private func homeCells() -> [HomeCellType] {
-        return [.poems, .reciteMode, .fakeMode, .singers]
+        var homeCellTypes: [HomeCellType] = [.poems, .reciteMode, .fakeMode, .singers]
+        if gameSettings.reciteMode == .beginner {
+           homeCellTypes.remove(at: 2)
+        }
+        return homeCellTypes
     }
     
     private func setNavigationBarButtons() {

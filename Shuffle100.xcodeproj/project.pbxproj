@@ -260,8 +260,7 @@
 			children = (
 				92D5714E220EC7DB00235717 /* GameSettings.swift */,
 			);
-			name = models;
-			path = "New Group";
+			path = models;
 			sourceTree = "<group>";
 		};
 		92E6552021CE74E200005F85 /* delegates */ = {
