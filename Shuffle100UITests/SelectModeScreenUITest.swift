@@ -21,16 +21,16 @@ class SelectModeScreenUITest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_tappingReciteModeCellShowsSelectModeScreen() {
+    func test_HomeScreenReflectsSelectedMode() {
         // given
         let reciteModeCell = app.tables.cells.staticTexts["読み上げモード"]
         
         // when
         reciteModeCell.tap()
+        app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
+        app.buttons["トップ"].tap()
         
         // then
-        XCTAssert(app.navigationBars["読み上げモードを選ぶ"].exists)
-        XCTAssertNotNil(app.pickerWheels.element.staticTexts["通常 (競技かるた)"])        
+        XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
     }
-
 }
