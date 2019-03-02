@@ -68,7 +68,7 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
-    fileprivate func initialRowSelectInPicker() {
+    private func initialRowSelectInPicker() {
         picker.selectRow(row(for: gameSettings.reciteMode)!, inComponent: 0, animated: false)
     }
     

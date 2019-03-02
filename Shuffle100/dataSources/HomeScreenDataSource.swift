@@ -66,14 +66,14 @@ extension HomeViewController: UITableViewDataSource {
         }
     }
     
-    fileprivate func settingSection(withTypes types: [HomeCellType]) -> TableSection {
+    private func settingSection(withTypes types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
         section.dataSources = types.map{
             HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: gameSettings)}
         return section
     }
     
-    fileprivate func gameStartSection() -> TableSection {
+    private func gameStartSection() -> TableSection {
         var section = TableSection(title: "試合開始")
         var dataSource = HomeScreenDataSourceFactory.startGameDataSource()
         dataSource.accessibilityLabel = GameStartCell.identifier

@@ -47,6 +47,11 @@ class HomeViewController: UIViewController {
         setNavigationBarButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -76,7 +81,7 @@ class HomeViewController: UIViewController {
         setHelpButton(withSize: reSize)
     }
     
-    fileprivate func setSettingsButton(withSize reSize: CGSize) {
+    private func setSettingsButton(withSize reSize: CGSize) {
         let gearButton = UIBarButtonItem(
             image: UIImage(named: "gear-520.png")?.reSizeImage(reSize: reSize),
             style: UIBarButtonItem.Style.plain, target: self, action: nil)
@@ -84,7 +89,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = gearButton
     }
     
-    fileprivate func setHelpButton(withSize reSize: CGSize) {
+    private func setHelpButton(withSize reSize: CGSize) {
         let helpButton = UIBarButtonItem(
             image: UIImage(named: "question_white.png")?.reSizeImage(reSize: reSize),
             style: UIBarButtonItem.Style.plain, target: self, action: nil)

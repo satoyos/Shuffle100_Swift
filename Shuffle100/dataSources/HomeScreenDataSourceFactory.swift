@@ -36,24 +36,24 @@ struct HomeScreenDataSourceFactory {
         return DataSource(title: "試合開始", accessoryType: .none)
     }
     
-    fileprivate static func poemsDataSource() -> DataSource {
+    private static func poemsDataSource() -> DataSource {
         return DataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator)
     }
     
-    fileprivate static func reciteModeDataSource(for reciteMode: ReciteMode) -> DataSource {
+    private static func reciteModeDataSource(for reciteMode: ReciteMode) -> DataSource {
         return DataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: labelString(for: reciteMode)!)
         
     }
     
-    fileprivate static func fakeModeDataSource() -> DataSource {
+    private static func fakeModeDataSource() -> DataSource {
         return DataSource(title: "空札を加える", accessoryType: .none, withSwitch: true)
     }
     
-    fileprivate static func singerDataSource() -> DataSource {
+    private static func singerDataSource() -> DataSource {
         return DataSource(title: "読手", accessoryType: .disclosureIndicator)
     }
     
-    fileprivate static func labelString(for mode: ReciteMode) -> String? {
+    private static func labelString(for mode: ReciteMode) -> String? {
         for i in 0..<(reciteModeHolders.count) {
             if reciteModeHolders[i].mode == mode {
                 return reciteModeHolders[i].title
