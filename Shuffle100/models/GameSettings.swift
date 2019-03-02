@@ -19,7 +19,7 @@ struct ReciteModeHolder {
     var title: String
 }
 
-struct GameSettings {
+class GameSettings {
     var reciteMode: ReciteMode
     
     init(reciteMode: ReciteMode = .normal) {

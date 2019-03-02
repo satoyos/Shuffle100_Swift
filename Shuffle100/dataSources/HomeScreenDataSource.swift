@@ -40,6 +40,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func setupDataSources(withTypes types: [HomeCellType]) {
+        sections = [TableSection]()
         sections.append(settingSection(withTypes: types))
         sections.append(gameStartSection())
     }

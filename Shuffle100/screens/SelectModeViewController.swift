@@ -52,14 +52,18 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
         return reciteModeHolders[row].title
     }
     
-    fileprivate func initPicker() {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        gameSettings.reciteMode = reciteModeHolders[row].mode
+    }
+    
+    private func initPicker() {
         picker.dataSource = self
         picker.delegate = self
         layoutPicker()
         initialRowSelectInPicker()
     }
     
-    fileprivate func layoutPicker() {
+    private func layoutPicker() {
         picker.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
             make.width.equalToSuperview()

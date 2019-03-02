@@ -27,7 +27,7 @@ class HomeScreenTest: XCTestCase {
         XCTAssertEqual(screen.view.backgroundColor, UIColor.white)
     }
     
-    fileprivate func startGameCell() -> GameStartCell {
+    private func startGameCell() -> GameStartCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1)) as! GameStartCell
     }
     
@@ -89,5 +89,18 @@ class HomeScreenTest: XCTestCase {
         // then
         let rowNum = beginnerModeScreen.tableView(beginnerModeScreen.tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(rowNum, 3)
+    }
+    
+    func test_changeReciteModeInSettings_reclectsModeLabel() {
+        // given
+        let gameSettingsWithBeginnerMode = GameSettings(reciteMode: .beginner)
+
+        // when
+        screen.gameSettings = gameSettingsWithBeginnerMode
+        screen.viewWillAppear(false)
+
+        // then
+        let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
     }
 }

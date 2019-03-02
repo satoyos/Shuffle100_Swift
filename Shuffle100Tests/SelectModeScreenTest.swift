@@ -42,7 +42,15 @@ class SelectModeScreenTest: XCTestCase {
         
         // then
         XCTAssertEqual(selected, 1)
-//        ToDo: ↑このテストを通すところから！↑
+    }
+    
+    func test_selectingModeOnPicker_changesGameSettings() {
+        // given        
+        // when: screenにイベントを送る
+        screen.pickerView(screen.picker, didSelectRow: 1, inComponent: 0)
+        
+        // then
+        XCTAssertEqual(screen.gameSettings.reciteMode, .beginner)
     }
 
 }

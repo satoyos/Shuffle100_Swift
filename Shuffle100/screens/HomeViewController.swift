@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     let titleName = "トップ"
     let navBarButtonSize = 32
     var tableView: UITableView!
-    var sections = [TableSection]()
+    var sections: [TableSection]!
     var gameSettings: GameSettings!
     
     init(gameSettings: GameSettings) {
@@ -48,8 +48,9 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        setupDataSources(withTypes: homeCells())
         tableView.reloadData()
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
