@@ -28,6 +28,7 @@ struct HomeScreenDataSourceFactory {
         case .singers:
             dataSource = singerDataSource()
         }
+        dataSource.gameSettings = settings
         dataSource.accessibilityLabel = type.rawValue
         return dataSource
     }

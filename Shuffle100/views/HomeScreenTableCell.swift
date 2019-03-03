@@ -28,7 +28,7 @@ class HomeScreenTableCell: UITableViewCell {
         detailTextLabel?.text = dataSource.detailLabelText
         if dataSource.withSwitch {
             let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            switchView.isOn = false
+            switchView.isOn = dataSource.gameSettings.fakeMode
             self.accessoryView = switchView
         }
     }

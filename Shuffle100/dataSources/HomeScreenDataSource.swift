@@ -22,14 +22,16 @@ struct DataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String!
-    var withSwitch: Bool!
-    var detailLabelText: String!
+    var withSwitch: Bool
+    var detailLabelText: String
+    var gameSettings: GameSettings
     
-    init(title: String, accessoryType type: UITableViewCell.AccessoryType, detailLabelText: String = "", withSwitch: Bool = false) {
+    init(title: String, accessoryType type: UITableViewCell.AccessoryType, detailLabelText: String = "", withSwitch: Bool = false, gameSettings settings: GameSettings = GameSettings()) {
         self.title = title
         self.accessoryType = type
         self.withSwitch = withSwitch
         self.detailLabelText = detailLabelText
+        self.gameSettings = settings
     }
 }
 

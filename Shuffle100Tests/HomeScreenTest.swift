@@ -52,9 +52,13 @@ class HomeScreenTest: XCTestCase {
         XCTAssertEqual(cell_startGame.cellStyle, UITableViewCell.CellStyle.default)
     }
    
-    func test_fakeModeCellHasSwitch() {
+    func test_fakeModeCellHasSwitch_defaultIsOff() {
         let fakeModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
-        XCTAssertNotNil(fakeModeCell.accessoryView)
+        guard let switchView = fakeModeCell.accessoryView as? UISwitch else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertFalse(switchView.isOn)
     }
     
     func test_defaultReciteModeIsNormal() {
@@ -102,5 +106,22 @@ class HomeScreenTest: XCTestCase {
         // then
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
+    }
+    
+    func test_fakeModeIsOn_whenSetSoInGivenSettings() {
+        // given
+        let settingsWithFakeModeOn = GameSettings(fakeMode: true)
+        
+        // when
+        screen.gameSettings = settingsWithFakeModeOn
+        screen.viewWillAppear(false)
+        
+        // then
+        let fakeModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
+        guard let switchView = fakeModeCell.accessoryView as? UISwitch else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertTrue(switchView.isOn)
     }
 }
