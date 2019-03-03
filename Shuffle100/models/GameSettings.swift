@@ -21,8 +21,10 @@ struct ReciteModeHolder {
 
 class GameSettings {
     var reciteMode: ReciteMode
+    var fakeMode: Bool
     
-    init(reciteMode: ReciteMode = .normal) {
+    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false) {
         self.reciteMode = reciteMode
+        self.fakeMode = fakeMode
     }
 }

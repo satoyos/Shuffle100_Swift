@@ -22,11 +22,17 @@ class GameSettingsTest: XCTestCase {
     func test_initWithoutParameters() {
         let settings = GameSettings()
         XCTAssertEqual(settings.reciteMode, .normal)
+        XCTAssertFalse(settings.fakeMode)
     }
     
     func test_initWithRecoteModeParameter() {
         let settings = GameSettings(reciteMode: .nonstop)
         XCTAssertEqual(settings.reciteMode, .nonstop)
+    }
+    
+    func test_initWithFakeModeParameter() {
+        let settings = GameSettings(fakeMode: true)
+        XCTAssertTrue(settings.fakeMode)
     }
 
 }
