@@ -10,15 +10,15 @@ import UIKit
 
 struct TableSection {
     var title: String
-    var dataSources: [DataSource]
+    var dataSources: [HomeScreenDataSource]
     
     init(title: String) {
         self.title = title
-        self.dataSources = [DataSource]()
+        self.dataSources = [HomeScreenDataSource]()
     }
 }
 
-struct DataSource {
+struct HomeScreenDataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String!
