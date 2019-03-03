@@ -21,6 +21,10 @@ class SelectModeScreenTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func test_topPromptExists() {
+        XCTAssertEqual(screen.navigationItem.prompt, "百首読み上げ")
+    }
+    
     func test_pickerRowsCountIs3() {
         let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)
         XCTAssertEqual(rowNum, 3)
@@ -45,7 +49,7 @@ class SelectModeScreenTest: XCTestCase {
     }
     
     func test_selectingModeOnPicker_changesGameSettings() {
-        // given        
+        // given
         // when: screenにイベントを送る
         screen.pickerView(screen.picker, didSelectRow: 1, inComponent: 0)
         

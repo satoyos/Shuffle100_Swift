@@ -20,17 +20,12 @@ class SelectModeScreenUITest: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func test_HomeScreenReflectsSelectedMode() {
-        // given
-        let reciteModeCell = app.tables.cells.staticTexts["読み上げモード"]
-        
+    
+    func test_topPromptExists() {
         // when
-        reciteModeCell.tap()
-        app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
-        app.buttons["トップ"].tap()
+        app.tables.cells.staticTexts["読み上げモード"].tap()
         
         // then
-        XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
+        XCTAssertTrue(app.staticTexts["百首読み上げ"].exists)
     }
 }

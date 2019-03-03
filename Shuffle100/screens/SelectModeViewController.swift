@@ -35,9 +35,15 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = screenTitle
+        navigationItem.prompt = "百首読み上げ"
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(picker)
         initPicker()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
