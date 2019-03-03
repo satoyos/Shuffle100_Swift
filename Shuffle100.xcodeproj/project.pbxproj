@@ -30,6 +30,7 @@
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
 		925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
 		925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
+		927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */; };
 		929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
@@ -95,6 +96,7 @@
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9258FAF821FEE4AA00E4E0B7 /* question_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_white.png; sourceTree = "<group>"; };
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
+		927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReciteModeUITest.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		923D59302143BB0B000F5E60 /* Shuffle100UITests */ = {
 			isa = PBXGroup;
 			children = (
+				927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */,
 				923D59332143BB0B000F5E60 /* Info.plist */,
 				9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */,
 				92D5715C2211647700235717 /* SelectModeScreenUITest.swift */,
@@ -244,6 +247,14 @@
 				9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */ = {
+			isa = PBXGroup;
+			children = (
+				927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */,
+			);
+			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
 		};
 		92CE52052168D45D00538E01 /* dataSources */ = {
@@ -542,6 +553,7 @@
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameSettings.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
+				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
