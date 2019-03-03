@@ -24,11 +24,10 @@ struct HomeScreenDataSourceFactory {
         case .reciteMode:
             dataSource = reciteModeDataSource(for: settings.reciteMode)
         case .fakeMode:
-            dataSource = fakeModeDataSource()
+            dataSource = fakeModeDataSource(with: settings.fakeMode)
         case .singers:
             dataSource = singerDataSource()
         }
-        dataSource.gameSettings = settings
         dataSource.accessibilityLabel = type.rawValue
         return dataSource
     }
@@ -46,8 +45,10 @@ struct HomeScreenDataSourceFactory {
         
     }
     
-    private static func fakeModeDataSource() -> DataSource {
-        return DataSource(title: "空札を加える", accessoryType: .none, withSwitch: true)
+    private static func fakeModeDataSource(with switchOnFlg: Bool) -> DataSource {
+        var dataSource = DataSource(title: "空札を加える", accessoryType: .none)
+        dataSource.withSwitchOf = switchOnFlg
+        return dataSource
     }
     
     private static func singerDataSource() -> DataSource {

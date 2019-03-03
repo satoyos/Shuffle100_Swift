@@ -26,9 +26,9 @@ class HomeScreenTableCell: UITableViewCell {
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
         detailTextLabel?.text = dataSource.detailLabelText
-        if dataSource.withSwitch {
+        if let switchValue = dataSource.withSwitchOf {
             let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            switchView.isOn = dataSource.gameSettings.fakeMode
+            switchView.isOn = switchValue
             self.accessoryView = switchView
         }
     }
