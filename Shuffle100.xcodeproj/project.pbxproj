@@ -32,6 +32,27 @@
 		925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
 		927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */; };
 		927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */; };
+		927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
+		927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
+		927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
+		927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
+		927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
+		927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
+		927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE5222E9DD100AF48F7 /* PoemExt.swift */; };
+		927E4BF1222E9DD200AF48F7 /* PoemExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE5222E9DD100AF48F7 /* PoemExt.swift */; };
+		927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE5222E9DD100AF48F7 /* PoemExt.swift */; };
+		927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
+		927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
+		927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
+		927E4BF6222E9DD200AF48F7 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE7222E9DD200AF48F7 /* Deck.swift */; };
+		927E4BF7222E9DD200AF48F7 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE7222E9DD200AF48F7 /* Deck.swift */; };
+		927E4BF8222E9DD200AF48F7 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE7222E9DD200AF48F7 /* Deck.swift */; };
+		927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE8222E9DD200AF48F7 /* Poem.swift */; };
+		927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE8222E9DD200AF48F7 /* Poem.swift */; };
+		927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE8222E9DD200AF48F7 /* Poem.swift */; };
+		927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
+		927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
+		927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
 		929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
@@ -99,6 +120,13 @@
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
 		927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReciteModeUITest.swift; sourceTree = "<group>"; };
 		927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDefaultTest.swift; sourceTree = "<group>"; };
+		927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffled.swift"; sourceTree = "<group>"; };
+		927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedState100.swift; sourceTree = "<group>"; };
+		927E4BE5222E9DD100AF48F7 /* PoemExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemExt.swift; sourceTree = "<group>"; };
+		927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemSupplier.swift; sourceTree = "<group>"; };
+		927E4BE7222E9DD200AF48F7 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		927E4BE8222E9DD200AF48F7 /* Poem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
+		927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Diff.swift"; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
@@ -205,11 +233,9 @@
 		923D59252143BB0B000F5E60 /* Shuffle100Tests */ = {
 			isa = PBXGroup;
 			children = (
-				923D59262143BB0B000F5E60 /* HomeScreenTest.swift */,
+				927E4C00222E9E0F00AF48F7 /* screens */,
+				927E4BFF222E9E0500AF48F7 /* models */,
 				923D59282143BB0B000F5E60 /* Info.plist */,
-				92D57150220EC87700235717 /* GameSettingsTest.swift */,
-				92D57158220F063100235717 /* SelectModeScreenTest.swift */,
-				927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */,
 			);
 			path = Shuffle100Tests;
 			sourceTree = "<group>";
@@ -260,6 +286,24 @@
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
 		};
+		927E4BFF222E9E0500AF48F7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		927E4C00222E9E0F00AF48F7 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				923D59262143BB0B000F5E60 /* HomeScreenTest.swift */,
+				92D57150220EC87700235717 /* GameSettingsTest.swift */,
+				92D57158220F063100235717 /* SelectModeScreenTest.swift */,
+				927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
 		92CE52052168D45D00538E01 /* dataSources */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +316,13 @@
 		92D5714D220EC78C00235717 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */,
+				927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */,
+				927E4BE7222E9DD200AF48F7 /* Deck.swift */,
+				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
+				927E4BE5222E9DD100AF48F7 /* PoemExt.swift */,
+				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
+				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
 				92D5714E220EC7DB00235717 /* GameSettings.swift */,
 			);
 			path = models;
@@ -520,11 +571,18 @@
 				92D5714F220EC7DB00235717 /* GameSettings.swift in Sources */,
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
+				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
+				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
+				927E4BF6222E9DD200AF48F7 /* Deck.swift in Sources */,
+				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
+				927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */,
+				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,15 +593,22 @@
 			files = (
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92D57152220ECBC000235717 /* GameSettings.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
+				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92D57151220EC87700235717 /* GameSettingsTest.swift in Sources */,
+				927E4BF7222E9DD200AF48F7 /* Deck.swift in Sources */,
+				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92D5715A221014A300235717 /* UIColorExtention.swift in Sources */,
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
+				927E4BF1222E9DD200AF48F7 /* PoemExt.swift in Sources */,
+				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
@@ -554,15 +619,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927E4BF8222E9DD200AF48F7 /* Deck.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
+				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameSettings.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
+				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
+				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
+				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92D5715D2211647700235717 /* SelectModeScreenUITest.swift in Sources */,
+				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
+				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
