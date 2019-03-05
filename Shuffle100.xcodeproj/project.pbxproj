@@ -53,6 +53,10 @@
 		927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
 		927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
 		927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
+		927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C01222E9EC600AF48F7 /* DeckTests.swift */; };
+		927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */; };
+		927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */; };
+		927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C04222E9EC700AF48F7 /* PoemsTests.swift */; };
 		929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
@@ -127,6 +131,10 @@
 		927E4BE7222E9DD200AF48F7 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		927E4BE8222E9DD200AF48F7 /* Poem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 		927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Diff.swift"; sourceTree = "<group>"; };
+		927E4C01222E9EC600AF48F7 /* DeckTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
+		927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemSupplierTests.swift; sourceTree = "<group>"; };
+		927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedState100Tests.swift; sourceTree = "<group>"; };
+		927E4C04222E9EC700AF48F7 /* PoemsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemsTests.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
@@ -289,6 +297,11 @@
 		927E4BFF222E9E0500AF48F7 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				927E4C01222E9EC600AF48F7 /* DeckTests.swift */,
+				927E4C04222E9EC700AF48F7 /* PoemsTests.swift */,
+				927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */,
+				927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */,
+				92D57150220EC87700235717 /* GameSettingsTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -297,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				923D59262143BB0B000F5E60 /* HomeScreenTest.swift */,
-				92D57150220EC87700235717 /* GameSettingsTest.swift */,
 				92D57158220F063100235717 /* SelectModeScreenTest.swift */,
 				927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */,
 			);
@@ -593,15 +605,18 @@
 			files = (
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92D57152220ECBC000235717 /* GameSettings.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
+				927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
+				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92D57151220EC87700235717 /* GameSettingsTest.swift in Sources */,
 				927E4BF7222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
@@ -609,6 +624,7 @@
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
 				927E4BF1222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
+				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
