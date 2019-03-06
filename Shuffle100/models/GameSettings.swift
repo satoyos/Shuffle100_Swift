@@ -22,9 +22,11 @@ struct ReciteModeHolder {
 class GameSettings {
     var reciteMode: ReciteMode
     var fakeMode: Bool
+    var selectedStatus100: SelectedState100
     
-    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false) {
+    init(selectedBool100: [Bool] = [Bool](repeating: true, count: 100), reciteMode: ReciteMode = .normal, fakeMode: Bool = false) {
         self.reciteMode = reciteMode
         self.fakeMode = fakeMode
+        self.selectedStatus100 = SelectedState100(array: selectedBool100)
     }
 }
