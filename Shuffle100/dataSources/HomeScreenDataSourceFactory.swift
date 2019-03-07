@@ -20,7 +20,7 @@ struct HomeScreenDataSourceFactory {
         
         switch type {
         case .poems:
-            dataSource = poemsDataSource()
+            dataSource = poemsDataSource(settings.selectedStatus100.selected_num)
         case .reciteMode:
             dataSource = reciteModeDataSource(for: settings.reciteMode)
         case .fakeMode:
@@ -36,8 +36,8 @@ struct HomeScreenDataSourceFactory {
         return HomeScreenDataSource(title: "試合開始", accessoryType: .none)
     }
     
-    private static func poemsDataSource() -> HomeScreenDataSource {
-        return HomeScreenDataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator)
+    private static func poemsDataSource(_ selectedNum: Int) -> HomeScreenDataSource {
+        return HomeScreenDataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator, detailLabelText: "\(selectedNum)首")
     }
     
     private static func reciteModeDataSource(for reciteMode: ReciteMode) -> HomeScreenDataSource {

@@ -16,7 +16,7 @@ extension HomeScreenTest {
     }
     
     func test_allCellsHaveAccessibilityLabel() {
-        let cell_top = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        let cell_top = selectedPoemsCell()
         XCTAssertEqual(cell_top.accessibilityLabel, "poemsCell")
         
         let cell_2nd = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
@@ -54,5 +54,12 @@ extension HomeScreenTest {
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "通常")
     }
-
+    
+    func test_defaultSelectedPoemsNumberIs100() {
+        XCTAssertEqual(selectedPoemsCell().detailTextLabel?.text, "100首")
+    }
+    
+    private func selectedPoemsCell() -> HomeScreenTableCell {
+        return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as! HomeScreenTableCell
+    }
 }
