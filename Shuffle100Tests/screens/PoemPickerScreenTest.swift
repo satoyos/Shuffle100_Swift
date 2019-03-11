@@ -26,5 +26,17 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssertEqual(screen.navigationItem.title, "歌を選ぶ")
     }
 
+    func test_numberOfCellsIs100() {
+        XCTAssertEqual(screen.tableView(screen.tableView, numberOfRowsInSection: 0), 100)
+    }
+    
+    func test_tableSectionNumIs1() {
+        XCTAssertEqual(screen.numberOfSections(in: screen.tableView), 1)
+    }
+    
+    func test_1stCellShowsPoemNo1() {
+        let firstCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(firstCell.textLabel?.text, Poem100.poems[0].strWithNumberAndLiner())
+    }
 
 }

@@ -14,8 +14,20 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 1 {
-            navigationController?.pushViewController(SelectModeViewController(gameSettings: gameSettings), animated: true)
+        
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                navigationController?.pushViewController(
+                    PoemPickerViewController(),
+                    animated: true)
+            case 1:
+                navigationController?.pushViewController(
+                    SelectModeViewController(gameSettings: gameSettings),
+                    animated: true)
+            default:
+                return
+            }
         }
     }
 }
