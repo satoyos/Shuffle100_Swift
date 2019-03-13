@@ -35,8 +35,14 @@ class PoemPickerScreenTest: XCTestCase {
     }
     
     func test_1stCellShowsPoemNo1() {
-        let firstCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(firstCell.textLabel?.text, Poem100.poems[0].strWithNumberAndLiner())
+        XCTAssertEqual(firstCell().textLabel?.text, Poem100.poems[0].strWithNumberAndLiner())
     }
 
+    func test_verseFontIsMincho() {
+        XCTAssertEqual(firstCell().textLabel?.font.fontName, "HiraMinProN-W6")
+    }
+    
+    private func firstCell() -> UITableViewCell {
+        return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+    }
 }
