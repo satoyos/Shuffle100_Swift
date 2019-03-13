@@ -29,7 +29,16 @@ class PoemPickerViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath)
         cell.textLabel?.text = Poem100.poems[indexPath.row].strWithNumberAndLiner()
-        cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: UIFont.systemFontSize)
+        cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return fontSizeForVerse() * 3
+    }
+    
+    private func fontSizeForVerse() -> CGFloat {
+//        return UIFont.systemFontSize
+        return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
     }
 }

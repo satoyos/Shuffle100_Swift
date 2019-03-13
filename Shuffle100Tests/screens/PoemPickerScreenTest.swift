@@ -38,8 +38,10 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssertEqual(firstCell().textLabel?.text, Poem100.poems[0].strWithNumberAndLiner())
     }
 
-    func test_verseFontIsMincho() {
-        XCTAssertEqual(firstCell().textLabel?.font.fontName, "HiraMinProN-W6")
+    func test_verseFontIsMinchoAndBodySizeForDynamicType() {
+        let firstCellLabel = firstCell().textLabel
+        XCTAssertEqual(firstCellLabel?.font.fontName, "HiraMinProN-W6")
+        XCTAssertEqual(firstCellLabel?.font.pointSize,                       UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize)
     }
     
     private func firstCell() -> UITableViewCell {
