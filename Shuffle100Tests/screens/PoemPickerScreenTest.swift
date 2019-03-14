@@ -42,6 +42,7 @@ class PoemPickerScreenTest: XCTestCase {
         let firstCellLabel = firstCell().textLabel
         XCTAssertEqual(firstCellLabel?.font.fontName, "HiraMinProN-W6")
         XCTAssertEqual(firstCellLabel?.font.pointSize,                       UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize)
+        XCTAssert((firstCellLabel?.adjustsFontForContentSizeCategory)!)
     }
     
     private func firstCell() -> UITableViewCell {

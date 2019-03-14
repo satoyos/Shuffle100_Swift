@@ -30,6 +30,7 @@ class PoemPickerViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath)
         cell.textLabel?.text = Poem100.poems[indexPath.row].strWithNumberAndLiner()
         cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
+        cell.textLabel?.adjustsFontForContentSizeCategory = true
         return cell
     }
     
