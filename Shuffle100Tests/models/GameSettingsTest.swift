@@ -20,7 +20,7 @@ class GameSettingsTest: XCTestCase {
     }
 
     func test_initWithoutParameters() {
-        let settings = GameSettings()
+        let settings = Settings()
         XCTAssertEqual(settings.reciteMode, .normal)
         XCTAssertFalse(settings.fakeMode)
         let allSelectedBools100 = [Bool](repeating: true, count: 100)

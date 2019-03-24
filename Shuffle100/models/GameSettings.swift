@@ -30,3 +30,40 @@ class GameSettings {
         self.selectedStatus100 = SelectedState100(array: selectedBool100)
     }
 }
+
+struct Bool100 {
+    var bools: [Bool]
+    
+    init(bools: [Bool] = [Bool](repeating: true, count: 100)) {
+        self.bools = bools
+    }
+}
+
+class Settings {
+    var mode: GameSettings
+    var selectedStatus100: SelectedState100
+    
+    init(mode: GameSettings = GameSettings(), bool100: Bool100 = Bool100()){
+        self.mode = mode
+        self.selectedStatus100 = SelectedState100(array: bool100.bools)
+    }
+    
+    var reciteMode: ReciteMode {
+        get {
+            return mode.reciteMode
+        }
+        set(m) {
+            mode.reciteMode = m
+        }
+    }
+    
+    var fakeMode: Bool {
+        get {
+            return mode.fakeMode
+        }
+        set(m) {
+            mode.fakeMode = m
+        }
+    }
+}
+
