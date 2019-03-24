@@ -27,6 +27,10 @@ class GameSettingsTest: XCTestCase {
         XCTAssertEqual(settings.selectedStatus100.bools, allSelectedBools100)
     }
     
+    //// これからどんどんGameSettingsをSettingsで置き換えていく！
+    //// GameSettingsは、Settingsの初期化と永続化にしか使わないようにし、
+    //// それらとテスト以外のコードには存在を隠蔽する。
+    
     func test_initWithRecoteModeParameter() {
         let settings = GameSettings(reciteMode: .nonstop)
         XCTAssertEqual(settings.reciteMode, .nonstop)
