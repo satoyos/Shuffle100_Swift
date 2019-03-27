@@ -30,40 +30,40 @@
 
 public extension ConstraintView {
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_left: ConstraintItem { return self.snp.left }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_top: ConstraintItem { return self.snp.top }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_right: ConstraintItem { return self.snp.right }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_bottom: ConstraintItem { return self.snp.bottom }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_leading: ConstraintItem { return self.snp.leading }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_trailing: ConstraintItem { return self.snp.trailing }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_width: ConstraintItem { return self.snp.width }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_height: ConstraintItem { return self.snp.height }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_centerX: ConstraintItem { return self.snp.centerX }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_centerY: ConstraintItem { return self.snp.centerY }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_baseline: ConstraintItem { return self.snp.baseline }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     @available(iOS 8.0, OSX 10.11, *)
     public var snp_lastBaseline: ConstraintItem { return self.snp.lastBaseline }
     
@@ -103,13 +103,13 @@ public extension ConstraintView {
     @available(iOS 8.0, *)
     public var snp_centerYWithinMargins: ConstraintItem { return self.snp.centerYWithinMargins }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_edges: ConstraintItem { return self.snp.edges }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_size: ConstraintItem { return self.snp.size }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public var snp_center: ConstraintItem { return self.snp.center }
     
     @available(iOS, deprecated:3.0, message:"Use newer snp.* syntax.")
@@ -120,32 +120,32 @@ public extension ConstraintView {
     @available(iOS 8.0, *)
     public var snp_centerWithinMargins: ConstraintItem { return self.snp.centerWithinMargins }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public func snp_prepareConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> [Constraint] {
         return self.snp.prepareConstraints(closure)
     }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public func snp_makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
         self.snp.makeConstraints(closure)
     }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public func snp_remakeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
         self.snp.remakeConstraints(closure)
     }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public func snp_updateConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
         self.snp.updateConstraints(closure)
     }
     
-    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated, message:"Use newer snp.* syntax.")
     public func snp_removeConstraints() {
         self.snp.removeConstraints()
     }
     
-    public var snp: ConstraintViewDSL {
+    var snp: ConstraintViewDSL {
         return ConstraintViewDSL(view: self)
     }
     
