@@ -18,11 +18,11 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     ]
     
     lazy var picker = UIPickerView()
-    var gameSettings: GameSettings!
-    
-    init(gameSettings: GameSettings = GameSettings()) {
-        self.gameSettings = gameSettings
-        
+    var settings: Settings!
+
+    init(settings: Settings = Settings()) {
+        self.settings = settings
+
         // クラスの持つ指定イニシャライザを呼び出す
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,7 +59,7 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        gameSettings.reciteMode = reciteModeHolders[row].mode
+        settings.reciteMode = reciteModeHolders[row].mode
     }
     
     private func initPicker() {
@@ -79,7 +79,7 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     private func initialRowSelectInPicker() {
-        picker.selectRow(row(for: gameSettings.reciteMode)!, inComponent: 0, animated: false)
+        picker.selectRow(row(for: settings.reciteMode)!, inComponent: 0, animated: false)
     }
     
     private func row(for mode: ReciteMode) -> Int? {

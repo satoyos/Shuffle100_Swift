@@ -70,7 +70,8 @@ extension HomeViewController: UITableViewDataSource {
     private func settingSection(withTypes types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
         section.dataSources = types.map{
-            HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: gameSettings)}
+//            HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: gameSettings)}
+            HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: settings)}
         return section
     }
     

@@ -20,11 +20,11 @@ class HomeViewController: UIViewController {
     let navBarButtonSize = 32
     var tableView: UITableView!
     var sections: [TableSection]!
-    var gameSettings: GameSettings!
+    var settings: Settings!
     
-    init(gameSettings: GameSettings) {
-        self.gameSettings = gameSettings
-        
+    init(settings: Settings) {
+          self.settings = settings
+
         // クラスの持つ指定イニシャライザを呼び出す
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     }
     
     convenience init() {
-        self.init(gameSettings: GameSettings())
+          self.init(settings: Settings())
     }
 
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ class HomeViewController: UIViewController {
     
     private func homeCells() -> [HomeCellType] {
         var homeCellTypes: [HomeCellType] = [.poems, .reciteMode, .fakeMode, .singers]
-        if gameSettings.reciteMode == .beginner {
+        if settings.reciteMode == .beginner {
            homeCellTypes.remove(at: 2)
         }
         return homeCellTypes

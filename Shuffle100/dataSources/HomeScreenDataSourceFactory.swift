@@ -15,7 +15,8 @@ struct HomeScreenDataSourceFactory {
         ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
     ]
     
-    static func settingsDataSource(for type: HomeCellType, settings: GameSettings) -> HomeScreenDataSource {
+//    static func settingsDataSource(for type: HomeCellType, settings: GameSettings) -> HomeScreenDataSource {
+    static func settingsDataSource(for type: HomeCellType, settings: Settings) -> HomeScreenDataSource {
         var dataSource: HomeScreenDataSource!
         
         switch type {

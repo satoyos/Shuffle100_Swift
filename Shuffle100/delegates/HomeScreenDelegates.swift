@@ -23,7 +23,7 @@ extension HomeViewController: UITableViewDelegate {
                     animated: true)
             case 1:
                 navigationController?.pushViewController(
-                    SelectModeViewController(gameSettings: gameSettings),
+                    SelectModeViewController(settings: settings),
                     animated: true)
             default:
                 return

@@ -46,7 +46,7 @@ extension HomeScreenTest {
     }
     
     func test_defaultReciteModeIsNormal() {
-        let defaultReciteMode = screen.gameSettings.reciteMode
+        let defaultReciteMode = screen.settings.reciteMode
         XCTAssertEqual(defaultReciteMode, .normal)
     }
     

@@ -38,7 +38,7 @@ class SelectModeScreenTest: XCTestCase {
     func test_beginnerModeIsSelected_whenSetSoInGameSettings() {
         // given
         let gameSettingsWithBeginnerMode = GameSettings(reciteMode: .beginner)
-        let screenB = SelectModeViewController(gameSettings: gameSettingsWithBeginnerMode)
+        let screenB = SelectModeViewController(settings: Settings(mode: gameSettingsWithBeginnerMode))
         
         // when
         screenB.viewDidLoad()
@@ -54,7 +54,7 @@ class SelectModeScreenTest: XCTestCase {
         screen.pickerView(screen.picker, didSelectRow: 1, inComponent: 0)
         
         // then
-        XCTAssertEqual(screen.gameSettings.reciteMode, .beginner)
+        XCTAssertEqual(screen.settings.reciteMode, .beginner)
     }
 
 }

@@ -43,6 +43,8 @@ class GameSettingsTest: XCTestCase {
     //// GameSettingsは、Settingsの初期化と永続化にしか使わないようにし、
     //// それらとテスト以外のコードには存在を隠蔽する。
     
-    //// このテスト内はこれでOK。次はProductionコードだ！
+    //// このテスト内はこれでOK。
+    //// HomeScreenとSelectModeScreenも置き換え済み。
+    //// 残るは、PoemPickerScreenのProductionコードだ！
     
 }

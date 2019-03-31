@@ -28,7 +28,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_beginnerModeLabelIsBeginner() {
         // given
-        let beginnerModeScreen = HomeViewController(gameSettings: GameSettings(reciteMode: .beginner))
+        let beginnerModeScreen = HomeViewController(settings: beginnerSettings())
         beginnerModeScreen.viewDidLoad()
         
         // when
@@ -40,7 +40,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_fakeModeCellGetsHidden_inBeginnerMode() {
         // given
-        let beginnerModeScreen = HomeViewController(gameSettings: GameSettings(reciteMode: .beginner))
+        let beginnerModeScreen = HomeViewController(settings: beginnerSettings())
         
         // when
         beginnerModeScreen.viewDidLoad()
@@ -52,10 +52,10 @@ class HomeScreenTest: XCTestCase {
     
     func test_changeReciteModeInSettings_reclectsModeLabel() {
         // given
-        let gameSettingsWithBeginnerMode = GameSettings(reciteMode: .beginner)
+        screen.settings = beginnerSettings()
 
         // when
-        screen.gameSettings = gameSettingsWithBeginnerMode
+        
         screen.viewWillAppear(false)
 
         // then
@@ -68,7 +68,7 @@ class HomeScreenTest: XCTestCase {
         let settingsWithFakeModeOn = GameSettings(fakeMode: true)
         
         // when
-        screen.gameSettings = settingsWithFakeModeOn
+        screen.settings = Settings(mode: settingsWithFakeModeOn)
         screen.viewWillAppear(false)
         
         // then
@@ -78,5 +78,9 @@ class HomeScreenTest: XCTestCase {
             return
         }
         XCTAssertTrue(switchView.isOn)
+    }
+    
+    private func beginnerSettings() -> Settings {
+        return Settings(mode: GameSettings(reciteMode: .beginner))
     }
 }
