@@ -19,7 +19,7 @@ struct ReciteModeHolder {
     var title: String
 }
 
-class GameSettings {
+struct GameSettings {
     var reciteMode: ReciteMode
     var fakeMode: Bool
     var selectedStatus100: SelectedState100
