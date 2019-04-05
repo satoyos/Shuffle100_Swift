@@ -19,7 +19,7 @@ struct ReciteModeHolder {
     var title: String
 }
 
-struct GameSettings {
+struct GameConfig {
     var reciteMode: ReciteMode
     var fakeMode: Bool
     var selectedStatus100: SelectedState100
@@ -40,10 +40,10 @@ struct Bool100 {
 }
 
 class Settings {
-    var mode: GameSettings
+    var mode: GameConfig
     var selectedStatus100: SelectedState100
     
-    init(mode: GameSettings = GameSettings(), bool100: Bool100 = Bool100()){
+    init(mode: GameConfig = GameConfig(), bool100: Bool100 = Bool100()){
         self.mode = mode
         self.selectedStatus100 = SelectedState100(array: bool100.bools)
     }

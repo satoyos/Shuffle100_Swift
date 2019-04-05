@@ -69,10 +69,10 @@
 		92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
 		92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
 		92CE5218216B6ABA00538E01 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE5214216B5AF000538E01 /* RevealServer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		92D5714F220EC7DB00235717 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameSettings.swift */; };
-		92D57151220EC87700235717 /* GameSettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameSettingsTest.swift */; };
-		92D57152220ECBC000235717 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameSettings.swift */; };
-		92D57153220ECBEA00235717 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameSettings.swift */; };
+		92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
+		92D57151220EC87700235717 /* GameConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameConfigTest.swift */; };
+		92D57152220ECBC000235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
+		92D57153220ECBEA00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeViewController.swift */; };
 		92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeViewController.swift */; };
 		92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeViewController.swift */; };
@@ -146,8 +146,8 @@
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
-		92D5714E220EC7DB00235717 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameSettings.swift; path = Shuffle100/models/GameSettings.swift; sourceTree = SOURCE_ROOT; };
-		92D57150220EC87700235717 /* GameSettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTest.swift; sourceTree = "<group>"; };
+		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
+		92D57150220EC87700235717 /* GameConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigTest.swift; sourceTree = "<group>"; };
 		92D57154220F03AF00235717 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
 		92D5715C2211647700235717 /* SelectModeScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenUITest.swift; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 				927E4C04222E9EC700AF48F7 /* PoemsTests.swift */,
 				927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */,
 				927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */,
-				92D57150220EC87700235717 /* GameSettingsTest.swift */,
+				92D57150220EC87700235717 /* GameConfigTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 				927E4BE5222E9DD100AF48F7 /* PoemExt.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
 				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
-				92D5714E220EC7DB00235717 /* GameSettings.swift */,
+				92D5714E220EC7DB00235717 /* GameConfig.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -591,7 +591,7 @@
 			files = (
 				92CE520B2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
-				92D5714F220EC7DB00235717 /* GameSettings.swift in Sources */,
+				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
@@ -620,7 +620,7 @@
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
-				92D57152220ECBC000235717 /* GameSettings.swift in Sources */,
+				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
@@ -631,7 +631,7 @@
 				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
-				92D57151220EC87700235717 /* GameSettingsTest.swift in Sources */,
+				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
 				927E4BF7222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92D5715A221014A300235717 /* UIColorExtention.swift in Sources */,
@@ -654,7 +654,7 @@
 				9265966D22353124007CDA1A /* PoemPickerScreenUITest.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
-				92D57153220ECBEA00235717 /* GameSettings.swift in Sources */,
+				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,

@@ -65,7 +65,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_fakeModeIsOn_whenSetSoInGivenSettings() {
         // given
-        let settingsWithFakeModeOn = GameSettings(fakeMode: true)
+        let settingsWithFakeModeOn = GameConfig(fakeMode: true)
         
         // when
         screen.settings = Settings(mode: settingsWithFakeModeOn)
@@ -81,6 +81,6 @@ class HomeScreenTest: XCTestCase {
     }
     
     private func beginnerSettings() -> Settings {
-        return Settings(mode: GameSettings(reciteMode: .beginner))
+        return Settings(mode: GameConfig(reciteMode: .beginner))
     }
 }
