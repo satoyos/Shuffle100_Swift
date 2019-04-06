@@ -45,6 +45,10 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssert((firstCellLabel?.adjustsFontForContentSizeCategory)!)
     }
     
+    func test_selectedPoemCellIsNadeshiko() {
+        XCTAssertEqual(firstCell().backgroundColor, UIColor(hex: "eebbcb"))
+    }
+    
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
     }

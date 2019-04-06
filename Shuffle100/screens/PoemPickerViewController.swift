@@ -9,7 +9,21 @@
 import UIKit
 
 class PoemPickerViewController: UITableViewController {
+    var settings: Settings!
+    let nadeshiko_color = UIColor(hex: "eebbcb")
 
+    init(settings: Settings = Settings()) {
+        self.settings = settings
+        
+        // クラスの持つ指定イニシャライザを呼び出す
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // 新しく init を定義した場合に必須
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.prompt = "百首読み上げ"
@@ -31,6 +45,7 @@ class PoemPickerViewController: UITableViewController {
         cell.textLabel?.text = Poem100.poems[indexPath.row].strWithNumberAndLiner()
         cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
         cell.textLabel?.adjustsFontForContentSizeCategory = true
+        cell.backgroundColor = colorForPoemIndex(indexPath.row)
         return cell
     }
     
@@ -39,7 +54,13 @@ class PoemPickerViewController: UITableViewController {
     }
     
     private func fontSizeForVerse() -> CGFloat {
-//        return UIFont.systemFontSize
         return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
+    }
+    
+    private func colorForPoemIndex(_ idx: Int) -> UIColor {
+        if try! settings.selectedStatus100.of_number(index: idx+1) {
+            return nadeshiko_color
+        }
+        return UIColor.white
     }
 }
