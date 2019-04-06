@@ -45,7 +45,7 @@ class PoemPickerViewController: UITableViewController {
         cell.textLabel?.text = Poem100.poems[indexPath.row].strWithNumberAndLiner()
         cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
         cell.textLabel?.adjustsFontForContentSizeCategory = true
-        cell.backgroundColor = colorForPoemIndex(indexPath.row)
+        cell.backgroundColor = colorForRowIndex(indexPath.row)
         return cell
     }
     
@@ -57,8 +57,8 @@ class PoemPickerViewController: UITableViewController {
         return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
     }
     
-    private func colorForPoemIndex(_ idx: Int) -> UIColor {
-        if try! settings.selectedStatus100.of_number(index: idx+1) {
+    private func colorForRowIndex(_ rowIndex: Int) -> UIColor {
+        if try! settings.selectedStatus100.of_number(rowIndex+1) {
             return nadeshiko_color
         }
         return UIColor.white
