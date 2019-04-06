@@ -42,10 +42,12 @@ class PoemPickerViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath)
-        cell.textLabel?.text = Poem100.poems[indexPath.row].strWithNumberAndLiner()
+        let poem = Poem100.poems[indexPath.row]
+        cell.textLabel?.text = poem.strWithNumberAndLiner()
         cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
         cell.textLabel?.adjustsFontForContentSizeCategory = true
-        cell.backgroundColor = colorForRowIndex(indexPath.row)
+        cell.backgroundColor = colorFor(poem: poem)
+        cell.tag = poem.number
         return cell
     }
     
@@ -57,8 +59,8 @@ class PoemPickerViewController: UITableViewController {
         return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
     }
     
-    private func colorForRowIndex(_ rowIndex: Int) -> UIColor {
-        if try! settings.selectedStatus100.of_number(rowIndex+1) {
+    private func colorFor(poem: Poem) -> UIColor {
+        if try! settings.selectedStatus100.of_number(poem.number) {
             return nadeshiko_color
         }
         return UIColor.white

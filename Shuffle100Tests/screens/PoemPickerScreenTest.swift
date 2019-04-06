@@ -49,6 +49,10 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssertEqual(firstCell().backgroundColor, UIColor(hex: "eebbcb"))
     }
     
+    func test_tagOfCellIsSet() {
+        XCTAssertEqual(firstCell().tag, 1)
+    }
+    
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
     }
