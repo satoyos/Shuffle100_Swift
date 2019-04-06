@@ -22,7 +22,12 @@ class HomeViewControllerUITest: XCTestCase {
         super.tearDown()
     }
     
-    func test_correctLabelAndCellsAppearOnLoad() {
+    func test_defaultCellsAndButtonsExistOnLoad() {
+        correctLabelAndCellsExist()
+        navBarButtonsExists()
+    }
+    
+    private func correctLabelAndCellsExist() {
         XCTAssert(app.navigationBars["トップ"].exists)
         XCTAssert(cellExistsWithText("取り札を用意する歌"))
         XCTAssert(cellExistsWithText("読み上げモード"))
@@ -30,13 +35,12 @@ class HomeViewControllerUITest: XCTestCase {
         XCTAssert(cellExistsWithText("読手"))
     }
     
-    func test_navBarButtonsExists() {
+    private func navBarButtonsExists() {
         XCTAssert(app.navigationBars.buttons["GearButton"].exists)
         XCTAssert(app.navigationBars.buttons["HelpButton"].exists)
     }
     
-    
-    fileprivate func cellExistsWithText(_ text: String) -> Bool {
+    private func cellExistsWithText(_ text: String) -> Bool {
         return app.tables.cells.staticTexts[text].exists
     }
 }
