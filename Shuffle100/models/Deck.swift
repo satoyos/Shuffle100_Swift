@@ -92,5 +92,6 @@ class Deck {
         for i in 0..<selected_nums.count {
             poems.append(Deck.original_poems[rest_nums[i]-1])
         }
+        poems.shuffle()
     }
 }
