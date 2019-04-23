@@ -16,11 +16,21 @@ class MainCoordinator {
         let homeScreen = HomeViewController()
         navigationController.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
+        
+        // ToDo:
+        // タップされたときのアクションの確認を、UIテストからUnitテストに移す！
+        homeScreen.selectPoemAction = {[weak self] in
+            self?.selectPoem()
+        }
     }
     
     private func setUpNavigationController() {
         navigationController.interactivePopGestureRecognizer?.isEnabled = false
         navigationController.navigationBar.topItem?.prompt = "百首読み上げ"
         navigationController.navigationBar.barTintColor = UIColor(hex: "cee4ae")
+    }
+    
+    private func selectPoem() {
+        navigationController.pushViewController(PoemPickerViewController(), animated: true)
     }
 }
