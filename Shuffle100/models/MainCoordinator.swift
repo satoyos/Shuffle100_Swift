@@ -13,14 +13,15 @@ class MainCoordinator {
     var navigationController = UINavigationController()
     
     func start() {
-        let homeScreen = HomeViewController()
+        let settings = Settings()
+        let homeScreen = HomeViewController(settings: settings)
         navigationController.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
         
         // ToDo:
         // タップされたときのアクションの確認を、UIテストからUnitテストに移す！
-        homeScreen.selectPoemAction = {[weak self] in
-            self?.selectPoem()
+        homeScreen.selectPoemAction = {[weak self, unowned settings] in
+            self?.selectPoem(settings: settings)
         }
     }
     
@@ -30,7 +31,7 @@ class MainCoordinator {
         navigationController.navigationBar.barTintColor = UIColor(hex: "cee4ae")
     }
     
-    private func selectPoem() {
-        navigationController.pushViewController(PoemPickerViewController(), animated: true)
+    private func selectPoem(settings: Settings) {
+        navigationController.pushViewController(PoemPickerViewController(settings: settings), animated: true)
     }
 }
