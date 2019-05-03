@@ -18,11 +18,13 @@ class MainCoordinator {
         navigationController.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
         
-        // ToDo:
-        // タップされたときのアクションの確認を、UIテストからUnitテストに移す！
+        
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
         }
+        
+        // ToDo:
+        // モード選択画面への遷移もここで定義する！
     }
     
     private func setUpNavigationController() {
