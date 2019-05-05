@@ -45,8 +45,12 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssert((firstCellLabel?.adjustsFontForContentSizeCategory)!)
     }
     
+    private func nadeshikoColor() -> UIColor {
+        return UIColor(hex: "eebbcb")
+    }
+    
     func test_selectedPoemCellIsNadeshiko() {
-        XCTAssertEqual(firstCell().backgroundColor, UIColor(hex: "eebbcb"))
+        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
     }
     
     func test_unselectedPoemCellIsWhite() {
@@ -58,7 +62,31 @@ class PoemPickerScreenTest: XCTestCase {
         screen.settings = testSettings
         screen.tableView.reloadData()
         // then
-        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)        
+        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+    }
+    
+    func test_tapiingSelctedPoem_makeItUnselected() {
+        // given
+        let testIndexPath = IndexPath(row: 0, section: 0)
+        // when
+        screen.tableView(screen.tableView, didSelectRowAt: testIndexPath)
+        // then
+        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+        XCTAssertEqual(screen.selected_num, 99)
+    }
+    
+    func test_tappingUnselectedPoem_makeItSelected() {
+        // given
+        let testBoolArray = allUnselectedBools100()
+        let testSetting = Settings(bool100: Bool100(bools: testBoolArray))
+        screen.settings = testSetting
+        screen.tableView.reloadData()
+        let testIndex = IndexPath(row: 0, section: 0)
+        // when
+        screen.tableView(screen.tableView, didSelectRowAt: testIndex)
+        // then
+        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
+        XCTAssertEqual(screen.selected_num, 1)
     }
     
     func test_tagOfCellIsSet() {
@@ -71,5 +99,9 @@ class PoemPickerScreenTest: XCTestCase {
     
     private func allSelectedBools100() -> [Bool] {
         return [Bool](repeating: true, count: 100)
+    }
+    
+    private func allUnselectedBools100() -> [Bool] {
+        return [Bool](repeating: false, count: 100)
     }
 }

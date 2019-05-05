@@ -11,6 +11,12 @@ import UIKit
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
     let nadeshiko_color = UIColor(hex: "eebbcb")
+    
+    var selected_num: Int {
+        get {
+            return settings.selectedStatus100.selected_num
+        }
+    }
 
     init(settings: Settings = Settings()) {
         self.settings = settings
@@ -53,6 +59,12 @@ class PoemPickerViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return fontSizeForVerse() * 3
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        settings.selectedStatus100.reverse_in_index(indexPath.row)
+        tableView.reloadData()
+        return
     }
     
     private func fontSizeForVerse() -> CGFloat {
