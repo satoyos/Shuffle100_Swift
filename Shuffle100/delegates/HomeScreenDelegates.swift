@@ -20,9 +20,7 @@ extension HomeViewController: UITableViewDelegate {
             case 0:
                 selectPoemAction?()
             case 1:
-                navigationController?.pushViewController(
-                    SelectModeViewController(settings: settings),
-                    animated: true)
+                selectModeAction?()
             default:
                 return
             }

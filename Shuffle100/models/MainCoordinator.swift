@@ -23,8 +23,9 @@ class MainCoordinator {
             self?.selectPoem(settings: settings)
         }
         
-        // ToDo:
-        // モード選択画面への遷移もここで定義する！
+        homeScreen.selectModeAction = {[weak self, unowned settings] in
+            self?.selectMode(settings: settings)
+        }
     }
     
     private func setUpNavigationController() {
@@ -35,5 +36,9 @@ class MainCoordinator {
     
     private func selectPoem(settings: Settings) {
         navigationController.pushViewController(PoemPickerViewController(settings: settings), animated: true)
+    }
+    
+    private func selectMode(settings: Settings) {
+        navigationController.pushViewController(SelectModeViewController(settings: settings), animated: true)
     }
 }
