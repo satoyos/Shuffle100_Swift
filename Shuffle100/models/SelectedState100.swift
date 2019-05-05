@@ -40,11 +40,11 @@ class SelectedState100 {
         return init_bools
     }
     
-    func of_number(_ index: Int) throws -> Bool {
-        if index < 1 || index > 100 {
+    func of_number(_ number: Int) throws -> Bool {
+        if number < 1 || number > 100 {
             throw NSError(domain: "indexが範囲外!", code: -1)
         } else {
-            return bools[index-1]
+            return bools[number-1]
         }
     }
     
@@ -83,14 +83,18 @@ class SelectedState100 {
     }
     
     func select_in_numbers(_ array: Array<Int>) {
-        for idx in array {
-            select_of(number: idx)
+        for num in array {
+            select_of(number: num)
         }
     }
     
     func cancel_in_numbers(_ array: Array<Int>) {
-        for idx in array {
-            cancel_of(number: idx)
+        for num in array {
+            cancel_of(number: num)
         }
+    }
+    
+    func reverse_in_index(_ idx: Int) {
+        self.bools[idx] = !self.bools[idx]
     }
 }

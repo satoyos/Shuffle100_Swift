@@ -165,4 +165,13 @@ class SelectedState100Tests: XCTestCase {
         XCTAssertEqual(try state100.of_number(8), false)
         XCTAssertEqual(state100.selected_num, 94)
     }
+    
+    func test_reverse_in_index() {
+        // given
+        let state100 = SelectedState100.create_of(bool: true)
+        // when
+        state100.reverse_in_index(0)
+        // then
+        XCTAssertFalse(try! state100.of_number(1))
+    }
 }
