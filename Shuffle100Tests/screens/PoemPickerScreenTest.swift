@@ -49,11 +49,27 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssertEqual(firstCell().backgroundColor, UIColor(hex: "eebbcb"))
     }
     
+    func test_unselectedPoemCellIsWhite() {
+        // given
+        var boolArray = allSelectedBools100()
+        boolArray[0] = false
+        let testSettings = Settings(bool100: Bool100(bools: boolArray))
+        // when
+        screen.settings = testSettings
+        screen.tableView.reloadData()
+        // then
+        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)        
+    }
+    
     func test_tagOfCellIsSet() {
         XCTAssertEqual(firstCell().tag, 1)
     }
     
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+    }
+    
+    private func allSelectedBools100() -> [Bool] {
+        return [Bool](repeating: true, count: 100)
     }
 }
