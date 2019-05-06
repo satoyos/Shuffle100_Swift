@@ -93,6 +93,10 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssertEqual(firstCell().tag, 1)
     }
     
+    func test_accessibilityLabelIsSet() {
+        XCTAssertEqual(firstCell().accessibilityLabel, "001")
+    }
+    
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
     }

@@ -54,6 +54,7 @@ class PoemPickerViewController: UITableViewController {
         cell.textLabel?.adjustsFontForContentSizeCategory = true
         cell.backgroundColor = colorFor(poem: poem)
         cell.tag = poem.number
+        cell.accessibilityLabel = String(format: "%03d", poem.number)
         return cell
     }
     
