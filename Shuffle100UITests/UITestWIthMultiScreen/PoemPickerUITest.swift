@@ -14,7 +14,7 @@ class PoemPickerUITest: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        XCUIApplication().launch()
+        app.launch()
     }
     
     override func tearDown() {
@@ -28,10 +28,11 @@ class PoemPickerUITest: XCTestCase {
         // when
         //   goes to PocmPickerScreen
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        //   tap poems #1,3,5
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["1. 秋の田の かりほの庵の とまをあらみ 我が衣手は 露にぬれつつ"]/*[[".cells.staticTexts[\"1. 秋の田の かりほの庵の とまをあらみ 我が衣手は 露にぬれつつ\"]",".staticTexts[\"1. 秋の田の かりほの庵の とまをあらみ 我が衣手は 露にぬれつつ\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["3. あしびきの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ"]/*[[".cells.staticTexts[\"3. あしびきの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ\"]",".staticTexts[\"3. あしびきの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["5. 奥山に 紅葉踏み分け 鳴く鹿の 声聞くときぞ 秋はかなしき"]/*[[".cells.staticTexts[\"5. 奥山に 紅葉踏み分け 鳴く鹿の 声聞くときぞ 秋はかなしき\"]",".staticTexts[\"5. 奥山に 紅葉踏み分け 鳴く鹿の 声聞くときぞ 秋はかなしき\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //   tap poems #1,2, 4
+        tablesQuery.cells["001"].tap()
+        tablesQuery.cells["002"].tap()
+        tablesQuery.cells["004"].tap()
+        //   back to HomeScreen
         app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
         // then
         XCTAssertTrue(app.cells.staticTexts["97首"].exists)
