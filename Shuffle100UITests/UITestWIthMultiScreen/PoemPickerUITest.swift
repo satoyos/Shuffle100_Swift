@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PoemPickerUITest: XCTestCase {
+class PoemPickerIntegrationUITest: XCTestCase {
     let app = XCUIApplication()
     
     override func setUp() {
