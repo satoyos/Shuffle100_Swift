@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BBBadgeBarButtonItem
 
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
@@ -35,6 +36,15 @@ class PoemPickerViewController: UITableViewController {
         navigationItem.prompt = "百首読み上げ"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         self.navigationItem.title = "歌を選ぶ"
+        let button = UIButton(type: .custom)
+        button.setTitle("保存", for: .normal)
+        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)
+        buttonItem?.badgeValue = "10首"
+        navigationItem.rightBarButtonItem = buttonItem
+    }
+    
+    @objc func saveButtonTapped(btn: UIBarButtonItem) {
+        print("Save Button Tapped!")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
