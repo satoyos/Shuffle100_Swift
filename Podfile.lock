@@ -1,8 +1,10 @@
 PODS:
+  - BBBadgeBarButtonItem (1.2)
   - Reveal-SDK (21)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
+  - BBBadgeBarButtonItem (from `https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git`)
   - Reveal-SDK
   - SnapKit (~> 5.0.0)
 
@@ -11,10 +13,20 @@ SPEC REPOS:
     - Reveal-SDK
     - SnapKit
 
+EXTERNAL SOURCES:
+  BBBadgeBarButtonItem:
+    :git: https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git
+
+CHECKOUT OPTIONS:
+  BBBadgeBarButtonItem:
+    :commit: 0b705dde8f5c065b05f3482a05b4a3685e52608c
+    :git: https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git
+
 SPEC CHECKSUMS:
+  BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   Reveal-SDK: 3523e0eb7c562811c51bb71da6e523a6373702c8
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 9949553aa08ba96b284ecff813c072193d5fe233
+PODFILE CHECKSUM: 1c6930ca4772a88a00ab1db5256018b4092a1d98
 
 COCOAPODS: 1.6.1
