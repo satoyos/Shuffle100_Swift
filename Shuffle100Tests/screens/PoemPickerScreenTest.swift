@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import BBBadgeBarButtonItem
 
 class PoemPickerScreenTest: XCTestCase {
 
@@ -95,6 +96,14 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_accessibilityLabelIsSet() {
         XCTAssertEqual(firstCell().accessibilityLabel, "001")
+    }
+    
+    func test_badgeValueShowsSelectedNum() {
+        guard let bbItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem else {
+            XCTAssert(false, "Could't get BBBadgeBarButtonItem")
+            return
+        }
+        XCTAssertEqual(bbItem.badgeValue, "100首")
     }
     
     private func firstCell() -> UITableViewCell {
