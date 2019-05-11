@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = "Reveal-SDK";
+			productName = "Reveal-SDK";
 		};
 /* End PBXAggregateTarget section */
 
@@ -125,7 +126,7 @@
 		07350E5022CA01DB59E55A4720A39C6F /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		0B0A6EF821304C8E0A84F0A30BB4079D /* Reveal-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Reveal-SDK.xcconfig"; sourceTree = "<group>"; };
 		10D7E31BE959A125AD739F80665AF800 /* Then.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Then.swift; path = Sources/Then/Then.swift; sourceTree = "<group>"; };
-		15BDE08274D6B57812696444C9F1F32F /* BBBadgeBarButtonItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BBBadgeBarButtonItem.framework; path = BBBadgeBarButtonItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15BDE08274D6B57812696444C9F1F32F /* BBBadgeBarButtonItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BBBadgeBarButtonItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA032ABA6432819FB4276EBC68BD4A2 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		1B1C51D9FE34E3C706B4EDCB7415F67C /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1B67E25C836C5A1A44B83831997919ED /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
@@ -139,7 +140,7 @@
 		35061557909D1B9DA187E5A83FBF745C /* BBBadgeBarButtonItem.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BBBadgeBarButtonItem.modulemap; sourceTree = "<group>"; };
 		3A22D642D0D7FB87BA91059E23E137A9 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		3B723905CF8F34FE643B18D992AB9605 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3B802299790E206ADA60791DF811CEF8 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Then.framework; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B802299790E206ADA60791DF811CEF8 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A9747CBEFE9B29220AA7D9F74952BF /* Pods-Shuffle100UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Shuffle100UITests.modulemap"; sourceTree = "<group>"; };
 		5266FDE547844B3C4EB3F59D537E7539 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		591FEBE067CFF672535F7288F528E0D7 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
@@ -147,7 +148,7 @@
 		5A330BBB53DCC1D02D1DF54302872F30 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		5AC7B05E080AA16BDF87845F72BF7679 /* Pods-Shuffle100-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Shuffle100-umbrella.h"; sourceTree = "<group>"; };
 		60E1847A932BF9F0F99E5E1897370E8D /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
-		61686391B5BE5C4C93828EAC2610E3F0 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Shuffle100UITests.framework; path = "Pods-Shuffle100UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61686391B5BE5C4C93828EAC2610E3F0 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C254D04A46F683BE4329AC247AA7C9 /* Pods-Shuffle100Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Shuffle100Tests-umbrella.h"; sourceTree = "<group>"; };
 		7365F91C96C293C72F78F345CA2D5E25 /* Pods-Shuffle100.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Shuffle100.modulemap"; sourceTree = "<group>"; };
 		73E36DF2005A52295DE6C615D921C45C /* Pods-Shuffle100UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Shuffle100UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,11 +173,12 @@
 		9BC7424C4D3E2E589BC53B60FC7BE086 /* Pods-Shuffle100UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Shuffle100UITests-umbrella.h"; sourceTree = "<group>"; };
 		9CB00294E1A51C056DEBCB09649F7F72 /* BBBadgeBarButtonItem-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-prefix.pch"; sourceTree = "<group>"; };
 		9D8415041B1B262FB54356EFAFCC47E7 /* Then-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Then-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DDA57ABC6ECD2002DF89693B089CB63 /* BBBadgeBarButtonItem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BBBadgeBarButtonItem-dummy.m"; sourceTree = "<group>"; };
 		A29E6D56D3534E2BBD2236B69396DF5F /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		A99977F2E40F481C5787DBFE2FE594BE /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "RevealServer-22/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		AF7A49C9E62EF2BA23227BDB3B1D33E6 /* BBBadgeBarButtonItem-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-umbrella.h"; sourceTree = "<group>"; };
-		B5955CDCD392B283F6B7ED10C85ADB4D /* Pods_Shuffle100.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Shuffle100.framework; path = "Pods-Shuffle100.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5955CDCD392B283F6B7ED10C85ADB4D /* Pods_Shuffle100.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CA0F31C87DC94BB662284CE2B35827 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		B899B6F0ECC545BE7701079CEE841ACE /* Pods-Shuffle100UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Shuffle100UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BB308ACDA98E4CF0DBF27DE01097D88A /* BBBadgeBarButtonItem.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BBBadgeBarButtonItem.xcconfig; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 		BF6E322CCE00E98EFBE1B5D8676A97CC /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		C1F94E8B3E649B59A336F194931D87F8 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		C37E2857AC967FC8F0AEA2E40CE4B6F1 /* Pods-Shuffle100Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Shuffle100Tests-Info.plist"; sourceTree = "<group>"; };
-		C46F0A1A313F531BE66E983C33ABEFF1 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46F0A1A313F531BE66E983C33ABEFF1 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CC2845E5C83AD2988F9FD2A30265E9D8 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		D0C85238345E57B74F6A4ADB853DC6A0 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
@@ -206,9 +208,8 @@
 		F0390006543EBA087A025C1715492F2F /* Pods-Shuffle100UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Shuffle100UITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F3558E2E78E4A798927033F429DFEC68 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		F5E9FEBFA0BF328997CDF7FE845CDBB3 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
-		F7597375CE9B70666E4120D0ED13BC25 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "RevealServer-21/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		FAA081E944A7154D54C9555E8B9E5C30 /* Then-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Then-Info.plist"; sourceTree = "<group>"; };
-		FD407D1D14FC7D81D06BED54E5047B8A /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Shuffle100Tests.framework; path = "Pods-Shuffle100Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD407D1D14FC7D81D06BED54E5047B8A /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE135B40179C1F63B034D994DC89A4F0 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		FE298987D6A49C3D78A8BA9790FD4941 /* Pods-Shuffle100Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Shuffle100Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FF222989134BEF17659F50CF53F7874F /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
@@ -266,6 +267,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101109B310B9C8EB1357735BCA7632E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A99977F2E40F481C5787DBFE2FE594BE /* RevealServer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		124B3F269457C0A5AD47508239E2CAB7 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +315,6 @@
 				7CC97F748B3AEEBA4A7FD800A13A2CFF /* BBBadgeBarButtonItem.m */,
 				639299F4067350CCD1DE0A4B94AA52FC /* Support Files */,
 			);
-			name = BBBadgeBarButtonItem;
 			path = BBBadgeBarButtonItem;
 			sourceTree = "<group>";
 		};
@@ -339,14 +347,6 @@
 			);
 			name = "Pods-Shuffle100";
 			path = "Target Support Files/Pods-Shuffle100";
-			sourceTree = "<group>";
-		};
-		892D3FE3DE1D233DD811B662B88829AC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F7597375CE9B70666E4120D0ED13BC25 /* RevealServer.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
@@ -408,7 +408,6 @@
 				10D7E31BE959A125AD739F80665AF800 /* Then.swift */,
 				B84BB0479037827E427DF48BAD47FF13 /* Support Files */,
 			);
-			name = Then;
 			path = Then;
 			sourceTree = "<group>";
 		};
@@ -429,10 +428,9 @@
 		C1385F3CB30394ABA568287A39F61B92 /* Reveal-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				892D3FE3DE1D233DD811B662B88829AC /* Frameworks */,
+				101109B310B9C8EB1357735BCA7632E6 /* Frameworks */,
 				5A710D6C45AD6B5A08606BA4FA5C26EB /* Support Files */,
 			);
-			name = "Reveal-SDK";
 			path = "Reveal-SDK";
 			sourceTree = "<group>";
 		};
@@ -505,7 +503,6 @@
 				347581EBE34AE7C7084CAC2CF0E891F6 /* UILayoutSupport+Extensions.swift */,
 				3051E2607E3ABD779A328F3107B1CAF3 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -685,13 +682,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -889,10 +887,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -902,6 +897,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -951,8 +947,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -976,11 +971,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Shuffle100/Pods-Shuffle100-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Shuffle100/Pods-Shuffle100.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1015,11 +1006,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1040,6 +1027,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1118,11 +1106,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1156,11 +1140,7 @@
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
 				PRODUCT_MODULE_NAME = SnapKit;
 				PRODUCT_NAME = SnapKit;
@@ -1192,11 +1172,7 @@
 				INFOPLIST_FILE = "Target Support Files/Then/Then-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Then/Then.modulemap";
 				PRODUCT_MODULE_NAME = Then;
 				PRODUCT_NAME = Then;
@@ -1217,10 +1193,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1245,11 +1218,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1282,11 +1251,7 @@
 				INFOPLIST_FILE = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem.modulemap";
 				PRODUCT_MODULE_NAME = BBBadgeBarButtonItem;
 				PRODUCT_NAME = BBBadgeBarButtonItem;
@@ -1318,11 +1283,7 @@
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
 				PRODUCT_MODULE_NAME = SnapKit;
 				PRODUCT_NAME = SnapKit;
@@ -1353,11 +1314,7 @@
 				INFOPLIST_FILE = "Target Support Files/Then/Then-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Then/Then.modulemap";
 				PRODUCT_MODULE_NAME = Then;
 				PRODUCT_NAME = Then;
@@ -1390,11 +1347,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Shuffle100/Pods-Shuffle100-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Shuffle100/Pods-Shuffle100.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1427,11 +1380,7 @@
 				INFOPLIST_FILE = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BBBadgeBarButtonItem/BBBadgeBarButtonItem.modulemap";
 				PRODUCT_MODULE_NAME = BBBadgeBarButtonItem;
 				PRODUCT_NAME = BBBadgeBarButtonItem;
@@ -1464,11 +1413,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.modulemap";
 				OTHER_LDFLAGS = "";

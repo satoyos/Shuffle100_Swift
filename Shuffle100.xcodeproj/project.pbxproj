@@ -560,7 +560,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-21/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-22/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
@@ -873,8 +873,10 @@
 					"@loader_path/Frameworks",
 					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
+				OTHER_SWIFT_FLAGS = "-D CODOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shuffle100.app/Shuffle100";
@@ -896,6 +898,7 @@
 					"@loader_path/Frameworks",
 					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
