@@ -37,12 +37,7 @@ class PoemPickerViewController: UITableViewController {
         navigationItem.prompt = "百首読み上げ"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         self.navigationItem.title = "歌を選ぶ"
-        let button = UIButton(type: .custom)
-        button.setTitle("保存", for: .normal)
-        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)?.then {
-            $0.badgeValue = "\(selected_num)首"
-        }
-        navigationItem.rightBarButtonItem = buttonItem
+        navigationItem.rightBarButtonItem = saveButtonItem()
     }
     
     @objc func saveButtonTapped(btn: UIBarButtonItem) {
@@ -79,6 +74,19 @@ class PoemPickerViewController: UITableViewController {
         settings.selectedStatus100.reverse_in_index(indexPath.row)
         tableView.reloadData()
         return
+    }
+    
+    private func saveButtonItem() -> UIBarButtonItem? {
+        let button = UIButton(type: .custom).then {
+            $0.setTitle("保存", for: .normal)
+            $0.setStandardColor()
+        }
+        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
+            $0.badgeValue = "\(selected_num)首"
+            $0.badgeOriginX = -50
+            $0.badgeOriginY = 5
+        }
+        return buttonItem
     }
     
     private func fontSizeForVerse() -> CGFloat {
