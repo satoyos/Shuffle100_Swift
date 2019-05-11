@@ -39,6 +39,7 @@ class PoemPickerViewController: UITableViewController {
         let button = UIButton(type: .custom)
         button.setTitle("保存", for: .normal)
         let buttonItem = BBBadgeBarButtonItem(customUIButton: button)
+        buttonItem?.style = .plain
         buttonItem?.badgeValue = "10首"
         navigationItem.rightBarButtonItem = buttonItem
     }
