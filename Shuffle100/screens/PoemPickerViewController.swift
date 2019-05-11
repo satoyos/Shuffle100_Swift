@@ -80,6 +80,7 @@ class PoemPickerViewController: UITableViewController {
         let button = UIButton(type: .custom).then {
             $0.setTitle("保存", for: .normal)
             $0.setStandardColor()
+            $0.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         }
         let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
             $0.badgeValue = "\(selected_num)首"
