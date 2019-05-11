@@ -90,6 +90,12 @@
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
+		92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */; };
+		92FC39472286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */; };
+		92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */; };
+		92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
+		92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
+		92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -162,6 +168,8 @@
 		92D5715C2211647700235717 /* SelectModeScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenUITest.swift; sourceTree = "<group>"; };
 		92E6552121CE753200005F85 /* HomeScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDelegates.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
+		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
+		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +352,7 @@
 			children = (
 				92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */,
 				929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */,
+				92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */,
 			);
 			path = dataSources;
 			sourceTree = "<group>";
@@ -368,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				92E6552121CE753200005F85 /* HomeScreenDelegates.swift */,
+				92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -607,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92CE520B2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
@@ -626,6 +637,7 @@
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
+				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,10 +651,12 @@
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
+				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
+				92FC39472286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
@@ -687,10 +701,12 @@
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
+				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92D5715D2211647700235717 /* SelectModeScreenUITest.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
+				92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,

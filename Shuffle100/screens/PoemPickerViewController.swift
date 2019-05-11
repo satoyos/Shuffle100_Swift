@@ -40,40 +40,51 @@ class PoemPickerViewController: UITableViewController {
         navigationItem.rightBarButtonItem = saveButtonItem()
     }
     
-    @objc func saveButtonTapped(btn: UIBarButtonItem) {
-        print("Save Button Tapped!")
+    override func viewWillAppear(_ animated: Bool) {
+        updateBadge()
     }
+    
+//    @objc func saveButtonTapped(btn: UIBarButtonItem) {
+//        print("Save Button Tapped!")
+//    }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return Poem100.poems.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let poem = Poem100.poems[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath).then {
-            $0.textLabel?.text = poem.strWithNumberAndLiner()
-            $0.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
-            $0.textLabel?.adjustsFontForContentSizeCategory = true
-            $0.backgroundColor = colorFor(poem: poem)
-            $0.tag = poem.number
-            $0.accessibilityLabel = String(format: "%03d", poem.number)
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return Poem100.poems.count
+//    }
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let poem = Poem100.poems[indexPath.row]
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath).then {
+//            $0.textLabel?.text = poem.strWithNumberAndLiner()
+//            $0.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
+//            $0.textLabel?.adjustsFontForContentSizeCategory = true
+//            $0.backgroundColor = colorFor(poem: poem)
+//            $0.tag = poem.number
+//            $0.accessibilityLabel = String(format: "%03d", poem.number)
+//        }
+//        return cell
+//    }
+//
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return fontSizeForVerse() * 3
+//    }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        settings.selectedStatus100.reverse_in_index(indexPath.row)
+//        tableView.reloadData()
+//        updateBadge()
+//        return
+//    }
+//
+    internal func updateBadge() {
+        if let btnWithBadge = navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem {
+            btnWithBadge.badgeValue = "\(selected_num)首"
         }
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return fontSizeForVerse() * 3
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        settings.selectedStatus100.reverse_in_index(indexPath.row)
-        tableView.reloadData()
-        return
     }
     
     private func saveButtonItem() -> UIBarButtonItem? {
@@ -90,14 +101,14 @@ class PoemPickerViewController: UITableViewController {
         return buttonItem
     }
     
-    private func fontSizeForVerse() -> CGFloat {
-        return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
-    }
-    
-    private func colorFor(poem: Poem) -> UIColor {
-        if try! settings.selectedStatus100.of_number(poem.number) {
-            return nadeshiko_color
-        }
-        return UIColor.white
-    }
+//    private func fontSizeForVerse() -> CGFloat {
+//        return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
+//    }
+//    
+//    private func colorFor(poem: Poem) -> UIColor {
+//        if try! settings.selectedStatus100.of_number(poem.number) {
+//            return nadeshiko_color
+//        }
+//        return UIColor.white
+//    }
 }

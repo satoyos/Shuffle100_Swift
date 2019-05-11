@@ -106,6 +106,21 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssertEqual(bbItem.badgeValue, "100首")
     }
     
+    func test_tappingPoemChangesBadgeValue() {
+        // given
+        guard let btnWithBadge = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem else {
+            XCTAssert(false, "Could't get BBBadgeBarButtonItem")
+            return
+        }
+        XCTAssertEqual(btnWithBadge.badgeValue, "100首")
+        // when
+        let testIndex = IndexPath(row: 0, section: 0)
+        screen.tableView(screen.tableView, didSelectRowAt: testIndex)
+        // then
+        XCTAssertEqual(btnWithBadge.badgeValue, "99首")
+        
+    }
+    
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
     }
