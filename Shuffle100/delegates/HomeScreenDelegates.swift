@@ -18,13 +18,9 @@ extension HomeViewController: UITableViewDelegate {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                navigationController?.pushViewController(
-                    PoemPickerViewController(),
-                    animated: true)
+                selectPoemAction?()
             case 1:
-                navigationController?.pushViewController(
-                    SelectModeViewController(settings: settings),
-                    animated: true)
+                selectModeAction?()
             default:
                 return
             }

@@ -90,7 +90,8 @@ class Deck {
         let int100 = (Array<Int>)(1...100)
         var rest_nums = int100.diff(selected_nums).shuffled()
         for i in 0..<selected_nums.count {
-            poems.append(Deck.original_poems[rest_nums[i]])
+            poems.append(Deck.original_poems[rest_nums[i]-1])
         }
+        poems.shuffle()
     }
 }

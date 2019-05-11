@@ -10,29 +10,29 @@ import XCTest
 @testable import Shuffle100
 
 class HomeScreenTest: XCTestCase {
-    var screen: HomeViewController!
+//    var screen: HomeViewController!
+//
+//    override func setUp() {
+//        super.setUp()
+//        self.screen = HomeViewController()
+//        screen.viewDidLoad()
+//    }
+//
+//    override func tearDown() {
+//        super.tearDown()
+//    }
     
-    override func setUp() {
-        super.setUp()
-        self.screen = HomeViewController()
-        screen.viewDidLoad()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    internal func startGameCell() -> GameStartCell {
+    internal func startGameCell(of screen: HomeViewController) ->        GameStartCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1)) as! GameStartCell
     }
     
     func test_beginnerModeLabelIsBeginner() {
         // given
-        let beginnerModeScreen = HomeViewController(settings: beginnerSettings())
-        beginnerModeScreen.viewDidLoad()
+        let screen = HomeViewController(settings: beginnerSettings())
         
         // when
-        let reciteModeCell = beginnerModeScreen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        screen.loadViewIfNeeded()
+        let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         
         //then
         XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
@@ -41,10 +41,8 @@ class HomeScreenTest: XCTestCase {
     func test_fakeModeCellGetsHidden_inBeginnerMode() {
         // given
         let beginnerModeScreen = HomeViewController(settings: beginnerSettings())
-        
         // when
-        beginnerModeScreen.viewDidLoad()
-        
+        beginnerModeScreen.loadViewIfNeeded()
         // then
         let rowNum = beginnerModeScreen.tableView(beginnerModeScreen.tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(rowNum, 3)
@@ -52,10 +50,11 @@ class HomeScreenTest: XCTestCase {
     
     func test_changeReciteModeInSettings_reclectsModeLabel() {
         // given
+        let screen = HomeViewController()
         screen.settings = beginnerSettings()
 
         // when
-        
+        screen.loadViewIfNeeded()
         screen.viewWillAppear(false)
 
         // then
@@ -65,10 +64,12 @@ class HomeScreenTest: XCTestCase {
     
     func test_fakeModeIsOn_whenSetSoInGivenSettings() {
         // given
+        let screen = HomeViewController()
         let settingsWithFakeModeOn = GameConfig(fakeMode: true)
         
         // when
         screen.settings = Settings(mode: settingsWithFakeModeOn)
+        screen.loadViewIfNeeded()
         screen.viewWillAppear(false)
         
         // then

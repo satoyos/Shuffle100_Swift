@@ -7,7 +7,9 @@ target 'Shuffle100' do
 
   # Pods for Shuffle100
   pod 'Reveal-SDK', :configurations => ['Debug']
-  pod 'SnapKit', '~> 4.0.0', :inhibit_warnings => true
+  pod 'SnapKit', '~> 5.0.0', :inhibit_warnings => true
+  pod 'BBBadgeBarButtonItem', git: 'https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git'
+  pod 'Then'
 
   target 'Shuffle100Tests' do
     inherit! :search_paths

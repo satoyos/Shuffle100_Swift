@@ -12,20 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var coordinator: MainCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let homeScreen = HomeViewController()
-        
-        let navi = UINavigationController(rootViewController: homeScreen as UIViewController)
-        navi.interactivePopGestureRecognizer?.isEnabled = false
-
-        navi.navigationBar.topItem?.prompt = "百首読み上げ"
-        navi.navigationBar.barTintColor = UIColor(hex: "cee4ae")
+//        let homeScreen = HomeViewController()
+//
+//        let navi = UINavigationController(rootViewController: homeScreen as UIViewController)
+//        navi.interactivePopGestureRecognizer?.isEnabled = false
+//
+//        navi.navigationBar.topItem?.prompt = "百首読み上げ"
+//        navi.navigationBar.barTintColor = UIColor(hex: "cee4ae")
+        coordinator = MainCoordinator()
+        coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navi
+        window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()
 
         return true

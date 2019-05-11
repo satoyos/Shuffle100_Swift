@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
     var tableView: UITableView!
     var sections: [TableSection]!
     var settings: Settings!
+    var selectPoemAction: (() -> Void)?
+    var selectModeAction: (() -> Void)?
     
     init(settings: Settings) {
           self.settings = settings

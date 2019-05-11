@@ -10,28 +10,30 @@ import XCTest
 @testable import Shuffle100
 
 class SelectModeScreenTest: XCTestCase {
-    var screen: SelectModeViewController!
-
-    override func setUp() {
-        screen = SelectModeViewController()
-        screen.viewDidLoad()
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func test_topPromptExists() {
+        // given
+        let screen = SelectModeViewController()
+        // when
+        screen.loadViewIfNeeded()
+        // then
         XCTAssertEqual(screen.navigationItem.prompt, "百首読み上げ")
     }
     
     func test_pickerRowsCountIs3() {
+        // given
+        let screen = SelectModeViewController()
+        // when
         let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)
+        // then
         XCTAssertEqual(rowNum, 3)
     }
 
     func test_deaultSelectedRowIs0() {
+        // given
+        let screen = SelectModeViewController()
+        // when
         let selected = screen.picker.selectedRow(inComponent: 0)
+        // then
         XCTAssertEqual(selected, 0)
     }
 
@@ -39,20 +41,18 @@ class SelectModeScreenTest: XCTestCase {
         // given
         let gameConfigWithBeginnerMode = GameConfig(reciteMode: .beginner)
         let screenB = SelectModeViewController(settings: Settings(mode: gameConfigWithBeginnerMode))
-        
         // when
         screenB.viewDidLoad()
         let selected = screenB.picker.selectedRow(inComponent: 0)
-        
         // then
         XCTAssertEqual(selected, 1)
     }
     
     func test_selectingModeOnPicker_changesGameConfig() {
         // given
+        let screen = SelectModeViewController()
         // when: screenにイベントを送る
         screen.pickerView(screen.picker, didSelectRow: 1, inComponent: 0)
-        
         // then
         XCTAssertEqual(screen.settings.reciteMode, .beginner)
     }

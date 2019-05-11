@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shuffle100UITests/HomeViewControllerUITest.swift"
-            timestampString = "573304230.115521"
+            timestampString = "576591848.0871119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "cellExistsWithText(_:)"
             landmarkType = "7">
          </BreakpointContent>

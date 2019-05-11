@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import BBBadgeBarButtonItem
 
 class PoemPickerScreenTest: XCTestCase {
 
@@ -45,7 +46,90 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssert((firstCellLabel?.adjustsFontForContentSizeCategory)!)
     }
     
+    private func nadeshikoColor() -> UIColor {
+        return UIColor(hex: "eebbcb")
+    }
+    
+    func test_selectedPoemCellIsNadeshiko() {
+        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
+    }
+    
+    func test_unselectedPoemCellIsWhite() {
+        // given
+        var boolArray = allSelectedBools100()
+        boolArray[0] = false
+        let testSettings = Settings(bool100: Bool100(bools: boolArray))
+        // when
+        screen.settings = testSettings
+        screen.tableView.reloadData()
+        // then
+        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+    }
+    
+    func test_tapiingSelctedPoem_makeItUnselected() {
+        // given
+        let testIndexPath = IndexPath(row: 0, section: 0)
+        // when
+        screen.tableView(screen.tableView, didSelectRowAt: testIndexPath)
+        // then
+        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+        XCTAssertEqual(screen.selected_num, 99)
+    }
+    
+    func test_tappingUnselectedPoem_makeItSelected() {
+        // given
+        let testBoolArray = allUnselectedBools100()
+        let testSetting = Settings(bool100: Bool100(bools: testBoolArray))
+        screen.settings = testSetting
+        screen.tableView.reloadData()
+        let testIndex = IndexPath(row: 0, section: 0)
+        // when
+        screen.tableView(screen.tableView, didSelectRowAt: testIndex)
+        // then
+        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
+        XCTAssertEqual(screen.selected_num, 1)
+    }
+    
+    func test_tagOfCellIsSet() {
+        XCTAssertEqual(firstCell().tag, 1)
+    }
+    
+    func test_accessibilityLabelIsSet() {
+        XCTAssertEqual(firstCell().accessibilityLabel, "001")
+    }
+    
+    func test_badgeValueShowsSelectedNum() {
+        guard let bbItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem else {
+            XCTAssert(false, "Could't get BBBadgeBarButtonItem")
+            return
+        }
+        XCTAssertEqual(bbItem.badgeValue, "100首")
+    }
+    
+    func test_tappingPoemChangesBadgeValue() {
+        // given
+        guard let btnWithBadge = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem else {
+            XCTAssert(false, "Could't get BBBadgeBarButtonItem")
+            return
+        }
+        XCTAssertEqual(btnWithBadge.badgeValue, "100首")
+        // when
+        let testIndex = IndexPath(row: 0, section: 0)
+        screen.tableView(screen.tableView, didSelectRowAt: testIndex)
+        // then
+        XCTAssertEqual(btnWithBadge.badgeValue, "99首")
+        
+    }
+    
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+    }
+    
+    private func allSelectedBools100() -> [Bool] {
+        return [Bool](repeating: true, count: 100)
+    }
+    
+    private func allUnselectedBools100() -> [Bool] {
+        return [Bool](repeating: false, count: 100)
     }
 }
