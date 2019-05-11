@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import BBBadgeBarButtonItem
+import Then
 
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
@@ -35,47 +37,31 @@ class PoemPickerViewController: UITableViewController {
         navigationItem.prompt = "百首読み上げ"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         self.navigationItem.title = "歌を選ぶ"
-    }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return Poem100.poems.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath)
-        let poem = Poem100.poems[indexPath.row]
-        cell.textLabel?.text = poem.strWithNumberAndLiner()
-        cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
-        cell.textLabel?.adjustsFontForContentSizeCategory = true
-        cell.backgroundColor = colorFor(poem: poem)
-        cell.tag = poem.number
-        cell.accessibilityLabel = String(format: "%03d", poem.number)
-        return cell
+        navigationItem.rightBarButtonItem = saveButtonItem()
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return fontSizeForVerse() * 3
+    override func viewWillAppear(_ animated: Bool) {
+        updateBadge()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        settings.selectedStatus100.reverse_in_index(indexPath.row)
-        tableView.reloadData()
-        return
-    }
-    
-    private func fontSizeForVerse() -> CGFloat {
-        return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
-    }
-    
-    private func colorFor(poem: Poem) -> UIColor {
-        if try! settings.selectedStatus100.of_number(poem.number) {
-            return nadeshiko_color
+    internal func updateBadge() {
+        if let btnWithBadge = navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem {
+            btnWithBadge.badgeValue = "\(selected_num)首"
         }
-        return UIColor.white
     }
+    
+    private func saveButtonItem() -> UIBarButtonItem? {
+        let button = UIButton(type: .custom).then {
+            $0.setTitle("保存", for: .normal)
+            $0.setStandardColor()
+            $0.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        }
+        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
+            $0.badgeValue = "\(selected_num)首"
+            $0.badgeOriginX = -50
+            $0.badgeOriginY = 5
+        }
+        return buttonItem
+    }
+    
 }
