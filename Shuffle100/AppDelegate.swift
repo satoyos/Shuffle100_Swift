@@ -17,13 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        let homeScreen = HomeViewController()
-//
-//        let navi = UINavigationController(rootViewController: homeScreen as UIViewController)
-//        navi.interactivePopGestureRecognizer?.isEnabled = false
-//
-//        navi.navigationBar.topItem?.prompt = "百首読み上げ"
-//        navi.navigationBar.barTintColor = UIColor(hex: "cee4ae")
+        if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
+            print("---- interval -> \(loadedSettings.interval)")
+            print("---- kamiShimo -> \(loadedSettings.kamiSimoInterval)")
+            print("---- volume   -> \(loadedSettings.volume)")
+        }
+
         coordinator = MainCoordinator()
         coordinator?.start()
         
