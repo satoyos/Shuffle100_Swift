@@ -8,6 +8,7 @@
 
 import UIKit
 import BBBadgeBarButtonItem
+import Then
 
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
@@ -38,9 +39,9 @@ class PoemPickerViewController: UITableViewController {
         self.navigationItem.title = "歌を選ぶ"
         let button = UIButton(type: .custom)
         button.setTitle("保存", for: .normal)
-        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)
-        buttonItem?.style = .plain
-        buttonItem?.badgeValue = "10首"
+        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)?.then {
+            $0.badgeValue = "\(selected_num)首"
+        }
         navigationItem.rightBarButtonItem = buttonItem
     }
     
@@ -58,14 +59,15 @@ class PoemPickerViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath)
         let poem = Poem100.poems[indexPath.row]
-        cell.textLabel?.text = poem.strWithNumberAndLiner()
-        cell.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
-        cell.textLabel?.adjustsFontForContentSizeCategory = true
-        cell.backgroundColor = colorFor(poem: poem)
-        cell.tag = poem.number
-        cell.accessibilityLabel = String(format: "%03d", poem.number)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath).then {
+            $0.textLabel?.text = poem.strWithNumberAndLiner()
+            $0.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
+            $0.textLabel?.adjustsFontForContentSizeCategory = true
+            $0.backgroundColor = colorFor(poem: poem)
+            $0.tag = poem.number
+            $0.accessibilityLabel = String(format: "%03d", poem.number)
+        }
         return cell
     }
     
