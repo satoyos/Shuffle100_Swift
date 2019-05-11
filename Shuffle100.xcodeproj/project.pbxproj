@@ -96,6 +96,9 @@
 		92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
 		92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
 		92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
+		92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC394E2287110D00791053 /* RecitingSettings.swift */; };
+		92FC39502287110D00791053 /* RecitingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC394E2287110D00791053 /* RecitingSettings.swift */; };
+		92FC39512287110D00791053 /* RecitingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC394E2287110D00791053 /* RecitingSettings.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -170,6 +173,7 @@
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
+		92FC394E2287110D00791053 /* RecitingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingSettings.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 		92D5714D220EC78C00235717 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				92FC394D228710D100791053 /* legacySettings */,
 				927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */,
 				927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */,
 				927E4BE7222E9DD200AF48F7 /* Deck.swift */,
@@ -380,6 +385,14 @@
 				92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */,
 			);
 			path = delegates;
+			sourceTree = "<group>";
+		};
+		92FC394D228710D100791053 /* legacySettings */ = {
+			isa = PBXGroup;
+			children = (
+				92FC394E2287110D00791053 /* RecitingSettings.swift */,
+			);
+			path = legacySettings;
 			sourceTree = "<group>";
 		};
 		EDFFE9D58434747A8AD3492F /* Pods */ = {
@@ -629,6 +642,7 @@
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
+				92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
@@ -651,6 +665,7 @@
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
+				92FC39502287110D00791053 /* RecitingSettings.swift in Sources */,
 				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
@@ -693,6 +708,7 @@
 				92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
+				92FC39512287110D00791053 /* RecitingSettings.swift in Sources */,
 				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
