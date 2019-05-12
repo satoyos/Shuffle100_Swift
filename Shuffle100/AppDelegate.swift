@@ -17,12 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
-            print("---- interval -> \(loadedSettings.interval)")
-            print("---- kamiShimo -> \(loadedSettings.kamiSimoInterval)")
-            print("---- volume   -> \(loadedSettings.volume)")
-        }
-
         coordinator = MainCoordinator()
         coordinator?.start()
         

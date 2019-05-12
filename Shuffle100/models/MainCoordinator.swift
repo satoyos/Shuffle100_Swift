@@ -41,4 +41,12 @@ class MainCoordinator {
     private func selectMode(settings: Settings) {
         navigationController.pushViewController(SelectModeViewController(settings: settings), animated: true)
     }
+    
+    private func tryLoadingLegacyData() {
+        if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
+            print("---- interval -> \(loadedSettings.interval)")
+            print("---- kamiShimo -> \(loadedSettings.kamiSimoInterval)")
+            print("---- volume   -> \(loadedSettings.volume)")
+        }
+    }
 }
