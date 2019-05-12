@@ -11,6 +11,10 @@ import UIKit
 
 class MainCoordinator {
     var navigationController = UINavigationController()
+
+    init() {
+        tryLoadingLegacyData()
+    }
     
     func start() {
         let settings = Settings()
