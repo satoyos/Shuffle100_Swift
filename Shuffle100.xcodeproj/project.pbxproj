@@ -99,6 +99,12 @@
 		92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC394E2287110D00791053 /* RecitingSettings.swift */; };
 		92FC39502287110D00791053 /* RecitingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC394E2287110D00791053 /* RecitingSettings.swift */; };
 		92FC39512287110D00791053 /* RecitingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC394E2287110D00791053 /* RecitingSettings.swift */; };
+		92FC39532288370D00791053 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39522288370D00791053 /* GameSettings.swift */; };
+		92FC39542288370D00791053 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39522288370D00791053 /* GameSettings.swift */; };
+		92FC39552288370D00791053 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39522288370D00791053 /* GameSettings.swift */; };
+		92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39562288389C00791053 /* SelectedStatus100.swift */; };
+		92FC39582288389C00791053 /* SelectedStatus100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39562288389C00791053 /* SelectedStatus100.swift */; };
+		92FC39592288389C00791053 /* SelectedStatus100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39562288389C00791053 /* SelectedStatus100.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -174,6 +180,8 @@
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
 		92FC394E2287110D00791053 /* RecitingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingSettings.swift; sourceTree = "<group>"; };
+		92FC39522288370D00791053 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		92FC39562288389C00791053 /* SelectedStatus100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedStatus100.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -391,6 +399,8 @@
 			isa = PBXGroup;
 			children = (
 				92FC394E2287110D00791053 /* RecitingSettings.swift */,
+				92FC39522288370D00791053 /* GameSettings.swift */,
+				92FC39562288389C00791053 /* SelectedStatus100.swift */,
 			);
 			path = legacySettings;
 			sourceTree = "<group>";
@@ -629,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92FC39532288370D00791053 /* GameSettings.swift in Sources */,
 				92CE520B2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
@@ -642,6 +653,7 @@
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
+				92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */,
 				92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
@@ -674,6 +686,7 @@
 				92FC39472286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
+				92FC39582288389C00791053 /* SelectedStatus100.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
@@ -691,6 +704,7 @@
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
+				92FC39542288370D00791053 /* GameSettings.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +718,7 @@
 				9265966D22353124007CDA1A /* PoemPickerScreenUITest.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
+				92FC39552288370D00791053 /* GameSettings.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
@@ -724,6 +739,7 @@
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
+				92FC39592288389C00791053 /* SelectedStatus100.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
 				925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */,
