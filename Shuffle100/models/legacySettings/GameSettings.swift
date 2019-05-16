@@ -47,14 +47,15 @@ class GameSettings: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         self.statuses_for_deck = aDecoder.decodeObject(forKey: SerializedKey.statuses_for_deck) as! [SelectedStatus100]
-        self.fake_flg = aDecoder.decodeObject(forKey: SerializedKey.fake_flg) as! Bool
-        self.beginner_flg = aDecoder.decodeObject(forKey: SerializedKey.beginner_flg) as! Bool
-        self.singer_index = aDecoder.decodeObject(forKey: SerializedKey.singer_index) as! Int
+        self.fake_flg = aDecoder.decodeBool(forKey: SerializedKey.fake_flg)
+        self.beginner_flg = aDecoder.decodeBool(forKey: SerializedKey.beginner_flg)
+        let loadedIndex = aDecoder.decodeInt32(forKey: SerializedKey.singer_index)
+        self.singer_index = Int(loadedIndex)
         self.recite_mode_id = aDecoder.decodeObject(forKey: SerializedKey.recite_mode_id) as! String
     }
     
     static func salvageDataFromUserDefaults() -> GameSettings? {
-        if let rsData = UserDefaults.standard.object(forKey: "game_settings"),
+        if let rsData = UserDefaults.init(suiteName: "game_settings")?.object(forKey: "game_settings"),
             let settings = NSKeyedUnarchiver.unarchiveObject(with: rsData as! Data) {
             return settings as? GameSettings
         }

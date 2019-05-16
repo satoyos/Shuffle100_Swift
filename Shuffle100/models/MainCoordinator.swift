@@ -52,5 +52,9 @@ class MainCoordinator {
             print("---- kamiShimo -> \(loadedSettings.kamiSimoInterval)")
             print("---- volume   -> \(loadedSettings.volume)")
         }
+        
+        if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
+            print("++++ fake_flg -> \(gameSettings.fake_flg)")
+        }
     }
 }
