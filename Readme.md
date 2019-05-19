@@ -28,8 +28,8 @@ RubyMotion版は、[App Store](https://itunes.apple.com/jp/app/bai-shou-dumi-sha
 | 通常モード(競技かるたモード) | (試合再開) → 下の句読み上げ → 次の歌の上の句読み上げ → (試合一次停止) |
 | 初心者モード(散らし取りモード) | (試合再開) → 上の句読み上げ → 下の句読み上げ → (試合一次停止) |
 
-## 3. 試合に使う歌の選択
-  100首の中から、試合に使う歌をお好みで選べます。  
+## 3. 試合に使う歌の選択と保存
+  100首の中から、試合に使う歌をお好みで選べます。  また、選んだ歌は「札セット」として名前をつけて保存しておくことができます。
   歌を選ぶための一覧画面で、ある歌を長押しすると、その歌の取り札イメージを見ることができます。
 
 ## 4. 空札(からふだ)の有無(通常モードのみ)
@@ -73,7 +73,7 @@ Kyogi-Karuta is a Japanese traditional game using the “Hyaku-nin-Isshu"(#1) Ka
 RubyMotion version of this app is in [App Store](https://itunes.apple.com/jp/app/bai-shou-dumi-shangge/id857819404?mt=8) , supports playing the game, by singing verses at random. 
 
 You can watch Demo video at [this page](https://vimeo.com/88511077).
-(Now, we are migrationg the app from RubyMotion to Swift in this repository.)
+(Now, we are migrating the app from RubyMotion to Swift in this repository.)
 
 Some settings are available;
 
@@ -97,7 +97,7 @@ Some settings are available;
 | Beginner mode | Recommended mode for Beginner. Singer pauses after singing a whole verse. |
 
 ## 3. Verses to sing
-  You can select verses to use as you like.  
+  You can select verses to use as you like, and save it with name as you like.
   When you long-press a verse in "Select Verses" screen(#4), you can confirm "Tori-Fuda" image(#5) of the verse.  
   (#4 .. in Japanese; 「歌を選ぶ」画面)  
   (#5 .. in Japanese; 「取り札」イメージ)
