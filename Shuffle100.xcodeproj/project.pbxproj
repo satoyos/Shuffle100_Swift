@@ -108,6 +108,7 @@
 		92FC39872290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
 		92FC39882290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
 		92FC39892290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
+		92FC398D22917E6000791053 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 92FC398C22917E6000791053 /* Readme.md */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -186,6 +187,7 @@
 		92FC39522288370D00791053 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		92FC39562288389C00791053 /* SelectedStatus100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedStatus100.swift; sourceTree = "<group>"; };
 		92FC39862290457E00791053 /* FudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSet.swift; sourceTree = "<group>"; };
+		92FC398C22917E6000791053 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		923D59052143BB0A000F5E60 = {
 			isa = PBXGroup;
 			children = (
+				92FC398C22917E6000791053 /* Readme.md */,
 				923D59102143BB0A000F5E60 /* Shuffle100 */,
 				923D59252143BB0B000F5E60 /* Shuffle100Tests */,
 				923D59302143BB0B000F5E60 /* Shuffle100UITests */,
@@ -536,6 +539,7 @@
 			files = (
 				9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */,
 				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92FC398D22917E6000791053 /* Readme.md in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
