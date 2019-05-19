@@ -105,6 +105,9 @@
 		92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39562288389C00791053 /* SelectedStatus100.swift */; };
 		92FC39582288389C00791053 /* SelectedStatus100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39562288389C00791053 /* SelectedStatus100.swift */; };
 		92FC39592288389C00791053 /* SelectedStatus100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39562288389C00791053 /* SelectedStatus100.swift */; };
+		92FC39872290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
+		92FC39882290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
+		92FC39892290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -182,6 +185,7 @@
 		92FC394E2287110D00791053 /* RecitingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingSettings.swift; sourceTree = "<group>"; };
 		92FC39522288370D00791053 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		92FC39562288389C00791053 /* SelectedStatus100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedStatus100.swift; sourceTree = "<group>"; };
+		92FC39862290457E00791053 /* FudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSet.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 				92FC394E2287110D00791053 /* RecitingSettings.swift */,
 				92FC39522288370D00791053 /* GameSettings.swift */,
 				92FC39562288389C00791053 /* SelectedStatus100.swift */,
+				92FC39862290457E00791053 /* FudaSet.swift */,
 			);
 			path = legacySettings;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
+				92FC39872290457E00791053 /* FudaSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +697,7 @@
 				927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				92FC39882290457E00791053 /* FudaSet.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
@@ -716,6 +723,7 @@
 				927E4BF8222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4C0C22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				9265966D22353124007CDA1A /* PoemPickerScreenUITest.swift in Sources */,
+				92FC39892290457E00791053 /* FudaSet.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				92FC39552288370D00791053 /* GameSettings.swift in Sources */,

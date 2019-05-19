@@ -55,6 +55,9 @@ class MainCoordinator {
         
         if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
             print("++++ fake_flg -> \(gameSettings.fake_flg)")
+            print("++++ selectedNum -> \(gameSettings.statuses_for_deck[0].selectedNum)")
+            print("++++ fuda_sets -> \(gameSettings.fuda_sets.map{$0.name}) ++++")
+            print("++++ fuda_sets_selectedNum -> \(gameSettings.fuda_sets.map{$0.status100.selectedNum}) ++++")
         }
     }
 }

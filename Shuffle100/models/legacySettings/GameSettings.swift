@@ -24,7 +24,26 @@ fileprivate struct DefaultValue {
     static let beginner_flg      = false
     static let singer_index      = 0
     static let recite_mode_id    = "normal"
-//    static let fuda_sets         = []
+    static let fuda_sets         = [FudaSet]()
+}
+
+@objc (Symbol)
+class Symbol: NSObject, NSCoding {
+    var value: NSString = "初期値"
+    
+    func encode(with aCoder: NSCoder) {
+        print("___inside ENCODE____")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        print("___inside initWitDecoder____")
+        if let decodedObject = aDecoder.decodeObject() {
+            print("+++ decodeObjectは成功したよ！ \(decodedObject)+++")
+        } else {
+            print("---- decodeObjectに失敗してるよ！ ----")
+        }
+    }
+    
 }
 
 @objc (GameSettings)
@@ -34,7 +53,7 @@ class GameSettings: NSObject, NSCoding {
     var beginner_flg: Bool
     var singer_index: Int
     var recite_mode_id: String
-//    var fuda_sets:
+    var fuda_sets: [FudaSet]
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(statuses_for_deck, forKey: SerializedKey.statuses_for_deck)
@@ -42,7 +61,7 @@ class GameSettings: NSObject, NSCoding {
         aCoder.encode(beginner_flg, forKey: SerializedKey.beginner_flg)
         aCoder.encode(singer_index, forKey: SerializedKey.singer_index)
         aCoder.encode(recite_mode_id, forKey: SerializedKey.recite_mode_id)
-//        aCoder.encode(fuda_sets, forKey: SerializedKey.fuda_sets)
+        aCoder.encode(fuda_sets, forKey: SerializedKey.fuda_sets)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +70,10 @@ class GameSettings: NSObject, NSCoding {
         self.beginner_flg = aDecoder.decodeBool(forKey: SerializedKey.beginner_flg)
         let loadedIndex = aDecoder.decodeInt32(forKey: SerializedKey.singer_index)
         self.singer_index = Int(loadedIndex)
-        self.recite_mode_id = aDecoder.decodeObject(forKey: SerializedKey.recite_mode_id) as! String
+        let loadedID = aDecoder.decodeObject(forKey: SerializedKey.recite_mode_id) as! Symbol
+        self.recite_mode_id = loadedID.value as String
+        self.fuda_sets = aDecoder.decodeObject(forKey: SerializedKey.fuda_sets) as! [FudaSet]
+        print("+++++++++ FINISH   recite_mode_id => \(self.recite_mode_id) +++++++++")
     }
     
     static func salvageDataFromUserDefaults() -> GameSettings? {

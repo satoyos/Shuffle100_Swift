@@ -15,6 +15,11 @@ fileprivate struct SerializedKey {
 @objc (SelectedStatus100)
 class SelectedStatus100: NSObject, NSCoding {
     var status: [Bool]
+    var selectedNum: Int {
+        get {
+            return status.filter{$0}.count
+        }
+    }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(status, forKey: SerializedKey.status100)
@@ -27,4 +32,5 @@ class SelectedStatus100: NSObject, NSCoding {
     init(status:[Bool] = [Bool](repeating: true, count: 100)) {
         self.status = status
     }
+    
 }
