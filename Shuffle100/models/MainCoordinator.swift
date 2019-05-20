@@ -12,16 +12,12 @@ import UIKit
 class MainCoordinator {
     var navigationController = UINavigationController()
 
-    init() {
-        tryLoadingLegacyData()
-    }
-    
     func start() {
-        let settings = Settings()
+        let gameConfig = tryLoadLegacyGameSettings()
+        let settings = Settings(mode: gameConfig)
         let homeScreen = HomeViewController(settings: settings)
         navigationController.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
-        
         
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
@@ -47,17 +43,32 @@ class MainCoordinator {
     }
     
     private func tryLoadingLegacyData() {
+        tryLoadLegacyRecitingSettings()
+        let _ = tryLoadLegacyGameSettings()
+    }
+    
+    private func tryLoadLegacyRecitingSettings() {
         if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
             print("---- interval -> \(loadedSettings.interval)")
             print("---- kamiShimo -> \(loadedSettings.kamiSimoInterval)")
             print("---- volume   -> \(loadedSettings.volume)")
+        } else {
+            print("--- Couldn't find Legacy Data for RecitingSettings ---")
         }
-        
+    }
+    
+    private func tryLoadLegacyGameSettings() -> GameConfig {
         if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
             print("++++ fake_flg -> \(gameSettings.fake_flg)")
             print("++++ selectedNum -> \(gameSettings.statuses_for_deck[0].selectedNum)")
             print("++++ fuda_sets -> \(gameSettings.fuda_sets.map{$0.name}) ++++")
             print("++++ fuda_sets_selectedNum -> \(gameSettings.fuda_sets.map{$0.status100.selectedNum}) ++++")
+            let bool100 = gameSettings.statuses_for_deck[0].status
+            let gameConfig = GameConfig(selectedBool100: bool100, reciteMode: ReciteMode.normal, fakeMode: gameSettings.fake_flg)
+            return gameConfig
+        } else {
+            print("--- Couldn't find Legacy Data for GameSettings ---")
+            return GameConfig()
         }
     }
 }

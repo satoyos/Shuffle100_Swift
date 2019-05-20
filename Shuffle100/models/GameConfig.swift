@@ -19,6 +19,12 @@ struct ReciteModeHolder {
     var title: String
 }
 
+//
+// 歌選択状態を2箇所で保持している問題発見！！
+//
+// 歌選択状態の設定箇所 その1
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
 struct GameConfig {
     var reciteMode: ReciteMode
     var fakeMode: Bool
@@ -38,6 +44,9 @@ struct Bool100 {
         self.bools = bools
     }
 }
+
+// 歌選択状態の設定箇所 その2
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 class Settings {
     var mode: GameConfig
