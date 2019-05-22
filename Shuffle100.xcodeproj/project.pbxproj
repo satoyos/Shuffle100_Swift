@@ -12,6 +12,7 @@
 		9207BAF4229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
 		9207BAF5229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
 		9207BAF6229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
+		9207BAF822957B6C00816DC8 /* Bool100Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF722957B6C00816DC8 /* Bool100Test.swift */; };
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
@@ -140,6 +141,7 @@
 		79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
 		9207BAF3229579D600816DC8 /* Bool100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool100.swift; sourceTree = "<group>"; };
+		9207BAF722957B6C00816DC8 /* Bool100Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool100Test.swift; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		92D5714D220EC78C00235717 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				9207BAF722957B6C00816DC8 /* Bool100Test.swift */,
 				92FC394D228710D100791053 /* legacySettings */,
 				927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */,
 				927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */,
@@ -690,6 +693,7 @@
 			files = (
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
+				9207BAF822957B6C00816DC8 /* Bool100Test.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
