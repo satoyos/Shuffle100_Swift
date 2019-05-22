@@ -11,8 +11,16 @@ import Foundation
 struct Bool100 {
     var bools: [Bool]
     
-    init(bools: [Bool] = [Bool](repeating: true, count: 100)) {
+    init(bools: [Bool] = allTrueBoolArray()) {
         self.bools = bools
+    }
+    
+    static func allSelected() -> Bool100 {
+        return self.init(bools: allTrueBoolArray())
+    }
+    
+    static func allTrueBoolArray() -> [Bool] {
+        return [Bool](repeating: true, count: 100)
     }
 }
 
