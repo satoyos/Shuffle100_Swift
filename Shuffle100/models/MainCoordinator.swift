@@ -64,7 +64,7 @@ class MainCoordinator {
             print("++++ fuda_sets -> \(gameSettings.fuda_sets.map{$0.name}) ++++")
             print("++++ fuda_sets_selectedNum -> \(gameSettings.fuda_sets.map{$0.status100.selectedNum}) ++++")
             let bool100 = gameSettings.statuses_for_deck[0].status
-            let gameConfig = GameConfig(selectedBool100: bool100, reciteMode: ReciteMode.normal, fakeMode: gameSettings.fake_flg)
+            let gameConfig = GameConfig(reciteMode: ReciteMode.normal, fakeMode: gameSettings.fake_flg)
             return gameConfig
         } else {
             print("--- Couldn't find Legacy Data for GameSettings ---")
