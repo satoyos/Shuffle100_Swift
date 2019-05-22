@@ -28,14 +28,6 @@ struct GameConfig {
     }
 }
 
-struct Bool100 {
-    var bools: [Bool]
-    
-    init(bools: [Bool] = [Bool](repeating: true, count: 100)) {
-        self.bools = bools
-    }
-}
-
 class Settings {
     var mode: GameConfig
     var selectedStatus100: SelectedState100
