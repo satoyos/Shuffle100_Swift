@@ -22,5 +22,10 @@ struct Bool100 {
     static func allTrueBoolArray() -> [Bool] {
         return [Bool](repeating: true, count: 100)
     }
+    
+    static func allFalseBoolArray() -> [Bool] {
+        return [Bool](repeating: false, count: 100)
+    }
+    
 }
 

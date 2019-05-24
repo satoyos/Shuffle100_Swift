@@ -32,12 +32,9 @@ class SelectedState100 {
         self.init(array: init_bools)
     }
     
-    private static func get_array100_of(bool: Bool) -> Array<Bool> {
-        var init_bools: Array<Bool> = []
-        for _ in 0..<100 {
-            init_bools.append(bool)
-        }
-        return init_bools
+    private static func get_array100_of(bool: Bool) -> [Bool] {
+        if bool { return Bool100.allTrueBoolArray() }
+        else { return Bool100.allFalseBoolArray() }
     }
     
     func of_number(_ number: Int) throws -> Bool {

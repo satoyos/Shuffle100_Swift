@@ -27,4 +27,5 @@ class Bool100Test: XCTestCase {
         let trueCount = sut.bools.filter{$0}.count
         XCTAssertEqual(trueCount, 100)
     }
+    
 }

@@ -56,7 +56,7 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_unselectedPoemCellIsWhite() {
         // given
-        var boolArray = allSelectedBools100()
+        var boolArray = Bool100.allTrueBoolArray()
         boolArray[0] = false
         let testSettings = Settings(bool100: Bool100(bools: boolArray))
         // when
@@ -78,7 +78,7 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_tappingUnselectedPoem_makeItSelected() {
         // given
-        let testBoolArray = allUnselectedBools100()
+        let testBoolArray = Bool100.allFalseBoolArray()
         let testSetting = Settings(bool100: Bool100(bools: testBoolArray))
         screen.settings = testSetting
         screen.tableView.reloadData()
@@ -123,13 +123,5 @@ class PoemPickerScreenTest: XCTestCase {
     
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
-    }
-    
-    private func allSelectedBools100() -> [Bool] {
-        return [Bool](repeating: true, count: 100)
-    }
-    
-    private func allUnselectedBools100() -> [Bool] {
-        return [Bool](repeating: false, count: 100)
     }
 }

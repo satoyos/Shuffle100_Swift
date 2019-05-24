@@ -12,16 +12,6 @@ import XCTest
 class SelectedState100Tests: XCTestCase {
     let init_value = SelectedState100.defaultState
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func test_init_without_params() {
         let state100 = SelectedState100()
         XCTAssertNotNil(state100)
@@ -33,9 +23,7 @@ class SelectedState100Tests: XCTestCase {
     }
     
     func test_initWithBoolArray() {
-        // 添え字が3番と25番だけtrueで、あとは全部falseな配列(サイズは100)を作る
-        var b_array: Array<Bool> = []
-        for _ in 0..<100 {b_array.append(false)}
+        var b_array = Bool100.allFalseBoolArray()
         b_array[3] = true
         b_array[25] = true
 
@@ -46,8 +34,6 @@ class SelectedState100Tests: XCTestCase {
         XCTAssertEqual(state100.bools[0],  false)
         XCTAssertEqual(state100.bools[25], true)
     }
-    
-    
     
     func test_classMethod_createOfBool() {
         // 全てtrueで初期化
@@ -93,10 +79,8 @@ class SelectedState100Tests: XCTestCase {
     func test_cancellAll() {
         // すべて「選択済み」(true)で初期化しておく
         let state100 = SelectedState100.create_of(bool: true)
-        
         // 全キャンセルのメソッドを呼び出す
         state100.cancel_all()
-        
         // 結果の確認
         for i in 1...100 {
             XCTAssertEqual(try state100.of_number(i), false)
@@ -107,10 +91,8 @@ class SelectedState100Tests: XCTestCase {
         // 「選択なし」状態で初期化しておく
         let state100 = SelectedState100.create_of(bool: false)
         XCTAssertEqual(state100.bools[3], false)
-        
         // 全選択のメソッドを呼び出す
         state100.select_all()
-        
         // 結果の確認
         for i in 1...100 {
             XCTAssertEqual(try state100.of_number(i), true)
@@ -148,18 +130,16 @@ class SelectedState100Tests: XCTestCase {
     func test_select_in_numbers() {
         // 全て選択(false)状態で初期化する
         let state100 = SelectedState100.create_of(bool: false)
-
         // 選択したい要素を、1始まりの番号の配列で指定する
         state100.select_in_numbers([1, 5, 10])
-
+        // then
         XCTAssertEqual(state100.selected_num, 3)
         XCTAssertEqual(try state100.of_number(5), true)
     }
     
     func test_cancel_in_numbers() {
         // 全てキャンセル(false)状態で初期化する
-        let state100 = SelectedState100.create_of(bool: true)
-        
+        let state100 = SelectedState100.create_of(bool: true)        
         // キャンセルしたい要素を、1はじまりの番号の配列で指定する
         state100.cancel_in_numbers([2, 4, 8, 16, 32, 64])
         XCTAssertEqual(try state100.of_number(8), false)

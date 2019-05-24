@@ -11,20 +11,11 @@ import XCTest
 
 class GameConfigTest: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func test_initWithoutParameters() {
         let settings = Settings()
         XCTAssertEqual(settings.reciteMode, .normal)
         XCTAssertFalse(settings.fakeMode)
-        let allSelectedBools100 = [Bool](repeating: true, count: 100)
-        XCTAssertEqual(settings.selectedStatus100.bools, allSelectedBools100)
+        XCTAssertEqual(settings.selectedStatus100.bools, Bool100.allTrueBoolArray())
     }
     
     func test_initWithRecoteModeParameter() {

@@ -52,11 +52,9 @@ class HomeScreenTest: XCTestCase {
         // given
         let screen = HomeViewController()
         screen.settings = beginnerSettings()
-
         // when
         screen.loadViewIfNeeded()
         screen.viewWillAppear(false)
-
         // then
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
@@ -66,12 +64,10 @@ class HomeScreenTest: XCTestCase {
         // given
         let screen = HomeViewController()
         let settingsWithFakeModeOn = GameConfig(fakeMode: true)
-        
         // when
         screen.settings = Settings(mode: settingsWithFakeModeOn)
         screen.loadViewIfNeeded()
-        screen.viewWillAppear(false)
-        
+        screen.viewWillAppear(false)        
         // then
         let fakeModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
         guard let switchView = fakeModeCell.accessoryView as? UISwitch else {
