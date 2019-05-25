@@ -19,6 +19,10 @@ struct Bool100 {
         return self.init(bools: allTrueBoolArray())
     }
     
+    static func allUnselected() -> Bool100 {
+        return self.init(bools: allFalseBoolArray())
+    }
+    
     static func allTrueBoolArray() -> [Bool] {
         return [Bool](repeating: true, count: 100)
     }

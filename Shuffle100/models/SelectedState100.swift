@@ -17,24 +17,24 @@ class SelectedState100 {
         }
     }
     
-    init(array: Array<Bool>){
-        bools = array
+    init(bool100: Bool100){
+        bools = bool100.bools
     }
     
     static func create_of(bool: Bool) -> SelectedState100 {
-        let init_bools = SelectedState100.get_array100_of(bool: bool)
-        return SelectedState100(array: init_bools)
+        let initBool100 = SelectedState100.get_bool100_of(bool: bool)
+        return SelectedState100(bool100: initBool100)
     }
     
     convenience init() {
         let init_value = SelectedState100.defaultState
-        let init_bools = SelectedState100.get_array100_of(bool: init_value)
-        self.init(array: init_bools)
+        let initBool100 = SelectedState100.get_bool100_of(bool: init_value)
+        self.init(bool100: initBool100)
     }
     
-    private static func get_array100_of(bool: Bool) -> [Bool] {
-        if bool { return Bool100.allTrueBoolArray() }
-        else { return Bool100.allFalseBoolArray() }
+    private static func get_bool100_of(bool: Bool) -> Bool100 {
+        if bool { return Bool100.allSelected() }
+        else { return Bool100.allUnselected() }
     }
     
     func of_number(_ number: Int) throws -> Bool {
@@ -54,11 +54,11 @@ class SelectedState100 {
     }
     
     func cancel_all() {
-        self.bools = SelectedState100.get_array100_of(bool: false)
+        self.bools = Bool100.allFalseBoolArray()
     }
     
     func select_all() {
-        self.bools = SelectedState100.get_array100_of(bool: true)
+        self.bools = Bool100.allTrueBoolArray()
     }
     
     func select_of(number: Int) {
