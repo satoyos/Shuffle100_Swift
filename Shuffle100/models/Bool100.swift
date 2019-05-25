@@ -26,9 +26,5 @@ struct Bool100 {
     static func allFalseBoolArray() -> [Bool] {
         return [Bool](repeating: false, count: 100)
     }
-    
-    //
-    // ToDo: trueの数を返すメソッドをここで用意しておく！！！
-    //
 }
 
