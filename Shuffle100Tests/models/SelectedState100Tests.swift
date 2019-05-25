@@ -22,15 +22,16 @@ class SelectedState100Tests: XCTestCase {
         XCTAssertEqual(bs[15], init_value)
     }
     
-    func test_initWithBoolArray() {
+    func test_initWithBool100() {
+        // given
         var b_array = Bool100.allFalseBoolArray()
         b_array[3] = true
         b_array[25] = true
-
-        let state100 = SelectedState100(array: b_array)
+        let testBool100 = Bool100(bools: b_array)
+        // when
+        let state100 = SelectedState100(bool100: testBool100)
+        // then
         XCTAssertNotNil(state100)
-        
-        // 正しく初期化されていることを確認！
         XCTAssertEqual(state100.bools[0],  false)
         XCTAssertEqual(state100.bools[25], true)
     }

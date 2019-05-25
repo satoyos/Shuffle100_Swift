@@ -34,7 +34,7 @@ class Settings {
     
     init(mode: GameConfig = GameConfig(), bool100: Bool100 = Bool100()){
         self.mode = mode
-        self.selectedStatus100 = SelectedState100(array: bool100.bools)
+        self.selectedStatus100 = SelectedState100(bool100: bool100)
     }
     
     var reciteMode: ReciteMode {
