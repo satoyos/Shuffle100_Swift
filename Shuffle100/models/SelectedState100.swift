@@ -65,8 +65,7 @@ class SelectedState100 {
         do {
             try self.set_state_of_number(state: true, index: number)
         } catch {
-            print("numberの値[\(number)]がサポート範囲外")
-            exit(2)
+            fatalError("numberの値[\(number)]がサポート範囲外")
         }
     }
     
