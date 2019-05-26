@@ -14,7 +14,8 @@ class MainCoordinator {
 
     func start() {
         let gameConfig = tryLoadLegacyGameSettings()
-        let settings = Settings(mode: gameConfig)
+        let recitingConfig = tryLoadLegacyRecitingSettings()
+        let settings = Settings(mode: gameConfig, recitingConfig: recitingConfig)
         let homeScreen = HomeViewController(settings: settings)
         navigationController.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
@@ -41,24 +42,27 @@ class MainCoordinator {
     private func selectMode(settings: Settings) {
         navigationController.pushViewController(SelectModeViewController(settings: settings), animated: true)
     }
-    
-    private func tryLoadingLegacyData() {
-        tryLoadLegacyRecitingSettings()
-        let _ = tryLoadLegacyGameSettings()
-    }
-    
-    private func tryLoadLegacyRecitingSettings() {
+
+    private func tryLoadLegacyRecitingSettings() -> RecitingConfig {
         if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
-            print("---- interval -> \(loadedSettings.interval)")
-            print("---- kamiShimo -> \(loadedSettings.kamiSimoInterval)")
-            print("---- volume   -> \(loadedSettings.volume)")
+            let recitingConfig = RecitingConfig(
+                volume: loadedSettings.volume,
+                interval: loadedSettings.interval,
+                kamiShimoInterval: loadedSettings.kamiSimoInterval
+            )
+            print("+++ Success loading Legacy Data")
+            recitingConfig.debugPrint()
+            return recitingConfig
         } else {
-            print("--- Couldn't find Legacy Data for RecitingSettings ---")
+            return RecitingConfig()
         }
     }
     
     private func tryLoadLegacyGameSettings() -> GameConfig {
         if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
+
+            // ToDo: 以下のデバッグ出力も GameConfigの処理として切り出そう
+            
             print("++++ fake_flg -> \(gameSettings.fake_flg)")
             print("++++ selectedNum -> \(gameSettings.statuses_for_deck[0].selectedNum)")
             print("++++ fuda_sets -> \(gameSettings.fuda_sets.map{$0.name}) ++++")

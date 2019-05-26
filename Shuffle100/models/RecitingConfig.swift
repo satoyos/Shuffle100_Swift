@@ -12,4 +12,13 @@ struct RecitingConfig {
     var volume: Float = 1.0
     var interval: Float = 1.10
     var kamiShimoInterval: Float = 1.0
+    
+    func debugPrint() {
+        print("---------------")
+        print("RecitingConfig:")
+        print("   volume:            \(volume)")
+        print("   interval:          \(interval)")
+        print("   kamiShimoInterval: \(kamiShimoInterval)")
+        print("---------------")
+    }
 }
