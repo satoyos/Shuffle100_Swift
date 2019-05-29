@@ -11,12 +11,12 @@ import Foundation
 class Settings {
     var mode: GameConfig
     var recitingConfig: RecitingConfig
-    var selectedStatus100: SelectedState100
+    var state100: SelectedState100
     
     init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100()){
         self.mode = mode
         self.recitingConfig = recitingConfig
-        self.selectedStatus100 = SelectedState100(bool100: bool100)
+        self.state100 = SelectedState100(bool100: bool100)
     }
     
     var reciteMode: ReciteMode {

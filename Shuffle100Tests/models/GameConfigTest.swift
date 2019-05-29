@@ -15,7 +15,7 @@ class GameConfigTest: XCTestCase {
         let settings = Settings()
         XCTAssertEqual(settings.reciteMode, .normal)
         XCTAssertFalse(settings.fakeMode)
-        XCTAssertEqual(settings.selectedStatus100.bools, Bool100.allTrueBoolArray())
+        XCTAssertEqual(settings.state100.bools, Bool100.allTrueBoolArray())
     }
     
     func test_initWithRecoteModeParameter() {
