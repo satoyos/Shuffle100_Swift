@@ -119,7 +119,7 @@ class DeckTests: XCTestCase {
         let bool100 = SelectedState100.create_of(bool: false)
         bool100.select_of(number: 1)
         bool100.select_of(number: 100)
-        XCTAssertEqual(bool100.selected_num, 2)
+        XCTAssertEqual(bool100.selectedNum, 2)
         
         // 作成したSeletedState100でDockを初期化
         let deck = Deck.create_from(state100: bool100)

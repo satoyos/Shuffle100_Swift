@@ -11,7 +11,7 @@ import Foundation
 class SelectedState100 {
     static let defaultState = true
     var bools: Array<Bool>
-    var selected_num: Int {
+    var selectedNum: Int {
         get {
             return bools.filter{$0 == true}.count
         }

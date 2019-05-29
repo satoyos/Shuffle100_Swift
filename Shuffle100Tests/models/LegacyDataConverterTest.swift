@@ -18,7 +18,7 @@ class LegacyDataConverterTest: XCTestCase {
         // when
         let state100 = LegacyDataConverter.convertSelectedStatus100(testSelectedStatus100)
         // then
-        XCTAssertEqual(state100.selected_num, 3)
+        XCTAssertEqual(state100.selectedNum, 3)
     }
 
 }
