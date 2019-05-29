@@ -21,7 +21,7 @@ struct HomeScreenDataSourceFactory {
         
         switch type {
         case .poems:
-            dataSource = poemsDataSource(settings.selectedStatus100.selectedNum)
+            dataSource = poemsDataSource(settings.state100.selectedNum)
         case .reciteMode:
             dataSource = reciteModeDataSource(for: settings.reciteMode)
         case .fakeMode:

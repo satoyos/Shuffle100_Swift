@@ -74,9 +74,8 @@ class MainCoordinator {
     private func initSettings(_ settings: Settings, with gameSettings: GameSettings) {
         settings.fakeMode = gameSettings.fake_flg
         settings.reciteMode = .normal // still fail loading legacy saved symbol data
-        let boolArray = gameSettings.statuses_for_deck[0].status
-        let bool100 = Bool100(bools: boolArray)
-        settings.selectedStatus100 = SelectedState100(bool100: bool100)
+        let loadedStatus100 = gameSettings.statuses_for_deck[0]
+        settings.state100 = LegacyDataConverter.convertSelectedStatus100(loadedStatus100)
     }
     
     private func initSettings(_ settings: Settings, with recitingSettings: RecitingSettings) {
