@@ -9,8 +9,16 @@
 import Foundation
 
 struct  LegacyDataConverter {
-    static func convertSelectedStatus100(_ legacyStatus100: SelectedStatus100) -> SelectedState100 {
-        let bool100 = Bool100(bools: legacyStatus100.status)
+    static func state100FromGameSettings(_ gameSettings: GameSettings) -> SelectedState100 {
+        let loadedStatus100 = gameSettings.statuses_for_deck[0]
+        let bool100 = Bool100(bools: loadedStatus100.status)
         return SelectedState100(bool100: bool100)
+    }
+    
+    static func convertRecitingSettings(_ recitingSettings: RecitingSettings) -> RecitingConfig {
+        return RecitingConfig(
+            volume: recitingSettings.volume,
+            interval: recitingSettings.interval,
+            kamiShimoInterval: recitingSettings.kamiShimoInterval)
     }
 }

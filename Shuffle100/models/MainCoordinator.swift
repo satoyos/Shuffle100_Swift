@@ -74,14 +74,12 @@ class MainCoordinator {
     private func initSettings(_ settings: Settings, with gameSettings: GameSettings) {
         settings.fakeMode = gameSettings.fake_flg
         settings.reciteMode = .normal // still fail loading legacy saved symbol data
-        let loadedStatus100 = gameSettings.statuses_for_deck[0]
-        settings.state100 = LegacyDataConverter.convertSelectedStatus100(loadedStatus100)
+//        let loadedStatus100 = gameSettings.statuses_for_deck[0]
+        settings.state100 = LegacyDataConverter.state100FromGameSettings(gameSettings)
     }
     
     private func initSettings(_ settings: Settings, with recitingSettings: RecitingSettings) {
-        settings.interval = recitingSettings.interval
-        settings.kamiShimoInterval = recitingSettings.kamiShimoInterval
-        settings.volume = recitingSettings.volume
+        settings.recitingConfig = LegacyDataConverter.convertRecitingSettings(recitingSettings)
     }
     
     private func nowTesting() -> Bool {

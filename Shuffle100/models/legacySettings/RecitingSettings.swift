@@ -34,6 +34,12 @@ class RecitingSettings: NSObject, NSCoding {
         aCoder.encode(volume, forKey: SerializedKey.volume)
     }
     
+    init(volume: Float, interval: Float, kamiShimoInterval: Float) {
+        self.volume = volume
+        self.interval = interval
+        self.kamiShimoInterval = kamiShimoInterval
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         let loadedInterval = aDecoder.decodeObject(forKey: SerializedKey.interval) as! NSNumber
         self.interval         = Float(truncating: loadedInterval)
