@@ -13,9 +13,17 @@ class MainCoordinator {
     var navigationController = UINavigationController()
 
     func start() {
-        let gameConfig = tryLoadLegacyGameSettings()
-        let recitingConfig = tryLoadLegacyRecitingSettings()
-        let settings = Settings(mode: gameConfig, recitingConfig: recitingConfig)
+        let settings = Settings()
+        if let gameSettings = tryLoadLegacyGameSettings() {
+            if !nowTesting() {
+                initSettings(settings, with: gameSettings)
+            }
+        }
+        if let recitingSettings = tryLoadLegacyRecitingSettings() {
+            if !nowTesting() {
+                initSettings(settings, with: recitingSettings)
+            }
+        }
         let homeScreen = HomeViewController(settings: settings)
         navigationController.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
@@ -43,35 +51,42 @@ class MainCoordinator {
         navigationController.pushViewController(SelectModeViewController(settings: settings), animated: true)
     }
 
-    private func tryLoadLegacyRecitingSettings() -> RecitingConfig {
+    private func tryLoadLegacyRecitingSettings() -> RecitingSettings? {
         if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
-            let recitingConfig = RecitingConfig(
-                volume: loadedSettings.volume,
-                interval: loadedSettings.interval,
-                kamiShimoInterval: loadedSettings.kamiSimoInterval
-            )
             print("+++ Success loading Legacy Data")
-            recitingConfig.debugPrint()
-            return recitingConfig
+            loadedSettings.debugPrint()
+            return loadedSettings
         } else {
-            return RecitingConfig()
+            return nil
         }
     }
     
-    private func tryLoadLegacyGameSettings() -> GameConfig {
+    private func tryLoadLegacyGameSettings() -> GameSettings? {
         if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
-
-            // ToDo: 以下のデバッグ出力も GameConfigの処理として切り出そう
-            
-            print("++++ fake_flg -> \(gameSettings.fake_flg)")
-            print("++++ selectedNum -> \(gameSettings.statuses_for_deck[0].selectedNum)")
-            print("++++ fuda_sets -> \(gameSettings.fuda_sets.map{$0.name}) ++++")
-            print("++++ fuda_sets_selectedNum -> \(gameSettings.fuda_sets.map{$0.status100.selectedNum}) ++++")
-            let gameConfig = GameConfig(reciteMode: ReciteMode.normal, fakeMode: gameSettings.fake_flg)
-            return gameConfig
+            print("+++ Success loading legacy GameSettings")
+            gameSettings.debugPrint()
+            return gameSettings
         } else {
-            print("--- Couldn't find Legacy Data for GameSettings ---")
-            return GameConfig()
+            return nil
         }
+    }
+    
+    private func initSettings(_ settings: Settings, with gameSettings: GameSettings) {
+        settings.fakeMode = gameSettings.fake_flg
+        settings.reciteMode = .normal // still fail loading legacy saved symbol data
+        let boolArray = gameSettings.statuses_for_deck[0].status
+        let bool100 = Bool100(bools: boolArray)
+        settings.selectedStatus100 = SelectedState100(bool100: bool100)
+    }
+    
+    private func initSettings(_ settings: Settings, with recitingSettings: RecitingSettings) {
+        settings.interval = recitingSettings.interval
+        settings.kamiShimoInterval = recitingSettings.kamiShimoInterval
+        settings.volume = recitingSettings.volume
+    }
+    
+    private func nowTesting() -> Bool {
+        let testing = (ProcessInfo.processInfo.environment["IS_TESTING"] == "1")
+        return testing
     }
 }

@@ -12,6 +12,7 @@ struct Bool100 {
     var bools: [Bool]
     
     init(bools: [Bool] = allTrueBoolArray()) {
+        assert(bools.count == 100, "Bool100 must be initialized with Bool Array of size 100")
         self.bools = bools
     }
     

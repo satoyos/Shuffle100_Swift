@@ -26,4 +26,11 @@ struct GameConfig {
     init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false) {        self.reciteMode = reciteMode
         self.fakeMode = fakeMode
     }
+    
+//    func debugPrint() {
+//        print("-----------")
+//        print("GameConfig:")
+//        print("   fake_flg:    \(fakeMode)")
+//        print("   reciteMode:  \(reciteMode)")
+//    }
 }
