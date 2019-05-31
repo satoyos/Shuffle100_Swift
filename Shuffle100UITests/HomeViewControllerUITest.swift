@@ -14,7 +14,8 @@ class HomeViewControllerUITest: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        XCUIApplication().launch()
+        app.launchEnvironment = ["IS_TESTING" : "1"]
+        app.launch()
     }
     
     override func tearDown() {

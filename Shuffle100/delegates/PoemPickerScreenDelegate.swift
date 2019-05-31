@@ -11,7 +11,7 @@ import UIKit
 
 extension PoemPickerViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        settings.selectedStatus100.reverse_in_index(indexPath.row)
+        settings.state100.reverse_in_index(indexPath.row)
         tableView.reloadData()
         updateBadge()
         return

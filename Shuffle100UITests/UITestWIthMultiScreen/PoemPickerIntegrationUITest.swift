@@ -14,6 +14,7 @@ class PoemPickerIntegrationUITest: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        app.launchEnvironment = ["IS_TESTING" : "1"]
         app.launch()
     }
     
