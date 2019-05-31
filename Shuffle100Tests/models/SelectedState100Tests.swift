@@ -22,15 +22,16 @@ class SelectedState100Tests: XCTestCase {
         XCTAssertEqual(bs[15], init_value)
     }
     
-    func test_initWithBoolArray() {
+    func test_initWithBool100() {
+        // given
         var b_array = Bool100.allFalseBoolArray()
         b_array[3] = true
         b_array[25] = true
-
-        let state100 = SelectedState100(array: b_array)
+        let testBool100 = Bool100(bools: b_array)
+        // when
+        let state100 = SelectedState100(bool100: testBool100)
+        // then
         XCTAssertNotNil(state100)
-        
-        // 正しく初期化されていることを確認！
         XCTAssertEqual(state100.bools[0],  false)
         XCTAssertEqual(state100.bools[25], true)
     }
@@ -102,7 +103,7 @@ class SelectedState100Tests: XCTestCase {
     func test_selectedNum() {
         let state100 = SelectedState100.create_of(bool: false)
         for i in [1,3,5] {state100.bools[i] = true}
-        XCTAssertEqual(state100.selected_num, 3)
+        XCTAssertEqual(state100.selectedNum, 3)
     }
     
     func test_select_of_number() {
@@ -113,7 +114,7 @@ class SelectedState100Tests: XCTestCase {
         // 10番目の要素を指定してselect_of()を呼ぶと、その要素だけがtrueに変わる。
         state100.select_of(number: 10)
         XCTAssertEqual(try state100.of_number(10), true)
-        XCTAssertEqual(state100.selected_num, 1)
+        XCTAssertEqual(state100.selectedNum, 1)
     }
     
     func test_cancel_of_number() {
@@ -124,7 +125,7 @@ class SelectedState100Tests: XCTestCase {
         // 6番目の要素を指定してcancel_of()を呼ぶと、その要素だけがfalseに変わる
         state100.cancel_of(number: 6)
         XCTAssertEqual(try state100.of_number(6), false)
-        XCTAssertEqual(state100.selected_num, 99)
+        XCTAssertEqual(state100.selectedNum, 99)
     }
     
     func test_select_in_numbers() {
@@ -133,7 +134,7 @@ class SelectedState100Tests: XCTestCase {
         // 選択したい要素を、1始まりの番号の配列で指定する
         state100.select_in_numbers([1, 5, 10])
         // then
-        XCTAssertEqual(state100.selected_num, 3)
+        XCTAssertEqual(state100.selectedNum, 3)
         XCTAssertEqual(try state100.of_number(5), true)
     }
     
@@ -143,7 +144,7 @@ class SelectedState100Tests: XCTestCase {
         // キャンセルしたい要素を、1はじまりの番号の配列で指定する
         state100.cancel_in_numbers([2, 4, 8, 16, 32, 64])
         XCTAssertEqual(try state100.of_number(8), false)
-        XCTAssertEqual(state100.selected_num, 94)
+        XCTAssertEqual(state100.selectedNum, 94)
     }
     
     func test_reverse_in_index() {

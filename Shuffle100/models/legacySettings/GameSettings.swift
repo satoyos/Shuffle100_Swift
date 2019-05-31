@@ -55,13 +55,15 @@ class GameSettings: NSObject, NSCoding {
     var recite_mode_id: String
     var fuda_sets: [FudaSet]
     
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(statuses_for_deck, forKey: SerializedKey.statuses_for_deck)
-        aCoder.encode(fake_flg, forKey: SerializedKey.fake_flg)
-        aCoder.encode(beginner_flg, forKey: SerializedKey.beginner_flg)
-        aCoder.encode(singer_index, forKey: SerializedKey.singer_index)
-        aCoder.encode(recite_mode_id, forKey: SerializedKey.recite_mode_id)
-        aCoder.encode(fuda_sets, forKey: SerializedKey.fuda_sets)
+    func encode(with aCoder: NSCoder) { }
+    
+    init(status100: SelectedStatus100 = SelectedStatus100(status: Bool100.allTrueBoolArray()), fake_flg: Bool = false, beginner_flg: Bool = false, singer_index: Int = 0, recite_mode_id: String = "デフォルト", fuda_sets: [FudaSet] = [FudaSet]()) {
+        self.statuses_for_deck = [status100]
+        self.fake_flg = fake_flg
+        self.beginner_flg = beginner_flg
+        self.singer_index = singer_index
+        self.recite_mode_id = recite_mode_id
+        self.fuda_sets = fuda_sets
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,9 +75,18 @@ class GameSettings: NSObject, NSCoding {
         let loadedID = aDecoder.decodeObject(forKey: SerializedKey.recite_mode_id) as! Symbol
         self.recite_mode_id = loadedID.value as String
         self.fuda_sets = aDecoder.decodeObject(forKey: SerializedKey.fuda_sets) as! [FudaSet]
-        print("+++++++++ FINISH   recite_mode_id => \(self.recite_mode_id) +++++++++")
     }
     
+    func debugPrint() {
+        print("-----------")
+        print("GameSettings:")
+        print("   fake_flg:    \(fake_flg)")
+        print("   reciteMode:  \(recite_mode_id)")
+        print("   selectedNum: \(statuses_for_deck[0].selectedNum)")
+        print("   fuda_sets:   \(fuda_sets.map{$0.name})")
+        print("   fuda_sets_selectedNum:  \(fuda_sets.map{$0.status100.selectedNum})")
+    }
+
     static func salvageDataFromUserDefaults() -> GameSettings? {
         if let rsData = UserDefaults.init(suiteName: "game_settings")?.object(forKey: "game_settings"),
             let settings = NSKeyedUnarchiver.unarchiveObject(with: rsData as! Data) {

@@ -24,31 +24,29 @@ fileprivate struct DefaultValue {
 @objc (RecitingSettings)
 class RecitingSettings: NSObject, NSCoding {
     var interval: Float
-    var kamiSimoInterval: Float
+    var kamiShimoInterval: Float
     var volume: Float
     static var shared: RecitingSettings?
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(interval, forKey: SerializedKey.interval)
-        aCoder.encode(kamiSimoInterval, forKey: SerializedKey.kamiShimoInterval)
+        aCoder.encode(kamiShimoInterval, forKey: SerializedKey.kamiShimoInterval)
         aCoder.encode(volume, forKey: SerializedKey.volume)
     }
-    //    init(interval: Float, kamiShimoInterval: Float, volume: Float) {
-    //        self.interval = interval
-    //        self.kamiSimoInterval = kamiShimoInterval
-    //        self.volume = volume
-    //    }
+    
+    init(volume: Float, interval: Float, kamiShimoInterval: Float) {
+        self.volume = volume
+        self.interval = interval
+        self.kamiShimoInterval = kamiShimoInterval
+    }
     
     required init?(coder aDecoder: NSCoder) {
-        //        RecitingSettings.shared = nil
         let loadedInterval = aDecoder.decodeObject(forKey: SerializedKey.interval) as! NSNumber
         self.interval         = Float(truncating: loadedInterval)
         let loadedKSInterval = aDecoder.decodeObject(forKey: SerializedKey.kamiShimoInterval) as! NSNumber
-        self.kamiSimoInterval = Float(truncating: loadedKSInterval)
-        //        print("+++ kamiShimoInterval => \(kamiSimoInterval)")
+        self.kamiShimoInterval = Float(truncating: loadedKSInterval)
         let loadedVolume = aDecoder.decodeObject(forKey: SerializedKey.volume) as! NSNumber
         self.volume = Float(truncating: loadedVolume)
-        //        RecitingSettings.shared = RecitingSettings(interval: interval, kamiShimoInterval: kamiSimoInterval, volume: volume)
     }
     
     static func salvageDataFromUserDefaults() -> RecitingSettings? {
@@ -57,5 +55,14 @@ class RecitingSettings: NSObject, NSCoding {
             return settings as? RecitingSettings
         }
         return nil
+    }
+    
+    func debugPrint() {
+        print("---------------")
+        print("RecitingSettings:")
+        print("   volume:            \(volume)")
+        print("   interval:          \(interval)")
+        print("   kamiShimoInterval: \(kamiShimoInterval)")
+        print("---------------")
     }
 }

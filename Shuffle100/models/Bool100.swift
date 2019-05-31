@@ -12,11 +12,16 @@ struct Bool100 {
     var bools: [Bool]
     
     init(bools: [Bool] = allTrueBoolArray()) {
+        assert(bools.count == 100, "Bool100 must be initialized with Bool Array of size 100")
         self.bools = bools
     }
     
     static func allSelected() -> Bool100 {
         return self.init(bools: allTrueBoolArray())
+    }
+    
+    static func allUnselected() -> Bool100 {
+        return self.init(bools: allFalseBoolArray())
     }
     
     static func allTrueBoolArray() -> [Bool] {

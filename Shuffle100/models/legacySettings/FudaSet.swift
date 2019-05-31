@@ -18,6 +18,11 @@ fileprivate struct SerializedKey {
 class FudaSet: NSObject, NSCoding {
     var status100: SelectedStatus100
     var name: String
+    
+    init(name: String, status100: SelectedStatus100) {
+        self.name = name
+        self.status100 = status100
+    }
 
     func encode(with aCoder: NSCoder) {
         aCoder.encode(status100, forKey: SerializedKey.status100)

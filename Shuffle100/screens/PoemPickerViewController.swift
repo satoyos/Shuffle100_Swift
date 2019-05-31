@@ -16,7 +16,7 @@ class PoemPickerViewController: UITableViewController {
     
     var selected_num: Int {
         get {
-            return settings.selectedStatus100.selected_num
+            return settings.state100.selectedNum
         }
     }
 

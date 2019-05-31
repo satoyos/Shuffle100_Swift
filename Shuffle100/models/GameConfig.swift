@@ -26,33 +26,11 @@ struct GameConfig {
     init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false) {        self.reciteMode = reciteMode
         self.fakeMode = fakeMode
     }
+    
+//    func debugPrint() {
+//        print("-----------")
+//        print("GameConfig:")
+//        print("   fake_flg:    \(fakeMode)")
+//        print("   reciteMode:  \(reciteMode)")
+//    }
 }
-
-class Settings {
-    var mode: GameConfig
-    var selectedStatus100: SelectedState100
-    
-    init(mode: GameConfig = GameConfig(), bool100: Bool100 = Bool100()){
-        self.mode = mode
-        self.selectedStatus100 = SelectedState100(array: bool100.bools)
-    }
-    
-    var reciteMode: ReciteMode {
-        get {
-            return mode.reciteMode
-        }
-        set(m) {
-            mode.reciteMode = m
-        }
-    }
-    
-    var fakeMode: Bool {
-        get {
-            return mode.fakeMode
-        }
-        set(m) {
-            mode.fakeMode = m
-        }
-    }
-}
-
