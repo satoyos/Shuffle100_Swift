@@ -14,10 +14,7 @@ class SavedFudaSetTest: XCTestCase {
         let set = SavedFudaSet()
         // then
         XCTAssertEqual(set.name, "名前を付けましょう")
-        XCTAssertEqual(set.bools.count, 100)
-        for i in 0..<100 {
-            XCTAssertEqual(set.bools[i], true)
-        }
+        XCTAssertEqual(set.state100.selectedNum, 100)
     }
     
 }
