@@ -78,6 +78,10 @@
 		92AF24A3229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
 		92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
 		92AF24A5229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
+		92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */; };
+		92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
+		92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
+		92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -192,6 +196,8 @@
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverterTest.swift; sourceTree = "<group>"; };
 		92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverter.swift; sourceTree = "<group>"; };
+		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
+		92AF24A822A15FC60085B754 /* SavedFudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSet.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
@@ -376,6 +382,7 @@
 				9207BAFB2298182000816DC8 /* Bool100Test.swift */,
 				9207BB3522996CF200816DC8 /* RecitingConfigTest.swift */,
 				92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */,
+				92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -417,6 +424,7 @@
 				9207BAF3229579D600816DC8 /* Bool100.swift */,
 				9207BB3122996B7300816DC8 /* Settings.swift */,
 				92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */,
+				92AF24A822A15FC60085B754 /* SavedFudaSet.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -682,6 +690,7 @@
 				9207BAF4229579D600816DC8 /* Bool100.swift in Sources */,
 				92CE520B2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
+				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
@@ -723,6 +732,8 @@
 				92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				92FC39502287110D00791053 /* RecitingSettings.swift in Sources */,
 				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
+				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
+				92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
@@ -789,6 +800,7 @@
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92D5715D2211647700235717 /* SelectModeScreenUITest.swift in Sources */,
+				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92AF24A5229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
