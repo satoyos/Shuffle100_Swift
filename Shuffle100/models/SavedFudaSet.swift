@@ -10,11 +10,10 @@ import Foundation
 
 struct SavedFudaSet {
     var name: String
-    var bools: [Bool]
+    var state100: SelectedState100
     
-    init(name: String = "名前を付けましょう", bools: [Bool] = Bool100.allTrueBoolArray()) {
-        assert(bools.count == 100)
+    init(name: String = "名前を付けましょう", state100: SelectedState100 = SelectedState100()) {
         self.name = name
-        self.bools = bools
+        self.state100 = state100
     }
 }

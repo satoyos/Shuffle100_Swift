@@ -12,11 +12,13 @@ class Settings {
     var mode: GameConfig
     var recitingConfig: RecitingConfig
     var state100: SelectedState100
+    var savedFudaSets: [SavedFudaSet]
     
-    init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100()){
+    init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100(), savedFudaSets: [SavedFudaSet] = []){
         self.mode = mode
         self.recitingConfig = recitingConfig
         self.state100 = SelectedState100(bool100: bool100)
+        self.savedFudaSets = savedFudaSets
     }
     
     var reciteMode: ReciteMode {
