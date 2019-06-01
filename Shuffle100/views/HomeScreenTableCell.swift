@@ -31,6 +31,8 @@ class HomeScreenTableCell: UITableViewCell {
             switchView.accessibilityLabel = "fakeModeSwitch"
             switchView.isOn = switchValue
             self.accessoryView = switchView
+        } else {
+            self.accessoryView = nil
         }
     }
 }
