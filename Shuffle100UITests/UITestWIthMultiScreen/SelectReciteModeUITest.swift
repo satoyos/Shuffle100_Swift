@@ -32,6 +32,8 @@ class SelectReciteModeUITest: XCTestCase {
         
         // then
         XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
+        // in BeginnerMode, fake mode chell should disappear
+        XCTAssertFalse(app.switches["fakeModeSwitch"].exists)
     }
 
 }
