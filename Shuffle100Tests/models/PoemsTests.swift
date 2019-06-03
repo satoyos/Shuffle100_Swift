@@ -11,16 +11,6 @@ import XCTest
 
 class PoemsTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testInit_canCreateLiner() {
         let liner = Liner2Parts(kami: "aaa", shimo: "bbb")
         XCTAssertNotNil(liner)
@@ -53,7 +43,7 @@ class PoemsTests: XCTestCase {
         XCTAssertEqual(Poem100.poems[1].living_years, "(645〜702)")
         XCTAssertEqual(Poem100.poems[0].kimari_ji, "あきの")
     }
-    
+
     func test_strWithNumberAndLiner() {
         let second = Poem100.poems[1]
         XCTAssertEqual(second.strWithNumberAndLiner(), "2. 春過ぎて 夏来にけらし 白妙の 衣干すてふ 天の香具山")
