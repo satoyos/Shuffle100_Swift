@@ -128,6 +128,9 @@
 		92FC39882290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
 		92FC39892290457E00791053 /* FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39862290457E00791053 /* FudaSet.swift */; };
 		92FC398D22917E6000791053 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 92FC398C22917E6000791053 /* Readme.md */; };
+		92FCCEDD22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
+		92FCCEDE22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
+		92FCCEDF22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -216,6 +219,7 @@
 		92FC39562288389C00791053 /* SelectedStatus100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedStatus100.swift; sourceTree = "<group>"; };
 		92FC39862290457E00791053 /* FudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSet.swift; sourceTree = "<group>"; };
 		92FC398C22917E6000791053 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		92FCCEDC22A51E3C002B589E /* 100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 100.json; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 		9258FAF321FEAB6C00E4E0B7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				92FCCEDC22A51E3C002B589E /* 100.json */,
 				9258FAF821FEE4AA00E4E0B7 /* question_white.png */,
 				9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */,
 			);
@@ -578,6 +583,7 @@
 				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				92FC398D22917E6000791053 /* Readme.md in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
+				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
