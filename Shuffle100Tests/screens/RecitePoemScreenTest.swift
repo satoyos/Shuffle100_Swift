@@ -18,9 +18,13 @@ class RecitePoemScreenTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_instanciate() {
+    func test_layout() {
         let screen = RecitePoemViewController()
+        screen.loadViewIfNeeded()
+        screen.view.layoutIfNeeded()
         XCTAssertEqual(screen.view.backgroundColor, .white)
+        XCTAssertEqual(screen.headerContainer.backgroundColor, .lightGray)
+        XCTAssertEqual(screen.headerContainer.frame.size.height, 40)
     }
 
 }
