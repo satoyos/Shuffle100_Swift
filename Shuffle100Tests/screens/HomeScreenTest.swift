@@ -10,18 +10,6 @@ import XCTest
 @testable import Shuffle100
 
 class HomeScreenTest: XCTestCase {
-//    var screen: HomeViewController!
-//
-//    override func setUp() {
-//        super.setUp()
-//        self.screen = HomeViewController()
-//        screen.viewDidLoad()
-//    }
-//
-//    override func tearDown() {
-//        super.tearDown()
-//    }
-    
     internal func startGameCell(of screen: HomeViewController) ->        GameStartCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1)) as! GameStartCell
     }
