@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import SnapKit
 
 class RecitePoemViewController: UIViewController {
-
+    let headerContainer = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        view.addSubview(headerContainer)
+        headerContainer.backgroundColor = .lightGray
+        headerContainer.snp.makeConstraints{(make) -> Void in
+            make.width.equalToSuperview()
+            make.height.equalTo(40)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+        }
     }
     
 
