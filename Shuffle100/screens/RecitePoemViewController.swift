@@ -12,6 +12,7 @@ import SnapKit
 class RecitePoemViewController: UIViewController {
     let headerContainer = UIView()
     let mainContainer = UIView()
+    let playButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class RecitePoemViewController: UIViewController {
         view.backgroundColor = .lightGray // this background is covered by container views
         layoutHeaderContainer()
         layoutMainContainer()
+        layoutPlayButton()
     }
     
     private func layoutHeaderContainer() {
@@ -41,6 +43,15 @@ class RecitePoemViewController: UIViewController {
             make.width.equalToSuperview()
             make.top.equalTo(headerContainer.snp.bottom)
             make.bottom.equalToSuperview()
+        }
+    }
+    
+    private func layoutPlayButton() {
+        mainContainer.addSubview(playButton)
+        playButton.snp.makeConstraints{(make) -> Void in
+            make.center.equalToSuperview()
+            make.height.equalTo(300)
+            make.width.equalTo(300)
         }
     }
 
