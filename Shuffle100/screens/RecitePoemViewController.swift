@@ -11,11 +11,18 @@ import SnapKit
 
 class RecitePoemViewController: UIViewController {
     let headerContainer = UIView()
+    let mainContainer = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray // this background is covered by container views
+        layoutHeaderContainer()
+        layoutMainContainer()
+    }
+    
+    private func layoutHeaderContainer() {
+        
         view.addSubview(headerContainer)
         headerContainer.backgroundColor = Color.natsumushi.UIColor
         headerContainer.snp.makeConstraints{(make) -> Void in
@@ -26,6 +33,15 @@ class RecitePoemViewController: UIViewController {
         }
     }
     
-
+    private func layoutMainContainer() {
+        view.addSubview(mainContainer)
+        mainContainer.backgroundColor = .white
+        mainContainer.snp.makeConstraints{(make) -> Void in
+            make.left.equalToSuperview()
+            make.width.equalToSuperview()
+            make.top.equalTo(headerContainer.snp.bottom)
+            make.bottom.equalToSuperview()
+        }
+    }
 
 }

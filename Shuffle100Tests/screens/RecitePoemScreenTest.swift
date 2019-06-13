@@ -22,9 +22,10 @@ class RecitePoemScreenTest: XCTestCase {
         let screen = RecitePoemViewController()
         screen.loadViewIfNeeded()
         screen.view.layoutIfNeeded()
-        XCTAssertEqual(screen.view.backgroundColor, .white)
+        XCTAssertEqual(screen.view.backgroundColor, .lightGray)
         XCTAssertEqual(screen.headerContainer.backgroundColor, Color.natsumushi.UIColor)
         XCTAssertEqual(screen.headerContainer.frame.size.height, 40)
+        XCTAssertEqual(screen.mainContainer.frame.origin.y, screen.headerContainer.frame.size.height)
     }
 
 }
