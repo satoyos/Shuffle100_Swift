@@ -21,3 +21,28 @@ extension UIColor {
         self.init(hex: hex, alpha: 1.0)
     }
 }
+
+enum Color: String {
+    case red = "C85D5D"
+    case orange = "DD7C3A"
+    case yellow = "D8C05B"
+    case green = "66A040"
+    case emerald = "5BAA84"
+    case lightblue = "63BFC1"
+    case blue = "4A78A5"
+    case purple = "835C91"
+    case pink = "D182B9"
+    case brown = "8E6C4D"
+    case gray = "828282"
+    case black = "3F3F3F"
+    case nadeshiko = "eebbcb"
+    case natsumushi = "cee4ae"
+    
+    var UIColor: UIKit.UIColor {
+        return UIKit.UIColor(hex: self.rawValue)
+    }
+    
+    var cgColor: UIKit.CGColor {
+        return self.UIColor.cgColor
+    }
+}

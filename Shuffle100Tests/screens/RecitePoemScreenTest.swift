@@ -23,7 +23,7 @@ class RecitePoemScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         screen.view.layoutIfNeeded()
         XCTAssertEqual(screen.view.backgroundColor, .white)
-        XCTAssertEqual(screen.headerContainer.backgroundColor, .lightGray)
+        XCTAssertEqual(screen.headerContainer.backgroundColor, Color.natsumushi.UIColor)
         XCTAssertEqual(screen.headerContainer.frame.size.height, 40)
     }
 
