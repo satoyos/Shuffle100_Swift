@@ -26,6 +26,7 @@ class RecitePoemScreenTest: XCTestCase {
         XCTAssertEqual(screen.headerContainer.backgroundColor, Color.natsumushi.UIColor)
         XCTAssertEqual(screen.headerContainer.frame.size.height, 40)
         XCTAssertEqual(screen.mainContainer.frame.origin.y, screen.headerContainer.frame.size.height)
+        XCTAssertEqual(screen.playButton.frame.width, 300)
     }
 
 }
