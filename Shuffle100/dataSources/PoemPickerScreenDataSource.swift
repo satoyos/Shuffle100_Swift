@@ -42,7 +42,7 @@ extension PoemPickerViewController {
     
     private func colorFor(poem: Poem) -> UIColor {
         if try! settings.state100.of_number(poem.number) {
-            return nadeshiko_color
+            return Color.nadeshiko.UIColor
         }
         return UIColor.white
     }

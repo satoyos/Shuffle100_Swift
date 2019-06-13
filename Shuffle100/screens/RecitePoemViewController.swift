@@ -17,7 +17,7 @@ class RecitePoemViewController: UIViewController {
 
         view.backgroundColor = .white
         view.addSubview(headerContainer)
-        headerContainer.backgroundColor = .lightGray
+        headerContainer.backgroundColor = Color.natsumushi.UIColor
         headerContainer.snp.makeConstraints{(make) -> Void in
             make.width.equalToSuperview()
             make.height.equalTo(40)

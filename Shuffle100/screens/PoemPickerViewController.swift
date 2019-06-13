@@ -12,7 +12,6 @@ import Then
 
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
-    let nadeshiko_color = UIColor(hex: "eebbcb")
     
     var selected_num: Int {
         get {

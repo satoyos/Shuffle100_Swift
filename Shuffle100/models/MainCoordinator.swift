@@ -40,7 +40,7 @@ class MainCoordinator {
     private func setUpNavigationController() {
         navigationController.interactivePopGestureRecognizer?.isEnabled = false
         navigationController.navigationBar.topItem?.prompt = "百首読み上げ"
-        navigationController.navigationBar.barTintColor = UIColor(hex: "cee4ae")
+        navigationController.navigationBar.barTintColor = Color.natsumushi.UIColor
     }
     
     private func selectPoem(settings: Settings) {
