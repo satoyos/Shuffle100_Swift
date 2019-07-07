@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework
+${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Then/Then.framework
