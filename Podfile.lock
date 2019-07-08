@@ -1,17 +1,23 @@
 PODS:
   - BBBadgeBarButtonItem (1.2)
+  - DSFloatingButton (1.0.1)
+  - FontAwesome.swift (1.8.1)
   - Reveal-SDK (23)
   - SnapKit (5.0.0)
   - Then (2.5.0)
 
 DEPENDENCIES:
   - BBBadgeBarButtonItem (from `https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git`)
+  - DSFloatingButton
+  - FontAwesome.swift
   - Reveal-SDK
   - SnapKit (~> 5.0.0)
   - Then
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DSFloatingButton
+    - FontAwesome.swift
     - Reveal-SDK
     - SnapKit
     - Then
@@ -27,10 +33,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
+  DSFloatingButton: 2611b44e75736cd2f2686691ee4d2c16f2b62391
+  FontAwesome.swift: 6f55c8ed22a30ab6a8ca94033473161f678dcd4b
   Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
-PODFILE CHECKSUM: 1e148f5b0553318d63b944708fed5a0ddf8bc4b8
+PODFILE CHECKSUM: 09be31f293a38ac70db3397a4ab1544311d55923
 
 COCOAPODS: 1.7.3

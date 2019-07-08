@@ -12,6 +12,8 @@ target 'Shuffle100' do
   pod 'SnapKit', '~> 5.0.0', :inhibit_warnings => true
   pod 'BBBadgeBarButtonItem', git: 'https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git'
   pod 'Then'
+  pod 'DSFloatingButton'
+  pod 'FontAwesome.swift'
 
   target 'Shuffle100Tests' do
     inherit! :search_paths
