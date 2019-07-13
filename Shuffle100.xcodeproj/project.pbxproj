@@ -24,6 +24,9 @@
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* HomeScreenTest.swift */; };
+		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
+		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
+		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
@@ -179,6 +182,7 @@
 		923D59282143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
 		9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-520.png"; sourceTree = "<group>"; };
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			children = (
 				921737F6214E97C00059EAA4 /* UIColorExtention.swift */,
 				9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */,
+				9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */,
 			);
 			name = lib;
 			path = ../lib;
@@ -699,6 +704,7 @@
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
+				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
@@ -758,6 +764,7 @@
 				92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				9207BB3322996B7300816DC8 /* Settings.swift in Sources */,
 				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				92FC39882290457E00791053 /* FudaSet.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
@@ -806,6 +813,7 @@
 				92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
