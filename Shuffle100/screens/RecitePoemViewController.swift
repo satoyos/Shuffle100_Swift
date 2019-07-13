@@ -10,49 +10,23 @@ import UIKit
 import SnapKit
 
 class RecitePoemViewController: UIViewController {
-    let headerContainer = UIView()
-    let mainContainer = UIView()
-    let playButton = UIButton()
+    var recitePoemView: RecitePoemView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .lightGray // this background is covered by container views
-        layoutHeaderContainer()
-        layoutMainContainer()
-        layoutPlayButton()
+        view.backgroundColor = Color.natsumushi.UIColor
+        recitePoemView = RecitePoemView()
+        view.addSubview(recitePoemView)
+        recitePoemView.initView(title: "To be written")
     }
     
-    private func layoutHeaderContainer() {
-        
-        view.addSubview(headerContainer)
-        headerContainer.backgroundColor = Color.natsumushi.UIColor
-        headerContainer.snp.makeConstraints{(make) -> Void in
-            make.width.equalToSuperview()
-            make.height.equalTo(40)
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-    private func layoutMainContainer() {
-        view.addSubview(mainContainer)
-        mainContainer.backgroundColor = .white
-        mainContainer.snp.makeConstraints{(make) -> Void in
-            make.left.equalToSuperview()
-            make.width.equalToSuperview()
-            make.top.equalTo(headerContainer.snp.bottom)
-            make.bottom.equalToSuperview()
-        }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        recitePoemView.fixLayoutOn(baseView: self.view)
     }
-    
-    private func layoutPlayButton() {
-        mainContainer.addSubview(playButton)
-        playButton.snp.makeConstraints{(make) -> Void in
-            make.center.equalToSuperview()
-            make.height.equalTo(300)
-            make.width.equalTo(300)
-        }
-    }
-
 }
