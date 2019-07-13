@@ -30,6 +30,9 @@
 		9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
 		9258D1A422D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
 		9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
+		9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
+		9258D1A822D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
+		9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
 		9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
@@ -187,6 +190,7 @@
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
+		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
 		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
 		9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-520.png"; sourceTree = "<group>"; };
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 				9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */,
 				92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */,
 				9258D1A222D9D624003A0EF8 /* ViewSize.swift */,
+				9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -734,6 +739,7 @@
 				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				928E73B622ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
+				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				92FC39872290457E00791053 /* FudaSet.swift in Sources */,
@@ -744,6 +750,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9258D1A822D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
@@ -803,6 +810,7 @@
 				927E4C0C22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				9265966D22353124007CDA1A /* PoemPickerScreenUITest.swift in Sources */,
 				92FC39892290457E00791053 /* FudaSet.swift in Sources */,
+				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
