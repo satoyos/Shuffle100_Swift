@@ -36,6 +36,18 @@
 		9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
 		9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
 		9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
+		9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
+		9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
+		9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
+		9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
+		9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
+		9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
+		9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
+		9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
+		9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
+		9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
+		9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
+		9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
 		9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
@@ -195,6 +207,10 @@
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
 		9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewHeaderButton.swift; sourceTree = "<group>"; };
+		9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemView.swift; sourceTree = "<group>"; };
+		9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemView-HeaderPart.swift"; sourceTree = "<group>"; };
+		9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemView-LowerPart.swift"; sourceTree = "<group>"; };
+		9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemView-PlayButtonPart.swift"; sourceTree = "<group>"; };
 		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
 		9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-520.png"; sourceTree = "<group>"; };
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -390,6 +406,10 @@
 				9258D1A222D9D624003A0EF8 /* ViewSize.swift */,
 				9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */,
 				9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */,
+				9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */,
+				9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */,
+				9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */,
+				9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -725,6 +745,7 @@
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
+				9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
 				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
@@ -734,11 +755,13 @@
 				92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */,
 				92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
+				9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
 				927E4BF6222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
+				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				92AF24A3229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
@@ -748,6 +771,7 @@
 				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
+				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				92FC39872290457E00791053 /* FudaSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,6 +803,7 @@
 				92FC39582288389C00791053 /* SelectedStatus100.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */,
+				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				9207BB3322996B7300816DC8 /* Settings.swift in Sources */,
@@ -800,12 +825,15 @@
 				927E4BF1222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				9207BAF5229579D600816DC8 /* Bool100.swift in Sources */,
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
+				9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				92FC39542288370D00791053 /* GameSettings.swift in Sources */,
 				9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
+				9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
+				9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +846,7 @@
 				9265966D22353124007CDA1A /* PoemPickerScreenUITest.swift in Sources */,
 				92FC39892290457E00791053 /* FudaSet.swift in Sources */,
 				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
+				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
@@ -830,6 +859,7 @@
 				92F5298E229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
+				9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				92FC39512287110D00791053 /* RecitingSettings.swift in Sources */,
 				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
@@ -838,12 +868,14 @@
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
+				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92D5715D2211647700235717 /* SelectModeScreenUITest.swift in Sources */,
 				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
+				9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92AF24A5229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
