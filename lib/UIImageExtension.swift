@@ -24,4 +24,15 @@ extension UIImage {
         let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
         return reSizeImage(reSize: reSize)
     }
+    
+    func tint(color: UIColor, alpha: CGFloat = 1) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        let drawRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIRectFill(drawRect)
+        draw(in: drawRect, blendMode: .destinationIn, alpha: alpha)
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage!
+    }
 }
