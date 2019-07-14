@@ -18,7 +18,7 @@ class RecitePoemViewController: UIViewController {
         view.backgroundColor = Color.natsumushi.UIColor
         recitePoemView = RecitePoemView()
         view.addSubview(recitePoemView)
-        recitePoemView.initView(title: "To be written")
+        recitePoemView.initView(title: "序歌")
     }
     
     override func viewWillAppear(_ animated: Bool) {

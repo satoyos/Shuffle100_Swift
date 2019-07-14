@@ -24,6 +24,8 @@ extension HomeViewController: UITableViewDelegate {
             default:
                 return
             }
+        } else {
+            startGameAction?()
         }
     }
 }
