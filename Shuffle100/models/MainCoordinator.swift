@@ -35,6 +35,10 @@ class MainCoordinator {
         homeScreen.selectModeAction = {[weak self, unowned settings] in
             self?.selectMode(settings: settings)
         }
+        
+        homeScreen.startGameAction = {[weak self, unowned settings] in
+            self?.startGame(settings: settings)
+        }
     }
     
     private func setUpNavigationController() {
@@ -51,6 +55,10 @@ class MainCoordinator {
         navigationController.pushViewController(SelectModeViewController(settings: settings), animated: true)
     }
 
+    private func startGame(settings: Settings) {
+        navigationController.pushViewController(RecitePoemViewController(), animated: true)
+    }
+    
     private func tryLoadLegacyRecitingSettings() -> RecitingSettings? {
         if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
             print("+++ Success loading Legacy Data")

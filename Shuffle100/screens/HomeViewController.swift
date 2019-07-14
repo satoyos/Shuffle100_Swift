@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     var settings: Settings!
     var selectPoemAction: (() -> Void)?
     var selectModeAction: (() -> Void)?
+    var startGameAction: (() -> Void)?
     
     init(settings: Settings) {
           self.settings = settings
