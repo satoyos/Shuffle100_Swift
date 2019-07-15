@@ -26,5 +26,4 @@ class RecitePoemScreenTest: XCTestCase {
         XCTAssertEqual(screen.recitePoemView.headerContainer.frame.size.height, 40)
         XCTAssertGreaterThan(screen.recitePoemView.playButton.frame.size.width, 100)
     }
-
 }

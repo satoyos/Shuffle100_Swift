@@ -26,4 +26,13 @@ class GotoRecitePoemScreenUITest: XCTestCase {
         // then
         XCTAssert(app.staticTexts["序歌"].exists)
     }
+    
+    func test_backToHomeScreenUsingExitButton() {
+        // when
+        app.tables.cells["GameStartCell"].tap()
+        app.buttons["exit"].tap()
+        // then
+        XCTAssert(app.alerts.staticTexts["試合を終了しますか？"].exists)
+        
+    }
 }

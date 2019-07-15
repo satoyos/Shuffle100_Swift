@@ -19,6 +19,7 @@ class RecitePoemViewController: UIViewController {
         recitePoemView = RecitePoemView()
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
+        addActionsToButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,5 +29,11 @@ class RecitePoemViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         recitePoemView.fixLayoutOn(baseView: self.view)
+    }
+    
+    func addActionsToButtons() {
+        recitePoemView.exitButton.tappedAction = {[weak self] in
+            self?.exitButtonTapped()
+        }
     }
 }
