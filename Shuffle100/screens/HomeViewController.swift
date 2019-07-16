@@ -51,6 +51,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
         setupDataSources(withTypes: homeCells())
         tableView.reloadData()
         super.viewWillAppear(animated)
