@@ -350,13 +350,13 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
-				92D5714D220EC78C00235717 /* models */,
 				921737F5214E979F0059EAA4 /* lib */,
-				9258FAF321FEAB6C00E4E0B7 /* resources */,
+				92D5714D220EC78C00235717 /* models */,
 				92CE52052168D45D00538E01 /* dataSources */,
 				92E6552021CE74E200005F85 /* delegates */,
 				923D593F2143BD50000F5E60 /* screens */,
 				925CEB51218ED4FF00876E7A /* views */,
+				9258FAF321FEAB6C00E4E0B7 /* resources */,
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
 				923D59182143BB0B000F5E60 /* Assets.xcassets */,
 				923D591D2143BB0B000F5E60 /* Info.plist */,

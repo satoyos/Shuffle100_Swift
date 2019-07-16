@@ -33,6 +33,9 @@ class GotoRecitePoemScreenUITest: XCTestCase {
         app.buttons["exit"].tap()
         // then
         XCTAssert(app.alerts.staticTexts["試合を終了しますか？"].exists)
-        
+        // when
+        app.alerts.buttons["終了する"].tap()
+        // then
+        XCTAssert(app.navigationBars["トップ"].exists)        
     }
 }
