@@ -66,9 +66,10 @@ class PoemPickerViewController: UITableViewController {
     }
     
     private func searchSetup() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "歌を検索"
+        searchController = UISearchController(searchResultsController: nil).then {
+            $0.searchResultsUpdater = self
+            $0.searchBar.placeholder = "歌を検索"
+        }
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
     }
