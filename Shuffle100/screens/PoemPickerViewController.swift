@@ -12,6 +12,7 @@ import Then
 
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
+    private var searchController: UISearchController!
     
     var selected_num: Int {
         get {
@@ -37,6 +38,7 @@ class PoemPickerViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItem = saveButtonItem()
+        searchSetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,4 +65,11 @@ class PoemPickerViewController: UITableViewController {
         return buttonItem
     }
     
+    private func searchSetup() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "歌を検索"
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+    }
 }
