@@ -93,4 +93,8 @@ class SelectedState100 {
     func reverse_in_index(_ idx: Int) {
         self.bools[idx].toggle()
     }
+    
+    func reverseInNumber(_ number: Int) {
+        self.bools[number-1].toggle()
+    }
 }
