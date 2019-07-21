@@ -22,18 +22,26 @@ class SelectReciteModeUITest: XCTestCase {
     }
 
     func test_HomeScreenReflectsSelectedMode() {
-        // given
-        let reciteModeCell = app.tables.cells.staticTexts["読み上げモード"]
+        XCTContext.runActivity(named: "トップ画面で「読み上げモード」をタップすると、モード選択画面に遷移する"){
+            (acitivity) in
+            // given
+            let reciteModeCell = app.tables.cells.staticTexts["読み上げモード"]
+            // when
+            reciteModeCell.tap()
+            // then
+            XCTAssertTrue(app.staticTexts["百首読み上げ"].exists)
+        }
         
-        // when
-        reciteModeCell.tap()
-        app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
-        app.buttons["トップ"].tap()
-        
-        // then
-        XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
-        // in BeginnerMode, fake mode chell should disappear
-        XCTAssertFalse(app.switches["fakeModeSwitch"].exists)
+        XCTContext.runActivity(named: "初心者モードを選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
+            // when
+            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
+            app.buttons["トップ"].tap()
+            // then
+            // then
+            XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
+            // in BeginnerMode, fake mode chell should disappear
+            XCTAssertFalse(app.switches["fakeModeSwitch"].exists)
+        }
     }
 
 }
