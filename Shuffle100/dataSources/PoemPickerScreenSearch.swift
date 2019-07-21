@@ -10,7 +10,12 @@ import UIKit
 
 extension PoemPickerViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        // code to filter poem
+        let text = searchController.searchBar.text ?? ""
+        if text.isEmpty {
+            filteredPoems = Poem100.poems
+        } else {
+            filteredPoems = Poem100.poems.filter {$0.searchText.contains(text)}
+        }
     }
     
     
