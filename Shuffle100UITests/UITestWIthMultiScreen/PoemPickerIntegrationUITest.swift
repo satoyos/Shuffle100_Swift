@@ -44,14 +44,24 @@ class PoemPickerIntegrationUITest: XCTestCase {
         }
     }
     
-//    func test_searchPoem() {
-//        // given
-//        let tableQuery = app.tables
-//        // when
-//        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-//    }
+    func test_searchPoem() {
+        // given
+        gotoPoemPickerScreenTest()
+        XCTContext.runActivity(named: "検索窓に「あき」を入力すると、検索用データがそれにヒットする歌のみ表示される"){
+            (activity) in
+            // when
+            let searchField = app.searchFields.element
+            searchField.tap()
+            searchField.typeText("あき")
+            // then
+            XCTAssert(app.tables.cells["001"].exists)
+            XCTAssertFalse(app.tables.cells["002"].exists)
+            XCTAssert(app.tables.cells["005"].exists)
+        }
+        
+    }
     
-    func gotoPoemPickerScreenTest() {
+    private func gotoPoemPickerScreenTest() {
         XCTContext.runActivity(named: "「取り札を用意する歌」セルをタップすると、歌選択画面に遷移する") { (activity) in
             app.tables/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
             XCTAssert(app.navigationBars["歌を選ぶ"].exists)
