@@ -11,8 +11,13 @@ import UIKit
 
 extension PoemPickerViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let number = indexPath.row + 1
-//        settings.state100.reverse_in_index(indexPath.row)
+        let number: Int
+        if searchController.isActive {
+            let selectedPoem = filteredPoems[indexPath.row]
+            number = selectedPoem.number
+        } else {
+            number = indexPath.row + 1
+        }
         settings.state100.reverseInNumber(number)
         tableView.reloadData()
         updateBadge()

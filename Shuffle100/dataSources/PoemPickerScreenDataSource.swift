@@ -15,12 +15,20 @@ extension PoemPickerViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return Poem100.poems.count
+        if searchController.isActive {
+            return filteredPoems.count
+        } else {
+            return Poem100.poems.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let poem = Poem100.poems[indexPath.row]
+        let poem: Poem
+        if searchController.isActive {
+            poem = filteredPoems[indexPath.row]
+        } else {
+            poem = Poem100.poems[indexPath.row]
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath).then {
             $0.textLabel?.text = poem.strWithNumberAndLiner()
             $0.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())

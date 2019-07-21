@@ -16,7 +16,6 @@ extension PoemPickerViewController: UISearchResultsUpdating {
         } else {
             filteredPoems = Poem100.poems.filter {$0.searchText.contains(text)}
         }
+        tableView.reloadData()
     }
-    
-    
 }

@@ -12,7 +12,7 @@ import Then
 
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
-    private var searchController: UISearchController!
+    internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
     
     var selected_num: Int {
@@ -43,7 +43,15 @@ class PoemPickerViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateBadge()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // searchControllerがActiveなまま強制的にトップスクリーンに戻った場合でも、
+        // Active状態を解除する。
+        searchController?.isActive = false
+        super.viewWillDisappear(animated)
     }
     
     internal func updateBadge() {
@@ -69,6 +77,8 @@ class PoemPickerViewController: UITableViewController {
     private func searchSetup() {
         searchController = UISearchController(searchResultsController: nil).then {
             $0.searchResultsUpdater = self
+            $0.hidesNavigationBarDuringPresentation = false
+            $0.obscuresBackgroundDuringPresentation = false
             $0.searchBar.placeholder = "歌を検索"
         }
         navigationItem.hidesSearchBarWhenScrolling = false
