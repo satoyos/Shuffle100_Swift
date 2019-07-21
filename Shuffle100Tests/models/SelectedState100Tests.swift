@@ -155,4 +155,13 @@ class SelectedState100Tests: XCTestCase {
         // then
         XCTAssertFalse(try! state100.of_number(1))
     }
+    
+    func test_reverseInNumber() {
+        // giben
+        let state100 = SelectedState100.create_of(bool: true)
+        // when
+        state100.reverseInNumber(4)
+        // then
+        XCTAssertFalse(try! state100.of_number(4))
+    }
 }
