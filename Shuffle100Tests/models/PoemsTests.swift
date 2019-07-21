@@ -49,7 +49,7 @@ class PoemsTests: XCTestCase {
         XCTAssertEqual(second.strWithNumberAndLiner(), "2. 春過ぎて 夏来にけらし 白妙の 衣干すてふ 天の香具山")
     }
     
-    func test_setSearchText() {
+    func test_searchText() {
         // given
         let second = Poem100.poems[1]
         // then
