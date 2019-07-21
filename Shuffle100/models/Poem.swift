@@ -21,6 +21,10 @@ struct Poem: Codable {
     let in_hiragana: Liner2Parts
     let in_modern_kana: [String]
     let kimari_ji: String
+    var searchText: String {
+        let multiDimensionalArray: [[String]] = [[String(number)], liner, [in_hiragana.kami, in_hiragana.shimo], in_modern_kana, [poet], [kimari_ji]]
+        return multiDimensionalArray.joined().joined(separator: " ")
+    }
 }
 
 struct Poem100 {

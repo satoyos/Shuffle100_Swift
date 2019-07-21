@@ -49,4 +49,10 @@ class PoemsTests: XCTestCase {
         XCTAssertEqual(second.strWithNumberAndLiner(), "2. 春過ぎて 夏来にけらし 白妙の 衣干すてふ 天の香具山")
     }
     
+    func test_setSearchText() {
+        // given
+        let second = Poem100.poems[1]
+        // then
+        XCTAssertEqual(second.searchText, "2 春過ぎて 夏来にけらし 白妙の 衣干すてふ 天の香具山 はるすきてなつきにけらししろたへの ころもほすてふあまのかくやま はるすぎて なつきにけらし しろたえの ころもほすちょう あまのかぐやま 持統天皇 はるす")
+    }
 }

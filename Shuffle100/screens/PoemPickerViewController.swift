@@ -13,6 +13,7 @@ import Then
 class PoemPickerViewController: UITableViewController {
     var settings: Settings!
     private var searchController: UISearchController!
+    internal var filteredPoems = [Poem]()
     
     var selected_num: Int {
         get {
