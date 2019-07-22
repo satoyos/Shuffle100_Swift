@@ -16,7 +16,7 @@ class PoemPickerScreenTest: XCTestCase {
     override func setUp() {
         super.setUp()
         self.screen = PoemPickerViewController()
-        screen.viewDidLoad()
+        screen.loadViewIfNeeded()
     }
 
     override func tearDown() {
