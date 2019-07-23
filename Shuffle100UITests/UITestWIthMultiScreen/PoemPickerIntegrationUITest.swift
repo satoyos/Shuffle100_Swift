@@ -58,7 +58,16 @@ class PoemPickerIntegrationUITest: XCTestCase {
             XCTAssertFalse(app.tables.cells["002"].exists)
             XCTAssert(app.tables.cells["005"].exists)
         }
-        
+        XCTContext.runActivity(named: "検索結果としてフィルタリングされた歌をタップしたら、選択状態を変えることができる") { (acitvity) in
+            // when
+            app.tables.cells["001"].tap()
+            app.tables.cells["005"].tap()
+            app.buttons["Cancel"].tap()
+            //   back to HomeScreen
+            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+            // then
+            XCTAssertTrue(app.cells.staticTexts["98首"].exists)
+        }
     }
     
     private func gotoPoemPickerScreenTest() {
