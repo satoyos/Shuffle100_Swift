@@ -126,6 +126,13 @@
 		92C87DD322E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD422E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD522E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
+		92C87DD722E88D5400569D15 /* Singers.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD622E88D5400569D15 /* Singers.json */; };
+		92C87DD822E88D5400569D15 /* Singers.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD622E88D5400569D15 /* Singers.json */; };
+		92C87DD922E88D5400569D15 /* Singers.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD622E88D5400569D15 /* Singers.json */; };
+		92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDA22E88E6900569D15 /* SingerTests.swift */; };
+		92C87DDD22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
+		92C87DDE22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
+		92C87DDF22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92CE520B2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
 		92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
 		92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
@@ -257,6 +264,9 @@
 		92AF24A822A15FC60085B754 /* SavedFudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSet.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92C87DD222E8894900569D15 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
+		92C87DD622E88D5400569D15 /* Singers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Singers.json; sourceTree = "<group>"; };
+		92C87DDA22E88E6900569D15 /* SingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTests.swift; sourceTree = "<group>"; };
+		92C87DDC22E88F8600569D15 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
@@ -410,6 +420,7 @@
 				9258FAF821FEE4AA00E4E0B7 /* question_white.png */,
 				9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */,
 				9258D1BE22DA0258003A0EF8 /* exit_square.png */,
+				92C87DD622E88D5400569D15 /* Singers.json */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -453,6 +464,7 @@
 				9207BB3522996CF200816DC8 /* RecitingConfigTest.swift */,
 				92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */,
 				92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */,
+				92C87DDA22E88E6900569D15 /* SingerTests.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -505,6 +517,7 @@
 				9207BB3122996B7300816DC8 /* Settings.swift */,
 				92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */,
 				92AF24A822A15FC60085B754 /* SavedFudaSet.swift */,
+				92C87DDC22E88F8600569D15 /* Singer.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -662,6 +675,7 @@
 				92FC398D22917E6000791053 /* Readme.md in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
+				92C87DD722E88D5400569D15 /* Singers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +685,7 @@
 			files = (
 				9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */,
 				9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92C87DD822E88D5400569D15 /* Singers.json in Resources */,
 				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 				92C87DD422E8894900569D15 /* audio in Resources */,
 			);
@@ -682,6 +697,7 @@
 			files = (
 				9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */,
 				9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92C87DD922E88D5400569D15 /* Singers.json in Resources */,
 				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 				92C87DD522E8894900569D15 /* audio in Resources */,
 			);
@@ -793,6 +809,7 @@
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
+				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
 				927E4BF6222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
@@ -817,12 +834,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9258D1A822D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
+				92C87DDE22E88F8600569D15 /* Singer.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
+				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
 				92FC39502287110D00791053 /* RecitingSettings.swift in Sources */,
 				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
@@ -910,6 +929,7 @@
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
+				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,

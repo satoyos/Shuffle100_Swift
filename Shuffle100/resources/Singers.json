@@ -1,0 +1,13 @@
+[
+    {
+        "id": "ia",
+        "name": "IA（ボーカロイド）",
+        "path": "audio/ia"
+    },
+    {
+        "id": "inaba",
+        "name": "いなばくん（人間）",
+        "path": "audio/inaba"
+    }
+]
+
