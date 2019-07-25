@@ -25,4 +25,20 @@ class SingerTests: XCTestCase {
         let second = Singers.all[1]
         XCTAssertEqual(second.path, "audio/inaba")
     }
+    
+    func test_defaultSinger() {
+        // when
+        let singer = Singers.defaultSinger()
+        // then
+        XCTAssertEqual(singer.id, "ia")
+    }
+    
+    func test_getSingerOfID() {
+        // when
+        if let singer = Singers.getSingerOfID("inaba") {
+            XCTAssertEqual(singer.name, "いなばくん（人間）")
+        } else {
+            XCTFail()
+        }
+    }
 }
