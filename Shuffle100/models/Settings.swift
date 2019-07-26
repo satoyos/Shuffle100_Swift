@@ -39,6 +39,15 @@ class Settings {
         }
     }
     
+    var singerID: String {
+        get {
+            return mode.singerID
+        }
+        set(m) {
+            mode.singerID = m
+        }
+    }
+    
     var volume: Float {
         get {
             return recitingConfig.volume
