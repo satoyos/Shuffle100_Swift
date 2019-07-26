@@ -22,9 +22,12 @@ struct ReciteModeHolder {
 struct GameConfig {
     var reciteMode: ReciteMode
     var fakeMode: Bool
+    var singerID: String
 
-    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false) {        self.reciteMode = reciteMode
+    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia") {
+        self.reciteMode = reciteMode
         self.fakeMode = fakeMode
+        self.singerID = singerID
     }
     
 //    func debugPrint() {
