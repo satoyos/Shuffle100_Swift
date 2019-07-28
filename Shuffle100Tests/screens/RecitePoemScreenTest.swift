@@ -20,6 +20,10 @@ class RecitePoemScreenTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func test_screenHasGameSettings() {
+        XCTAssertNotNil(screen.settings)
+    }
+    
     func test_initialLayout() {
         XCTAssertEqual(screen.view.backgroundColor, Color.natsumushi.UIColor)
         XCTAssertEqual(screen.recitePoemView.headerContainer.backgroundColor, Color.natsumushi.UIColor)
