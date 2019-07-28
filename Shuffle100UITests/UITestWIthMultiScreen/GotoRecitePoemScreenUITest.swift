@@ -32,7 +32,8 @@ class GotoRecitePoemScreenUITest: XCTestCase {
         app.tables.cells["GameStartCell"].tap()
         app.buttons["exit"].tap()
         // then
-        XCTAssert(app.alerts.staticTexts["試合を終了しますか？"].exists)
+//        XCTAssert(app.alerts.staticTexts["試合を終了しますか？"].exists)
+        waitToAppear(for: app.alerts.staticTexts["試合を終了しますか？"])
         // when
         app.alerts.buttons["終了する"].tap()
         // then
