@@ -7,10 +7,25 @@
 //
 
 import UIKit
-import SnapKit
+import AVFoundation
+import Then
 
-class RecitePoemViewController: UIViewController {
+class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var recitePoemView: RecitePoemView!
+    var settings: Settings!
+    var currentPlayer: AVAudioPlayer?
+    
+    init(settings: Settings = Settings()) {
+        self.settings = settings
+        
+        // クラスの持つ指定イニシャライザを呼び出す
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // 新しく init を定義した場合に必須
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +35,8 @@ class RecitePoemViewController: UIViewController {
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
         addActionsToButtons()
+        
+        playJoka()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,5 +52,16 @@ class RecitePoemViewController: UIViewController {
         recitePoemView.exitButton.tappedAction = {[weak self] in
             self?.exitButtonTapped()
         }
+    }
+    
+    private func playJoka() {
+        guard let folder = Singers.getSingerOfID(settings.singerID) else {
+            print("[\(settings.singerID)]に対応する読手が見つかりません。")
+            return }
+        currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: folder.path).then {
+                $0.prepareToPlay()
+                $0.volume = settings.volume
+        }
+        currentPlayer?.play()
     }
 }
