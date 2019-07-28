@@ -12,9 +12,17 @@ class AudioPlayerFactory {
     static let shared = AudioPlayerFactory()
     
     func prepareOpeningPlayer(folder: String) -> AVAudioPlayer {
+        let player: AVAudioPlayer
+        
         guard let path = Bundle.main.path(forResource: folder + "/序歌", ofType: "m4a") else {
             fatalError("音源ファイルが見つかりません")
         }
-        return AVAudioPlayer()
+        do {
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+        
+        } catch {
+            fatalError("序歌のAudioPlayer生成に失敗しました。folder => [\(folder)]")
+        }
+        return player
     }
 }

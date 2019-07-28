@@ -30,7 +30,6 @@ class AudioPlayerFactoryTests: XCTestCase {
         let player = factory.prepareOpeningPlayer(folder: folderName)
         // then
         XCTAssertNotNil(player)
-        
     }
 
 }
