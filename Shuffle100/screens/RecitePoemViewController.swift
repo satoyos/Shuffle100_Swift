@@ -61,6 +61,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: folder.path).then {
                 $0.prepareToPlay()
                 $0.volume = settings.volume
+                $0.delegate = self
         }
         currentPlayer?.play()
     }
