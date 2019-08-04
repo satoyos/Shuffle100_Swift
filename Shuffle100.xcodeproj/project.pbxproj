@@ -374,6 +374,7 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
+				929A614F22F6D84200435D2C /* audioPlayers */,
 				929A614E22F6D60C00435D2C /* coordinaters */,
 				921737F5214E979F0059EAA4 /* lib */,
 				92D5714D220EC78C00235717 /* models */,
@@ -507,6 +508,14 @@
 			path = coordinaters;
 			sourceTree = "<group>";
 		};
+		929A614F22F6D84200435D2C /* audioPlayers */ = {
+			isa = PBXGroup;
+			children = (
+				9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */,
+			);
+			path = audioPlayers;
+			sourceTree = "<group>";
+		};
 		92CE52052168D45D00538E01 /* dataSources */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,7 +542,6 @@
 				92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */,
 				92AF24A822A15FC60085B754 /* SavedFudaSet.swift */,
 				92C87DDC22E88F8600569D15 /* Singer.swift */,
-				9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
