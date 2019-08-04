@@ -372,6 +372,7 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
+				929A614E22F6D60C00435D2C /* coordinaters */,
 				921737F5214E979F0059EAA4 /* lib */,
 				92D5714D220EC78C00235717 /* models */,
 				92CE52052168D45D00538E01 /* dataSources */,
@@ -496,6 +497,14 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		929A614E22F6D60C00435D2C /* coordinaters */ = {
+			isa = PBXGroup;
+			children = (
+				92BCDE79226C8E1E001853DC /* MainCoordinator.swift */,
+			);
+			path = coordinaters;
+			sourceTree = "<group>";
+		};
 		92CE52052168D45D00538E01 /* dataSources */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,7 +528,6 @@
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
 				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
 				92D5714E220EC7DB00235717 /* GameConfig.swift */,
-				92BCDE79226C8E1E001853DC /* MainCoordinator.swift */,
 				9207BAF3229579D600816DC8 /* Bool100.swift */,
 				9207BB3122996B7300816DC8 /* Settings.swift */,
 				92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */,
