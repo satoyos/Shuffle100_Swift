@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
-    var navigationController = UINavigationController()
+    var navigator = UINavigationController()
 
     func start() {
         let settings = Settings()
@@ -25,7 +25,7 @@ class MainCoordinator: Coordinator {
             }
         }
         let homeScreen = HomeViewController(settings: settings)
-        navigationController.pushViewController(homeScreen as UIViewController, animated: false)
+        navigator.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
         
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
@@ -42,21 +42,22 @@ class MainCoordinator: Coordinator {
     }
     
     private func setUpNavigationController() {
-        navigationController.interactivePopGestureRecognizer?.isEnabled = false
-        navigationController.navigationBar.topItem?.prompt = "百首読み上げ"
-        navigationController.navigationBar.barTintColor = Color.natsumushi.UIColor
+        navigator.interactivePopGestureRecognizer?.isEnabled = false
+        navigator.navigationBar.topItem?.prompt = "百首読み上げ"
+        navigator.navigationBar.barTintColor = Color.natsumushi.UIColor
     }
     
     private func selectPoem(settings: Settings) {
-        navigationController.pushViewController(PoemPickerViewController(settings: settings), animated: true)
+        let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings)
+        coordinator.start()
     }
     
-    private func selectMode(settings: Settings) {
-        navigationController.pushViewController(SelectModeViewController(settings: settings), animated: true)
+    
+    private func selectMode(settings: Settings) {        navigator.pushViewController(SelectModeViewController(settings: settings), animated: true)
     }
 
     private func startGame(settings: Settings) {
-        navigationController.pushViewController(RecitePoemViewController(), animated: true)
+        navigator.pushViewController(RecitePoemViewController(), animated: true)
     }
     
     private func tryLoadLegacyRecitingSettings() -> RecitingSettings? {
