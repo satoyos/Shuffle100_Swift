@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MainCoordinator.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2019/04/21.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainCoordinator {
+class MainCoordinator: Coordinator {
     var navigationController = UINavigationController()
 
     func start() {
