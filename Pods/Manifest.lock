@@ -2,8 +2,8 @@ PODS:
   - BBBadgeBarButtonItem (1.2)
   - DSFloatingButton (1.0.1)
   - FontAwesome.swift (1.8.1)
-  - Reveal-SDK (23)
-  - SnapKit (5.0.0)
+  - Reveal-SDK (24)
+  - SnapKit (5.0.1)
   - Then (2.5.0)
 
 DEPENDENCIES:
@@ -35,8 +35,8 @@ SPEC CHECKSUMS:
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   DSFloatingButton: 2611b44e75736cd2f2686691ee4d2c16f2b62391
   FontAwesome.swift: 6f55c8ed22a30ab6a8ca94033473161f678dcd4b
-  Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
-  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
 PODFILE CHECKSUM: 09be31f293a38ac70db3397a4ab1544311d55923
