@@ -60,7 +60,6 @@ class MainCoordinator: Coordinator {
     }
 
     private func startGame(settings: Settings) {
-//        navigator.pushViewController(RecitePoemViewController(), animated: true)
         let coordinator = RecitePoemCoordinator(navigator: navigator, settings: settings)
         coordinator.start()
     }
