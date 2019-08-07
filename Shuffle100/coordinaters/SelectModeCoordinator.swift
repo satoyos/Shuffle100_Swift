@@ -1,14 +1,14 @@
 //
-//  PoemPickerCoordinator.swift
+//  SelectModeCoordinator.swift
 //  Shuffle100
 //
-//  Created by 里 佳史 on 2019/08/04.
+//  Created by 里 佳史 on 2019/08/07.
 //  Copyright © 2019 里 佳史. All rights reserved.
 //
 
 import UIKit
 
-final class PoemPickerCoordinator: Coordinator {
+final class SelectModeCoordinator: Coordinator {
     private let navigator: UINavigationController
     private var settings: Settings
     private var screen: UIViewController?
@@ -19,7 +19,7 @@ final class PoemPickerCoordinator: Coordinator {
     }
     
     func start() {
-        let screen = PoemPickerViewController(settings: settings)
+        let screen = SelectModeViewController(settings: settings)
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }
