@@ -23,6 +23,9 @@
 		9208DF1022FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */; };
 		9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */; };
 		9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */; };
+		9208DF1422FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* RecitePoemCoordinator.swift */; };
+		9208DF1522FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* RecitePoemCoordinator.swift */; };
+		9208DF1622FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* RecitePoemCoordinator.swift */; };
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
@@ -224,6 +227,7 @@
 		9207BB3122996B7300816DC8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9207BB3522996CF200816DC8 /* RecitingConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfigTest.swift; sourceTree = "<group>"; };
 		9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeCoordinator.swift; sourceTree = "<group>"; };
+		9208DF1322FAFD2300A3F22C /* RecitePoemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemCoordinator.swift; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
@@ -519,6 +523,7 @@
 				929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */,
 				929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */,
 				9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */,
+				9208DF1322FAFD2300A3F22C /* RecitePoemCoordinator.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
@@ -869,6 +874,7 @@
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				92FC39872290457E00791053 /* FudaSet.swift in Sources */,
+				9208DF1422FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +921,7 @@
 				92FC39882290457E00791053 /* FudaSet.swift in Sources */,
 				9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
+				9208DF1522FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92AF24A1229E91260085B754 /* LegacyDataConverterTest.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
@@ -953,6 +960,7 @@
 				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
+				9208DF1622FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */,
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
