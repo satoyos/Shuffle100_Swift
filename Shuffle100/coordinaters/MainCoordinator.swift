@@ -54,7 +54,6 @@ class MainCoordinator: Coordinator {
     
     
     private func selectMode(settings: Settings) {
-//        navigator.pushViewController(SelectModeViewController(settings: settings), animated: true)
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings)
         coordinator.start()
         
