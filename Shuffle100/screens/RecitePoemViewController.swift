@@ -35,8 +35,6 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
         addActionsToButtons()
-        
-        playJoka()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +52,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    private func playJoka() {
+    func playJoka() {
         guard let folder = Singers.getSingerOfID(settings.singerID) else {
             print("[\(settings.singerID)]に対応する読手が見つかりません。")
             return }

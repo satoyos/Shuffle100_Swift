@@ -21,6 +21,7 @@ final class RecitePoemCoordinator: Coordinator {
     func start() {
         let screen = RecitePoemViewController(settings: settings)
         navigator.pushViewController(screen, animated: true)
+        screen.playJoka()
         self.screen = screen
     }
 }
