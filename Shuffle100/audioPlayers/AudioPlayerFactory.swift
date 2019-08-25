@@ -21,7 +21,7 @@ class AudioPlayerFactory {
             player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
         
         } catch {
-            fatalError("序歌のAudioPlayer生成に失敗しました。folder => [\(folder)]")
+            fatalError("序歌のAudioPlayer生成に失敗しました。folder => [\(folder)]\n - Error: \(error.localizedDescription)")
         }
         return player
     }
