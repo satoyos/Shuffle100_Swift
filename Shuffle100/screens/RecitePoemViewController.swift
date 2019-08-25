@@ -56,11 +56,19 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         guard let folder = Singers.getSingerOfID(settings.singerID) else {
             print("[\(settings.singerID)]に対応する読手が見つかりません。")
             return }
+    
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: folder.path).then {
-                $0.prepareToPlay()
-                $0.volume = settings.volume
-                $0.delegate = self
+            $0.prepareToPlay()
+            $0.volume = settings.volume
+            $0.delegate = self
         }
         currentPlayer?.play()
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateAudioProgressView() {
+        guard let player = currentPlayer else { return }
+        if player.isPlaying {                recitePoemView.progressView.setProgress(Float(player.currentTime / player.duration), animated: true)
+        }
     }
 }
