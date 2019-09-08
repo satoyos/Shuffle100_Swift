@@ -12,18 +12,19 @@ import FontAwesome_swift
 
 class ReciteViewButton: DSFloatingButton {
 
-    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
+//    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
+      func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome) {
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
-        if leftInset {
-            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: fontSize * 0.3, bottom: 0, right: 0)
-        }
+        
         self.setTitleColor(Color.konpeki.UIColor, for: .normal)
         self.setTitle(String.fontAwesomeIcon(name: iconType), for: .normal)
         self.cornerRadius = height / 2
         self.useCornerRadius = true
         setGradient()
     }
+    
+    
     
     private func setGradient() {
         // gradient

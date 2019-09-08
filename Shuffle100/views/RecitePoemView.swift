@@ -9,13 +9,18 @@
 import UIKit
 
 class RecitePoemView: UIView {
+    
+    enum WaitingFor {
+        case pause
+        case play
+    }
 
     let headerContainer = UIView()
     let lowerContainer = UIView()
     let space1 = UIView()
     let space2 = UIView()
     let space3 = UIView()
-    let playButton = ReciteViewButton()
+    let playButton = ReciteViewPlayButton()
     let rewindButton = ReciteViewButton()
     let forwardButton = ReciteViewButton()
     let progressView = UIProgressView()
@@ -43,6 +48,17 @@ class RecitePoemView: UIView {
         setYaxisConstraints()
         setAccessibilityLabels()
     }
+    
+//    func playButtonShows(waitingFor: WaitingFor) {
+//        switch waitingFor {
+//        case .play:
+//            playButton.
+//        case .pause:
+//            
+//        @unknown default:
+//            <#code#>
+//        }
+//    }
     
     private func setYaxisConstraints() {
         self.addSubview(space1)

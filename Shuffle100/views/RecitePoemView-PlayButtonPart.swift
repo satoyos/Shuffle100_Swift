@@ -20,7 +20,7 @@ extension RecitePoemView {
     }
     
     private func configurePlayButton() {
-        playButton.configure(height: playButtonSize().height, fontSize: playButtonFontSize(), iconType: .play, leftInset: true)
+        playButton.configurePlayButton(height: playButtonSize().height, fontSize: playButtonFontSize(), iconType: .play, leftInset: true)
     }
     
     internal func playButtonSize() -> CGSize {
