@@ -20,8 +20,15 @@ final class RecitePoemCoordinator: Coordinator {
     
     func start() {
         let screen = RecitePoemViewController(settings: settings)
+        
+        // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
+        // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
+        CATransaction.begin()
         navigator.pushViewController(screen, animated: true)
-        screen.playJoka()
+        CATransaction.setCompletionBlock {
+            screen.playJoka()
+        }
+        CATransaction.commit()
         self.screen = screen
     }
 }

@@ -63,6 +63,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
             $0.delegate = self
         }
         currentPlayer?.play()
+        recitePoemView.showAsWaitingFor(.pause)
         Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
     }
     

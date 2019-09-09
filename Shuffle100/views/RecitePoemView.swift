@@ -8,14 +8,14 @@
 
 import UIKit
 
+enum WaitingFor {
+    case pause
+    case play
+}
+
 class RecitePoemView: UIView {
     
-    enum WaitingFor {
-        case pause
-        case play
-    }
-
-    let headerContainer = UIView()
+       let headerContainer = UIView()
     let lowerContainer = UIView()
     let space1 = UIView()
     let space2 = UIView()
@@ -49,16 +49,9 @@ class RecitePoemView: UIView {
         setAccessibilityLabels()
     }
     
-//    func playButtonShows(waitingFor: WaitingFor) {
-//        switch waitingFor {
-//        case .play:
-//            playButton.
-//        case .pause:
-//            
-//        @unknown default:
-//            <#code#>
-//        }
-//    }
+    func showAsWaitingFor(_ waitingFor: WaitingFor) {
+        playButton.showAsWaitingFor(waitingFor)
+    }
     
     private func setYaxisConstraints() {
         self.addSubview(space1)
