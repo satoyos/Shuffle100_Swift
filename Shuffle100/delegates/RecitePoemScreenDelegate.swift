@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 extension RecitePoemViewController {
     internal func exitButtonTapped() {
@@ -18,5 +19,9 @@ extension RecitePoemViewController {
         let cancel = UIAlertAction(title: "続ける", style: .default, handler: nil)
         ac.addAction(cancel)
         present(ac, animated: true)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.playerFinishedAction?()
     }
 }

@@ -14,6 +14,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var recitePoemView: RecitePoemView!
     var settings: Settings!
     var currentPlayer: AVAudioPlayer?
+    var playerFinishedAction: (() -> Void)?
     
     init(settings: Settings = Settings()) {
         self.settings = settings
