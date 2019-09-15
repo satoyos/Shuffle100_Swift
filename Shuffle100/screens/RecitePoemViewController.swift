@@ -14,6 +14,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var recitePoemView: RecitePoemView!
     var settings: Settings!
     var currentPlayer: AVAudioPlayer?
+    var timerForPrgoress: Timer!
     var playerFinishedAction: (() -> Void)?
     
     init(settings: Settings = Settings()) {
@@ -47,6 +48,11 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         recitePoemView.fixLayoutOn(baseView: self.view)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timerForPrgoress.invalidate()
+    }
+    
     func addActionsToButtons() {
         recitePoemView.exitButton.tappedAction = {[weak self] in
             self?.exitButtonTapped()
@@ -65,7 +71,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         }
         currentPlayer?.play()
         recitePoemView.showAsWaitingFor(.pause)
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
     }
     
     @objc func updateAudioProgressView() {
