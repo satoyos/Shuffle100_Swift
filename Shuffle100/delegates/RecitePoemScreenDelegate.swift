@@ -13,6 +13,8 @@ extension RecitePoemViewController {
     internal func exitButtonTapped() {
         let ac = UIAlertController(title: "試合を終了しますか？", message: nil, preferredStyle: .alert)
         let quit = UIAlertAction(title: "終了する", style: .cancel) {[weak self] action in
+            self?.currentPlayer?.stop()
+            self?.currentPlayer = nil
             _ = self?.navigationController?.popViewController(animated: true)
         }
         ac.addAction(quit)
