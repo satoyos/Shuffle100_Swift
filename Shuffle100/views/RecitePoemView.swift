@@ -15,7 +15,7 @@ enum WaitingFor {
 
 class RecitePoemView: UIView {
     
-       let headerContainer = UIView()
+    let headerContainer = UIView()
     let lowerContainer = UIView()
     let space1 = UIView()
     let space2 = UIView()
