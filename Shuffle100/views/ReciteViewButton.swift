@@ -11,7 +11,7 @@ import DSFloatingButton
 import FontAwesome_swift
 
 class ReciteViewButton: DSFloatingButton {
-
+    
 //    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
       func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome) {
         self.titleLabel?.textAlignment = .center
@@ -23,8 +23,6 @@ class ReciteViewButton: DSFloatingButton {
         self.useCornerRadius = true
         setGradient()
     }
-    
-    
     
     private func setGradient() {
         // gradient
