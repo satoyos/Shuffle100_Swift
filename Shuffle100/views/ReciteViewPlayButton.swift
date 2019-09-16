@@ -31,10 +31,12 @@ class ReciteViewPlayButton: ReciteViewButton {
             self.setTitle(String.fontAwesomeIcon(name: .play), for: .normal)
             self.setTitleColor(colorWaitingForPlay, for: .normal)
             self.contentEdgeInsets = UIEdgeInsets(top: 0, left: (titleLabel?.font.pointSize)! * 0.3, bottom: 0, right: 0)
+            self.accessibilityIdentifier = "waitingForPlay"
         case .pause:
             self.setTitle(String.fontAwesomeIcon(name: .pause), for: .normal)
             self.setTitleColor(colorWaitingForPause, for: .normal)
             self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            self.accessibilityIdentifier = "waitingForPause"
         }
     }
 }
