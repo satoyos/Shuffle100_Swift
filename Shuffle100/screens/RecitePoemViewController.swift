@@ -57,6 +57,9 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         recitePoemView.exitButton.tappedAction = {[weak self] in
             self?.exitButtonTapped()
         }
+        recitePoemView.playButton.tap = { [weak self] btn in
+            self?.flipPlaying()
+        }
     }
     
     func playJoka() {

@@ -23,6 +23,20 @@ extension RecitePoemViewController {
         present(ac, animated: true)
     }
     
+    internal func flipPlaying() {
+        guard let currentPlayer = currentPlayer else {       return
+        }
+        if currentPlayer.isPlaying {
+            // pause playing
+            currentPlayer.pause()
+            recitePoemView.showAsWaitingFor(.play)
+        } else {
+            // restart playing
+            currentPlayer.play()
+            recitePoemView.showAsWaitingFor(.pause)
+        }
+    }
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         self.playerFinishedAction?()
     }
