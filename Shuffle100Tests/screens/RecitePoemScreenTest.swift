@@ -26,8 +26,18 @@ class RecitePoemScreenTest: XCTestCase {
     
     func test_initialLayout() {
         XCTAssertEqual(screen.view.backgroundColor, Color.natsumushi.UIColor)
+       
         XCTAssertEqual(screen.recitePoemView.headerContainer.backgroundColor, Color.natsumushi.UIColor)
         XCTAssertEqual(screen.recitePoemView.headerContainer.frame.size.height, 40)
         XCTAssertGreaterThan(screen.recitePoemView.playButton.frame.size.width, 100)
+
+        
+    }
+    
+    func test_playButtonAccessibilityIdentifier() {
+        // when
+        screen.recitePoemView.showAsWaitingFor(.pause)
+        // then
+        XCTAssertEqual(screen.recitePoemView.playButton.accessibilityIdentifier, "waitingForPause")
     }
 }
