@@ -40,4 +40,15 @@ class RecitePoemScreenTest: XCTestCase {
         // then
         XCTAssertEqual(screen.recitePoemView.playButton.accessibilityIdentifier, "waitingForPause")
     }
+    
+    func test_rewindButtonPlayerTimeToZero() {
+        // given
+        screen.playJoka()
+        // when
+        sleep(1)
+        let rewindButton = screen.recitePoemView.rewindButton
+        rewindButton.tap!(rewindButton)
+        // then
+        XCTAssertEqual(screen.currentPlayer?.currentTime, 0)
+    }
 }

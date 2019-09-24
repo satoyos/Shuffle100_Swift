@@ -37,6 +37,13 @@ extension RecitePoemViewController {
         }
     }
     
+    internal func rewindButtonTapped() {
+        currentPlayer?.currentTime = 0.0
+        currentPlayer?.pause()
+        recitePoemView.showAsWaitingFor(.play)
+        updateAudioProgressView()
+    }
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         self.playerFinishedAction?()
     }
