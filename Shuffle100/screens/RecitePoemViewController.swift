@@ -60,6 +60,9 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         recitePoemView.playButton.tap = { [weak self] btn in
             self?.flipPlaying()
         }
+        recitePoemView.rewindButton.tap = { [weak self] btn in
+            self?.rewindButtonTapped()
+        }
     }
     
     func playJoka() {
@@ -79,7 +82,6 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     
     @objc func updateAudioProgressView() {
         guard let player = currentPlayer else { return }
-        if player.isPlaying {                recitePoemView.progressView.setProgress(Float(player.currentTime / player.duration), animated: true)
-        }
+        recitePoemView.progressView.setProgress(Float(player.currentTime / player.duration), animated: true)
     }
 }
