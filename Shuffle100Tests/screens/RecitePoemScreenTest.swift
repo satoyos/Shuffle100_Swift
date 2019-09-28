@@ -51,4 +51,15 @@ class RecitePoemScreenTest: XCTestCase {
         // then
         XCTAssertEqual(screen.currentPlayer?.currentTime, 0)
     }
+    
+    func test_forwardButtonSetPlayterStop() {
+        // given
+        screen.playJoka()
+        // when
+        sleep(1)
+        let forwardButton = screen.recitePoemView.forwardButton
+        forwardButton.tap!(forwardButton)
+        // then
+        XCTAssertFalse(screen.currentPlayer!.isPlaying)
+    }
 }
