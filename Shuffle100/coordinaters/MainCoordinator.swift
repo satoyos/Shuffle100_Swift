@@ -11,6 +11,7 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
+    var recitePoemCoordinator: RecitePoemCoordinator!
 
     func start() {
         let settings = Settings()
@@ -62,6 +63,7 @@ class MainCoordinator: Coordinator {
     private func startGame(settings: Settings) {
         let coordinator = RecitePoemCoordinator(navigator: navigator, settings: settings)
         coordinator.start()
+        self.recitePoemCoordinator = coordinator
     }
     
     private func tryLoadLegacyRecitingSettings() -> RecitingSettings? {

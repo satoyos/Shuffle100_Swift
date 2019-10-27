@@ -39,6 +39,7 @@ class GotoRecitePoemScreenUITest: XCTestCase {
             (activity) in
             // when
             app.alerts.buttons["終了する"].tap()
+            sleep(1)
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
         }

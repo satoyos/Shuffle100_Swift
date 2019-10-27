@@ -14,6 +14,8 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var recitePoemView: RecitePoemView!
     var settings: Settings!
     var currentPlayer: AVAudioPlayer?
+    var timerForPrgoress: Timer!
+    var playerFinishedAction: (() -> Void)?
     
     init(settings: Settings = Settings()) {
         self.settings = settings
@@ -35,8 +37,6 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
         addActionsToButtons()
-        
-        playJoka()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,21 +48,54 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         recitePoemView.fixLayoutOn(baseView: self.view)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timerForPrgoress.invalidate()
+    }
+    
     func addActionsToButtons() {
         recitePoemView.exitButton.tappedAction = {[weak self] in
             self?.exitButtonTapped()
         }
+        recitePoemView.playButton.tap = { [weak self] btn in
+            self?.flipPlaying()
+        }
+        recitePoemView.rewindButton.tap = { [weak self] btn in
+            self?.rewindButtonTapped()
+        }
+        recitePoemView.forwardButton.tap = { [weak self] btn in
+            self?.forwardButtonTapped()
+        }
     }
     
-    private func playJoka() {
-        guard let folder = Singers.getSingerOfID(settings.singerID) else {
+    func playJoka() {
+        guard let singer = Singers.getSingerOfID(settings.singerID) else {
             print("[\(settings.singerID)]に対応する読手が見つかりません。")
-            return }
-        currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: folder.path).then {
-                $0.prepareToPlay()
-                $0.volume = settings.volume
-                $0.delegate = self
+            return
+        }
+        currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path).then {
+            $0.prepareToPlay()
+            $0.volume = settings.volume
+            $0.delegate = self
         }
         currentPlayer?.play()
+        recitePoemView.showAsWaitingFor(.pause)
+        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+    }
+    
+    func playNumberedPoem(number: Int, side: Side) {
+        guard let singer = Singers.getSingerOfID(settings.singerID) else {
+            print("[\(settings.singerID)]に対応する読手が見つかりません。")
+            return
+        }
+        currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
+        currentPlayer?.play()
+        recitePoemView.showAsWaitingFor(.pause)
+        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateAudioProgressView() {
+        guard let player = currentPlayer else { return }
+        recitePoemView.progressView.setProgress(Float(player.currentTime / player.duration), animated: false)
     }
 }
