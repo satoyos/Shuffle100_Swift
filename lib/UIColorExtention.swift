@@ -20,6 +20,20 @@ extension UIColor {
     convenience init(hex: String) {
         self.init(hex: hex, alpha: 1.0)
     }
+    
+    /// ライト/ダーク用の色を受け取ってDynamic Colorを作って返す
+    public class func dynamicColor(light: UIColor, dark: UIColor) -> UIColor {
+        if #available(iOS 13, *) {
+            return UIColor { (traitCollection) -> UIColor in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return dark
+                } else {
+                    return light
+                }
+            }
+        }
+        return light
+    }
 }
 
 enum Color: String {
