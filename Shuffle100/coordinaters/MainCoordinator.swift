@@ -12,6 +12,8 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
     var recitePoemCoordinator: RecitePoemCoordinator!
+    static let barTintColor = UIColor.dynamicColor(light: Color.natsumushi.UIColor, dark: Color.kawairo.UIColor)
+    static let selectedPoemBackColor = UIColor.dynamicColor(light: Color.nadeshiko.UIColor, dark: Color.suou.UIColor)
 
     func start() {
         let settings = Settings()
@@ -45,7 +47,8 @@ class MainCoordinator: Coordinator {
     private func setUpNavigationController() {
         navigator.interactivePopGestureRecognizer?.isEnabled = false
         navigator.navigationBar.topItem?.prompt = "百首読み上げ"
-        navigator.navigationBar.barTintColor = Color.natsumushi.UIColor
+//        navigator.navigationBar.barTintColor = Color.natsumushi.UIColor
+        navigator.navigationBar.barTintColor = MainCoordinator.barTintColor
     }
     
     private func selectPoem(settings: Settings) {
