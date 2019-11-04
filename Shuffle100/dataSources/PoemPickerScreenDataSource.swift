@@ -50,8 +50,13 @@ extension PoemPickerViewController {
     
     private func colorFor(poem: Poem) -> UIColor {
         if try! settings.state100.of_number(poem.number) {
-            return Color.nadeshiko.UIColor
+//            return Color.nadeshiko.UIColor
+            return MainCoordinator.selectedPoemBackColor
         }
-        return UIColor.white
+        if #available(iOS 13.0, *) {
+            return UIColor.systemBackground
+        } else {
+            return UIColor.white
+        }
     }
 }

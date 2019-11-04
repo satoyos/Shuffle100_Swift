@@ -46,12 +46,28 @@ class PoemPickerScreenTest: XCTestCase {
         XCTAssert((firstCellLabel?.adjustsFontForContentSizeCategory)!)
     }
     
-    private func nadeshikoColor() -> UIColor {
-        return UIColor(hex: "eebbcb")
+    private func firstCellColorIsSelectedColor() {
+        // then
+        if #available(iOS 13.0, *) {
+            let firstCellBackColor = firstCell().backgroundColor
+            XCTAssertEqual(firstCellBackColor, MainCoordinator.selectedPoemBackColor)
+        } else {
+            XCTAssertEqual(firstCell().backgroundColor, Color.nadeshiko.UIColor)
+        }
     }
     
     func test_selectedPoemCellIsNadeshiko() {
-        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
+        firstCellColorIsSelectedColor()
+    }
+    
+   private func firstCellColorIsUnselectedColor() {
+        // then
+        if #available(iOS 13.0, *) {
+            let firstCellBackColor = firstCell().backgroundColor
+            XCTAssertEqual(firstCellBackColor, UIColor.systemBackground)
+        } else {
+            XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+        }
     }
     
     func test_unselectedPoemCellIsWhite() {
@@ -62,17 +78,17 @@ class PoemPickerScreenTest: XCTestCase {
         // when
         screen.settings = testSettings
         screen.tableView.reloadData()
-        // then
-        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+        firstCellColorIsUnselectedColor()
     }
     
-    func test_tapiingSelctedPoem_makeItUnselected() {
+    func test_tappingSelctedPoem_makeItUnselected() {
         // given
         let testIndexPath = IndexPath(row: 0, section: 0)
         // when
         screen.tableView(screen.tableView, didSelectRowAt: testIndexPath)
         // then
-        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+//        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
+        firstCellColorIsUnselectedColor()
         XCTAssertEqual(screen.selected_num, 99)
     }
     
@@ -86,7 +102,8 @@ class PoemPickerScreenTest: XCTestCase {
         // when
         screen.tableView(screen.tableView, didSelectRowAt: testIndex)
         // then
-        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
+//        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
+        firstCellColorIsSelectedColor()
         XCTAssertEqual(screen.selected_num, 1)
     }
     
