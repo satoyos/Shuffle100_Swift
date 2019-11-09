@@ -56,6 +56,7 @@ enum Color: String {
     case buttonNormal = "0077ff"
     case suou = "9e3d3f"
     case kawairo = "475950"
+    case aofujiiro = "84a2d4"
     
     var UIColor: UIKit.UIColor {
         return UIKit.UIColor(hex: self.rawValue)

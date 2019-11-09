@@ -16,8 +16,8 @@ extension UIButton {
     }
     
     func setImageWithStarndardColor(_ image: UIImage) {
-        self.setImage(image.tint(color: Color.buttonNormal.UIColor), for: .normal)
-        self.setImage(image.tint(color: Color.buttonNormal.UIColor, alpha: 0.4), for: .highlighted)
+        self.setImage(image.tint(color: MainCoordinator.standardButtonColor), for: .normal)
+        self.setImage(image.tint(color: MainCoordinator.standardButtonColor, alpha: 0.4), for: .highlighted)
     }
 }
 

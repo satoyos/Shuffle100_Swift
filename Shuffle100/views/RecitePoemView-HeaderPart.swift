@@ -16,7 +16,7 @@ private let headerButtonMargin = 10
 extension RecitePoemView {
     internal func layoutHeaderContainer() {
         self.addSubview(headerContainer)
-        headerContainer.backgroundColor = Color.natsumushi.UIColor
+        headerContainer.backgroundColor = MainCoordinator.barTintColor
         headerContainer.snp.makeConstraints{(make) -> Void in
             make.width.equalToSuperview()
             make.height.equalTo(40)
@@ -28,13 +28,21 @@ extension RecitePoemView {
         layoutExitButton()
     }
     
+    fileprivate func textColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.label
+        } else {
+            return .black
+        }
+    }
+    
     private func layoutHeaderTitle() {
         let titleLabel = UILabel().then {
             $0.text = headerTitle
             $0.textAlignment = .center
             $0.sizeToFit()
             $0.backgroundColor = .clear
-            $0.textColor = .black
+            $0.textColor = textColor()
         }
         headerContainer.addSubview(titleLabel)
         titleLabel.snp.makeConstraints{(make) -> Void in

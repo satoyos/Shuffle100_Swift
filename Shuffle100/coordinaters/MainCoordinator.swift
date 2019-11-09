@@ -14,6 +14,7 @@ class MainCoordinator: Coordinator {
     var recitePoemCoordinator: RecitePoemCoordinator!
     static let barTintColor = UIColor.dynamicColor(light: Color.natsumushi.UIColor, dark: Color.kawairo.UIColor)
     static let selectedPoemBackColor = UIColor.dynamicColor(light: Color.nadeshiko.UIColor, dark: Color.suou.UIColor)
+    static let standardButtonColor = UIColor.dynamicColor(light: Color.konpeki.UIColor, dark: Color.aofujiiro.UIColor)
 
     func start() {
         let settings = Settings()

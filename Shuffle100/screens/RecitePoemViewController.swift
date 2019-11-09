@@ -32,7 +32,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = Color.natsumushi.UIColor
+        view.backgroundColor = MainCoordinator.barTintColor
         recitePoemView = RecitePoemView()
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
