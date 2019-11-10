@@ -17,6 +17,11 @@ class ReciteViewButton: DSFloatingButton {
         return MainCoordinator.standardButtonColor
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setGradient()
+    }
+    
     func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome) {
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
@@ -29,11 +34,30 @@ class ReciteViewButton: DSFloatingButton {
         setGradient()
     }
     
+    fileprivate func playButtonGradientStartColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.dynamicColor(light: .white, dark: .blue)
+        } else {
+            return .white
+        }
+    }
+    
+    fileprivate func playButtonGradietEndColor() -> UIColor {
+        let lightVersionEndColor = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        let darkVersionEndColor = UIColor(displayP3Red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        if #available(iOS 13.0, *) {
+            return UIColor.dynamicColor(light: lightVersionEndColor, dark: darkVersionEndColor)
+        } else {
+            return lightVersionEndColor
+        }
+    }
+    
     private func setGradient() {
         // gradient
-        self.gradientStartColor = UIColor.white
-        self.gradientEndColor = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        self.gradientStartColor = playButtonGradientStartColor()
+        self.gradientEndColor = playButtonGradietEndColor()
         self.gradientStartPoint = CGPoint(x: 0.5, y: 0.0)
         self.gradientEndPoint = CGPoint(x: 0.5, y: 1.0)
     }
+    
 }
