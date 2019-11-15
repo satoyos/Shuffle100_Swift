@@ -36,7 +36,7 @@ class ReciteViewButton: DSFloatingButton {
     
     fileprivate func playButtonGradientStartColor() -> UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor.dynamicColor(light: .white, dark: .blue)
+            return UIColor.dynamicColor(light: .white, dark: .darkGray)
         } else {
             return .white
         }
@@ -44,7 +44,7 @@ class ReciteViewButton: DSFloatingButton {
     
     fileprivate func playButtonGradietEndColor() -> UIColor {
         let lightVersionEndColor = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-        let darkVersionEndColor = UIColor(displayP3Red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        let darkVersionEndColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         if #available(iOS 13.0, *) {
             return UIColor.dynamicColor(light: lightVersionEndColor, dark: darkVersionEndColor)
         } else {

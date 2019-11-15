@@ -10,7 +10,7 @@ import UIKit
 import FontAwesome_swift
 
 class ReciteViewPlayButton: ReciteViewButton {
-    let colorWaitingForPause = Color.shoujouhi.UIColor
+    let colorWaitingForPause = UIColor.dynamicColor(light: Color.shoujouhi.UIColor, dark: Color.tsutsujiiro.UIColor)
     let colorWaitingForPlay = Color.konpeki.UIColor
     
     func configurePlayButton(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
