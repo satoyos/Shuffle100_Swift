@@ -14,7 +14,7 @@ class ReciteViewButton: DSFloatingButton {
     
 //    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
     fileprivate func standardButtonColor() -> UIColor {
-        return MainCoordinator.standardButtonColor
+        return StandardColor.standardButtonColor
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
