@@ -50,7 +50,7 @@ class PoemPickerScreenTest: XCTestCase {
         // then
         if #available(iOS 13.0, *) {
             let firstCellBackColor = firstCell().backgroundColor
-            XCTAssertEqual(firstCellBackColor, MainCoordinator.selectedPoemBackColor)
+            XCTAssertEqual(firstCellBackColor, StandardColor.selectedPoemBackColor)
         } else {
             XCTAssertEqual(firstCell().backgroundColor, Color.nadeshiko.UIColor)
         }

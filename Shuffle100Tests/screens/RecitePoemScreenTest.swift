@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Shuffle100
 
 class RecitePoemScreenTest: XCTestCase {
     var screen = RecitePoemViewController()
@@ -25,8 +26,8 @@ class RecitePoemScreenTest: XCTestCase {
     }
     
     func test_initialLayout() {
-        XCTAssertEqual(screen.view.backgroundColor, MainCoordinator.barTintColor)
-    XCTAssertEqual(screen.recitePoemView.headerContainer.backgroundColor, MainCoordinator.barTintColor)
+        XCTAssertEqual(screen.view.backgroundColor, StandardColor.barTintColor)
+    XCTAssertEqual(screen.recitePoemView.headerContainer.backgroundColor, StandardColor.barTintColor)
     XCTAssertEqual(screen.recitePoemView.headerContainer.frame.size.height, 40)
     XCTAssertGreaterThan(screen.recitePoemView.playButton.frame.size.width, 100)
     }

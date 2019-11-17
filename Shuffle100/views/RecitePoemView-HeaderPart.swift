@@ -16,7 +16,7 @@ private let headerButtonMargin = 10
 extension RecitePoemView {
     internal func layoutHeaderContainer() {
         self.addSubview(headerContainer)
-        headerContainer.backgroundColor = MainCoordinator.barTintColor
+        headerContainer.backgroundColor = StandardColor.barTintColor
         headerContainer.snp.makeConstraints{(make) -> Void in
             make.width.equalToSuperview()
             make.height.equalTo(40)

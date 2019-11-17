@@ -32,7 +32,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = MainCoordinator.barTintColor
+        view.backgroundColor = StandardColor.barTintColor
         recitePoemView = RecitePoemView()
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
