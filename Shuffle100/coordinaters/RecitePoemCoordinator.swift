@@ -39,4 +39,6 @@ final class RecitePoemCoordinator: Coordinator {
 //        self.screen?.recitePoemView.backgroundColor = .red
         print("序歌の読み上げ終了!!")
     }
+    
+    // ToDo: 次はノーマルモードの読み上げを実装するぞ！
 }
