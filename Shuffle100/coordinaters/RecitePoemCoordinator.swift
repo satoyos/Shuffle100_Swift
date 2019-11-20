@@ -12,10 +12,13 @@ final class RecitePoemCoordinator: Coordinator {
     private let navigator: UINavigationController
     private var settings: Settings
     private var screen: RecitePoemViewController?
+    var poemSupplier: PoemSupplier!
     
     init(navigator: UINavigationController, settings: Settings) {
         self.navigator = navigator
         self.settings = settings
+        let deck = Deck.create_from(state100: settings.state100)
+        self.poemSupplier = PoemSupplier(deck: deck, shuffle: false)
     }
     
     func start() {
