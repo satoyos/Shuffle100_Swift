@@ -98,4 +98,17 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         guard let player = currentPlayer else { return }
         recitePoemView.progressView.setProgress(Float(player.currentTime / player.duration), animated: false)
     }
+    
+    func stepIntoNextPoem(number: Int, at counter: Int, total: Int) {
+        UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
+            let newReciteView = RecitePoemView()
+            self.recitePoemView.removeFromSuperview()
+            UIView.performWithoutAnimation {
+                self.view.addSubview(newReciteView)
+                newReciteView.initView(title: "\(counter)首め")
+            }
+            self.recitePoemView = newReciteView
+            self.addActionsToButtons()
+        }, completion: nil)
+    }
 }
