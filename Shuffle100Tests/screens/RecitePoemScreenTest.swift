@@ -64,4 +64,17 @@ class RecitePoemScreenTest: XCTestCase {
     func test_playNumberedPoemCauseNoError() {
         XCTAssertNoThrow(screen.playNumberedPoem(number: 1, side: .shimo))
     }
+    
+    func test_stepIntoNextPoemFlipView() {
+        // given
+        screen.recitePoemView.initView(title: "aaa")
+        let supplier = PoemSupplier()
+        // when
+        _ = supplier.draw_next_poem()
+        screen.stepIntoNextPoem(number: supplier.poem.number, at: supplier.current_index, total: supplier.size )
+        sleep(1)
+        // then
+        XCTAssertEqual(screen.recitePoemView.headerTitle, "1首め")
+        
+    }
 }

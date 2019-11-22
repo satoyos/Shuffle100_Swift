@@ -41,7 +41,8 @@ final class RecitePoemCoordinator: Coordinator {
     private func jokaFinished() {
 //        self.screen?.recitePoemView.backgroundColor = .red
         print("序歌の読み上げ終了!!")
+        _ = poemSupplier.draw_next_poem()
+        screen!.stepIntoNextPoem(number: poemSupplier.poem.number, at: poemSupplier.current_index, total: poemSupplier.size)
     }
-    
-    // ToDo: 次はノーマルモードの読み上げを実装するぞ！
+  
 }
