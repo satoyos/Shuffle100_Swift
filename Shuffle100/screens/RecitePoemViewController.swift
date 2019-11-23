@@ -88,7 +88,11 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
             print("[\(settings.singerID)]に対応する読手が見つかりません。")
             return
         }
-        currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
+        currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path).then {
+            $0.prepareToPlay()
+            $0.volume = settings.volume
+            $0.delegate = self
+        }
         currentPlayer?.play()
         recitePoemView.showAsWaitingFor(.pause)
         timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
@@ -109,6 +113,12 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
             }
             self.recitePoemView = newReciteView
             self.addActionsToButtons()
-        }, completion: nil)
+        }, completion: { finished in
+            self.reciteKami(number: number)
+        })
+    }
+    
+    private func reciteKami(number: Int) {
+        playNumberedPoem(number: number, side: .kami)
     }
 }

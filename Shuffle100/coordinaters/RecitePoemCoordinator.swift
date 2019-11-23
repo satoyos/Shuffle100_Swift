@@ -42,7 +42,16 @@ final class RecitePoemCoordinator: Coordinator {
 //        self.screen?.recitePoemView.backgroundColor = .red
         print("序歌の読み上げ終了!!")
         _ = poemSupplier.draw_next_poem()
-        screen!.stepIntoNextPoem(number: poemSupplier.poem.number, at: poemSupplier.current_index, total: poemSupplier.size)
+        let number = poemSupplier.poem.number
+        let counter = poemSupplier.current_index
+        screen!.playerFinishedAction = { [weak self, number, counter] in
+            self?.reciteKamiFinished(number: number, counter: counter)
+        }
+        screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+    }
+    
+    private func reciteKamiFinished(number: Int, counter: Int ) {
+        print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。")
     }
   
 }
