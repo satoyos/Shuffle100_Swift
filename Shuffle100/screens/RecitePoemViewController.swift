@@ -80,18 +80,22 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    fileprivate func setTimerForProgressView() {
+        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+    }
+    
     func playJoka() {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
         prepareCurrentPlayer()
         playCurrentPlayer()
-        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+        setTimerForProgressView()
     }
     
     func playNumberedPoem(number: Int, side: Side) {
         currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
         prepareCurrentPlayer()
         playCurrentPlayer()
-        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+        setTimerForProgressView()
     }
     
     private func prepareCurrentPlayer() {
