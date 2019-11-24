@@ -88,6 +88,9 @@
 		92737DD42380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD52380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD82385677F007B5FAD /* RecitePoemCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD72385677F007B5FAD /* RecitePoemCoordinatorTest.swift */; };
+		92737E3E238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
+		92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
+		92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
 		927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */; };
 		927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */; };
 		927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
@@ -271,6 +274,7 @@
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		92737DD72385677F007B5FAD /* RecitePoemCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemCoordinatorTest.swift; sourceTree = "<group>"; };
+		92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenGameActions.swift; sourceTree = "<group>"; };
 		927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReciteModeUITest.swift; sourceTree = "<group>"; };
 		927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDefaultTest.swift; sourceTree = "<group>"; };
 		927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffled.swift"; sourceTree = "<group>"; };
@@ -451,6 +455,7 @@
 				92D57154220F03AF00235717 /* SelectModeViewController.swift */,
 				927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */,
 				928E73B522ABE83C00FB1B7B /* RecitePoemViewController.swift */,
+				92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -873,6 +878,7 @@
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
+				92737E3E238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
@@ -927,6 +933,7 @@
 				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92737DD82385677F007B5FAD /* RecitePoemCoordinatorTest.swift in Sources */,
+				92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
@@ -1002,6 +1009,7 @@
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* RecitePoemCoordinator.swift in Sources */,
+				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
