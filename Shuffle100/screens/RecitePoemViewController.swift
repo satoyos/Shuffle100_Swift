@@ -81,25 +81,27 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playJoka() {
-        currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path).then {
-            $0.prepareToPlay()
-            $0.volume = settings.volume
-            $0.delegate = self
-        }
+        currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
+        prepareCurrentPlayer()
         currentPlayer?.play()
         recitePoemView.showAsWaitingFor(.pause)
         timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
     }
     
     func playNumberedPoem(number: Int, side: Side) {
-        currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path).then {
+        currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
+        prepareCurrentPlayer()
+        currentPlayer?.play()
+        recitePoemView.showAsWaitingFor(.pause)
+        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+    }
+    
+    private func prepareCurrentPlayer() {
+        _ = currentPlayer?.then {
             $0.prepareToPlay()
             $0.volume = settings.volume
             $0.delegate = self
         }
-        currentPlayer?.play()
-        recitePoemView.showAsWaitingFor(.pause)
-        timerForPrgoress = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
     }
     
     @objc func updateAudioProgressView() {
