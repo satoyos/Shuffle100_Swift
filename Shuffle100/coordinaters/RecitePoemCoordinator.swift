@@ -39,7 +39,6 @@ final class RecitePoemCoordinator: Coordinator {
     }
     
     private func jokaFinished() {
-//        self.screen?.recitePoemView.backgroundColor = .red
         print("序歌の読み上げ終了!!")
         _ = poemSupplier.draw_next_poem()
         let number = poemSupplier.poem.number
