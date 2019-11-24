@@ -24,24 +24,30 @@ extension RecitePoemViewController {
     }
     
     internal func flipPlaying() {
-        guard let currentPlayer = currentPlayer else {       return
-        }
+        guard let currentPlayer = currentPlayer else { return }
         if currentPlayer.isPlaying {
-            // pause playing
-            currentPlayer.pause()
-            recitePoemView.showAsWaitingFor(.play)
+            pauseCurrentPlayer()
         } else {
-            // restart playing
-            currentPlayer.play()
-            recitePoemView.showAsWaitingFor(.pause)
+            playCurrentPlayer()
         }
+    }
+    
+    internal func playCurrentPlayer() {
+        guard let currentPlayer = currentPlayer else { return }
+        currentPlayer.play()
+        recitePoemView.showAsWaitingFor(.pause)
+    }
+    
+    internal func pauseCurrentPlayer() {
+        guard let currentPlayer = currentPlayer else { return }
+        currentPlayer.pause()
+        recitePoemView.showAsWaitingFor(.play)
     }
     
     internal func rewindButtonTapped() {
         guard let currentPlayer = currentPlayer else { return }
         currentPlayer.currentTime = 0.0
-        currentPlayer.pause()
-        recitePoemView.showAsWaitingFor(.play)
+        pauseCurrentPlayer()
         updateAudioProgressView()
     }
     
