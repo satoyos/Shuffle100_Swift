@@ -25,6 +25,10 @@ class RecitePoemScreenTest: XCTestCase {
         XCTAssertNotNil(screen.settings)
     }
     
+    func test_screenHasSinger() {
+        XCTAssertNotNil(screen.singer)
+    }
+    
     func test_initialLayout() {
         XCTAssertEqual(screen.view.backgroundColor, StandardColor.barTintColor)
     XCTAssertEqual(screen.recitePoemView.headerContainer.backgroundColor, StandardColor.barTintColor)

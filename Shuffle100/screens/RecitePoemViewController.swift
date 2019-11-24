@@ -16,6 +16,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var currentPlayer: AVAudioPlayer?
     var timerForPrgoress: Timer!
     var playerFinishedAction: (() -> Void)?
+    var singer: Singer!
     
     init(settings: Settings = Settings()) {
         self.settings = settings
@@ -31,6 +32,13 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let singerID = settings.singerID
+        guard let singer = fetchSinger(id: singerID) else {
+            print("[\(singerID)]に対応する読手が見つかりません。")
+            return
+        }
+        self.singer = singer
 
         view.backgroundColor = StandardColor.barTintColor
         recitePoemView = RecitePoemView()
@@ -39,6 +47,10 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         addActionsToButtons()
     }
     
+    fileprivate func fetchSinger(id: String) -> Singer? {
+        return Singers.getSingerOfID(id)
+    }
+        
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -69,10 +81,6 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playJoka() {
-        guard let singer = Singers.getSingerOfID(settings.singerID) else {
-            print("[\(settings.singerID)]に対応する読手が見つかりません。")
-            return
-        }
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path).then {
             $0.prepareToPlay()
             $0.volume = settings.volume
@@ -84,10 +92,6 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playNumberedPoem(number: Int, side: Side) {
-        guard let singer = Singers.getSingerOfID(settings.singerID) else {
-            print("[\(settings.singerID)]に対応する読手が見つかりません。")
-            return
-        }
         currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path).then {
             $0.prepareToPlay()
             $0.volume = settings.volume
