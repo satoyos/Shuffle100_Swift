@@ -48,7 +48,7 @@ extension RecitePoemViewController {
             self.recitePoemView.removeFromSuperview()
             UIView.performWithoutAnimation {
                 self.view.addSubview(newReciteView)
-                newReciteView.initView(title: "\(counter)首め")
+                newReciteView.initView(title: "\(counter)首め:上の句 (全\(total)首)")
             }
             self.recitePoemView = newReciteView
             self.addActionsToButtons()
