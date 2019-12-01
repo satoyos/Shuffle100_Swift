@@ -30,7 +30,7 @@ class RecitePoemView: UIView {
     var headerTitle = "To be Filled!"
     
     func fixLayoutOn(baseView: UIView, offsetX: CGFloat = 0) {
-        self.snp.makeConstraints{(make) -> Void in
+        self.snp.remakeConstraints{(make) -> Void in
             make.top.equalTo(baseView.safeAreaInsets.top)
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
