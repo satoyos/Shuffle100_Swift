@@ -59,7 +59,7 @@ class PoemSupplierTests: XCTestCase {
         // falseを返す
         let bool2 = supplier.draw_next_poem()
         XCTAssertFalse(bool2)
-        // current_indexは最後の札Nozbeタスクまま変わっていない。
+        // current_indexは最後の札のまま変わっていない。
         XCTAssertEqual(supplier.current_index, 100)
     }
     
