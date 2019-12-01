@@ -15,13 +15,15 @@ enum Side {
 
 class PoemSupplier {
     var deck: Deck
-    private let shuffle: Bool
     private var current_poem: Poem?
     private var fuda_side: Side?
     
     init(deck: Deck, shuffle: Bool) {
         self.deck = deck
-        self.shuffle = shuffle
+//        self.shuffle = shuffle
+        if shuffle {
+            deck.shuffle()
+        }
     }
     
     convenience init() {

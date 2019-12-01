@@ -18,7 +18,7 @@ final class RecitePoemCoordinator: Coordinator {
         self.navigator = navigator
         self.settings = settings
         let deck = Deck.create_from(state100: settings.state100)
-        self.poemSupplier = PoemSupplier(deck: deck, shuffle: false)
+        self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
     }
     
     func start() {
@@ -60,5 +60,22 @@ final class RecitePoemCoordinator: Coordinator {
   
     private func stepIntoShimoInNormalMode() {
         print("上の句が終わった状態でPlayButtonが押された！")
+        let number = poemSupplier.poem.number
+        let counter = poemSupplier.current_index
+        screen!.playerFinishedAction = { [weak self, number, counter] in
+            self?.reciteShimoFinished(number: number, counter: counter)
+        }
+        screen?.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    }
+    
+    private func reciteShimoFinished(number: Int, counter: Int) {
+        print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
+        _ = poemSupplier.draw_next_poem()
+        let number = poemSupplier.poem.number
+        let counter = poemSupplier.current_index
+        screen!.playerFinishedAction = { [weak self, number, counter] in
+            self?.reciteKamiFinished(number: number, counter: counter)
+        }
+        screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
 }

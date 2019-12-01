@@ -35,7 +35,7 @@ class PoemSupplierTests: XCTestCase {
     }
     
     func test_drawNextPoem() {
-        let supplier = PoemSupplier()
+        let supplier = PoemSupplier(deck: Deck(), shuffle: false)
         XCTAssertEqual(supplier.current_index, 0)
         // できたてのオブジェクトは、poemプロパティの値がnil
         XCTAssertNil(supplier.poem)
@@ -64,7 +64,7 @@ class PoemSupplierTests: XCTestCase {
     }
     
     func test_rollbackPrevPoem() {
-        let supplier = PoemSupplier()
+        let supplier = PoemSupplier(deck: Deck(), shuffle: false)
         // 予め2枚めくっておく
         for _ in (1...2) { _ = supplier.draw_next_poem() }
         XCTAssertEqual(supplier.current_index, 2)
