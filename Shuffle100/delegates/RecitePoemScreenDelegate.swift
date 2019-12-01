@@ -23,6 +23,14 @@ extension RecitePoemViewController {
         present(ac, animated: true)
     }
     
+    internal func playButtonTapped() {
+        if playFinished {
+            self.playButtonTappedAfterFinishedReciting?()
+        } else {
+            flipPlaying()
+        }
+    }
+    
     internal func flipPlaying() {
         guard let currentPlayer = currentPlayer else { return }
         if currentPlayer.isPlaying {
@@ -61,6 +69,8 @@ extension RecitePoemViewController {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        player.currentTime = player.duration
+        self.playFinished = true
         self.playerFinishedAction?()
     }
 }
