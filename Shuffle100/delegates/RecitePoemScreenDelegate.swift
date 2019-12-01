@@ -69,8 +69,14 @@ extension RecitePoemViewController {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        player.currentTime = player.duration
+        keepProgressBarFilled(player)
         self.playFinished = true
         self.playerFinishedAction?()
     }
+    
+    fileprivate func keepProgressBarFilled(_ player: AVAudioPlayer) {
+        player.currentTime = player.duration
+    }
+    
+
 }
