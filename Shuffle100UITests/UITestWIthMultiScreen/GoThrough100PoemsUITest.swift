@@ -24,12 +24,23 @@ class GoThrough100PoemsUITest: XCTestCase {
         XCTContext.runActivity(named: "まず序歌へ") { (activiti) in
             gotoRecitePoemScreenFromHome()
         }
-//        sleep(1)
-        XCTContext.runActivity(named: "forwardボタンを押すと、1首めの上の句へ") { (activiti) in
-            app.buttons["forward"].tap()
-            sleep(1)
-            XCTAssert(app.staticTexts["1首め:上の句 (全100首)"].exists)
+
+        for i in (1...20) {
+            XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
+                tapForwardButton()
+                sleep(1)
+                XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
+            }
+            XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
+                
+                tapForwardButton()
+                tapPlayButton()
+                sleep(1)
+                XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
+            }
         }
+
+        
     }
 
     private func gotoRecitePoemScreenFromHome() {
@@ -38,4 +49,14 @@ class GoThrough100PoemsUITest: XCTestCase {
         // then
         XCTAssert(app.staticTexts["序歌"].exists)
     }
+    
+    private func tapForwardButton() {
+        app.buttons["forward"].tap()
+    }
+    
+    private func tapPlayButton() {
+        app.buttons["play"].tap()
+    }
+    
+
 }

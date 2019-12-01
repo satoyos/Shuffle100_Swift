@@ -62,8 +62,27 @@ extension RecitePoemViewController {
         recitePoemView.showAsWaitingFor(.play)
     }
     
+    func slideIntoShimo(number: Int, at counter: Int, total: Int) {
+        let newReciteView = RecitePoemView()
+        view.addSubview(newReciteView)
+        newReciteView.initView(title: "\(counter)首め:下の句 (全\(total)首)")
+        newReciteView.fixLayoutOn(baseView: self.view, offsetX: self.view.frame.width)
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            newReciteView.fixLayoutOn(baseView: self.view, offsetX: 0)
+        }, completion: { finished in
+            self.recitePoemView.removeFromSuperview()
+            self.recitePoemView = newReciteView
+            self.addActionsToButtons()
+            self.reciteShimo(number: number)
+        })
+    }
+    
     private func reciteKami(number: Int) {
         playNumberedPoem(number: number, side: .kami)
     }
-
+    
+    private func reciteShimo(number: Int) {
+        playNumberedPoem(number: number, side: .shimo)
+    }
 }
