@@ -51,6 +51,14 @@ final class RecitePoemCoordinator: Coordinator {
     
     private func reciteKamiFinished(number: Int, counter: Int ) {
         print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。")
+        guard let screen = screen else { return }
+        screen.waitUserActionAfterFineshdReciing()
+        screen.playButtonTappedAfterFinishedReciting = { [weak self] in
+            self?.stepIntoShimoInNormalMode()
+        }
     }
   
+    private func stepIntoShimoInNormalMode() {
+        print("上の句が終わった状態でPlayButtonが押された！")
+    }
 }

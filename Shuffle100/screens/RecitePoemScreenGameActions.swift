@@ -29,6 +29,7 @@ extension RecitePoemViewController {
             $0.volume = settings.volume
             $0.delegate = self
         }
+        self.playFinished = false
     }
 
     fileprivate func startPlayingCurrentPlayer() {
@@ -55,6 +56,10 @@ extension RecitePoemViewController {
         }, completion: { finished in
             self.reciteKami(number: number)
         })
+    }
+    
+    func waitUserActionAfterFineshdReciing() {
+        recitePoemView.showAsWaitingFor(.play)
     }
     
     private func reciteKami(number: Int) {

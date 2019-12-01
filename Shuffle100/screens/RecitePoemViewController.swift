@@ -16,7 +16,9 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var currentPlayer: AVAudioPlayer?
     var timerForPrgoress: Timer!
     var playerFinishedAction: (() -> Void)?
+    var playButtonTappedAfterFinishedReciting: (() -> Void)?
     var singer: Singer!
+    var playFinished: Bool = false
     
     init(settings: Settings = Settings()) {
         self.settings = settings
@@ -70,7 +72,8 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
             self?.exitButtonTapped()
         }
         recitePoemView.playButton.tap = { [weak self] btn in
-            self?.flipPlaying()
+//            self?.flipPlaying()
+            self?.playButtonTapped()
         }
         recitePoemView.rewindButton.tap = { [weak self] btn in
             self?.rewindButtonTapped()
