@@ -10,7 +10,6 @@ import XCTest
 
 class RecitePoemCoordinatorTest: XCTestCase {
     
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -24,9 +23,6 @@ class RecitePoemCoordinatorTest: XCTestCase {
         let coordinator = RecitePoemCoordinator(navigator: nc, settings: Settings())
         let supplier = coordinator.poemSupplier
         XCTAssert(supplier?.draw_next_poem() ?? false)
-        XCTAssertEqual(supplier?.poem.number, 1)
-        
+        XCTAssertNotNil(supplier?.poem.number)
     }
-
-    
 }
