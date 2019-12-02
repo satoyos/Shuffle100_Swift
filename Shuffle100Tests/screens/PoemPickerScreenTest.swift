@@ -145,4 +145,12 @@ class PoemPickerScreenTest: XCTestCase {
     private func firstCell() -> UITableViewCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
     }
+    
+    func test_toolBarExists() {
+        let picker = PoemPickerViewController()
+        let _ = UINavigationController(rootViewController: picker)
+        picker.loadViewIfNeeded()
+        picker.viewWillAppear(false)
+        XCTAssertFalse(picker.navigationController!.isToolbarHidden)
+    }
 }
