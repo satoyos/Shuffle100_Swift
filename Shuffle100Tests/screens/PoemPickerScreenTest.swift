@@ -153,4 +153,16 @@ class PoemPickerScreenTest: XCTestCase {
         picker.viewWillAppear(false)
         XCTAssertFalse(picker.navigationController!.isToolbarHidden)
     }
+    
+    func test_toolBarHas3Buttons() {
+        // given
+        let picker = PoemPickerViewController()
+        let _ = UINavigationController(rootViewController: picker)
+        picker.loadViewIfNeeded()
+        // when
+        picker.viewWillAppear(false)
+        // then
+        let items = picker.navigationController?.toolbar.items
+        XCTAssertEqual(items?.count, 3)
+    }
 }

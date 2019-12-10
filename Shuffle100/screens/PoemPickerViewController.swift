@@ -43,9 +43,10 @@ class PoemPickerViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(false)
         updateBadge()
         navigationController?.isToolbarHidden = false
+        toolBarSetup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,5 +86,12 @@ class PoemPickerViewController: UITableViewController {
         }
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
+    }
+    
+    private func toolBarSetup() {
+        let cancelAllButton = UIBarButtonItem(title: "全て取消", style: .plain, target: self, action: nil)
+        let selectAllButton = UIBarButtonItem(title: "全て洗濯", style: .plain, target: self, action: nil)
+        let selectGroupButton = UIBarButtonItem(title: "まとめて選ぶ", style: .plain, target: self, action: nil)
+        self.toolbarItems = [cancelAllButton, selectGroupButton, selectAllButton]
     }
 }
