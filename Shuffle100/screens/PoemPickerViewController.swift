@@ -40,20 +40,26 @@ class PoemPickerViewController: UITableViewController {
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItem = saveButtonItem()
         searchSetup()
+        toolBarSetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
+        super.viewWillAppear(animated)
         updateBadge()
-        navigationController?.isToolbarHidden = false
-        toolBarSetup()
+//        toolBarSetup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         navigationController?.setToolbarHidden(false, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         // searchControllerがActiveなまま強制的にトップスクリーンに戻った場合でも、
         // Active状態を解除する。
         searchController?.isActive = false
-        navigationController?.isToolbarHidden = true
+//        navigationController?.isToolbarHidden = true
+        navigationController?.setToolbarHidden(true, animated: true)
         super.viewWillDisappear(animated)
     }
     

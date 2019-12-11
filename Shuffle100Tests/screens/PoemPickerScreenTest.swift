@@ -150,7 +150,7 @@ class PoemPickerScreenTest: XCTestCase {
         let picker = PoemPickerViewController()
         let _ = UINavigationController(rootViewController: picker)
         picker.loadViewIfNeeded()
-        picker.viewWillAppear(false)
+        picker.viewDidAppear(false)
         XCTAssertFalse(picker.navigationController!.isToolbarHidden)
     }
     
@@ -160,7 +160,7 @@ class PoemPickerScreenTest: XCTestCase {
         let _ = UINavigationController(rootViewController: picker)
         picker.loadViewIfNeeded()
         // when
-        picker.viewWillAppear(false)
+        picker.viewDidAppear(false)
         // then
         let items = picker.navigationController?.toolbar.items
         XCTAssertEqual(items?.count, 3)
