@@ -46,7 +46,6 @@ class PoemPickerViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateBadge()
-//        toolBarSetup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,7 +57,6 @@ class PoemPickerViewController: UITableViewController {
         // searchControllerがActiveなまま強制的にトップスクリーンに戻った場合でも、
         // Active状態を解除する。
         searchController?.isActive = false
-//        navigationController?.isToolbarHidden = true
         navigationController?.setToolbarHidden(true, animated: true)
         super.viewWillDisappear(animated)
     }
