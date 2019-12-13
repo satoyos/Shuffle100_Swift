@@ -166,6 +166,7 @@ class PoemPickerScreenTest: XCTestCase {
         picker.viewDidAppear(false)
         // then
         let items = picker.navigationController?.toolbar.items
-        XCTAssertEqual(items?.count, 3)
+        let buttons = items?.filter{ $0.target != nil }
+        XCTAssertEqual(buttons?.count, 3)
     }
 }
