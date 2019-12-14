@@ -1,5 +1,5 @@
 //
-//  RecotePoemScreenUITest.swift
+//  RecitePoemScreenUITest.swift
 //  Shuffle100UITests
 //
 //  Created by 里 佳史 on 2019/09/16.
@@ -9,7 +9,7 @@
 import XCTest
 import FontAwesome_swift
 
-class RecotePoemScreenUITest: XCTestCase {
+class RecitePoemScreenUITest: XCTestCase {
     let app = XCUIApplication()
     
     override func setUp() {
