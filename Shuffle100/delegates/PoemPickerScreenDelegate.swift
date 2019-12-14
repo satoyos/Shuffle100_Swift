@@ -28,4 +28,10 @@ extension PoemPickerViewController {
         print("Save Button Tapped!")
     }
 
+    @objc func cancelAllButtonTapped() {
+        print("「全て取消」ボタンが押された！")
+        settings.state100.cancel_all()
+        tableView.reloadData()
+        updateBadge()
+    }
 }

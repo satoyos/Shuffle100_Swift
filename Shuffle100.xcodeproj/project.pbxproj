@@ -33,6 +33,7 @@
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
 		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
+		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
@@ -246,6 +247,7 @@
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
 		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
+		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
 		923D590E2143BB0A000F5E60 /* Shuffle100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuffle100.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59112143BB0A000F5E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923D59132143BB0A000F5E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				923D59332143BB0B000F5E60 /* Info.plist */,
 				9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */,
 				92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */,
+				923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */,
 			);
 			path = Shuffle100UITests;
 			sourceTree = "<group>";
@@ -1062,6 +1065,7 @@
 				9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
 				925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */,
+				923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
