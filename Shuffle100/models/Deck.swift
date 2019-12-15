@@ -78,7 +78,7 @@ class Deck {
     }
     
     func shuffle() {
-        shuffle_with_size(size: Deck.original_poems.count)
+        shuffle_with_size(size: poems.count)
     }
     
     func add_fake_poems() {
