@@ -68,6 +68,14 @@ extension RecitePoemViewController {
         audioPlayerDidFinishPlaying(currentPlayer, successfully: true)
     }
     
+    fileprivate func backToHomeScreen() {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @objc internal func backToHomeButtonTapped() {
+        backToHomeScreen()
+    }
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         keepProgressBarFilled(player)
         self.playFinished = true

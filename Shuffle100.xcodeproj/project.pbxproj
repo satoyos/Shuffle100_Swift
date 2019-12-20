@@ -38,6 +38,7 @@
 		923B594D23ACF606002027B4 /* GameEndViiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* GameEndViiew.swift */; };
 		923B594E23ACF606002027B4 /* GameEndViiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* GameEndViiew.swift */; };
 		923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595023ACF927002027B4 /* RecitePoemViewTests.swift */; };
+		923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595223ACF9DE002027B4 /* GameEndViewTest.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
 		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
@@ -254,6 +255,7 @@
 		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
 		923B594B23ACF606002027B4 /* GameEndViiew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViiew.swift; sourceTree = "<group>"; };
 		923B595023ACF927002027B4 /* RecitePoemViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemViewTests.swift; sourceTree = "<group>"; };
+		923B595223ACF9DE002027B4 /* GameEndViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViewTest.swift; sourceTree = "<group>"; };
 		923D590E2143BB0A000F5E60 /* Shuffle100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuffle100.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59112143BB0A000F5E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923D59132143BB0A000F5E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				923B595023ACF927002027B4 /* RecitePoemViewTests.swift */,
+				923B595223ACF9DE002027B4 /* GameEndViewTest.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
 				927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
+				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,

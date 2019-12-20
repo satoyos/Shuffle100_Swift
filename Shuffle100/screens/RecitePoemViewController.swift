@@ -12,6 +12,7 @@ import Then
 
 class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var recitePoemView: RecitePoemView!
+    var gameEndView: GameEndViiew!
     var settings: Settings!
     var currentPlayer: AVAudioPlayer?
     var timerForPrgoress: Timer!
@@ -65,6 +66,13 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timerForPrgoress.invalidate()
+    }
+    
+    func prepareGameEndView() {
+        gameEndView = GameEndViiew().then{
+            $0.initView(title: "トップに戻る")
+            $0.backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
+        }
     }
     
     func addActionsToButtons() {
