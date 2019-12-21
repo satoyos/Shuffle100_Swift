@@ -70,12 +70,18 @@ final class RecitePoemCoordinator: Coordinator {
     
     private func reciteShimoFinished(number: Int, counter: Int) {
         print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
-        _ = poemSupplier.draw_next_poem()
-        let number = poemSupplier.poem.number
-        let counter = poemSupplier.current_index
-        screen!.playerFinishedAction = { [weak self, number, counter] in
-            self?.reciteKamiFinished(number: number, counter: counter)
+        if poemSupplier.draw_next_poem() {
+            let number = poemSupplier.poem.number
+            let counter = poemSupplier.current_index
+            screen!.playerFinishedAction = { [weak self, number, counter] in
+                self?.reciteKamiFinished(number: number, counter: counter)
+            }
+            screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+        
+        } else {
+            print("歌は全て読み終えた！")
+            
+            // ToDo: 全ての歌を読み終えたら、GameEndViewを表示する処理を書く！
         }
-        screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
 }
