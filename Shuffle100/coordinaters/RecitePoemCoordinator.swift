@@ -40,8 +40,8 @@ final class RecitePoemCoordinator: Coordinator {
     
     private func jokaFinished() {
         print("序歌の読み上げ終了!!")
-        _ = poemSupplier.draw_next_poem()
-        let number = poemSupplier.poem.number
+        guard let firstPoem = poemSupplier.drawNextPoem() else { return }
+        let number = firstPoem.number
         let counter = poemSupplier.current_index
         screen!.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteKamiFinished(number: number, counter: counter)
@@ -70,8 +70,8 @@ final class RecitePoemCoordinator: Coordinator {
     
     private func reciteShimoFinished(number: Int, counter: Int) {
         print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
-        if poemSupplier.draw_next_poem() {
-            let number = poemSupplier.poem.number
+        if let poem = poemSupplier.drawNextPoem() {
+            let number = poem.number
             let counter = poemSupplier.current_index
             screen!.playerFinishedAction = { [weak self, number, counter] in
                 self?.reciteKamiFinished(number: number, counter: counter)
