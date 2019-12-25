@@ -101,4 +101,23 @@ class PoemSupplierTests: XCTestCase {
         // このとき、poemプロパティの中身は空っぽ(nil)
         XCTAssertNil(supplier.poem)
     }
+    
+    func test_new_drawNextPoem() {
+        // given
+        let supplier = PoemSupplier()        
+        // まだ次の歌があるとき、そのPoemを返す
+        let first = supplier.drawNextPoem()
+        XCTAssertNotNil(first)
+        // あと98枚引く
+        for _ in 1...98 {
+            _ = supplier.drawNextPoem()
+        }
+        // 100枚目を引く
+        let at100 = supplier.drawNextPoem()
+        XCTAssertEqual(supplier.current_index, 100)
+        XCTAssertNotNil(at100)
+        // 100枚引いた状態で、もう1枚引く
+        let after100 = supplier.drawNextPoem()
+        XCTAssertNil(after100)
+    }
 }

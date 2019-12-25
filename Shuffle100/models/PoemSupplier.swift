@@ -74,6 +74,17 @@ class PoemSupplier {
         }
     }
     
+    func drawNextPoem() -> Poem? {
+        current_poem = deck.next_poem()
+        switch current_poem {
+        case nil:
+            return nil
+        default:
+            self.fuda_side = .kami
+            return current_poem
+        }
+    }
+    
     func rollback_prev_poem() -> Bool {
         current_poem = deck.rollback_poem()
         switch current_poem {
