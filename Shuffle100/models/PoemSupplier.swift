@@ -63,16 +63,16 @@ class PoemSupplier {
         return fuda_side
     }
     
-    func draw_next_poem() -> Bool {
-        current_poem = deck.next_poem()
-        switch current_poem {
-        case nil:
-            return false
-        default:
-            self.fuda_side = .kami
-            return true
-        }
-    }
+//    func draw_next_poem() -> Bool {
+//        current_poem = deck.next_poem()
+//        switch current_poem {
+//        case nil:
+//            return false
+//        default:
+//            self.fuda_side = .kami
+//            return true
+//        }
+//    }
     
     func drawNextPoem() -> Poem? {
         current_poem = deck.next_poem()

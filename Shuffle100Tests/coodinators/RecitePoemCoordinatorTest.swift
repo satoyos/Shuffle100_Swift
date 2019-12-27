@@ -22,7 +22,6 @@ class RecitePoemCoordinatorTest: XCTestCase {
         let nc = UINavigationController()
         let coordinator = RecitePoemCoordinator(navigator: nc, settings: Settings())
         let supplier = coordinator.poemSupplier
-        XCTAssert(supplier?.draw_next_poem() ?? false)
-        XCTAssertNotNil(supplier?.poem.number)
+        XCTAssertNotNil(supplier?.drawNextPoem())
     }
 }
