@@ -11,16 +11,6 @@ import XCTest
 
 class PoemSupplierTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func test_initWithNoArg() {
         let supplier = PoemSupplier()
         XCTAssertNotNil(supplier)
@@ -33,35 +23,6 @@ class PoemSupplierTests: XCTestCase {
         XCTAssertNotNil(supplier.deck)
         XCTAssertEqual(supplier.current_index, 0)
     }
-    
-//    func test_drawNextPoem() {
-//        let supplier = PoemSupplier(deck: Deck(), shuffle: false)
-//        XCTAssertEqual(supplier.current_index, 0)
-//        // できたてのオブジェクトは、poemプロパティの値がnil
-//        XCTAssertNil(supplier.poem)
-//
-//        // まだ次の歌があるとき、trueを返す
-//        let bool = supplier.draw_next_poem()
-//        XCTAssertTrue(bool)
-//        XCTAssertEqual(supplier.current_index, 1)
-//        XCTAssertEqual(supplier.poem.poet, "天智天皇")
-//
-//        // あと2回めくると、保持する歌の番号は3になる.
-//        for _ in (1...2) {_ = supplier.draw_next_poem()}
-//        XCTAssertEqual(supplier.current_index, 3)
-//        XCTAssertEqual(supplier.poem.number, 3)
-//
-//        // あと97回は問題なくめくれる
-//        for _ in (1...97) { _ = supplier.draw_next_poem() }
-//        XCTAssertEqual(supplier.current_index, 100)
-//
-//        // もう次の歌が無いとき
-//        // falseを返す
-//        let bool2 = supplier.draw_next_poem()
-//        XCTAssertFalse(bool2)
-//        // current_indexは最後の札のまま変わっていない。
-//        XCTAssertEqual(supplier.current_index, 100)
-//    }
     
     func test_rollbackPrevPoem() {
         let supplier = PoemSupplier(deck: Deck(), shuffle: false)
