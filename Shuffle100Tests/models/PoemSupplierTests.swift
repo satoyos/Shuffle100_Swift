@@ -15,25 +15,25 @@ class PoemSupplierTests: XCTestCase {
         let supplier = PoemSupplier()
         XCTAssertNotNil(supplier)
         XCTAssertEqual(supplier.size, 100)
-        XCTAssertEqual(supplier.current_index, 0)
+        XCTAssertEqual(supplier.currentIndex, 0)
     }
     
     func test_initWithArgs() {
         let supplier = PoemSupplier(deck: Deck(), shuffle: true)
         XCTAssertNotNil(supplier.deck)
-        XCTAssertEqual(supplier.current_index, 0)
+        XCTAssertEqual(supplier.currentIndex, 0)
     }
     
     func test_rollbackPrevPoem() {
         let supplier = PoemSupplier(deck: Deck(), shuffle: false)
         // 予め2枚めくっておく
         for _ in (1...2) { _ = supplier.drawNextPoem() }
-        XCTAssertEqual(supplier.current_index, 2)
+        XCTAssertEqual(supplier.currentIndex, 2)
         
-        // 1回ロールバックすると、current_indexおよび歌番号が1になる。
+        // 1回ロールバックすると、currentIndexおよび歌番号が1になる。
         let bool = supplier.rollback_prev_poem()
         XCTAssertTrue(bool)
-        XCTAssertEqual(supplier.current_index, 1)
+        XCTAssertEqual(supplier.currentIndex, 1)
         XCTAssertEqual(supplier.poem.number, 1)
         
         // もう1回ロールバックすると、もう戻る歌が無いため、falseを返す
@@ -75,7 +75,7 @@ class PoemSupplierTests: XCTestCase {
         }
         // 100枚目を引く
         let at100 = supplier.drawNextPoem()
-        XCTAssertEqual(supplier.current_index, 100)
+        XCTAssertEqual(supplier.currentIndex, 100)
         XCTAssertNotNil(at100)
         // 100枚引いた状態で、もう1枚引く
         let after100 = supplier.drawNextPoem()

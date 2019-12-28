@@ -75,7 +75,7 @@ class RecitePoemScreenTest: XCTestCase {
         let supplier = PoemSupplier()
         // when
         let poem = supplier.drawNextPoem()!
-        screen.stepIntoNextPoem(number: poem.number, at: supplier.current_index, total: supplier.size )
+        screen.stepIntoNextPoem(number: poem.number, at: supplier.currentIndex, total: supplier.size )
         sleep(1)
         // then
         XCTAssertEqual(screen.recitePoemView.headerTitle, "1首め:上の句 (全100首)")

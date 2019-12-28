@@ -42,7 +42,7 @@ final class RecitePoemCoordinator: Coordinator {
         print("序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
         let number = firstPoem.number
-        let counter = poemSupplier.current_index
+        let counter = poemSupplier.currentIndex
         screen!.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteKamiFinished(number: number, counter: counter)
         }
@@ -61,7 +61,7 @@ final class RecitePoemCoordinator: Coordinator {
     private func stepIntoShimoInNormalMode() {
         print("上の句が終わった状態でPlayButtonが押された！")
         let number = poemSupplier.poem.number
-        let counter = poemSupplier.current_index
+        let counter = poemSupplier.currentIndex
         screen!.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteShimoFinished(number: number, counter: counter)
         }
@@ -72,7 +72,7 @@ final class RecitePoemCoordinator: Coordinator {
         print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
         if let poem = poemSupplier.drawNextPoem() {
             let number = poem.number
-            let counter = poemSupplier.current_index
+            let counter = poemSupplier.currentIndex
             screen!.playerFinishedAction = { [weak self, number, counter] in
                 self?.reciteKamiFinished(number: number, counter: counter)
             }
