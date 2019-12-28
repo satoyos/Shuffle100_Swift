@@ -35,7 +35,7 @@ class PoemSupplier {
         }
     }
     
-    var current_index: Int {
+    var currentIndex: Int {
         get {
             return deck.counter
         }
