@@ -98,6 +98,7 @@
 		92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
 		92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
 		92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */; };
+		9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */; };
 		927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */; };
 		927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */; };
 		927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
@@ -287,6 +288,7 @@
 		92737DD72385677F007B5FAD /* RecitePoemCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenGameActions.swift; sourceTree = "<group>"; };
 		92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoThrough100PoemsUITest.swift; sourceTree = "<group>"; };
+		9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeomRecitedUITest.swift; sourceTree = "<group>"; };
 		927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReciteModeUITest.swift; sourceTree = "<group>"; };
 		927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDefaultTest.swift; sourceTree = "<group>"; };
 		927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffled.swift"; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */,
 				9258D1E822DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift */,
 				92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */,
+				9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
+				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92AF24A5229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
