@@ -60,7 +60,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        recitePoemView.fixLayoutOn(baseView: self.view)
+        recitePoemView?.fixLayoutOn(baseView: self.view)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
