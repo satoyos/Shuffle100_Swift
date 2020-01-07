@@ -10,6 +10,8 @@ import UIKit
 
 class GameEndViiew: UIView {
     let backToHomeButton = UIButton()
+    let headerContainer = UIView()
+    var headerTitle: String?
 
     func fixLayoutOn(baseView: UIView) {
         self.snp.remakeConstraints{(make) -> Void in
@@ -31,7 +33,10 @@ class GameEndViiew: UIView {
     
     func initView(title: String) {
         self.backgroundColor = backgroundColor()
+        self.headerTitle = title
+        backToHomeButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
         self.addSubview(backToHomeButton)
+        layoutHeaderContainer()
         layoutBackToHomeButton()
     }
     
@@ -40,6 +45,40 @@ class GameEndViiew: UIView {
         backToHomeButton.sizeToFit()
         backToHomeButton.snp.makeConstraints{(make) -> Void in
             make.center.equalTo(self)
+        }
+    }
+    
+    private func layoutHeaderContainer() {
+        self.addSubview(headerContainer)
+        headerContainer.backgroundColor = StandardColor.barTintColor
+        headerContainer.snp.makeConstraints{(make) -> Void in
+            make.width.equalToSuperview()
+            make.height.equalTo(40)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+        }
+        layoutHeaderTitle()
+    }
+    
+    private func layoutHeaderTitle() {
+        let titleLabel = UILabel().then {
+            $0.text = headerTitle
+            $0.textAlignment = .center
+            $0.sizeToFit()
+            $0.backgroundColor = .clear
+            $0.textColor = textColor()
+        }
+        headerContainer.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints{(make) -> Void in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    fileprivate func textColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor.label
+        } else {
+            return .black
         }
     }
 }

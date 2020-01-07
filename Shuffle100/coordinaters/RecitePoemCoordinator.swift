@@ -80,8 +80,7 @@ final class RecitePoemCoordinator: Coordinator {
         
         } else {
             print("歌は全て読み終えた！")
-            
-            // ToDo: 全ての歌を読み終えたら、GameEndViewを表示する処理を書く！
+            screen!.stepIntoGameEnd()
         }
     }
 }

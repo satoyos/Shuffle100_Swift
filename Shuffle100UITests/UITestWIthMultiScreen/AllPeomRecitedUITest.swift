@@ -23,7 +23,36 @@ class AllPeomRecitedUITest: XCTestCase {
     }
 
     func test_GameEndViewAppears() {
-        
+        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
+            // given
+            gotoPoemPickerScreenTest()
+            sleep(1)
+            // when
+            app.buttons["全て取消"].tap()
+            app.tables.cells["001"].tap()
+            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+            // then
+            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
+        }
+        XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
+            // given
+            gotoRecitePoemScreenFromHome()
+            // when
+            tapForwardButton()
+            sleep(1)
+            tapForwardButton()
+            sleep(1)
+            tapPlayButton()
+            sleep(1)
+            // then
+            XCTAssert(app.staticTexts["1首め:下の句 (全1首)"].exists)
+        }
+        XCTContext.runActivity(named: "最後の歌を読み終えると、「試合終了」画面が現れる") { (activity) in
+            // when
+            tapForwardButton()
+            sleep(1)
+            XCTAssert(app.staticTexts["試合終了"].exists)
+        }
     }
 
     
@@ -33,4 +62,20 @@ class AllPeomRecitedUITest: XCTestCase {
             XCTAssert(app.navigationBars["歌を選ぶ"].exists)
         }
     }
+    
+    private func gotoRecitePoemScreenFromHome() {
+        // when
+        app.tables.cells["GameStartCell"].tap()
+        // then
+        XCTAssert(app.staticTexts["序歌"].exists)
+    }
+    
+    private func tapForwardButton() {
+        app.buttons["forward"].tap()
+    }
+    
+    private func tapPlayButton() {
+        app.buttons["play"].tap()
+    }
+    
 }

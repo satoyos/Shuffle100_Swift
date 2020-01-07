@@ -78,6 +78,20 @@ extension RecitePoemViewController {
         })
     }
     
+    func stepIntoGameEnd() {
+        UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
+            let gameEndView = GameEndViiew()
+            self.recitePoemView.removeFromSuperview()
+            UIView.performWithoutAnimation {
+                self.view.addSubview(gameEndView)
+                gameEndView.initView(title: "試合終了")
+                gameEndView.fixLayoutOn(baseView: self.view)
+            }
+            self.recitePoemView = nil
+            self.currentPlayer = nil
+        }, completion: nil)
+    }
+    
     private func reciteKami(number: Int) {
         playNumberedPoem(number: number, side: .kami)
     }
