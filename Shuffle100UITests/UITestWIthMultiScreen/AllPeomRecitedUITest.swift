@@ -8,7 +8,7 @@
 
 import XCTest
 
-class AllPeomRecitedUITest: XCTestCase {
+class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils {
 
    let app = XCUIApplication()
     
@@ -25,7 +25,7 @@ class AllPeomRecitedUITest: XCTestCase {
     func test_GameEndViewAppears() {
         XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
             // given
-            gotoPoemPickerScreenTest()
+            gotoPoemPickerScreen(app)
             sleep(1)
             // when
             app.buttons["全て取消"].tap()
@@ -55,14 +55,6 @@ class AllPeomRecitedUITest: XCTestCase {
         }
     }
 
-    
-    private func gotoPoemPickerScreenTest() {
-        XCTContext.runActivity(named: "「取り札を用意する歌」セルをタップすると、歌選択画面に遷移する") { (activity) in
-            app.tables/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-            XCTAssert(app.navigationBars["歌を選ぶ"].exists)
-        }
-    }
-    
     private func gotoRecitePoemScreenFromHome() {
         // when
         app.tables.cells["GameStartCell"].tap()
