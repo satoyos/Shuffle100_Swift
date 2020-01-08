@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PoemPickerScreenUITest: XCTestCase {
+class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
@@ -25,7 +25,7 @@ class PoemPickerScreenUITest: XCTestCase {
     func test_cancelAllAndSelectAll() {
         XCTContext.runActivity(named: "「全て取消」ボタンを押すと、選ばれている歌が0首になる") { activity in
             // given
-            gotoPoemPickerScreen()
+            gotoPoemPickerScreen(app)
             // when
             sleep(1)
             app.buttons["全て取消"].tap()
@@ -35,7 +35,7 @@ class PoemPickerScreenUITest: XCTestCase {
         }
         XCTContext.runActivity(named: "そこから「全て選択」ボタンを押すと、選ばれている歌が100首になる") { activity in
             // given
-            gotoPoemPickerScreen()
+            gotoPoemPickerScreen(app)
             // when
             sleep(1)
             app.buttons["全て選択"].tap()
@@ -44,12 +44,4 @@ class PoemPickerScreenUITest: XCTestCase {
             XCTAssertTrue(app.cells.staticTexts["100首"].exists)
         }
     }
-    
-    private func gotoPoemPickerScreen() {
-        // when
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        // then
-        XCTAssert(app.navigationBars["歌を選ぶ"].exists)
-    }
-
 }
