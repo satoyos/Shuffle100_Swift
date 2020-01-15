@@ -8,7 +8,7 @@
 
 import XCTest
 
-class GoThrough100PoemsUITest: XCTestCase {
+class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils {
     var app = XCUIApplication()
     
     override func setUp() {
@@ -22,7 +22,7 @@ class GoThrough100PoemsUITest: XCTestCase {
 
     func test_goThroghWithSkipForward() {
         XCTContext.runActivity(named: "まず序歌へ") { (activiti) in
-            gotoRecitePoemScreenFromHome()
+            gotoRecitePoemScreen(app)
         }
 
         for i in (1...20) {
@@ -41,13 +41,6 @@ class GoThrough100PoemsUITest: XCTestCase {
         }
 
         
-    }
-
-    private func gotoRecitePoemScreenFromHome() {
-        // when
-        app.tables.cells["GameStartCell"].tap()
-        // then
-        XCTAssert(app.staticTexts["序歌"].exists)
     }
     
     private func tapForwardButton() {
