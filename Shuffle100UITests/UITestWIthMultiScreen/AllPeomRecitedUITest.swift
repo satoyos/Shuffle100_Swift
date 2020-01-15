@@ -36,7 +36,7 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils {
         }
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
-            gotoRecitePoemScreenFromHome()
+            gotoRecitePoemScreen(app)
             // when
             tapForwardButton()
             sleep(1)
@@ -55,13 +55,6 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils {
         }
     }
 
-    private func gotoRecitePoemScreenFromHome() {
-        // when
-        app.tables.cells["GameStartCell"].tap()
-        // then
-        XCTAssert(app.staticTexts["序歌"].exists)
-    }
-    
     private func tapForwardButton() {
         app.buttons["forward"].tap()
     }

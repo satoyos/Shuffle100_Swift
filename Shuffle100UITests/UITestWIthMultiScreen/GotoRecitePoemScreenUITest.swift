@@ -8,7 +8,7 @@
 
 import XCTest
 
-class GotoRecitePoemScreenUITest: XCTestCase {
+class GotoRecitePoemScreenUITest: XCTestCase, HomeScreenUITestUtils {
     var app = XCUIApplication()
 
     override func setUp() {
@@ -21,12 +21,12 @@ class GotoRecitePoemScreenUITest: XCTestCase {
     }
 
     func test_RecitePoemScreenAppearWhenGameStartCellTapped() {
-        gotoRecitePoemScreenFromHome()
+        gotoRecitePoemScreen(app)
     }
     
     func test_backToHomeScreenUsingExitButton() {
         // given
-        gotoRecitePoemScreenFromHome()
+        gotoRecitePoemScreen(app)
         
         XCTContext.runActivity(named: "Exitボタンを押すと、確認のダイアログが現れる") { (activiti) in
             // when
@@ -43,12 +43,5 @@ class GotoRecitePoemScreenUITest: XCTestCase {
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
         }
-    }
-    
-    private func gotoRecitePoemScreenFromHome() {
-        // when
-        app.tables.cells["GameStartCell"].tap()
-        // then
-        XCTAssert(app.staticTexts["序歌"].exists)
     }
 }
