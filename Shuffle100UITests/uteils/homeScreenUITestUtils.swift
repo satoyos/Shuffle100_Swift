@@ -1,5 +1,5 @@
 //
-//  homeScreenUITestUtils.swift
+//  HomeScreenUITestUtils.swift
 //  Shuffle100UITests
 //
 //  Created by Yoshifumi Sato on 2020/01/08.
