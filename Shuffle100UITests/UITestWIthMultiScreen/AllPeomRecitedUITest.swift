@@ -8,7 +8,7 @@
 
 import XCTest
 
-class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils {
+class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils {
 
    let app = XCUIApplication()
     
@@ -38,29 +38,20 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils {
             // given
             gotoRecitePoemScreen(app)
             // when
-            tapForwardButton()
+            tapForwardButton(app)
             sleep(1)
-            tapForwardButton()
+            tapForwardButton(app)
             sleep(1)
-            tapPlayButton()
+            tapPlayButton(app)
             sleep(1)
             // then
             XCTAssert(app.staticTexts["1首め:下の句 (全1首)"].exists)
         }
         XCTContext.runActivity(named: "最後の歌を読み終えると、「試合終了」画面が現れる") { (activity) in
             // when
-            tapForwardButton()
+            tapForwardButton(app)
             sleep(1)
             XCTAssert(app.staticTexts["試合終了"].exists)
         }
     }
-
-    private func tapForwardButton() {
-        app.buttons["forward"].tap()
-    }
-    
-    private func tapPlayButton() {
-        app.buttons["play"].tap()
-    }
-    
 }
