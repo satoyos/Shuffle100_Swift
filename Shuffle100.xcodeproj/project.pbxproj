@@ -170,6 +170,7 @@
 		92C87DDD22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92C87DDE22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92C87DDF22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
+		92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */; };
 		92CE520B2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
 		92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
 		92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */; };
@@ -323,6 +324,7 @@
 		92C87DD622E88D5400569D15 /* Singers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Singers.json; sourceTree = "<group>"; };
 		92C87DDA22E88E6900569D15 /* SingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTests.swift; sourceTree = "<group>"; };
 		92C87DDC22E88F8600569D15 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
+		92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
@@ -610,6 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */,
+				92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */,
 			);
 			path = uteils;
 			sourceTree = "<group>";
@@ -1058,6 +1061,7 @@
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
 				92FC39552288370D00791053 /* GameSettings.swift in Sources */,
+				92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
 				9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */,
