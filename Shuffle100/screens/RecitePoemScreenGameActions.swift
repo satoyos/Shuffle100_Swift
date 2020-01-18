@@ -80,7 +80,11 @@ extension RecitePoemViewController {
     
     func stepIntoGameEnd() {
         UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
-            let gameEndView = GameEndViiew()
+            let gameEndView = GameEndViiew().then {
+                $0.backToHomeButtonAction = { [weak self] in
+                    self?.backToHomeScreen()
+                }
+            }
             self.recitePoemView.removeFromSuperview()
             UIView.performWithoutAnimation {
                 self.view.addSubview(gameEndView)

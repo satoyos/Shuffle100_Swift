@@ -65,13 +65,8 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        timerForPrgoress.invalidate()
-    }
-    
-    func prepareGameEndView() {
-        gameEndView = GameEndViiew().then{
-            $0.initView(title: "トップに戻る")
-            $0.backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
+        if let timerForPrgoress = self.timerForPrgoress {
+            timerForPrgoress.invalidate()
         }
     }
     

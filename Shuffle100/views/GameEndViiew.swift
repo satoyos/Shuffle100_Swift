@@ -12,6 +12,7 @@ class GameEndViiew: UIView {
     let backToHomeButton = UIButton()
     let headerContainer = UIView()
     var headerTitle: String?
+    var backToHomeButtonAction: ( ()->Void )?
 
     func fixLayoutOn(baseView: UIView) {
         self.snp.remakeConstraints{(make) -> Void in
@@ -38,6 +39,7 @@ class GameEndViiew: UIView {
         self.addSubview(backToHomeButton)
         layoutHeaderContainer()
         layoutBackToHomeButton()
+        backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
     }
     
     private func layoutBackToHomeButton() {
@@ -80,5 +82,14 @@ class GameEndViiew: UIView {
         } else {
             return .black
         }
+    }
+    
+    @objc func backToHomeButtonTapped() {
+//        print("GameEndViewで定義されたdelegateメソッドが呼ばれた！")
+        guard let action = backToHomeButtonAction else {
+            print("No action is set to this button!")
+            return
+        }
+        action()
     }
 }
