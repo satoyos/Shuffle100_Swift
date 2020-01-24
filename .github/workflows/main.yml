@@ -13,5 +13,7 @@ jobs:
       run: sudo xcode-select -s '/Applications/Xcode_11.3.app/Contents/Developer'
     - name: Show Xcode version
       run: xcodebuild -version
+    - name: Install CocoaPods
+      run: pod install 
     - name: Build # シミュレーター向けにビルド
       run: xcodebuild -sdk iphonesimulator -configuration Debug build 
