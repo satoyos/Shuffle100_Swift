@@ -57,4 +57,16 @@ class SelectModeScreenTest: XCTestCase {
         XCTAssertEqual(screen.settings.reciteMode, .beginner)
     }
 
+    func test_backgroundColorIsSetCorrectly() {
+        // given
+        let screen = SelectModeViewController()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        if #available(iOS 13.0, *) {
+            XCTAssertEqual(screen.view.backgroundColor, UIColor.systemBackground)
+        } else {
+            XCTAssertEqual(screen.view.backgroundColor, UIColor.white)
+        }
+    }
 }

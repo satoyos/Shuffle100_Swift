@@ -36,7 +36,7 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         navigationItem.title = screenTitle
         navigationItem.prompt = "百首読み上げ"
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = StandardColor.backgroundColor
         self.view.addSubview(picker)
         initPicker()
     }
