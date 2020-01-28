@@ -1,5 +1,5 @@
 //
-//  RecitePoemCoordinator.swift
+//  NormalModeCoordinator.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2019/08/07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RecitePoemCoordinator: Coordinator {
+final class NormalModeCoordinator: Coordinator {
     private let navigator: UINavigationController
     private var settings: Settings
     private var screen: RecitePoemViewController?
