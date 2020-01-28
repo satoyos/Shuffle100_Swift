@@ -6,12 +6,11 @@
 //  Copyright © 2019 里 佳史. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
-    var recitePoemCoordinator: RecitePoemCoordinator!
+    var recitePoemCoordinator: NormalModeCoordinator!
 
     func start() {
         let settings = Settings()
@@ -61,7 +60,7 @@ class MainCoordinator: Coordinator {
     }
 
     private func startGame(settings: Settings) {
-        let coordinator = RecitePoemCoordinator(navigator: navigator, settings: settings)
+        let coordinator = NormalModeCoordinator(navigator: navigator, settings: settings)
         coordinator.start()
         self.recitePoemCoordinator = coordinator
     }

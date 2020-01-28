@@ -1,5 +1,5 @@
 //
-//  RecitePoemCoordinatorTest.swift
+//  NormalModeCoordinatorTest.swift
 //  Shuffle100Tests
 //
 //  Created by 里 佳史 on 2019/11/20.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RecitePoemCoordinatorTest: XCTestCase {
+class NormalModeCoordinatorTest: XCTestCase {
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,7 +20,7 @@ class RecitePoemCoordinatorTest: XCTestCase {
 
     func test_canRetrievePoem() {
         let nc = UINavigationController()
-        let coordinator = RecitePoemCoordinator(navigator: nc, settings: Settings())
+        let coordinator = NormalModeCoordinator(navigator: nc, settings: Settings())
         let supplier = coordinator.poemSupplier
         XCTAssertNotNil(supplier?.drawNextPoem())
     }
