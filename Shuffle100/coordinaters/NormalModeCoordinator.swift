@@ -10,18 +10,18 @@ import UIKit
 
 final class NormalModeCoordinator: RecitePoemCoordinator {
 
-    override internal func jokaFinished() {
-        print("序歌の読み上げ終了!!")
-        guard let firstPoem = poemSupplier.drawNextPoem() else { return }
-        let number = firstPoem.number
-        let counter = poemSupplier.currentIndex
-        screen!.playerFinishedAction = { [weak self, number, counter] in
-            self?.reciteKamiFinished(number: number, counter: counter)
-        }
-        screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
-    }
+//    override internal func jokaFinished() {
+//        print("序歌の読み上げ終了!!")
+//        guard let firstPoem = poemSupplier.drawNextPoem() else { return }
+//        let number = firstPoem.number
+//        let counter = poemSupplier.currentIndex
+//        screen!.playerFinishedAction = { [weak self, number, counter] in
+//            self?.reciteKamiFinished(number: number, counter: counter)
+//        }
+//        screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+//    }
     
-    private func reciteKamiFinished(number: Int, counter: Int ) {
+    override internal func reciteKamiFinished(number: Int, counter: Int ) {
         print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。")
         guard let screen = screen else { return }
         screen.waitUserActionAfterFineshdReciing()
