@@ -471,7 +471,7 @@
 		923D59302143BB0B000F5E60 /* Shuffle100UITests */ = {
 			isa = PBXGroup;
 			children = (
-				92BC8D4C23C6102800F0033F /* uteils */,
+				92BC8D4C23C6102800F0033F /* utils */,
 				928450D322E06B4B00D12CA7 /* lib */,
 				927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */,
 				923D59332143BB0B000F5E60 /* Info.plist */,
@@ -613,13 +613,13 @@
 			path = audioPlayers;
 			sourceTree = "<group>";
 		};
-		92BC8D4C23C6102800F0033F /* uteils */ = {
+		92BC8D4C23C6102800F0033F /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */,
 				92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */,
 			);
-			path = uteils;
+			path = utils;
 			sourceTree = "<group>";
 		};
 		92CE52052168D45D00538E01 /* dataSources */ = {

@@ -27,4 +27,23 @@ extension HomeScreenUITestUtils {
         // then
         XCTAssert(app.staticTexts["序歌"].exists)
     }
+    
+    
+    
+    func gotoSelectModeScreen(_ app: XCUIApplication) {
+        // when
+        app.tables.staticTexts["読み上げモード"].tap()
+        // then
+        XCTAssert(app.navigationBars["読み上げモードを選ぶ"].exists)
+    }
+    
+
+    
+    func gotoSelectSingerScreen(_ app: XCUIApplication) {
+        // when
+        app.tables.staticTexts["読手"].tap()
+        // then
+        XCTAssert(app.navigationBars["読手を選ぶ"].exists)
+    }
+    
 }
