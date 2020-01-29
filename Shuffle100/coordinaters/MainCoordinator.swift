@@ -10,7 +10,7 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
-    var recitePoemCoordinator: NormalModeCoordinator!
+    var recitePoemCoordinator: RecitePoemCoordinator!
 
     func start() {
         let settings = Settings()
@@ -60,8 +60,18 @@ class MainCoordinator: Coordinator {
     }
 
     private func startGame(settings: Settings) {
-        let coordinator = NormalModeCoordinator(navigator: navigator, settings: settings)
-        coordinator.start()
+        var gameDriver: RecitePoemCoordinator!
+        switch settings.mode.reciteMode {
+        case .normal:
+            gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings)
+            gameDriver.start()
+        case .nonstop:
+            gameDriver = NonsotpModeCoordinator(navigator: navigator, settings: settings)
+            gameDriver.start()
+        default:
+            assertionFailure("Not implemented yet!!")
+        }
+        guard let coordinator = gameDriver else { return }
         self.recitePoemCoordinator = coordinator
     }
     

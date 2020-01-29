@@ -1,15 +1,18 @@
 //
-//  NormalModeCoordinator.swift
+//  NonsotpModeCoordinator.swift
 //  Shuffle100
 //
-//  Created by 里 佳史 on 2019/08/07.
-//  Copyright © 2019 里 佳史. All rights reserved.
+//  Created by Yoshifumi Sato on 2020/01/29.
+//  Copyright © 2020 里 佳史. All rights reserved.
 //
 
 import UIKit
 
-final class NormalModeCoordinator: RecitePoemCoordinator {
+class NonsotpModeCoordinator: RecitePoemCoordinator {
 
+    //
+    // 問題なければ、このメソッドはSuper classいに移す！
+    //
     override internal func jokaFinished() {
         print("序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
@@ -22,16 +25,12 @@ final class NormalModeCoordinator: RecitePoemCoordinator {
     }
     
     private func reciteKamiFinished(number: Int, counter: Int ) {
-        print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。")
-        guard let screen = screen else { return }
-        screen.waitUserActionAfterFineshdReciing()
-        screen.playButtonTappedAfterFinishedReciting = { [weak self] in
-            self?.stepIntoShimoInNormalMode()
-        }
+        print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(ノンストップ)")
+        stepIntoShimoInNonstopMode()
     }
-  
-    private func stepIntoShimoInNormalMode() {
-        print("上の句が終わった状態でPlayButtonが押された！")
+    
+    private func stepIntoShimoInNonstopMode() {
+        print("ノンストップモードで下の句に突入！")
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen!.playerFinishedAction = { [weak self, number, counter] in
