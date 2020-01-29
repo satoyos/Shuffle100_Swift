@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol GameDriver {
-    func jokaFinished() -> Void
-    func reciteKamiFinished(number: Int, counter: Int) -> Void
-    
-}
-
 class RecitePoemCoordinator: Coordinator{
     private let navigator: UINavigationController
     private var settings: Settings
