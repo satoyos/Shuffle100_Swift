@@ -742,6 +742,7 @@
 				923D59292143BB0B000F5E60 /* Sources */,
 				923D592A2143BB0B000F5E60 /* Frameworks */,
 				923D592B2143BB0B000F5E60 /* Resources */,
+				031AC0CB018034914CECDE0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -842,6 +843,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		031AC0CB018034914CECDE0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		22EAC5839B794BD057C033D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

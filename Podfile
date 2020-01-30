@@ -22,7 +22,14 @@ target 'Shuffle100' do
 
   target 'Shuffle100UITests' do
     inherit! :search_paths
-    # Pods for testing
+    # belows are introduced to avoid bug of Cocoapods,
+    # so that UItest can be executed on Real Device
+    pod 'Reveal-SDK', :configurations => ['Debug']
+    pod 'SnapKit', '~> 5.0.0', :inhibit_warnings => true
+    pod 'BBBadgeBarButtonItem', git: 'https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git'
+    pod 'Then'
+    pod 'DSFloatingButton'
+    pod 'FontAwesome.swift'
   end
 
 end
