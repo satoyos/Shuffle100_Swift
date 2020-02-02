@@ -48,6 +48,8 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(recitePoemView)
         recitePoemView.initView(title: "序歌")
         addActionsToButtons()
+        
+        setNotificationsAboutBackgound()
     }
     
     fileprivate func fetchSinger(id: String) -> Singer? {
@@ -86,4 +88,12 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    private func setNotificationsAboutBackgound() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(RecitePoemViewController.onWillResignActive(_:)),
+            name: UIApplication.willResignActiveNotification,
+            object: nil
+        )
+    }
 }
