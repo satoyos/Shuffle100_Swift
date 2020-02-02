@@ -81,4 +81,12 @@ extension RecitePoemViewController {
     fileprivate func keepProgressBarFilled(_ player: AVAudioPlayer) {
         player.currentTime = player.duration
     }
+    
+    @objc func onWillResignActive(_ notification: Notification?) {
+        print("-- バックグラウンドに【これから入ります】 (Notificationで検出)")
+        if settings.reciteMode != .nonstop {
+            print("// ノンストップではないので、読み上げを止めます。")
+            pauseCurrentPlayer()
+        }
+    }
 }
