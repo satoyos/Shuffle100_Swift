@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 extension RecitePoemViewController {
     internal func exitButtonTapped() {
@@ -87,6 +88,41 @@ extension RecitePoemViewController {
         if settings.reciteMode != .nonstop {
             print("// ノンストップではないので、読み上げを止めます。")
             pauseCurrentPlayer()
+        } else {
+            setupRemoteTransportControls()
+//            updateNowPlayingInfo()
         }
+    }
+    
+    private func setupRemoteTransportControls() {
+        // Get the shared MPRemoteCommandCenter
+        let commandCenter = MPRemoteCommandCenter.shared()
+
+        // Add handler for Play Command
+        commandCenter.playCommand.addTarget { [unowned self] event -> MPRemoteCommandHandlerStatus in
+            guard let currentPlayer = self.currentPlayer else { return .commandFailed}
+            currentPlayer.play()
+            return .success
+        }
+
+        // Add handler for Pause Command
+        commandCenter.pauseCommand.addTarget { [unowned self] event -> MPRemoteCommandHandlerStatus in
+            guard let currentPlayer = self.currentPlayer else { return .commandFailed}
+            currentPlayer.pause()
+            return .success
+        }
+    }
+    
+    internal func updateNowPlayingInfo(title: String) {
+//        guard let player = self.currentPlayer else { return }
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = title
+
+//        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
+        
+
+        // Set the metadata
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 }

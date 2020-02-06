@@ -11,12 +11,12 @@ import UIKit
 extension RecitePoemViewController {
     func playJoka() {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
-        startPlayingCurrentPlayer()
+        startPlayingCurrentPlayer(number: nil, side: nil, count: nil )
     }
     
-    func playNumberedPoem(number: Int, side: Side) {
+    func playNumberedPoem(number: Int, side: Side, count: Int) {
         currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
-        startPlayingCurrentPlayer()
+        startPlayingCurrentPlayer(number: number, side: side, count: count)
     }
 
     fileprivate func setTimerForProgressView() {
@@ -32,11 +32,32 @@ extension RecitePoemViewController {
         self.playFinished = false
     }
 
-    fileprivate func startPlayingCurrentPlayer() {
+    fileprivate func startPlayingCurrentPlayer(number: Int?, side: Side?, count: Int? ) {
+        updateNowPlayingInfoIfNeeded(count: count, side: side)
         prepareCurrentPlayer()
         playCurrentPlayer()
         setTimerForProgressView()
     }
+    
+    private func updateNowPlayingInfoIfNeeded(count: Int?, side: Side?) {
+        guard settings.reciteMode == .nonstop else { return }
+        
+        var title: String!
+        if let count = count {
+            guard let side = side else { return }
+            var sideStr = ""
+            if side == .kami {
+                sideStr = "上"
+            } else {
+                sideStr = "下"
+            }
+            title = "\(count)首目 (\(sideStr)の句)"
+        } else {
+            title = "序歌"
+        }
+        updateNowPlayingInfo(title: title)
+    }
+    
     
     @objc func updateAudioProgressView() {
         guard let player = currentPlayer else { return }
@@ -54,7 +75,7 @@ extension RecitePoemViewController {
             self.recitePoemView = newReciteView
             self.addActionsToButtons()
         }, completion: { finished in
-            self.reciteKami(number: number)
+            self.reciteKami(number: number, count: counter)
         })
     }
     
@@ -74,7 +95,7 @@ extension RecitePoemViewController {
             self.recitePoemView.removeFromSuperview()
             self.recitePoemView = newReciteView
             self.addActionsToButtons()
-            self.reciteShimo(number: number)
+            self.reciteShimo(number: number, count: counter)
         })
     }
     
@@ -96,11 +117,11 @@ extension RecitePoemViewController {
         }, completion: nil)
     }
     
-    private func reciteKami(number: Int) {
-        playNumberedPoem(number: number, side: .kami)
+    private func reciteKami(number: Int, count: Int) {
+        playNumberedPoem(number: number, side: .kami, count: count)
     }
     
-    private func reciteShimo(number: Int) {
-        playNumberedPoem(number: number, side: .shimo)
+    private func reciteShimo(number: Int, count: Int) {
+        playNumberedPoem(number: number, side: .shimo, count: count)
     }
 }
