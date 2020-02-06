@@ -39,6 +39,8 @@ class MainCoordinator: Coordinator {
         homeScreen.startGameAction = {[weak self, unowned settings] in
             self?.startGame(settings: settings)
         }
+        
+        AudioPlayerFactory.shared.setupAudioSession()
     }
     
     private func setUpNavigationController() {

@@ -7,10 +7,31 @@
 //
 
 import Foundation
+import UIKit
 import AVFoundation
 
 class AudioPlayerFactory {
     static let shared = AudioPlayerFactory()
+    
+    func setupAudioSession() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            // CategoryをPlaybackにする
+            try session.setCategory(.playback, mode: .default)
+        } catch  {
+            // 予期しない場合
+            fatalError("Category設定失敗")
+        }
+        // session有効化
+        do {
+            try session.setActive(true)
+        } catch {
+            // 予期しない場合
+            fatalError("Session有効化失敗")
+        }
+    }
     
     func prepareOpeningPlayer(folder: String) -> AVAudioPlayer {
         let player: AVAudioPlayer

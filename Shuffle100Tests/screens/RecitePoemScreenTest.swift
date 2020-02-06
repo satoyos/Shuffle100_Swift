@@ -66,7 +66,7 @@ class RecitePoemScreenTest: XCTestCase {
     }
     
     func test_playNumberedPoemCauseNoError() {
-        XCTAssertNoThrow(screen.playNumberedPoem(number: 1, side: .shimo))
+        XCTAssertNoThrow(screen.playNumberedPoem(number: 1, side: .shimo, count: 1))
     }
     
     func test_stepIntoNextPoemFlipView() {
