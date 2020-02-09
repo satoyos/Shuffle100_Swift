@@ -23,7 +23,10 @@ class RecitePoemCoordinator: Coordinator{
     
     func start() {
         let screen = RecitePoemViewController(settings: settings)
-
+        screen.backToPreviousAction = { [weak self] in
+            self?.rewindToPrevious()
+        }
+        
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
         CATransaction.begin()
@@ -66,6 +69,15 @@ class RecitePoemCoordinator: Coordinator{
         } else {
             print("歌は全て読み終えた！")
             screen!.stepIntoGameEnd()
+        }
+    }
+    
+    internal func rewindToPrevious() {
+        print("!! 歌の読み上げ冒頭でrewindボタンが押されたので、一つ前の画面に戻す！")
+        if poemSupplier.currentIndex == 0 {
+            navigator.popViewController(animated: true)
+        } else {
+            assertionFailure("1首目以降の画面戻しは未実装")
         }
     }
 }
