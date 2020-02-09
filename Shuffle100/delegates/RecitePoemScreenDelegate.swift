@@ -90,7 +90,6 @@ extension RecitePoemViewController {
             pauseCurrentPlayer()
         } else {
             setupRemoteTransportControls()
-//            updateNowPlayingInfo()
         }
     }
     
@@ -114,14 +113,12 @@ extension RecitePoemViewController {
     }
     
     internal func updateNowPlayingInfo(title: String) {
-//        guard let player = self.currentPlayer else { return }
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
 
-//        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
         
-
         // Set the metadata
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
