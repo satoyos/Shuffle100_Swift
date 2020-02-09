@@ -55,9 +55,13 @@ extension RecitePoemViewController {
     
     internal func rewindButtonTapped() {
         guard let currentPlayer = currentPlayer else { return }
-        currentPlayer.currentTime = 0.0
-        pauseCurrentPlayer()
-        updateAudioProgressView()
+        if currentPlayer.currentTime > 0.0 {
+            currentPlayer.currentTime = 0.0
+            pauseCurrentPlayer()
+            updateAudioProgressView()
+        } else {
+            self.backToPreviousAction?()
+        }
     }
     
     internal func forwardButtonTapped() {

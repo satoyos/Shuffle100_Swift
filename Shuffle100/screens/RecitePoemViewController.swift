@@ -18,6 +18,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var timerForPrgoress: Timer!
     var playerFinishedAction: (() -> Void)?
     var playButtonTappedAfterFinishedReciting: (() -> Void)?
+    var backToPreviousAction: (() -> Void)?
     var singer: Singer!
     var playFinished: Bool = false
     
