@@ -24,21 +24,22 @@ class PoemSupplierTests: XCTestCase {
         XCTAssertEqual(supplier.currentIndex, 0)
     }
     
-    func test_rollbackPrevPoem() {
+    func test_rollBackPrevPoem() {
         let supplier = PoemSupplier(deck: Deck(), shuffle: false)
         // 予め2枚めくっておく
         for _ in (1...2) { _ = supplier.drawNextPoem() }
         XCTAssertEqual(supplier.currentIndex, 2)
         
         // 1回ロールバックすると、currentIndexおよび歌番号が1になる。
-        let bool = supplier.rollback_prev_poem()
-        XCTAssertTrue(bool)
+        let poem = supplier.rollBackPrevPoem()
+        XCTAssertNotNil(poem)
         XCTAssertEqual(supplier.currentIndex, 1)
+        XCTAssertEqual(poem!.number, 1)
         XCTAssertEqual(supplier.poem.number, 1)
         
-        // もう1回ロールバックすると、もう戻る歌が無いため、falseを返す
-        let bool2 = supplier.rollback_prev_poem()
-        XCTAssertFalse(bool2)
+        // もう1回ロールバックすると、もう戻る歌がないため、nilを返す
+        let poem2 = supplier.rollBackPrevPoem()
+        XCTAssertNil(poem2)
     }
     
     func test_stepIntoShimo() {
@@ -56,8 +57,8 @@ class PoemSupplierTests: XCTestCase {
         // 1枚めくり、そこから巻き戻そうとすると、falseが返る
         let supplier = PoemSupplier()
         _ = supplier.drawNextPoem()
-        let bool = supplier.rollback_prev_poem()
-        XCTAssertFalse(bool)
+        let poem = supplier.rollBackPrevPoem()
+        XCTAssertNil(poem)
         
         // このとき、poemプロパティの中身は空っぽ(nil)
         XCTAssertNil(supplier.poem)

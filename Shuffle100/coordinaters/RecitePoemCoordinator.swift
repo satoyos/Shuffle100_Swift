@@ -77,7 +77,13 @@ class RecitePoemCoordinator: Coordinator{
         if poemSupplier.currentIndex == 0 {
             navigator.popViewController(animated: true)
         } else {
-            assertionFailure("1首目以降の画面戻しは未実装")
+            if let prevPoem = poemSupplier.rollBackPrevPoem() {
+                // 一つ前の歌(prevPoem)に戻す
+                assertionFailure("ここはまだ未実装")
+            } else {
+                // もう戻す歌がない (今が1首め)
+                navigator.popViewController(animated: true)
+            }
         }
     }
 }

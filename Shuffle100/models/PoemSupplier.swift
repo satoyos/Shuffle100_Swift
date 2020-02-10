@@ -73,13 +73,14 @@ class PoemSupplier {
         }
     }
     
-    func rollback_prev_poem() -> Bool {
+    func rollBackPrevPoem() -> Poem? {
         current_poem = deck.rollback_poem()
         switch current_poem {
         case nil:
-            return false
+            return nil
         default:
-            return true
+            self.fuda_side = .shimo
+            return current_poem
         }
     }
     
