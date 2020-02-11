@@ -83,6 +83,12 @@ extension RecitePoemViewController {
         recitePoemView.showAsWaitingFor(.play)
     }
     
+    fileprivate func setUpNewScreen(with newReciteView: RecitePoemView) {
+        self.recitePoemView.removeFromSuperview()
+        self.recitePoemView = newReciteView
+        self.addActionsToButtons()
+    }
+    
     func slideIntoShimo(number: Int, at counter: Int, total: Int) {
         let newReciteView = RecitePoemView()
         view.addSubview(newReciteView)
@@ -92,10 +98,23 @@ extension RecitePoemViewController {
         UIView.animate(withDuration: 1.0, animations: {
             newReciteView.fixLayoutOn(baseView: self.view, offsetX: 0)
         }, completion: { finished in
-            self.recitePoemView.removeFromSuperview()
-            self.recitePoemView = newReciteView
-            self.addActionsToButtons()
+            self.setUpNewScreen(with: newReciteView)
             self.reciteShimo(number: number, count: counter)
+        })
+    }
+    
+    func slideBackToKami(number: Int, at counter: Int, total: Int) {
+        let newReciteView = RecitePoemView()
+        view.addSubview(newReciteView)
+        newReciteView.initView(title: "\(counter)首め:上の句 (全\(total)首)")
+        newReciteView.fixLayoutOn(baseView: self.view, offsetX: -1 * self.view.frame.width)
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            newReciteView.fixLayoutOn(baseView: self.view, offsetX: 0)
+        }, completion: { finished in
+            self.setUpNewScreen(with: newReciteView)
+            self.reciteKami(number: number, count: counter)
+            self.playButtonTapped()
         })
     }
     

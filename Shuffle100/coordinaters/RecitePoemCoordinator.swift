@@ -73,22 +73,46 @@ class RecitePoemCoordinator: Coordinator{
     }
     
     internal func rewindToPrevious() {
-        print("!! 歌の読み上げ冒頭でrewindボタンが押されたので、一つ前の画面に戻す！")
-        if poemSupplier.currentIndex == 0 {
-            navigator.popViewController(animated: true)
-        } else {
-            if let prevPoem = poemSupplier.rollBackPrevPoem() {
-                // 一つ前の歌(prevPoem)に戻す
-                let number = prevPoem.number
-                let counter = poemSupplier.currentIndex
-                screen!.playerFinishedAction = { [weak self] in
-                    self?.reciteShimoFinished(number: number, counter: counter)
-                }
-                screen!.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
-            } else {
-                // もう戻す歌がない (今が1首め)
-                navigator.popViewController(animated: true)
+//        print("!! 歌の読み上げ冒頭でrewindボタンが押されたので、一つ前の画面に戻す！")
+        guard let side = poemSupplier.side else {
+            print("序歌の冒頭でrewidが押された")
+            backToTopScreen()
+            return
+        }
+        if side == .kami {
+            backToPreviousPoem()
+        } else {  // 下の句の冒頭でrewindが押された場合
+            guard let screen = screen else { return }
+            let number = poemSupplier.poem.number
+            let counter = poemSupplier.currentIndex
+            let size = poemSupplier.size
+            poemSupplier.back_to_kami()
+            screen.slideBackToKami(number: number, at: counter, total: size)
+            screen.playerFinishedAction = { [weak self, number, counter] in
+                self?.reciteKamiFinished(number: number, counter: counter)
             }
         }
     }
+
+    private func backToTopScreen() {
+        navigator.popViewController(animated: true)
+    }
+
+    private func backToPreviousPoem() {
+        if let prevPoem = poemSupplier.rollBackPrevPoem() {
+            // 一つ前の歌(prevPoem)に戻す
+            let number = prevPoem.number
+            let counter = poemSupplier.currentIndex
+            screen!.playerFinishedAction = { [weak self] in
+                self?.reciteShimoFinished(number: number, counter: counter)
+            }
+            screen!.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
+        } else {
+            // もう戻す歌がない (今が1首め)
+            print("1首目の上の句の冒頭でrewindが押された！")
+            backToTopScreen()
+        }
+    }
+    
+
 }
