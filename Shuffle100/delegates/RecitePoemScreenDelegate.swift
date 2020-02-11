@@ -66,11 +66,15 @@ extension RecitePoemViewController {
     
     internal func forwardButtonTapped() {
         guard let currentPlayer = currentPlayer else { return }
-        currentPlayer.currentTime = currentPlayer.duration - 0.1
-        currentPlayer.pause()
-        updateAudioProgressView()
-        currentPlayer.stop()
-        audioPlayerDidFinishPlaying(currentPlayer, successfully: true)
+        if currentPlayer.isPlaying {
+            currentPlayer.currentTime = currentPlayer.duration - 0.1
+            currentPlayer.pause()
+            updateAudioProgressView()
+            currentPlayer.stop()
+            audioPlayerDidFinishPlaying(currentPlayer, successfully: true)
+        } else {
+            self.skipToNextScreenAction?()
+        }
     }
     
     internal func backToHomeScreen() {

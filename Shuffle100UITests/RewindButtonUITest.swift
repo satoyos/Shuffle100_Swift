@@ -40,7 +40,7 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
             gotoRecitePoemScreen(app)
             app.buttons["forward"].tap()
             app.buttons["forward"].tap()
-            app.buttons["play"].tap()
+            app.buttons["forward"].tap()
             app.buttons["forward"].tap()
             XCTAssert(app.staticTexts["2首め:上の句 (全100首)"].exists)
         }
@@ -52,7 +52,7 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
             rewindButton.tap()
             rewindButton.tap()
             // then
-            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)            
+            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
         }
     }
     
