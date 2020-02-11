@@ -79,7 +79,12 @@ class RecitePoemCoordinator: Coordinator{
         } else {
             if let prevPoem = poemSupplier.rollBackPrevPoem() {
                 // 一つ前の歌(prevPoem)に戻す
-                assertionFailure("ここはまだ未実装")
+                let number = prevPoem.number
+                let counter = poemSupplier.currentIndex
+                screen!.playerFinishedAction = { [weak self] in
+                    self?.reciteShimoFinished(number: number, counter: counter)
+                }
+                screen!.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
             } else {
                 // もう戻す歌がない (今が1首め)
                 navigator.popViewController(animated: true)

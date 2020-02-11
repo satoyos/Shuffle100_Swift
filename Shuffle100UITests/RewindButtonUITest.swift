@@ -50,9 +50,9 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
             sleep(1)
             // when
             rewindButton.tap()
-//            rewindButton.tap()
+            rewindButton.tap()
             // then
-//            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)            
+            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)            
         }
     }
     
