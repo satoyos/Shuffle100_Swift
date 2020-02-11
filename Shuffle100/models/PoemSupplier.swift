@@ -85,7 +85,15 @@ class PoemSupplier {
     }
     
     func step_into_shimo() {
-        self.fuda_side = .shimo
+        self.setSideTo(.shimo)
+    }
+    
+    func back_to_kami() {
+        self.setSideTo(.kami)
+    }
+    
+    private func setSideTo(_ side: Side) {
+        self.fuda_side = side
     }
     
 }
