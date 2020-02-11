@@ -99,6 +99,22 @@ extension RecitePoemViewController {
         })
     }
     
+    func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
+        UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromRight, .layoutSubviews], animations: {
+            let newReciteView = RecitePoemView()
+            self.recitePoemView.removeFromSuperview()
+            UIView.performWithoutAnimation {
+                self.view.addSubview(newReciteView)
+                newReciteView.initView(title: "\(counter)首め:下の句 (全\(total)首)")
+            }
+            self.recitePoemView = newReciteView
+            self.addActionsToButtons()
+        }, completion: { finished in
+            self.reciteShimo(number: number, count: counter)
+            self.playButtonTapped()
+        })
+    }
+    
     func stepIntoGameEnd() {
         UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
             let gameEndView = GameEndViiew().then {
