@@ -58,6 +58,7 @@ enum Color: String {
     case kawairo = "475950"
     case aofujiiro = "84a2d4"
     case tsutsujiiro = "e95295"
+    case kourainando = "2c4f54"
     
     var UIColor: UIKit.UIColor {
         return UIKit.UIColor(hex: self.rawValue)
