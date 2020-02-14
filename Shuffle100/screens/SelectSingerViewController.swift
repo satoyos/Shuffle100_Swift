@@ -48,6 +48,11 @@ class SelectSingerViewController: UIViewController, UIPickerViewDataSource, UIPi
         return Singers.all[row].name
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let index = pickerView.selectedRow(inComponent: 0)
+        settings.singerID = Singers.all[index].id
+    }
+    
     private func initPicker() {
         picker.dataSource = self
         picker.delegate = self
