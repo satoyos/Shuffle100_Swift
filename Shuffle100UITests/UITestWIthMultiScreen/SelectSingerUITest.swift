@@ -20,7 +20,15 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
     func test_HomeScreenReflectsSelectedSinger() {
         gotoSelectSingerScreen(app)
         
-        // 続きを書く！
+        XCTContext.runActivity(named: "「いなばくん」を選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
+            // given
+            let inabaLabel = "いなばくん（人間）"
+            // when
+            app.pickerWheels.element.adjust(toPickerWheelValue: inabaLabel)
+            app.buttons["トップ"].tap()
+            // then
+            XCTAssertTrue(app.cells.staticTexts[inabaLabel].exists)
+        }
     }
 
 }
