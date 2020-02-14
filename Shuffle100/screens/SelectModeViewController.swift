@@ -41,11 +41,11 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
         initPicker()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//    }
+//
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
