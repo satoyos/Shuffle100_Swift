@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Settings {
+class Settings: Codable {
     var mode: GameConfig
     var recitingConfig: RecitingConfig
     var state100: SelectedState100

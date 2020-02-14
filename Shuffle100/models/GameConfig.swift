@@ -8,18 +8,18 @@
 
 import Foundation
 
-enum ReciteMode: CaseIterable {
+enum ReciteMode: String, CaseIterable, Codable {
     case normal
     case beginner
     case nonstop
 }
 
-struct ReciteModeHolder {
+struct ReciteModeHolder: Codable {
     var mode: ReciteMode
     var title: String
 }
 
-struct GameConfig {
+struct GameConfig: Codable {
     var reciteMode: ReciteMode
     var fakeMode: Bool
     var singerID: String
