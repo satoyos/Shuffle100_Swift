@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SelectReciteModeUITest: XCTestCase {
+class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
@@ -24,12 +24,7 @@ class SelectReciteModeUITest: XCTestCase {
     func test_HomeScreenReflectsSelectedMode() {
         XCTContext.runActivity(named: "トップ画面で「読み上げモード」をタップすると、モード選択画面に遷移する"){
             (acitivity) in
-            // given
-            let reciteModeCell = app.tables.cells.staticTexts["読み上げモード"]
-            // when
-            reciteModeCell.tap()
-            // then
-            XCTAssertTrue(app.staticTexts["百首読み上げ"].exists)
+            gotoSelectModeScreen(app)
         }
         
         XCTContext.runActivity(named: "初心者モードを選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in

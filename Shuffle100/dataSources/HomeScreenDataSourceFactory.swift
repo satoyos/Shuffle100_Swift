@@ -27,7 +27,8 @@ struct HomeScreenDataSourceFactory {
         case .fakeMode:
             dataSource = fakeModeDataSource(with: settings.fakeMode)
         case .singers:
-            dataSource = singerDataSource()
+            let singer = Singers.getSingerOfID(settings.singerID)!
+            dataSource = singerDataSource(with: singer.name)
         }
         dataSource.accessibilityLabel = type.rawValue
         return dataSource
@@ -52,8 +53,8 @@ struct HomeScreenDataSourceFactory {
         return dataSource
     }
     
-    private static func singerDataSource() -> HomeScreenDataSource {
-        return HomeScreenDataSource(title: "読手", accessoryType: .disclosureIndicator)
+    private static func singerDataSource(with singerName: String) -> HomeScreenDataSource {
+        return HomeScreenDataSource(title: "読手", accessoryType: .disclosureIndicator, detailLabelText: singerName)
     }
     
     private static func labelString(for mode: ReciteMode) -> String? {

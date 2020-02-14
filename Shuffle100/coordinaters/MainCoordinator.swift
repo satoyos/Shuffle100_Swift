@@ -36,6 +36,10 @@ class MainCoordinator: Coordinator {
             self?.selectMode(settings: settings)
         }
         
+        homeScreen.selectSingerAction = {[weak self, unowned settings] in
+            self?.selectSinger(settings: settings)
+        }
+        
         homeScreen.startGameAction = {[weak self, unowned settings] in
             self?.startGame(settings: settings)
         }
@@ -59,6 +63,11 @@ class MainCoordinator: Coordinator {
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings)
         coordinator.start()
         
+    }
+    
+    private func selectSinger(settings: Settings) {
+        let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings)
+        coordinator.start()
     }
 
     private func startGame(settings: Settings) {
