@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RecitingConfig {
+struct RecitingConfig: Codable {
     var volume: Float = 1.0
     var interval: Float = 1.10
     var kamiShimoInterval: Float = 1.0

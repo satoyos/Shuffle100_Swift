@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SelectedState100 {
+class SelectedState100: Codable {
     static let defaultState = true
     var bools: Array<Bool>
     var selectedNum: Int {

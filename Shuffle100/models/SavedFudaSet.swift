@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SavedFudaSet {
+struct SavedFudaSet: Codable {
     var name: String
     var state100: SelectedState100
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Bool100 {
+struct Bool100: Codable {
     var bools: [Bool]
     
     init(bools: [Bool] = allTrueBoolArray()) {
