@@ -10,21 +10,15 @@ import XCTest
 @testable import Shuffle100
 
 class SelectSingerScreenTest: XCTestCase {
-    var screen: SelectSingerViewController!
-
-    override func setUp() {
-        screen = SelectSingerViewController()
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func test_titleText() {
+    func test_initialScreen() {
+        // given
+        let screen = SelectSingerViewController()
         // when
         screen.loadViewIfNeeded()
+        let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)
         // then
         XCTAssertEqual(screen.title, "読手を選ぶ")
+        XCTAssertEqual(rowNum, 2)
     }
 
 }

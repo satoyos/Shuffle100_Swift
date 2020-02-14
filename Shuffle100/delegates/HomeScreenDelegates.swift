@@ -21,6 +21,8 @@ extension HomeViewController: UITableViewDelegate {
                 selectPoemAction?()
             case 1:
                 selectModeAction?()
+            case 3:
+                selectSingerAction?()
             default:
                 return
             }
