@@ -14,6 +14,7 @@ class PoemPickerViewController: UITableViewController {
     var settings: Settings!
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
+    var saveSettingsAction: (() -> Void)?
     
     var selected_num: Int {
         get {
@@ -54,6 +55,7 @@ class PoemPickerViewController: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        self.saveSettingsAction?()
         // searchControllerがActiveなまま強制的にトップスクリーンに戻った場合でも、
         // Active状態を解除する。
         searchController?.isActive = false

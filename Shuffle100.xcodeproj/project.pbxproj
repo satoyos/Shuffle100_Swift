@@ -32,6 +32,7 @@
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
+		9220CFA323F95FFB003018C9 /* SetEnvUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220CFA223F95FFB003018C9 /* SetEnvUITestUtils.swift */; };
 		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
 		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
 		923B594C23ACF606002027B4 /* GameEndViiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* GameEndViiew.swift */; };
@@ -273,6 +274,7 @@
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
+		9220CFA223F95FFB003018C9 /* SetEnvUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEnvUITestUtils.swift; sourceTree = "<group>"; };
 		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
 		923B594B23ACF606002027B4 /* GameEndViiew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViiew.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 			children = (
 				92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */,
 				92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */,
+				9220CFA223F95FFB003018C9 /* SetEnvUITestUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1147,6 +1150,7 @@
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
+				9220CFA323F95FFB003018C9 /* SetEnvUITestUtils.swift in Sources */,
 				929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,

@@ -9,6 +9,7 @@
 import Foundation
 
 class Settings: Codable {
+    static let userDefaultKey = "Settings"
     var mode: GameConfig
     var recitingConfig: RecitingConfig
     var state100: SelectedState100
