@@ -8,12 +8,13 @@
 
 import XCTest
 
-class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
+class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils, SetEnvUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        setEnvTesting(app)
         app.launch()
     }
     

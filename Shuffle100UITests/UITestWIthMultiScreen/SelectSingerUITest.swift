@@ -8,12 +8,13 @@
 
 import XCTest
 
-class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
+class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SetEnvUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        setEnvTesting(app)
         app.launch()
     }
 

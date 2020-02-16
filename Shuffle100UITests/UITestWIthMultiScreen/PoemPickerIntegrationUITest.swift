@@ -8,14 +8,14 @@
 
 import XCTest
 
-class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils {
+class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, SetEnvUITestUtils {
     
     let app = XCUIApplication()
     
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        app.launchEnvironment = ["IS_TESTING" : "1"]
+        setEnvTesting(app)
         app.launch()
     }
     

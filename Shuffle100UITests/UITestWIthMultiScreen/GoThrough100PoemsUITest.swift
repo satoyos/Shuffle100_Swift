@@ -8,11 +8,12 @@
 
 import XCTest
 
-class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils {
+class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, SetEnvUITestUtils {
     var app = XCUIApplication()
     
     override func setUp() {
         continueAfterFailure = false
+        setEnvTesting(app)
         app.launch()
     }
 

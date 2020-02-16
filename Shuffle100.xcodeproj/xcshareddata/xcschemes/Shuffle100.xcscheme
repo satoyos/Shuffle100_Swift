@@ -27,38 +27,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "NO">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "923D59212143BB0B000F5E60"
-               BuildableName = "Shuffle100Tests.xctest"
-               BlueprintName = "Shuffle100Tests"
-               ReferencedContainer = "container:Shuffle100.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9216F5C1214E181A00A6C250"
-               BuildableName = "Shuffle100UITests2.xctest"
-               BlueprintName = "Shuffle100UITests2"
-               ReferencedContainer = "container:Shuffle100.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "923D592C2143BB0B000F5E60"
-               BuildableName = "Shuffle100UITests.xctest"
-               BlueprintName = "Shuffle100UITests"
-               ReferencedContainer = "container:Shuffle100.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -75,8 +43,28 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "923D59212143BB0B000F5E60"
+               BuildableName = "Shuffle100Tests.xctest"
+               BlueprintName = "Shuffle100Tests"
+               ReferencedContainer = "container:Shuffle100.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "923D592C2143BB0B000F5E60"
+               BuildableName = "Shuffle100UITests.xctest"
+               BlueprintName = "Shuffle100UITests"
+               ReferencedContainer = "container:Shuffle100.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -98,8 +86,6 @@
             ReferencedContainer = "container:Shuffle100.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

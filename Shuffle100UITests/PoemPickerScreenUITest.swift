@@ -8,18 +8,14 @@
 
 import XCTest
 
-class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils {
+class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SetEnvUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        app.launchEnvironment = ["IS_TESTING" : "1"]
+        setEnvTesting(app)
         app.launch()
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func test_cancelAllAndSelectAll() {

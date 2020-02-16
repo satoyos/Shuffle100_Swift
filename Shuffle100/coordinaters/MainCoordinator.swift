@@ -11,19 +11,10 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
     var recitePoemCoordinator: RecitePoemCoordinator!
+    let store = StoreManager()
 
     func start() {
-        let settings = Settings()
-        if let gameSettings = tryLoadLegacyGameSettings() {
-            if !nowTesting() {
-                initSettings(settings, with: gameSettings)
-            }
-        }
-        if let recitingSettings = tryLoadLegacyRecitingSettings() {
-            if !nowTesting() {
-                initSettings(settings, with: recitingSettings)
-            }
-        }
+        let settings = setUpSettings()
         let homeScreen = HomeViewController(settings: settings)
         navigator.pushViewController(homeScreen as UIViewController, animated: false)
         setUpNavigationController()
@@ -46,6 +37,31 @@ class MainCoordinator: Coordinator {
         
         AudioPlayerFactory.shared.setupAudioSession()
     }
+
+    private func setUpSettings() -> Settings {
+        let defaultSettings = Settings()
+        if let loadedSettings = store.load(key: Settings.userDefaultKey) as Settings? {
+            if nowTesting() {
+                return defaultSettings
+            } else {
+                return loadedSettings
+            }
+        } else {
+            if let gameSettings = tryLoadLegacyGameSettings() {
+                if !nowTesting() {
+                    initSettings(defaultSettings, with: gameSettings)
+                }
+            }
+            if let recitingSettings = tryLoadLegacyRecitingSettings() {
+                if !nowTesting() {
+                    initSettings(defaultSettings, with: recitingSettings)
+                }
+            }
+            return defaultSettings
+        }
+    }
+    
+
     
     private func setUpNavigationController() {
         navigator.interactivePopGestureRecognizer?.isEnabled = false
@@ -54,7 +70,7 @@ class MainCoordinator: Coordinator {
     }
     
     private func selectPoem(settings: Settings) {
-        let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings)
+        let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
     
