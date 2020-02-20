@@ -20,12 +20,15 @@ extension UserDefaults: Storable{}
 struct StoreManager {
 
     let store: Storable
+    private let env: Environment
 
-    init(store: Storable = UserDefaults.standard) {
+    init(store: Storable = UserDefaults.standard, env: Environment = Environment()) {
         self.store = store
+        self.env = env
     }
 
     func save<T: Codable>(value: T, key: String) throws {
+        if env.wontSaveData() { return }
         do {
             let encodedData = try JSONEncoder().encode(value)
             store.set(encodedData, forKey: key)
@@ -35,6 +38,7 @@ struct StoreManager {
     }
 
     func load<T: Codable>(key: String) -> T? {
+        if env.ignoreSavedData() { return nil}
         guard let data = store.data(forKey: key) else { return nil }
         do {
             let decode = try JSONDecoder().decode(T.self, from: data)

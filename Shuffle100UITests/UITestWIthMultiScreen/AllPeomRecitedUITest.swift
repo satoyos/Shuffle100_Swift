@@ -15,7 +15,7 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setEnvTesting(app)
+        setEnvIgnoreSavedData(app)
         app.launch()
     }
     
