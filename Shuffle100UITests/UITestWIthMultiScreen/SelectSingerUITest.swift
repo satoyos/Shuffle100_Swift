@@ -14,7 +14,7 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SetEnvUITestUtils {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setEnvTesting(app)
+        setEnvIgnoreSavedData(app)
         app.launch()
     }
 

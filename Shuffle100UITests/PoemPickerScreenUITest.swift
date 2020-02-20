@@ -14,7 +14,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SetEnvUITestUti
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setEnvTesting(app)
+        setEnvIgnoreSavedData(app)
         app.launch()
     }
 

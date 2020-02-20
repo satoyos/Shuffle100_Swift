@@ -8,15 +8,27 @@
 
 import XCTest
 
-class StoreManagerTest: XCTestCase {
+class StoreManagerTest: XCTestCase{
+    var env = Environment()
+    
+    override func setUp() {
+        
+    }
+
+    override func tearDown() {
+        env.setEnvWontSaveData()
+        env.setEnvIgnoreSavedData()
+    }
 
     func test_StoreManager() {
         // given
-        let store = StoreManager()
+        let store = StoreManager(env: env)
         let settings = Settings()
-        let keyStr = "Settings"
+        let keyStr = "Test"
         // when
         settings.interval = 2.3
+        env.setEnvWillSaveData()
+        env.setEnvLoadSavedData()
         do {
             try store.save(value: settings, key: keyStr)
         } catch {

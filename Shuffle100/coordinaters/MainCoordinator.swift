@@ -12,6 +12,7 @@ class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
     var recitePoemCoordinator: RecitePoemCoordinator!
     let store = StoreManager()
+    let env = Environment()
 
     func start() {
         let settings = setUpSettings()
@@ -41,19 +42,19 @@ class MainCoordinator: Coordinator {
     private func setUpSettings() -> Settings {
         let defaultSettings = Settings()
         if let loadedSettings = store.load(key: Settings.userDefaultKey) as Settings? {
-            if nowTesting() {
+            if env.ignoreSavedData() {
                 return defaultSettings
             } else {
                 return loadedSettings
             }
         } else {
             if let gameSettings = tryLoadLegacyGameSettings() {
-                if !nowTesting() {
+                if !env.ignoreSavedData() {
                     initSettings(defaultSettings, with: gameSettings)
                 }
             }
             if let recitingSettings = tryLoadLegacyRecitingSettings() {
-                if !nowTesting() {
+                if !env.ignoreSavedData() {
                     initSettings(defaultSettings, with: recitingSettings)
                 }
             }
@@ -133,8 +134,8 @@ class MainCoordinator: Coordinator {
         settings.recitingConfig = LegacyDataConverter.convertRecitingSettings(recitingSettings)
     }
     
-    private func nowTesting() -> Bool {
-        let testing = (ProcessInfo.processInfo.environment["IS_TESTING"] == "1")
-        return testing
-    }
+//    private func nowTesting() -> Bool {
+//        let testing = (ProcessInfo.processInfo.environment["IS_TESTING"] == "1")
+//        return testing
+//    }
 }

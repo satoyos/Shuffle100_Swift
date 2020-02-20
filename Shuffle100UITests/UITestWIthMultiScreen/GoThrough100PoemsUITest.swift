@@ -13,7 +13,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
     
     override func setUp() {
         continueAfterFailure = false
-        setEnvTesting(app)
+        setEnvIgnoreSavedData(app)
         app.launch()
     }
 

@@ -14,7 +14,7 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setEnvTesting(app)
+        setEnvIgnoreSavedData(app)
         app.launch()
     }
 
