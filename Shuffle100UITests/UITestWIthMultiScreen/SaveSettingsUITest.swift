@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SaveSettingsUITest: XCTestCase, SetEnvUITestUtils, HomeScreenUITestUtils {
+class SaveSettingsUITest: XCTestCase, SetEnvUITestUtils, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
     
 
     func test_savedDataAffectsLaterGames() {
@@ -22,16 +22,27 @@ class SaveSettingsUITest: XCTestCase, SetEnvUITestUtils, HomeScreenUITestUtils {
             // then
             XCTAssert(app.staticTexts["100首"].exists)
         }
-//        XCTContext.runActivity(named: "テスト状態でなくし、歌を2首選択を外して、トップに戻ってから、アプリを落とす") { (acitivity) in
-//            setEnv(app)
-//            gotoPoemPickerScreen(app)
-//            XCTAssert(app.searchFields["歌を検索"].exists)
-//            app.tables.cells["001"].tap()
-//            app.tables.cells["003"].tap()
-//            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
-//            XCTAssert(app.staticTexts["98首"].exists)
-//            app.terminate()
-//        }
+        XCTContext.runActivity(named: "データのセーブとロードを有効にし、歌を2首選択を外して、トップに戻ってから、アプリを落とす") { (acitivity) in
+            // given
+            setEnvLoadSavedData(app)
+            setEnvWillSaveData(app)
+            gotoPoemPickerScreen(app)
+            app.tables.cells["001"].tap()
+            app.tables.cells["003"].tap()
+            goBackToHomeScreen(app)
+            XCTAssert(app.staticTexts["98首"].exists)
+            // when
+            app.terminate()
+            // then
+            XCTAssertFalse(app.staticTexts["98首"].exists)
+        }
+        XCTContext.runActivity(named: "再度アプリを起動すると、落とす前に選択していたデータが再現されている") { (acitivity) in
+            // when
+
+            app.activate()
+            // then
+            XCTAssert(app.staticTexts["98首"].exists)
+        }
     }
 
 

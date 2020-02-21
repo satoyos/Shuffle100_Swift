@@ -170,6 +170,7 @@
 		92AE7C7323FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
+		92AE7C7723FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */; };
 		92AF24A1229E91260085B754 /* LegacyDataConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */; };
 		92AF24A3229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
 		92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
@@ -351,6 +352,7 @@
 		92AE7C6E23FD7135003FA07F /* SaveSettingsUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSettingsUITest.swift; sourceTree = "<group>"; };
 		92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTest.swift; sourceTree = "<group>"; };
 		92AE7C7223FEAEDC003FA07F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PemPickerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverterTest.swift; sourceTree = "<group>"; };
 		92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverter.swift; sourceTree = "<group>"; };
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */,
 				92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */,
 				9220CFA223F95FFB003018C9 /* SetEnvUITestUtils.swift */,
+				92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1141,6 +1144,7 @@
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
+				92AE7C7723FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift in Sources */,
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
 				92FC39552288370D00791053 /* GameSettings.swift in Sources */,
 				92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */,
