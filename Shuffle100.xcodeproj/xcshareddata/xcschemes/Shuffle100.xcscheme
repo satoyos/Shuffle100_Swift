@@ -38,7 +38,12 @@
       </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "IS_TESTING"
+            key = "WONT_SAVE_DATA"
+            value = "1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "IGNORE_SAVED_DATA"
             value = "1"
             isEnabled = "YES">
          </EnvironmentVariable>
