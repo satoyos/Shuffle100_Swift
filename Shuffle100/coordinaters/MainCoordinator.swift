@@ -38,31 +38,6 @@ class MainCoordinator: Coordinator {
         
         AudioPlayerFactory.shared.setupAudioSession()
     }
-
-    private func setUpSettings() -> Settings {
-        let defaultSettings = Settings()
-        if let loadedSettings = store.load(key: Settings.userDefaultKey) as Settings? {
-            if env.ignoreSavedData() {
-                return defaultSettings
-            } else {
-                return loadedSettings
-            }
-        } else {
-            if let gameSettings = tryLoadLegacyGameSettings() {
-                if !env.ignoreSavedData() {
-                    initSettings(defaultSettings, with: gameSettings)
-                }
-            }
-            if let recitingSettings = tryLoadLegacyRecitingSettings() {
-                if !env.ignoreSavedData() {
-                    initSettings(defaultSettings, with: recitingSettings)
-                }
-            }
-            return defaultSettings
-        }
-    }
-    
-
     
     private func setUpNavigationController() {
         navigator.interactivePopGestureRecognizer?.isEnabled = false
@@ -102,40 +77,4 @@ class MainCoordinator: Coordinator {
         guard let coordinator = gameDriver else { return }
         self.recitePoemCoordinator = coordinator
     }
-    
-    private func tryLoadLegacyRecitingSettings() -> RecitingSettings? {
-        if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
-            print("+++ Success loading Legacy Data")
-            loadedSettings.debugPrint()
-            return loadedSettings
-        } else {
-            return nil
-        }
-    }
-    
-    private func tryLoadLegacyGameSettings() -> GameSettings? {
-        if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
-            print("+++ Success loading legacy GameSettings")
-            gameSettings.debugPrint()
-            return gameSettings
-        } else {
-            return nil
-        }
-    }
-    
-    private func initSettings(_ settings: Settings, with gameSettings: GameSettings) {
-        settings.fakeMode = gameSettings.fake_flg
-        settings.reciteMode = .normal // still fail loading legacy saved symbol data
-        settings.state100 = LegacyDataConverter.state100FromGameSettings(gameSettings)
-        settings.savedFudaSets = LegacyDataConverter.savedFudaSetsFromGameSettings(gameSettings)
-    }
-    
-    private func initSettings(_ settings: Settings, with recitingSettings: RecitingSettings) {
-        settings.recitingConfig = LegacyDataConverter.convertRecitingSettings(recitingSettings)
-    }
-    
-//    private func nowTesting() -> Bool {
-//        let testing = (ProcessInfo.processInfo.environment["IS_TESTING"] == "1")
-//        return testing
-//    }
 }

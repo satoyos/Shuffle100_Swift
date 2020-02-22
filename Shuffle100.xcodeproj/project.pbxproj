@@ -169,6 +169,9 @@
 		92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7723FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */; };
+		92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
+		92AE7C7A24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
+		92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
 		92AF24A1229E91260085B754 /* LegacyDataConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */; };
 		92AF24A3229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
 		92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
@@ -349,6 +352,7 @@
 		92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTest.swift; sourceTree = "<group>"; };
 		92AE7C7223FEAEDC003FA07F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PemPickerScreenUITestUtils.swift; sourceTree = "<group>"; };
+		92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorSetUpSettings.swift; sourceTree = "<group>"; };
 		92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverterTest.swift; sourceTree = "<group>"; };
 		92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverter.swift; sourceTree = "<group>"; };
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
@@ -641,6 +645,7 @@
 				927A197E23E06C8A00443322 /* RecitePoemCoordinator.swift */,
 				92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */,
 				92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */,
+				92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
@@ -1024,6 +1029,7 @@
 				9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				928E73B622ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
+				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
@@ -1110,6 +1116,7 @@
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				929A615622F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
+				92AE7C7A24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
 				925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
@@ -1160,6 +1167,7 @@
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92CE520D2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
+				92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
