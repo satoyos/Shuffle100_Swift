@@ -48,7 +48,6 @@ class MainCoordinator: Coordinator {
         coordinator.start()
     }
     
-    
     private func selectMode(settings: Settings) {
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
