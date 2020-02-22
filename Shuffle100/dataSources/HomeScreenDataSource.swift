@@ -59,8 +59,7 @@ extension HomeViewController: UITableViewDataSource {
             
             cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
             if let switchView = cell.accessoryView as? UISwitch {
-                self.switchView = switchView
-                self.switchView?.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
+                switchView.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
             }
             return cell
         } else {
@@ -74,7 +73,6 @@ extension HomeViewController: UITableViewDataSource {
     private func settingSection(withTypes types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
         section.dataSources = types.map{
-//            HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: gameSettings)}
             HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: settings)}
         return section
     }

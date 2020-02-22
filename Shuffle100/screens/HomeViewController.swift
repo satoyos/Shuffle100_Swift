@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
     var tableView: UITableView!
     var sections: [TableSection]!
     var settings: Settings!
-    var switchView: UISwitch?
     var selectPoemAction: (() -> Void)?
     var selectModeAction: (() -> Void)?
     var selectSingerAction: (() -> Void)?
@@ -103,6 +102,5 @@ class HomeViewController: UIViewController {
             style: UIBarButtonItem.Style.plain, target: self, action: nil)
         helpButton.accessibilityLabel = "HelpButton"
         self.navigationItem.rightBarButtonItem = helpButton
-    }
-    
+    }    
 }
