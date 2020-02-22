@@ -11,9 +11,9 @@ import SnapKit
 
 class SelectSingerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let picker = UIPickerView()
-    
     var settings: Settings!
-
+    var saveSettingsAction: (() -> Void)?
+    
     init(settings: Settings = Settings()) {
         self.settings = settings
 
@@ -36,6 +36,11 @@ class SelectSingerViewController: UIViewController, UIPickerViewDataSource, UIPi
         initPicker()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.saveSettingsAction?()
+    }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

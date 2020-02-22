@@ -19,6 +19,7 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     lazy var picker = UIPickerView()
     var settings: Settings!
+    var saveSettingsAction: (() -> Void)?
 
     init(settings: Settings = Settings()) {
         self.settings = settings
@@ -41,11 +42,11 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
         initPicker()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//    }
-//
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.saveSettingsAction?()
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
