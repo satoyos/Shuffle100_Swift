@@ -17,18 +17,23 @@ protocol SetEnvUITestUtils {
 
 extension SetEnvUITestUtils {
     func setEnvIgnoreSavedData(_ app: XCUIApplication) {
-        app.launchEnvironment = ["IGNORE_SAVED_DATA": "1"]
+        app.launchEnvironment["IGNORE_SAVED_DATA"] = "1"
     }
     
     func setEnvLoadSavedData(_ app: XCUIApplication) {
-        app.launchEnvironment = ["IGNORE_SAVED_DATA": "0"]
+        app.launchEnvironment["IGNORE_SAVED_DATA"] = "0"
     }
     
     func setEnvWillSaveData(_ app: XCUIApplication) {
-        app.launchEnvironment = ["WONT_SAVE_DATA": "0"]
+        app.launchEnvironment["WONT_SAVE_DATA"] = "0"
     }
     
     func setEnvWontSaveData(_ app: XCUIApplication) {
         app.launchEnvironment = ["WONT_SAVE_DATA": "1"]
+    }
+    
+    func setEnvIgnoreSavedDataAndWillSaveData(_ app: XCUIApplication) {
+        app.launchEnvironment["IGNORE_SAVED_DATA"] = "1"
+        app.launchEnvironment["WONT_SAVE_DATA"] = "0"
     }
 }

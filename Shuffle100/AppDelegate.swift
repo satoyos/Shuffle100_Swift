@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        cleanUserDefualtIfUITesting()
+
         coordinator = MainCoordinator()
         coordinator?.start()
         
@@ -49,6 +51,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func cleanUserDefualtIfUITesting() {
+        if CommandLine.arguments.contains("--uitesting") {
+            let userDefaults = UserDefaults.standard
+            if let domain = Bundle.main.bundleIdentifier {
+                userDefaults.removePersistentDomain(forName: domain)
+            }
+        }
+    }
+    
 }
 

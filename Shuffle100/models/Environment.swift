@@ -18,10 +18,16 @@ class Environment {
     }
     
     func wontSaveData() -> Bool {
+        if ProcessInfo.processInfo.environment["WONT_SAVE_DATA"] != "1" {
+            return false
+        }
         return wontSave
     }
     
     func ignoreSavedData() -> Bool {
+        if ProcessInfo.processInfo.environment["IGNORE_SAVED_DATA"] != "1" {
+            return false
+        }
         return ignoreSaved
     }
     
