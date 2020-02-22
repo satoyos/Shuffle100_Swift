@@ -52,13 +52,13 @@ class MainCoordinator: Coordinator {
     
     
     private func selectMode(settings: Settings) {
-        let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings)
+        let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         
     }
     
     private func selectSinger(settings: Settings) {
-        let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings)
+        let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
 
