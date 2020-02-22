@@ -8,13 +8,13 @@
 
 import XCTest
 
-class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUITestUtils, SetEnvUITestUtils {
+class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUITestUtils {
     let app = XCUIApplication()
 
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setEnvIgnoreSavedData(app)
+        app.launchArguments.append("--uitesting")
         app.launch()
     }
 
