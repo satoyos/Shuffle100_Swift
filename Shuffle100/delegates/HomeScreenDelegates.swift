@@ -30,4 +30,9 @@ extension HomeViewController: UITableViewDelegate {
             startGameAction?()
         }
     }
+    
+    @objc func switchValueChanged(sender: UISwitch) {
+        settings.fakeMode = sender.isOn
+        self.saveSettingsAction?()
+    }
 }

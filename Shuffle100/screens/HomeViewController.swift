@@ -21,10 +21,12 @@ class HomeViewController: UIViewController {
     var tableView: UITableView!
     var sections: [TableSection]!
     var settings: Settings!
+    var switchView: UISwitch?
     var selectPoemAction: (() -> Void)?
     var selectModeAction: (() -> Void)?
     var selectSingerAction: (() -> Void)?
     var startGameAction: (() -> Void)?
+    var saveSettingsAction: (() -> Void)?
     
     init(settings: Settings) {
           self.settings = settings
