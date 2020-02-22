@@ -58,6 +58,10 @@ extension HomeViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableCell.identifier) as! HomeScreenTableCell
             
             cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
+            if let switchView = cell.accessoryView as? UISwitch {
+                self.switchView = switchView
+                self.switchView?.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: GameStartCell.identifier, for: indexPath) as! GameStartCell

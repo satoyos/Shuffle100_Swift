@@ -23,18 +23,16 @@ class MainCoordinator: Coordinator {
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
         }
-        
         homeScreen.selectModeAction = {[weak self, unowned settings] in
             self?.selectMode(settings: settings)
         }
-        
         homeScreen.selectSingerAction = {[weak self, unowned settings] in
             self?.selectSinger(settings: settings)
         }
-        
         homeScreen.startGameAction = {[weak self, unowned settings] in
             self?.startGame(settings: settings)
         }
+        setSaveSettingsActionTo(screen: homeScreen, settings: settings)
         
         AudioPlayerFactory.shared.setupAudioSession()
     }
@@ -76,5 +74,15 @@ class MainCoordinator: Coordinator {
         }
         guard let coordinator = gameDriver else { return }
         self.recitePoemCoordinator = coordinator
+    }
+    
+    private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings ) {
+        screen.saveSettingsAction = { [store, settings] in
+            do {
+                try store.save(value: settings, key: Settings.userDefaultKey)
+            } catch {
+                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
+            }
+        }
     }
 }
