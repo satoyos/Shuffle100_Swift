@@ -8,14 +8,14 @@
 
 import XCTest
 
-class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, SetEnvUITestUtils {
+class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils {
 
    let app = XCUIApplication()
     
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setEnvIgnoreSavedData(app)
+        app.launchArguments.append("--uitesting")
         app.launch()
     }
     
