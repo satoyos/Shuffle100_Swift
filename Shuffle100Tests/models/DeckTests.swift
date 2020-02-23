@@ -37,20 +37,20 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(deck.counter, 0)
         
         // next_poem関数で、次のオブジェクトを取得できる
-        var next_poem = deck.next_poem()!
-        XCTAssertEqual(next_poem.number, 1)
-        next_poem = deck.next_poem()!
-        XCTAssertEqual(next_poem.number, 2)
+        var nextPoem = deck.nextPoem()!
+        XCTAssertEqual(nextPoem.number, 1)
+        nextPoem = deck.nextPoem()!
+        XCTAssertEqual(nextPoem.number, 2)
         
         // counterの値も一つずつ増えているはず。
         XCTAssertEqual(deck.counter, 2)
         
         // next_poemによってPoemを取得し尽くした場合、next_poemはnilを返す
         while deck.counter < 100 {
-            _ = deck.next_poem()
+            _ = deck.nextPoem()
         }
         XCTAssertEqual(deck.counter, 100)
-        if let _ = deck.next_poem() {
+        if let _ = deck.nextPoem() {
             print("ここはnilでなければならないところ！")
             XCTAssertFalse(true)
         } else {
@@ -61,17 +61,17 @@ class DeckTests: XCTestCase {
     func test_rollbackPrevPoem() {
         let deck = Deck()
         // 2枚めくる
-        _ = deck.next_poem()
-        _ = deck.next_poem()
+        _ = deck.nextPoem()
+        _ = deck.nextPoem()
         XCTAssertEqual(deck.counter, 2)
         
         // 1回ロールバックすると、カウンターの値は1になり、歌番号は1番になる。
-        let prev_poem = deck.rollback_poem()!
+        let prev_poem = deck.rollBackPoem()!
         XCTAssertEqual(deck.counter, 1)
         XCTAssertEqual(prev_poem.number, 1)
         
         // 2回ロールバックすると、カウンターの値は0になり、返り値としてはnilが返る
-        if let _ = deck.rollback_poem() {
+        if let _ = deck.rollBackPoem() {
             print("ここはnilでなければならないところ！")
             XCTAssertFalse(true)
         } else {
@@ -83,16 +83,16 @@ class DeckTests: XCTestCase {
     func test_shuffleWithSize() {
         let deck = Deck()
         // シャッフルして何枚の数を取得したいか？のサイズを指定できる。
-        deck.shuffle_with_size(size: 10)
+        deck.shuffleWithSize(size: 10)
         XCTAssertEqual(deck.size, 10)
         // 10回歌データを供給できる
         var p: Poem
         for _ in 1...10 {
-            p = deck.next_poem()!
+            p = deck.nextPoem()!
             XCTAssertNotNil(p)
         }
         // しかし、11回目の歌を供給しようとすると、nilを返す
-        if let _ = deck.next_poem() {
+        if let _ = deck.nextPoem() {
             print("ここはnilでなければならないところ！")
             XCTAssertFalse(true)
         } else {

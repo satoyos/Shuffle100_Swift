@@ -63,7 +63,7 @@ class PoemSupplier {
     }
         
     func drawNextPoem() -> Poem? {
-        current_poem = deck.next_poem()
+        current_poem = deck.nextPoem()
         switch current_poem {
         case nil:
             return nil
@@ -74,7 +74,7 @@ class PoemSupplier {
     }
     
     func rollBackPrevPoem() -> Poem? {
-        current_poem = deck.rollback_poem()
+        current_poem = deck.rollBackPoem()
         switch current_poem {
         case nil:
             return nil
