@@ -17,7 +17,7 @@ class RecitePoemCoordinator: Coordinator{
     init(navigator: UINavigationController, settings: Settings) {
         self.navigator = navigator
         self.settings = settings
-        let deck = Deck.create_from(state100: settings.state100)
+        let deck = Deck.createFrom(state100: settings.state100)
         self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
     }
     
