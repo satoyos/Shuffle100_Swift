@@ -9,7 +9,7 @@
 import Foundation
 
 class Deck {
-    static let original_poems = Poem100.poems
+    static let originalPoems = Poem100.poems
     var poems: Array<Poem>
     private var count = 0
     
@@ -18,19 +18,19 @@ class Deck {
     }
     
     convenience init() {
-        self.init(poems: Deck.original_poems)
+        self.init(poems: Deck.originalPoems)
     }
     
     static func create_from(state100: SelectedState100) -> Deck {
-        var result_poems: Array<Poem>
-        result_poems = []
+        var resultPoems: Array<Poem>
+        resultPoems = []
         for i in 0..<100 {
             if state100.bools[i] {
-                result_poems.append(original_poems[i])
+                resultPoems.append(originalPoems[i])
             }
         }
         let deck = Deck()
-        deck.poems = result_poems
+        deck.poems = resultPoems
         return deck
     }
     
@@ -83,14 +83,14 @@ class Deck {
     
     func add_fake_poems() {
         if self.size >= 50 {
-            poems = Deck.original_poems
+            poems = Deck.originalPoems
             return
         }
         let selected_nums = poems.map{$0.number}
         let int100 = (Array<Int>)(1...100)
         let rest_nums = int100.diff(selected_nums).shuffled()
         for i in 0..<selected_nums.count {
-            poems.append(Deck.original_poems[rest_nums[i]-1])
+            poems.append(Deck.originalPoems[rest_nums[i]-1])
         }
         poems.shuffle()
     }
