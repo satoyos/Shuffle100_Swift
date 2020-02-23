@@ -21,7 +21,7 @@ class Deck {
         self.init(poems: Deck.originalPoems)
     }
     
-    static func create_from(state100: SelectedState100) -> Deck {
+    static func createFrom(state100: SelectedState100) -> Deck {
         var resultPoems: [Poem]
         resultPoems = []
         for i in 0..<100 {
@@ -81,7 +81,7 @@ class Deck {
         shuffleWithSize(size: poems.count)
     }
     
-    func add_fake_poems() {
+    func addFakePoems() {
         if self.size >= 50 {
             poems = Deck.originalPoems
             return
