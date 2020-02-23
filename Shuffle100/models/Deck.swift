@@ -10,10 +10,10 @@ import Foundation
 
 class Deck {
     static let originalPoems = Poem100.poems
-    var poems: Array<Poem>
+    var poems: [Poem]
     private var count = 0
     
-    init(poems: Array<Poem>) {
+    init(poems: [Poem]) {
         self.poems = poems
     }
     
@@ -22,7 +22,7 @@ class Deck {
     }
     
     static func create_from(state100: SelectedState100) -> Deck {
-        var resultPoems: Array<Poem>
+        var resultPoems: [Poem]
         resultPoems = []
         for i in 0..<100 {
             if state100.bools[i] {
@@ -46,7 +46,7 @@ class Deck {
         }
     }
     
-    func next_poem() -> Poem? {
+    func nextPoem() -> Poem? {
         if count == poems.count {
             return nil
         } else {
@@ -55,7 +55,7 @@ class Deck {
         }
     }
     
-    func rollback_poem() -> Poem? {
+    func rollBackPoem() -> Poem? {
         switch count {
         case 0:
             return nil
@@ -68,17 +68,17 @@ class Deck {
         }
     }
     
-    func shuffle_with_size(size: Int) {
-        let shuffled_poems = poems.shuffled()
+    func shuffleWithSize(size: Int) {
+        let shuffledPoems = poems.shuffled()
         poems = []
         for i in 0..<size {
-            poems.append(shuffled_poems[i])
+            poems.append(shuffledPoems[i])
         }
         
     }
     
     func shuffle() {
-        shuffle_with_size(size: poems.count)
+        shuffleWithSize(size: poems.count)
     }
     
     func add_fake_poems() {
@@ -86,11 +86,11 @@ class Deck {
             poems = Deck.originalPoems
             return
         }
-        let selected_nums = poems.map{$0.number}
+        let selectedNums = poems.map{$0.number}
         let int100 = (Array<Int>)(1...100)
-        let rest_nums = int100.diff(selected_nums).shuffled()
-        for i in 0..<selected_nums.count {
-            poems.append(Deck.originalPoems[rest_nums[i]-1])
+        let restNums = int100.diff(selectedNums).shuffled()
+        for i in 0..<selectedNums.count {
+            poems.append(Deck.originalPoems[restNums[i]-1])
         }
         poems.shuffle()
     }
