@@ -102,7 +102,7 @@ class DeckTests: XCTestCase {
     
     func test_shuffle() {
         // シャッフルする前は、オリジナルの順番通りに並んでいる。
-        let org_numbers = Deck.original_poems.map{$0.number}
+        let org_numbers = Deck.originalPoems.map{$0.number}
         XCTAssertEqual(org_numbers.count, 100)
         let deck = Deck()
         var poems_numbers = deck.poems.map{$0.number}
