@@ -82,4 +82,19 @@ class PoemSupplierTests: XCTestCase {
         let after100 = supplier.drawNextPoem()
         XCTAssertNil(after100)
     }
+    
+    func test_addFakePoems() {
+        // given
+        let bool100 = Bool100.allUnselected()
+        let state100 = SelectedState100(bool100: bool100)
+        state100.select_of(number: 3)
+        state100.select_of(number: 5)
+        let deck = Deck.createFrom(state100: state100)
+        let supplier = PoemSupplier(deck: deck, shuffle: true)
+        XCTAssertEqual(supplier.deck.size, 2)
+        // when
+        supplier.addFakePoems()
+        // then
+        XCTAssertEqual(supplier.deck.size, 4)
+    }
 }
