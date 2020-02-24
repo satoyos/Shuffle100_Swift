@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils {
+class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
     
     let app = XCUIApplication()
     
@@ -39,7 +39,7 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils {
             app.tables.cells["002"].tap()
             app.tables.cells["004"].tap()
             //   back to HomeScreen
-            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+            goBackToHomeScreen(app)
             // then
             XCTAssertTrue(app.cells.staticTexts["97首"].exists)
         }
@@ -65,7 +65,7 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils {
             app.tables.cells["005"].tap()
             app.buttons["Cancel"].tap()
             //   back to HomeScreen
-            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+            goBackToHomeScreen(app)
             // then
             XCTAssertTrue(app.cells.staticTexts["98首"].exists)
         }
