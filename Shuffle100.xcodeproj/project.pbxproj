@@ -172,6 +172,7 @@
 		92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
 		92AE7C7A24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
 		92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
+		92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */; };
 		92AF24A1229E91260085B754 /* LegacyDataConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */; };
 		92AF24A3229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
 		92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */; };
@@ -353,6 +354,7 @@
 		92AE7C7223FEAEDC003FA07F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PemPickerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorSetUpSettings.swift; sourceTree = "<group>"; };
+		92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeModeUITest.swift; sourceTree = "<group>"; };
 		92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverterTest.swift; sourceTree = "<group>"; };
 		92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverter.swift; sourceTree = "<group>"; };
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */,
 				9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */,
 				92ABF9B423F583E7000CA91C /* SelectSingerUITest.swift */,
+				92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 				92FC39592288389C00791053 /* SelectedStatus100.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 				9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
+				92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
 				925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */,
 				923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */,

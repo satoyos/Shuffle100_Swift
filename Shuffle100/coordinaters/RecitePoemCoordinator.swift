@@ -19,6 +19,9 @@ class RecitePoemCoordinator: Coordinator{
         self.settings = settings
         let deck = Deck.createFrom(state100: settings.state100)
         self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
+        if settings.fakeMode {
+            poemSupplier.addFakePoems()
+        }
     }
     
     func start() {
