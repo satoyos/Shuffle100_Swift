@@ -92,8 +92,13 @@ class PoemSupplier {
         self.setSideTo(.kami)
     }
     
+    func addFakePoems() {
+        deck.addFakePoems()
+    }
+    
     private func setSideTo(_ side: Side) {
         self.fuda_side = side
     }
+    
     
 }
