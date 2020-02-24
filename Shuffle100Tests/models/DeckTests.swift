@@ -116,9 +116,9 @@ class DeckTests: XCTestCase {
     }
     
     func test_createFromSelectedState100() {
-        let bool100 = SelectedState100.create_of(bool: false)
-        bool100.select_of(number: 1)
-        bool100.select_of(number: 100)
+        let bool100 = SelectedState100.createOf(bool: false)
+        bool100.selectOf(number: 1)
+        bool100.selectOf(number: 100)
         XCTAssertEqual(bool100.selectedNum, 2)
         
         // 作成したSeletedState100でDockを初期化
@@ -129,10 +129,10 @@ class DeckTests: XCTestCase {
     }
     
     func test_addFakePoems() {
-        let st100 = SelectedState100.create_of(bool: false)
+        let st100 = SelectedState100.createOf(bool: false)
 
         // まず、3枚選んだ状態に設定
-        st100.select_in_numbers([2, 3, 6])
+        st100.selectInNumbers([2, 3, 6])
         let deck = Deck.createFrom(state100: st100)
         XCTAssertEqual(deck.size, 3)
         
@@ -141,7 +141,7 @@ class DeckTests: XCTestCase {
         XCTAssertEqual(deck.size, 6)
         
         // 50枚以上のデッキに空札を追加しても、デッキのサイズは2倍にならず、100枚の札が全て選ばれた状態になる
-        st100.select_in_numbers((Array<Int>)(1...60))
+        st100.selectInNumbers((Array<Int>)(1...60))
         let deck2 = Deck.createFrom(state100: st100)
         XCTAssertEqual(deck2.size, 60)
         deck2.addFakePoems()

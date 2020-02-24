@@ -21,7 +21,7 @@ class SelectedState100: Codable {
         bools = bool100.bools
     }
     
-    static func create_of(bool: Bool) -> SelectedState100 {
+    static func createOf(bool: Bool) -> SelectedState100 {
         let initBool100 = SelectedState100.get_bool100_of(bool: bool)
         return SelectedState100(bool100: initBool100)
     }
@@ -37,7 +37,7 @@ class SelectedState100: Codable {
         else { return Bool100.allUnselected() }
     }
     
-    func of_number(_ number: Int) throws -> Bool {
+    func ofNumber(_ number: Int) throws -> Bool {
         if number < 1 || number > 100 {
             throw NSError(domain: "indexが範囲外!", code: -1)
         } else {
@@ -45,7 +45,7 @@ class SelectedState100: Codable {
         }
     }
     
-    func set_state_of_number(state: Bool, index: Int) throws {
+    func setStateOfNumber(state: Bool, index: Int) throws {
         if index < 1 || index > 100 {
             throw NSError(domain: "indexが範囲外!", code: -1)
         } else {
@@ -53,44 +53,44 @@ class SelectedState100: Codable {
         }
     }
     
-    func cancel_all() {
+    func cancelAll() {
         self.bools = Bool100.allFalseBoolArray()
     }
     
-    func select_all() {
+    func selectAll() {
         self.bools = Bool100.allTrueBoolArray()
     }
     
-    func select_of(number: Int) {
+    func selectOf(number: Int) {
         do {
-            try self.set_state_of_number(state: true, index: number)
+            try self.setStateOfNumber(state: true, index: number)
         } catch {
             fatalError("numberの値[\(number)]がサポート範囲外")
         }
     }
     
-    func cancel_of(number: Int) {
+    func cancelOf(number: Int) {
         do {
-            try self.set_state_of_number(state: false, index: number)
+            try self.setStateOfNumber(state: false, index: number)
         } catch {
             print("numberの値[\(number)]がサポート範囲外")
             exit(2)
         }
     }
     
-    func select_in_numbers(_ array: Array<Int>) {
+    func selectInNumbers(_ array: Array<Int>) {
         for num in array {
-            select_of(number: num)
+            selectOf(number: num)
         }
     }
     
-    func cancel_in_numbers(_ array: Array<Int>) {
+    func cancelInNumbers(_ array: Array<Int>) {
         for num in array {
-            cancel_of(number: num)
+            cancelOf(number: num)
         }
     }
     
-    func reverse_in_index(_ idx: Int) {
+    func reverseInIndex(_ idx: Int) {
         self.bools[idx].toggle()
     }
     

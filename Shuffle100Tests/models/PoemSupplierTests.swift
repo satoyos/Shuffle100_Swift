@@ -85,10 +85,10 @@ class PoemSupplierTests: XCTestCase {
     
     func test_addFakePoems() {
         // given
-        let bool100 = Bool100.allUnselected()
-        let state100 = SelectedState100(bool100: bool100)
-        state100.select_of(number: 3)
-        state100.select_of(number: 5)
+//        let bool100 = Bool100.allUnselected()
+        let state100 = SelectedState100.createOf(bool: false)
+        state100.selectOf(number: 3)
+        state100.selectOf(number: 5)
         let deck = Deck.createFrom(state100: state100)
         let supplier = PoemSupplier(deck: deck, shuffle: true)
         XCTAssertEqual(supplier.deck.size, 2)
