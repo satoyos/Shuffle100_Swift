@@ -19,7 +19,7 @@ final class NormalModeCoordinator: RecitePoemCoordinator {
         screen.skipToNextScreenAction = { [weak self] in
             self?.stepIntoShimoInNormalMode()
         }
-        poemSupplier.step_into_shimo()
+        poemSupplier.stepIntoShimo()
     }
   
     private func stepIntoShimoInNormalMode() {

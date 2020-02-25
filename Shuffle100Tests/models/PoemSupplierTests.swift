@@ -45,11 +45,11 @@ class PoemSupplierTests: XCTestCase {
     func test_stepIntoShimo() {
         let supplier = PoemSupplier()
         _ = supplier.drawNextPoem()
-        XCTAssertTrue(supplier.kami_now)
+        XCTAssertTrue(supplier.kamiNow)
         XCTAssertEqual(supplier.side, .kami)
         
-        supplier.step_into_shimo()
-        XCTAssertFalse(supplier.kami_now)
+        supplier.stepIntoShimo()
+        XCTAssertFalse(supplier.kamiNow)
         XCTAssertEqual(supplier.side, .shimo)
     }
     
@@ -85,7 +85,6 @@ class PoemSupplierTests: XCTestCase {
     
     func test_addFakePoems() {
         // given
-//        let bool100 = Bool100.allUnselected()
         let state100 = SelectedState100.createOf(bool: false)
         state100.selectOf(number: 3)
         state100.selectOf(number: 5)
