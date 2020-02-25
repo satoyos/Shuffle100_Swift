@@ -17,10 +17,12 @@ class PoemSupplier {
     var deck: Deck
     private var current_poem: Poem?
     private var fuda_side: Side?
+    private var mustShuffle: Bool
     
-    init(deck: Deck, shuffle: Bool) {
+    init(deck: Deck, shuffle mustShuffle: Bool = true) {
         self.deck = deck
-        if shuffle {
+        self.mustShuffle = mustShuffle
+        if mustShuffle {
             deck.shuffle()
         }
     }
@@ -94,6 +96,9 @@ class PoemSupplier {
     
     func addFakePoems() {
         deck.addFakePoems()
+        if mustShuffle {
+            deck.shuffle()
+        }
     }
     
     private func setSideTo(_ side: Side) {
