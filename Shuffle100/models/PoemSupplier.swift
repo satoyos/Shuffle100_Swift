@@ -52,7 +52,7 @@ class PoemSupplier {
         
     }
     
-    var kami_now: Bool {
+    var kamiNow: Bool {
         if let _ = self.current_poem {
             return fuda_side! == .kami
         } else {
@@ -86,11 +86,11 @@ class PoemSupplier {
         }
     }
     
-    func step_into_shimo() {
+    func stepIntoShimo() {
         self.setSideTo(.shimo)
     }
     
-    func back_to_kami() {
+    func backToKami() {
         self.setSideTo(.kami)
     }
     

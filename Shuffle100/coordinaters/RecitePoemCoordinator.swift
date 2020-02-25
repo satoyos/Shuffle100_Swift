@@ -89,7 +89,7 @@ class RecitePoemCoordinator: Coordinator{
             let number = poemSupplier.poem.number
             let counter = poemSupplier.currentIndex
             let size = poemSupplier.size
-            poemSupplier.back_to_kami()
+            poemSupplier.backToKami()
             screen.slideBackToKami(number: number, at: counter, total: size)
             screen.playerFinishedAction = { [weak self, number, counter] in
                 self?.reciteKamiFinished(number: number, counter: counter)
