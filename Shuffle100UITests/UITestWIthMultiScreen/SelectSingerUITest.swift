@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
+class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SelectSingerScreenUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
@@ -26,7 +26,7 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
             let inabaLabel = "いなばくん（人間）"
             // when
             app.pickerWheels.element.adjust(toPickerWheelValue: inabaLabel)
-            app.buttons["トップ"].tap()
+            goBackToHomeScreen(app)
             // then
             XCTAssertTrue(app.cells.staticTexts[inabaLabel].exists)
         }

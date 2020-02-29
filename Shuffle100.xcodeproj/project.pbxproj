@@ -168,7 +168,7 @@
 		92AE7C7323FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
-		92AE7C7723FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */; };
+		92AE7C7723FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7623FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift */; };
 		92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
 		92AE7C7A24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
 		92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
@@ -210,6 +210,8 @@
 		92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57158220F063100235717 /* SelectModeScreenTest.swift */; };
 		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
+		92E5F825240A5F7000C75FC6 /* SaveDataUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F824240A5F7000C75FC6 /* SaveDataUITest.swift */; };
+		92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */; };
 		92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
@@ -352,7 +354,7 @@
 		92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSingerCoordinator.swift; sourceTree = "<group>"; };
 		92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTest.swift; sourceTree = "<group>"; };
 		92AE7C7223FEAEDC003FA07F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PemPickerScreenUITestUtils.swift; sourceTree = "<group>"; };
+		92AE7C7623FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorSetUpSettings.swift; sourceTree = "<group>"; };
 		92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeModeUITest.swift; sourceTree = "<group>"; };
 		92AF24A0229E91260085B754 /* LegacyDataConverterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverterTest.swift; sourceTree = "<group>"; };
@@ -372,6 +374,8 @@
 		92D57150220EC87700235717 /* GameConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigTest.swift; sourceTree = "<group>"; };
 		92D57154220F03AF00235717 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
+		92E5F824240A5F7000C75FC6 /* SaveDataUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataUITest.swift; sourceTree = "<group>"; };
+		92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92E6552121CE753200005F85 /* HomeScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDelegates.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -592,6 +596,7 @@
 				9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */,
 				92ABF9B423F583E7000CA91C /* SelectSingerUITest.swift */,
 				92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */,
+				92E5F824240A5F7000C75FC6 /* SaveDataUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -666,7 +671,8 @@
 			children = (
 				92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */,
 				92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */,
-				92AE7C7623FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift */,
+				92AE7C7623FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift */,
+				92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1139,7 +1145,9 @@
 				927E4BF8222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4C0C22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92FC39892290457E00791053 /* FudaSet.swift in Sources */,
+				92E5F825240A5F7000C75FC6 /* SaveDataUITest.swift in Sources */,
 				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
+				92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */,
 				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
@@ -1148,7 +1156,7 @@
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
-				92AE7C7723FFDF4D003FA07F /* PemPickerScreenUITestUtils.swift in Sources */,
+				92AE7C7723FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift in Sources */,
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
 				92FC39552288370D00791053 /* GameSettings.swift in Sources */,
 				92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */,
