@@ -25,7 +25,7 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SelectSingerScreenU
             // given
             let inabaLabel = "いなばくん（人間）"
             // when
-            app.pickerWheels.element.adjust(toPickerWheelValue: inabaLabel)
+            selectSingerFor(name: "いなばくん", in: app)
             goBackToHomeScreen(app)
             // then
             XCTAssertTrue(app.cells.staticTexts[inabaLabel].exists)
