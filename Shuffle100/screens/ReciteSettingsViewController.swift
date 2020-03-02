@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteSettingsViewController: UIViewController {
+class ReciteSettingsViewController: UITableViewController {
     var settings: Settings!
 
     init(settings: Settings = Settings()) {
@@ -31,4 +31,7 @@ class ReciteSettingsViewController: UIViewController {
         
     }
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 }
