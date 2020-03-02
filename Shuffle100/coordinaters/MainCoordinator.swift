@@ -13,6 +13,7 @@ class MainCoordinator: Coordinator {
     var recitePoemCoordinator: RecitePoemCoordinator!
     let store = StoreManager()
     let env = Environment()
+    var homeScreen: HomeViewController?
 
     func start() {
         let settings = setUpSettings()
@@ -32,9 +33,12 @@ class MainCoordinator: Coordinator {
         homeScreen.startGameAction = {[weak self, unowned settings] in
             self?.startGame(settings: settings)
         }
+        homeScreen.reciteSettingsAction = { [weak self, unowned settings] in
+            self?.openReciteSettings(settins: settings)
+        }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings)
-        
         AudioPlayerFactory.shared.setupAudioSession()
+        self.homeScreen = homeScreen
     }
     
     private func setUpNavigationController() {
@@ -83,5 +87,11 @@ class MainCoordinator: Coordinator {
                 assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
             }
         }
+    }
+    
+    private func openReciteSettings(settins: Settings) {
+        guard let homeScreen = self.homeScreen else { return }
+        let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen)
+        coordinator.start()
     }
 }

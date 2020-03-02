@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     var selectSingerAction: (() -> Void)?
     var startGameAction: (() -> Void)?
     var saveSettingsAction: (() -> Void)?
+    var reciteSettingsAction: (() -> Void)?
     
     init(settings: Settings) {
           self.settings = settings
@@ -91,8 +92,9 @@ class HomeViewController: UIViewController {
     private func setSettingsButton(withSize reSize: CGSize) {
         let gearButton = UIBarButtonItem(
             image: UIImage(named: "gear-520.png")?.reSizeImage(reSize: reSize),
-            style: UIBarButtonItem.Style.plain, target: self, action: nil)
+            style: UIBarButtonItem.Style.plain, target: self, action: #selector(gearButtonTapped))
         gearButton.accessibilityLabel = "GearButton"
+        
         self.navigationItem.leftBarButtonItem = gearButton
     }
     

@@ -11,6 +11,7 @@ import XCTest
 protocol HomeScreenUITestUtils {
     func gotoPoemPickerScreen(_ app: XCUIApplication) -> Void
     func gotoRecitePoemScreen(_ app: XCUIApplication) -> Void
+    func gotoReciteSettingsScreen(_ app: XCUIApplication) -> Void
 }
 
 extension HomeScreenUITestUtils {
@@ -28,17 +29,13 @@ extension HomeScreenUITestUtils {
         XCTAssert(app.staticTexts["序歌"].exists)
     }
     
-    
-    
     func gotoSelectModeScreen(_ app: XCUIApplication) {
         // when
         app.tables.staticTexts["読み上げモード"].tap()
         // then
         XCTAssert(app.navigationBars["読み上げモードを選ぶ"].exists)
     }
-    
-
-    
+        
     func gotoSelectSingerScreen(_ app: XCUIApplication) {
         // when
         app.tables.staticTexts["読手"].tap()
@@ -46,4 +43,10 @@ extension HomeScreenUITestUtils {
         XCTAssert(app.navigationBars["読手を選ぶ"].exists)
     }
     
+    func gotoReciteSettingsScreen(_ app: XCUIApplication) {
+        // when
+        app.navigationBars["トップ"].buttons["GearButton"].tap()
+        // then
+        XCTAssert(app.navigationBars["いろいろな設定"].exists)
+    }
 }
