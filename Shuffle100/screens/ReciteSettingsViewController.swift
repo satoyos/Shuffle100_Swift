@@ -14,6 +14,8 @@ class ReciteSettingsViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "いろいろな設定"
+        self.view.backgroundColor = .white
+        
     }
 
 }

@@ -35,4 +35,8 @@ extension HomeViewController: UITableViewDelegate {
         settings.fakeMode = sender.isOn
         self.saveSettingsAction?()
     }
+    
+    @objc func gearButtonTapped(sender: UIButton) {
+        self.reciteSettingsAction?()
+    }
 }
