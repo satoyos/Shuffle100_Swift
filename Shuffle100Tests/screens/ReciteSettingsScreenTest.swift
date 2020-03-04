@@ -28,6 +28,13 @@ class ReciteSettingsScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title, "いろいろな設定")
+        // then
+        let tableView = screen.tableView
+        XCTAssertNotNil(tableView)
+        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
+        let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(firstCell.textLabel?.text, "歌と歌の間隔")
+        
     }
 
     
