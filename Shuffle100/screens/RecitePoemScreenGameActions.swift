@@ -65,7 +65,7 @@ extension RecitePoemViewController {
     }
     
     func stepIntoNextPoem(number: Int, at counter: Int, total: Int) {
-        UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
+        UIView.transition(with: self.view, duration: interval(), options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
             let newReciteView = RecitePoemView()
             self.recitePoemView.removeFromSuperview()
             UIView.performWithoutAnimation {
@@ -83,7 +83,7 @@ extension RecitePoemViewController {
         recitePoemView.showAsWaitingFor(.play)
     }
     
-    fileprivate func setUpNewScreen(with newReciteView: RecitePoemView) {
+    private func setUpNewScreen(with newReciteView: RecitePoemView) {
         self.recitePoemView.removeFromSuperview()
         self.recitePoemView = newReciteView
         self.addActionsToButtons()
@@ -95,7 +95,7 @@ extension RecitePoemViewController {
         newReciteView.initView(title: "\(counter)首め:下の句 (全\(total)首)")
         newReciteView.fixLayoutOn(baseView: self.view, offsetX: self.view.frame.width)
         
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: kamiShimoInterval(), animations: {
             newReciteView.fixLayoutOn(baseView: self.view, offsetX: 0)
         }, completion: { finished in
             self.setUpNewScreen(with: newReciteView)
@@ -109,7 +109,7 @@ extension RecitePoemViewController {
         newReciteView.initView(title: "\(counter)首め:上の句 (全\(total)首)")
         newReciteView.fixLayoutOn(baseView: self.view, offsetX: -1 * self.view.frame.width)
         
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: kamiShimoInterval(), animations: {
             newReciteView.fixLayoutOn(baseView: self.view, offsetX: 0)
         }, completion: { finished in
             self.setUpNewScreen(with: newReciteView)
@@ -119,7 +119,7 @@ extension RecitePoemViewController {
     }
     
     func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
-        UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromRight, .layoutSubviews], animations: {
+        UIView.transition(with: self.view, duration: interval(), options: [.transitionFlipFromRight, .layoutSubviews], animations: {
             let newReciteView = RecitePoemView()
             self.recitePoemView.removeFromSuperview()
             UIView.performWithoutAnimation {
@@ -135,7 +135,7 @@ extension RecitePoemViewController {
     }
     
     func stepIntoGameEnd() {
-        UIView.transition(with: self.view, duration: 1.0, options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
+        UIView.transition(with: self.view, duration: interval(), options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
             let gameEndView = GameEndViiew().then {
                 $0.backToHomeButtonAction = { [weak self] in
                     self?.backToHomeScreen()
@@ -158,5 +158,13 @@ extension RecitePoemViewController {
     
     private func reciteShimo(number: Int, count: Int) {
         playNumberedPoem(number: number, side: .shimo, count: count)
+    }
+    
+    private func interval() -> Double {
+        return Double(settings.interval)
+    }
+    
+    private func kamiShimoInterval() -> Double {
+        return Double(settings.kamiShimoInterval)
     }
 }
