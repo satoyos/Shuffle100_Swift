@@ -13,7 +13,7 @@ target 'Shuffle100' do
   pod 'BBBadgeBarButtonItem', git: 'https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git'
   pod 'Then'
   pod 'DSFloatingButton'
-  pod 'FontAwesome.swift'
+  pod 'FontAwesome.swift', :inhibit_warnings => true
 
   target 'Shuffle100Tests' do
     inherit! :search_paths
