@@ -22,8 +22,13 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_showRecteSettingsScreen() {
+    func test_gotoIntervalSettingScreen() {
+        // given
         gotoReciteSettingsScreen(app)
+        // when
+        app.tables.staticTexts["歌と歌の間隔"].tap()
+        // then
+        XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
     }
 
 }
