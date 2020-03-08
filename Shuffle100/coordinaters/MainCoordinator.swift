@@ -91,7 +91,7 @@ class MainCoordinator: Coordinator {
     
     private func openReciteSettings(settins: Settings) {
         guard let homeScreen = self.homeScreen else { return }
-        let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen)
+        let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen, store: store)
         coordinator.start()
     }
 }

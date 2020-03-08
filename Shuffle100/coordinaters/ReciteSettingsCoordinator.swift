@@ -10,12 +10,14 @@ import UIKit
 
 class ReciteSettingsCoordinator: Coordinator {
     private var settings: Settings
+    private var store: StoreManager
     private var fromScreen: UIViewController
     private var screen: UIViewController?
-    
-    init(settings: Settings, fromScreen: UIViewController) {
+
+    init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager()) {
         self.settings = settings
         self.fromScreen = fromScreen
+        self.store = store
     }
     
     func start() {
