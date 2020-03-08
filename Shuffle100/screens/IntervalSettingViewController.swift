@@ -15,7 +15,4 @@ class IntervalSettingViewController: UIViewController {
 
         self.title = "歌の間隔の調整"
     }
-    
-
-
 }
