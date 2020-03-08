@@ -155,6 +155,10 @@
 		929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */; };
 		929A615622F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */; };
 		929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */; };
+		92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */; };
+		92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
+		92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
+		92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
 		92ABF9A723F00B80000CA91C /* RewindButtonUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9A623F00B80000CA91C /* RewindButtonUITest.swift */; };
 		92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */; };
 		92ABF9AB23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9AA23F42CFA000CA91C /* SelectSingerViewController.swift */; };
@@ -354,6 +358,8 @@
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerCoordinator.swift; sourceTree = "<group>"; };
+		92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingScreenTest.swift; sourceTree = "<group>"; };
+		92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingViewController.swift; sourceTree = "<group>"; };
 		92ABF9A623F00B80000CA91C /* RewindButtonUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewindButtonUITest.swift; sourceTree = "<group>"; };
 		92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenTest.swift; sourceTree = "<group>"; };
 		92ABF9AA23F42CFA000CA91C /* SelectSingerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerViewController.swift; sourceTree = "<group>"; };
@@ -545,6 +551,7 @@
 				92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */,
 				92ABF9AA23F42CFA000CA91C /* SelectSingerViewController.swift */,
 				92E5F82A240BCD4900C75FC6 /* ReciteSettingsViewController.swift */,
+				92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -642,6 +649,7 @@
 				928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */,
 				92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */,
 				92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */,
+				92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -1039,6 +1047,7 @@
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
 				927E4BF6222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
+				92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
@@ -1075,10 +1084,12 @@
 				92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
 				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
+				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				92CE520C2168D4D200538E01 /* HomeScreenDataSource.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
+				92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */,
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
@@ -1221,6 +1232,7 @@
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
+				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				92AF24A5229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
