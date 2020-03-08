@@ -11,6 +11,7 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
     var recitePoemCoordinator: RecitePoemCoordinator!
+    var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     let store = StoreManager()
     let env = Environment()
     var homeScreen: HomeViewController?
@@ -93,5 +94,6 @@ class MainCoordinator: Coordinator {
         guard let homeScreen = self.homeScreen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen, store: store)
         coordinator.start()
+        self.reciteSettingsCoordinator = coordinator
     }
 }

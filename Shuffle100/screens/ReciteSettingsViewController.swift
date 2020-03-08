@@ -13,6 +13,7 @@ class ReciteSettingsViewController: UITableViewController {
     let reuseID = "ReciteSettings"
     var settings: Settings!
     let settingNames = ["歌と歌の間隔", "上の句と下の句の間隔", "音量調整"]
+    var intervalSettingAction: (() -> Void)?
 
     init(settings: Settings = Settings()) {
         self.settings = settings
@@ -49,6 +50,15 @@ class ReciteSettingsViewController: UITableViewController {
             $0.textLabel?.text = name
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            self.intervalSettingAction?()
+        default:
+            assertionFailure("他の選択肢は対応していません！")
+        }
     }
     
     private func createTableViewForReciteSettingsScreen() -> UITableView {
