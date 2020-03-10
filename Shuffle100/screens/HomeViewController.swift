@@ -15,35 +15,17 @@ enum HomeCellType: String {
     case singers = "singersCell"
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: SettingsAttachedViewController {
     let titleName = "トップ"
     let navBarButtonSize = 32
     var tableView: UITableView!
     var sections: [TableSection]!
-    var settings: Settings!
     var selectPoemAction: (() -> Void)?
     var selectModeAction: (() -> Void)?
     var selectSingerAction: (() -> Void)?
     var startGameAction: (() -> Void)?
-    var saveSettingsAction: (() -> Void)?
     var reciteSettingsAction: (() -> Void)?
     
-    init(settings: Settings) {
-          self.settings = settings
-
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    convenience init() {
-          self.init(settings: Settings())
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = titleName

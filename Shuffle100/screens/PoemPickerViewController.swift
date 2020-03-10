@@ -10,11 +10,10 @@ import UIKit
 import BBBadgeBarButtonItem
 import Then
 
-class PoemPickerViewController: UITableViewController {
-    var settings: Settings!
+class PoemPickerViewController: SettingsAttachedViewController {
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
-    var saveSettingsAction: (() -> Void)?
+    var tableView: UITableView!
     
     var selected_num: Int {
         get {
@@ -22,21 +21,10 @@ class PoemPickerViewController: UITableViewController {
         }
     }
 
-    init(settings: Settings = Settings()) {
-        self.settings = settings
-        
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.prompt = "百首読み上げ"
+        self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItem = saveButtonItem()
@@ -67,6 +55,13 @@ class PoemPickerViewController: UITableViewController {
         if let btnWithBadge = navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem {
             btnWithBadge.badgeValue = "\(selected_num)首"
         }
+    }
+    
+    private func createTableViewForScreen() -> UITableView {
+        let tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
     }
     
     private func saveButtonItem() -> UIBarButtonItem? {

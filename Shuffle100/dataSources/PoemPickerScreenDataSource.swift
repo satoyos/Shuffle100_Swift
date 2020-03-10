@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-extension PoemPickerViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension PoemPickerViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive {
             return filteredPoems.count
         } else {
@@ -22,7 +22,7 @@ extension PoemPickerViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let poem: Poem
         if searchController.isActive {
             poem = filteredPoems[indexPath.row]
@@ -40,7 +40,7 @@ extension PoemPickerViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return fontSizeForVerse() * 3
     }
     
