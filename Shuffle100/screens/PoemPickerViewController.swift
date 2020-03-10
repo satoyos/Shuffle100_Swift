@@ -26,6 +26,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
         navigationItem.prompt = "百首読み上げ"
         self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
+        view.addSubview(tableView)
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItem = saveButtonItem()
         searchSetup()
@@ -58,7 +59,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     }
     
     private func createTableViewForScreen() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .grouped)
+        let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
