@@ -11,7 +11,8 @@ import UIKit
 class SettingsAttachedViewController: UIViewController {
 
     var settings: Settings!
-    
+    var saveSettingsAction: (() -> Void)?
+
     init(settings: Settings = Settings()) {
         self.settings = settings
 

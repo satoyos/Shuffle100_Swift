@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-extension PoemPickerViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension PoemPickerViewController: UITableViewDelegate {
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let number: Int
         if searchController.isActive {
             let selectedPoem = filteredPoems[indexPath.row]

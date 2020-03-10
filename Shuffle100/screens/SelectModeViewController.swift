@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SelectModeViewController: SettingsAttachedViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let screenTitle = "読み上げモードを選ぶ"
     let reciteModeHolders = [
         ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
@@ -18,20 +18,6 @@ class SelectModeViewController: UIViewController, UIPickerViewDataSource, UIPick
     ]
     
     lazy var picker = UIPickerView()
-    var settings: Settings!
-    var saveSettingsAction: (() -> Void)?
-
-    init(settings: Settings = Settings()) {
-        self.settings = settings
-
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
