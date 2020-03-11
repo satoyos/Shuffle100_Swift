@@ -9,23 +9,9 @@
 import UIKit
 import SnapKit
 
-class SelectSingerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SelectSingerViewController: SettingsAttachedViewController,
+    UIPickerViewDataSource, UIPickerViewDelegate {
     let picker = UIPickerView()
-    var settings: Settings!
-    var saveSettingsAction: (() -> Void)?
-    
-    init(settings: Settings = Settings()) {
-        self.settings = settings
-
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

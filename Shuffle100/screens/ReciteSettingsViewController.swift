@@ -9,42 +9,30 @@
 import UIKit
 import Then
 
-class ReciteSettingsViewController: UITableViewController {
+class ReciteSettingsViewController: SettingsAttachedViewController, UITableViewDataSource, UITableViewDelegate {
     let reuseID = "ReciteSettings"
-    var settings: Settings!
+    var tableView: UITableView!
     let settingNames = ["歌と歌の間隔", "上の句と下の句の間隔", "音量調整"]
     var intervalSettingAction: (() -> Void)?
-
-    init(settings: Settings = Settings()) {
-        self.settings = settings
-
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "いろいろな設定"
-        view.backgroundColor = .white
+        view.backgroundColor = StandardColor.backgroundColor
         self.tableView = createTableViewForReciteSettingsScreen()
-        
+        view.addSubview(tableView)        
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingNames.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath).then {
             let name = settingNames[indexPath.row]
             $0.textLabel?.text = name
@@ -52,7 +40,7 @@ class ReciteSettingsViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             self.intervalSettingAction?()
@@ -62,7 +50,7 @@ class ReciteSettingsViewController: UITableViewController {
     }
     
     private func createTableViewForReciteSettingsScreen() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .grouped)
+        let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseID)
