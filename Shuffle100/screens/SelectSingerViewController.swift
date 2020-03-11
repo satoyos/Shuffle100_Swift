@@ -9,8 +9,7 @@
 import UIKit
 import SnapKit
 
-class SelectSingerViewController: SettingsAttachedViewController,
-    UIPickerViewDataSource, UIPickerViewDelegate {
+class SelectSingerViewController: SettingsAttachedViewController {
     let picker = UIPickerView()
     
     override func viewDidLoad() {
@@ -25,23 +24,6 @@ class SelectSingerViewController: SettingsAttachedViewController,
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.saveSettingsAction?()
-    }
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        Singers.all.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Singers.all[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let index = pickerView.selectedRow(inComponent: 0)
-        settings.singerID = Singers.all[index].id
     }
     
     private func initPicker() {

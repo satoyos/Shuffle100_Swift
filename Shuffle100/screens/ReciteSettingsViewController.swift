@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Then
+//import Then
 
-class ReciteSettingsViewController: SettingsAttachedViewController, UITableViewDataSource, UITableViewDelegate {
+class ReciteSettingsViewController: SettingsAttachedViewController {
     let reuseID = "ReciteSettings"
     var tableView: UITableView!
     let settingNames = ["歌と歌の間隔", "上の句と下の句の間隔", "音量調整"]
@@ -24,31 +24,6 @@ class ReciteSettingsViewController: SettingsAttachedViewController, UITableViewD
         view.addSubview(tableView)        
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingNames.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath).then {
-            let name = settingNames[indexPath.row]
-            $0.textLabel?.text = name
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            self.intervalSettingAction?()
-        default:
-            assertionFailure("他の選択肢は対応していません！")
-        }
-    }
-    
     private func createTableViewForReciteSettingsScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
