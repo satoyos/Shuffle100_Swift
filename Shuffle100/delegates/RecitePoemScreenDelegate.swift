@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-extension RecitePoemViewController {
+extension RecitePoemViewController: AVAudioPlayerDelegate {
     internal func exitButtonTapped() {
         let ac = UIAlertController(title: "試合を終了しますか？", message: nil, preferredStyle: .alert)
         let quit = UIAlertAction(title: "終了する", style: .cancel) {[weak self] action in

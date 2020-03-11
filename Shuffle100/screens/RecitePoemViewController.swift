@@ -10,10 +10,9 @@ import UIKit
 import AVFoundation
 import Then
 
-class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
+class RecitePoemViewController: SettingsAttachedViewController {
     var recitePoemView: RecitePoemView!
     var gameEndView: GameEndViiew!
-    var settings: Settings!
     var currentPlayer: AVAudioPlayer?
     var timerForPrgoress: Timer!
     var playerFinishedAction: (() -> Void)?
@@ -22,19 +21,7 @@ class RecitePoemViewController: UIViewController, AVAudioPlayerDelegate {
     var skipToNextScreenAction: (() -> Void)?
     var singer: Singer!
     var playFinished: Bool = false
-    
-    init(settings: Settings = Settings()) {
-        self.settings = settings
         
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
