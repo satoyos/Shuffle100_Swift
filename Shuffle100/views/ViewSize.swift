@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ViewSize.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2019/07/13.
@@ -9,10 +9,12 @@
 import UIKit
 
 private let skipButtonHeightBase: CGFloat = 30
+private let intervalTimeLabelSizeBase: CGFloat = 100
 
 protocol SizeByDevice {
     func playButtonHeight() -> CGFloat
     func skipButtonHeight() -> CGFloat
+    func intervalTimeLabelSize() -> CGFloat
 }
 
 class SizeFactory {
@@ -36,6 +38,10 @@ class PhoneSize: SizeByDevice {
     func skipButtonHeight() -> CGFloat {
         return skipButtonHeightBase
     }
+    
+    func intervalTimeLabelSize() -> CGFloat {
+        return intervalTimeLabelSizeBase
+    }
 }
 
 class PadSize: SizeByDevice {
@@ -45,6 +51,10 @@ class PadSize: SizeByDevice {
     
     func skipButtonHeight() -> CGFloat {
         return skipButtonHeightBase * 2
+    }
+    
+    func intervalTimeLabelSize() -> CGFloat {
+        return intervalTimeLabelSizeBase
     }
 }
 

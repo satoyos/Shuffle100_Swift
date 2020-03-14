@@ -20,5 +20,20 @@ class IntervalSettingScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title, "歌の間隔の調整")
+        // when
+        screen.view.layoutSubviews()
+        // then
+        XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())        
+    }
+    
+    private func timeLabelSizeByDevice() -> CGFloat {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            return 100
+        case .pad:
+            return 200
+        default:
+             fatalError("This Device is not supported. Idiom => \(UIDevice.current.userInterfaceIdiom)")
+        }
     }
 }
