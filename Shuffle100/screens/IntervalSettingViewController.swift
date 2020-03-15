@@ -30,6 +30,10 @@ class IntervalSettingViewController: SettingsAttachedViewController {
         configureSlider()
     }
     
+    internal func updateTimeLabel() {
+        timeLabel.text = String(format: "%.2F", slider.value)
+    }
+    
     private func configureTimeLabel() {
         _ = timeLabel.then {
             $0.text = "0.00"
@@ -40,7 +44,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
                 make.centerX.equalToSuperview()
                 make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
             }
-            $0.text = String(format: "%.2F", settings.interval)
+//            updateTimeLabel()
         }
     }
     
@@ -63,7 +67,10 @@ class IntervalSettingViewController: SettingsAttachedViewController {
             $0.minimumValue = minIntervalDuration
             $0.maximumValue = maxIntervalDuration
             $0.value = settings.interval
+            $0.accessibilityLabel = "slider"
+            $0.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
         }
+        updateTimeLabel()
     }
 
     private func blankBetweenLabelAndSlider() -> CGFloat {
