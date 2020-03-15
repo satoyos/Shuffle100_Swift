@@ -30,13 +30,13 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         // then
         XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
         
-        
-        XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
-            // when
-            app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
-            // then
-            XCTAssert(app.staticTexts["0.50"].exists)
-        }
+        if #available(iOS 13.0, *) {
+            XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
+                // when
+                app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
+                // then
+                XCTAssert(app.staticTexts["0.50"].exists)
+            }
+        }        
     }
-
 }
