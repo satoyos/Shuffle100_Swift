@@ -10,11 +10,13 @@ import UIKit
 
 private let skipButtonHeightBase: CGFloat = 30
 private let intervalTimeLabelSizeBase: CGFloat = 100
+private let intervalSliderHeightBase = intervalTimeLabelSizeBase * 4 / 10
 
 protocol SizeByDevice {
     func playButtonHeight() -> CGFloat
     func skipButtonHeight() -> CGFloat
-    func intervalTimeLabelSize() -> CGFloat
+    func intervalTimeLabelPointSize() -> CGFloat
+    func intervalSiderHeight() -> CGFloat
 }
 
 class SizeFactory {
@@ -39,8 +41,12 @@ class PhoneSize: SizeByDevice {
         return skipButtonHeightBase
     }
     
-    func intervalTimeLabelSize() -> CGFloat {
+    func intervalTimeLabelPointSize() -> CGFloat {
         return intervalTimeLabelSizeBase
+    }
+    
+    func intervalSiderHeight() -> CGFloat {
+        return intervalSliderHeightBase
     }
 }
 
@@ -53,8 +59,12 @@ class PadSize: SizeByDevice {
         return skipButtonHeightBase * 2
     }
     
-    func intervalTimeLabelSize() -> CGFloat {
-        return intervalTimeLabelSizeBase
+    func intervalTimeLabelPointSize() -> CGFloat {
+        return intervalTimeLabelSizeBase * 2
+    }
+    
+    func intervalSiderHeight() -> CGFloat {
+        return intervalSliderHeightBase * 2
     }
 }
 
