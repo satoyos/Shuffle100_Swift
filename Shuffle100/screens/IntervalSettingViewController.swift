@@ -18,8 +18,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
         super.viewDidLoad()
 
         self.title = "歌の間隔の調整"
-//        view.backgroundColor = StandardColor.backgroundColor
-        view.backgroundColor = .red
+        view.backgroundColor = StandardColor.backgroundColor
         view.addSubview(timeLabel)
         view.addSubview(slider)
         configureTimeLabel()
