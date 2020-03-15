@@ -23,7 +23,9 @@ class IntervalSettingScreenTest: XCTestCase {
         // when
         screen.view.layoutSubviews()
         // then
-        XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())        
+        XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())
+        XCTAssertNotNil(screen.slider)
+
     }
     
     private func timeLabelSizeByDevice() -> CGFloat {
