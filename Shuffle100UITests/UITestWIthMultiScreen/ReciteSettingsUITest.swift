@@ -22,13 +22,21 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_gotoIntervalSettingScreen() {
+    func test_IntervalSetting() {
         // given
         gotoReciteSettingsScreen(app)
         // when
         app.tables.staticTexts["歌と歌の間隔"].tap()
         // then
         XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
+        
+        
+        XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
+            // when
+            app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
+            // then
+            XCTAssert(app.staticTexts["0.50"].exists)
+        }
     }
 
 }
