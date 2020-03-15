@@ -8,11 +8,16 @@
 
 import UIKit
 import SnapKit
+import Then
+
+private let minIntervalDuration: Float = 0.5
+private let maxIntervalDuration: Float = 2.0
 
 class IntervalSettingViewController: SettingsAttachedViewController {
     let timeLabel = UILabel()
     let slider = UISlider()
     private let sizeByDevice = SizeFactory.createSizeByDevice()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +31,16 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     }
     
     private func configureTimeLabel() {
-        timeLabel.text = "0.00"
-        timeLabel.font = UIFont.systemFont(ofSize: labelPointSize())
-        timeLabel.sizeToFit()
-        timeLabel.snp.makeConstraints{ (make) -> Void in
-            // Center => [50%, 40%]
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
+        _ = timeLabel.then {
+            $0.text = "0.00"
+            $0.font = UIFont.systemFont(ofSize: labelPointSize())
+            $0.sizeToFit()
+            $0.snp.makeConstraints{ (make) -> Void in
+                // Center => [50%, 40%]
+                make.centerX.equalToSuperview()
+                make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
+            }
+            $0.text = String(format: "%.2F", settings.interval)
         }
     }
     
@@ -45,11 +53,16 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     }
     
     private func configureSlider() {
-        slider.snp.makeConstraints{ (make) -> Void in
-            make.width.equalTo(0.8 * viewWidth())
-            make.height.equalTo(sliderHeight())
-            make.centerX.equalToSuperview()
-            make.top.equalTo(timeLabel.snp.bottom).offset(blankBetweenLabelAndSlider())
+        _ = slider.then {
+            $0.snp.makeConstraints{ (make) -> Void in
+                make.width.equalTo(0.8 * viewWidth())
+                make.height.equalTo(sliderHeight())
+                make.centerX.equalToSuperview()
+                make.top.equalTo(timeLabel.snp.bottom).offset(blankBetweenLabelAndSlider())
+            }
+            $0.minimumValue = minIntervalDuration
+            $0.maximumValue = maxIntervalDuration
+            $0.value = settings.interval
         }
     }
 
