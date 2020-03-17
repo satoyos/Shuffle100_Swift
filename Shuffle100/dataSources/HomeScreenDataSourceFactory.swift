@@ -16,8 +16,8 @@ struct HomeScreenDataSourceFactory {
     ]
     
 //    static func settingsDataSource(for type: HomeCellType, settings: GameSettings) -> HomeScreenDataSource {
-    static func settingsDataSource(for type: HomeCellType, settings: Settings) -> HomeScreenDataSource {
-        var dataSource: HomeScreenDataSource!
+    static func settingsDataSource(for type: HomeCellType, settings: Settings) -> TableDataSource {
+        var dataSource: TableDataSource!
         
         switch type {
         case .poems:
@@ -34,27 +34,27 @@ struct HomeScreenDataSourceFactory {
         return dataSource
     }
     
-    static func startGameDataSource() -> HomeScreenDataSource {
-        return HomeScreenDataSource(title: "試合開始", accessoryType: .none)
+    static func startGameDataSource() -> TableDataSource {
+        return TableDataSource(title: "試合開始", accessoryType: .none)
     }
     
-    private static func poemsDataSource(_ selectedNum: Int) -> HomeScreenDataSource {
-        return HomeScreenDataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator, detailLabelText: "\(selectedNum)首")
+    private static func poemsDataSource(_ selectedNum: Int) -> TableDataSource {
+        return TableDataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator, detailLabelText: "\(selectedNum)首")
     }
     
-    private static func reciteModeDataSource(for reciteMode: ReciteMode) -> HomeScreenDataSource {
-        return HomeScreenDataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: labelString(for: reciteMode)!)
+    private static func reciteModeDataSource(for reciteMode: ReciteMode) -> TableDataSource {
+        return TableDataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: labelString(for: reciteMode)!)
         
     }
     
-    private static func fakeModeDataSource(with switchOnFlg: Bool) -> HomeScreenDataSource {
-        var dataSource = HomeScreenDataSource(title: "空札を加える", accessoryType: .none)
+    private static func fakeModeDataSource(with switchOnFlg: Bool) -> TableDataSource {
+        var dataSource = TableDataSource(title: "空札を加える", accessoryType: .none)
         dataSource.withSwitchOf = switchOnFlg
         return dataSource
     }
     
-    private static func singerDataSource(with singerName: String) -> HomeScreenDataSource {
-        return HomeScreenDataSource(title: "読手", accessoryType: .disclosureIndicator, detailLabelText: singerName)
+    private static func singerDataSource(with singerName: String) -> TableDataSource {
+        return TableDataSource(title: "読手", accessoryType: .disclosureIndicator, detailLabelText: singerName)
     }
     
     private static func labelString(for mode: ReciteMode) -> String? {
