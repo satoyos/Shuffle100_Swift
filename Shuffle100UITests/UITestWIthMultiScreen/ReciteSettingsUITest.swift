@@ -23,9 +23,11 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
     }
 
     func test_IntervalSetting() {
-        // given
+        // given, when
         gotoReciteSettingsScreen(app)
-        // when
+        // then
+//      // when
+//        app.tables.staticTexts["歌と歌の間隔"].tap()
         app.tables.staticTexts["歌と歌の間隔"].tap()
         // then
         XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
@@ -37,6 +39,6 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
                 // then
                 XCTAssert(app.staticTexts["0.50"].exists)
             }
-        }        
+        }
     }
 }

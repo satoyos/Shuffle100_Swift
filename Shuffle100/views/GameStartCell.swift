@@ -22,7 +22,7 @@ class GameStartCell: UITableViewCell {
     }
     
 
-    func configure(dataSource: HomeScreenDataSource) {
+    func configure(dataSource: TableDataSource) {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel

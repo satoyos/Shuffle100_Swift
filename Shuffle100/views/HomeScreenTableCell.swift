@@ -21,7 +21,7 @@ class HomeScreenTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(dataSource: HomeScreenDataSource) {
+    func configure(dataSource: TableDataSource) {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
