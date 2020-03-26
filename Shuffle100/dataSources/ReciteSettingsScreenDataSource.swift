@@ -15,21 +15,16 @@ extension ReciteSettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingNames.count
+        return tableSources.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath).then {
             
-            let name = settingNames[indexPath.row]
-            $0.accessoryType = .disclosureIndicator
-
-            /////////////////////////////
-            //   JUST WRITING AROUND HERE
-            /////////////////////////////
-            
-            $0.textLabel?.text = name
-            $0.detailTextLabel?.text = "1.10"
+            let source = tableSources[indexPath.row]
+            $0.textLabel?.text = source.title
+            $0.accessoryType = source.accessoryType
+            $0.detailTextLabel?.text = source.detailLabelText
         }
         return cell
     }
