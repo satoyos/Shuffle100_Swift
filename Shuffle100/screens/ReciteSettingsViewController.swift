@@ -12,7 +12,8 @@ import UIKit
 class ReciteSettingsViewController: SettingsAttachedViewController {
     let reuseID = ReciteSettingsTableCell.identifier
     var tableView: UITableView!
-    let settingNames = ["歌と歌の間隔", "上の句と下の句の間隔", "音量調整"]
+    var tableSources: [TableDataSource]!
+//    let settingNames = ["歌と歌の間隔", "上の句と下の句の間隔", "音量調整"]
     var intervalSettingAction: (() -> Void)?
 
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
         self.title = "いろいろな設定"
         view.backgroundColor = StandardColor.backgroundColor
         self.tableView = createTableViewForReciteSettingsScreen()
+        setUpTableSources()
         view.addSubview(tableView)        
     }
 
@@ -30,5 +32,13 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
         tableView.delegate = self
         tableView.register(ReciteSettingsTableCell.self, forCellReuseIdentifier: reuseID)
         return tableView
+    }
+    
+    private func setUpTableSources() {
+        self.tableSources = [
+            TableDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, detailLabelText: "1.10"),
+            TableDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, detailLabelText: "1.10"),
+            TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "1.10")
+        ]
     }
 }
