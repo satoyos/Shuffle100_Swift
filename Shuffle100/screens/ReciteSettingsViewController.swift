@@ -25,6 +25,12 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
         setUpTableSources()
         view.addSubview(tableView)        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setUpTableSources()
+        tableView.reloadData()
+        super.viewWillAppear(animated)
+    }
 
     private func createTableViewForReciteSettingsScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .plain)
@@ -36,9 +42,9 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
     
     private func setUpTableSources() {
         self.tableSources = [
-            TableDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, detailLabelText: "1.10"),
-            TableDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, detailLabelText: "1.10"),
-            TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "1.10")
+            TableDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, detailLabelText: String(format: "%.2F", settings.interval)),
+            TableDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, detailLabelText: String(format: "%.2F", settings.kamiShimoInterval)),
+            TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "")
         ]
     }
 }
