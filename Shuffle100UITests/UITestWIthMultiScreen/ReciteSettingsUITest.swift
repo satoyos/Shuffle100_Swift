@@ -26,8 +26,6 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         // given, when
         gotoReciteSettingsScreen(app)
         // then
-//      // when
-//        app.tables.staticTexts["歌と歌の間隔"].tap()
         app.tables.staticTexts["歌と歌の間隔"].tap()
         // then
         XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
@@ -36,6 +34,12 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
             XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
                 // when
                 app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
+                // then
+                XCTAssert(app.staticTexts["0.50"].exists)
+            }
+            XCTContext.runActivity(named: "「いろいろな設定」画面に戻ると、「歌と詩の間隔」の値が書き換わっている") { action in
+                // when
+                app.navigationBars.buttons["いろいろな設定"].tap()
                 // then
                 XCTAssert(app.staticTexts["0.50"].exists)
             }

@@ -34,7 +34,11 @@ class ReciteSettingsScreenTest: XCTestCase {
         XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
         XCTAssertEqual(firstCell.textLabel?.text, "歌と歌の間隔")
-        
+        XCTAssertEqual(firstCell.detailTextLabel?.text, "1.10")
+        let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(secondCell.detailTextLabel?.text, "1.00")
+        let thirdCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 2, section: 0))
+        XCTAssertEqual(thirdCell.detailTextLabel?.text, "")
     }
 
     

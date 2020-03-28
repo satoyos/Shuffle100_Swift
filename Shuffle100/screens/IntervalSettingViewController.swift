@@ -30,6 +30,12 @@ class IntervalSettingViewController: SettingsAttachedViewController {
         configureSlider()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        settings.interval = slider.value
+        self.saveSettingsAction?()
+    }
+    
     internal func updateTimeLabel() {
         timeLabel.text = String(format: "%.2F", slider.value)
     }
@@ -82,7 +88,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     }
     
     private func viewWidth() -> CGFloat {
-        print("|<==>| viewWidth: \(self.view.frame.size.width)")
+//        print("|<==>| viewWidth: \(self.view.frame.size.width)")
         return self.view.frame.size.width
     }
     

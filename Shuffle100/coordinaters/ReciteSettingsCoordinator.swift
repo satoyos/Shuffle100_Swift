@@ -54,7 +54,7 @@ class ReciteSettingsCoordinator: Coordinator {
     
     private func openIntervalSettingScreen() {
         print("これから、歌の間隔を調整する画面を開きます")
-        let coordinator = IntervalSettingCoordinator(navigator: navigator, settings: settings)
+        let coordinator = IntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()        
     }
 }
