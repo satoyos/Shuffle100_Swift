@@ -27,6 +27,7 @@ class IntervalSettingScreenTest: XCTestCase {
         XCTAssertNotNil(screen.slider)
         XCTAssertEqual(screen.timeLabel.text, "1.10")
         XCTAssertEqual(screen.slider.value, 1.1)
+        XCTAssertNotNil(screen.tryButton)
     }
     
     private func timeLabelSizeByDevice() -> CGFloat {
