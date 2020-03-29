@@ -17,6 +17,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     let timeLabel = UILabel()
     let slider = UISlider()
     private let sizeByDevice = SizeFactory.createSizeByDevice()
+    var tryButton = UIButton()
     
 
     override func viewDidLoad() {
@@ -26,8 +27,10 @@ class IntervalSettingViewController: SettingsAttachedViewController {
         view.backgroundColor = StandardColor.backgroundColor
         view.addSubview(timeLabel)
         view.addSubview(slider)
+        view.addSubview(tryButton)
         configureTimeLabel()
         configureSlider()
+        confitureTryButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +53,18 @@ class IntervalSettingViewController: SettingsAttachedViewController {
                 make.centerX.equalToSuperview()
                 make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
             }
-//            updateTimeLabel()
+        }
+    }
+    
+    private func confitureTryButton() {
+        _ = tryButton.then {
+            $0.setTitle("試しに聞いてみる", for: .normal)
+            $0.setTitleColor(StandardColor.standardButtonColor, for: .normal)
+            $0.sizeToFit()
+            $0.snp.makeConstraints{ (make) -> Void in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(slider.snp.bottom).offset(0.5 * one10thOfViewHeight())
+            }
         }
     }
     
