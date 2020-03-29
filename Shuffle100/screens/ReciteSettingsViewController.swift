@@ -7,13 +7,11 @@
 //
 
 import UIKit
-//import Then
 
 class ReciteSettingsViewController: SettingsAttachedViewController {
     let reuseID = ReciteSettingsTableCell.identifier
     var tableView: UITableView!
     var tableSources: [TableDataSource]!
-//    let settingNames = ["歌と歌の間隔", "上の句と下の句の間隔", "音量調整"]
     var intervalSettingAction: (() -> Void)?
 
     override func viewDidLoad() {
