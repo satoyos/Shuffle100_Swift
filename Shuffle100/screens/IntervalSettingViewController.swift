@@ -65,6 +65,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
                 make.centerX.equalToSuperview()
                 make.top.equalTo(slider.snp.bottom).offset(0.5 * one10thOfViewHeight())
             }
+            $0.addTarget(self, action: #selector(tryButtonTapped), for: .touchUpInside)
         }
     }
     

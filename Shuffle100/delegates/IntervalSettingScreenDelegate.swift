@@ -12,4 +12,7 @@ extension IntervalSettingViewController {
     @objc func sliderValueChanged(_ slider: UISlider) {
         updateTimeLabel()
     }
+    
+    @objc func tryButtonTapped(_ button: UIButton) {        print("「試しに聞いてみる」ボタンが押された！")
+    }
 }
