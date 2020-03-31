@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Then
+import AVFoundation
 
 private let minIntervalDuration: Float = 0.5
 private let maxIntervalDuration: Float = 2.0
@@ -18,6 +19,8 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     let slider = UISlider()
     private let sizeByDevice = SizeFactory.createSizeByDevice()
     var tryButton = UIButton()
+    var kamiPlayer: AVAudioPlayer!
+    var shimoPlayer: AVAudioPlayer!
     
 
     override func viewDidLoad() {
@@ -31,6 +34,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
         configureTimeLabel()
         configureSlider()
         confitureTryButton()
+        setKamiShimoPlayers()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -109,5 +113,15 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     
     private func viewHeiht() -> CGFloat {
         return view.frame.size.height
+    }
+    
+    private func setKamiShimoPlayers() {
+        guard let singer = Singers.getSingerOfID(settings.singerID) else {
+            assertionFailure("読手が見つかりません")
+            return
+        }
+        let singerFolder = singer.path
+        self.kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: 2, side: .kami, folder: singerFolder)
+        self.shimoPlayer = AudioPlayerFactory.shared.preparePlayer(number: 1, side: .shimo, folder: singerFolder)
     }
 }
