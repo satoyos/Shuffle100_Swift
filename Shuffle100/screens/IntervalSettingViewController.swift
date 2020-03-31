@@ -107,7 +107,6 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     }
     
     private func viewWidth() -> CGFloat {
-//        print("|<==>| viewWidth: \(self.view.frame.size.width)")
         return self.view.frame.size.width
     }
     
