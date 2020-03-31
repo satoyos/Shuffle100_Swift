@@ -14,5 +14,6 @@ extension IntervalSettingViewController {
     }
     
     @objc func tryButtonTapped(_ button: UIButton) {        print("「試しに聞いてみる」ボタンが押された！")
+        shimoPlayer.play()
     }
 }
