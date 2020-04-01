@@ -120,7 +120,11 @@ class IntervalSettingViewController: SettingsAttachedViewController {
             return
         }
         let singerFolder = singer.path
-        self.kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: 2, side: .kami, folder: singerFolder)
-        self.shimoPlayer = AudioPlayerFactory.shared.preparePlayer(number: 1, side: .shimo, folder: singerFolder)
+        self.kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: 2, side: .kami, folder: singerFolder).then {
+            $0.delegate = self
+        }
+        self.shimoPlayer = AudioPlayerFactory.shared.preparePlayer(number: 1, side: .shimo, folder: singerFolder).then {
+            $0.delegate = self
+        }
     }
 }
