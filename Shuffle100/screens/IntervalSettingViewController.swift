@@ -44,7 +44,12 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     }
     
     internal func updateTimeLabel() {
-        timeLabel.text = String(format: "%.2F", slider.value)
+//        timeLabel.text = String(format: "%.2F", slider.value)
+        updateTimeLabel(with: slider.value)
+    }
+    
+    internal func updateTimeLabel(with time: Float) {
+        timeLabel.text = String(format: "%.2F", time)
     }
     
     private func configureTimeLabel() {
