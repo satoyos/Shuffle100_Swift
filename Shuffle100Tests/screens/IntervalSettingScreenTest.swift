@@ -36,12 +36,14 @@ class IntervalSettingScreenTest: XCTestCase {
             XCTAssertNotNil(screen.shimoPlayer)
         }
             
-            
-        //
-        // ToDo Next:: write test for kamiPlayer, shimoPlayer
-        //
-        
+        XCTContext.runActivity(named: "Playerがセットされている") { activity in
+            XCTAssertNotNil(screen.kamiPlayer)
+            XCTAssertNotNil(screen.shimoPlayer)
+        }
     }
+    
+    ////// ToDo Next: startCountDownTimer()でtimerがセットされ、
+    ////// viewWillDissapear()でtimerが消される。
     
     private func timeLabelSizeByDevice() -> CGFloat {
         switch UIDevice.current.userInterfaceIdiom {

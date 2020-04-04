@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+private let subtractDuration: Float = 0.02
+
 extension IntervalSettingViewController: AVAudioPlayerDelegate {
     @objc func sliderValueChanged(_ slider: UISlider) {
         updateTimeLabel()
@@ -21,14 +23,30 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if !flag { return }
         if player == shimoPlayer {
+           
             //////////
             // ToDo Next:: Implement real count down!
             print("これからカウントダウンに入って、2種目の上の句を読み上げる！")
-            sleep(1)
-            //////////
-            kamiPlayer.play()
+            startCountDownTimer()
         } else {
             print("試し聞きはこれにて終了！")
+            updateTimeLabel()
         }
     }
+    
+    func startCountDownTimer() {
+        self.remainTime = slider.value
+        self.timer = Timer.scheduledTimer(timeInterval: Double(subtractDuration), target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateRemainTime(t: Timer) {
+        self.remainTime -= subtractDuration
+        if remainTime < subtractDuration {
+            self.remainTime = 0.0
+            deleteTimerIfNeeded()
+            kamiPlayer.play()
+        }
+        self.updateTimeLabel(with: remainTime)
+    }
+    
 }
