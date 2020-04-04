@@ -37,6 +37,11 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
                 // then
                 XCTAssert(app.staticTexts["0.50"].exists)
             }
+            XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
+                app.buttons["試しに聞いてみる"].tap()
+                waitToAppear(for: app.staticTexts["0.00"], timeout: 10)
+
+            }
             XCTContext.runActivity(named: "「いろいろな設定」画面に戻ると、「歌と詩の間隔」の値が書き換わっている") { action in
                 // when
                 app.navigationBars.buttons["いろいろな設定"].tap()
@@ -46,3 +51,4 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         }
     }
 }
+

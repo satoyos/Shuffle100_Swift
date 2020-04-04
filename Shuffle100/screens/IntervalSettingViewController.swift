@@ -21,6 +21,8 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     var tryButton = UIButton()
     var kamiPlayer: AVAudioPlayer!
     var shimoPlayer: AVAudioPlayer!
+    var remainTime: Float = 0.0
+    var timer: Timer!
     
 
     override func viewDidLoad() {
@@ -39,19 +41,26 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        deleteTimerIfNeeded()
         settings.interval = slider.value
         self.saveSettingsAction?()
     }
     
     internal func updateTimeLabel() {
-//        timeLabel.text = String(format: "%.2F", slider.value)
         updateTimeLabel(with: slider.value)
     }
     
     internal func updateTimeLabel(with time: Float) {
         timeLabel.text = String(format: "%.2F", time)
-    }
+    }    
     
+    internal func deleteTimerIfNeeded() {
+        if let timer = self.timer {
+            timer.invalidate()
+            self.timer = nil
+        }
+    }
+
     private func configureTimeLabel() {
         _ = timeLabel.then {
             $0.text = "0.00"
