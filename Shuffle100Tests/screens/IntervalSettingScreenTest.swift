@@ -44,6 +44,26 @@ class IntervalSettingScreenTest: XCTestCase {
     
     ////// ToDo Next: startCountDownTimer()でtimerがセットされ、
     ////// viewWillDissapear()でtimerが消される。
+    func test_createAndDeleteTimer() {
+        // given, when
+        let screen = IntervalSettingViewController()
+        
+        XCTContext.runActivity(named: "startCountDownTimer()でtimerがセット押される") { activity in
+            // then
+            XCTAssertNil(screen.timer)
+            // when
+            screen.startCountDownTimer()
+            // then
+            XCTAssertNotNil(screen.timer)
+        }
+        XCTContext.runActivity(named: "viewWillDissapear()でtimerが消される") { activity in
+            // when
+            screen.viewWillDisappear(false)
+            // then
+            XCTAssertNil(screen.timer)
+        }
+    }
+    
     
     private func timeLabelSizeByDevice() -> CGFloat {
         switch UIDevice.current.userInterfaceIdiom {
