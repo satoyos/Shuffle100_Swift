@@ -48,7 +48,7 @@ class IntervalSettingScreenTest: XCTestCase {
         // given, when
         let screen = IntervalSettingViewController()
         
-        XCTContext.runActivity(named: "startCountDownTimer()でtimerがセット押される") { activity in
+        XCTContext.runActivity(named: "startCountDownTimer()でtimerがセットされる") { activity in
             // then
             XCTAssertNil(screen.timer)
             // when
