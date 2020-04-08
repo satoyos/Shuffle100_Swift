@@ -42,8 +42,6 @@ class IntervalSettingScreenTest: XCTestCase {
         }
     }
     
-    ////// ToDo Next: startCountDownTimer()でtimerがセットされ、
-    ////// viewWillDissapear()でtimerが消される。
     func test_createAndDeleteTimer() {
         // given, when
         let screen = IntervalSettingViewController()
@@ -61,6 +59,29 @@ class IntervalSettingScreenTest: XCTestCase {
             screen.viewWillDisappear(false)
             // then
             XCTAssertNil(screen.timer)
+        }
+    }
+    
+    func test_currentPlayerGetSetCorrectly() {
+        // given, when
+        let screen = IntervalSettingViewController()
+        screen.loadViewIfNeeded()
+        screen.view.layoutSubviews()
+        // then
+        XCTAssertNil(screen.currentPlayer)
+        
+        XCTContext.runActivity(named: "tryButtonが押されたとき、currentPlayerにshimoPlayerがセットされる") { activity in
+            // when
+            screen.tryButtonTapped(screen.tryButton)
+            // then
+            XCTAssertEqual(screen.currentPlayer, screen.shimoPlayer)
+        }
+        XCTContext.runActivity(named: "カウントダウンが終わったとき、currentPlayerにkamiPlayerがセットされる") { activity in
+            // when
+            screen.remainTime = 0.0
+            screen.updateRemainTime(t: Timer())
+            // then
+            XCTAssertEqual(screen.currentPlayer, screen.kamiPlayer)
         }
     }
     

@@ -16,17 +16,16 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
         updateTimeLabel()
     }
     
-    @objc func tryButtonTapped(_ button: UIButton) {        print("「試しに聞いてみる」ボタンが押された！")
+    @objc func tryButtonTapped(_ button: UIButton) {
+//        print("「試しに聞いてみる」ボタンが押された！")
         shimoPlayer.play()
+        self.currentPlayer = shimoPlayer
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if !flag { return }
         if player == shimoPlayer {
-           
-            //////////
-            // ToDo Next:: Implement real count down!
-            print("これからカウントダウンに入って、2種目の上の句を読み上げる！")
+//            print("これからカウントダウンに入って、2種目の上の句を読み上げる！")
             startCountDownTimer()
         } else {
             print("試し聞きはこれにて終了！")
@@ -45,6 +44,7 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
             self.remainTime = 0.0
             deleteTimerIfNeeded()
             kamiPlayer.play()
+            self.currentPlayer = kamiPlayer
         }
         self.updateTimeLabel(with: remainTime)
     }
