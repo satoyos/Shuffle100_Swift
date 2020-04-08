@@ -21,6 +21,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     var tryButton = UIButton()
     var kamiPlayer: AVAudioPlayer!
     var shimoPlayer: AVAudioPlayer!
+    var currentPlayer: AVAudioPlayer!
     var remainTime: Float = 0.0
     var timer: Timer!
     
