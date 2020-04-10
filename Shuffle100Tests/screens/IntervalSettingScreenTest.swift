@@ -97,8 +97,7 @@ class IntervalSettingScreenTest: XCTestCase {
             // when
             screen.sliderValueChanged(screen.slider)
             // then
-            XCTAssertNil(screen.kamiPlayer)
-            XCTAssertNil(screen.shimoPlayer)
+            XCTAssertNil(screen.currentPlayer)
         }
     }
     
