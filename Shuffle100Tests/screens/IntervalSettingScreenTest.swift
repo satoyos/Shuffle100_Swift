@@ -85,7 +85,27 @@ class IntervalSettingScreenTest: XCTestCase {
         }
     }
     
+    func test_playersGetRemovedWhenSliderValueChanged() {
+        // given, when
+        let screen = IntervalSettingViewController()
+        screen.loadViewIfNeeded()
+        screen.view.layoutSubviews()
+        // then
+        XCTAssertNotNil(screen.kamiPlayer)
+        XCTAssertNotNil(screen.shimoPlayer)
+        XCTContext.runActivity(named: "Sliderの値が変わると、Playerが削除される") { activity in
+            // when
+            screen.sliderValueChanged(screen.slider)
+            // then
+            XCTAssertNil(screen.kamiPlayer)
+            XCTAssertNil(screen.shimoPlayer)
+        }
+    }
     
+    //
+    // ToDo: viewWillDissappearのときも、Playersが空になるテストを書く！
+    //
+
     private func timeLabelSizeByDevice() -> CGFloat {
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
@@ -96,4 +116,5 @@ class IntervalSettingScreenTest: XCTestCase {
              fatalError("This Device is not supported. Idiom => \(UIDevice.current.userInterfaceIdiom)")
         }
     }
+    
 }
