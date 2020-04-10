@@ -13,6 +13,7 @@ private let subtractDuration: Float = 0.02
 
 extension IntervalSettingViewController: AVAudioPlayerDelegate {
     @objc func sliderValueChanged(_ slider: UISlider) {
+        stopAndRemovePlayersIfNeeded()
         updateTimeLabel()
     }
     
@@ -47,6 +48,15 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
             self.currentPlayer = kamiPlayer
         }
         self.updateTimeLabel(with: remainTime)
+    }
+    
+    private func stopAndRemovePlayersIfNeeded() {
+        if let currentPlayer = currentPlayer {
+            currentPlayer.stop()
+            self.currentPlayer = nil
+        }
+        self.kamiPlayer = nil
+        self.shimoPlayer = nil
     }
     
 }
