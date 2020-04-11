@@ -85,7 +85,7 @@ class IntervalSettingScreenTest: XCTestCase {
         }
     }
     
-    func test_playersGetRemovedWhenSliderValueChanged() {
+    func test_playersGetResetWhenSliderValueChanged() {
         // given, when
         let screen = IntervalSettingViewController()
         screen.loadViewIfNeeded()
@@ -93,10 +93,20 @@ class IntervalSettingScreenTest: XCTestCase {
         // then
         XCTAssertNotNil(screen.kamiPlayer)
         XCTAssertNotNil(screen.shimoPlayer)
-        XCTContext.runActivity(named: "Sliderの値が変わると、Playerが削除される") { activity in
+        XCTAssertNil(screen.currentPlayer)
+        XCTAssert(screen.tryButton.isEnabled)
+        XCTContext.runActivity(named: "tryButtonがタップされると、tryButtonが無効になり、currentPlayerにshimoPlayerがセットされる") { activity in
+            // when
+            screen.tryButtonTapped(screen.tryButton)
+            // then
+            XCTAssertFalse(screen.tryButton.isEnabled)
+            XCTAssertEqual(screen.currentPlayer, screen.shimoPlayer)
+        }
+        XCTContext.runActivity(named: "Sliderの値が変わると、tryButtonが有効になり、currnetPlayerがnilになる") { activity in
             // when
             screen.sliderValueChanged(screen.slider)
             // then
+            XCTAssert(screen.tryButton.isEnabled)
             XCTAssertNil(screen.currentPlayer)
         }
     }
@@ -104,6 +114,13 @@ class IntervalSettingScreenTest: XCTestCase {
     //
     // ToDo: viewWillDissappearのときも、Playersが空になるテストを書く！
     //
+    func text_playerGetRestWhenViewWillDisappear() {
+        // given
+        let screen = IntervalSettingViewController()
+        screen.loadViewIfNeeded()
+        screen.view.layoutSubviews()
+
+    }
 
     private func timeLabelSizeByDevice() -> CGFloat {
         switch UIDevice.current.userInterfaceIdiom {

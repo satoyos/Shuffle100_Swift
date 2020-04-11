@@ -19,8 +19,10 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
     
     @objc func tryButtonTapped(_ button: UIButton) {
 //        print("「試しに聞いてみる」ボタンが押された！")
-        shimoPlayer.play()
+//        shimoPlayer.play(atTime: 0.0)
         self.currentPlayer = shimoPlayer
+        pleyCurrentPlayerFromBeginning()
+        
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -30,6 +32,7 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
             startCountDownTimer()
         } else {
             print("試し聞きはこれにて終了！")
+            tryButton.isEnabled = true
             updateTimeLabel()
         }
     }
@@ -44,8 +47,8 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
         if remainTime < subtractDuration {
             self.remainTime = 0.0
             deleteTimerIfNeeded()
-            kamiPlayer.play()
             self.currentPlayer = kamiPlayer
+            pleyCurrentPlayerFromBeginning()
         }
         self.updateTimeLabel(with: remainTime)
     }
@@ -55,12 +58,17 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
             currentPlayer.stop()
             self.currentPlayer = nil
         }
-        if let kamiPlayer = kamiPlayer {
-            kamiPlayer.prepareToPlay()
+        tryButton.isEnabled = true
+    }
+    
+    private func pleyCurrentPlayerFromBeginning() {
+        guard  let currentPlayer = currentPlayer else {
+            assertionFailure("currentPlayerが設定されていません")
+            return
         }
-        if let shimoPlayer = shimoPlayer {
-            shimoPlayer.prepareToPlay()
-        }
+        tryButton.isEnabled = false
+        currentPlayer.currentTime = 0.0
+        currentPlayer.play()
     }
     
 }
