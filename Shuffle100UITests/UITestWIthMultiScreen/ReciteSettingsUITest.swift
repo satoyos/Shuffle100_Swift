@@ -29,6 +29,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         app.tables.staticTexts["歌と歌の間隔"].tap()
         // then
         XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
+        XCTAssertFalse(app.staticTexts["トップ"].exists)
         
         if #available(iOS 13.0, *) {
             XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
@@ -48,6 +49,13 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
                 // then
                 XCTAssert(app.staticTexts["0.50"].exists)
             }
+        }
+        
+        XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
+            // when
+            app.buttons["設定終了"].tap()
+            // then
+            XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
         }
     }
 }
