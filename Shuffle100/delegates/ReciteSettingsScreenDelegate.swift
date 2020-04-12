@@ -17,4 +17,8 @@ extension ReciteSettingsViewController: UITableViewDelegate {
             assertionFailure("他の選択肢は対応していません！")
         }
     }
+    
+    @objc func dismissButtonTapped(_ button: UIButton) {
+        self.dismiss(animated: true)
+    }
 }

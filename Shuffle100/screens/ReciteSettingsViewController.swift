@@ -18,6 +18,7 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
         super.viewDidLoad()
 
         self.title = "いろいろな設定"
+        configureDismissButton()
         view.backgroundColor = StandardColor.backgroundColor
         self.tableView = createTableViewForReciteSettingsScreen()
         setUpTableSources()
@@ -45,4 +46,10 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
             TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "")
         ]
     }
+    
+    private func configureDismissButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "設定終了", style: .plain, target: self, action: #selector(dismissButtonTapped))
+    }
+
+
 }
