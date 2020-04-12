@@ -49,13 +49,12 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
                 // then
                 XCTAssert(app.staticTexts["0.50"].exists)
             }
-        }
-        
-        XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
-            // when
-            app.buttons["設定終了"].tap()
-            // then
-            XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
+            XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
+                // when
+                app.buttons["設定終了"].tap()
+                // then
+                XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
+            }
         }
     }
 }
