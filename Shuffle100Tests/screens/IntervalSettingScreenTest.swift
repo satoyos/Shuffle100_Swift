@@ -111,15 +111,16 @@ class IntervalSettingScreenTest: XCTestCase {
         }
     }
     
-    //
-    // ToDo: viewWillDissappearのときも、Playersが空になるテストを書く！
-    //
-    func text_playerGetRestWhenViewWillDisappear() {
+    func test_playerGetRestWhenViewWillDisappear() {
         // given
         let screen = IntervalSettingViewController()
         screen.loadViewIfNeeded()
         screen.view.layoutSubviews()
-
+        screen.tryButtonTapped(screen.tryButton)
+        // when
+        screen.viewWillDisappear(false)
+        // then
+        XCTAssertNil(screen.currentPlayer)
     }
 
     private func timeLabelSizeByDevice() -> CGFloat {
