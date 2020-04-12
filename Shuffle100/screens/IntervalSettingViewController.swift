@@ -43,6 +43,7 @@ class IntervalSettingViewController: SettingsAttachedViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         deleteTimerIfNeeded()
+        stopAndResetPlayerIfNeeded()
         settings.interval = slider.value
         self.saveSettingsAction?()
     }
