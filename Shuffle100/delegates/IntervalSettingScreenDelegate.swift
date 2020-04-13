@@ -11,17 +11,11 @@ import AVFoundation
 
 private let subtractDuration: Float = 0.02
 
-extension IntervalSettingViewController: AVAudioPlayerDelegate {
-    @objc func sliderValueChanged(_ slider: UISlider) {
-        stopAndResetPlayerIfNeeded()
-        updateTimeLabel()
-    }
-    
-    @objc func tryButtonTapped(_ button: UIButton) {
-        self.currentPlayer = shimoPlayer
-        pleyCurrentPlayerFromBeginning()
-        
-    }
+extension IntervalSettingViewController {
+//    @objc func sliderValueChanged(_ slider: UISlider) {
+//        stopAndResetPlayerIfNeeded()
+//        updateTimeLabel()
+//    }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if !flag { return }
@@ -39,33 +33,33 @@ extension IntervalSettingViewController: AVAudioPlayerDelegate {
         self.timer = Timer.scheduledTimer(timeInterval: Double(subtractDuration), target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
     }
     
-    @objc func updateRemainTime(t: Timer) {
-        self.remainTime -= subtractDuration
-        if remainTime < subtractDuration {
-            self.remainTime = 0.0
-            deleteTimerIfNeeded()
-            self.currentPlayer = kamiPlayer
-            pleyCurrentPlayerFromBeginning()
-        }
-        self.updateTimeLabel(with: remainTime)
-    }
+//    @objc func updateRemainTime(t: Timer) {
+//        self.remainTime -= subtractDuration
+//        if remainTime < subtractDuration {
+//            self.remainTime = 0.0
+//            deleteTimerIfNeeded()
+//            self.currentPlayer = kamiPlayer
+//            pleyCurrentPlayerFromBeginning()
+//        }
+//        self.updateTimeLabel(with: remainTime)
+//    }
     
-    internal func stopAndResetPlayerIfNeeded() {
-        if let currentPlayer = currentPlayer {
-            currentPlayer.stop()
-            self.currentPlayer = nil
-        }
-        tryButton.isEnabled = true
-    }
+//    internal func stopAndResetPlayerIfNeeded() {
+//        if let currentPlayer = currentPlayer {
+//            currentPlayer.stop()
+//            self.currentPlayer = nil
+//        }
+//        tryButton.isEnabled = true
+//    }
     
-    private func pleyCurrentPlayerFromBeginning() {
-        guard  let currentPlayer = currentPlayer else {
-            assertionFailure("currentPlayerが設定されていません")
-            return
-        }
-        tryButton.isEnabled = false
-        currentPlayer.currentTime = 0.0
-        currentPlayer.play()
-    }
-    
+//    private func pleyCurrentPlayerFromBeginning() {
+//        guard  let currentPlayer = currentPlayer else {
+//            assertionFailure("currentPlayerが設定されていません")
+//            return
+//        }
+//        tryButton.isEnabled = false
+//        currentPlayer.currentTime = 0.0
+//        currentPlayer.play()
+//    }
+//    
 }

@@ -17,19 +17,19 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
         // then
         XCTAssertNotNil(screen)
         // when
-//        screen.loadViewIfNeeded()
-//        // then
-//        XCTAssertEqual(screen.title, "歌の間隔の調整")
-//        // when
-//        screen.view.layoutSubviews()
-//        // then
-//        XCTContext.runActivity(named: "Subviewsが正しく設置されている") { activity in
-//            XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(screen.title, "上の句と下の句の間隔")
+        // when
+        screen.view.layoutSubviews()
+        // then
+        XCTContext.runActivity(named: "Subviewsが正しく設置されている") { activity in
+            XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())
 //            XCTAssertNotNil(screen.slider)
 //            XCTAssertEqual(screen.timeLabel.text, "1.10")
 //            XCTAssertEqual(screen.slider.value, 1.1)
 //            XCTAssertNotNil(screen.tryButton)
-//        }
+        }
 //
 //        XCTContext.runActivity(named: "詩を試しに読み上げるPlayerもセットされている") { activity in
 //            XCTAssertNotNil(screen.kamiPlayer)
