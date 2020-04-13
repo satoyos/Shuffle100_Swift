@@ -87,6 +87,10 @@
 		9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAF821FEE4AA00E4E0B7 /* question_white.png */; };
+		925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */; };
+		925994E024449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */; };
+		925994E124449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */; };
+		925994E224449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */; };
 		925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
@@ -353,6 +357,8 @@
 		9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-520.png"; sourceTree = "<group>"; };
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9258FAF821FEE4AA00E4E0B7 /* question_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_white.png; sourceTree = "<group>"; };
+		925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingScreenTest.swift; sourceTree = "<group>"; };
+		925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingViewController.swift; sourceTree = "<group>"; };
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
@@ -589,6 +595,7 @@
 				92E5F82A240BCD4900C75FC6 /* ReciteSettingsViewController.swift */,
 				92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */,
 				92A6EB8024167F9200B37A42 /* SettingsAttachedViewController.swift */,
+				925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -688,6 +695,7 @@
 				92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */,
 				92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */,
 				92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */,
+				925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -1066,6 +1074,7 @@
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
+				925994E024449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
@@ -1162,6 +1171,7 @@
 				9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
+				925994E124449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
 				92A6EB8A24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				928E73B722ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
@@ -1179,6 +1189,7 @@
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				92A6EB7E241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
+				925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92AF24A4229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				923B594D23ACF606002027B4 /* GameEndViiew.swift in Sources */,
@@ -1289,6 +1300,7 @@
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
+				925994E224449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				927CB8F9240D0F3D0044B507 /* ReciteSettingsUITest.swift in Sources */,
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
