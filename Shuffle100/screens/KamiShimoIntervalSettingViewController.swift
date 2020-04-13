@@ -7,24 +7,46 @@
 //
 
 import UIKit
+import SnapKit
 
 class KamiShimoIntervalSettingViewController: UIViewController {
+    let timeLabel = UILabel()
+    let slider = UISlider()
+    private let sizeByDevice = SizeFactory.createSizeByDevice()
+    var tryButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "上の句と下の句の間隔"
+        view.backgroundColor = StandardColor.backgroundColor
+        view.addSubview(timeLabel)
+        configureTimeLabel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureTimeLabel() {
+        _ = timeLabel.then {
+            $0.text = "0.00"
+            $0.font = UIFont.systemFont(ofSize: labelPointSize())
+            $0.sizeToFit()
+            $0.snp.makeConstraints{ (make) -> Void in
+                // Center => [50%, 40%]
+                make.centerX.equalToSuperview()
+                make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
+            }
+        }
     }
-    */
+    
+    private func labelPointSize() -> CGFloat {
+        return sizeByDevice.intervalTimeLabelPointSize()
+    }
+    
+    private func one10thOfViewHeight() -> CGFloat {
+        return 0.1 * viewHeiht()
+    }
+    
+    private func viewHeiht() -> CGFloat {
+        return view.frame.size.height
+    }
 
 }
