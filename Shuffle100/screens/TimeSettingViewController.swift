@@ -7,17 +7,16 @@
 //
 
 import UIKit
-import SnapKit
 import Then
 import AVFoundation
 
-private let minIntervalDuration: Float = 0.5
-private let maxIntervalDuration: Float = 2.0
+internal let minIntervalDuration: Float = 0.5
+internal let maxIntervalDuration: Float = 2.0
 
 class TimeSettingViewController: SettingsAttachedViewController {
     let timeLabel = UILabel()
     let slider = UISlider()
-    private let sizeByDevice = SizeFactory.createSizeByDevice()
+    internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var tryButton = UIButton()
     var kamiPlayer: AVAudioPlayer!
     var shimoPlayer: AVAudioPlayer!
@@ -33,56 +32,11 @@ class TimeSettingViewController: SettingsAttachedViewController {
         view.addSubview(timeLabel)
         view.addSubview(slider)
         view.addSubview(tryButton)
-        configureTimeLabel()
-        configureSlider()
-        confitureTryButton()
+        layoutScreen()
+        setSubviewsTarget()
         setKamiShimoPlayers()
     }
     
-    internal func configureTimeLabel() {
-        _ = timeLabel.then {
-            $0.text = "0.00"
-            $0.font = UIFont.systemFont(ofSize: labelPointSize())
-            $0.sizeToFit()
-            $0.snp.makeConstraints{ (make) -> Void in
-                // Center => [50%, 40%]
-                make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
-            }
-        }
-    }
-    
-    internal func confitureTryButton() {
-        _ = tryButton.then {
-            $0.setTitle("試しに聞いてみる", for: .normal)
-            $0.setTitleColor(StandardColor.standardButtonColor, for: .normal)
-            $0.setTitleColor(UIColor.lightGray, for: .disabled)
-            $0.sizeToFit()
-            $0.snp.makeConstraints{ (make) -> Void in
-                make.centerX.equalToSuperview()
-                make.top.equalTo(slider.snp.bottom).offset(0.5 * one10thOfViewHeight())
-            }
-            $0.addTarget(self, action: #selector(tryButtonTapped), for: .touchUpInside)
-        }
-    }
-
-    internal func configureSlider() {
-        _ = slider.then {
-            $0.snp.makeConstraints{ (make) -> Void in
-                make.width.equalTo(0.8 * viewWidth())
-                make.height.equalTo(sliderHeight())
-                make.centerX.equalToSuperview()
-                make.top.equalTo(timeLabel.snp.bottom).offset(blankBetweenLabelAndSlider())
-            }
-            $0.minimumValue = minIntervalDuration
-            $0.maximumValue = maxIntervalDuration
-            $0.value = settings.interval
-            $0.accessibilityLabel = "slider"
-            $0.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
-        }
-        updateTimeLabel()
-    }
-
     internal func setKamiShimoPlayers() {
         guard let singer = Singers.getSingerOfID(settings.singerID) else {
             assertionFailure("読手が見つかりません")
@@ -119,28 +73,10 @@ class TimeSettingViewController: SettingsAttachedViewController {
     internal func successfullyPlayerFinishedAction(_ player: AVAudioPlayer) {
         assertionFailure("This method must be overwritten in subclass!!")
     }
-
-    private func labelPointSize() -> CGFloat {
-        return sizeByDevice.intervalTimeLabelPointSize()
-    }
     
-    private func one10thOfViewHeight() -> CGFloat {
-        return 0.1 * viewHeiht()
-    }
-    
-    private func blankBetweenLabelAndSlider() -> CGFloat {
-        return sliderHeight()
+    private func setSubviewsTarget() {
+        tryButton.addTarget(self, action: #selector(tryButtonTapped), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
     }
 
-    private func sliderHeight() -> CGFloat {
-        return sizeByDevice.intervalSiderHeight()
-    }
-    
-    private func viewWidth() -> CGFloat {
-        return self.view.frame.size.width
-    }
-    
-    private func viewHeiht() -> CGFloat {
-        return view.frame.size.height
-    }
 }

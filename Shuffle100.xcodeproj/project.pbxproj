@@ -97,6 +97,9 @@
 		925994E82444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
 		925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
 		925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
+		925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
+		925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
+		925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
 		925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
@@ -364,6 +367,7 @@
 		925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingViewController.swift; sourceTree = "<group>"; };
 		925994E32444A8D200044253 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenDelegate.swift; sourceTree = "<group>"; };
+		925994EC2447528800044253 /* TimeSettingScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenLayout.swift; sourceTree = "<group>"; };
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
@@ -549,6 +553,7 @@
 				92D5714D220EC78C00235717 /* models */,
 				92CE52052168D45D00538E01 /* dataSources */,
 				92E6552021CE74E200005F85 /* delegates */,
+				925994EB2447522E00044253 /* Layout */,
 				923D593F2143BD50000F5E60 /* screens */,
 				925CEB51218ED4FF00876E7A /* views */,
 				9258FAF321FEAB6C00E4E0B7 /* resources */,
@@ -616,6 +621,14 @@
 				92C87DD622E88D5400569D15 /* Singers.json */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		925994EB2447522E00044253 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				925994EC2447528800044253 /* TimeSettingScreenLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		925CEB51218ED4FF00876E7A /* views */ = {
@@ -1098,6 +1111,7 @@
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
+				925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */,
 				923B594C23ACF606002027B4 /* GameEndViiew.swift in Sources */,
@@ -1229,6 +1243,7 @@
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
 				9207BAF5229579D600816DC8 /* Bool100.swift in Sources */,
+				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
@@ -1326,6 +1341,7 @@
 				92AF24A5229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
+				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
 				92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */,
