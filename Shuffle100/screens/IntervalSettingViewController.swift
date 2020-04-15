@@ -32,4 +32,13 @@ final class IntervalSettingViewController: TimeSettingViewController {
         pleyCurrentPlayerFromBeginning()
     }
 
+    override internal func successfullyPlayerFinishedAction(_ player: AVAudioPlayer) {
+        if player == shimoPlayer {
+            startCountDownTimer()
+        } else {
+            print("試し聞きはこれにて終了！")
+            tryButton.isEnabled = true
+            updateTimeLabel()
+        }
+    }
 }

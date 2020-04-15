@@ -115,6 +115,17 @@ class TimeSettingViewController: SettingsAttachedViewController {
     internal func tryButtonAction() {
         assertionFailure("This method must be overwritten!")
     }
+    
+    internal func successfullyPlayerFinishedAction(_ player: AVAudioPlayer) {
+//        if player == shimoPlayer {
+//            startCountDownTimer()
+//        } else {
+//            print("試し聞きはこれにて終了！")
+//            tryButton.isEnabled = true
+//            updateTimeLabel()
+//        }
+        assertionFailure("This method must be overwritten in subclass!!")
+    }
 
     private func labelPointSize() -> CGFloat {
         return sizeByDevice.intervalTimeLabelPointSize()
