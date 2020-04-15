@@ -12,6 +12,20 @@ import AVFoundation
 private let subtractDuration: Float = 0.02
 
 extension TimeSettingViewController: AVAudioPlayerDelegate {
+    internal func successfullyPlayerFinishedAction(_ player: AVAudioPlayer) {
+        if player == shimoPlayer {
+            startCountDownTimer()
+        } else {
+            print("試し聞きはこれにて終了！")
+            tryButton.isEnabled = true
+            updateTimeLabel()
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if !flag { return }
+        successfullyPlayerFinishedAction(player)
+    }
 
     @objc func tryButtonTapped(_ button: UIButton) {
         tryButtonAction()
@@ -53,5 +67,10 @@ extension TimeSettingViewController: AVAudioPlayerDelegate {
     
     internal func setCurrentPlayer(with player: AVAudioPlayer) {
         self.currentPlayer = player
+    }
+    
+    internal func startCountDownTimer() {
+        self.remainTime = slider.value
+        self.timer = Timer.scheduledTimer(timeInterval: Double(subtractDuration), target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
     }
 }

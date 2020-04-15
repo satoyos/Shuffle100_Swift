@@ -139,6 +139,4 @@ class TimeSettingViewController: SettingsAttachedViewController {
     private func viewHeiht() -> CGFloat {
         return view.frame.size.height
     }
-    
-
 }
