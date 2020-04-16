@@ -14,9 +14,9 @@ import AVFoundation
 final class IntervalSettingViewController: TimeSettingViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        self.initialTime = settings.interval
         self.title = "歌の間隔の調整"
+        super.viewDidLoad()
     }
     
     override internal func reflectSliderValueToSettings() {

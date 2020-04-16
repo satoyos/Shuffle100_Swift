@@ -53,7 +53,8 @@ extension TimeSettingViewController {
             }
             $0.minimumValue = minIntervalDuration
             $0.maximumValue = maxIntervalDuration
-            $0.value = settings.interval
+//            $0.value = settings.interval
+            $0.value = initialTime
             $0.accessibilityLabel = "slider"
         }
         updateTimeLabel()
