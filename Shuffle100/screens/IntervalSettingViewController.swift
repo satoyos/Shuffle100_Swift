@@ -19,12 +19,8 @@ final class IntervalSettingViewController: TimeSettingViewController {
         self.title = "歌の間隔の調整"
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        deleteTimerIfNeeded()
-        stopAndResetPlayerIfNeeded()
+    override internal func reflectSliderValueToSettings() {
         settings.interval = slider.value
-        self.saveSettingsAction?()
     }
     
     override internal func tryButtonAction() {
