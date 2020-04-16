@@ -25,8 +25,8 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
         // then
         XCTContext.runActivity(named: "Subviewsが正しく設置されている") { activity in
             XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())
-//            XCTAssertNotNil(screen.slider)
-//            XCTAssertEqual(screen.timeLabel.text, "1.10")
+            XCTAssertNotNil(screen.slider)
+            XCTAssertEqual(screen.timeLabel.text, "1.00")
 //            XCTAssertEqual(screen.slider.value, 1.1)
 //            XCTAssertNotNil(screen.tryButton)
         }

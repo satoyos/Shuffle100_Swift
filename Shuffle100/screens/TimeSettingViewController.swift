@@ -18,6 +18,7 @@ class TimeSettingViewController: SettingsAttachedViewController {
     let slider = UISlider()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var tryButton = UIButton()
+    var initialTime: Float!
     var kamiPlayer: AVAudioPlayer!
     var shimoPlayer: AVAudioPlayer!
     var currentPlayer: AVAudioPlayer!

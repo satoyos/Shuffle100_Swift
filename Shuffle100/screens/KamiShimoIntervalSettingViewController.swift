@@ -11,9 +11,9 @@ import UIKit
 class KamiShimoIntervalSettingViewController: TimeSettingViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        self.initialTime = settings.kamiShimoInterval
         self.title = "上の句と下の句の間隔"
+        super.viewDidLoad()
     }
     
 }
