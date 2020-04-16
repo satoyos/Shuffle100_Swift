@@ -36,6 +36,14 @@ class TimeSettingViewController: SettingsAttachedViewController {
         setSubviewsTarget()
         setKamiShimoPlayers()
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        deleteTimerIfNeeded()
+        stopAndResetPlayerIfNeeded()
+        reflectSliderValueToSettings()
+        self.saveSettingsAction?()
+    }
     
     internal func setKamiShimoPlayers() {
         guard let singer = Singers.getSingerOfID(settings.singerID) else {
@@ -66,6 +74,10 @@ class TimeSettingViewController: SettingsAttachedViewController {
         }
     }
 
+    internal func reflectSliderValueToSettings() {
+        assertionFailure("This method must be overwritten!!")
+    }
+    
     internal func tryButtonAction() {
         assertionFailure("This method must be overwritten!")
     }
