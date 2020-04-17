@@ -22,13 +22,17 @@ class ReciteSettingsCoordinator: Coordinator {
     }
     
     func start() {
-        print("歯車ボタンが押された！")
+//        print("歯車ボタンが押された！")
         let screen = ReciteSettingsViewController(settings: settings)
         self.navigator = UINavigationController(rootViewController: screen)
         setUpNavigationController()
         screen.intervalSettingAction = { [weak self] in
             self?.openIntervalSettingScreen()
         }
+        screen.kamiShimoIntervalSettingAction = { [weak self] in
+            self?.openKamiShimoIntervalSettingScreen()
+        }
+        
         fromScreen.present(navigator, animated: true)
         self.screen = screen
     }
@@ -53,8 +57,14 @@ class ReciteSettingsCoordinator: Coordinator {
     }
     
     private func openIntervalSettingScreen() {
-        print("これから、歌の間隔を調整する画面を開きます")
+//        print("これから、歌の間隔を調整する画面を開きます")
         let coordinator = IntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()        
+    }
+    
+    private func openKamiShimoIntervalSettingScreen() {
+        print("これから、上の句と下の句の間隔を調整する画面を開きます")
+        let coordinator = KamiShimoIntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
+        coordinator.start()
     }
 }

@@ -13,6 +13,7 @@ class ReciteSettingsViewController: SettingsAttachedViewController {
     var tableView: UITableView!
     var tableSources: [TableDataSource]!
     var intervalSettingAction: (() -> Void)?
+    var kamiShimoIntervalSettingAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
