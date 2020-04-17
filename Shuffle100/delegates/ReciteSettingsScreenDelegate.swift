@@ -13,6 +13,8 @@ extension ReciteSettingsViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             self.intervalSettingAction?()
+        case 1:
+            self.kamiShimoIntervalSettingAction?()
         default:
             assertionFailure("他の選択肢は対応していません！")
         }
