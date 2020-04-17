@@ -65,33 +65,33 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         app.tables.staticTexts["上の句と下の句の間隔"].tap()
         // then
         XCTAssert(app.navigationBars["上の句と下の句の間隔"].exists)
-//        XCTAssertFalse(app.staticTexts["トップ"].exists)
-//
-//        if #available(iOS 13.0, *) {
-//            XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
-//                // when
-//                app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
-//                // then
-//                XCTAssert(app.staticTexts["0.50"].exists)
-//            }
-//            XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
-//                app.buttons["試しに聞いてみる"].tap()
-//                waitToAppear(for: app.staticTexts["0.00"], timeout: 10)
-//
-//            }
-//            XCTContext.runActivity(named: "「いろいろな設定」画面に戻ると、「歌と詩の間隔」の値が書き換わっている") { action in
-//                // when
-//                app.navigationBars.buttons["いろいろな設定"].tap()
-//                // then
-//                XCTAssert(app.staticTexts["0.50"].exists)
-//            }
-//            XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
-//                // when
-//                app.buttons["設定終了"].tap()
-//                // then
-//                XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
-//            }
-//        }
+        XCTAssertFalse(app.staticTexts["トップ"].exists)
+
+        if #available(iOS 13.0, *) {
+            XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
+                // when
+                app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
+                // then
+                XCTAssert(app.staticTexts["0.50"].exists)
+            }
+            XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
+                app.buttons["試しに聞いてみる"].tap()
+                waitToAppear(for: app.staticTexts["0.00"], timeout: 10)
+
+            }
+            XCTContext.runActivity(named: "「いろいろな設定」画面に戻ると、「上の句と下の句の間隔」の値が書き換わっている") { action in
+                // when
+                app.navigationBars.buttons["いろいろな設定"].tap()
+                // then
+                XCTAssert(app.staticTexts["0.50"].exists)
+            }
+            XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
+                // when
+                app.buttons["設定終了"].tap()
+                // then
+                XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
+            }
+        }
     }
 }
 

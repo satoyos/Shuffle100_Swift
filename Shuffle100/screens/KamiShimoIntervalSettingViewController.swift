@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class KamiShimoIntervalSettingViewController: TimeSettingViewController {
 
@@ -16,4 +17,22 @@ class KamiShimoIntervalSettingViewController: TimeSettingViewController {
         super.viewDidLoad()
     }
     
+    override internal func reflectSliderValueToSettings() {
+        settings.kamiShimoInterval = slider.value
+    }
+    
+    override internal func tryButtonAction() {
+        setCurrentPlayer(with: kamiPlayer)
+        pleyCurrentPlayerFromBeginning()
+    }
+    
+    override internal func successfullyPlayerFinishedAction(_ player: AVAudioPlayer) {
+        if player == kamiPlayer {
+            startCountDownTimer()
+        } else {
+            print("試し聞きはこれにて終了！")
+            tryButton.isEnabled = true
+            updateTimeLabel()
+        }
+    }
 }
