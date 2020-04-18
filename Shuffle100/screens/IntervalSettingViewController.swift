@@ -41,4 +41,8 @@ final class IntervalSettingViewController: TimeSettingViewController {
     override func switchCurrentPlayerAfterCountDown() {
         self.currentPlayer = kamiPlayer
     }
+    
+    override func kamiPoemNumber() -> Int? {
+        return 2
+    }
 }

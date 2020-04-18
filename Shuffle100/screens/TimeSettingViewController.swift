@@ -51,8 +51,12 @@ class TimeSettingViewController: SettingsAttachedViewController {
             assertionFailure("読手が見つかりません")
             return
         }
+        guard let kamiPoemNumber = kamiPoemNumber() else {
+            assertionFailure("上の句の歌番号が見つかりません")
+            return
+        }
         let singerFolder = singer.path
-        self.kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: 2, side: .kami, folder: singerFolder).then {
+        self.kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: kamiPoemNumber, side: .kami, folder: singerFolder).then {
             $0.delegate = self
         }
         self.shimoPlayer = AudioPlayerFactory.shared.preparePlayer(number: 1, side: .shimo, folder: singerFolder).then {
@@ -89,6 +93,11 @@ class TimeSettingViewController: SettingsAttachedViewController {
     
     internal func switchCurrentPlayerAfterCountDown() {
         assertionFailure("This method must be overwritten!")
+    }
+    
+    internal func kamiPoemNumber() -> Int? {
+        assertionFailure("This method must be overwritten!")
+        return nil
     }
     
     private func setSubviewsTarget() {
