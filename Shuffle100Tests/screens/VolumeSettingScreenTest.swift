@@ -24,7 +24,8 @@ class VolumeSettingScreenTest: XCTestCase {
         screen.view.layoutSubviews()
         // then
         XCTContext.runActivity(named: "Subviewsが正しく設置されている") { activity in
-            XCTAssertNotNil(screen.slider)            
+            XCTAssertNotNil(screen.slider)
+            XCTAssertEqual(screen.tryButton.title(for: .normal), "テスト音声を再生する")
         }
     }
 
