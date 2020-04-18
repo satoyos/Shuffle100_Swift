@@ -42,7 +42,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
     
     func test_createAndDeleteTimer() {
         // given, when
-        let screen = IntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingViewController()
 
         XCTContext.runActivity(named: "startCountDownTimer()でtimerがセットされる") { activity in
             // then
@@ -62,7 +62,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
 
     func test_currentPlayerGetSetCorrectly() {
         // given, when
-        let screen = IntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingViewController()
         screen.loadViewIfNeeded()
         screen.view.layoutSubviews()
         // then
@@ -131,6 +131,4 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
              fatalError("This Device is not supported. Idiom => \(UIDevice.current.userInterfaceIdiom)")
         }
     }
-    
-    
 }
