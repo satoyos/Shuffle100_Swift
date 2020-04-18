@@ -16,6 +16,16 @@ class VolumeSettingScreenTest: XCTestCase {
         let screen = VolumeSettingViewController()
         // then
         XCTAssertNotNil(screen)
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(screen.title, "音量の調整")
+        // when
+        screen.view.layoutSubviews()
+        // then
+        XCTContext.runActivity(named: "Subviewsが正しく設置されている") { activity in
+            XCTAssertNotNil(screen.slider)            
+        }
     }
 
 }
