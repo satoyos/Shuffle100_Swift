@@ -32,7 +32,7 @@ extension TimeSettingViewController: AVAudioPlayerDelegate {
         if remainTime < subtractDuration {
             self.remainTime = 0.0
             deleteTimerIfNeeded()
-            self.currentPlayer = kamiPlayer
+            switchCurrentPlayerAfterCountDown()
             pleyCurrentPlayerFromBeginning()
         }
        updateTimeLabel(with: remainTime)

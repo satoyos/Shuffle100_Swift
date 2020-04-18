@@ -68,18 +68,18 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
         // then
         XCTAssertNil(screen.currentPlayer)
 
-        XCTContext.runActivity(named: "tryButtonが押されたとき、currentPlayerにshimoPlayerがセットされる") { activity in
+        XCTContext.runActivity(named: "tryButtonが押されたとき、currentPlayerにkamiPlayerがセットされる") { activity in
             // when
             screen.tryButtonTapped(screen.tryButton)
             // then
-            XCTAssertEqual(screen.currentPlayer, screen.shimoPlayer)
+            XCTAssertEqual(screen.currentPlayer, screen.kamiPlayer)
         }
-        XCTContext.runActivity(named: "カウントダウンが終わったとき、currentPlayerにkamiPlayerがセットされる") { activity in
+        XCTContext.runActivity(named: "カウントダウンが終わったとき、currentPlayerにshimoPlayerがセットされる") { activity in
             // when
             screen.remainTime = 0.0
             screen.updateRemainTime(t: Timer())
             // then
-            XCTAssertEqual(screen.currentPlayer, screen.kamiPlayer)
+            XCTAssertEqual(screen.currentPlayer, screen.shimoPlayer)
         }
     }
 
@@ -93,7 +93,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
         XCTAssertNotNil(screen.shimoPlayer)
         XCTAssertNil(screen.currentPlayer)
         XCTAssert(screen.tryButton.isEnabled)
-        XCTContext.runActivity(named: "tryButtonがタップされると、tryButtonが無効になり、currentPlayerにshimoPlayerがセットされる") { activity in
+        XCTContext.runActivity(named: "tryButtonがタップされると、tryButtonが無効になり、currentPlayerにkamiPlayerがセットされる") { activity in
             // when
             screen.tryButtonTapped(screen.tryButton)
             // then

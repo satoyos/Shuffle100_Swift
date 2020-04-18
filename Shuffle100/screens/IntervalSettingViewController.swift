@@ -37,4 +37,8 @@ final class IntervalSettingViewController: TimeSettingViewController {
             updateTimeLabel()
         }
     }
+    
+    override func switchCurrentPlayerAfterCountDown() {
+        self.currentPlayer = kamiPlayer
+    }
 }
