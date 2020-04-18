@@ -39,4 +39,9 @@ class KamiShimoIntervalSettingViewController: TimeSettingViewController {
     override func switchCurrentPlayerAfterCountDown() {
         self.currentPlayer = shimoPlayer
     }
+    
+    override func kamiPoemNumber() -> Int? {
+        return 1
+    }
+    
 }
