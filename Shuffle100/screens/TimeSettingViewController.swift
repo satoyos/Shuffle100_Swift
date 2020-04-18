@@ -87,6 +87,10 @@ class TimeSettingViewController: SettingsAttachedViewController {
         assertionFailure("This method must be overwritten in subclass!!")
     }
     
+    internal func switchCurrentPlayerAfterCountDown() {
+        assertionFailure("This method must be overwritten!")
+    }
+    
     private func setSubviewsTarget() {
         tryButton.addTarget(self, action: #selector(tryButtonTapped), for: .touchUpInside)
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)

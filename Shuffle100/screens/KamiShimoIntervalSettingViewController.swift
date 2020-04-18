@@ -35,4 +35,8 @@ class KamiShimoIntervalSettingViewController: TimeSettingViewController {
             updateTimeLabel()
         }
     }
+    
+    override func switchCurrentPlayerAfterCountDown() {
+        self.currentPlayer = shimoPlayer
+    }
 }
