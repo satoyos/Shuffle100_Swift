@@ -12,6 +12,10 @@ import AVFoundation
 private let subtractDuration: Float = 0.02
 
 extension TimeSettingViewController: AVAudioPlayerDelegate {
+    
+    internal func setDelegate(ofPlayer player: AVAudioPlayer) {
+        player.delegate = self
+    }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if !flag { return }
