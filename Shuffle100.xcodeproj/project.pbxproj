@@ -113,6 +113,9 @@
 		925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
 		92599500244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
 		92599501244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
+		92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
+		92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
+		92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
 		925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
@@ -386,6 +389,7 @@
 		925994F6244AA47200044253 /* VolumeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingViewController.swift; sourceTree = "<group>"; };
 		925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenLayout.swift; sourceTree = "<group>"; };
 		925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingCoordinator.swift; sourceTree = "<group>"; };
+		92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenDelegate.swift; sourceTree = "<group>"; };
 		925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableCell.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
@@ -831,6 +835,7 @@
 				92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */,
 				92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */,
 				925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */,
+				92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1140,6 +1145,7 @@
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */,
 				923B594C23ACF606002027B4 /* GameEndViiew.swift in Sources */,
+				92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
@@ -1210,6 +1216,7 @@
 				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
 				92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
+				92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
@@ -1306,6 +1313,7 @@
 				92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */,
 				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
+				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingViewController.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
