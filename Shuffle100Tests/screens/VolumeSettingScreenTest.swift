@@ -27,6 +27,7 @@ class VolumeSettingScreenTest: XCTestCase {
             XCTAssertNotNil(screen.slider)
             XCTAssertEqual(screen.tryButton.title(for: .normal), "テスト音声を再生する")
         }
+        XCTAssertNotNil(screen.currentPlayer)
     }
 
 }
