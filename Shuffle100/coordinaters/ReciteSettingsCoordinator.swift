@@ -67,4 +67,10 @@ class ReciteSettingsCoordinator: Coordinator {
         let coordinator = KamiShimoIntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
+    
+    private func openVolumeSettingScreen() {
+//
+//        次はここから
+//        
+    }
 }
