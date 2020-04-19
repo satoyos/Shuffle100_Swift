@@ -15,6 +15,8 @@ extension ReciteSettingsViewController: UITableViewDelegate {
             self.intervalSettingAction?()
         case 1:
             self.kamiShimoIntervalSettingAction?()
+        case 2:
+            self.volumeSettingAction?()
         default:
             assertionFailure("他の選択肢は対応していません！")
         }
