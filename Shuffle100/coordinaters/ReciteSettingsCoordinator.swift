@@ -32,6 +32,9 @@ class ReciteSettingsCoordinator: Coordinator {
         screen.kamiShimoIntervalSettingAction = { [weak self] in
             self?.openKamiShimoIntervalSettingScreen()
         }
+        screen.volumeSettingAction = { [weak self] in
+            self?.openVolumeSettingScreen()
+        }
         
         fromScreen.present(navigator, animated: true)
         self.screen = screen
@@ -57,20 +60,20 @@ class ReciteSettingsCoordinator: Coordinator {
     }
     
     private func openIntervalSettingScreen() {
-//        print("これから、歌の間隔を調整する画面を開きます")
+        assert(true, "これから、歌の間隔を調整する画面を開きます")
         let coordinator = IntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()        
     }
     
     private func openKamiShimoIntervalSettingScreen() {
-        print("これから、上の句と下の句の間隔を調整する画面を開きます")
+        assert(true, "これから、上の句と下の句の間隔を調整する画面を開きます")
         let coordinator = KamiShimoIntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
     
     private func openVolumeSettingScreen() {
-//
-//        次はここから
-//        
+        assert(true, "これから、音量をちょうせうする画面を開きます")
+        let coordinator = VolumeSettingCoordinator(navigator: navigator, settings: settings, store: store)
+        coordinator.start()
     }
 }

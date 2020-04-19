@@ -61,7 +61,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
     func test_KamiShimoIntervalSetting() {
         // given, when
         gotoReciteSettingsScreen(app)
-        // then
+        // when
         app.tables.staticTexts["上の句と下の句の間隔"].tap()
         // then
         XCTAssert(app.navigationBars["上の句と下の句の間隔"].exists)
@@ -93,5 +93,15 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
             }
         }
     }
+    
+    func test_VolumeSetting() {
+        // given, when
+        gotoReciteSettingsScreen(app)
+        // when
+        app.tables.staticTexts["音量調整"].tap()
+        // then
+        XCTAssert(app.navigationBars.staticTexts["音量の調整"].exists)
+    }
+
 }
 
