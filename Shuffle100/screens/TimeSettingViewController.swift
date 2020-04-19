@@ -57,10 +57,10 @@ class TimeSettingViewController: SettingsAttachedViewController {
         }
         let singerFolder = singer.path
         self.kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: kamiPoemNumber, side: .kami, folder: singerFolder).then {
-            $0.delegate = self
+            setDelegate(ofPlayer: $0)
         }
         self.shimoPlayer = AudioPlayerFactory.shared.preparePlayer(number: 1, side: .shimo, folder: singerFolder).then {
-            $0.delegate = self
+            setDelegate(ofPlayer: $0)
         }
     }
     
