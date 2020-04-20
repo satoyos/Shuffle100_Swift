@@ -51,6 +51,7 @@ class VolumeSettingViewController: SettingsAttachedViewController {
         let singerFolder = singer.path
         let kamiPlayer = AudioPlayerFactory.shared.preparePlayer(number: 1, side: .kami, folder: singerFolder).then {
             setDelegate(ofPlayer: $0)
+            $0.volume = settings.volume
         }
         self.currentPlayer = kamiPlayer
     }
