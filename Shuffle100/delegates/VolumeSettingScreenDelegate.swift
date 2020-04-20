@@ -10,7 +10,27 @@ import UIKit
 import AVFoundation
 
 extension VolumeSettingViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag == false {
+            assertionFailure("Playerの再生が正常に終了しなかった！")
+            return
+        }
+        player.currentTime = 0.0
+        tryButton.isEnabled = true
+    }
+    
     internal func setDelegate(ofPlayer player: AVAudioPlayer) {
         player.delegate = self
+    }
+    
+    @objc func tryButtonTapped() {
+        assert(true, "試し聴きのボタンが押された！")
+        currentPlayer.play()
+        tryButton.isEnabled = false
+    }
+    
+    @objc func sliderValueChanged(_ slider: UISlider) {
+        assert(true, "スライダーの値が変わった！")
+        currentPlayer.volume = slider.value
     }
 }
