@@ -105,6 +105,14 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
             app.tables.staticTexts["音量調整"].tap()
             // then
             XCTAssert(app.staticTexts["音量の調整"].exists)
+            
+            XCTContext.runActivity(named: "スライダーを左端に動かして、元の画面に戻ると、音量が「0%」になっている"){ action in
+                // when
+                app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
+                app.buttons["いろいろな設定"].tap()
+                // then
+                XCTAssert(app.cells.staticTexts["0%"].exists)
+            }
         }
     }
 
