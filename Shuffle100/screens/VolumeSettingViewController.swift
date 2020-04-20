@@ -31,6 +31,12 @@ class VolumeSettingViewController: SettingsAttachedViewController {
         setSubviewsTarget()
         setPlayer()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        stopPlayer()
+        reflectSliderValueToSettings()
+    }
 
     private func setSubviewsTarget() {
         
@@ -46,6 +52,17 @@ class VolumeSettingViewController: SettingsAttachedViewController {
             setDelegate(ofPlayer: $0)
         }
         self.currentPlayer = kamiPlayer
+    }
+    
+    private func stopPlayer() {
+        if let player = currentPlayer {
+            player.stop()
+        }
+    }
+    
+    private func reflectSliderValueToSettings() {
+        settings.volume = slider.value
+        self.saveSettingsAction?()
     }
     
 }
