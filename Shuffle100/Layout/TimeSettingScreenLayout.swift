@@ -34,7 +34,7 @@ extension TimeSettingViewController {
         _ = tryButton.then {
             $0.setTitle("試しに聞いてみる", for: .normal)
             $0.setTitleColor(StandardColor.standardButtonColor, for: .normal)
-            $0.setTitleColor(UIColor.lightGray, for: .disabled)
+            $0.setTitleColor(StandardColor.disabledButtonColor, for: .disabled)
             $0.sizeToFit()
             $0.snp.makeConstraints{ (make) -> Void in
                 make.centerX.equalToSuperview()

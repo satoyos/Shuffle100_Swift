@@ -38,7 +38,7 @@ extension VolumeSettingViewController {
         _ = tryButton.then {
             $0.setTitle("テスト音声を再生する", for: .normal)
             $0.setTitleColor(StandardColor.standardButtonColor, for: .normal)
-            $0.setTitleColor(UIColor.lightGray, for: .disabled)
+            $0.setTitleColor(StandardColor.disabledButtonColor, for: .disabled)
             $0.sizeToFit()
             $0.snp.makeConstraints{ (make) -> Void in
                 make.centerX.equalToSuperview()
