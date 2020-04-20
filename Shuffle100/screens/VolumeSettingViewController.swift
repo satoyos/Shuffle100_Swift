@@ -34,12 +34,13 @@ class VolumeSettingViewController: SettingsAttachedViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        stopPlayer()
+        stopPlayerAndResetTime()
         reflectSliderValueToSettings()
     }
 
     private func setSubviewsTarget() {
-        
+        tryButton.addTarget(self, action: #selector(tryButtonTapped), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
     }
     
     private func setPlayer() {
@@ -54,9 +55,10 @@ class VolumeSettingViewController: SettingsAttachedViewController {
         self.currentPlayer = kamiPlayer
     }
     
-    private func stopPlayer() {
+    private func stopPlayerAndResetTime() {
         if let player = currentPlayer {
             player.stop()
+            player.currentTime = 0.0
         }
     }
     
