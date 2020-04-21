@@ -115,6 +115,21 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
             }
         }
     }
+    
+    func test_openSettingsFromRecitePoemScreen() {
+        // given
+        gotoRecitePoemScreen(app)
+        // then
+        let gearButton = app.buttons["gear"]
+        XCTAssert(gearButton.exists)
+        
+        XCTContext.runActivity(named: "歯車ボタンをタップすると、「いろいろな設定」画面が現れる") { activity in
+            // when
+            gearButton.tap()
+            // then
+            XCTAssert(app.navigationBars.staticTexts["いろいろな設定"].exists)
+        }
+    }
 
 }
 
