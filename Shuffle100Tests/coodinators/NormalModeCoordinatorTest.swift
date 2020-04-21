@@ -20,7 +20,7 @@ class NormalModeCoordinatorTest: XCTestCase {
 
     func test_canRetrievePoem() {
         let nc = UINavigationController()
-        let coordinator = NormalModeCoordinator(navigator: nc, settings: Settings())
+        let coordinator = NormalModeCoordinator(navigator: nc, settings: Settings(), store: StoreManager())
         let supplier = coordinator.poemSupplier
         XCTAssertNotNil(supplier?.drawNextPoem())
     }

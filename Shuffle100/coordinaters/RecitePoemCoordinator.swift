@@ -13,10 +13,13 @@ class RecitePoemCoordinator: Coordinator{
     private var settings: Settings
     internal var screen: RecitePoemViewController?
     var poemSupplier: PoemSupplier!
+    var store: StoreManager
+    var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     
-    init(navigator: UINavigationController, settings: Settings) {
+    init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
+        self.store = store
         let deck = Deck.createFrom(state100: settings.state100)
         self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
         if settings.fakeMode {
@@ -115,6 +118,14 @@ class RecitePoemCoordinator: Coordinator{
             print("1首目の上の句の冒頭でrewindが押された！")
             backToTopScreen()
         }
+    }
+    
+    // 歯車ボタンが押されたときの画面遷移をここでやる！
+    private func openReciteSettings(settings: Settings) {
+        guard let screen = self.screen else { return }
+        let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
+        coordinator.start()
+        self.reciteSettingsCoordinator = coordinator
     }
     
 

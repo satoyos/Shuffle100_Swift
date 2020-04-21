@@ -68,10 +68,10 @@ class MainCoordinator: Coordinator {
         var gameDriver: RecitePoemCoordinator!
         switch settings.mode.reciteMode {
         case .normal:
-            gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings)
+            gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings, store: store)
             gameDriver.start()
         case .nonstop:
-            gameDriver = NonsotpModeCoordinator(navigator: navigator, settings: settings)
+            gameDriver = NonsotpModeCoordinator(navigator: navigator, settings: settings, store: store)
             gameDriver.start()
         default:
             assertionFailure("Not implemented yet!!")
