@@ -24,6 +24,14 @@ extension RecitePoemViewController: AVAudioPlayerDelegate {
         present(ac, animated: true)
     }
     
+    internal func settingsButtonTapped() {
+        guard let player = currentPlayer else { return }
+        if player.isPlaying {
+            pauseCurrentPlayer()
+        }
+        self.openSettingsAction?()
+    }
+    
     internal func playButtonTapped() {
         if playFinished {
             self.playButtonTappedAfterFinishedReciting?()
