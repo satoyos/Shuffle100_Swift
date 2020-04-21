@@ -32,6 +32,9 @@ class RecitePoemCoordinator: Coordinator{
         screen.backToPreviousAction = { [weak self] in
             self?.rewindToPrevious()
         }
+        screen.openSettingsAction = { [weak self] in
+            self?.openReciteSettings()
+        }
         
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
@@ -121,7 +124,7 @@ class RecitePoemCoordinator: Coordinator{
     }
     
     // 歯車ボタンが押されたときの画面遷移をここでやる！
-    private func openReciteSettings(settings: Settings) {
+    private func openReciteSettings() {
         guard let screen = self.screen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()

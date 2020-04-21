@@ -19,6 +19,7 @@ class RecitePoemViewController: SettingsAttachedViewController {
     var playButtonTappedAfterFinishedReciting: (() -> Void)?
     var backToPreviousAction: (() -> Void)?
     var skipToNextScreenAction: (() -> Void)?
+    var openSettingsAction: (() -> Void)?
     var singer: Singer!
     var playFinished: Bool = false
         
@@ -65,8 +66,10 @@ class RecitePoemViewController: SettingsAttachedViewController {
         recitePoemView.exitButton.tappedAction = {[weak self] in
             self?.exitButtonTapped()
         }
+        recitePoemView.gearButton.tappedAction = { [weak self] in
+            self?.settingsButtonTapped()
+        }
         recitePoemView.playButton.tap = { [weak self] btn in
-//            self?.flipPlaying()
             self?.playButtonTapped()
         }
         recitePoemView.rewindButton.tap = { [weak self] btn in
