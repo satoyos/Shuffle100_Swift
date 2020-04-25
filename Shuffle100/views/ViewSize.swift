@@ -34,7 +34,8 @@ class SizeFactory {
 
 class PhoneSize: SizeByDevice {
     func playButtonHeight() -> CGFloat {
-        return UIApplication.shared.keyWindow!.bounds.width * 300 / 375
+//        return UIApplication.shared.keyWindow!.bounds.width * 300 / 375
+        return keyWindow().bounds.width * 300 / 375
     }
     
     func skipButtonHeight() -> CGFloat {
@@ -52,7 +53,8 @@ class PhoneSize: SizeByDevice {
 
 class PadSize: SizeByDevice {
     func playButtonHeight() -> CGFloat {
-        return UIApplication.shared.keyWindow!.bounds.width * 2 / 3
+//        return UIApplication.shared.keyWindow!.bounds.width * 2 / 3
+        return keyWindow().bounds.width * 2 / 3
     }
     
     func skipButtonHeight() -> CGFloat {
@@ -68,3 +70,10 @@ class PadSize: SizeByDevice {
     }
 }
 
+private func keyWindow() -> UIWindow {
+    if let window = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive}).map({$0 as? UIWindowScene}).compactMap({$0}).first?.windows.filter({$0.isKeyWindow}).first {
+        return window
+    } else {
+        fatalError("KeyWindowが取得できません")
+    }
+}

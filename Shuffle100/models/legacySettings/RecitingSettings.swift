@@ -51,10 +51,11 @@ class RecitingSettings: NSObject, NSCoding {
     
     static func salvageDataFromUserDefaults() -> RecitingSettings? {
         if let rsData = UserDefaults.standard.object(forKey: "reciting_settings"),
-            let settings = NSKeyedUnarchiver.unarchiveObject(with: rsData as! Data){
-            return settings as? RecitingSettings
+            let settings = try! NSKeyedUnarchiver.unarchivedObject(ofClass: RecitingSettings.self, from: rsData as! Data) {
+            return settings
+        } else {
+            return nil
         }
-        return nil
     }
     
     func debugPrint() {
