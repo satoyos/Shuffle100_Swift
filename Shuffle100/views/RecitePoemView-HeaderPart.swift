@@ -28,12 +28,8 @@ extension RecitePoemView {
         layoutExitButton()
     }
     
-    fileprivate func textColor() -> UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor.label
-        } else {
-            return .black
-        }
+    private func textColor() -> UIColor {
+        return UIColor.label
     }
     
     private func layoutHeaderTitle() {

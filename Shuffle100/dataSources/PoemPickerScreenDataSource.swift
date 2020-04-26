@@ -50,13 +50,8 @@ extension PoemPickerViewController: UITableViewDataSource {
     
     private func colorFor(poem: Poem) -> UIColor {
         if try! settings.state100.ofNumber(poem.number) {
-//            return Color.nadeshiko.UIColor
             return StandardColor.selectedPoemBackColor
         }
-        if #available(iOS 13.0, *) {
-            return UIColor.systemBackground
-        } else {
-            return UIColor.white
-        }
+        return UIColor.systemBackground
     }
 }

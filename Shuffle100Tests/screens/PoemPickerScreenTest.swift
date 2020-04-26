@@ -60,14 +60,10 @@ class PoemPickerScreenTest: XCTestCase {
         firstCellColorIsSelectedColor()
     }
     
-   private func firstCellColorIsUnselectedColor() {
+    private func firstCellColorIsUnselectedColor() {
         // then
-        if #available(iOS 13.0, *) {
-            let firstCellBackColor = firstCell().backgroundColor
-            XCTAssertEqual(firstCellBackColor, UIColor.systemBackground)
-        } else {
-            XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
-        }
+        let firstCellBackColor = firstCell().backgroundColor
+        XCTAssertEqual(firstCellBackColor, UIColor.systemBackground)
     }
     
     func test_unselectedPoemCellIsWhite() {
@@ -87,7 +83,6 @@ class PoemPickerScreenTest: XCTestCase {
         // when
         screen.tableView(screen.tableView, didSelectRowAt: testIndexPath)
         // then
-//        XCTAssertEqual(firstCell().backgroundColor, UIColor.white)
         firstCellColorIsUnselectedColor()
         XCTAssertEqual(screen.selected_num, 99)
     }
@@ -102,7 +97,6 @@ class PoemPickerScreenTest: XCTestCase {
         // when
         screen.tableView(screen.tableView, didSelectRowAt: testIndex)
         // then
-//        XCTAssertEqual(firstCell().backgroundColor, nadeshikoColor())
         firstCellColorIsSelectedColor()
         XCTAssertEqual(screen.selected_num, 1)
     }
