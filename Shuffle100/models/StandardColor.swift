@@ -16,10 +16,11 @@ struct StandardColor {
     static let backgroundColor = standardBackgroundColor()
     
     static private func standardBackgroundColor() -> UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor.systemBackground
-        } else {
-            return UIColor.white
-        }
+//        if #available(iOS 13.0, *) {
+//            return UIColor.systemBackground
+//        } else {
+//            return UIColor.white
+//        }
+        return UIColor.systemBackground
     }
 }
