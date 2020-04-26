@@ -122,6 +122,31 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
             // then
             XCTAssert(app.navigationBars.staticTexts["いろいろな設定"].exists)
         }
+        
+        XCTContext.runActivity(named: "上の句と下の句の間隔をMaxにしてホーム画面に戻ると、その値が反映されている") { activity in
+            // when
+            app.tables.staticTexts["歌と歌の間隔"].tap()
+            app.sliders["slider"].adjust(toNormalizedSliderPosition: 1.0)
+            // then
+            XCTAssert(app.staticTexts["2.00"].exists)
+            // when
+            app.navigationBars.buttons["いろいろな設定"].tap()
+            // then
+            XCTAssert(app.staticTexts["2.00"].exists)
+            // when
+            app.buttons["設定終了"].tap()
+            // then
+            XCTAssert(app.staticTexts["序歌"].exists)
+            // when
+            app.buttons["exit"].tap()
+            app.buttons["終了する"].tap()
+            // then
+            waitToAppear(for: app.navigationBars.staticTexts["トップ"])
+            // when
+            gotoReciteSettingsScreen(app)
+            // then
+            XCTAssert(app.staticTexts["2.00"].exists)
+        }
     }
 
 }
