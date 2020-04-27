@@ -9,6 +9,8 @@
 import Foundation
 
 class BeginnerModeCoordinator: RecitePoemCoordinator {
+    var whatsNextCoordinator: WhatsNextCoordinator!
+    
     override func reciteKamiFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")
         stepIntoShimoInBeginnerMode()
@@ -19,9 +21,16 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
         assert(true, "初心者モードで下の句に突入！")
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
-        screen.playerFinishedAction = { [weak self, number, counter] in
-            self?.reciteShimoFinished(number: number, counter: counter)
+        screen.playerFinishedAction = { [weak self] in
+            self?.openWhatsNextScreen()
         }
         screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    }
+    
+    internal func openWhatsNextScreen() {
+        guard let screen = screen else { return }
+        let coordinator = WhatsNextCoordinator(fromScreen: screen)
+        coordinator.start()
+        self.whatsNextCoordinator = coordinator
     }
 }
