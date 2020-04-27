@@ -73,8 +73,9 @@ class MainCoordinator: Coordinator {
         case .nonstop:
             gameDriver = NonsotpModeCoordinator(navigator: navigator, settings: settings, store: store)
             gameDriver.start()
-        default:
-            assertionFailure("Not implemented yet!!")
+        case .beginner:
+            gameDriver = BeginnerModeCoordinator(navigator: navigator, settings: settings, store: store)
+            gameDriver.start()
         }
         guard let coordinator = gameDriver else { return }
         self.recitePoemCoordinator = coordinator
