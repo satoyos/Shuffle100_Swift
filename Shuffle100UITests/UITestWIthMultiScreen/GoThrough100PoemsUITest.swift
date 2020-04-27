@@ -57,13 +57,11 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         for i in (1...3) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 tapForwardButton(app)
-//                sleep(1)
                 XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
                 
                 tapForwardButton(app)
-//                sleep(3)
                 XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
             }
         }

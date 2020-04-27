@@ -11,12 +11,12 @@ import UIKit
 class NonsotpModeCoordinator: RecitePoemCoordinator {
 
     override internal func reciteKamiFinished(number: Int, counter: Int ) {
-        print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(ノンストップ)")
+        assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(ノンストップ)")
         stepIntoShimoInNonstopMode()
     }
     
     private func stepIntoShimoInNonstopMode() {
-        print("ノンストップモードで下の句に突入！")
+        assert(true, "ノンストップモードで下の句に突入！")
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen!.playerFinishedAction = { [weak self, number, counter] in
