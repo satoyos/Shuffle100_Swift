@@ -43,6 +43,11 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
             tapForwardButton(app)
             XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
         }
+        XCTContext.runActivity(named: "下の句が終わると、「次はどうする？」画面が現れる") { (activiti) in
+            
+            tapForwardButton(app)
+            XCTAssert(app.staticTexts["次はどうする？"].exists)
+        }
     }
 
 }
