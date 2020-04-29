@@ -9,14 +9,17 @@
 import UIKit
 
 class WhatsNextViewController: UIViewController {
+    var torifudaButton = WhatsNextButton()
+    var refrainButton = WhatsNextButton()
+    var goNextButton = WhatsNextButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = StandardColor.backgroundColor
         self.title = "次はどうする？"
-        
+        view.addSubview(torifudaButton)
+        view.addSubview(refrainButton)
+        view.addSubview(goNextButton)
     }
     
-    
-
 }
