@@ -11,12 +11,16 @@ import UIKit
 private let skipButtonHeightBase: CGFloat = 30
 private let intervalTimeLabelSizeBase: CGFloat = 100
 private let intervalSliderHeightBase = intervalTimeLabelSizeBase * 4 / 10
+private let imageOffsetXBase: CGFloat = 30
+private let whatsNextButtonHeightBase: CGFloat = 50
 
 protocol SizeByDevice {
     func playButtonHeight() -> CGFloat
     func skipButtonHeight() -> CGFloat
     func intervalTimeLabelPointSize() -> CGFloat
     func intervalSiderHeight() -> CGFloat
+    func whatsNextButtonHeight() -> CGFloat
+    func imageOffsetX() -> CGFloat
 }
 
 class SizeFactory {
@@ -34,7 +38,6 @@ class SizeFactory {
 
 class PhoneSize: SizeByDevice {
     func playButtonHeight() -> CGFloat {
-//        return UIApplication.shared.keyWindow!.bounds.width * 300 / 375
         return keyWindow().bounds.width * 300 / 375
     }
     
@@ -49,11 +52,19 @@ class PhoneSize: SizeByDevice {
     func intervalSiderHeight() -> CGFloat {
         return intervalSliderHeightBase
     }
+    
+    func whatsNextButtonHeight() -> CGFloat {
+        return whatsNextButtonHeightBase
+    }
+    
+    func imageOffsetX() -> CGFloat {
+        return imageOffsetXBase
+    }
 }
 
 class PadSize: SizeByDevice {
+
     func playButtonHeight() -> CGFloat {
-//        return UIApplication.shared.keyWindow!.bounds.width * 2 / 3
         return keyWindow().bounds.width * 2 / 3
     }
     
@@ -68,6 +79,15 @@ class PadSize: SizeByDevice {
     func intervalSiderHeight() -> CGFloat {
         return intervalSliderHeightBase * 2
     }
+    
+    func whatsNextButtonHeight() -> CGFloat {
+        return whatsNextButtonHeightBase * 2
+    }
+    
+    func imageOffsetX() -> CGFloat {
+        return imageOffsetXBase * 2
+    }
+    
 }
 
 private func keyWindow() -> UIWindow {
