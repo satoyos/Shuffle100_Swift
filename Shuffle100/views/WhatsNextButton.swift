@@ -10,6 +10,7 @@ import UIKit
 
 class WhatsNextButton: UIButton {
     func initWithImage(filename: String) {
+        imageView?.contentMode = .scaleAspectFit
         let image = UIImage(named: filename)!.reSizeImage(reSize: imageSize())
         setImage(image, for: .normal)
     }

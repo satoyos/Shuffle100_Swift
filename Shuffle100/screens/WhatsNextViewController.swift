@@ -12,6 +12,7 @@ class WhatsNextViewController: UIViewController {
     var torifudaButton = WhatsNextButton()
     var refrainButton = WhatsNextButton()
     var goNextButton = WhatsNextButton()
+    let sizes = SizeFactory.createSizeByDevice()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class WhatsNextViewController: UIViewController {
         view.addSubview(torifudaButton)
         view.addSubview(refrainButton)
         view.addSubview(goNextButton)
+        layoutButtons()
     }
     
 }
