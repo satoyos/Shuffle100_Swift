@@ -28,21 +28,21 @@ extension WhatsNextViewController {
         _ = button.then {
             $0.frame.size = buttonSize()
             $0.setStandardTitleColor()
-            $0.imageEdgeInsets = UIEdgeInsets(
-                top: 0,
-                left: sizes.imageOffsetX(),
-                bottom: 0,
-                right: viewWidth() - sizes.whatsNextButtonHeight() - sizes.imageOffsetX())
-            $0.titleEdgeInsets = UIEdgeInsets(
-                top: 0,
-                left: -1 * (retinaSclae() - 1) *  sizes.whatsNextButtonHeight(),
-                bottom: 0,
-                right: 0)
+//            $0.imageEdgeInsets = UIEdgeInsets(
+//                top: 0,
+//                left: sizes.imageOffsetX(),
+//                bottom: 0,
+//                right: viewWidth() - sizes.whatsNextButtonHeight() - sizes.imageOffsetX())
+//            $0.titleEdgeInsets = UIEdgeInsets(
+//                top: 0,
+//                left: -1 * (retinaSclae() - 1) *  sizes.whatsNextButtonHeight(),
+//                bottom: 0,
+//                right: 0)
         }
     }
     
     private func buttonSize() -> CGSize {
-        return CGSize(width: viewWidth(), height: sizes.whatsNextButtonHeight())
+        return CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight())
     }
     
     private func viewWidth() -> CGFloat {
