@@ -29,6 +29,8 @@ class WhatsNextScreenTest: XCTestCase {
         XCTAssertEqual(screen.view.subviews.count, 3)
         XCTAssertEqual(screen.refrainButton.title(for: .normal), "下の句をもう一度読む")
         XCTAssertEqual(screen.refrainButton.frame.size.width, screen.view.frame.size.width * 0.8)
+        XCTAssertEqual(screen.torifudaButton.title(for: .normal), "取り札を見る")
+        XCTAssertEqual(screen.goNextButton.title(for: .normal), "次の歌へ！")
     }
 
 }
