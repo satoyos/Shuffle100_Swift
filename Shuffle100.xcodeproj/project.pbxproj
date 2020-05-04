@@ -343,6 +343,22 @@
 		92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
 		92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
 		92FFBF3F245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
+		92FFBF41245FB3F0004D7F79 /* FudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF40245FB3F0004D7F79 /* FudaView.swift */; };
+		92FFBF42245FB3F0004D7F79 /* FudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF40245FB3F0004D7F79 /* FudaView.swift */; };
+		92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF40245FB3F0004D7F79 /* FudaView.swift */; };
+		92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
+		92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
+		92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
+		92FFBF49245FB4F7004D7F79 /* FudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */; };
+		92FFBF4A245FB4F7004D7F79 /* FudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */; };
+		92FFBF4B245FB4F7004D7F79 /* FudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */; };
+		92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
+		92FFBF4F245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
+		92FFBF50245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
+		92FFBF51245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
+		92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
+		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
+		92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -522,6 +538,12 @@
 		92FCCEDC22A51E3C002B589E /* 100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 100.json; sourceTree = "<group>"; };
 		92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNextScreenDelegate.swift; sourceTree = "<group>"; };
 		92FFBF3C245FB2FF004D7F79 /* String-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-extension.swift"; sourceTree = "<group>"; };
+		92FFBF40245FB3F0004D7F79 /* FudaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaView.swift; sourceTree = "<group>"; };
+		92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaScreenLayout.swift; sourceTree = "<group>"; };
+		92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaViewController.swift; sourceTree = "<group>"; };
+		92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tatami_moved.jpg; sourceTree = "<group>"; };
+		92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "washi_darkgreen 001.jpg"; sourceTree = "<group>"; };
+		92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaScreenTest.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -678,6 +700,7 @@
 				925994E32444A8D200044253 /* TimeSettingViewController.swift */,
 				925994F6244AA47200044253 /* VolumeSettingViewController.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextViewController.swift */,
+				92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -694,6 +717,8 @@
 				92328C2724591E25005E0FEE /* go_next.png */,
 				92328C2524591E25005E0FEE /* refrain.png */,
 				92328C2624591E25005E0FEE /* torifuda.png */,
+				92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */,
+				92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -704,6 +729,7 @@
 				925994EC2447528800044253 /* TimeSettingScreenLayout.swift */,
 				925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */,
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
+				92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -725,6 +751,7 @@
 				923B594B23ACF606002027B4 /* GameEndViiew.swift */,
 				92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */,
 				92328C2124591D64005E0FEE /* WhatsNextButton.swift */,
+				92FFBF40245FB3F0004D7F79 /* FudaView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -795,6 +822,7 @@
 				925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */,
 				925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */,
 				9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */,
+				92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -1041,7 +1069,9 @@
 				92C87DD322E8894900569D15 /* audio in Resources */,
 				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				92FC398D22917E6000791053 /* Readme.md in Resources */,
+				92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92328C2B24591E25005E0FEE /* torifuda.png in Resources */,
+				92FFBF51245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
 				92328C2824591E25005E0FEE /* refrain.png in Resources */,
@@ -1059,7 +1089,9 @@
 				92328C2F24591E25005E0FEE /* go_next.png in Resources */,
 				92328C2924591E25005E0FEE /* refrain.png in Resources */,
 				9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92FFBF4F245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92C87DD822E88D5400569D15 /* Singers.json in Resources */,
+				92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 				92C87DD422E8894900569D15 /* audio in Resources */,
 			);
@@ -1074,7 +1106,9 @@
 				92328C3024591E25005E0FEE /* go_next.png in Resources */,
 				92328C2A24591E25005E0FEE /* refrain.png in Resources */,
 				9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */,
+				92FFBF50245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92C87DD922E88D5400569D15 /* Singers.json in Resources */,
+				92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 				92C87DD522E8894900569D15 /* audio in Resources */,
 			);
@@ -1205,6 +1239,7 @@
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
 				92FFBF1E245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
+				92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
@@ -1239,6 +1274,7 @@
 				925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
+				92FFBF49245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
 				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				92AF24A3229E92EE0085B754 /* LegacyDataConverter.swift in Sources */,
 				927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */,
@@ -1250,6 +1286,7 @@
 				92AE7C7323FEAEDC003FA07F /* Environment.swift in Sources */,
 				9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				928E73B622ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
+				92FFBF41245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
@@ -1312,6 +1349,7 @@
 				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1EC22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FC39582288389C00791053 /* SelectedStatus100.swift in Sources */,
+				92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
@@ -1347,6 +1385,7 @@
 				92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				9206CEE222E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				927E4BF7222E9DD200AF48F7 /* Deck.swift in Sources */,
+				92FFBF4A245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
 				925994F8244AA47200044253 /* VolumeSettingViewController.swift in Sources */,
 				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */,
@@ -1361,6 +1400,7 @@
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
 				9207BAF5229579D600816DC8 /* Bool100.swift in Sources */,
+				92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */,
 				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
@@ -1380,6 +1420,7 @@
 				9205E1772456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
+				92FFBF42245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				925994F22449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
@@ -1401,6 +1442,7 @@
 				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingViewController.swift in Sources */,
+				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
@@ -1448,6 +1490,7 @@
 				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,
 				927A198123E06C8A00443322 /* RecitePoemCoordinator.swift in Sources */,
+				92FFBF4B245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
 				92ABF9AD23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
@@ -1476,6 +1519,7 @@
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				925994F32449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
+				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
