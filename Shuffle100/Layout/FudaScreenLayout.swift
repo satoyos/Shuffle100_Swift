@@ -41,6 +41,7 @@ extension FudaViewController {
             $0.center = CGPoint(x: view.center.x, y: view.center.y + topOffset() / 2.0)
         }
         tatamiView.addSubview(fudaView)
+        fudaView.accessibilityLabel = "fudaView"
         self.fudaView = fudaView
     }
         
