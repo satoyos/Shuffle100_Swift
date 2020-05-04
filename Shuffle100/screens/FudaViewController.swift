@@ -13,7 +13,14 @@ class FudaViewController: UIViewController {
     var titleString = "タイトル未定"
     var tatamiView: UIImageView!
     var fudaView: FudaView!
-
+    
+    var displayedString: String {
+        get {
+            guard let fudaView = fudaView else { return "" }
+            return fudaView.displayedString
+        }
+    }
+    
     init(shimoString: String, title titleString: String) {
         self.shimoString = shimoString
         self.titleString = titleString
@@ -34,7 +41,7 @@ class FudaViewController: UIViewController {
         layoutFudaScreen()
         setDismissButton()
     }
-    
+
     private func setDismissButton() {
         let dismissButton = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(dismissButtonTapped))
         self.navigationItem.rightBarButtonItem = dismissButton

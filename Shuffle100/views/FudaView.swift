@@ -22,6 +22,16 @@ class FudaView: UIImageView {
     var whiteBackView: UIView!
     var labels15 = [UILabel]()
 
+    var displayedString: String {
+        get {
+            var str = ""
+            for label in labels15 {
+                str += label.text ?? ""
+            }
+            return str.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+    }
+
     init(frame: CGRect, withPower fudaPower: CGFloat = 0.0, shimoString: String) {
         self.fudaPower = fudaPower
         self.shimoString = shimoString
