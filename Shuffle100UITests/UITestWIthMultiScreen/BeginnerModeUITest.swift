@@ -23,7 +23,7 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     }
 
     func test_startBeginnerMode() throws {
-        XCTContext.runActivity(named: "初心者モードを選択") { (activiti) in
+        XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
             gotoSelectModeScreen(app)
             app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
@@ -31,19 +31,19 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
             // then
             XCTAssert(app.cells.staticTexts["初心者"].exists)
         }
-        XCTContext.runActivity(named: "そして序歌へ") { (activiti) in
+        XCTContext.runActivity(named: "そして序歌へ") { (activity) in
             gotoRecitePoemScreen(app)
         }
-        XCTContext.runActivity(named: "forwardボタンを押すと、1首めの上の句へ") { (activiti) in
+        XCTContext.runActivity(named: "forwardボタンを押すと、1首めの上の句へ") { (activity) in
             tapForwardButton(app)
             XCTAssert(app.staticTexts["1首め:上の句 (全100首)"].exists)
         }
-        XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
+        XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activity) in
             
             tapForwardButton(app)
             XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
         }
-        XCTContext.runActivity(named: "下の句が終わると、「次はどうする？」画面が現れる") { (activiti) in
+        XCTContext.runActivity(named: "下の句が終わると、「次はどうする？」画面が現れる") { (activity) in
             
             tapForwardButton(app)
             XCTAssert(app.staticTexts["次はどうする？"].exists)
