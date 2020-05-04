@@ -23,6 +23,20 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     }
 
     func test_startBeginnerMode() throws {
+        gotoWhatsNextScreen()
+    }
+    
+    func test_showTorifuda() {
+        // given
+        gotoWhatsNextScreen()
+        // when
+        app.buttons["torifuda"].tap()
+        // then
+//        XCTAssert(app.buttons["閉じる"].exists)
+        XCTAssert(app.images["fudaView"].exists)
+    }
+    
+    private func gotoWhatsNextScreen() {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
             gotoSelectModeScreen(app)
@@ -49,5 +63,7 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
             XCTAssert(app.staticTexts["次はどうする？"].exists)
         }
     }
+    
+
 
 }
