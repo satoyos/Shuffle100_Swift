@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class WhatsNextButton: UIButton {
     func initWithImage(filename: String) {
@@ -15,12 +16,20 @@ class WhatsNextButton: UIButton {
         setImage(image, for: .normal)
     }
     
+    private func remakeLayoutConstraints() {
+        let imageHeiht = bounds.size.height
+        titleLabel?.snp.remakeConstraints { make in
+            make.leading.equalTo(imageView!.snp.trailing).offset(imageHeiht * 0.5)
+            make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageView?.frame.origin = bounds.origin
-        titleLabel?.frame = CGRect(
-            origin: CGPoint(x: bounds.origin.x + 100, y: bounds.origin.y),
-            size: CGSize(width: self.frame.size.width - 100, height: self.frame.size.height))
+        imageView?.frame.origin = CGPoint(x: 0, y: 0)
+        remakeLayoutConstraints()
     }
     
     private func imageSize() -> CGSize {

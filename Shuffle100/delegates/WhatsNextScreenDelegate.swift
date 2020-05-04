@@ -20,6 +20,11 @@ extension WhatsNextViewController {
     
     @objc func torifudaButtonTapped() {
         print("取り札ボタンが押された！")
+        let screen = FudaViewController(shimoString: "はなそむかしのかににおひける", title: "35. 人はいさ 心もしらず")
+        let nav = UINavigationController(rootViewController: screen)
+        nav.modalPresentationStyle = .fullScreen
+        nav.navigationBar.barTintColor = StandardColor.barTintColor
+        present(nav, animated: true)
     }
     
     @objc func refrainButtonTapped() {
