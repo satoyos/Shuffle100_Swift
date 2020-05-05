@@ -12,13 +12,15 @@ class WhatsNextCoordinator: Coordinator {
     private var screen: WhatsNextViewController!
     private var fromScreen: UIViewController
     private var navigator: UINavigationController!
+    private var currentPoem: Poem!
     
-    init(fromScreen: UIViewController) {
+    init(fromScreen: UIViewController, currentPoem: Poem) {
         self.fromScreen = fromScreen
+        self.currentPoem = currentPoem
     }
     
     func start() {
-        let screen = WhatsNextViewController()
+        let screen = WhatsNextViewController(currentPoem: currentPoem)
         self.navigator = UINavigationController(rootViewController: screen)
         setUpNavigationController()
         fromScreen.present(navigator, animated: true)

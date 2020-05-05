@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils {
+class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, PoemPickerScreenUITestUtils {
     var app = XCUIApplication()
 
     override func setUpWithError() throws {
@@ -28,15 +28,28 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     
     func test_showTorifuda() {
         // given
-        gotoWhatsNextScreen()
+        XCTContext.runActivity(named: "歌を1首(#4)だけ選んだ状態にする") { (activity) in
+            gotoPoemPickerScreen(app)
+            let clearButton = waitToHittable(for: app.buttons["全て取消"])
+            clearButton.tap()
+            //   tap poems #4
+            app.tables.cells["004"].tap()
+            //   back to HomeScreen
+            goBackToHomeScreen(app)
+            // then
+            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
+        }
+        gotoWhatsNextScreen(poemsNumber: 1)
         // when
         app.buttons["torifuda"].tap()
         // then
-//        XCTAssert(app.buttons["閉じる"].exists)
         XCTAssert(app.images["fudaView"].exists)
+        XCTAssert(app.staticTexts["ふ"].exists)
+        XCTAssert(app.staticTexts["し"].exists)
+        XCTAssertFalse(app.staticTexts["あ"].exists)
     }
     
-    private func gotoWhatsNextScreen() {
+    private func gotoWhatsNextScreen(poemsNumber:Int = 100) {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
             gotoSelectModeScreen(app)
@@ -50,12 +63,12 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         }
         XCTContext.runActivity(named: "forwardボタンを押すと、1首めの上の句へ") { (activity) in
             tapForwardButton(app)
-            XCTAssert(app.staticTexts["1首め:上の句 (全100首)"].exists)
+            XCTAssert(app.staticTexts["1首め:上の句 (全\(poemsNumber)首)"].exists)
         }
         XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activity) in
             
             tapForwardButton(app)
-            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
+            XCTAssert(app.staticTexts["1首め:下の句 (全\(poemsNumber)首)"].exists)
         }
         XCTContext.runActivity(named: "下の句が終わると、「次はどうする？」画面が現れる") { (activity) in
             

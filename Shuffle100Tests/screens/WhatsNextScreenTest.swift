@@ -20,7 +20,8 @@ class WhatsNextScreenTest: XCTestCase {
 
     func test_initialScreen() {
         // given
-        let screen = WhatsNextViewController()
+        let testPoem = PoemSupplier().drawNextPoem()!
+        let screen = WhatsNextViewController(currentPoem: testPoem)
         // when
         screen.loadViewIfNeeded()
         screen.view.layoutSubviews()

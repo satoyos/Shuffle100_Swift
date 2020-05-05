@@ -19,8 +19,13 @@ extension WhatsNextViewController {
     }
     
     @objc func torifudaButtonTapped() {
-        print("取り札ボタンが押された！")
-        let screen = FudaViewController(shimoString: "はなそむかしのかににおひける", title: "35. 人はいさ 心もしらず")
+        assert(true,"取り札ボタンが押された！")
+        let shimoStr = currentPoem.in_hiragana.shimo
+        var title = "\(currentPoem.number)."
+        for partStr in currentPoem.liner {
+            title += " \(partStr)"
+        }
+        let screen = FudaViewController(shimoString: shimoStr, title: title)
         let nav = UINavigationController(rootViewController: screen)
         nav.modalPresentationStyle = .fullScreen
         nav.navigationBar.barTintColor = StandardColor.barTintColor

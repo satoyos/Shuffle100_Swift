@@ -73,7 +73,10 @@ class FudaView: UIImageView {
                 $0.textAlignment = .center
                 $0.frame = CGRect(origin: labelOriginOf(idx),
                                   size: labelSize())
-                $0.accessibilityLabel = "fudaChar_\(idx)"
+//                accessibilityLabelを設定すると、
+//                UITestの際の表示文字を指定しての存在確認ができないので、
+//                ここでは設定しないでおくが、良い確認方法が見つかったら、再設定する。
+//                $0.accessibilityLabel = "fudaChar_\(idx)"
                 $0.textColor = .black
                 self.addSubview($0)
             }
