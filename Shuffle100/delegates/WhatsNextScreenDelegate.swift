@@ -33,7 +33,9 @@ extension WhatsNextViewController {
     }
     
     @objc func refrainButtonTapped() {
-        print("読み直しボタンが押された！")
+        assert(true, "読み直しボタンが押された！")
+        dismiss(animated: true)
+        refrainAction?()
     }
     
     @objc func goNextButtonTapped() {

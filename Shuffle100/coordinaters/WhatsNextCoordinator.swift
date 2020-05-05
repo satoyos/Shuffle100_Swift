@@ -13,6 +13,7 @@ class WhatsNextCoordinator: Coordinator {
     private var fromScreen: UIViewController
     private var navigator: UINavigationController!
     private var currentPoem: Poem!
+    var refrainEscalatingAction: (() -> Void)?
     
     init(fromScreen: UIViewController, currentPoem: Poem) {
         self.fromScreen = fromScreen
@@ -23,6 +24,9 @@ class WhatsNextCoordinator: Coordinator {
         let screen = WhatsNextViewController(currentPoem: currentPoem)
         self.navigator = UINavigationController(rootViewController: screen)
         setUpNavigationController()
+        screen.refrainAction = { [weak self] in
+            self?.refrainShimo()
+        }
         fromScreen.present(navigator, animated: true)
         self.screen = screen
     }
@@ -31,5 +35,9 @@ class WhatsNextCoordinator: Coordinator {
         navigator.interactivePopGestureRecognizer?.isEnabled = false
         navigator.navigationBar.barTintColor = StandardColor.barTintColor
         navigator.modalPresentationStyle = .fullScreen
+    }
+    
+    internal func refrainShimo() {
+        self.refrainEscalatingAction?()
     }
 }
