@@ -63,6 +63,17 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         }
     }
     
+    func test_goNext() {
+        // given
+        gotoWhatsNextScreen()
+        // when
+        app.buttons["goNext"].tap()
+        // then
+        XCTContext.runActivity(named: "そのまま2首めに移る") { activity in
+            waitToAppear(for: app.staticTexts["2首め:上の句 (全100首)"], timeout: 3)
+        }
+    }
+    
     private func gotoWhatsNextScreen(poemsNumber:Int = 100) {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when

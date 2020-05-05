@@ -39,6 +39,9 @@ extension WhatsNextViewController {
     }
     
     @objc func goNextButtonTapped() {
-        print("次の歌に進むボタンが押された！")
+        assert(true, "次の歌に進むボタンが押された！")
+        dismiss(animated: true, completion: {
+            self.goNextAction?()
+            })
     }
 }
