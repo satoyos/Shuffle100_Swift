@@ -33,6 +33,9 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
         coordinator.refrainEscalatingAction = { [weak self] in
             self?.refrainShimo()
         }
+        coordinator.goNextPoemEscalatingAction = { [weak self] in
+            self?.goNextPoem()
+        }
         coordinator.start()
         self.whatsNextCoordinator = coordinator
     }
@@ -43,5 +46,13 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen.refrainShimo(number: number, count: counter)
+    }
+    
+    internal func goNextPoem() {
+        assert(true, "次の詩へ進むボタンが押されたことを、初心者モードのCoordinatorが知ったよ！")
+        let number = poemSupplier.poem.number
+        let counter = poemSupplier.currentIndex
+        // 次の詩に進むことが決まった後は、Normalモードと同じで、デフォルトの動作をする
+        reciteShimoFinished(number: number, counter: counter)
     }
 }

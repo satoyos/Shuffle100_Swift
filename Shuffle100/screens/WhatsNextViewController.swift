@@ -19,6 +19,7 @@ class WhatsNextViewController: UIViewController {
     let sizes = SizeFactory.createSizeByDevice()
     var currentPoem: Poem!
     var refrainAction: (() -> Void)?
+    var goNextAction: (() -> Void)?
 
     init(currentPoem: Poem) {
         self.currentPoem = currentPoem

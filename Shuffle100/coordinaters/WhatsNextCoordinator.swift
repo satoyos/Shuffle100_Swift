@@ -14,6 +14,7 @@ class WhatsNextCoordinator: Coordinator {
     private var navigator: UINavigationController!
     private var currentPoem: Poem!
     var refrainEscalatingAction: (() -> Void)?
+    var goNextPoemEscalatingAction: (() -> Void)?
     
     init(fromScreen: UIViewController, currentPoem: Poem) {
         self.fromScreen = fromScreen
@@ -27,6 +28,9 @@ class WhatsNextCoordinator: Coordinator {
         screen.refrainAction = { [weak self] in
             self?.refrainShimo()
         }
+        screen.goNextAction = { [weak self] in
+            self?.goNextPoem()
+        }
         fromScreen.present(navigator, animated: true)
         self.screen = screen
     }
@@ -38,6 +42,10 @@ class WhatsNextCoordinator: Coordinator {
     }
     
     internal func refrainShimo() {
-        self.refrainEscalatingAction?()
+        refrainEscalatingAction?()
+    }
+    
+    internal func goNextPoem() {
+        goNextPoemEscalatingAction?()
     }
 }
