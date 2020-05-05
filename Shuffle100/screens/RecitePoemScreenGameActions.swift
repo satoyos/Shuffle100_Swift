@@ -152,6 +152,10 @@ extension RecitePoemViewController {
         }, completion: nil)
     }
     
+    func refrainShimo(number: Int, count: Int) {
+        self.reciteShimo(number: number, count: count)
+    }
+    
     private func reciteKami(number: Int, count: Int) {
         playNumberedPoem(number: number, side: .kami, count: count)
     }

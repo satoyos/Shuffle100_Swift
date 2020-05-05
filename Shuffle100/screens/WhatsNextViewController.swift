@@ -18,6 +18,7 @@ class WhatsNextViewController: UIViewController {
     var exitButton: UIBarButtonItem!
     let sizes = SizeFactory.createSizeByDevice()
     var currentPoem: Poem!
+    var refrainAction: (() -> Void)?
 
     init(currentPoem: Poem) {
         self.currentPoem = currentPoem

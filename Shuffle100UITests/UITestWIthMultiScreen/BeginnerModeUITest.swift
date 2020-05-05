@@ -49,6 +49,20 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         XCTAssertFalse(app.staticTexts["あ"].exists)
     }
     
+    func test_refrainShimo() {
+        // given
+        gotoWhatsNextScreen()
+        // when
+        app.buttons["refrain"].tap()
+        // then
+        XCTContext.runActivity(named: "読み上げ画面に戻る") { activity in
+            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
+        }
+        XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { activity in
+            waitToAppear(for: app.staticTexts["次はどうする？"], timeout: 15)
+        }
+    }
+    
     private func gotoWhatsNextScreen(poemsNumber:Int = 100) {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
