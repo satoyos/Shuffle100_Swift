@@ -17,7 +17,19 @@ class WhatsNextViewController: UIViewController {
     var gearButton: UIBarButtonItem!
     var exitButton: UIBarButtonItem!
     let sizes = SizeFactory.createSizeByDevice()
+    var currentPoem: Poem!
 
+    init(currentPoem: Poem) {
+        self.currentPoem = currentPoem
+        // クラスの持つ指定イニシャライザを呼び出す
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // 新しく init を定義した場合に必須
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = StandardColor.backgroundColor
