@@ -64,7 +64,7 @@ class RecitePoemViewController: SettingsAttachedViewController {
     
     func addActionsToButtons() {
         recitePoemView.exitButton.tappedAction = {[weak self] in
-            self?.exitButtonTapped()
+            self?.confirmExittingGame()
         }
         recitePoemView.gearButton.tappedAction = { [weak self] in
             self?.settingsButtonTapped()
