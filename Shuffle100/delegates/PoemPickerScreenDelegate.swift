@@ -39,4 +39,18 @@ extension PoemPickerViewController: UITableViewDelegate {
         tableView.reloadData()
         updateBadge()
     }
+    
+    @objc func selectByGroupButtonTapped() {
+        let ngramAction = UIAlertAction(title: "1字目で選ぶ", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
+        let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(ngramAction)
+        ac.addAction(cancelAction)
+        if let pc = ac.popoverPresentationController {
+            pc.sourceView = navigationController!.toolbar
+            pc.sourceRect = CGRect(x: view.frame.width, y: 0, width: 1, height: 1)
+        }
+        present(ac, animated: true)
+//        selectByGroupAction?()
+    }
 }
