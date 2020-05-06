@@ -29,7 +29,7 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
     
     internal func openWhatsNextScreen() {
         guard let screen = screen else { return }
-        let coordinator = WhatsNextCoordinator(fromScreen: screen, currentPoem: poemSupplier.poem)
+        let coordinator = WhatsNextCoordinator(fromScreen: screen, currentPoem: poemSupplier.poem, settings: settings, store: store)
         coordinator.refrainEscalatingAction = { [weak self] in
             self?.refrainShimo()
         }

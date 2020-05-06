@@ -13,13 +13,18 @@ class WhatsNextCoordinator: Coordinator {
     private var fromScreen: UIViewController
     private var navigator: UINavigationController!
     private var currentPoem: Poem!
-    var refrainEscalatingAction: (() -> Void)?
-    var goNextPoemEscalatingAction: (() -> Void)?
-    var exitGameEscalationgAction: (() -> Void)?
+    private var settings: Settings
+    private var store: StoreManager
+    private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
+    internal var refrainEscalatingAction: (() -> Void)?
+    internal var goNextPoemEscalatingAction: (() -> Void)?
+    internal var exitGameEscalationgAction: (() -> Void)?
     
-    init(fromScreen: UIViewController, currentPoem: Poem) {
+    init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager) {
         self.fromScreen = fromScreen
         self.currentPoem = currentPoem
+        self.settings = settings
+        self.store = store
     }
     
     func start() {
@@ -34,6 +39,9 @@ class WhatsNextCoordinator: Coordinator {
         }
         screen.exitGameAction = { [weak self] in
             self?.exitGame()
+        }
+        screen.goSettingAction = { [weak self] in
+            self?.openSettingScreen()
         }
         fromScreen.present(navigator, animated: true)
         self.screen = screen
@@ -55,5 +63,12 @@ class WhatsNextCoordinator: Coordinator {
     
     internal func exitGame() {
         exitGameEscalationgAction?()
+    }
+    
+    internal func openSettingScreen() {
+        guard let screen = self.screen else { return }
+        let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
+        coordinator.start()
+        self.reciteSettingsCoordinator = coordinator
     }
 }

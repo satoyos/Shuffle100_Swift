@@ -16,7 +16,8 @@ extension WhatsNextViewController: ExitGameProtocol {
     }
 
     @objc func gearButtonTapped() {
-        print("歯車ボタンが押された！")
+        assert(true, "歯車ボタンが押された！")
+        goSettingAction?()
     }
     
     @objc func exitButtonTapped() {

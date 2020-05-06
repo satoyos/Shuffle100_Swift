@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
+class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, ExitGameUITestUtils {
     let app = XCUIApplication()
 
     override func setUp() {
@@ -149,5 +149,41 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils {
         }
     }
 
+    func test_openSettingsFromWhatsNextScreen() {
+        // given
+        gotoWhatsNextScreen(app)
+        // then
+        let gearButton = app.buttons["gear"]
+        XCTAssert(gearButton.exists)
+        
+        XCTContext.runActivity(named: "歯車ボタンをタップすると、「いろいろな設定」画面が現れる") { activity in
+            // when
+            gearButton.tap()
+            // then
+            XCTAssert(app.navigationBars.staticTexts["いろいろな設定"].exists)
+        }
+        
+        XCTContext.runActivity(named: "上の句と下の句の間隔をMaxにしてホーム画面に戻ると、その値が反映されている") { activity in
+            // when
+            app.tables.staticTexts["歌と歌の間隔"].tap()
+            app.sliders["slider"].adjust(toNormalizedSliderPosition: 1.0)
+            // then
+            XCTAssert(app.staticTexts["2.00"].exists)
+            // when
+            app.navigationBars.buttons["いろいろな設定"].tap()
+            // then
+            XCTAssert(app.staticTexts["2.00"].exists)
+            // when
+            app.buttons["設定終了"].tap()
+            // then
+            XCTAssert(app.staticTexts["次はどうする？"].exists)
+            // when
+            exitGameSuccessfully(app)
+            // when
+            gotoReciteSettingsScreen(app)
+            // then
+            XCTAssert(app.staticTexts["2.00"].exists)
+        }
+    }
 }
 

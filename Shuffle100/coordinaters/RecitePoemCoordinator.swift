@@ -10,11 +10,11 @@ import UIKit
 
 class RecitePoemCoordinator: Coordinator{
     private let navigator: UINavigationController
-    private var settings: Settings
+    internal var settings: Settings
     internal var screen: RecitePoemViewController?
-    var poemSupplier: PoemSupplier!
-    var store: StoreManager
-    var reciteSettingsCoordinator: ReciteSettingsCoordinator!
+    internal var poemSupplier: PoemSupplier!
+    internal var store: StoreManager
+    internal var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator

@@ -21,6 +21,7 @@ class WhatsNextViewController: UIViewController {
     var refrainAction: (() -> Void)?
     var goNextAction: (() -> Void)?
     var exitGameAction: (() -> Void)?
+    var goSettingAction: (() -> Void)?
 
     init(currentPoem: Poem) {
         self.currentPoem = currentPoem
