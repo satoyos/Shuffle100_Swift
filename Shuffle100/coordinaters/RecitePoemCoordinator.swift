@@ -51,7 +51,7 @@ class RecitePoemCoordinator: Coordinator{
     }
     
     internal func jokaFinished() {
-        print("序歌の読み上げ終了!!")
+        assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
         let number = firstPoem.number
         let counter = poemSupplier.currentIndex
@@ -76,15 +76,14 @@ class RecitePoemCoordinator: Coordinator{
             screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
         
         } else {
-            print("歌は全て読み終えた！")
+            assert(true, "歌は全て読み終えた！")
             screen!.stepIntoGameEnd()
         }
     }
     
     internal func rewindToPrevious() {
-//        print("!! 歌の読み上げ冒頭でrewindボタンが押されたので、一つ前の画面に戻す！")
         guard let side = poemSupplier.side else {
-            print("序歌の冒頭でrewidが押された")
+            assert(true, "序歌の冒頭でrewidが押された")
             backToTopScreen()
             return
         }
@@ -103,7 +102,7 @@ class RecitePoemCoordinator: Coordinator{
         }
     }
 
-    private func backToTopScreen() {
+    internal func backToTopScreen() {
         navigator.popViewController(animated: true)
     }
 
@@ -118,7 +117,7 @@ class RecitePoemCoordinator: Coordinator{
             screen!.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
         } else {
             // もう戻す歌がない (今が1首め)
-            print("1首目の上の句の冒頭でrewindが押された！")
+            assert(true, "1首目の上の句の冒頭でrewindが押された！")
             backToTopScreen()
         }
     }

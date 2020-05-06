@@ -8,14 +8,19 @@
 
 import UIKit
 
-extension WhatsNextViewController {
+extension WhatsNextViewController: ExitGameProtocol {
+    func exitGame() {
+        dismiss(animated: true, completion: {
+            self.exitGameAction?()
+        })
+    }
 
     @objc func gearButtonTapped() {
         print("歯車ボタンが押された！")
     }
     
     @objc func exitButtonTapped() {
-        print("Exitボタンが押された！")
+        confirmExittingGame(onScreen: self)
     }
     
     @objc func torifudaButtonTapped() {
