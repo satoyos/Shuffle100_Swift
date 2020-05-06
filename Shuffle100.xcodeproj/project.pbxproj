@@ -360,6 +360,9 @@
 		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */; };
 		92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF56246256B5004D7F79 /* ExitGameUITestUtils.swift */; };
+		92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
+		92FFBF5E24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
+		92FFBF5F24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -546,6 +549,7 @@
 		92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "washi_darkgreen 001.jpg"; sourceTree = "<group>"; };
 		92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaScreenTest.swift; sourceTree = "<group>"; };
 		92FFBF56246256B5004D7F79 /* ExitGameUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameUITestUtils.swift; sourceTree = "<group>"; };
+		92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameProtocol.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -926,6 +930,7 @@
 				925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */,
 				92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */,
 				92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */,
+				92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1250,6 +1255,7 @@
 				9205E17C24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
+				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
 				925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				92FC39572288389C00791053 /* SelectedStatus100.swift in Sources */,
@@ -1427,6 +1433,7 @@
 				9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				925994F22449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
+				92FFBF5E24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1475,6 +1482,7 @@
 				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */,
+				92FFBF5F24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
 				92FC39512287110D00791053 /* RecitingSettings.swift in Sources */,
 				92737DD52380312F007B5FAD /* StandardColor.swift in Sources */,
 				92328C3424596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
