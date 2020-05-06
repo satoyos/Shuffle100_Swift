@@ -14,6 +14,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
     var tableView: UITableView!
+    var selectByGroupAction: (() -> Void)?
     
     var selected_num: Int {
         get {
@@ -93,7 +94,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     private func toolBarSetup() {
         let cancelAllButton = UIBarButtonItem(title: "全て取消", style: .plain, target: self, action: #selector(cancelAllButtonTapped))
         let selectAllButton = UIBarButtonItem(title: "全て選択", style: .plain, target: self, action: #selector(selectAllButtonTapped))
-        let selectGroupButton = UIBarButtonItem(title: "まとめて選ぶ", style: .plain, target: self, action: nil)
+        let selectGroupButton = UIBarButtonItem(title: "まとめて選ぶ", style: .plain, target: self, action: #selector(selectByGroupButtonTapped))
         let flexibleSpace1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         self.toolbarItems = [cancelAllButton, flexibleSpace1, selectAllButton, flexibleSpace1, selectGroupButton]
     }
