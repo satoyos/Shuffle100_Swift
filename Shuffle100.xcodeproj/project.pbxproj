@@ -359,6 +359,7 @@
 		92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */; };
+		92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF56246256B5004D7F79 /* ExitGameUITestUtils.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -544,6 +545,7 @@
 		92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tatami_moved.jpg; sourceTree = "<group>"; };
 		92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "washi_darkgreen 001.jpg"; sourceTree = "<group>"; };
 		92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaScreenTest.swift; sourceTree = "<group>"; };
+		92FFBF56246256B5004D7F79 /* ExitGameUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameUITestUtils.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -872,6 +874,7 @@
 				92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */,
 				92AE7C7623FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift */,
 				92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */,
+				92FFBF56246256B5004D7F79 /* ExitGameUITestUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1478,6 +1481,7 @@
 				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
+				92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */,
 				92CE520D2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92A6EB7F241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
