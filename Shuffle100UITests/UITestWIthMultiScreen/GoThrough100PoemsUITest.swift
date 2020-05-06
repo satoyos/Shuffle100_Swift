@@ -29,14 +29,14 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 tapForwardButton(app)
-                Thread.sleep(forTimeInterval: 0.2)
+                Thread.sleep(forTimeInterval: 0.1)
                 XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
                 
                 tapForwardButton(app)
                 tapPlayButton(app)
-                Thread.sleep(forTimeInterval: 0.2)
+                Thread.sleep(forTimeInterval: 0.1)
                 XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
             }
         }
@@ -60,7 +60,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         XCTContext.runActivity(named: "そして序歌へ") { (activiti) in
             gotoRecitePoemScreen(app)
         }
-        for i in (1...3) {
+        for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 tapForwardButton(app)
                 XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
@@ -70,6 +70,53 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
                 tapForwardButton(app)
                 XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
             }
+        }
+        XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
+            // when
+            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
+            button.tap()
+            // then
+            XCTAssert(app.navigationBars["トップ"].exists)
+        }
+    }
+    
+    func test_goThorough100InBeginnerMode() {
+        XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
+            // when
+            gotoSelectModeScreen(app)
+            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
+            app.buttons["トップ"].tap()
+            // then
+            XCTAssert(app.cells.staticTexts["初心者"].exists)
+        }
+        XCTContext.runActivity(named: "そして読み上げを開始し、序歌をスキップ") { (activiti) in
+            gotoRecitePoemScreen(app)
+            tapForwardButton(app)
+        }
+        for i in (1...100) {
+            XCTContext.runActivity(named: "\(i)首めの上の句の読み上げが始まる") { (activiti) in
+                XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
+            }
+            XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
+                Thread.sleep(forTimeInterval: 0.1)
+                
+                tapForwardButton(app)
+                XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
+            }
+            XCTContext.runActivity(named: "下の句を読み終わると、「次はどうする？」画面になる") { activity in
+                tapForwardButton(app)
+                XCTAssert(app.navigationBars["次はどうする？"].exists)
+            }
+            XCTContext.runActivity(named: "「次の歌へ！」ボタンを押して、次の歌に進む") { activity in
+                app.buttons["goNext"].tap()
+            }
+        }
+        XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
+            // when
+            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
+            button.tap()
+            // then
+            XCTAssert(app.navigationBars["トップ"].exists)
         }
     }
 }
