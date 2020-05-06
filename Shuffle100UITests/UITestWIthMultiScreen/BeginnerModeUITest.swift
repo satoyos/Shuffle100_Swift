@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, PoemPickerScreenUITestUtils {
+class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, PoemPickerScreenUITestUtils, ExitGameUITestUtils {
     var app = XCUIApplication()
 
     override func setUpWithError() throws {
@@ -74,6 +74,13 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         }
     }
     
+    func test_exitGameFromWhatsNextScreen() {
+        // given
+        gotoWhatsNextScreen()
+        // when, then
+        exitGameSuccessfully(app)
+    }
+    
     private func gotoWhatsNextScreen(poemsNumber:Int = 100) {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
@@ -101,7 +108,5 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
             XCTAssert(app.staticTexts["次はどうする？"].exists)
         }
     }
-    
-
 
 }
