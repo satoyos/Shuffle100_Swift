@@ -20,6 +20,7 @@ class WhatsNextViewController: UIViewController {
     var currentPoem: Poem!
     var refrainAction: (() -> Void)?
     var goNextAction: (() -> Void)?
+    var exitGameAction: (() -> Void)?
 
     init(currentPoem: Poem) {
         self.currentPoem = currentPoem

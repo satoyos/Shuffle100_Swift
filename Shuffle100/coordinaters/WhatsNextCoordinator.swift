@@ -15,6 +15,7 @@ class WhatsNextCoordinator: Coordinator {
     private var currentPoem: Poem!
     var refrainEscalatingAction: (() -> Void)?
     var goNextPoemEscalatingAction: (() -> Void)?
+    var exitGameEscalationgAction: (() -> Void)?
     
     init(fromScreen: UIViewController, currentPoem: Poem) {
         self.fromScreen = fromScreen
@@ -30,6 +31,9 @@ class WhatsNextCoordinator: Coordinator {
         }
         screen.goNextAction = { [weak self] in
             self?.goNextPoem()
+        }
+        screen.exitGameAction = { [weak self] in
+            self?.exitGame()
         }
         fromScreen.present(navigator, animated: true)
         self.screen = screen
@@ -47,5 +51,9 @@ class WhatsNextCoordinator: Coordinator {
     
     internal func goNextPoem() {
         goNextPoemEscalatingAction?()
+    }
+    
+    internal func exitGame() {
+        exitGameEscalationgAction?()
     }
 }
