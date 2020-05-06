@@ -26,21 +26,27 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             gotoRecitePoemScreen(app)
         }
 
-        for i in (1...20) {
+        for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 tapForwardButton(app)
-                sleep(1)
+                Thread.sleep(forTimeInterval: 0.2)
                 XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
                 
                 tapForwardButton(app)
                 tapPlayButton(app)
-                sleep(1)
+                Thread.sleep(forTimeInterval: 0.2)
                 XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
             }
         }
-
+        XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
+            // when
+            tapForwardButton(app)
+            app.buttons["トップに戻る"].tap()
+            // then
+            XCTAssert(app.navigationBars["トップ"].exists)
+        }
         
     }
     
