@@ -13,6 +13,7 @@ final class PoemPickerCoordinator: Coordinator {
     private var settings: Settings
     private var screen: UIViewController?
     private var store: StoreManager
+    private var ngramPickerCoordinator: NgramPickerCoordinator!
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
@@ -30,7 +31,16 @@ final class PoemPickerCoordinator: Coordinator {
                 assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
             }
         }
+        screen.openNgramPickerAction = { [weak self] in
+            self?.openNgramPicker()
+        }
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
+    }
+    
+    internal func openNgramPicker() {
+        let coordinator = NgramPickerCoordinator(navigator: navigator, settings: settings, store: store)
+        coordinator.start()
+        self.ngramPickerCoordinator = coordinator
     }
 }

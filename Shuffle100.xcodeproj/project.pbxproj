@@ -266,6 +266,9 @@
 		92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
 		92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
 		92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
+		92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
+		92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
+		92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -516,6 +519,7 @@
 		92AF24A2229E92EE0085B754 /* LegacyDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataConverter.swift; sourceTree = "<group>"; };
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
 		92AF24A822A15FC60085B754 /* SavedFudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSet.swift; sourceTree = "<group>"; };
+		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -870,6 +874,7 @@
 				925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */,
 				9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */,
 				9205E17F24571016003BAEDC /* WhatsNextCoordinator.swift */,
+				92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
@@ -1237,6 +1242,7 @@
 				92CE520B2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92ABF9AB23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
+				92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
@@ -1339,6 +1345,7 @@
 				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				92CE520C2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
+				92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */,
@@ -1485,6 +1492,7 @@
 				925994E62444A8D200044253 /* TimeSettingViewController.swift in Sources */,
 				9205E17E24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
+				92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				923B594E23ACF606002027B4 /* GameEndViiew.swift in Sources */,
 				92158F7B232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
