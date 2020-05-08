@@ -7,24 +7,50 @@
 //
 
 import UIKit
+import Then
+import BBBadgeBarButtonItem
 
 class NgramPickerViewController: SettingsAttachedViewController {
+    
+    var tableView: UITableView!
+    
+    var selectedNum: Int {
+        get {
+            return settings.state100.selectedNum
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.prompt = "百首読み上げ"
         self.title = "1字目で選ぶ"
+        self.tableView = createTableViewForScreen()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ngrams")
+        view.addSubview(tableView)
+        navigationItem.rightBarButtonItem = dummyButtonItem()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func createTableViewForScreen() -> UITableView {
+        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
     }
-    */
+    
+    private func dummyButtonItem() -> UIBarButtonItem {
+        let button = UIButton(type: .custom).then {
+            $0.setTitle(" ", for: .normal)
+        }
+        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
+            $0.badgeValue = "\(selectedNum)首"
+            $0.badgeOriginX = -50
+            $0.badgeOriginY = 0
+        }
+        return buttonItem
+    }
+
+    
 
 }

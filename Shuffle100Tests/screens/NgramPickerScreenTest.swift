@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import BBBadgeBarButtonItem
 @testable import Shuffle100
 
 class NgramPickerScreenTest: XCTestCase {
@@ -26,8 +27,10 @@ class NgramPickerScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title, "1字目で選ぶ")
-        
+        XCTAssertNotNil(screen.tableView)
+        let buttonItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem
+        XCTAssertNotNil(buttonItem)
+        XCTAssertEqual(buttonItem?.badgeValue, "100首")
     }
-
     
 }
