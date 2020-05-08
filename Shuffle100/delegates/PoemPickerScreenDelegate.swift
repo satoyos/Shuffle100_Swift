@@ -41,7 +41,9 @@ extension PoemPickerViewController: UITableViewDelegate {
     }
     
     @objc func selectByGroupButtonTapped() {
-        let ngramAction = UIAlertAction(title: "1字目で選ぶ", style: .default, handler: nil)
+        let ngramAction = UIAlertAction(title: "1字目で選ぶ", style: .default) { action in
+            self.openNgramPickerAction?()
+        }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)
         ac.addAction(ngramAction)

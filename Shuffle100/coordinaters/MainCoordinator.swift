@@ -10,11 +10,12 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var navigator = UINavigationController()
-    var recitePoemCoordinator: RecitePoemCoordinator!
-    var reciteSettingsCoordinator: ReciteSettingsCoordinator!
-    let store = StoreManager()
-    let env = Environment()
-    var homeScreen: HomeViewController?
+    internal let store = StoreManager()
+    internal let env = Environment()
+    private var recitePoemCoordinator: RecitePoemCoordinator!
+    private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
+    private var poemPickerCoordinator: PoemPickerCoordinator!
+    private var homeScreen: HomeViewController?
 
     func start() {
         let settings = setUpSettings()
@@ -51,6 +52,7 @@ class MainCoordinator: Coordinator {
     private func selectPoem(settings: Settings) {
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
+        self.poemPickerCoordinator = coordinator
     }
     
     private func selectMode(settings: Settings) {

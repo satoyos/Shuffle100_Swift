@@ -15,6 +15,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     internal var filteredPoems = [Poem]()
     var tableView: UITableView!
     var selectByGroupAction: (() -> Void)?
+    var openNgramPickerAction: (() -> Void)?
     
     var selected_num: Int {
         get {

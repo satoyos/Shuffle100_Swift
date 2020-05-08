@@ -29,6 +29,10 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils {
         button.tap()
         // then
         XCTAssert(app.staticTexts["どうやって選びますか？"].exists)
+        // when
+        app.buttons["1字目で選ぶ"].tap()
+        // then
+        waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: 1)
     }
 
 }
