@@ -47,8 +47,9 @@ class NgramPickerScreenTest: XCTestCase {
         XCTAssertEqual(numOf2charsGroup, 5)
         let titleOf2charsGroup = screen.tableView(screen.tableView, titleForHeaderInSection: 1)
         XCTAssertEqual(titleOf2charsGroup, "二枚札")
-        let cellOfTopIn2CharsGropu = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
-        XCTAssertEqual(cellOfTopIn2CharsGropu.textLabel?.text, "「う」で始まる歌")
+        let cellOfTopIn2CharsGroup = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(cellOfTopIn2CharsGroup.textLabel?.text, "「う」で始まる歌")
+        XCTAssertNotNil(cellOfTopIn2CharsGroup.imageView?.image)
     }
     
 }

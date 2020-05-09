@@ -20,6 +20,18 @@ internal struct NgramPickerSecion: Codable {
     var items: [NgramPickerItem]
 }
 
+enum NgramSelectedStatus {
+    case full
+    case partial
+    case none
+}
+
+private let selectedImageDic: [NgramSelectedStatus: UIImage] = [
+    .full: UIImage(named: "blue_circle_full.png")!,
+    .partial: UIImage(named: "blue_circle_half.png")!,
+    .none: UIImage(named: "blue_circle_empty.png")!
+]
+
 extension NgramPickerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
@@ -37,6 +49,7 @@ extension NgramPickerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
             $0.textLabel?.text = itemForIndex(indexPath).title
             $0.accessibilityLabel = itemForIndex(indexPath).id
+            $0.imageView?.image = circleImage(for: indexPath, withHeight: cellHeight(of: $0))
         }
         return cell
     }
@@ -59,5 +72,15 @@ extension NgramPickerViewController: UITableViewDataSource {
         return sections[indexPath.section].items[indexPath.row]
     }
     
+    private func cellHeight(of cell: UITableViewCell) -> CGFloat {
+        return cell.frame.height
+    }
     
+    private func circleImage(for indexPath: IndexPath, withHeight height: CGFloat) -> UIImage {
+//
+//        ToDo: ここ、イメージを決め打ちにしているので、正しいイメージが表示されるようにする！
+//        
+        let image = selectedImageDic[.full]!
+        return image.reSizeImage(reSize: CGSize(width: height, height: height))
+    }
 }
