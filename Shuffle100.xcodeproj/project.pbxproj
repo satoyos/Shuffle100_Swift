@@ -275,6 +275,9 @@
 		92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */; };
 		92B9E96D2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */; };
 		92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */; };
+		92B9E97024666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
+		92B9E97124666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
+		92B9E97224666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -528,6 +531,7 @@
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDataSource.swift; sourceTree = "<group>"; };
+		92B9E96F24666083007C2E75 /* ngram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ngram.json; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -737,6 +741,7 @@
 			children = (
 				92C87DD222E8894900569D15 /* audio */,
 				92FCCEDC22A51E3C002B589E /* 100.json */,
+				92B9E96F24666083007C2E75 /* ngram.json */,
 				9258FAF821FEE4AA00E4E0B7 /* question_white.png */,
 				9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */,
 				9258D1BE22DA0258003A0EF8 /* exit_square.png */,
@@ -1099,6 +1104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9258D1BF22DA0258003A0EF8 /* exit_square.png in Resources */,
+				92B9E97024666083007C2E75 /* ngram.json in Resources */,
 				9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */,
 				92C87DD322E8894900569D15 /* audio in Resources */,
 				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
@@ -1118,6 +1124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B9E97124666083007C2E75 /* ngram.json in Resources */,
 				9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */,
 				92328C2C24591E25005E0FEE /* torifuda.png in Resources */,
 				92328C2F24591E25005E0FEE /* go_next.png in Resources */,
@@ -1135,6 +1142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B9E97224666083007C2E75 /* ngram.json in Resources */,
 				9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */,
 				92328C2D24591E25005E0FEE /* torifuda.png in Resources */,
 				92328C3024591E25005E0FEE /* go_next.png in Resources */,
