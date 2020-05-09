@@ -43,6 +43,12 @@ class NgramPickerScreenTest: XCTestCase {
         let nijiSection = screen.sections.first(where: {$0.sectionId == "two"})
         XCTAssertNotNil(nijiSection)
         XCTAssertEqual(nijiSection?.items.count, 5)
+        let numOf2charsGroup = screen.tableView(screen.tableView, numberOfRowsInSection: 1)
+        XCTAssertEqual(numOf2charsGroup, 5)
+        let titleOf2charsGroup = screen.tableView(screen.tableView, titleForHeaderInSection: 1)
+        XCTAssertEqual(titleOf2charsGroup, "二枚札")
+        let cellOfTopIn2CharsGropu = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(cellOfTopIn2CharsGropu.textLabel?.text, "「う」で始まる歌")
     }
     
 }
