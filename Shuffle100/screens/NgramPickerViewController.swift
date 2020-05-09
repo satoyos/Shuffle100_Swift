@@ -10,6 +10,8 @@ import UIKit
 import Then
 import BBBadgeBarButtonItem
 
+internal let cellReuseId = "ngrams"
+
 class NgramPickerViewController: SettingsAttachedViewController {
     
     var tableView: UITableView!
@@ -27,7 +29,7 @@ class NgramPickerViewController: SettingsAttachedViewController {
         navigationItem.prompt = "百首読み上げ"
         self.title = "1字目で選ぶ"
         self.tableView = createTableViewForScreen()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ngrams")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
         self.sections = loadDataJson()
         navigationItem.rightBarButtonItem = dummyButtonItem()

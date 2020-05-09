@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Then
 
 internal struct NgramPickerItem: Codable {
     var id: String
@@ -21,7 +22,11 @@ internal struct NgramPickerSecion: Codable {
 
 extension NgramPickerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return sections[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].headerTitle
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,7 +34,11 @@ extension NgramPickerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
+            $0.textLabel?.text = itemForIndex(indexPath).title
+            $0.accessibilityLabel = itemForIndex(indexPath).id
+        }
+        return cell
     }
     
     internal func loadDataJson() -> [NgramPickerSecion] {
@@ -44,6 +53,10 @@ extension NgramPickerViewController: UITableViewDataSource {
         } else {
             fatalError("JSONデータの読み込みに失敗")
         }
+    }
+    
+    private func itemForIndex(_ indexPath: IndexPath) -> NgramPickerItem {
+        return sections[indexPath.section].items[indexPath.row]
     }
     
     
