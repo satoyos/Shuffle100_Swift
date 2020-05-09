@@ -278,6 +278,15 @@
 		92B9E97024666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E97124666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E97224666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
+		92B9E9762466F4E0007C2E75 /* blue_circle_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9732466F4DF007C2E75 /* blue_circle_empty.png */; };
+		92B9E9772466F4E0007C2E75 /* blue_circle_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9732466F4DF007C2E75 /* blue_circle_empty.png */; };
+		92B9E9782466F4E0007C2E75 /* blue_circle_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9732466F4DF007C2E75 /* blue_circle_empty.png */; };
+		92B9E9792466F4E0007C2E75 /* blue_circle_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9742466F4DF007C2E75 /* blue_circle_half.png */; };
+		92B9E97A2466F4E0007C2E75 /* blue_circle_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9742466F4DF007C2E75 /* blue_circle_half.png */; };
+		92B9E97B2466F4E0007C2E75 /* blue_circle_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9742466F4DF007C2E75 /* blue_circle_half.png */; };
+		92B9E97C2466F4E0007C2E75 /* blue_circle_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9752466F4DF007C2E75 /* blue_circle_full.png */; };
+		92B9E97D2466F4E0007C2E75 /* blue_circle_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9752466F4DF007C2E75 /* blue_circle_full.png */; };
+		92B9E97E2466F4E0007C2E75 /* blue_circle_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9752466F4DF007C2E75 /* blue_circle_full.png */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -532,6 +541,9 @@
 		92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDataSource.swift; sourceTree = "<group>"; };
 		92B9E96F24666083007C2E75 /* ngram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ngram.json; sourceTree = "<group>"; };
+		92B9E9732466F4DF007C2E75 /* blue_circle_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_empty.png; sourceTree = "<group>"; };
+		92B9E9742466F4DF007C2E75 /* blue_circle_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_half.png; sourceTree = "<group>"; };
+		92B9E9752466F4DF007C2E75 /* blue_circle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_full.png; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -751,6 +763,9 @@
 				92328C2624591E25005E0FEE /* torifuda.png */,
 				92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */,
 				92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */,
+				92B9E9732466F4DF007C2E75 /* blue_circle_empty.png */,
+				92B9E9752466F4DF007C2E75 /* blue_circle_full.png */,
+				92B9E9742466F4DF007C2E75 /* blue_circle_half.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -1110,8 +1125,11 @@
 				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				92FC398D22917E6000791053 /* Readme.md in Resources */,
 				92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
+				92B9E97C2466F4E0007C2E75 /* blue_circle_full.png in Resources */,
+				92B9E9762466F4E0007C2E75 /* blue_circle_empty.png in Resources */,
 				92328C2B24591E25005E0FEE /* torifuda.png in Resources */,
 				92FFBF51245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
+				92B9E9792466F4E0007C2E75 /* blue_circle_half.png in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
 				92328C2824591E25005E0FEE /* refrain.png in Resources */,
@@ -1131,7 +1149,10 @@
 				92328C2924591E25005E0FEE /* refrain.png in Resources */,
 				9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				92FFBF4F245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
+				92B9E97A2466F4E0007C2E75 /* blue_circle_half.png in Resources */,
+				92B9E9772466F4E0007C2E75 /* blue_circle_empty.png in Resources */,
 				92C87DD822E88D5400569D15 /* Singers.json in Resources */,
+				92B9E97D2466F4E0007C2E75 /* blue_circle_full.png in Resources */,
 				92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 				92C87DD422E8894900569D15 /* audio in Resources */,
@@ -1149,7 +1170,10 @@
 				92328C2A24591E25005E0FEE /* refrain.png in Resources */,
 				9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				92FFBF50245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
+				92B9E97B2466F4E0007C2E75 /* blue_circle_half.png in Resources */,
+				92B9E9782466F4E0007C2E75 /* blue_circle_empty.png in Resources */,
 				92C87DD922E88D5400569D15 /* Singers.json in Resources */,
+				92B9E97E2466F4E0007C2E75 /* blue_circle_full.png in Resources */,
 				92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 				92C87DD522E8894900569D15 /* audio in Resources */,
