@@ -13,6 +13,7 @@ import BBBadgeBarButtonItem
 class NgramPickerViewController: SettingsAttachedViewController {
     
     var tableView: UITableView!
+    var sections: [NgramPickerSecion]!
     
     var selectedNum: Int {
         get {
@@ -28,6 +29,7 @@ class NgramPickerViewController: SettingsAttachedViewController {
         self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ngrams")
         view.addSubview(tableView)
+        self.sections = loadDataJson()
         navigationItem.rightBarButtonItem = dummyButtonItem()
     }
     

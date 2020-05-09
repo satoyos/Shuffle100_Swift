@@ -1,7 +1,7 @@
 [
   {
-    "section_id": "one",
-    "header_title": "一枚札",
+    "sectionId": "one",
+    "headerTitle": "一枚札",
     "items": [
       {
         "id": "just_one",
@@ -10,8 +10,8 @@
     ]
   },
   {
-    "section_id": "two",
-    "header_title": "二枚札",
+    "sectionId": "two",
+    "headerTitle": "二枚札",
     "items": [
       {
         "id": "u",
@@ -36,8 +36,8 @@
     ]
   },
   {
-    "section_id": "three",
-    "header_title": "三枚札",
+    "sectionId": "three",
+    "headerTitle": "三枚札",
     "items": [
       {
         "id": "i",
@@ -58,8 +58,8 @@
     ]
   },
   {
-    "section_id": "four",
-    "header_title": "四枚札",
+    "sectionId": "four",
+    "headerTitle": "四枚札",
     "items": [
       {
         "id": "ha",
@@ -80,8 +80,8 @@
     ]
   },
   {
-    "section_id": "five",
-    "header_title": "五枚札",
+    "sectionId": "five",
+    "headerTitle": "五枚札",
     "items": [
       {
         "id": "mi",
@@ -90,8 +90,8 @@
     ]
   },
   {
-    "section_id": "six",
-    "header_title": "六枚札",
+    "sectionId": "six",
+    "headerTitle": "六枚札",
     "items": [
       {
         "id": "ta",
@@ -104,8 +104,8 @@
     ]
   },
   {
-    "section_id": "seven",
-    "header_title": "七枚札",
+    "sectionId": "seven",
+    "headerTitle": "七枚札",
     "items": [
       {
         "id": "o",
@@ -118,8 +118,8 @@
     ]
   },
   {
-    "section_id": "eight",
-    "header_title": "八枚札",
+    "sectionId": "eight",
+    "headerTitle": "八枚札",
     "items": [
       {
         "id": "na",
@@ -128,8 +128,8 @@
     ]
   },
   {
-    "section_id": "sixteen",
-    "header_title": "十六枚札",
+    "sectionId": "sixteen",
+    "headerTitle": "十六枚札",
     "items": [
       {
         "id": "a",
