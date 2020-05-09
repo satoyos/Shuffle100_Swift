@@ -40,6 +40,9 @@ class NgramPickerScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.sections.count, 9)
+        let nijiSection = screen.sections.first(where: {$0.sectionId == "two"})
+        XCTAssertNotNil(nijiSection)
+        XCTAssertEqual(nijiSection?.items.count, 5)
     }
     
 }
