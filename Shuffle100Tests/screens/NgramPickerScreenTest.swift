@@ -33,4 +33,13 @@ class NgramPickerScreenTest: XCTestCase {
         XCTAssertEqual(buttonItem?.badgeValue, "100首")
     }
     
+    func test_loadDataSourceFile() {
+        // given
+        let screen = NgramPickerViewController()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(screen.sections.count, 9)
+    }
+    
 }
