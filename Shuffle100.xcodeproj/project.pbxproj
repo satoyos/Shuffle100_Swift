@@ -287,6 +287,10 @@
 		92B9E97C2466F4E0007C2E75 /* blue_circle_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9752466F4DF007C2E75 /* blue_circle_full.png */; };
 		92B9E97D2466F4E0007C2E75 /* blue_circle_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9752466F4DF007C2E75 /* blue_circle_full.png */; };
 		92B9E97E2466F4E0007C2E75 /* blue_circle_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E9752466F4DF007C2E75 /* blue_circle_full.png */; };
+		92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */; };
+		92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
+		92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
+		92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -544,6 +548,8 @@
 		92B9E9732466F4DF007C2E75 /* blue_circle_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_empty.png; sourceTree = "<group>"; };
 		92B9E9742466F4DF007C2E75 /* blue_circle_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_half.png; sourceTree = "<group>"; };
 		92B9E9752466F4DF007C2E75 /* blue_circle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_full.png; sourceTree = "<group>"; };
+		92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramNumbersTest.swift; sourceTree = "<group>"; };
+		92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramDataFactory.swift; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -852,6 +858,7 @@
 				9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */,
 				92ABF9BC23F6DF46000CA91C /* StoreManagerTest.swift */,
 				92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */,
+				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -960,6 +967,7 @@
 				92737DD22380312F007B5FAD /* StandardColor.swift */,
 				92ABF9B823F6D739000CA91C /* StoreManager.swift */,
 				92AE7C7223FEAEDC003FA07F /* Environment.swift */,
+				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1313,6 +1321,7 @@
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
+				92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
@@ -1380,6 +1389,7 @@
 				92C87DDE22E88F8600569D15 /* Singer.swift in Sources */,
 				92FFBF6624650219004D7F79 /* NgramPickerViewController.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
+				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
 				92B9E9692465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
@@ -1430,6 +1440,7 @@
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
 				927E4C05222E9EC700AF48F7 /* DeckTests.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
+				92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
@@ -1568,6 +1579,7 @@
 				929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,

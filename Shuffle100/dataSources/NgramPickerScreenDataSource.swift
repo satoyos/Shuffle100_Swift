@@ -9,22 +9,24 @@
 import UIKit
 import Then
 
-internal struct NgramPickerItem: Codable {
-    var id: String
-    var title: String
-}
+/// これ、全部staticで参照できるように変えないとだめじゃない？？
 
-internal struct NgramPickerSecion: Codable {
-    var sectionId: String
-    var headerTitle: String
-    var items: [NgramPickerItem]
-}
-
-enum NgramSelectedStatus {
-    case full
-    case partial
-    case none
-}
+//internal struct NgramPickerItem: Codable {
+//    var id: String
+//    var title: String
+//}
+//
+//internal struct NgramPickerSecion: Codable {
+//    var sectionId: String
+//    var headerTitle: String
+//    var items: [NgramPickerItem]
+//}
+//
+//enum NgramSelectedStatus {
+//    case full
+//    case partial
+//    case none
+//}
 
 private let selectedImageDic: [NgramSelectedStatus: UIImage] = [
     .full: UIImage(named: "blue_circle_full.png")!,
@@ -54,19 +56,19 @@ extension NgramPickerViewController: UITableViewDataSource {
         return cell
     }
     
-    internal func loadDataJson() -> [NgramPickerSecion] {
-        let jsonPath = Bundle.main.path(forResource: "ngram", ofType: "json")!
-        if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) {
-            let decoder = JSONDecoder()
-            if let sections = try? decoder.decode([NgramPickerSecion].self, from: jsonData) {
-                return sections
-            } else {
-                fatalError("JSONデータのデコードに失敗")
-            }
-        } else {
-            fatalError("JSONデータの読み込みに失敗")
-        }
-    }
+//    internal func loadDataJson() -> [NgramPickerSecion] {
+//        let jsonPath = Bundle.main.path(forResource: "ngram", ofType: "json")!
+//        if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) {
+//            let decoder = JSONDecoder()
+//            if let sections = try? decoder.decode([NgramPickerSecion].self, from: jsonData) {
+//                return sections
+//            } else {
+//                fatalError("JSONデータのデコードに失敗")
+//            }
+//        } else {
+//            fatalError("JSONデータの読み込みに失敗")
+//        }
+//    }
     
     private func itemForIndex(_ indexPath: IndexPath) -> NgramPickerItem {
         return sections[indexPath.section].items[indexPath.row]
