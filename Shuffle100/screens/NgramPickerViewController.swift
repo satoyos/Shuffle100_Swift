@@ -15,7 +15,8 @@ internal let cellReuseId = "ngrams"
 class NgramPickerViewController: SettingsAttachedViewController {
     
     var tableView: UITableView!
-    var sections: [NgramPickerSecion]!
+    var sections = NgramDataFactory.createNgramPickerSctions()
+    lazy var numbersDic = NgramDataFactory.createNgramNumbersDic()
     
     var selectedNum: Int {
         get {
@@ -31,7 +32,7 @@ class NgramPickerViewController: SettingsAttachedViewController {
         self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
-        self.sections = loadDataJson()
+//        self.sections = NgramDataFactory.createNgramPickerSctions()
         navigationItem.rightBarButtonItem = dummyButtonItem()
     }
     
