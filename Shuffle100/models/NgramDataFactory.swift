@@ -25,6 +25,18 @@ enum NgramSelectedStatus {
     case none
 }
 
+private let firstCharDic: [String: Character] = [
+  "mu": "む",  "su": "す",  "me": "め",  "fu": "ふ",  "sa": "さ",  "ho": "ほ",  "se": "せ",
+  "u": "う",  "tsu": "つ",  "shi": "し",  "mo": "も",  "yu": "ゆ",
+  "i": "い",  "chi": "ち",  "hi": "ひ",  "ki": "き",
+  "ha": "は",  "ya": "や",  "yo": "よ",  "ka": "か",
+  "mi": "み",
+  "ta": "た",  "ko": "こ",
+  "o": "お",  "wa": "わ",
+  "na": "な",
+  "a": "あ"
+]
+
 struct NgramDataFactory {
     static func createNgramPickerSctions() -> [NgramPickerSecion] {
         let jsonPath = Bundle.main.path(forResource: "ngram", ofType: "json")!
@@ -41,9 +53,12 @@ struct NgramDataFactory {
     }
     
     static func createNgramNumbersDic() -> [String: [Int]] {
-           
-           
-           // pseudo return value
-           return ["あ": [1, 3, 4]]
-       }
+        var dic = [String: [Int]]()
+        
+        for (id, char) in firstCharDic {
+            let hitPoems = Deck.originalPoems.filter{$0.kimari_ji.first == char}
+            dic[id] = hitPoems.map{$0.number}
+        }
+        return dic
+    }
 }
