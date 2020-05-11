@@ -26,6 +26,10 @@ class NgramNumbersTest: XCTestCase {
     
 
     func test_correctDic() {
+        XCTAssertEqual(numbers["ha"], [2, 9, 67, 96])
+        XCTAssertEqual(numbers["mu"], [87])
+        XCTAssertEqual(numbers["i"]?.count, 3)
+        XCTAssertEqual(numbers["a"]?.count, 16)
     }
 
 }
