@@ -32,7 +32,7 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils {
         // when
         app.buttons["1字目で選ぶ"].tap()
         // then
-        waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: 1)
+        waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: 5)
     }
 
 }
