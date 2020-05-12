@@ -32,6 +32,16 @@ class SelectedState100: Codable {
         self.init(bool100: initBool100)
     }
     
+    var allSelectedNumbers: [Int] {
+        get {
+            var  numbers = [Int]()
+            for i in 0 ..< 100 {
+                if bools[i] { numbers.append(i+1) }
+            }
+            return numbers
+        }
+    }
+    
     private static func get_bool100_of(bool: Bool) -> Bool100 {
         if bool { return Bool100.allSelected() }
         else { return Bool100.allUnselected() }

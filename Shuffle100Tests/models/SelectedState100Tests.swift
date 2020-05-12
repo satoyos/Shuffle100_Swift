@@ -164,4 +164,18 @@ class SelectedState100Tests: XCTestCase {
         // then
         XCTAssertFalse(try! state100.ofNumber(4))
     }
+    
+    func test_allSelectedNumbers() {
+        // given
+        var bools = Bool100.allFalseBoolArray()
+        bools[1] = true
+        bools[2] = true
+        bools[10] = true
+        let bool100 = Bool100(bools: bools)
+        let state100 = SelectedState100(bool100: bool100)
+        // when
+        let numbers = state100.allSelectedNumbers
+        // then
+        XCTAssertEqual(numbers, [2, 3, 11])
+    }
 }
