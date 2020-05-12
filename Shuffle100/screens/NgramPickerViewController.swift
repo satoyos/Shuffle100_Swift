@@ -17,6 +17,7 @@ class NgramPickerViewController: SettingsAttachedViewController {
     var tableView: UITableView!
     var sections = NgramDataFactory.createNgramPickerSctions()
     lazy var numbersDic = NgramDataFactory.createNgramNumbersDic()
+    internal var allSelectedNumbers: [Int]!
     
     var selectedNum: Int {
         get {
@@ -29,10 +30,10 @@ class NgramPickerViewController: SettingsAttachedViewController {
 
         navigationItem.prompt = "百首読み上げ"
         self.title = "1字目で選ぶ"
+        self.allSelectedNumbers = settings.state100.allSelectedNumbers
         self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
-//        self.sections = NgramDataFactory.createNgramPickerSctions()
         navigationItem.rightBarButtonItem = dummyButtonItem()
     }
     

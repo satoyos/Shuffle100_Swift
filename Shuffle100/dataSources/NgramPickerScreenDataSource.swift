@@ -9,25 +9,6 @@
 import UIKit
 import Then
 
-/// これ、全部staticで参照できるように変えないとだめじゃない？？
-
-//internal struct NgramPickerItem: Codable {
-//    var id: String
-//    var title: String
-//}
-//
-//internal struct NgramPickerSecion: Codable {
-//    var sectionId: String
-//    var headerTitle: String
-//    var items: [NgramPickerItem]
-//}
-//
-//enum NgramSelectedStatus {
-//    case full
-//    case partial
-//    case none
-//}
-
 private let selectedImageDic: [NgramSelectedStatus: UIImage] = [
     .full: UIImage(named: "blue_circle_full.png")!,
     .partial: UIImage(named: "blue_circle_half.png")!,
@@ -56,19 +37,6 @@ extension NgramPickerViewController: UITableViewDataSource {
         return cell
     }
     
-//    internal func loadDataJson() -> [NgramPickerSecion] {
-//        let jsonPath = Bundle.main.path(forResource: "ngram", ofType: "json")!
-//        if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) {
-//            let decoder = JSONDecoder()
-//            if let sections = try? decoder.decode([NgramPickerSecion].self, from: jsonData) {
-//                return sections
-//            } else {
-//                fatalError("JSONデータのデコードに失敗")
-//            }
-//        } else {
-//            fatalError("JSONデータの読み込みに失敗")
-//        }
-//    }
     
     private func itemForIndex(_ indexPath: IndexPath) -> NgramPickerItem {
         return sections[indexPath.section].items[indexPath.row]
@@ -79,9 +47,8 @@ extension NgramPickerViewController: UITableViewDataSource {
     }
     
     private func circleImage(for indexPath: IndexPath, withHeight height: CGFloat) -> UIImage {
-//
-//        ToDo: ここ、イメージを決め打ちにしているので、正しいイメージが表示されるようにする！
-//        
+//        let idForCell = itemForIndex(indexPath).id
+//        let allNumbersForId = Set(arrayLiteral: numbersDic[idForCell])
         let image = selectedImageDic[.full]!
         return image.reSizeImage(reSize: CGSize(width: height, height: height))
     }
