@@ -141,7 +141,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             app.buttons["exit"].tap()
             app.buttons["終了する"].tap()
             // then
-            waitToAppear(for: app.navigationBars.staticTexts["トップ"])
+            waitToAppear(for: app.navigationBars.staticTexts["トップ"], timeout: 4)
             // when
             gotoReciteSettingsScreen(app)
             // then
