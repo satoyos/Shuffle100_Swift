@@ -47,9 +47,22 @@ extension NgramPickerViewController: UITableViewDataSource {
     }
     
     private func circleImage(for indexPath: IndexPath, withHeight height: CGFloat) -> UIImage {
-//        let idForCell = itemForIndex(indexPath).id
-//        let allNumbersForId = Set(arrayLiteral: numbersDic[idForCell])
-        let image = selectedImageDic[.full]!
+        let idForCell = itemForIndex(indexPath).id
+        let allNumbersSetForId = Set(numbersDic[idForCell]!)
+        let selectedNumbersSet = Set(allSelectedNumbers)
+        let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, charRelated: allNumbersSetForId)
+        let image = selectedImageDic[resultStatus]!
         return image.reSizeImage(reSize: CGSize(width: height, height: height))
+    }
+    
+    private func comparePoemNumbers(selected: Set<Int>, charRelated: Set<Int>) -> NgramSelectedStatus {
+        let intersection = selected.intersection(charRelated)
+        if intersection.isEmpty {
+            return .none
+        } else if intersection == charRelated {
+            return .full
+        } else {
+            return .partial
+        }
     }
 }

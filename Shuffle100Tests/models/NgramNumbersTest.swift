@@ -30,6 +30,8 @@ class NgramNumbersTest: XCTestCase {
         XCTAssertEqual(numbers["mu"], [87])
         XCTAssertEqual(numbers["i"]?.count, 3)
         XCTAssertEqual(numbers["a"]?.count, 16)
+        XCTAssertNotNil(numbers["just_one"])
+        XCTAssertEqual(numbers["just_one"]?.count, 7)
     }
 
 }

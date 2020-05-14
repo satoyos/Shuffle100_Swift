@@ -59,6 +59,12 @@ struct NgramDataFactory {
             let hitPoems = Deck.originalPoems.filter{$0.kimari_ji.first == char}
             dic[id] = hitPoems.map{$0.number}
         }
+        var justOneArray = [Int]()
+        for char in ["mu", "su", "me", "fu", "sa", "ho", "se"] {
+            guard let numArray = dic[char] else { fatalError("字[\(char)]に対応する歌番号が見つかりません！")}
+            justOneArray += numArray
+        }
+        dic["just_one"] = justOneArray
         return dic
     }
 }
