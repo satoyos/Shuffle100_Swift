@@ -16,7 +16,7 @@ class NgramPickerViewController: SettingsAttachedViewController {
     
     var tableView: UITableView!
     var sections = NgramDataFactory.createNgramPickerSctions()
-    lazy var numbersDic = NgramDataFactory.createNgramNumbersDic()
+    var numbersDic = NgramDataFactory.createNgramNumbersDic()
     internal var allSelectedNumbers: [Int]!
     
     var selectedNum: Int {

@@ -291,6 +291,7 @@
 		92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
 		92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
 		92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
+		92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -550,6 +551,7 @@
 		92B9E9752466F4DF007C2E75 /* blue_circle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle_full.png; sourceTree = "<group>"; };
 		92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramNumbersTest.swift; sourceTree = "<group>"; };
 		92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramDataFactory.swift; sourceTree = "<group>"; };
+		92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgremPickerSectionTest.swift; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -859,6 +861,7 @@
 				92ABF9BC23F6DF46000CA91C /* StoreManagerTest.swift */,
 				92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */,
 				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
+				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1452,6 +1455,7 @@
 				927CB8FC240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92E5F82C240BCD4900C75FC6 /* ReciteSettingsViewController.swift in Sources */,
 				925994FC244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
+				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				9207BB3322996B7300816DC8 /* Settings.swift in Sources */,
 				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
