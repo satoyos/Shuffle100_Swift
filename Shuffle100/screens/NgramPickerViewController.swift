@@ -32,8 +32,8 @@ class NgramPickerViewController: SettingsAttachedViewController {
         self.title = "1字目で選ぶ"
         self.allSelectedNumbers = settings.state100.allSelectedNumbers
         self.tableView = createTableViewForScreen()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
-        view.addSubview(tableView)
+        //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
         navigationItem.rightBarButtonItem = dummyButtonItem()
     }
     
