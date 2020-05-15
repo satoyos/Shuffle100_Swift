@@ -292,6 +292,9 @@
 		92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
 		92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
 		92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */; };
+		92B9E990246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */; };
+		92B9E991246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */; };
+		92B9E992246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -552,6 +555,7 @@
 		92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramNumbersTest.swift; sourceTree = "<group>"; };
 		92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramDataFactory.swift; sourceTree = "<group>"; };
 		92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgremPickerSectionTest.swift; sourceTree = "<group>"; };
+		92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerTableCell.swift; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -807,6 +811,7 @@
 				92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */,
 				92328C2124591D64005E0FEE /* WhatsNextButton.swift */,
 				92FFBF40245FB3F0004D7F79 /* FudaView.swift */,
+				92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1373,6 +1378,7 @@
 				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
+				92B9E990246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
 				9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
@@ -1392,6 +1398,7 @@
 				92C87DDE22E88F8600569D15 /* Singer.swift in Sources */,
 				92FFBF6624650219004D7F79 /* NgramPickerViewController.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
+				92B9E991246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
 				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
 				92B9E9692465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
@@ -1587,6 +1594,7 @@
 				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,
+				92B9E992246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
 				927A198123E06C8A00443322 /* RecitePoemCoordinator.swift in Sources */,
 				92FFBF4B245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
 				92ABF9AD23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,

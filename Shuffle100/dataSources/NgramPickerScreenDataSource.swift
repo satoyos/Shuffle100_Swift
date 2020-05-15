@@ -9,11 +9,11 @@
 import UIKit
 import Then
 
-private let selectedImageDic: [NgramSelectedStatus: UIImage] = [
-    .full: UIImage(named: "blue_circle_full.png")!,
-    .partial: UIImage(named: "blue_circle_half.png")!,
-    .none: UIImage(named: "blue_circle_empty.png")!
-]
+//private let selectedImageDic: [NgramSelectedStatus: UIImage] = [
+//    .full: UIImage(named: "blue_circle_full.png")!,
+//    .partial: UIImage(named: "blue_circle_half.png")!,
+//    .none: UIImage(named: "blue_circle_empty.png")!
+//]
 
 extension NgramPickerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +51,7 @@ extension NgramPickerViewController: UITableViewDataSource {
         let allNumbersSetForId = Set(numbersDic[idForCell]!)
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, charRelated: allNumbersSetForId)
-        let image = selectedImageDic[resultStatus]!
+        let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
         return image.reSizeImage(reSize: CGSize(width: height, height: height))
     }
     
