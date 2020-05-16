@@ -17,11 +17,17 @@ class NgramPickerViewController: SettingsAttachedViewController {
     var tableView: UITableView!
     var sections = NgramDataFactory.createNgramPickerSctions()
     var numbersDic = NgramDataFactory.createNgramNumbersDic()
-    internal var allSelectedNumbers: [Int]!
+    var badgeItem: BBBadgeBarButtonItem!
     
     var selectedNum: Int {
         get {
             return settings.state100.selectedNum
+        }
+    }
+    
+    var allSelectedNumbers: [Int] {
+        get {
+            return settings.state100.allSelectedNumbers
         }
     }
 
@@ -30,11 +36,11 @@ class NgramPickerViewController: SettingsAttachedViewController {
 
         navigationItem.prompt = "百首読み上げ"
         self.title = "1字目で選ぶ"
-        self.allSelectedNumbers = settings.state100.allSelectedNumbers
         self.tableView = createTableViewForScreen()
-        //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
         tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
-        navigationItem.rightBarButtonItem = dummyButtonItem()
+        self.badgeItem = dummyButtonItem()
+        updateBadgeItem()
+        navigationItem.rightBarButtonItem = badgeItem
     }
     
 
@@ -45,18 +51,18 @@ class NgramPickerViewController: SettingsAttachedViewController {
         return tableView
     }
     
-    private func dummyButtonItem() -> UIBarButtonItem {
+    private func dummyButtonItem() -> BBBadgeBarButtonItem {
         let button = UIButton(type: .custom).then {
             $0.setTitle(" ", for: .normal)
         }
         let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
-            $0.badgeValue = "\(selectedNum)首"
             $0.badgeOriginX = -50
             $0.badgeOriginY = 0
         }
         return buttonItem
     }
 
-    
-
+    internal func updateBadgeItem() {
+        badgeItem.badgeValue = "\(selectedNum)首"
+    }
 }

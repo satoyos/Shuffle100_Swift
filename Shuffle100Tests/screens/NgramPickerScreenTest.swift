@@ -61,11 +61,30 @@ class NgramPickerScreenTest: XCTestCase {
         let screen = NgramPickerViewController(settings: settings)
         screen.loadViewIfNeeded()
         // then
-        let item = screen.navigationItem.rightBarButtonItem as! BBBadgeBarButtonItem
+        let item = badgeItem(of: screen)
         XCTAssertEqual(item.badgeValue , "99首")
-        let tsuCell = cellFor(screen, section: 1, row: 1)
+        let tsuIndex = tsuIndexPath()
+        let tsuCell = cellFor(screen, section:tsuIndex.section, row: tsuIndex.row)
         XCTAssertEqual(tsuCell.textLabel?.text, "「つ」で始まる歌")
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
+    }
+    
+    func test_partialTapMakefFull() {
+        // given
+        let settings = Settings()
+        settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
+        let screen = NgramPickerViewController(settings: settings)
+        screen.loadViewIfNeeded()
+        let tsuIndex = tsuIndexPath()
+        let tsuCell = cellFor(screen, section: tsuIndex.section, row: tsuIndex.row)
+        XCTAssertEqual(tsuCell.selectedStatus, .partial)
+        // when
+        tapCellOfIndex(tsuIndexPath(), in: screen)
+        // then
+        let newTsuCell = cellFor(screen, section: tsuIndex.section, row: tsuIndex.row)
+        XCTAssertEqual(newTsuCell.selectedStatus, .full)
+        let item = badgeItem(of: screen)
+        XCTAssertEqual(item.badgeValue, "100首")
     }
     
     private func cellFor(_ screen: NgramPickerViewController, section: Int, row: Int) -> NgramPickerTableCell {
@@ -73,4 +92,15 @@ class NgramPickerScreenTest: XCTestCase {
         return cell as! NgramPickerTableCell
     }
     
+    private func tsuIndexPath() -> IndexPath {
+        return IndexPath(row: 1, section: 1)
+    }
+    
+    private func tapCellOfIndex(_ indexPath: IndexPath, in screen: NgramPickerViewController) {
+        screen.tableView(screen.tableView, didSelectRowAt: indexPath)
+    }
+    
+    private func badgeItem(of screen: NgramPickerViewController) -> BBBadgeBarButtonItem {
+        return screen.navigationItem.rightBarButtonItem as! BBBadgeBarButtonItem
+    }
 }
