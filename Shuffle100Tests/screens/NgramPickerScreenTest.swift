@@ -47,9 +47,30 @@ class NgramPickerScreenTest: XCTestCase {
         XCTAssertEqual(numOf2charsGroup, 5)
         let titleOf2charsGroup = screen.tableView(screen.tableView, titleForHeaderInSection: 1)
         XCTAssertEqual(titleOf2charsGroup, "二枚札")
-        let cellOfTopIn2CharsGroup = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
+        let cellOfTopIn2CharsGroup = cellFor(screen, section: 1, row: 0)
         XCTAssertEqual(cellOfTopIn2CharsGroup.textLabel?.text, "「う」で始まる歌")
         XCTAssertNotNil(cellOfTopIn2CharsGroup.imageView?.image)
+        XCTAssertEqual(cellOfTopIn2CharsGroup.selectedStatus, .full)
+    }
+    
+    func test_partialSelected() {
+        // given
+        let settings = Settings()
+        settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
+        // when
+        let screen = NgramPickerViewController(settings: settings)
+        screen.loadViewIfNeeded()
+        // then
+        let item = screen.navigationItem.rightBarButtonItem as! BBBadgeBarButtonItem
+        XCTAssertEqual(item.badgeValue , "99首")
+        let tsuCell = cellFor(screen, section: 1, row: 1)
+        XCTAssertEqual(tsuCell.textLabel?.text, "「つ」で始まる歌")
+        XCTAssertEqual(tsuCell.selectedStatus, .partial)
+    }
+    
+    private func cellFor(_ screen: NgramPickerViewController, section: Int, row: Int) -> NgramPickerTableCell {
+        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
+        return cell as! NgramPickerTableCell
     }
     
 }

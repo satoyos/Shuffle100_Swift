@@ -32,7 +32,9 @@ extension NgramPickerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
             $0.textLabel?.text = itemForIndex(indexPath).title
             $0.accessibilityLabel = itemForIndex(indexPath).id
-            $0.imageView?.image = circleImage(for: indexPath, withHeight: cellHeight(of: $0))
+            let state = selectedState(for: indexPath, withHeight: cellHeight(of: $0))
+            $0.imageView?.image = state.circleImage
+            ($0 as! NgramPickerTableCell).selectedStatus = state.status
         }
         return cell
     }
@@ -46,13 +48,13 @@ extension NgramPickerViewController: UITableViewDataSource {
         return cell.frame.height
     }
     
-    private func circleImage(for indexPath: IndexPath, withHeight height: CGFloat) -> UIImage {
+    private func  selectedState(for indexPath: IndexPath, withHeight height: CGFloat) -> (status: NgramSelectedStatus, circleImage: UIImage) {
         let idForCell = itemForIndex(indexPath).id
         let allNumbersSetForId = Set(numbersDic[idForCell]!)
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, charRelated: allNumbersSetForId)
         let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
-        return image.reSizeImage(reSize: CGSize(width: height, height: height))
+        return (resultStatus, image.reSizeImage(reSize: CGSize(width: height, height: height)))
     }
     
     private func comparePoemNumbers(selected: Set<Int>, charRelated: Set<Int>) -> NgramSelectedStatus {

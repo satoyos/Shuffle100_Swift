@@ -18,6 +18,7 @@ class NgramPickerTableCell: UITableViewCell {
         .partial: halfCircleImage,
         .none: emptyCircleImage
     ]
+    var selectedStatus: NgramSelectedStatus!
 
     override func awakeFromNib() {
         super.awakeFromNib()
