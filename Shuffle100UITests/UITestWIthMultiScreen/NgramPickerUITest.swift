@@ -22,27 +22,42 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils {
     }
 
     func test_openNgramPicker() throws {
-        gotoNgramPickerScreen(app)
+        gotoPoemPickerScreen(app)
+        gotoNgramPickerScreenFromPickerScreen(app)
     }
 
-    func test_tapCellaffectsSelectedNum() {
+    func test_tapFullSelectedCell() {
         // given
-        gotoNgramPickerScreen(app)
+        gotoPoemPickerScreen(app)
+        gotoNgramPickerScreenFromPickerScreen(app)
         // when
         app.cells["just_one"].tap()
         // then
         XCTContext.runActivity(named: "トップ画面に戻ると、一字決まり分の選択が外れた「93首」が表示されている") { activity in
             goBackToTopScreen(app)
             XCTAssert(app.staticTexts["93首"].exists)
-            
         }
     }
     
-    private func gotoNgramPickerScreen(_ app: XCUIApplication) {
-        // given
-        gotoPoemPickerScreen(app)
+    func test_tapEmptySelectedCell() {
+        XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
+            gotoPoemPickerScreen(app)
+            let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+            button.tap()
+            gotoNgramPickerScreenFromPickerScreen(app)
+        }
         // when
+        app.cells["shi"].tap()
+        // then
+        goBackToTopScreen(app)
+        XCTAssert(app.staticTexts["2首"].exists)
+        
+    }
+    
+    private func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication) {
+        // given
         let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: 3)
+        // when
         button.tap()
         // then
         XCTAssert(app.staticTexts["どうやって選びますか？"].exists)
