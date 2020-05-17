@@ -22,7 +22,7 @@ struct NgramPickerSecion: Codable {
 enum NgramSelectedStatus {
     case full
     case partial
-    case none
+    case empry
 }
 
 private let firstCharDic: [String: Character] = [

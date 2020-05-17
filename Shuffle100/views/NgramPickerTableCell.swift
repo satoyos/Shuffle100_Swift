@@ -16,7 +16,7 @@ class NgramPickerTableCell: UITableViewCell {
     static let selectedImageDic: [NgramSelectedStatus: UIImage] = [
         .full: fullCircleImage,
         .partial: halfCircleImage,
-        .none: emptyCircleImage
+        .empry: emptyCircleImage
     ]
     var selectedStatus: NgramSelectedStatus!
 
