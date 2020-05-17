@@ -61,34 +61,52 @@ class NgramPickerScreenTest: XCTestCase {
         let screen = NgramPickerViewController(settings: settings)
         screen.loadViewIfNeeded()
         // then
-        let item = badgeItem(of: screen)
-        XCTAssertEqual(item.badgeValue , "99首")
+        XCTAssertEqual(screen.badgeItem.badgeValue , "99首")
         let tsuIndex = tsuIndexPath()
         let tsuCell = cellFor(screen, section:tsuIndex.section, row: tsuIndex.row)
         XCTAssertEqual(tsuCell.textLabel?.text, "「つ」で始まる歌")
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
     }
     
-    func test_partialTapMakefFull() {
+    func test_tapPartialMakesFull() {
         // given
         let settings = Settings()
         settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
         let screen = NgramPickerViewController(settings: settings)
         screen.loadViewIfNeeded()
         let tsuIndex = tsuIndexPath()
-        let tsuCell = cellFor(screen, section: tsuIndex.section, row: tsuIndex.row)
+        let tsuCell = cellFor(screen, indexPath: tsuIndex)
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
         // when
         tapCellOfIndex(tsuIndexPath(), in: screen)
         // then
-        let newTsuCell = cellFor(screen, section: tsuIndex.section, row: tsuIndex.row)
+        let newTsuCell = cellFor(screen, indexPath: tsuIndex)
         XCTAssertEqual(newTsuCell.selectedStatus, .full)
-        let item = badgeItem(of: screen)
-        XCTAssertEqual(item.badgeValue, "100首")
+        XCTAssertEqual(screen.badgeItem.badgeValue, "100首")
+    }
+    
+    func test_tapFullMakesEmpty() {
+        // given
+        let screen = NgramPickerViewController()
+        screen.loadViewIfNeeded()
+        let tsuIndex = tsuIndexPath()
+        let tsuCell = cellFor(screen, indexPath: tsuIndex)
+        XCTAssertEqual(tsuCell.selectedStatus, .full)
+        // when
+        tapCellOfIndex(tsuIndex, in: screen)
+        // then
+        let newTsuCell = cellFor(screen, indexPath: tsuIndex)
+        XCTAssertEqual(newTsuCell.selectedStatus, .empry)
+        XCTAssertEqual(screen.badgeItem.badgeValue, "98首")
     }
     
     private func cellFor(_ screen: NgramPickerViewController, section: Int, row: Int) -> NgramPickerTableCell {
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
+        return cell as! NgramPickerTableCell
+    }
+    
+    private func cellFor(_ screen: NgramPickerViewController, indexPath: IndexPath) -> NgramPickerTableCell {
+        let cell = screen.tableView(screen.tableView, cellForRowAt: indexPath)
         return cell as! NgramPickerTableCell
     }
     
@@ -98,9 +116,5 @@ class NgramPickerScreenTest: XCTestCase {
     
     private func tapCellOfIndex(_ indexPath: IndexPath, in screen: NgramPickerViewController) {
         screen.tableView(screen.tableView, didSelectRowAt: indexPath)
-    }
-    
-    private func badgeItem(of screen: NgramPickerViewController) -> BBBadgeBarButtonItem {
-        return screen.navigationItem.rightBarButtonItem as! BBBadgeBarButtonItem
     }
 }

@@ -31,7 +31,10 @@ extension NgramPickerViewController: UITableViewDelegate {
     }
     
     private func makeSelectedNone(cell: NgramPickerTableCell) {
-        // ToDo: Implement this method!!
+        let id = cell.accessibilityLabel!
+        guard let numbers = numbersDic[id] else { fatalError("「\(id)」に対応する歌番号の配列が見つかりません")}
+        settings.state100.cancelInNumbers(numbers)
+        updateTableAndBadge()
     }
     
     private func updateTableAndBadge() {
