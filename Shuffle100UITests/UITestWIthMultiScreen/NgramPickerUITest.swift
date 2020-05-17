@@ -22,6 +22,23 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils {
     }
 
     func test_openNgramPicker() throws {
+        gotoNgramPickerScreen(app)
+    }
+
+    func test_tapCellaffectsSelectedNum() {
+        // given
+        gotoNgramPickerScreen(app)
+        // when
+        app.cells["just_one"].tap()
+        // then
+        XCTContext.runActivity(named: "トップ画面に戻ると、一字決まり分の選択が外れた「93首」が表示されている") { activity in
+            goBackToTopScreen(app)
+            XCTAssert(app.staticTexts["93首"].exists)
+            
+        }
+    }
+    
+    private func gotoNgramPickerScreen(_ app: XCUIApplication) {
         // given
         gotoPoemPickerScreen(app)
         // when
@@ -34,5 +51,9 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils {
         // then
         waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: 5)
     }
-
+    
+    private func goBackToTopScreen(_ app: XCUIApplication) {
+        app.buttons["歌を選ぶ"].tap()
+        app.buttons["トップ"].tap()
+    }
 }
