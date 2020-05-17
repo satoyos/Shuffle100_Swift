@@ -60,7 +60,7 @@ extension NgramPickerViewController: UITableViewDataSource {
     private func comparePoemNumbers(selected: Set<Int>, charRelated: Set<Int>) -> NgramSelectedStatus {
         let intersection = selected.intersection(charRelated)
         if intersection.isEmpty {
-            return .none
+            return .empry
         } else if intersection == charRelated {
             return .full
         } else {
