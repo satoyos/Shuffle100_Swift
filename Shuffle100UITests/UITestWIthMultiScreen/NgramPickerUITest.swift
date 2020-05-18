@@ -54,6 +54,24 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils {
         
     }
     
+    func test_selectSeveralCells() {
+        XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
+            gotoPoemPickerScreen(app)
+            let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+            button.tap()
+            gotoNgramPickerScreenFromPickerScreen(app)
+        }
+        // when
+        app.cells["u"].tap()
+        app.cells["tsu"].tap()
+        app.cells["shi"].tap()
+        app.cells["mo"].tap()
+        app.cells["yu"].tap()
+        // then
+        goBackToTopScreen(app)
+        XCTAssert(app.staticTexts["10首"].exists)
+    }
+    
     private func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication) {
         // given
         let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: 3)
