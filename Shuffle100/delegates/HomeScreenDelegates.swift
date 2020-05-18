@@ -27,7 +27,12 @@ extension HomeViewController: UITableViewDelegate {
                 return
             }
         } else {
-            startGameAction?()
+            if settings.state100.selectedNum > 0 {
+                startGameAction?()
+            } else {
+                tableView.deselectRow(at: indexPath, animated: true)
+                alertZeroPoems()
+            }
         }
     }
     
@@ -38,5 +43,12 @@ extension HomeViewController: UITableViewDelegate {
     
     @objc func gearButtonTapped(sender: UIButton) {
         self.reciteSettingsAction?()
+    }
+    
+    private func alertZeroPoems() {
+        let backAction = UIAlertAction(title: "戻る", style: .cancel)
+        let ac = UIAlertController(title: "詩を選びましょう", message: "「取り札を用意する歌」で、試合に使う歌を選んでください", preferredStyle: .alert)
+        ac.addAction(backAction)
+        present(ac, animated: true)
     }
 }
