@@ -70,5 +70,29 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPicker
             XCTAssertTrue(app.cells.staticTexts["98首"].exists)
         }
     }
+    
+    func test_alertAppearsWhenStartGameWithoutSelectedPoem() {
+        // given
+        gotoPoemPickerScreen(app)
+        let button = waitToHittable(for: app.buttons["全て取消"], timeout: 5)
+        button.tap()
+        goBackToHomeScreen(app)
+        XCTAssert(app.staticTexts["0首"].exists)
+        XCTContext.runActivity(named: "歌を全く選ばないまま試合を開始しようとすると、アラートが表示される") { activity in
+            // when
+            app.cells["GameStartCell"].tap()
+            // then
+            XCTAssert(app.staticTexts["詩を選びましょう"].exists)
+        }
+        XCTContext.runActivity(named: "アラート画面で「戻る」ボタンを押すと、アラートは消える") { acivity in
+            // when
+            app.buttons["戻る"].tap()
+            // then
+            XCTAssertFalse(app.staticTexts["詩を選びましょう"].exists)
+        }
+        XCTContext.runActivity(named: "アラート画面が消えてトップ画面に戻ったとき、「試合開始」セルの選択は解除された状態になっている") { activity in
+            XCTAssertFalse(app.cells["GameStartCell"].isSelected)
+        }
+    }
 }
 
