@@ -9,12 +9,6 @@
 import UIKit
 import Then
 
-//private let selectedImageDic: [NgramSelectedStatus: UIImage] = [
-//    .full: UIImage(named: "blue_circle_full.png")!,
-//    .partial: UIImage(named: "blue_circle_half.png")!,
-//    .none: UIImage(named: "blue_circle_empty.png")!
-//]
-
 extension NgramPickerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
