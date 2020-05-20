@@ -6,8 +6,8 @@
 //  Copyright © 2019 里 佳史. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import BBBadgeBarButtonItem
 
 extension PoemPickerViewController: UITableViewDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -24,8 +24,9 @@ extension PoemPickerViewController: UITableViewDelegate {
         return
     }
     
-    @objc func saveButtonTapped(btn: UIBarButtonItem) {
-        print("Save Button Tapped!")
+    @objc func saveButtonTapped(button: UIButton) {
+        assert(true, "Save Button Tapped!")
+        showActionSheetForSaving(button)
     }
 
     @objc func cancelAllButtonTapped() {
@@ -53,6 +54,16 @@ extension PoemPickerViewController: UITableViewDelegate {
             pc.sourceRect = CGRect(x: view.frame.width, y: 0, width: 1, height: 1)
         }
         present(ac, animated: true)
-//        selectByGroupAction?()
+    }
+    
+    private func showActionSheetForSaving(_ button: UIButton) {
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel)
+        let ac = UIAlertController(title: "選んでいる札をどのように保存しますか？", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(cancel)
+        if let pc = ac.popoverPresentationController {
+            pc.sourceView = self.view
+            pc.sourceView = button
+        }
+        present(ac, animated: true)
     }
 }
