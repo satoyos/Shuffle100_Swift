@@ -295,6 +295,7 @@
 		92B9E990246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */; };
 		92B9E991246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */; };
 		92B9E992246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */; };
+		92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */; };
 		92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -556,6 +557,7 @@
 		92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramDataFactory.swift; sourceTree = "<group>"; };
 		92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgremPickerSectionTest.swift; sourceTree = "<group>"; };
 		92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerTableCell.swift; sourceTree = "<group>"; };
+		92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetSavingUITest.swift; sourceTree = "<group>"; };
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */,
 				9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */,
 				92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */,
+				92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -1641,6 +1644,7 @@
 				9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
 				9205E1782456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				92A6EB8324167F9200B37A42 /* SettingsAttachedViewController.swift in Sources */,
+				92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */,
 				92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
 				925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */,
