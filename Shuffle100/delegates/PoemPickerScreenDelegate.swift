@@ -57,12 +57,16 @@ extension PoemPickerViewController: UITableViewDelegate {
     }
     
     private func showActionSheetForSaving(_ button: UIButton) {
-        let cancel = UIAlertAction(title: "キャンセル", style: .cancel)
+        let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
+            // request name new set
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "選んでいる札をどのように保存しますか？", message: nil, preferredStyle: .actionSheet)
-        ac.addAction(cancel)
+        ac.addAction(newSetAction)
+        ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
-            pc.sourceView = self.view
             pc.sourceView = button
+            pc.sourceRect = button.frame
         }
         present(ac, animated: true)
     }

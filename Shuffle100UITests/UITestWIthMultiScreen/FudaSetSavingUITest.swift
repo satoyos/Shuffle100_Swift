@@ -26,6 +26,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             app.buttons["保存"].tap()
             // then
             XCTAssert(app.staticTexts["選んでいる札をどのように保存しますか？"].exists)
+            XCTAssert(app.buttons["新しい札セットとして保存する"].exists)
+            // iPadでは、ActionSheetでキャンセルボタンが表示されない。
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                XCTAssert(app.buttons["キャンセル"].exists)
+            }
         }
     }
 
