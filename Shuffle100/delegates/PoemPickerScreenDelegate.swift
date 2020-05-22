@@ -58,7 +58,7 @@ extension PoemPickerViewController: UITableViewDelegate {
     
     private func showActionSheetForSaving(_ button: UIButton) {
         let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
-            // request name new set
+            self.saveNewFudaSet()
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "選んでいる札をどのように保存しますか？", message: nil, preferredStyle: .actionSheet)
@@ -70,4 +70,25 @@ extension PoemPickerViewController: UITableViewDelegate {
         }
         present(ac, animated: true)
     }
+    
+    internal func saveNewFudaSet() {
+        var alertTextField: UITextField?
+
+        let ac = UIAlertController(
+            title: "新しい札セットの名前",
+            message: nil,
+            preferredStyle: .alert)
+        ac.addTextField(configurationHandler: { (textField: UITextField!) in
+            alertTextField = textField
+            alertTextField?.placeholder = "札セットの名前"
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            // add Fuda Set with new naame
+        }
+        ac.addAction(cancelAction)
+        ac.addAction(okAction)
+        present(ac, animated: true)
+    }
+    
 }
