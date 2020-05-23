@@ -26,6 +26,10 @@ extension PoemPickerViewController: UITableViewDelegate {
     
     @objc func saveButtonTapped(button: UIButton) {
         assert(true, "Save Button Tapped!")
+        guard selected_num > 0 else {
+            showAlertNotToSaveEmptySet()
+            return
+        }
         showActionSheetForSaving(button)
     }
 
@@ -102,6 +106,11 @@ extension PoemPickerViewController: UITableViewDelegate {
         present(ac, animated: true)
     }
     
-    
+    private func showAlertNotToSaveEmptySet() {
+        let ac = UIAlertController(title: "歌を選びましょう", message: "空の札セットは保存できません。", preferredStyle: .alert)
+        let backAction = UIAlertAction(title: "戻る", style: .cancel)
+        ac.addAction(backAction)
+        present(ac, animated: true)
+    }
     
 }
