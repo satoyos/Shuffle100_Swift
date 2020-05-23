@@ -38,6 +38,20 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         }
     }
 
+    func test_savingEmptyFudaSetIsInhibited() {
+        // given
+        gotoPoemPickerScreen(app)
+        // when
+        let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+        button.tap()
+        app.buttons["保存"].tap()
+        // then
+        XCTAssert(app.staticTexts["歌を選びましょう"].exists)
+        // when
+        app.buttons["戻る"].tap()
+        // then
+        XCTAssertFalse(app.staticTexts["歌を選びましょう"].exists)
+    }
     
     private func showActionSheetforFudaSetSaving(_ app: XCUIApplication) {
         XCTContext.runActivity(named: "「保存」ボタンを押すと、アクションシートが現れる") { activity in
