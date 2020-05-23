@@ -71,6 +71,11 @@ extension PoemPickerViewController: UITableViewDelegate {
         present(ac, animated: true)
     }
     
+    func addNewFudaSet(name: String) {
+        let newFudaSet = SavedFudaSet(name: name, state100: self.settings.state100)
+        self.settings.savedFudaSets.append(newFudaSet)
+    }
+    
     internal func saveNewFudaSet() {
         var alertTextField: UITextField?
 
@@ -84,11 +89,19 @@ extension PoemPickerViewController: UITableViewDelegate {
         })
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            // add Fuda Set with new naame
+            if let name = alertTextField?.text {
+                guard name.count > 0 else {
+                    // alert empty name
+                    return
+                }
+                self.addNewFudaSet(name: name)
+            }
         }
         ac.addAction(cancelAction)
         ac.addAction(okAction)
         present(ac, animated: true)
     }
+    
+    
     
 }

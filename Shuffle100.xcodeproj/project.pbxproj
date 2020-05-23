@@ -40,6 +40,7 @@
 		920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920C00172427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
+		920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */; };
 		92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		92158F7B232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
@@ -438,6 +439,7 @@
 		9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeCoordinator.swift; sourceTree = "<group>"; };
 		9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinator.swift; sourceTree = "<group>"; };
 		920C00152427A61600593803 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
+		920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFudaSetTest.swift; sourceTree = "<group>"; };
 		92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButton.swift; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
@@ -890,6 +892,7 @@
 				9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */,
 				92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */,
 				92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */,
+				920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -1433,6 +1436,7 @@
 				92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */,
 				929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
+				920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */,
 				92ABF9BA23F6D739000CA91C /* StoreManager.swift in Sources */,
 				9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
