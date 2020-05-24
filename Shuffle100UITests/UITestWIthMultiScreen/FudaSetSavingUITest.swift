@@ -60,6 +60,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         app.buttons["戻る"].tap()
         // then
         XCTAssertFalse(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
+        XCTAssert(app.staticTexts["新しい札セットの名前"].exists)
     }
     
     private func showActionSheetforFudaSetSaving(_ app: XCUIApplication) {
