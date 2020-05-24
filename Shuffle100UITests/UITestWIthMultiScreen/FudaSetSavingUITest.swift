@@ -30,12 +30,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         // given
         gotoPoemPickerScreen(app)
         showActionSheetforFudaSetSaving(app)
-        XCTContext.runActivity(named: "「新しい札セットとして保存」を選択すると、新セットの名前を入力するためのダイアログが現れる") { activity in
-            // when
-            app.buttons[saveNewFudaSetStr].tap()
-            // then
-            waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: 2)
-        }
+        selectSaveAsNewSet(app)
     }
 
     func test_savingEmptyFudaSetIsInhibited() {
@@ -53,6 +48,20 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         XCTAssertFalse(app.staticTexts["歌を選びましょう"].exists)
     }
     
+    func test_emptyFudaSetNameIsInhibited() {
+        // given
+        gotoPoemPickerScreen(app)
+        showActionSheetforFudaSetSaving(app)
+        selectSaveAsNewSet(app)
+        // when
+        app.buttons["決定"].tap()
+        // then
+        XCTAssert(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
+        app.buttons["戻る"].tap()
+        // then
+        XCTAssertFalse(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
+    }
+    
     private func showActionSheetforFudaSetSaving(_ app: XCUIApplication) {
         XCTContext.runActivity(named: "「保存」ボタンを押すと、アクションシートが現れる") { activity in
             // when
@@ -67,5 +76,12 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         }
     }
     
-
+    private func selectSaveAsNewSet(_ app: XCUIApplication) {
+        XCTContext.runActivity(named: "「新しい札セットとして保存」を選択すると、新セットの名前を入力するためのダイアログが現れる") { activity in
+            // when
+            app.buttons[saveNewFudaSetStr].tap()
+            // then
+            waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: 2)
+        }
+    }
 }
