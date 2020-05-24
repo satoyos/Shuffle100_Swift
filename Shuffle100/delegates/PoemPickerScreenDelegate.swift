@@ -78,6 +78,7 @@ extension PoemPickerViewController: UITableViewDelegate {
     func addNewFudaSet(name: String) {
         let newFudaSet = SavedFudaSet(name: name, state100: self.settings.state100)
         self.settings.savedFudaSets.append(newFudaSet)
+        showSuccessfullySavedMessage(name: name)
     }
     
     internal func saveNewFudaSet() {
@@ -112,6 +113,13 @@ extension PoemPickerViewController: UITableViewDelegate {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let backAction = UIAlertAction(title: "戻る", style: .cancel, handler: handler)
         ac.addAction(backAction)
+        present(ac, animated: true)
+    }
+    
+    private func showSuccessfullySavedMessage(name: String) {
+        let ac = UIAlertController(title: "保存完了", message: "新しい札セット「\(name)」を保存しました。", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        ac.addAction(okAction)
         present(ac, animated: true)
     }
     
