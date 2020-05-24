@@ -27,7 +27,7 @@ extension PoemPickerViewController: UITableViewDelegate {
     @objc func saveButtonTapped(button: UIButton) {
         assert(true, "Save Button Tapped!")
         guard selected_num > 0 else {
-            showAlertInhibeted(title: "歌を選びましょう", message: "空の札セットは保存できません。")
+            showAlertInhibeted(title: "歌を選びましょう", message: "空の札セットは保存できません。", handler: nil)
             return
         }
         showActionSheetForSaving(button)
@@ -95,7 +95,9 @@ extension PoemPickerViewController: UITableViewDelegate {
         let okAction = UIAlertAction(title: "決定", style: .default) { _ in
             if let name = alertTextField?.text {
                 guard name.count > 0 else {
-                    self.showAlertInhibeted(title: "新しい札セットの名前を決めましょう", message: nil)
+                    self.showAlertInhibeted(title: "新しい札セットの名前を決めましょう", message: nil) { action in
+                        self.saveNewFudaSet()
+                    }
                     return
                 }
                 self.addNewFudaSet(name: name)
@@ -106,9 +108,9 @@ extension PoemPickerViewController: UITableViewDelegate {
         present(ac, animated: true)
     }
     
-    private func showAlertInhibeted(title: String, message: String?) {
+    private func showAlertInhibeted(title: String, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let backAction = UIAlertAction(title: "戻る", style: .cancel)
+        let backAction = UIAlertAction(title: "戻る", style: .cancel, handler: handler)
         ac.addAction(backAction)
         present(ac, animated: true)
     }
