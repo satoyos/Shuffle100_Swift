@@ -31,7 +31,14 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         gotoPoemPickerScreen(app)
         showActionSheetforFudaSetSaving(app)
         selectSaveAsNewSet(app)
+        // when
+        app.alerts.textFields.element.tap()
+        app.alerts.textFields.element.typeText("テスト札セット")
+        app.buttons["決定"].tap()
+        // then
+        XCTAssert(app.alerts.staticTexts["保存完了"].exists)
     }
+ 
 
     func test_savingEmptyFudaSetIsInhibited() {
         // given
