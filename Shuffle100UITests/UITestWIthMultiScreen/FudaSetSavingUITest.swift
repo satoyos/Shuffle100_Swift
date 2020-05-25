@@ -49,6 +49,13 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             // then
             XCTAssert(app.sheets.buttons["作った札セットから選ぶ"].exists)
         }
+        XCTContext.runActivity(named: "既存の札セットから選ぶアクションを選択すると、札セットの一覧画面が表示される") { _ in
+            // when
+            app.sheets.buttons["作った札セットから選ぶ"].tap()
+            // then
+            //
+            //  札セット画面が表示される確認
+        }
     }
  
 

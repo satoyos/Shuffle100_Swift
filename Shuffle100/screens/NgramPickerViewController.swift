@@ -10,10 +10,10 @@ import UIKit
 import Then
 import BBBadgeBarButtonItem
 
-internal let cellReuseId = "ngrams"
 
 class NgramPickerViewController: SettingsAttachedViewController {
     
+    internal let cellReuseId = "ngrams"
     var tableView: UITableView!
     var sections = NgramDataFactory.createNgramPickerSctions()
     var numbersDic = NgramDataFactory.createNgramNumbersDic()

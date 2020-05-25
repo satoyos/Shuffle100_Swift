@@ -41,6 +41,16 @@
 		920C00172427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */; };
+		920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */; };
+		920F6A6F247C03D400360C3B /* FudaSetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */; };
+		920F6A70247C03D400360C3B /* FudaSetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */; };
+		920F6A71247C03D400360C3B /* FudaSetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */; };
+		920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
+		920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
+		920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
+		920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
+		920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
+		920F6A79247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
 		92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		92158F7B232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
@@ -440,6 +450,10 @@
 		9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinator.swift; sourceTree = "<group>"; };
 		920C00152427A61600593803 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFudaSetTest.swift; sourceTree = "<group>"; };
+		920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenTest.swift; sourceTree = "<group>"; };
+		920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsViewController.swift; sourceTree = "<group>"; };
+		920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenDelegate.swift; sourceTree = "<group>"; };
+		920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenDataSource.swift; sourceTree = "<group>"; };
 		92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButton.swift; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
@@ -760,6 +774,7 @@
 				9205E17B24570E6F003BAEDC /* WhatsNextViewController.swift */,
 				92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */,
 				92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */,
+				920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -893,6 +908,7 @@
 				92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */,
 				92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */,
 				920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */,
+				920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -959,6 +975,7 @@
 				92A6EB9024191ED400B37A42 /* SelectSingerScreenDataSource.swift */,
 				920C00152427A61600593803 /* HomeScreenDataSource.swift */,
 				92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */,
+				920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */,
 			);
 			path = dataSources;
 			sourceTree = "<group>";
@@ -999,6 +1016,7 @@
 				92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */,
 				92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */,
 				92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */,
+				920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1305,6 +1323,7 @@
 				92ABF9B923F6D739000CA91C /* StoreManager.swift in Sources */,
 				92CE520B2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92ABF9AB23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,
+				920F6A6F247C03D400360C3B /* FudaSetsViewController.swift in Sources */,
 				92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
@@ -1362,7 +1381,9 @@
 				9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
+				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				92BCFA56241FB95A004B824A /* ReciteSettingsTableCell.swift in Sources */,
+				920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
@@ -1414,6 +1435,7 @@
 				92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
+				920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				92CE520C2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
@@ -1425,6 +1447,7 @@
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
 				9205E17D24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				92328C2324591D64005E0FEE /* WhatsNextButton.swift in Sources */,
+				920F6A70247C03D400360C3B /* FudaSetsViewController.swift in Sources */,
 				92FC39502287110D00791053 /* RecitingSettings.swift in Sources */,
 				92ABF9BD23F6DF46000CA91C /* StoreManagerTest.swift in Sources */,
 				92AE7C7123FEAE6A003FA07F /* EnvironmentTest.swift in Sources */,
@@ -1434,6 +1457,7 @@
 				92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */,
+				920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */,
 				929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */,
@@ -1508,6 +1532,7 @@
 				92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */,
 				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
+				920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				929A615622F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
@@ -1564,6 +1589,7 @@
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
 				9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */,
+				920F6A79247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				925994E62444A8D200044253 /* TimeSettingViewController.swift in Sources */,
 				9205E17E24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
@@ -1590,6 +1616,7 @@
 				9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */,
 				92CE520D2168D4D200538E01 /* TableDataSource.swift in Sources */,
+				920F6A71247C03D400360C3B /* FudaSetsViewController.swift in Sources */,
 				92A6EB7F241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
@@ -1634,6 +1661,7 @@
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				925994F32449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
+				920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
