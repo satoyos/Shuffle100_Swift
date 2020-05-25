@@ -31,12 +31,24 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         gotoPoemPickerScreen(app)
         showActionSheetforFudaSetSaving(app)
         selectSaveAsNewSet(app)
-        // when
-        app.alerts.textFields.element.tap()
-        app.alerts.textFields.element.typeText("テスト札セット")
-        app.buttons["決定"].tap()
-        // then
-        XCTAssert(app.alerts.staticTexts["保存完了"].exists)
+        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
+            // when
+            app.alerts.textFields.element.tap()
+            app.alerts.textFields.element.typeText("テスト札セット")
+            app.buttons["決定"].tap()
+            // then
+            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
+            // when
+            app.alerts.buttons["OK"].tap()
+            // then
+            XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
+        }
+        XCTContext.runActivity(named: "保存済みの札セットがある状態でツールバーの「まとめて選ぶ」を選択すると、既存の札セットを呼び出す選択肢が現れる") { activity in
+            // when
+            app.toolbars.buttons["まとめて選ぶ"].tap()
+            // then
+            XCTAssert(app.sheets.buttons["作った札セットから選ぶ"].exists)
+        }
     }
  
 

@@ -51,6 +51,12 @@ extension PoemPickerViewController: UITableViewDelegate {
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)
+        if settings.savedFudaSets.count > 0 {
+            let selectSavedSetAction = UIAlertAction(title: "作った札セットから選ぶ", style: .default) { _ in
+                    // show FudaSetsScreen
+            }
+            ac.addAction(selectSavedSetAction)
+        }
         ac.addAction(ngramAction)
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
