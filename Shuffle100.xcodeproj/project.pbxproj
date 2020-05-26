@@ -57,6 +57,9 @@
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
+		921C7851247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
+		921C7852247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
+		921C7853247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
 		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
 		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
 		92328C2224591D64005E0FEE /* WhatsNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* WhatsNextButton.swift */; };
@@ -458,6 +461,7 @@
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
+		921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FudaSetsTableViewCell.swift; path = Shuffle100/FudaSetsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButtonTest.swift; sourceTree = "<group>"; };
 		92328C2124591D64005E0FEE /* WhatsNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButton.swift; sourceTree = "<group>"; };
@@ -831,6 +835,7 @@
 				92328C2124591D64005E0FEE /* WhatsNextButton.swift */,
 				92FFBF40245FB3F0004D7F79 /* FudaView.swift */,
 				92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */,
+				921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1368,6 +1373,7 @@
 				92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
+				921C7851247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
@@ -1484,6 +1490,7 @@
 				92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
+				921C7852247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				92A6EB7E241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */,
@@ -1635,6 +1642,7 @@
 				92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
+				921C7853247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
 				925994E224449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,

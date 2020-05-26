@@ -30,5 +30,18 @@ class FudaSetsScreenTest: XCTestCase {
         XCTAssertEqual(screen.title, "作った札セットから選ぶ")
         XCTAssertNotNil(screen.tableView)
     }
+    
+    func test_eachCellShowsFudaSetSize() {
+        // given
+        let screen = FudaSetsViewController()
+        screen.loadViewIfNeeded()
+        // when
+        let set = SavedFudaSet(name: "aaa", state100: SelectedState100.init(bool100: Bool100.allSelected()))
+        screen.settings.savedFudaSets.append(set)
+        // then
+        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(cell.textLabel?.text, "aaa")
+        XCTAssertEqual(cell.detailTextLabel?.text, "100首")
+    }
 
 }

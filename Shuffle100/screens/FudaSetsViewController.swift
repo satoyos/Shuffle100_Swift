@@ -19,13 +19,13 @@ class FudaSetsViewController: SettingsAttachedViewController {
         navigationItem.prompt = "百首読み上げ"
         self.title = "作った札セットから選ぶ"
         self.tableView = createTableViewForScreen()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tableView.register(FudaSetsTableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
     }
     
 
     private func createTableViewForScreen() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+        let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
