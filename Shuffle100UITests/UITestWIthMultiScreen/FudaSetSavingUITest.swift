@@ -53,8 +53,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             // when
             app.sheets.buttons["作った札セットから選ぶ"].tap()
             // then
-            //
-            //  札セット画面が表示される確認
+            waitToAppear(for: app.navigationBars["作った札セットから選ぶ"], timeout: 3)
         }
     }
  
