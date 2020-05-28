@@ -16,8 +16,8 @@ extension FudaSetsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
-            $0.textLabel?.text = "aaa"
             let fudaSet = settings.savedFudaSets[indexPath.row]
+            $0.textLabel?.text = fudaSet.name
             $0.detailTextLabel?.text = "\(fudaSet.state100.selectedNum)首"
         }
         return cell
