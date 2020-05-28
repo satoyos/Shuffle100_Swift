@@ -31,10 +31,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         gotoPoemPickerScreen(app)
         showActionSheetforFudaSetSaving(app)
         selectSaveAsNewSet(app)
+        let testName = "テスト札セット"
         XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
             // when
             app.alerts.textFields.element.tap()
-            app.alerts.textFields.element.typeText("テスト札セット")
+            app.alerts.textFields.element.typeText(testName)
             app.buttons["決定"].tap()
             // then
             XCTAssert(app.alerts.staticTexts["保存完了"].exists)
@@ -54,6 +55,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             app.sheets.buttons["作った札セットから選ぶ"].tap()
             // then
             waitToAppear(for: app.navigationBars["作った札セットから選ぶ"], timeout: 3)
+            XCTAssert(app.cells.staticTexts[testName].exists)
         }
     }
  
