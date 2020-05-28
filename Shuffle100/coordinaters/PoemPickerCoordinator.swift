@@ -14,6 +14,7 @@ final class PoemPickerCoordinator: Coordinator {
     private var screen: UIViewController?
     private var store: StoreManager
     private var ngramPickerCoordinator: NgramPickerCoordinator!
+    private var fudaSetsCoordinator: FudaSetsCoordinator!
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
@@ -34,6 +35,9 @@ final class PoemPickerCoordinator: Coordinator {
         screen.openNgramPickerAction = { [weak self] in
             self?.openNgramPicker()
         }
+        screen.openFudaSetsScreenAction = { [weak self] in
+            self?.openFudaSetsScreen()
+        }
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }
@@ -42,5 +46,11 @@ final class PoemPickerCoordinator: Coordinator {
         let coordinator = NgramPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.ngramPickerCoordinator = coordinator
+    }
+    
+    internal func openFudaSetsScreen() {
+        let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
+        coordinator.start()
+        self.fudaSetsCoordinator = coordinator
     }
 }
