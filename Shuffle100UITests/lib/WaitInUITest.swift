@@ -8,7 +8,13 @@
 
 import XCTest
 
-extension XCTestCase {
+protocol WaitInUITest {
+    func waitToAppear(for element: XCUIElement, timeout: TimeInterval,
+ file: StaticString, line: UInt) -> Void
+    func waitToHittable(for element: XCUIElement, timeout: TimeInterval, file: StaticString, line: UInt) -> XCUIElement
+}
+
+extension WaitInUITest {
     func waitToAppear(for element: XCUIElement,
                       timeout: TimeInterval = 5,
                       file: StaticString = #file,
@@ -31,3 +37,4 @@ extension XCTestCase {
     }
 }
 
+extension XCTestCase: WaitInUITest {}
