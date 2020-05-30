@@ -43,27 +43,28 @@ class RecitePoemScreenTest: XCTestCase {
         XCTAssertEqual(screen.recitePoemView.playButton.accessibilityIdentifier, "waitingForPause")
     }
     
-    func test_rewindButtonPlayerTimeToZero() {
-        // given
-        screen.playJoka()
-        // when
-        sleep(1)
-        let rewindButton = screen.recitePoemView.rewindButton
-        rewindButton.tap!(rewindButton)
-        // then
-        XCTAssertEqual(screen.currentPlayer?.currentTime, 0)
-    }
-    
-    func test_forwardButtonSetPlayterStop() {
-        // given
-        screen.playJoka()
-        // when
-        sleep(1)
-        let forwardButton = screen.recitePoemView.forwardButton
-        forwardButton.tap!(forwardButton)
-        // then
-        XCTAssertFalse(screen.currentPlayer!.isPlaying)
-    }
+//    func test_rewindButtonPlayerTimeToZero() {
+//        // given
+//        screen.playJoka()
+//        // when
+//        sleep(2)
+//        let rewindButton = screen.recitePoemView.rewindButton
+//        rewindButton.tap!(rewindButton)
+//        // then
+//        XCTAssertEqual(screen.currentPlayer?.currentTime, 0)
+//    }
+//    
+//    func test_forwardButtonSetPlayterStop() {
+//        // given
+//        screen.playJoka()
+//        // when
+//        sleep(2)
+//        let forwardButton = screen.recitePoemView.forwardButton
+//        forwardButton.tap!(forwardButton)
+//        
+//        // then
+//        XCTAssertFalse(screen.currentPlayer!.isPlaying)
+//    }
     
     func test_playNumberedPoemCauseNoError() {
         XCTAssertNoThrow(screen.playNumberedPoem(number: 1, side: .shimo, count: 1))
