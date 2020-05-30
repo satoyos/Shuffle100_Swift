@@ -83,8 +83,9 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
         // when
         app.buttons["決定"].tap()
         // then
+        let button = waitToHittable(for: app.buttons["戻る"], timeout: 3)
         XCTAssert(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
-        app.buttons["戻る"].tap()
+        button.tap()
         // then
         XCTAssertFalse(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
         XCTAssert(app.staticTexts["新しい札セットの名前"].exists)
@@ -95,7 +96,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             // when
             app.buttons["保存"].tap()
             // then
-            XCTAssert(app.staticTexts["選んでいる札をどのように保存しますか？"].exists)
+            waitToAppear(for: app.staticTexts["選んでいる札をどのように保存しますか？"], timeout: 3)
             XCTAssert(app.buttons[saveNewFudaSetStr].exists)
             // iPadでは、ActionSheetでキャンセルボタンが表示されない。
             if UIDevice.current.userInterfaceIdiom == .phone {
