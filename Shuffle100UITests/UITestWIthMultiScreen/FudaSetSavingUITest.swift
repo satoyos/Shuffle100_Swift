@@ -29,9 +29,12 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
     func test_saveNewFudaSet() {
         // given
         gotoPoemPickerScreen(app)
+        app.cells["001"].tap()
+        app.cells["002"].tap()
+        app.cells["004"].tap()
         showActionSheetforFudaSetSaving(app)
         selectSaveAsNewSet(app)
-        let testName = "テスト札セット"
+        let testName = "97枚セット"
         XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
             // when
             app.alerts.textFields.element.tap()
