@@ -22,6 +22,14 @@ class FudaSetsCoordinator: Coordinator {
     
     func start() {
         let screen = FudaSetsViewController(settings: settings)
+        screen.saveSettingsAction = { [store, settings] in
+            assert(true, "<Save> 選んだ歌のデータをセーブするよ！")
+            do {
+                try store.save(value: settings, key: Settings.userDefaultKey)
+            } catch {
+                assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
+            }
+        }
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }

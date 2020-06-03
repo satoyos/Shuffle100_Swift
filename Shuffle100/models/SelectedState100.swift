@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SelectedState100: Codable {
+class SelectedState100: Codable, Equatable {
     static let defaultState = true
     var bools: Array<Bool>
     var selectedNum: Int {
@@ -20,7 +20,12 @@ class SelectedState100: Codable {
     init(bool100: Bool100){
         bools = bool100.bools
     }
-    
+
+    // Equatable
+    static func == (lhs: SelectedState100, rhs: SelectedState100) -> Bool {
+        lhs.bools == rhs.bools
+    }
+      
     static func createOf(bool: Bool) -> SelectedState100 {
         let initBool100 = SelectedState100.get_bool100_of(bool: bool)
         return SelectedState100(bool100: initBool100)
