@@ -9,7 +9,9 @@
 import UIKit
 
 extension FudaSetsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        settings.state100 = settings.savedFudaSets[indexPath.row].state100
+    }
 }
 
 

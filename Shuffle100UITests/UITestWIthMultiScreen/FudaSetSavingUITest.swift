@@ -8,7 +8,7 @@
 
 import XCTest
 
-class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
+class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
     private var app = XCUIApplication()
     private let saveNewFudaSetStr = "新しい札セットとして保存する"
     
@@ -28,7 +28,10 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
     
     func test_saveNewFudaSet() {
         // given
+        // デフォルトの設定では全ての歌が選ばれている状態
+        allPoemsAreSelectedAtHomeScreen(app)
         gotoPoemPickerScreen(app)
+        // check
         app.cells["001"].tap()
         app.cells["002"].tap()
         app.cells["004"].tap()
@@ -47,9 +50,18 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             // then
             XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
         }
+        XCTContext.runActivity(named: "一旦全ての歌を選択した状態に戻し、トップ画面に戻ると、100首選ばれていることが確認できる") { _ in
+            // when
+            let button = waitToHittable(for: app.buttons["全て選択"], timeout: 2)
+            button.tap()
+            goBackToHomeScreen(app)
+            allPoemsAreSelectedAtHomeScreen(app)
+        }
+        gotoPoemPickerScreen(app)
         XCTContext.runActivity(named: "保存済みの札セットがある状態でツールバーの「まとめて選ぶ」を選択すると、既存の札セットを呼び出す選択肢が現れる") { activity in
             // when
-            app.toolbars.buttons["まとめて選ぶ"].tap()
+            let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
+            button.tap()
             // then
             XCTAssert(app.sheets.buttons["作った札セットから選ぶ"].exists)
         }
@@ -59,6 +71,15 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             // then
             waitToAppear(for: app.navigationBars["作った札セットから選ぶ"], timeout: 3)
             XCTAssert(app.cells.staticTexts[testName].exists)
+            XCTAssert(app.cells.staticTexts["97首"].exists)
+        }
+        XCTContext.runActivity(named: "選んだ既存の札セットの歌が選択された状態になっている") { _ in
+            // when
+            app.cells.staticTexts[testName].tap()
+            // then
+            app.navigationBars.buttons["歌を選ぶ"].tap()
+            goBackToHomeScreen(app)
+            XCTAssert(app.cells.staticTexts["97首"].exists)
         }
     }
  
@@ -115,5 +136,9 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils {
             // then
             waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: 2)
         }
+    }
+    
+    private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {
+        XCTAssert(app.cells.staticTexts["100首"].exists)
     }
 }

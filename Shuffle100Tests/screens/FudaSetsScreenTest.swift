@@ -43,5 +43,35 @@ class FudaSetsScreenTest: XCTestCase {
         XCTAssertEqual(cell.textLabel?.text, "aaa")
         XCTAssertEqual(cell.detailTextLabel?.text, "100首")
     }
+    
+    func test_tapFudaSetCellChangesSelectedPoems() {
+        // given
+        var screen: FudaSetsViewController!
+        let fullSelectedState = SelectedState100.createOf(bool: true)
+        var boolArray = Bool100.allFalseBoolArray()
+        boolArray[0] = true
+        boolArray[1] = true
+        boolArray[4] = true
+        let partialySelectedState100 = SelectedState100(bool100: Bool100(bools: boolArray))
+        XCTContext.runActivity(named: "デフォルトでは100首選ばれている") { _ in
+            // when
+            screen = FudaSetsViewController()
+            // then
+            XCTAssertEqual(screen.settings.state100, fullSelectedState)
+            XCTAssertNotEqual(screen.settings.state100, partialySelectedState100)
+        }
+        XCTContext.runActivity(named: "3種だけのセットを選ぶと、settingsが保持する歌選択状態も上書きされる") { _ in
+            // given
+            let fudaSet = SavedFudaSet(name: "3首セット", state100: partialySelectedState100)
+            screen.settings.savedFudaSets.append(fudaSet)
+            XCTAssertEqual(screen.settings.savedFudaSets.count, 1)
+            // when
+            screen.loadViewIfNeeded()
+            screen.tableView(screen.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+            // then
+            XCTAssertEqual(screen.settings.state100, partialySelectedState100)
+        }
+    }
+    
 
 }

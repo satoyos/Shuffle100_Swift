@@ -22,7 +22,11 @@ class FudaSetsViewController: SettingsAttachedViewController {
         tableView.register(FudaSetsTableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        saveSettingsAction?()
+        super.viewWillDisappear(animated)
+    }
 
     private func createTableViewForScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .plain)
