@@ -84,6 +84,7 @@ extension PoemPickerViewController: UITableViewDelegate {
     func addNewFudaSet(name: String) {
         let newFudaSet = SavedFudaSet(name: name, state100: self.settings.state100)
         self.settings.savedFudaSets.append(newFudaSet)
+        self.saveSettingsAction?()
         showSuccessfullySavedMessage(name: name)
     }
     
