@@ -11,6 +11,8 @@ import XCTest
 class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
     private var app = XCUIApplication()
     private let saveNewFudaSetStr = "新しい札セットとして保存する"
+    private let test97SetName = "97枚セット"
+
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -31,25 +33,8 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUI
         // デフォルトの設定では全ての歌が選ばれている状態
         allPoemsAreSelectedAtHomeScreen(app)
         gotoPoemPickerScreen(app)
-        // check
-        app.cells["001"].tap()
-        app.cells["002"].tap()
-        app.cells["004"].tap()
-        showActionSheetforFudaSetSaving(app)
-        selectSaveAsNewSet(app)
-        let testName = "97枚セット"
-        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
-            // when
-            app.alerts.textFields.element.tap()
-            app.alerts.textFields.element.typeText(testName)
-            app.buttons["決定"].tap()
-            // then
-            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
-            // when
-            app.alerts.buttons["OK"].tap()
-            // then
-            XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
-        }
+        // when
+        add97FudaSetAsNewOne(app)
         XCTContext.runActivity(named: "一旦全ての歌を選択した状態に戻し、トップ画面に戻ると、100首選ばれていることが確認できる") { _ in
             // when
             let button = waitToHittable(for: app.buttons["全て選択"], timeout: 2)
@@ -70,12 +55,12 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUI
             app.sheets.buttons["作った札セットから選ぶ"].tap()
             // then
             waitToAppear(for: app.navigationBars["作った札セットから選ぶ"], timeout: 3)
-            XCTAssert(app.cells.staticTexts[testName].exists)
+            XCTAssert(app.cells.staticTexts[test97SetName].exists)
             XCTAssert(app.cells.staticTexts["97首"].exists)
         }
         XCTContext.runActivity(named: "選んだ既存の札セットの歌が選択された状態になっている") { _ in
             // when
-            app.cells.staticTexts[testName].tap()
+            app.cells.staticTexts[test97SetName].tap()
             // then
             app.navigationBars.buttons["歌を選ぶ"].tap()
             goBackToHomeScreen(app)
@@ -113,6 +98,30 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUI
         // then
         XCTAssertFalse(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
         XCTAssert(app.staticTexts["新しい札セットの名前"].exists)
+    }
+    
+    func test_fudaSetCellDeletable() {
+        // ToDo!!
+    }
+    
+    private func add97FudaSetAsNewOne(_ app: XCUIApplication) {
+        app.cells["001"].tap()
+        app.cells["002"].tap()
+        app.cells["004"].tap()
+        showActionSheetforFudaSetSaving(app)
+        selectSaveAsNewSet(app)
+        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
+            // when
+            app.alerts.textFields.element.tap()
+            app.alerts.textFields.element.typeText(test97SetName)
+            app.buttons["決定"].tap()
+            // then
+            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
+            // when
+            app.alerts.buttons["OK"].tap()
+            // then
+            XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
+        }
     }
     
     private func showActionSheetforFudaSetSaving(_ app: XCUIApplication) {
