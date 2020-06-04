@@ -8,7 +8,8 @@
 
 import Foundation
 
-class SelectedState100: Codable, Equatable {
+// class SelectedState100: Codable, Equatable {
+struct SelectedState100: Codable, Equatable {
     static let defaultState = true
     var bools: Array<Bool>
     var selectedNum: Int {
@@ -17,7 +18,7 @@ class SelectedState100: Codable, Equatable {
         }
     }
     
-    init(bool100: Bool100){
+    init(bool100: Bool100 = Bool100()){
         bools = bool100.bools
     }
 
@@ -31,11 +32,11 @@ class SelectedState100: Codable, Equatable {
         return SelectedState100(bool100: initBool100)
     }
     
-    convenience init() {
-        let init_value = SelectedState100.defaultState
-        let initBool100 = SelectedState100.get_bool100_of(bool: init_value)
-        self.init(bool100: initBool100)
-    }
+//    convenience init() {
+//        let init_value = SelectedState100.defaultState
+//        let initBool100 = SelectedState100.get_bool100_of(bool: init_value)
+//        self.init(bool100: initBool100)
+//    }
     
     var allSelectedNumbers: [Int] {
         get {
@@ -60,7 +61,7 @@ class SelectedState100: Codable, Equatable {
         }
     }
     
-    func setStateOfNumber(state: Bool, index: Int) throws {
+    mutating func setStateOfNumber(state: Bool, index: Int) throws {
         if index < 1 || index > 100 {
             throw NSError(domain: "indexが範囲外!", code: -1)
         } else {
@@ -68,15 +69,15 @@ class SelectedState100: Codable, Equatable {
         }
     }
     
-    func cancelAll() {
+    mutating func cancelAll() {
         self.bools = Bool100.allFalseBoolArray()
     }
     
-    func selectAll() {
+    mutating func selectAll() {
         self.bools = Bool100.allTrueBoolArray()
     }
     
-    func selectOf(number: Int) {
+    mutating func selectOf(number: Int) {
         do {
             try self.setStateOfNumber(state: true, index: number)
         } catch {
@@ -84,7 +85,7 @@ class SelectedState100: Codable, Equatable {
         }
     }
     
-    func cancelOf(number: Int) {
+    mutating func cancelOf(number: Int) {
         do {
             try self.setStateOfNumber(state: false, index: number)
         } catch {
@@ -93,23 +94,23 @@ class SelectedState100: Codable, Equatable {
         }
     }
     
-    func selectInNumbers(_ array: Array<Int>) {
+    mutating func selectInNumbers(_ array: Array<Int>) {
         for num in array {
             selectOf(number: num)
         }
     }
     
-    func cancelInNumbers(_ array: Array<Int>) {
+    mutating func cancelInNumbers(_ array: Array<Int>) {
         for num in array {
             cancelOf(number: num)
         }
     }
     
-    func reverseInIndex(_ idx: Int) {
+    mutating func reverseInIndex(_ idx: Int) {
         self.bools[idx].toggle()
     }
     
-    func reverseInNumber(_ number: Int) {
+    mutating func reverseInNumber(_ number: Int) {
         self.bools[number-1].toggle()
     }
 }

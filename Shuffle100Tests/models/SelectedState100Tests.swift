@@ -49,7 +49,7 @@ class SelectedState100Tests: XCTestCase {
     
     
     func test_ofNumber() {
-        let state100 = SelectedState100()
+        var state100 = SelectedState100()
         // 添え字15の要素のみ、デフォルトの初期値と逆にする
         state100.bools[15] = !init_value
         // このメソッドでは、bools[]の添え字よりも1多い数のindexでアクセスする
@@ -62,7 +62,7 @@ class SelectedState100Tests: XCTestCase {
     }
     
     func test_setStatusOfNumber() {
-        let state100 = SelectedState100()
+        var state100 = SelectedState100()
         let idx = 15 // 1はじまりの番号
         XCTAssertEqual(try state100.ofNumber(idx),init_value)
         
@@ -79,7 +79,7 @@ class SelectedState100Tests: XCTestCase {
 
     func test_cancellAll() {
         // すべて「選択済み」(true)で初期化しておく
-        let state100 = SelectedState100.createOf(bool: true)
+        var state100 = SelectedState100.createOf(bool: true)
         // 全キャンセルのメソッドを呼び出す
         state100.cancelAll()
         // 結果の確認
@@ -90,7 +90,7 @@ class SelectedState100Tests: XCTestCase {
     
     func test_selectAll() {
         // 「選択なし」状態で初期化しておく
-        let state100 = SelectedState100.createOf(bool: false)
+        var state100 = SelectedState100.createOf(bool: false)
         XCTAssertEqual(state100.bools[3], false)
         // 全選択のメソッドを呼び出す
         state100.selectAll()
@@ -101,14 +101,14 @@ class SelectedState100Tests: XCTestCase {
     }
 
     func test_selectedNum() {
-        let state100 = SelectedState100.createOf(bool: false)
+        var state100 = SelectedState100.createOf(bool: false)
         for i in [1,3,5] {state100.bools[i] = true}
         XCTAssertEqual(state100.selectedNum, 3)
     }
     
     func test_selectOfNumber() {
         // 10番の要素だけを選択するようにする
-        let state100 = SelectedState100.createOf(bool: false)
+        var state100 = SelectedState100.createOf(bool: false)
         XCTAssertEqual(try state100.ofNumber(10), false)
         
         // 10番目の要素を指定してselectOf()を呼ぶと、その要素だけがtrueに変わる。
@@ -119,7 +119,7 @@ class SelectedState100Tests: XCTestCase {
     
     func test_cancelOfNumber() {
         // 全て選択(true)状態で初期化する
-        let state100 = SelectedState100.createOf(bool: true)
+        var state100 = SelectedState100.createOf(bool: true)
         XCTAssertEqual(try state100.ofNumber(6), true)
         
         // 6番目の要素を指定してcancelOf()を呼ぶと、その要素だけがfalseに変わる
@@ -130,7 +130,7 @@ class SelectedState100Tests: XCTestCase {
     
     func test_selectInNumbers() {
         // 全て選択(false)状態で初期化する
-        let state100 = SelectedState100.createOf(bool: false)
+        var state100 = SelectedState100.createOf(bool: false)
         // 選択したい要素を、1始まりの番号の配列で指定する
         state100.selectInNumbers([1, 5, 10])
         // then
@@ -140,7 +140,7 @@ class SelectedState100Tests: XCTestCase {
     
     func test_cancelInNumbers() {
         // 全てキャンセル(false)状態で初期化する
-        let state100 = SelectedState100.createOf(bool: true)
+        var state100 = SelectedState100.createOf(bool: true)
         // キャンセルしたい要素を、1はじまりの番号の配列で指定する
         state100.cancelInNumbers([2, 4, 8, 16, 32, 64])
         XCTAssertEqual(try state100.ofNumber(8), false)
@@ -149,7 +149,7 @@ class SelectedState100Tests: XCTestCase {
     
     func test_reverse_in_index() {
         // given
-        let state100 = SelectedState100.createOf(bool: true)
+        var state100 = SelectedState100.createOf(bool: true)
         // when
         state100.reverseInIndex(0)
         // then
@@ -158,7 +158,7 @@ class SelectedState100Tests: XCTestCase {
     
     func test_reverseInNumber() {
         // giben
-        let state100 = SelectedState100.createOf(bool: true)
+        var state100 = SelectedState100.createOf(bool: true)
         // when
         state100.reverseInNumber(4)
         // then

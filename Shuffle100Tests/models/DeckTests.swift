@@ -116,7 +116,7 @@ class DeckTests: XCTestCase {
     }
     
     func test_createFromSelectedState100() {
-        let bool100 = SelectedState100.createOf(bool: false)
+        var bool100 = SelectedState100.createOf(bool: false)
         bool100.selectOf(number: 1)
         bool100.selectOf(number: 100)
         XCTAssertEqual(bool100.selectedNum, 2)
@@ -129,7 +129,7 @@ class DeckTests: XCTestCase {
     }
     
     func test_addFakePoems() {
-        let st100 = SelectedState100.createOf(bool: false)
+        var st100 = SelectedState100.createOf(bool: false)
 
         // まず、3枚選んだ状態に設定
         st100.selectInNumbers([2, 3, 6])

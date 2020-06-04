@@ -85,7 +85,7 @@ class PoemSupplierTests: XCTestCase {
     
     func test_addFakePoems() {
         // given
-        let state100 = SelectedState100.createOf(bool: false)
+        var state100 = SelectedState100.createOf(bool: false)
         state100.selectOf(number: 3)
         state100.selectOf(number: 5)
         let deck = Deck.createFrom(state100: state100)
