@@ -8,7 +8,6 @@
 
 import Foundation
 
-// class SelectedState100: Codable, Equatable {
 struct SelectedState100: Codable, Equatable {
     static let defaultState = true
     var bools: Array<Bool>
@@ -31,12 +30,6 @@ struct SelectedState100: Codable, Equatable {
         let initBool100 = SelectedState100.get_bool100_of(bool: bool)
         return SelectedState100(bool100: initBool100)
     }
-    
-//    convenience init() {
-//        let init_value = SelectedState100.defaultState
-//        let initBool100 = SelectedState100.get_bool100_of(bool: init_value)
-//        self.init(bool100: initBool100)
-//    }
     
     var allSelectedNumbers: [Int] {
         get {
