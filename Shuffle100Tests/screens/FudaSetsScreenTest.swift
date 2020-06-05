@@ -48,11 +48,8 @@ class FudaSetsScreenTest: XCTestCase {
         // given
         var screen: FudaSetsViewController!
         let fullSelectedState = SelectedState100.createOf(bool: true)
-        var boolArray = Bool100.allFalseBoolArray()
-        boolArray[0] = true
-        boolArray[1] = true
-        boolArray[4] = true
-        let partialySelectedState100 = SelectedState100(bool100: Bool100(bools: boolArray))
+        
+        let partialySelectedState100 = selectedState97()
         XCTContext.runActivity(named: "デフォルトでは100首選ばれている") { _ in
             // when
             screen = FudaSetsViewController()
@@ -73,5 +70,27 @@ class FudaSetsScreenTest: XCTestCase {
         }
     }
     
-
+    private func selectedState97() -> SelectedState100 {
+        var boolArray = Bool100.allFalseBoolArray()
+        boolArray[0] = true
+        boolArray[1] = true
+        boolArray[4] = true
+        return SelectedState100(bool100: Bool100(bools: boolArray))
+    }
+    
+    func test_deleteFudaSet() {
+        // given
+        let screen = FudaSetsViewController()
+        let fudaSet = SavedFudaSet(name: "97枚セット", state100: selectedState97())
+        screen.settings.savedFudaSets.append(fudaSet)
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let indexPath = IndexPath(row: 0, section: 0)
+        XCTAssert(screen.tableView(screen.tableView, canEditRowAt: indexPath))
+        // when
+        screen.tableView(screen.tableView, commit: .delete, forRowAt: indexPath)
+        // then
+        XCTAssertEqual(screen.settings.savedFudaSets.count, 0)
+    }
 }
