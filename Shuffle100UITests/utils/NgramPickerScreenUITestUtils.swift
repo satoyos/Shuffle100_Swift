@@ -9,12 +9,13 @@
 import XCTest
 
 protocol NgramPickerScreenTestUtils: PoemPickerScreenUITestUtils {
-    func selectAllNimaiFudaFromPoemPickerScreen(_ app: XCUIApplication)
+    func selectAll2maiFudaFromPoemPickerScreen(_ app: XCUIApplication)
+    func select93Excluding1jiKimari(_ app: XCUIApplication)
     func goBackToPoemPickerScreen(_ app: XCUIApplication)
 }
 
 extension NgramPickerScreenTestUtils {
-    func selectAllNimaiFudaFromPoemPickerScreen(_ app: XCUIApplication) {
+    func selectAll2maiFudaFromPoemPickerScreen(_ app: XCUIApplication) {
         XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
             let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
             button.tap()
@@ -33,5 +34,11 @@ extension NgramPickerScreenTestUtils {
         app.navigationBars.buttons["歌を選ぶ"].tap()
         // then
         XCTAssert(app.navigationBars["歌を選ぶ"].exists)
+    }
+    
+    func select93Excluding1jiKimari(_ app: XCUIApplication) {
+        gotoNgramPickerScreenFromPickerScreen(app)
+        app.cells["just_one"].tap()
+        goBackToPoemPickerScreen(app)
     }
 }

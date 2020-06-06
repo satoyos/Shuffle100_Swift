@@ -29,13 +29,11 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     func test_tapFullSelectedCell() {
         // given
         gotoPoemPickerScreen(app)
-        gotoNgramPickerScreenFromPickerScreen(app)
         // when
-        app.cells["just_one"].tap()
+        select93Excluding1jiKimari(app)
         // then
         XCTContext.runActivity(named: "トップ画面に戻ると、一字決まり分の選択が外れた「93首」が表示されている") { activity in
             // when
-            goBackToPoemPickerScreen(app)
             goBackToHomeScreen(app)
             // then
             XCTAssert(app.staticTexts["93首"].exists)
@@ -62,7 +60,7 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
         // given
         gotoPoemPickerScreen(app)
         // whwn
-        selectAllNimaiFudaFromPoemPickerScreen(app)
+        selectAll2maiFudaFromPoemPickerScreen(app)
         // then
         goBackToHomeScreen(app)
         XCTAssert(app.staticTexts["10首"].exists)
