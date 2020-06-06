@@ -37,6 +37,10 @@ extension NgramPickerScreenTestUtils {
     }
     
     func select93Excluding1jiKimari(_ app: XCUIApplication) {
+        XCTContext.runActivity(named: "全ての歌を選択する") { activity in
+            let button = waitToHittable(for: app.buttons["全て選択"], timeout: 3)
+            button.tap()
+        }
         gotoNgramPickerScreenFromPickerScreen(app)
         app.cells["just_one"].tap()
         goBackToPoemPickerScreen(app)

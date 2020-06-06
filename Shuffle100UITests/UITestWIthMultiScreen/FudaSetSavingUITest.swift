@@ -8,7 +8,7 @@
 
 import XCTest
 
-class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
+class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
     private var app = XCUIApplication()
     private let saveNewFudaSetStr = "新しい札セットとして保存する"
     private let test97SetName = "97枚セット"
