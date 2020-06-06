@@ -6,12 +6,12 @@
 //  Copyright © 2020 里 佳史. All rights reserved.
 //
 
-import Foundation
 import XCTest
 
 protocol PoemPickerScreenUITestUtils: WaitInUITest {
-    func goBackToHomeScreen(_ app: XCUIApplication) -> Void
+    func goBackToHomeScreen(_ app: XCUIApplication)
     func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication)
+    func select97Excluding_1_2_4(_ app: XCUIApplication)
 }
 
 extension PoemPickerScreenUITestUtils {
@@ -31,4 +31,13 @@ extension PoemPickerScreenUITestUtils {
         // then
         waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: 5)
     }
+    
+    func select97Excluding_1_2_4(_ app: XCUIApplication) {
+        let button = waitToHittable(for: app.buttons["全て選択"], timeout: 3)
+        button.tap()
+        app.cells["001"].tap()
+        app.cells["002"].tap()
+        app.cells["004"].tap()
+    }
+
 }

@@ -88,6 +88,7 @@
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* HomeScreenTest.swift */; };
 		9246195C248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195B248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift */; };
+		9246195E248BE29E002B6690 /* FudaSetsUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195D248BE29E002B6690 /* FudaSetsUITestUtils.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
@@ -488,6 +489,7 @@
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9246195B248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenUITestUtils.swift; sourceTree = "<group>"; };
+		9246195D248BE29E002B6690 /* FudaSetsUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsUITestUtils.swift; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
@@ -973,6 +975,7 @@
 				92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */,
 				92FFBF56246256B5004D7F79 /* ExitGameUITestUtils.swift */,
 				9246195B248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift */,
+				9246195D248BE29E002B6690 /* FudaSetsUITestUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1685,6 +1688,7 @@
 				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
+				9246195E248BE29E002B6690 /* FudaSetsUITestUtils.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
 				92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */,

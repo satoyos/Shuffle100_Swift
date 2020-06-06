@@ -8,9 +8,9 @@
 
 import XCTest
 
-class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
+class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils, FudaSetsUITestUtils {
     private var app = XCUIApplication()
-    private let saveNewFudaSetStr = "新しい札セットとして保存する"
+//    private let saveNewFudaSetStr = "新しい札セットとして保存する"
     private let test97SetName = "97枚セット"
 
     
@@ -34,7 +34,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenT
         allPoemsAreSelectedAtHomeScreen(app)
         gotoPoemPickerScreen(app)
         // when
-        add97FudaSetAsNewOne(app)
+        add97FudaSetAsNewOne(app, setName: test97SetName)
         XCTContext.runActivity(named: "一旦全ての歌を選択した状態に戻し、トップ画面に戻ると、100首選ばれていることが確認できる") { _ in
             // when
             let button = waitToHittable(for: app.buttons["全て選択"], timeout: 2)
@@ -102,49 +102,6 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenT
     
     func test_fudaSetCellDeletable() {
         // ToDo!!
-    }
-    
-    private func add97FudaSetAsNewOne(_ app: XCUIApplication) {
-        app.cells["001"].tap()
-        app.cells["002"].tap()
-        app.cells["004"].tap()
-        showActionSheetforFudaSetSaving(app)
-        selectSaveAsNewSet(app)
-        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
-            // when
-            app.alerts.textFields.element.tap()
-            app.alerts.textFields.element.typeText(test97SetName)
-            app.buttons["決定"].tap()
-            // then
-            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
-            // when
-            app.alerts.buttons["OK"].tap()
-            // then
-            XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
-        }
-    }
-    
-    private func showActionSheetforFudaSetSaving(_ app: XCUIApplication) {
-        XCTContext.runActivity(named: "「保存」ボタンを押すと、アクションシートが現れる") { activity in
-            // when
-            app.buttons["保存"].tap()
-            // then
-            waitToAppear(for: app.staticTexts["選んでいる札をどのように保存しますか？"], timeout: 3)
-            XCTAssert(app.buttons[saveNewFudaSetStr].exists)
-            // iPadでは、ActionSheetでキャンセルボタンが表示されない。
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                XCTAssert(app.buttons["キャンセル"].exists)
-            }
-        }
-    }
-    
-    private func selectSaveAsNewSet(_ app: XCUIApplication) {
-        XCTContext.runActivity(named: "「新しい札セットとして保存」を選択すると、新セットの名前を入力するためのダイアログが現れる") { activity in
-            // when
-            app.buttons[saveNewFudaSetStr].tap()
-            // then
-            waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: 2)
-        }
     }
     
     private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {
