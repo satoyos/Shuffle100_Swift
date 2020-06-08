@@ -8,7 +8,9 @@
 
 import XCTest
 
-class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils, FudaSetsUITestUtils {
+class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtils {
+    let selectBySetStr = "作った札セットから選ぶ"
+    
     private var app = XCUIApplication()
 //    private let saveNewFudaSetStr = "新しい札セットとして保存する"
     private let test97SetName = "97枚セット"
@@ -48,13 +50,13 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenT
             let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
             button.tap()
             // then
-            XCTAssert(app.sheets.buttons["作った札セットから選ぶ"].exists)
+            XCTAssert(app.sheets.buttons[selectBySetStr].exists)
         }
         XCTContext.runActivity(named: "既存の札セットから選ぶアクションを選択すると、札セットの一覧画面が表示される") { _ in
             // when
-            app.sheets.buttons["作った札セットから選ぶ"].tap()
+            app.sheets.buttons[selectBySetStr].tap()
             // then
-            waitToAppear(for: app.navigationBars["作った札セットから選ぶ"], timeout: 3)
+            waitToAppear(for: app.navigationBars[selectBySetStr], timeout: 3)
             XCTAssert(app.cells.staticTexts[test97SetName].exists)
             XCTAssert(app.cells.staticTexts["97首"].exists)
         }
@@ -100,8 +102,28 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenT
         XCTAssert(app.staticTexts["新しい札セットの名前"].exists)
     }
     
+    
+    //
+    // このテストを実行するときには、SimulatorのI/O -> Keyboardの中の
+    // "Connet Hardware Keyboard"のチェックを外しておくこと！
+    // そうしないと、動作不定になる。
+    //
     func test_fudaSetCellDeletable() {
-        // ToDo!!
+        // given
+        gotoPoemPickerScreen(app)
+        let set97name = "97枚セット"
+        add97FudaSetAsNewOne(app, setName: set97name)
+        add2maiFudaSetAsNewOne(app, setName: "2枚札セット")
+        // when
+//        続きは、札セット一覧画面に遷移するところから！
+        
+        
+        
+//        let button = waitToHittable(for: app.sheets.buttons[selectBySetStr], timeout: 3)
+//        button.tap()
+//        let cell = waitToHittable(for: app.cells["2枚札セット"], timeout: 3)
+//        cell.tap()
+        
     }
     
     private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {

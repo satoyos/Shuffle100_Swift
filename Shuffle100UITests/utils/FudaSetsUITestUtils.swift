@@ -10,8 +10,9 @@ import XCTest
 
 fileprivate let saveNewFudaSetStr = "新しい札セットとして保存する"
 
-protocol FudaSetsUITestUtils: PoemPickerScreenUITestUtils {
+protocol FudaSetsUITestUtils: NgramPickerScreenTestUtils {
     func add97FudaSetAsNewOne(_ app: XCUIApplication, setName: String)
+    func add2maiFudaSetAsNewOne(_ app: XCUIApplication, setName: String)
     func showActionSheetforFudaSetSaving(_ app: XCUIApplication)
     func selectSaveAsNewSet(_ app: XCUIApplication)
 }
@@ -19,20 +20,19 @@ protocol FudaSetsUITestUtils: PoemPickerScreenUITestUtils {
 extension FudaSetsUITestUtils {
     func add97FudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
         select97Excluding_1_2_4(app)
-        showActionSheetforFudaSetSaving(app)
-        selectSaveAsNewSet(app)
-        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
-            // when
-            app.alerts.textFields.element.tap()
-            app.alerts.textFields.element.typeText(setName)
-            app.buttons["決定"].tap()
-            // then
-            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
-            // when
-            app.alerts.buttons["OK"].tap()
+//        showActionSheetforFudaSetSaving(app)
+//        selectSaveAsNewSet(app)
+//        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
+//            // when
+            saveCurrentPoemsAsSet(name: setName, in: app)
             // then
             XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
-        }
+//        }
+    }
+    
+    func add2maiFudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
+        selectAll2maiFudaFromPoemPickerScreen(app)
+        saveCurrentPoemsAsSet(name: setName, in: app)
     }
     
     func showActionSheetforFudaSetSaving(_ app: XCUIApplication) {
@@ -55,6 +55,20 @@ extension FudaSetsUITestUtils {
             app.buttons[saveNewFudaSetStr].tap()
             // then
             waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: 2)
+        }
+    }
+    
+    private func saveCurrentPoemsAsSet(name: String, in app: XCUIApplication) {
+        showActionSheetforFudaSetSaving(app)
+        selectSaveAsNewSet(app)
+        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
+            _ = waitToHittable(for: app.alerts.buttons["決定"], timeout: 2)
+            let textField = app.alerts.textFields["札セットの名前"]
+            textField.tap()
+            textField.typeText(name)
+            app.buttons["決定"].tap()
+            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
+            app.alerts.buttons["OK"].tap()
         }
     }
 }
