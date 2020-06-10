@@ -12,7 +12,6 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     let selectBySetStr = "作った札セットから選ぶ"
     
     private var app = XCUIApplication()
-//    private let saveNewFudaSetStr = "新しい札セットとして保存する"
     private let test97SetName = "97枚セット"
 
     
@@ -156,6 +155,4 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         // then
         waitToAppear(for: app.navigationBars[selectBySetStr], timeout: 3)
     }
-    
-
 }
