@@ -13,6 +13,7 @@ fileprivate let saveNewFudaSetStr = "新しい札セットとして保存する"
 protocol FudaSetsUITestUtils: NgramPickerScreenTestUtils {
     func add97FudaSetAsNewOne(_ app: XCUIApplication, setName: String)
     func add2maiFudaSetAsNewOne(_ app: XCUIApplication, setName: String)
+    func add93FudaSetAsNewOne(_ app: XCUIApplication, setName: String)
     func showActionSheetforFudaSetSaving(_ app: XCUIApplication)
     func selectSaveAsNewSet(_ app: XCUIApplication)
 }
@@ -20,18 +21,19 @@ protocol FudaSetsUITestUtils: NgramPickerScreenTestUtils {
 extension FudaSetsUITestUtils {
     func add97FudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
         select97Excluding_1_2_4(app)
-//        showActionSheetforFudaSetSaving(app)
-//        selectSaveAsNewSet(app)
-//        XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
-//            // when
-            saveCurrentPoemsAsSet(name: setName, in: app)
-            // then
-            XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
-//        }
+        // when
+        saveCurrentPoemsAsSet(name: setName, in: app)
+        // then
+        XCTAssertFalse(app.alerts.staticTexts["保存完了"].exists)
     }
     
     func add2maiFudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
         selectAll2maiFudaFromPoemPickerScreen(app)
+        saveCurrentPoemsAsSet(name: setName, in: app)
+    }
+    
+    func add93FudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
+        select93Excluding1jiKimari(app)
         saveCurrentPoemsAsSet(name: setName, in: app)
     }
     
