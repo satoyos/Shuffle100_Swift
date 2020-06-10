@@ -64,7 +64,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             // when
             app.cells.staticTexts[test97SetName].tap()
             // then
-            app.navigationBars.buttons["歌を選ぶ"].tap()
+            goBackToPoemPickerScreen(app)
             goBackToHomeScreen(app)
             XCTAssert(app.cells.staticTexts["97首"].exists)
         }
@@ -112,21 +112,50 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         // given
         gotoPoemPickerScreen(app)
         let set97name = "97枚セット"
+        let set2maiFudaName = "2枚札セット"
         add97FudaSetAsNewOne(app, setName: set97name)
-        add2maiFudaSetAsNewOne(app, setName: "2枚札セット")
-        // when
-//        続きは、札セット一覧画面に遷移するところから！
-        
-        
-        
-//        let button = waitToHittable(for: app.sheets.buttons[selectBySetStr], timeout: 3)
-//        button.tap()
-//        let cell = waitToHittable(for: app.cells["2枚札セット"], timeout: 3)
-//        cell.tap()
+        add2maiFudaSetAsNewOne(app, setName: set2maiFudaName)
+        gotoFudaSetsScreenFromPoemPicker()
+        XCTContext.runActivity(named: "札セットのセルを左にスワイプして削除ボタンをタップすると、そのセルが消える") { _ in
+            let cell97 = app.cells.staticTexts[set97name]
+            XCTAssert(cell97.exists)
+            // when
+            cell97.swipeLeft()
+            app.tables.buttons["Delete"].tap()
+            // then
+            XCTAssertFalse(cell97.exists)
+            let cell2mai = app.cells.staticTexts[set2maiFudaName]
+            XCTAssert(cell2mai.exists)
+            // when
+            cell2mai.swipeLeft()
+            app.tables.buttons["Delete"].tap()
+            // then
+            XCTAssertFalse(cell2mai.exists)
+            goBackToPoemPickerScreen(app)
+        }
+        XCTContext.runActivity(named: "その後、さらに札セットを新規追加しても、正しく動作する") { _ in
+            let name93 = "一字決まり以外！"
+            add93FudaSetAsNewOne(app, setName: name93)
+            gotoFudaSetsScreenFromPoemPicker()
+            // then
+            XCTAssert(app.cells.staticTexts[name93].exists)
+        }
         
     }
     
     private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {
         XCTAssert(app.cells.staticTexts["100首"].exists)
     }
+    
+    private func gotoFudaSetsScreenFromPoemPicker() {
+        // when
+        let buttonByGroup = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
+        buttonByGroup.tap()
+        let buttonSavedSet = waitToHittable(for: app.sheets.buttons[selectBySetStr], timeout: 3)
+        buttonSavedSet.tap()
+        // then
+        waitToAppear(for: app.navigationBars[selectBySetStr], timeout: 3)
+    }
+    
+
 }
