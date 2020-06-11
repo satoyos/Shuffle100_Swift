@@ -14,6 +14,7 @@ protocol FudaSetsUITestUtils: NgramPickerScreenTestUtils {
     func add97FudaSetAsNewOne(_ app: XCUIApplication, setName: String)
     func add2maiFudaSetAsNewOne(_ app: XCUIApplication, setName: String)
     func add93FudaSetAsNewOne(_ app: XCUIApplication, setName: String)
+    func add1jiKimariFudaSetAsNewOne(_ app: XCUIApplication, setName: String)
     func showActionSheetforFudaSetSaving(_ app: XCUIApplication)
     func selectSaveAsNewSet(_ app: XCUIApplication)
 }
@@ -34,6 +35,11 @@ extension FudaSetsUITestUtils {
     
     func add93FudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
         select93Excluding1jiKimari(app)
+        saveCurrentPoemsAsSet(name: setName, in: app)
+    }
+    
+    func add1jiKimariFudaSetAsNewOne(_ app: XCUIApplication, setName: String) {
+        select1jiKimari(app)
         saveCurrentPoemsAsSet(name: setName, in: app)
     }
     
