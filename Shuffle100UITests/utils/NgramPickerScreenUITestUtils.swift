@@ -11,6 +11,7 @@ import XCTest
 protocol NgramPickerScreenTestUtils: PoemPickerScreenUITestUtils {
     func selectAll2maiFudaFromPoemPickerScreen(_ app: XCUIApplication)
     func select93Excluding1jiKimari(_ app: XCUIApplication)
+    func select1jiKimari(_ app: XCUIApplication)
     func goBackToPoemPickerScreen(_ app: XCUIApplication)
 }
 
@@ -41,6 +42,14 @@ extension NgramPickerScreenTestUtils {
             let button = waitToHittable(for: app.buttons["全て選択"], timeout: 3)
             button.tap()
         }
+        gotoNgramPickerScreenFromPickerScreen(app)
+        app.cells["just_one"].tap()
+        goBackToPoemPickerScreen(app)
+    }
+    
+    func select1jiKimari(_ app: XCUIApplication) {
+        let allCancelButton = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+        allCancelButton.tap()
         gotoNgramPickerScreenFromPickerScreen(app)
         app.cells["just_one"].tap()
         goBackToPoemPickerScreen(app)

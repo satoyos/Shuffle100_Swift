@@ -70,9 +70,15 @@ extension PoemPickerViewController: UITableViewDelegate {
         let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
             self.saveNewFudaSet()
         }
+        let overwriteSetAction = UIAlertAction(title: "前に作った札セットを上書きする", style: .default) { _ in
+            self.overwriteExistingFudaSet()
+        }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "選んでいる札をどのように保存しますか？", message: nil, preferredStyle: .actionSheet)
         ac.addAction(newSetAction)
+        if settings.savedFudaSets.count > 0 {
+            ac.addAction(overwriteSetAction)
+        }
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
             pc.sourceView = button
@@ -115,6 +121,10 @@ extension PoemPickerViewController: UITableViewDelegate {
         ac.addAction(cancelAction)
         ac.addAction(okAction)
         present(ac, animated: true)
+    }
+    
+    internal func overwriteExistingFudaSet() {
+        print("上書きするんだってさ！")
     }
     
     private func showAlertInhibeted(title: String, message: String?, handler: ((UIAlertAction) -> Void)?) {

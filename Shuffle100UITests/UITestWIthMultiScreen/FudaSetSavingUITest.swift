@@ -10,6 +10,7 @@ import XCTest
 
 class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtils {
     let selectBySetStr = "作った札セットから選ぶ"
+    let overwriteExisingSetStr = "前に作った札セットを上書きする"
     
     private var app = XCUIApplication()
     private let test97SetName = "97枚セット"
@@ -139,6 +140,19 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             // then
             XCTAssert(app.cells.staticTexts[name93].exists)
         }
+        
+    }
+    
+    func test_overwriteExistingFudaSet() {
+        // given
+        gotoPoemPickerScreen(app)
+        let name1jiKimariSet = "一字決まり札セット"
+        add1jiKimariFudaSetAsNewOne(app, setName: name1jiKimariSet)
+        // when
+        app.cells["001"].tap()
+        app.navigationBars.buttons["保存"].tap()
+        // then
+        XCTAssert(app.sheets.buttons[overwriteExisingSetStr].exists)
         
     }
     

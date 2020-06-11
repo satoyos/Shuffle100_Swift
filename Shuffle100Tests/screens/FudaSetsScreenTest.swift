@@ -93,4 +93,5 @@ class FudaSetsScreenTest: XCTestCase {
         // then
         XCTAssertEqual(screen.settings.savedFudaSets.count, 0)
     }
+    
 }
