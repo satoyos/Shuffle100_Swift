@@ -54,7 +54,7 @@ extension PoemPickerViewController {
                 guard name.count > 0 else {
                     self.showAlertInhibeted(title: "新しい札セットの名前を決めましょう", message: nil) { action in
                         self.saveNewFudaSet()
-                        alertTextField?.resignFirstResponder()
+//                        alertTextField?.resignFirstResponder()
                     }
                     return
                 }
