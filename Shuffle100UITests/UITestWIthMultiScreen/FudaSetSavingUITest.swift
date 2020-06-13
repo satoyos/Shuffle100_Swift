@@ -79,11 +79,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         button.tap()
         app.buttons["保存"].tap()
         // then
-        XCTAssert(app.staticTexts["歌を選びましょう"].exists)
+        XCTAssert(app.alerts.staticTexts["歌を選びましょう"].exists)
         // when
         app.buttons["戻る"].tap()
         // then
-        XCTAssertFalse(app.staticTexts["歌を選びましょう"].exists)
+        XCTAssertFalse(app.alerts.staticTexts["歌を選びましょう"].exists)
     }
     
     func test_emptyFudaSetNameIsInhibited() {
@@ -95,11 +95,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         app.buttons["決定"].tap()
         // then
         let button = waitToHittable(for: app.buttons["戻る"], timeout: 3)
-        XCTAssert(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
+        XCTAssert(app.alerts.staticTexts["新しい札セットの名前を決めましょう"].exists)
         button.tap()
         // then
         XCTAssertFalse(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
-        XCTAssert(app.staticTexts["新しい札セットの名前"].exists)
+        XCTAssert(app.alerts.staticTexts["新しい札セットの名前"].exists)
     }
     
     
