@@ -152,8 +152,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         app.cells["001"].tap()
         app.navigationBars.buttons["保存"].tap()
         // then
-        XCTAssert(app.sheets.buttons[overwriteExisingSetStr].exists)
-        
+        let button = waitToHittable(for: app.sheets.buttons[overwriteExisingSetStr], timeout: 2)
+        // when
+        button.tap()
+        // then
+        waitToAppear(for: app.alerts.staticTexts["上書きする札セットを選ぶ"], timeout: 2)
     }
     
     private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {

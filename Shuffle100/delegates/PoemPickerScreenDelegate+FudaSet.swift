@@ -67,7 +67,13 @@ extension PoemPickerViewController {
     }
     
     internal func overwriteExistingFudaSet() {
-        print("上書きするんだってさ！")
+        let ac = UIAlertController(title: "上書きする札セットを選ぶ", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
+        let overwriteAction = UIAlertAction(title: "上書きする", style: .default) { _ in
+        }
+        ac.addAction(cancelAction)
+        ac.addAction(overwriteAction)
+        present(ac, animated: true)
     }
 
     private func showSuccessfullySavedMessage(name: String) {
