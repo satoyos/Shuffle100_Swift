@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-extension PoemPickerViewController: UITableViewDataSource {
+extension PoemPickerViewController: UITableViewDataSource, UIPickerViewDataSource {
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -44,6 +45,18 @@ extension PoemPickerViewController: UITableViewDataSource {
         return fontSizeForVerse() * 3
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return settings.savedFudaSets.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return settings.savedFudaSets[row].name
+    }
+        
     private func fontSizeForVerse() -> CGFloat {
         return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
     }

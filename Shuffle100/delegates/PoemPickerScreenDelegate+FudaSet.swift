@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PoemPickerViewController {
+extension PoemPickerViewController: UIPickerViewDelegate {
     internal func showActionSheetForSaving(_ button: UIButton) {
         let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
             self.saveNewFudaSet()
@@ -37,6 +37,13 @@ extension PoemPickerViewController {
         showSuccessfullySavedMessage(name: name)
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currentFudaSet = settings.savedFudaSets[row]
+        let newFudaSet = SavedFudaSet(name: currentFudaSet.name, state100: settings.state100)
+        settings.savedFudaSets[row] = newFudaSet
+        self.saveSettingsAction?()
+    }
+    
     internal func saveNewFudaSet() {
         var alertTextField: UITextField?
 
@@ -54,7 +61,6 @@ extension PoemPickerViewController {
                 guard name.count > 0 else {
                     self.showAlertInhibeted(title: "新しい札セットの名前を決めましょう", message: nil) { action in
                         self.saveNewFudaSet()
-//                        alertTextField?.resignFirstResponder()
                     }
                     return
                 }
@@ -67,7 +73,11 @@ extension PoemPickerViewController {
     }
     
     internal func overwriteExistingFudaSet() {
-        let ac = UIAlertController(title: "上書きする札セットを選ぶ", message: nil, preferredStyle: .alert)
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 250, height: 150))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        let ac = UIAlertController(title: "上書きする札セットを選ぶ", message: "\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        ac.view.addSubview(pickerView)
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let overwriteAction = UIAlertAction(title: "上書きする", style: .default) { _ in
         }

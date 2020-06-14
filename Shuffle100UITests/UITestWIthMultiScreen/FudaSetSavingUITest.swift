@@ -146,17 +146,36 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     func test_overwriteExistingFudaSet() {
         // given
         gotoPoemPickerScreen(app)
+        let set2maiFudaName = "2枚札セット"
+        add2maiFudaSetAsNewOne(app, setName: set2maiFudaName)
         let name1jiKimariSet = "一字決まり札セット"
         add1jiKimariFudaSetAsNewOne(app, setName: name1jiKimariSet)
         // when
-        app.cells["001"].tap()
+        XCTContext.runActivity(named: "テストのために、わざと「1枚札セット」にもう１枚足してみる") { _ in
+            app.cells["001"].tap()
+        }
         app.navigationBars.buttons["保存"].tap()
         // then
-        let button = waitToHittable(for: app.sheets.buttons[overwriteExisingSetStr], timeout: 2)
+        XCTContext.runActivity(named: "上書きする札セットを選ぶための、pickerWheel付きのAlert画面が表示される") { _ in
+            let button = waitToHittable(for: app.sheets.buttons[overwriteExisingSetStr], timeout: 2)
+            // when
+            button.tap()
+            // then
+            waitToAppear(for: app.alerts.staticTexts["上書きする札セットを選ぶ"], timeout: 2)
+            XCTAssert(app.alerts.pickerWheels.element.exists)
+        }
         // when
-        button.tap()
+        XCTContext.runActivity(named: "Alert上のPickerWheelで、一字決まり札セットを上書き対象として指示する") { _ in
+            app.alerts.pickerWheels.element.adjust(toPickerWheelValue: name1jiKimariSet)
+            app.alerts.buttons["上書きする"].tap()
+        }
         // then
-        waitToAppear(for: app.alerts.staticTexts["上書きする札セットを選ぶ"], timeout: 2)
+        XCTContext.runActivity(named: "一字決まり札セットの枚数が8枚に上書きされている") { _ in
+            // when
+            gotoFudaSetsScreenFromPoemPicker()
+            // then
+            XCTAssert(app.cells.staticTexts["8首"].exists)
+        }
     }
     
     private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {
