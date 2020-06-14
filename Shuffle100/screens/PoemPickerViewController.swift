@@ -17,6 +17,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     var selectByGroupAction: (() -> Void)?
     var openNgramPickerAction: (() -> Void)?
     var openFudaSetsScreenAction: (() -> Void)?
+    var rowForFudaSetOverwritten: Int = 0
     
     var selected_num: Int {
         get {
