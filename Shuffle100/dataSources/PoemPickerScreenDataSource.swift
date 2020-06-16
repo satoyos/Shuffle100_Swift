@@ -53,8 +53,13 @@ extension PoemPickerViewController: UITableViewDataSource, UIPickerViewDataSourc
         return settings.savedFudaSets.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return settings.savedFudaSets[row].name
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        let fudaSet = settings.savedFudaSets[row]
+        label.text = fudaSet.name + " (\(fudaSet.state100.selectedNum)首)"
+        label.font = UIFont.systemFont(ofSize: fontSizeOfCell)
+        label.textAlignment = .center
+        return label
     }
         
     private func fontSizeForVerse() -> CGFloat {
@@ -67,4 +72,5 @@ extension PoemPickerViewController: UITableViewDataSource, UIPickerViewDataSourc
         }
         return UIColor.systemBackground
     }
+    
 }
