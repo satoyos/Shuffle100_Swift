@@ -21,6 +21,7 @@ protocol SizeByDevice {
     func intervalSiderHeight() -> CGFloat
     func whatsNextButtonHeight() -> CGFloat
     func imageOffsetX() -> CGFloat
+    func fudaSetPickerWidth() -> CGFloat
 }
 
 class SizeFactory {
@@ -60,6 +61,10 @@ class PhoneSize: SizeByDevice {
     func imageOffsetX() -> CGFloat {
         return imageOffsetXBase
     }
+    
+    func fudaSetPickerWidth() -> CGFloat {
+        return 260
+    }
 }
 
 class PadSize: SizeByDevice {
@@ -86,6 +91,10 @@ class PadSize: SizeByDevice {
     
     func imageOffsetX() -> CGFloat {
         return imageOffsetXBase * 2
+    }
+    
+    func fudaSetPickerWidth() -> CGFloat {
+        return 300
     }
     
 }

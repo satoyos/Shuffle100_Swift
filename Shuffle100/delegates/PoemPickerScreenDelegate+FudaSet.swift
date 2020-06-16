@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension PoemPickerViewController: UIPickerViewDelegate {
     internal func showActionSheetForSaving(_ button: UIButton) {
@@ -70,7 +71,14 @@ extension PoemPickerViewController: UIPickerViewDelegate {
     }
     
     internal func overwriteExistingFudaSet() {
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 250, height: 150))
+//
+//        ToDo: PickerViewのフォントはいい感じになったので、
+//              pickerView自体のサイズと位置をもちっといい感じにしたい！
+//        
+        
+        let sizeByDevice = SizeFactory.createSizeByDevice()
+        let fudaSetPickerWidth = sizeByDevice.fudaSetPickerWidth()
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: fudaSetPickerWidth, height: 150))
         pickerView.delegate = self
         pickerView.dataSource = self
         let ac = UIAlertController(title: "上書きする札セットを選ぶ", message: "\n\n\n\n\n\n\n\n", preferredStyle: .alert)

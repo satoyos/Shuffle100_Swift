@@ -18,6 +18,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     var openNgramPickerAction: (() -> Void)?
     var openFudaSetsScreenAction: (() -> Void)?
     var rowForFudaSetOverwritten: Int = 0
+    var fontSizeOfCell: CGFloat!
     
     var selected_num: Int {
         get {
@@ -46,6 +47,8 @@ class PoemPickerViewController: SettingsAttachedViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
          navigationController?.setToolbarHidden(false, animated: true)
+        let firstCell = self.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        self.fontSizeOfCell = firstCell.textLabel!.font.pointSize
     }
     
     override func viewWillDisappear(_ animated: Bool) {
