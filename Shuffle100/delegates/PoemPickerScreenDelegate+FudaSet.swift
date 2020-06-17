@@ -70,12 +70,7 @@ extension PoemPickerViewController: UIPickerViewDelegate {
         present(ac, animated: true)
     }
     
-    internal func overwriteExistingFudaSet() {
-//
-//        ToDo: PickerViewのフォントはいい感じになったので、
-//              pickerView自体のサイズと位置をもちっといい感じにしたい！
-//        
-        
+    internal func overwriteExistingFudaSet() {        
         let sizeByDevice = SizeFactory.createSizeByDevice()
         let fudaSetPickerWidth = sizeByDevice.fudaSetPickerWidth()
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: fudaSetPickerWidth, height: 150))
