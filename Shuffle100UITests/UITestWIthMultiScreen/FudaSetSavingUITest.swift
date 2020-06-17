@@ -166,7 +166,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         }
         // when
         XCTContext.runActivity(named: "Alert上のPickerWheelで、一字決まり札セットを上書き対象として指示する") { _ in
-            app.alerts.pickerWheels.element.adjust(toPickerWheelValue: name1jiKimariSet)
+            app.alerts.pickerWheels.element.adjust(toPickerWheelValue: name1jiKimariSet + " (7首)")
             app.alerts.buttons["上書きする"].tap()
         }
         // then
