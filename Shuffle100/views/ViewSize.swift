@@ -63,7 +63,7 @@ class PhoneSize: SizeByDevice {
     }
     
     func fudaSetPickerWidth() -> CGFloat {
-        return 260
+        return 270
     }
 }
 
@@ -94,7 +94,7 @@ class PadSize: SizeByDevice {
     }
     
     func fudaSetPickerWidth() -> CGFloat {
-        return 300
+        return 270
     }
     
 }
