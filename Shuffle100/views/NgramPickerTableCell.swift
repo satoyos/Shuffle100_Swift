@@ -8,9 +8,10 @@
 
 import UIKit
 
-private let fullCircleImage = UIImage(named: "blue_circle_full.png")!
-private let halfCircleImage = UIImage(named: "blue_circle_half.png")!
-private let emptyCircleImage = UIImage(named: "blue_circle_empty.png")!
+private let fullCircleImage = UIImage(named: "full_circle.png")!
+private let halfCircleImage = UIImage(named: "half_circle.png")!
+private let emptyCircleImage = UIImage(named: "empty_circle.png")!
+
 
 class NgramPickerTableCell: UITableViewCell {
     static let selectedImageDic: [NgramSelectedStatus: UIImage] = [
