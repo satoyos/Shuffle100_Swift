@@ -80,10 +80,7 @@ extension PoemPickerViewController: UIPickerViewDelegate {
         ac.view.addSubview(pickerView)
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let overwriteAction = UIAlertAction(title: "上書きする", style: .default) { _ in
-            let currentFudaSet = self.settings.savedFudaSets[self.rowForFudaSetOverwritten]
-            let newFudaSet = SavedFudaSet(name: currentFudaSet.name, state100: self.settings.state100)
-            self.settings.savedFudaSets[self.rowForFudaSetOverwritten] = newFudaSet
-            self.saveSettingsAction?()
+            self.executeOverwrite()
         }
         ac.addAction(cancelAction)
         ac.addAction(overwriteAction)
@@ -95,6 +92,13 @@ extension PoemPickerViewController: UIPickerViewDelegate {
         let okAction = UIAlertAction(title: "OK", style: .default)
         ac.addAction(okAction)
         present(ac, animated: true)
+    }
+    
+    private func executeOverwrite() {
+        let currentFudaSet = settings.savedFudaSets[rowForFudaSetOverwritten]
+        let newFudaSet = SavedFudaSet(name: currentFudaSet.name, state100: settings.state100)
+        settings.savedFudaSets[self.rowForFudaSetOverwritten] = newFudaSet
+        saveSettingsAction?()
     }
 
 }
