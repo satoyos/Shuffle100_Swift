@@ -170,7 +170,9 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             app.alerts.pickerWheels.element.adjust(toPickerWheelValue: name1jiKimariSet + " (7首)")
             app.alerts.buttons["上書きする"].tap()
             // then
-            XCTAssert(app.alerts.staticTexts["上書き保存完了"].exists)
+            let button = waitToHittable(for: app.alerts.buttons["OK"], timeout: 2)
+            XCTAssert(app.alerts.staticTexts["上書き完了"].exists)
+            button.tap()
         }
         // then
         XCTContext.runActivity(named: "一字決まり札セットの枚数が8枚に上書きされている") { _ in

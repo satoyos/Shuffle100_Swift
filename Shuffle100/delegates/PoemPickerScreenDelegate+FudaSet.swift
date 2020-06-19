@@ -99,6 +99,14 @@ extension PoemPickerViewController: UIPickerViewDelegate {
         let newFudaSet = SavedFudaSet(name: currentFudaSet.name, state100: settings.state100)
         settings.savedFudaSets[self.rowForFudaSetOverwritten] = newFudaSet
         saveSettingsAction?()
+        popupOverwritingResult(name: currentFudaSet.name)
+    }
+    
+    private func popupOverwritingResult(name: String) {
+        let ac = UIAlertController(title: "上書き完了", message: "前に作った札セット「\(name)」を上書き保存しました。", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        ac.addAction(okAction)
+        present(ac, animated: true)
     }
 
 }
