@@ -24,7 +24,7 @@ class HelpListViewController: UIViewController {
     private func createTableViewForScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
         return tableView
     }
 }
