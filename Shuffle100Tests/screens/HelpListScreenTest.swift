@@ -14,18 +14,19 @@ class HelpListScreenTest: XCTestCase {
     func test_initialScreen() throws {
         // given, when
         let screen = HelpListViewController()
-
+        // then
         XCTAssertNotNil(screen)
-//    // when
-//    screen.loadViewIfNeeded()
-//    // then
-//    XCTAssertEqual(screen.title, "いろいろな設定")
-//    // then
-//    let tableView = screen.tableView
-//    XCTAssertNotNil(tableView)
-//    XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
-//    let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
-//    XCTAssertEqual(firstCell.textLabel?.text, "歌と歌の間隔")
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(screen.title, "ヘルプ")
+        // then
+        let tableView = screen.tableView
+        XCTAssertNotNil(tableView)
+        XCTAssertEqual(tableView?.numberOfSections, 2)
+        XCTAssertEqual(screen.tableView(tableView!, titleForHeaderInSection: 0), "使い方")
+        let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(firstCell.textLabel?.text, "設定できること")
 //    XCTAssertEqual(firstCell.detailTextLabel?.text, "1.10")
 //    let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
 //    XCTAssertEqual(secondCell.detailTextLabel?.text, "1.00")
