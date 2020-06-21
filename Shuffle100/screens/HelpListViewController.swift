@@ -16,10 +16,15 @@ class HelpListViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "ヘルプ"
-        self.tableView = UITableView()
-        tableView.dataSource = self
+        self.tableView = createTableViewForScreen()
         tableView.register(HelpListTableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
     }
-
+    
+    private func createTableViewForScreen() -> UITableView {
+        let tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView.dataSource = self
+//        tableView.delegate = self
+        return tableView
+    }
 }
