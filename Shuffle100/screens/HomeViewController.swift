@@ -25,6 +25,7 @@ class HomeViewController: SettingsAttachedViewController {
     var selectSingerAction: (() -> Void)?
     var startGameAction: (() -> Void)?
     var reciteSettingsAction: (() -> Void)?
+    var helpActioh: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,7 @@ class HomeViewController: SettingsAttachedViewController {
     private func setHelpButton(withSize reSize: CGSize) {
         let helpButton = UIBarButtonItem(
             image: UIImage(named: "question_white.png")?.reSizeImage(reSize: reSize),
-            style: UIBarButtonItem.Style.plain, target: self, action: nil)
+            style: UIBarButtonItem.Style.plain, target: self, action: #selector(helpButtonTapped))
         helpButton.accessibilityLabel = "HelpButton"
         self.navigationItem.rightBarButtonItem = helpButton
     }    
