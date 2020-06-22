@@ -15,6 +15,7 @@ class MainCoordinator: Coordinator {
     private var recitePoemCoordinator: RecitePoemCoordinator!
     private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     private var poemPickerCoordinator: PoemPickerCoordinator!
+    private var helpListCoordinator: HelpListCoordinator!
     private var homeScreen: HomeViewController?
 
     func start() {
@@ -37,6 +38,9 @@ class MainCoordinator: Coordinator {
         }
         homeScreen.reciteSettingsAction = { [weak self, unowned settings] in
             self?.openReciteSettings(settins: settings)
+        }
+        homeScreen.helpActioh = { [weak self] in
+            self?.openHelpList()
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings)
         AudioPlayerFactory.shared.setupAudioSession()
@@ -98,5 +102,11 @@ class MainCoordinator: Coordinator {
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen, store: store)
         coordinator.start()
         self.reciteSettingsCoordinator = coordinator
+    }
+    
+    private func openHelpList() {
+        let coordinator = HelpListCoordinator(navigator: navigator)
+        coordinator.start()
+        self.helpListCoordinator = coordinator
     }
 }
