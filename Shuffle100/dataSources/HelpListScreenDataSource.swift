@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Then
 
 struct HelpListDataSource {
     enum SourceType {
@@ -55,11 +54,11 @@ extension HelpListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
-            let section = helpListSections[indexPath.section]
-            let dataSource = section.dataSources[indexPath.row]
-            $0.textLabel?.text = dataSource.name
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! HelpListTableViewCell
+        let section = helpListSections[indexPath.section]
+        let dataSource = section.dataSources[indexPath.row]
+        cell.configure(with: dataSource)
+        
         return cell
     }
     

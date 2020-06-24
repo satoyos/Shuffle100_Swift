@@ -27,6 +27,7 @@ class HelpListScreenTest: XCTestCase {
         XCTAssertEqual(screen.tableView(tableView!, titleForHeaderInSection: 0), "使い方")
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
         XCTAssertEqual(firstCell.textLabel?.text, "設定できること")
+        XCTAssertEqual(firstCell.accessoryType, .disclosureIndicator)
 //    XCTAssertEqual(firstCell.detailTextLabel?.text, "1.10")
 //    let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
 //    XCTAssertEqual(secondCell.detailTextLabel?.text, "1.00")
