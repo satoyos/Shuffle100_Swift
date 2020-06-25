@@ -9,5 +9,8 @@
 import UIKit
 
 extension HelpListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        
+    }
 }

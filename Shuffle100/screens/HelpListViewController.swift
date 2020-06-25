@@ -9,8 +9,22 @@
 import UIKit
 
 class HelpListViewController: UIViewController {
+    internal var helpListSections: [HelpListSection]!
     var tableView: UITableView!
     let cellReuseId = "HelpList"
+    
+    
+    init(sections: [HelpListSection] = []) {
+        self.helpListSections = sections
+
+        // クラスの持つ指定イニシャライザを呼び出す
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // 新しく init を定義した場合に必須
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
