@@ -12,8 +12,14 @@ import XCTest
 class HelpListScreenTest: XCTestCase {
 
     func test_initialScreen() throws {
+        // given
+        let coordinator = HelpListCoordinator(navigator: UINavigationController())
         // given, when
-        let screen = HelpListViewController()
+        coordinator.start()
+        guard let screen = coordinator.screen else {
+            XCTAssert(false, "Failed to fetch HelpListScreen")
+            return
+        }
         // then
         XCTAssertNotNil(screen)
         // when

@@ -77,6 +77,9 @@
 		921FF44224A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */; };
 		921FF44324A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */; };
 		921FF44524A0DBDE0083AC49 /* HelpListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */; };
+		921FF44724A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
+		921FF44824A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
+		921FF44924A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
 		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
 		92328C2224591D64005E0FEE /* WhatsNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* WhatsNextButton.swift */; };
@@ -494,6 +497,7 @@
 		921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenDelegate.swift; sourceTree = "<group>"; };
 		921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListCoordinator.swift; sourceTree = "<group>"; };
 		921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListUITest.swift; sourceTree = "<group>"; };
+		921FF44624A4D9EF0083AC49 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButtonTest.swift; sourceTree = "<group>"; };
 		92328C2124591D64005E0FEE /* WhatsNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButton.swift; sourceTree = "<group>"; };
@@ -824,6 +828,7 @@
 			isa = PBXGroup;
 			children = (
 				92C87DD222E8894900569D15 /* audio */,
+				921FF44624A4D9EF0083AC49 /* html */,
 				92FCCEDC22A51E3C002B589E /* 100.json */,
 				92B9E96F24666083007C2E75 /* ngram.json */,
 				9258FAF821FEE4AA00E4E0B7 /* question_white.png */,
@@ -1217,6 +1222,7 @@
 				92C87DD322E8894900569D15 /* audio in Resources */,
 				9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */,
 				92800397249BAFEE004D03C2 /* full_circle.png in Resources */,
+				921FF44724A4D9EF0083AC49 /* html in Resources */,
 				92FC398D22917E6000791053 /* Readme.md in Resources */,
 				92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92328C2B24591E25005E0FEE /* torifuda.png in Resources */,
@@ -1238,6 +1244,7 @@
 				9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */,
 				92328C2C24591E25005E0FEE /* torifuda.png in Resources */,
 				92328C2F24591E25005E0FEE /* go_next.png in Resources */,
+				921FF44824A4D9EF0083AC49 /* html in Resources */,
 				92800392249BAFEE004D03C2 /* empty_circle.png in Resources */,
 				92328C2924591E25005E0FEE /* refrain.png in Resources */,
 				9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */,
@@ -1259,6 +1266,7 @@
 				9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */,
 				92328C2D24591E25005E0FEE /* torifuda.png in Resources */,
 				92328C3024591E25005E0FEE /* go_next.png in Resources */,
+				921FF44924A4D9EF0083AC49 /* html in Resources */,
 				92800393249BAFEE004D03C2 /* empty_circle.png in Resources */,
 				92328C2A24591E25005E0FEE /* refrain.png in Resources */,
 				9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */,
