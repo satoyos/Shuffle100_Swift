@@ -9,7 +9,6 @@
 import UIKit
 
 class HelpListTableViewCell: UITableViewCell {
-//    private var htmlFileName: String!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
@@ -34,7 +33,6 @@ class HelpListTableViewCell: UITableViewCell {
         self.textLabel?.text = dataSource.name
         switch dataSource.type {
         case .html:
-//            self.htmlFileName = dataSource.fileName
             self.accessoryType = .disclosureIndicator
         case .value1:
             self.detailTextLabel?.text = dataSource.detail
