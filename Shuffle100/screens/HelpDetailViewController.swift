@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class HelpDetailViewController: UIViewController {
     var helpTitle: String!
@@ -29,6 +30,18 @@ class HelpDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = helpTitle
+        setWebView()
     }
 
+    private func setWebView() {
+        let webView = WKWebView(frame: view.bounds)
+        loadLocalHTML(fileName: htmlFileName, to: webView)
+        view.addSubview(webView)
+    }
+    
+    private func loadLocalHTML(fileName: String, to webView: WKWebView) {
+        guard let path: String = Bundle.main.path(forResource: fileName, ofType: "html") else { return }
+        let localHTMLUrl = URL(fileURLWithPath: path, isDirectory: false)
+        webView.loadFileURL(localHTMLUrl, allowingReadAccessTo: localHTMLUrl)
+    }
 }
