@@ -12,7 +12,7 @@ class HelpListViewController: UIViewController {
     internal var helpListSections: [HelpListSection]!
     var tableView: UITableView!
     let cellReuseId = "HelpList"
-    
+    var goDetailAction: ((_ indexPath: IndexPath) -> Void)?
     
     init(sections: [HelpListSection] = []) {
         self.helpListSections = sections

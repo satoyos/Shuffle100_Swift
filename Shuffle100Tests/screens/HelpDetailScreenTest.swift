@@ -18,6 +18,7 @@ class HelpDetailScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title, "aaa")
+        XCTAssertEqual(screen.view.subviews.count, 1)
     }
 
 
