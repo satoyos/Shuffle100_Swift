@@ -30,6 +30,7 @@ class HelpDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = helpTitle
+        navigationItem.prompt = "百首読み上げ"
         setWebView()
     }
 
