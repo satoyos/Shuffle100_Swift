@@ -19,7 +19,7 @@ private let helpListSections: [HelpListSection] = [
     ]),
     HelpListSection(name: "その他", dataSources: [
         HelpListDataSource(name: "「いなばくん」について", type: .html, fileName: "html/about_inaba_kun"),
-        HelpListDataSource(name: "このアプリを評価する", type: .html, fileName: "iii"),
+        HelpListDataSource(name: "このアプリを評価する", type: .review, fileName: nil),
         HelpListDataSource(name: "バージョン", type: .value1, fileName: nil, detail: appVersion())
     ])
 ]
@@ -55,6 +55,25 @@ class HelpListCoordinator: Coordinator {
             let screen = HelpDetailViewController(title: dataSource.name, htmlFileName: htmlFileName)
             navigator.pushViewController(screen, animated: true)
             self.detailHelpScreen = screen
+        } else if dataSource.type == .review {
+            showAlertConfirmingGotoReview()
+        }
+    }
+    
+    private func showAlertConfirmingGotoReview() {
+        let ac = UIAlertController(title: "このアプリを評価するために、App Storeアプリを立ち上げますか？", message: nil, preferredStyle: .alert)
+        let openAction = UIAlertAction(title: "立ち上げる", style: .default) { _ in
+            self.openAppStoreReview()
+        }
+        let cancelAction = UIAlertAction(title: "やめておく", style: .cancel)
+        ac.addAction(openAction)
+        ac.addAction(cancelAction)
+        screen.present(ac, animated: true)
+    }
+    
+    private func openAppStoreReview() {
+        if let url = URL(string: "https://itunes.apple.com/us/app/itunes-u/id857819404?action=write-review") {
+           UIApplication.shared.open(url)
         }
     }
 }

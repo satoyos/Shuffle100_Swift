@@ -33,7 +33,17 @@ class HelpListUITest: XCTestCase {
         canGotoDetailHelp(title: "「ノンストップ・モード」とは？")
         canGotoDetailHelp(title: "「札セット」とその使い方")
         canGotoDetailHelp(title: "「いなばくん」について")
-        
+    }
+    
+    func test_openAppStoreReviewForm() {
+        // given
+        gotoHelpListScreen()
+        // when
+        app.tables.staticTexts["このアプリを評価する"].tap()
+        // then
+        let button = waitToHittable(for: app.alerts.buttons["立ち上げる"], timeout: 2)
+        // when
+        button.tap()
     }
 
     private func gotoHelpListScreen() {

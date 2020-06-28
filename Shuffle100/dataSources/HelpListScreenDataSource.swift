@@ -11,6 +11,7 @@ import UIKit
 struct HelpListDataSource {
     enum SourceType {
         case html
+        case review
         case value1
     }
     let name: String

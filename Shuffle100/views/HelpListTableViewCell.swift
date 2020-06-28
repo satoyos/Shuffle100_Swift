@@ -36,6 +36,8 @@ class HelpListTableViewCell: UITableViewCell {
             self.accessoryType = .disclosureIndicator
         case .value1:
             self.detailTextLabel?.text = dataSource.detail
+        default:
+            return
         }
     }
 
