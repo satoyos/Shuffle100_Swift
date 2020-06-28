@@ -63,7 +63,7 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPicker
             // when
             app.tables.cells["001"].tap()
             app.tables.cells["005"].tap()
-            app.buttons["Cancel"].tap()
+            app.buttons["キャンセル"].tap()
             //   back to HomeScreen
             goBackToHomeScreen(app)
             // then
