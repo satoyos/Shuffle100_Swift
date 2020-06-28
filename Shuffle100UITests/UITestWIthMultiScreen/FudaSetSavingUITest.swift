@@ -121,14 +121,14 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             XCTAssert(cell97.exists)
             // when
             cell97.swipeLeft()
-            app.tables.buttons["Delete"].tap()
+            app.tables.buttons["削除"].tap()
             // then
             XCTAssertFalse(cell97.exists)
             let cell2mai = app.cells.staticTexts[set2maiFudaName]
             XCTAssert(cell2mai.exists)
             // when
             cell2mai.swipeLeft()
-            app.tables.buttons["Delete"].tap()
+            app.tables.buttons["削除"].tap()
             // then
             XCTAssertFalse(cell2mai.exists)
             goBackToPoemPickerScreen(app)
