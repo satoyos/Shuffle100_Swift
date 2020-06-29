@@ -1,0 +1,13 @@
+@media (prefers-color-scheme: dark) {
+  body{
+      background-color: #9e3d3f;  /* すおう */
+    color: #fff;
+  }
+  h3 {
+      background:#1f3134;
+      border: #1f3134 1px solid;
+  }
+  a {
+      color: #2ca9e1;  /* あまいろ */
+  }
+}
