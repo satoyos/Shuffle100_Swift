@@ -1200,10 +1200,10 @@
 			};
 			buildConfigurationList = 923D59092143BB0A000F5E60 /* Build configuration list for PBXProject "Shuffle100" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = ja;  // en -> ja
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				ja,   // en -> ja
+				ja,
 				Base,
 			);
 			mainGroup = 923D59052143BB0A000F5E60;
