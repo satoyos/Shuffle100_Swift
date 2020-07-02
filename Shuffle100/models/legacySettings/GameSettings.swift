@@ -89,10 +89,13 @@ class GameSettings: NSObject, NSCoding {
 
     static func salvageDataFromUserDefaults() -> GameSettings? {
         if let ud = UserDefaults.init(suiteName: "game_settings") {
-            let rsData = ud .object(forKey: "game_settings") as! Data
-            if let settings = try! NSKeyedUnarchiver.unarchivedObject(ofClass: GameSettings.self, from: rsData) {
-                return settings
+            if let rsData = ud.object(forKey: "game_settings") {
+                let convertedData = rsData as! Data
+                if let settings = try! NSKeyedUnarchiver.unarchivedObject(ofClass: GameSettings.self, from: convertedData) {
+                    return settings
+                }
             }
+            
         }
         return nil
     }
