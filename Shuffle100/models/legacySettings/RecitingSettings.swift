@@ -50,12 +50,17 @@ class RecitingSettings: NSObject, NSCoding {
     }
     
     static func salvageDataFromUserDefaults() -> RecitingSettings? {
-        if let rsData = UserDefaults.standard.object(forKey: "reciting_settings"),
-            let settings = try! NSKeyedUnarchiver.unarchivedObject(ofClass: RecitingSettings.self, from: rsData as! Data) {
-            return settings
-        } else {
-            return nil
+        if let rsData = UserDefaults.standard.object(forKey: "reciting_settings") {
+            let convertedData = rsData as! Data
+            do {
+                let settings = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(convertedData) as! RecitingSettings
+                return settings
+            } catch {
+                print("レガシーデータ(RecitingSettings)はあるが、Swiftで読み出すことができない！")
+                return nil
+            }
         }
+        return nil
     }
     
     func debugPrint() {
