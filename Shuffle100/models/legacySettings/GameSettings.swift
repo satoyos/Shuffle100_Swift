@@ -91,9 +91,14 @@ class GameSettings: NSObject, NSCoding {
         if let ud = UserDefaults.init(suiteName: "game_settings") {
             if let rsData = ud.object(forKey: "game_settings") {
                 let convertedData = rsData as! Data
-                if let settings = try! NSKeyedUnarchiver.unarchivedObject(ofClass: GameSettings.self, from: convertedData) {
+                do {
+                    let settings = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(convertedData) as! GameSettings
                     return settings
+                } catch {
+                    print("レガシーデータ(GameSettings)はあるが、Swiftで読み出すことができない！")
+                    return nil
                 }
+                
             }
             
         }
