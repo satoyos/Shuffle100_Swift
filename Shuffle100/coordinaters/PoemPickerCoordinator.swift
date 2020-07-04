@@ -38,6 +38,9 @@ final class PoemPickerCoordinator: Coordinator {
         screen.openFudaSetsScreenAction = { [weak self] in
             self?.openFudaSetsScreen()
         }
+        screen.showTorifudaAction = { [weak self] indexPath  in
+            self?.showTorifudaScreenFor(indexPath)
+        }
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }
@@ -52,5 +55,19 @@ final class PoemPickerCoordinator: Coordinator {
         let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.fudaSetsCoordinator = coordinator
+    }
+    
+    internal func showTorifudaScreenFor(_ indexPath: IndexPath) {
+        let poem = Deck.originalPoems[indexPath.row]
+        let shimoStr = poem.in_hiragana.shimo
+        var title = "\(poem.number)."
+        for partStr in poem.liner {
+            title += " \(partStr)"
+        }
+        let fudaScreen = FudaViewController(shimoString: shimoStr, title: title)
+        let nav = UINavigationController(rootViewController: fudaScreen)
+        nav.modalPresentationStyle = .fullScreen
+        nav.navigationBar.barTintColor = StandardColor.barTintColor
+        screen?.present(nav, animated: true)
     }
 }

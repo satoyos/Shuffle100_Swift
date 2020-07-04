@@ -17,6 +17,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     var selectByGroupAction: (() -> Void)?
     var openNgramPickerAction: (() -> Void)?
     var openFudaSetsScreenAction: (() -> Void)?
+    var showTorifudaAction: ((_ indexPath: IndexPath) -> Void)?
     var rowForFudaSetOverwritten: Int = 0
     var fontSizeOfCell: CGFloat!
     
@@ -31,6 +32,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
         navigationItem.prompt = "百首読み上げ"
         self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
+        makeCellsLongPressable()
         view.addSubview(tableView)
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItem = saveButtonItem()
@@ -105,4 +107,14 @@ class PoemPickerViewController: SettingsAttachedViewController {
         let flexibleSpace1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         self.toolbarItems = [cancelAllButton, flexibleSpace1, selectAllButton, flexibleSpace1, selectGroupButton]
     }
+    
+    private func makeCellsLongPressable() {
+        // UILongPressGestureRecognizer宣言
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed(recognizer:)))
+        // `UIGestureRecognizerDelegate`を設定するのをお忘れなく
+        longPressRecognizer.delegate = self
+        // tableViewにrecognizerを設定
+        tableView.addGestureRecognizer(longPressRecognizer)
+    }
+    
 }

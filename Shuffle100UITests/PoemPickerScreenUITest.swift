@@ -40,4 +40,14 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils {
             XCTAssertTrue(app.cells.staticTexts["100首"].exists)
         }
     }
+    
+    func test_longPressShowsFudaScreen() {
+        // given
+        gotoPoemPickerScreen(app)
+        // when
+        app.cells["001"].press(forDuration: 2.0)
+        // then
+        XCTAssert(app.staticTexts["わ"].exists)
+        XCTAssertFalse(app.staticTexts["き"].exists)
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import BBBadgeBarButtonItem
 
-extension PoemPickerViewController: UITableViewDelegate {
+extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let number: Int
         if searchController.isActive {
@@ -66,11 +66,23 @@ extension PoemPickerViewController: UITableViewDelegate {
         present(ac, animated: true)
     }
     
+    @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+        // 押された位置でcellのPathを取得
+        let point = recognizer.location(in: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+        if recognizer.state == UIGestureRecognizer.State.began  {
+            showTorifudaAction?(indexPath)
+        }
+    }
+
     internal func showAlertInhibeted(title: String, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let backAction = UIAlertAction(title: "戻る", style: .cancel, handler: handler)
         ac.addAction(backAction)
         present(ac, animated: true)
     }
+    
+
+
  
 }
