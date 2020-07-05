@@ -27,6 +27,7 @@ class RecitingSettings: NSObject, NSCoding {
     var kamiShimoInterval: Float
     var volume: Float
     static var shared: RecitingSettings?
+    static let userDefaultKey = "reciting_settings"
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(interval, forKey: SerializedKey.interval)
@@ -50,7 +51,7 @@ class RecitingSettings: NSObject, NSCoding {
     }
     
     static func salvageDataFromUserDefaults() -> RecitingSettings? {
-        if let rsData = UserDefaults.standard.object(forKey: "reciting_settings") {
+        if let rsData = UserDefaults.standard.object(forKey: userDefaultKey) {
             let convertedData = rsData as! Data
             do {
                 let settings = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(convertedData) as! RecitingSettings
@@ -61,6 +62,12 @@ class RecitingSettings: NSObject, NSCoding {
             }
         }
         return nil
+    }
+    
+    static func deleteLegacySavedData() {
+        if let _ = UserDefaults.standard.object(forKey: userDefaultKey) {
+            UserDefaults.standard.removeObject(forKey: userDefaultKey)
+        }
     }
     
     func debugPrint() {
