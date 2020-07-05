@@ -28,14 +28,20 @@ extension MainCoordinator {
                     initSettings(defaultSettings, with: recitingSettings)
                 }
             }
+            do {
+                try store.save(value: defaultSettings, key: Settings.userDefaultKey)
+            } catch {
+                assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
+            }
             return defaultSettings
         }
     }
     
     private func tryLoadLegacyRecitingSettings() -> RecitingSettings? {
         if let loadedSettings = RecitingSettings.salvageDataFromUserDefaults() {
-            print("+++ Success loading Legacy Data")
-            loadedSettings.debugPrint()
+//            print("+++ Success loading Legacy Data")
+//            loadedSettings.debugPrint()
+            RecitingSettings.deleteLegacySavedData()
             return loadedSettings
         } else {
             return nil
@@ -44,8 +50,9 @@ extension MainCoordinator {
     
     private func tryLoadLegacyGameSettings() -> GameSettings? {
         if let gameSettings = GameSettings.salvageDataFromUserDefaults() {
-            print("+++ Success loading legacy GameSettings")
-            gameSettings.debugPrint()
+//            print("+++ Success loading legacy GameSettings")
+//            gameSettings.debugPrint()
+            GameSettings.deleteLegacySavedData()
             return gameSettings
         } else {
             return nil

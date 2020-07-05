@@ -48,6 +48,8 @@ class Symbol: NSObject, NSCoding {
 
 @objc (GameSettings)
 class GameSettings: NSObject, NSCoding {
+    static let userDefaultKey = "game_settings"
+
     var statuses_for_deck: [SelectedStatus100]
     var fake_flg: Bool
     var beginner_flg: Bool
@@ -88,8 +90,8 @@ class GameSettings: NSObject, NSCoding {
     }
 
     static func salvageDataFromUserDefaults() -> GameSettings? {
-        if let ud = UserDefaults.init(suiteName: "game_settings") {
-            if let rsData = ud.object(forKey: "game_settings") {
+        if let ud = UserDefaults(suiteName: userDefaultKey) {
+            if let rsData = ud.object(forKey: userDefaultKey) {
                 let convertedData = rsData as! Data
                 do {
                     let settings = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(convertedData) as! GameSettings
@@ -98,10 +100,16 @@ class GameSettings: NSObject, NSCoding {
                     print("レガシーデータ(GameSettings)はあるが、Swiftで読み出すことができない！")
                     return nil
                 }
-                
             }
-            
         }
         return nil
+    }
+    
+    static func deleteLegacySavedData() {
+        if let ud = UserDefaults(suiteName: userDefaultKey) {
+            if let _ = ud.object(forKey: userDefaultKey) {
+                ud.removeObject(forKey: userDefaultKey)
+            }
+        }
     }
 }
