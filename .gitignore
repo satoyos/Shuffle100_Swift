@@ -2,6 +2,7 @@
 *.swp
 UserInterfaceState.xcuserstate
 .vscode
-appium_tests
-.idea
+appium_tests/.idea
+appium_tests/.bundle
+appium_tests/vendor
 DerivedData
