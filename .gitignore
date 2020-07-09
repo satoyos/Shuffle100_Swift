@@ -5,4 +5,5 @@ UserInterfaceState.xcuserstate
 appium_tests/.idea
 appium_tests/.bundle
 appium_tests/vendor
+appium_tests/screenshots
 DerivedData
