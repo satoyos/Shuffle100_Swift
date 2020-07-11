@@ -20,12 +20,13 @@ def desired_caps
   {
       caps: {
           platformName:  "iOS",
-          deviceName:    "iPhone 11",
+          # deviceName:    "iPhone 8",
           # deviceName:    "iPhone X",
-          # deviceName:    "iPhone Xs Max",
-          # deviceName:    "iPhone 7 Plus",
-          # deviceName:    "iPad Pro (12.9-inch)",
-          # deviceName:    "iPad Pro (12.9-inch) (3rd generation)",
+          # deviceName:    "iPhone Xs Max",  # 6.5inch
+          # deviceName:    "iPhone 8 Plus",  # 5.5inch
+          # deviceName:    "iPad Pro (9.7-inch)",
+          deviceName:    "iPad Pro (12.9-inch) (2nd generation)",
+          # deviceName:    "iPad Pro (12.9-inch) (4th generation)",
           platformVersion: "13.5",
           app: '../DerivedData/Shuffle100/Build/Products/Debug-iphonesimulator/Shuffle100.app',
           automationName: 'XCUITest',
