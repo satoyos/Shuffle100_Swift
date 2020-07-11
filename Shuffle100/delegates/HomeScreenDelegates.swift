@@ -16,12 +16,13 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
+            let cellsNum = self.tableView(tableView, numberOfRowsInSection: 0)
             switch indexPath.row {
             case 0:
                 selectPoemAction?()
             case 1:
                 selectModeAction?()
-            case 3:
+            case cellsNum-1:
                 selectSingerAction?()
             default:
                 return
