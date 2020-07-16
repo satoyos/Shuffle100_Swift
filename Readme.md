@@ -6,15 +6,13 @@ Shuffle100 (百首読み上げ) Swift Version
 (English follows Japanese)
 
 実際の百人一首かるたを使って対戦や練習をするときに、人の代わりに百人一首の歌の読み手を務めるiOSアプリです。
-[RubyMotionで作ったもの](https://github.com/satoyos/Shuffle100)をSwiftに移植中です。
-
 ![Image](http://postachio-images.s3-website-us-east-1.amazonaws.com/bdc9788b9b5c8ff218c37223f302b9a4/511242b6e6a9f3507107fc8f1c2af6e2/w600_df90791d0bf5c6022857a54b3700d61b.png)
 
 ボーカロイド音声（※1）または人間の音声（※2）で、百人一首の歌をランダムに読み上げます。  
 [こちらの動画](https://vimeo.com/88511077)で、実際に使っている様子をご覧いただけます。(競技かるた用の通常モードで遊ぶ場合の動画です)  
 また、歌を上の句から読み上げ始める「初心者モード」も用意しています。([こちらの動画](https://vimeo.com/104796183)をご覧ください。)
 
-RubyMotion版は、[App Store](https://itunes.apple.com/jp/app/bai-shou-dumi-shangge/id857819404?mt=8)で公開中です。以下、このリポジトリでSwift版に移植しようとしている、RubyMotion版「百首読み上げ」の機能をご紹介します。
+アプリは、[App Store](https://itunes.apple.com/jp/app/bai-shou-dumi-shangge/id857819404?mt=8)で公開中です。
 
 # 設定できること
 
@@ -72,7 +70,7 @@ Kyogi-Karuta is a Japanese traditional game using the “Hyaku-nin-Isshu"(#1) Ka
 
 (#1 .. It means "Single Verses by a Hundred People", selected by Teika Fujiwara about 800 years ago, as "The All Time Best 100 in these 600 years" at that time.)
 
-RubyMotion version of this app is in [App Store](https://itunes.apple.com/jp/app/bai-shou-dumi-shangge/id857819404?mt=8) , supports playing the game, by singing verses at random. 
+This app is in [App Store](https://itunes.apple.com/jp/app/bai-shou-dumi-shangge/id857819404?mt=8) , supports playing the game, by singing verses at random. 
 
 You can watch Demo video at [this page](https://vimeo.com/88511077).
 (Now, we are migrating the app from RubyMotion to Swift in this repository.)
