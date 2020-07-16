@@ -59,7 +59,8 @@ class HelpListUITest: XCTestCase {
         // then
         XCTAssert(app.navigationBars[title].exists)
         // when
-        app.navigationBars.buttons["ヘルプ"].tap()
+        let button = waitToHittable(for: app.navigationBars.buttons["ヘルプ"], timeout: 2)
+        button.tap()
         // then
         XCTAssert(app.navigationBars["ヘルプ"].exists)
     }
