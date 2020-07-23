@@ -9,6 +9,7 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
+    var screen: UIViewController?    
     var navigator = UINavigationController()
     internal let store = StoreManager()
     internal let env = Environment()
@@ -16,12 +17,11 @@ class MainCoordinator: Coordinator {
     private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     private var poemPickerCoordinator: PoemPickerCoordinator!
     private var helpListCoordinator: HelpListCoordinator!
-    private var homeScreen: HomeViewController?
 
     func start() {
         let settings = setUpSettings()
         let homeScreen = HomeViewController(settings: settings)
-        navigator.pushViewController(homeScreen as UIViewController, animated: false)
+        navigator.pushViewController(homeScreen, animated: false)
         setUpNavigationController()
         
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
@@ -44,7 +44,7 @@ class MainCoordinator: Coordinator {
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings)
         AudioPlayerFactory.shared.setupAudioSession()
-        self.homeScreen = homeScreen
+        self.screen = homeScreen
     }
     
     private func setUpNavigationController() {
@@ -89,16 +89,17 @@ class MainCoordinator: Coordinator {
     
     private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings ) {
         screen.saveSettingsAction = { [store, settings] in
-            do {
-                try store.save(value: settings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
-            }
+            store.saveSettingsPermanently(settings)
+//            do {
+//                try store.save(value: settings, key: Settings.userDefaultKey)
+//            } catch {
+//                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
+//            }
         }
     }
     
     private func openReciteSettings(settins: Settings) {
-        guard let homeScreen = self.homeScreen else { return }
+        guard let homeScreen = self.screen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen, store: store)
         coordinator.start()
         self.reciteSettingsCoordinator = coordinator

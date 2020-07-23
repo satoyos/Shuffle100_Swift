@@ -9,7 +9,7 @@
 import UIKit
 
 class WhatsNextCoordinator: Coordinator {
-    private var screen: WhatsNextViewController!
+    internal var screen: UIViewController?
     private var fromScreen: UIViewController
     private var navigator: UINavigationController!
     private var currentPoem: Poem!

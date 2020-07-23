@@ -9,7 +9,7 @@
 import UIKit
 
 class FudaSetsCoordinator: Coordinator {
-    private var screen: FudaSetsViewController!
+    var screen: UIViewController?
     private var settings: Settings
     private var store: StoreManager
     private var navigator: UINavigationController

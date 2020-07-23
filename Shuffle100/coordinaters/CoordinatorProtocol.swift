@@ -6,8 +6,9 @@
 //  Copyright © 2019 里 佳史. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol Coordinator {
+    var screen: UIViewController? { get set }
     func start()
 }

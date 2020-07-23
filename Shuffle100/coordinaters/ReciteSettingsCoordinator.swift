@@ -13,7 +13,7 @@ class ReciteSettingsCoordinator: Coordinator {
     private var store: StoreManager
     private var navigator: UINavigationController!
     private var fromScreen: UIViewController
-    private var screen: UIViewController?
+    internal var screen: UIViewController?
 
     init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager()) {
         self.settings = settings

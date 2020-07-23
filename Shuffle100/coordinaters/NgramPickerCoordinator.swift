@@ -9,7 +9,7 @@
 import UIKit
 
 class NgramPickerCoordinator: Coordinator {
-    private var screen: NgramPickerViewController!
+    var screen: UIViewController?
     private var settings: Settings
     private var store: StoreManager
     private var navigator: UINavigationController

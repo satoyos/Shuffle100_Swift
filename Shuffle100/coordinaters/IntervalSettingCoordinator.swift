@@ -9,6 +9,7 @@
 import UIKit
 
 final class IntervalSettingCoordinator: Coordinator {
+    internal var screen: UIViewController?
     var settings: Settings
     var store: StoreManager
     var navigator: UINavigationController
@@ -30,5 +31,6 @@ final class IntervalSettingCoordinator: Coordinator {
             }
         }
         navigator.pushViewController(screen, animated: true)
+        self.screen = screen
     }
 }

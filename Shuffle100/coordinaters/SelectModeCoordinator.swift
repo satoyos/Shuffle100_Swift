@@ -12,7 +12,7 @@ final class SelectModeCoordinator: Coordinator {
     private let navigator: UINavigationController
     private var settings: Settings
     private var store: StoreManager
-    private var screen: UIViewController?
+    var screen: UIViewController?
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager  = StoreManager()) {
         self.navigator = navigator

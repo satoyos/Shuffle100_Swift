@@ -17,7 +17,7 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
     }
     
     private func stepIntoShimoInBeginnerMode() {
-        guard let screen = screen else { return }
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         assert(true, "初心者モードで下の句に突入！")
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
@@ -45,7 +45,7 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
     
     internal func refrainShimo() {
         assert(true, "下の句を読み返す処理が、BeginnerModeのCoordinatorに戻ってきた！")
-        guard let screen = screen else { return }
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen.refrainShimo(number: number, count: counter)
