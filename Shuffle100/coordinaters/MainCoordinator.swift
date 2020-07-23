@@ -8,10 +8,12 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator, SaveSettings {
+    var store: StoreManager?
     var screen: UIViewController?    
     var navigator = UINavigationController()
-    internal let store = StoreManager()
+//    internal var  store = StoreManager()
+    internal var settings: Settings?
     internal let env = Environment()
     private var recitePoemCoordinator: RecitePoemCoordinator!
     private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
@@ -19,7 +21,9 @@ class MainCoordinator: Coordinator {
     private var helpListCoordinator: HelpListCoordinator!
 
     func start() {
-        let settings = setUpSettings()
+        self.store = StoreManager()
+        self.settings = setUpSettings()
+        guard let settings = settings else { return }
         let homeScreen = HomeViewController(settings: settings)
         navigator.pushViewController(homeScreen, animated: false)
         setUpNavigationController()
@@ -54,24 +58,29 @@ class MainCoordinator: Coordinator {
     }
     
     private func selectPoem(settings: Settings) {
+        guard let store = store else { return }
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.poemPickerCoordinator = coordinator
     }
     
     private func selectMode(settings: Settings) {
+        guard let store = store else { return }
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         
     }
     
     private func selectSinger(settings: Settings) {
+        guard let store = store else { return }
         let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
 
     private func startGame(settings: Settings) {
         var gameDriver: RecitePoemCoordinator!
+        
+        guard let store = store else { return }
         switch settings.mode.reciteMode {
         case .normal:
             gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings, store: store)
@@ -88,8 +97,11 @@ class MainCoordinator: Coordinator {
     }
     
     private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings ) {
+        guard let store = store else { return }
+
         screen.saveSettingsAction = { [store, settings] in
-            store.saveSettingsPermanently(settings)
+            self.saveSettingsPermanently(settings, into: store)
+//            store.saveSettingsPermanently(settings)
 //            do {
 //                try store.save(value: settings, key: Settings.userDefaultKey)
 //            } catch {
@@ -100,6 +112,7 @@ class MainCoordinator: Coordinator {
     
     private func openReciteSettings(settins: Settings) {
         guard let homeScreen = self.screen else { return }
+        guard let store = store else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen, store: store)
         coordinator.start()
         self.reciteSettingsCoordinator = coordinator

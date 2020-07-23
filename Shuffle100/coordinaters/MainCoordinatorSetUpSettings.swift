@@ -11,6 +11,8 @@ import Foundation
 extension MainCoordinator {
     internal func setUpSettings() -> Settings {
         let defaultSettings = Settings()
+        guard let store = self.store else { return defaultSettings}
+
         if let loadedSettings = store.load(key: Settings.userDefaultKey) as Settings? {
             if env.ignoreSavedData() {
                 return defaultSettings
@@ -28,11 +30,13 @@ extension MainCoordinator {
                     initSettings(defaultSettings, with: recitingSettings)
                 }
             }
-            do {
-                try store.save(value: defaultSettings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
-            }
+            saveSettingsPermanently(defaultSettings, into: store)
+//            do {
+//                try store.save(value: defaultSettings, key: Settings.userDefaultKey)
+//            } catch {
+//                assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
+//            }
+        
             return defaultSettings
         }
     }
