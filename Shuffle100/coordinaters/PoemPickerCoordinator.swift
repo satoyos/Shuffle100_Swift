@@ -11,7 +11,7 @@ import UIKit
 final class PoemPickerCoordinator: Coordinator {
     private let navigator: UINavigationController
     private var settings: Settings
-    private var screen: UIViewController?
+    internal var screen: UIViewController?
     private var store: StoreManager
     private var ngramPickerCoordinator: NgramPickerCoordinator!
     private var fudaSetsCoordinator: FudaSetsCoordinator!

@@ -9,6 +9,7 @@
 import UIKit
 
 final class KamiShimoIntervalSettingCoordinator: Coordinator {
+    var screen: UIViewController?
     var settings: Settings
     var store: StoreManager
     var navigator: UINavigationController
@@ -30,6 +31,7 @@ final class KamiShimoIntervalSettingCoordinator: Coordinator {
             }
         }
         navigator.pushViewController(screen, animated: true)
+        self.screen = screen
     }
     
     

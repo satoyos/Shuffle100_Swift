@@ -30,7 +30,7 @@ private func appVersion() -> String {
 }
 
 class HelpListCoordinator: Coordinator {
-    var screen: HelpListViewController!
+    var screen: UIViewController?
     private var navigator: UINavigationController
     private var detailHelpScreen: HelpDetailViewController!
     
@@ -68,7 +68,7 @@ class HelpListCoordinator: Coordinator {
         let cancelAction = UIAlertAction(title: "やめておく", style: .cancel)
         ac.addAction(openAction)
         ac.addAction(cancelAction)
-        screen.present(ac, animated: true)
+        screen?.present(ac, animated: true)
     }
     
     private func openAppStoreReview() {

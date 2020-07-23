@@ -9,7 +9,7 @@
 import UIKit
 
 final class VolumeSettingCoordinator: Coordinator {
-
+    var screen: UIViewController?
     var settings: Settings
     var store: StoreManager
     var navigator: UINavigationController

@@ -9,9 +9,9 @@
 import UIKit
 
 class RecitePoemCoordinator: Coordinator{
+    var screen: UIViewController?
     private let navigator: UINavigationController
     internal var settings: Settings
-    internal var screen: RecitePoemViewController?
     internal var poemSupplier: PoemSupplier!
     internal var store: StoreManager
     internal var reciteSettingsCoordinator: ReciteSettingsCoordinator!
@@ -53,12 +53,13 @@ class RecitePoemCoordinator: Coordinator{
     internal func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         let number = firstPoem.number
         let counter = poemSupplier.currentIndex
-        screen!.playerFinishedAction = { [weak self, number, counter] in
+        screen.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteKamiFinished(number: number, counter: counter)
         }
-        screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+        screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
     
     internal func reciteKamiFinished(number: Int, counter: Int ) {
@@ -67,17 +68,18 @@ class RecitePoemCoordinator: Coordinator{
     
     internal func reciteShimoFinished(number: Int, counter: Int) {
         print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         if let poem = poemSupplier.drawNextPoem() {
             let number = poem.number
             let counter = poemSupplier.currentIndex
-            screen!.playerFinishedAction = { [weak self, number, counter] in
+            screen.playerFinishedAction = { [weak self, number, counter] in
                 self?.reciteKamiFinished(number: number, counter: counter)
             }
-            screen!.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+            screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
         
         } else {
             assert(true, "歌は全て読み終えた！")
-            screen!.stepIntoGameEnd()
+            screen.stepIntoGameEnd()
         }
     }
     
@@ -87,10 +89,11 @@ class RecitePoemCoordinator: Coordinator{
             backToTopScreen()
             return
         }
+        
         if side == .kami {
             backToPreviousPoem()
         } else {  // 下の句の冒頭でrewindが押された場合
-            guard let screen = screen else { return }
+            guard let screen = self.screen as? RecitePoemViewController else { return }
             let number = poemSupplier.poem.number
             let counter = poemSupplier.currentIndex
             let size = poemSupplier.size
@@ -108,13 +111,14 @@ class RecitePoemCoordinator: Coordinator{
 
     private func backToPreviousPoem() {
         if let prevPoem = poemSupplier.rollBackPrevPoem() {
+            guard let screen = self.screen as? RecitePoemViewController else { return }
             // 一つ前の歌(prevPoem)に戻す
             let number = prevPoem.number
             let counter = poemSupplier.currentIndex
-            screen!.playerFinishedAction = { [weak self] in
+            screen.playerFinishedAction = { [weak self] in
                 self?.reciteShimoFinished(number: number, counter: counter)
             }
-            screen!.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
+            screen.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
         } else {
             // もう戻す歌がない (今が1首め)
             assert(true, "1首目の上の句の冒頭でrewindが押された！")
@@ -124,7 +128,7 @@ class RecitePoemCoordinator: Coordinator{
     
     // 歯車ボタンが押されたときの画面遷移をここでやる！
     private func openReciteSettings() {
-        guard let screen = self.screen else { return }
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
         self.reciteSettingsCoordinator = coordinator

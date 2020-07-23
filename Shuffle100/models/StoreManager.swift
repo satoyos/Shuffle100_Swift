@@ -26,7 +26,7 @@ struct StoreManager {
         self.store = store
         self.env = env
     }
-
+    
     func save<T: Codable>(value: T, key: String) throws {
         if env.wontSaveData() { return }
         do {
@@ -46,6 +46,14 @@ struct StoreManager {
         } catch let error {
             print(error.localizedDescription)
             return nil
+        }
+    }
+    
+    func saveSettingsPermanently(_ settings: Settings) {
+        do {
+            try self.save(value: settings, key: Settings.userDefaultKey)
+        } catch {
+            assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
         }
     }
 }

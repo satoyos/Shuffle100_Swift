@@ -11,7 +11,7 @@ import UIKit
 final class NormalModeCoordinator: RecitePoemCoordinator {
 
     override internal func reciteKamiFinished(number: Int, counter: Int ) {
-        guard let screen = screen else { return }
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         screen.waitUserActionAfterFineshdReciing()
         screen.playButtonTappedAfterFinishedReciting = { [weak self] in
             self?.stepIntoShimoInNormalMode()
@@ -23,7 +23,7 @@ final class NormalModeCoordinator: RecitePoemCoordinator {
     }
   
     private func stepIntoShimoInNormalMode() {
-        guard let screen = self.screen else { return }
+        guard let screen = self.screen as? RecitePoemViewController else { return }
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen.playerFinishedAction = { [weak self, number, counter] in
