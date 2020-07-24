@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class SelectSingerCoordinator: Coordinator {
+final class SelectSingerCoordinator: Coordinator, SaveSettings {
+    internal var settings: Settings?
+    internal var store: StoreManager?
     private let navigator: UINavigationController
-    private var settings: Settings
-    private var store: StoreManager
     var screen: UIViewController?
         
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
@@ -21,6 +21,7 @@ final class SelectSingerCoordinator: Coordinator {
     }
         
     func start() {
+        guard let settings = settings else { return }
         let screen = SelectSingerViewController(settings: settings)
         setSaveSettingsActionTo(screen: screen, settings: settings)
         navigator.pushViewController(screen, animated: true)
@@ -28,13 +29,9 @@ final class SelectSingerCoordinator: Coordinator {
     }
     
     private func setSaveSettingsActionTo(screen: SelectSingerViewController, settings: Settings ) {
+        guard let store = store else { return }
         screen.saveSettingsAction = { [store, settings] in
-            do {
-                try store.save(value: settings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
-            }
+            self.saveSettingsPermanently(settings, into: store)
         }
     }
-
 }

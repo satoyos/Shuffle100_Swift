@@ -14,7 +14,6 @@ class NgramPickerCoordinator: Coordinator {
     private var store: StoreManager
     private var navigator: UINavigationController
     
-    
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
@@ -26,6 +25,4 @@ class NgramPickerCoordinator: Coordinator {
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }
-    
-    
 }
