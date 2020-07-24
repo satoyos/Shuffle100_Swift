@@ -25,9 +25,9 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         self.settings = setUpSettings()
         guard let settings = settings else { return }
         let homeScreen = HomeViewController(settings: settings)
-        setUpNavigationController(navigator)
         navigator.pushViewController(homeScreen, animated: false)
-        
+        setUpNavigationController(navigator)
+
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
         }
