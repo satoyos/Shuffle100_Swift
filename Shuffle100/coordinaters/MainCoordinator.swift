@@ -12,7 +12,6 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     var store: StoreManager?
     var screen: UIViewController?    
     var navigator = UINavigationController()
-//    internal var  store = StoreManager()
     internal var settings: Settings?
     internal let env = Environment()
     private var recitePoemCoordinator: RecitePoemCoordinator!
@@ -51,12 +50,6 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         self.screen = homeScreen
     }
     
-//    private func setUpNavigationController() {
-//        navigator.interactivePopGestureRecognizer?.isEnabled = false
-//        navigator.navigationBar.topItem?.prompt = "百首読み上げ"
-//        navigator.navigationBar.barTintColor = StandardColor.barTintColor
-//    }
-//
     private func selectPoem(settings: Settings) {
         guard let store = store else { return }
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
@@ -98,15 +91,8 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     
     private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings ) {
         guard let store = store else { return }
-
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
-//            store.saveSettingsPermanently(settings)
-//            do {
-//                try store.save(value: settings, key: Settings.userDefaultKey)
-//            } catch {
-//                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
-//            }
         }
     }
     

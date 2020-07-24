@@ -8,11 +8,11 @@
 
 import UIKit
 
-final class PoemPickerCoordinator: Coordinator {
+final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
+    internal var settings: Settings?
+    internal var store: StoreManager?
     private let navigator: UINavigationController
-    private var settings: Settings
     internal var screen: UIViewController?
-    private var store: StoreManager
     private var ngramPickerCoordinator: NgramPickerCoordinator!
     private var fudaSetsCoordinator: FudaSetsCoordinator!
     
@@ -23,14 +23,11 @@ final class PoemPickerCoordinator: Coordinator {
     }
     
     func start() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
         let screen = PoemPickerViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
-            print("<Save> 選んだ歌のデータをセーブするよ！")
-            do {
-                try store.save(value: settings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
-            }
+            self.saveSettingsPermanently(settings, into: store)
         }
         screen.openNgramPickerAction = { [weak self] in
             self?.openNgramPicker()
@@ -46,12 +43,16 @@ final class PoemPickerCoordinator: Coordinator {
     }
     
     internal func openNgramPicker() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
         let coordinator = NgramPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.ngramPickerCoordinator = coordinator
     }
     
     internal func openFudaSetsScreen() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
         let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.fudaSetsCoordinator = coordinator

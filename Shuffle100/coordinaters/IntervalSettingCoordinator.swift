@@ -8,10 +8,11 @@
 
 import UIKit
 
-final class IntervalSettingCoordinator: Coordinator {
+final class IntervalSettingCoordinator: Coordinator, SaveSettings {
+    internal var settings: Settings?
+    internal var store: StoreManager?
+    
     internal var screen: UIViewController?
-    var settings: Settings
-    var store: StoreManager
     var navigator: UINavigationController
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager = StoreManager()) {
@@ -21,14 +22,11 @@ final class IntervalSettingCoordinator: Coordinator {
     }
         
     func start() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
         let screen = IntervalSettingViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
-            print("<Save> データをセーブするよ！")
-            do {
-                try store.save(value: settings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
-            }
+            self.saveSettingsPermanently(settings, into: store)
         }
         navigator.pushViewController(screen, animated: true)
         self.screen = screen

@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FudaSetsCoordinator: Coordinator {
+class FudaSetsCoordinator: Coordinator, SaveSettings {
+    internal var settings: Settings?
+    internal var store: StoreManager?
     var screen: UIViewController?
-    private var settings: Settings
-    private var store: StoreManager
     private var navigator: UINavigationController
 
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
@@ -21,17 +21,13 @@ class FudaSetsCoordinator: Coordinator {
     }
     
     func start() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
         let screen = FudaSetsViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
-            assert(true, "<Save> 選んだ歌のデータをセーブするよ！")
-            do {
-                try store.save(value: settings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SttingsデータのUserDefautへの保存に失敗しました。")
-            }
+            self.saveSettingsPermanently(settings, into: store)
         }
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }
-    
 }

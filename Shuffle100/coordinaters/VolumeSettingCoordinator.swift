@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class VolumeSettingCoordinator: Coordinator {
+final class VolumeSettingCoordinator: Coordinator, SaveSettings {
+    internal var settings: Settings?
+    internal var store: StoreManager?
     var screen: UIViewController?
-    var settings: Settings
-    var store: StoreManager
     var navigator: UINavigationController
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager = StoreManager()) {
@@ -21,17 +21,12 @@ final class VolumeSettingCoordinator: Coordinator {
     }
     
     func start() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
         let screen = VolumeSettingViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
-            print("<Save> データをセーブするよ！")
-            do {
-                try store.save(value: settings, key: Settings.userDefaultKey)
-            } catch {
-                assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
-            }
+            self.saveSettingsPermanently(settings, into: store)
         }
         navigator.pushViewController(screen, animated: true)
     }
-    
-
 }
