@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator, SaveSettings {
+class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     var store: StoreManager?
     var screen: UIViewController?    
     var navigator = UINavigationController()
@@ -25,8 +25,8 @@ class MainCoordinator: Coordinator, SaveSettings {
         self.settings = setUpSettings()
         guard let settings = settings else { return }
         let homeScreen = HomeViewController(settings: settings)
+        setUpNavigationController(navigator)
         navigator.pushViewController(homeScreen, animated: false)
-        setUpNavigationController()
         
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
@@ -51,12 +51,12 @@ class MainCoordinator: Coordinator, SaveSettings {
         self.screen = homeScreen
     }
     
-    private func setUpNavigationController() {
-        navigator.interactivePopGestureRecognizer?.isEnabled = false
-        navigator.navigationBar.topItem?.prompt = "百首読み上げ"
-        navigator.navigationBar.barTintColor = StandardColor.barTintColor
-    }
-    
+//    private func setUpNavigationController() {
+//        navigator.interactivePopGestureRecognizer?.isEnabled = false
+//        navigator.navigationBar.topItem?.prompt = "百首読み上げ"
+//        navigator.navigationBar.barTintColor = StandardColor.barTintColor
+//    }
+//
     private func selectPoem(settings: Settings) {
         guard let store = store else { return }
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)

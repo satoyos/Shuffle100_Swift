@@ -263,6 +263,9 @@
 		9298B70224C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
 		9298B70324C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
 		9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
+		9298B70624CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
+		9298B70724CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
+		9298B70824CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
 		929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */; };
 		929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */; };
 		929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */; };
@@ -592,6 +595,7 @@
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSettingsProtocol.swift; sourceTree = "<group>"; };
+		9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleNavigatorProtocol.swift; sourceTree = "<group>"; };
 		929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerCoordinator.swift; sourceTree = "<group>"; };
 		929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsCoordinator.swift; sourceTree = "<group>"; };
@@ -1005,6 +1009,7 @@
 				929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */,
 				921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */,
 				9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */,
+				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
@@ -1396,6 +1401,7 @@
 				92ABF9B923F6D739000CA91C /* StoreManager.swift in Sources */,
 				92CE520B2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92ABF9AB23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,
+				9298B70624CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
 				920F6A6F247C03D400360C3B /* FudaSetsViewController.swift in Sources */,
 				92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
@@ -1549,6 +1555,7 @@
 				920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */,
 				92ABF9BA23F6D739000CA91C /* StoreManager.swift in Sources */,
 				9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
+				9298B70724CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				925994E124449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
@@ -1692,6 +1699,7 @@
 				9205E17E24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				921FF44324A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
+				9298B70824CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
 				92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				929A94B6247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
