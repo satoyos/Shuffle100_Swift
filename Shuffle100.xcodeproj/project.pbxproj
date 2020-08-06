@@ -275,6 +275,10 @@
 		929A94B4247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
 		929A94B5247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
 		929A94B6247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
+		92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */; };
+		92A1467824DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
+		92A1467924DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
+		92A1467A24DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
 		92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */; };
 		92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
 		92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
@@ -599,6 +603,8 @@
 		929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerCoordinator.swift; sourceTree = "<group>"; };
 		929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsCoordinator.swift; sourceTree = "<group>"; };
+		92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenTest.swift; sourceTree = "<group>"; };
+		92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerViewController.swift; sourceTree = "<group>"; };
 		92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingScreenTest.swift; sourceTree = "<group>"; };
 		92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingViewController.swift; sourceTree = "<group>"; };
 		92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingCoordinator.swift; sourceTree = "<group>"; };
@@ -835,6 +841,7 @@
 				920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */,
 				921FF430249E52C60083AC49 /* HelpListViewController.swift */,
 				921FF44C24A603760083AC49 /* HelpDetailViewController.swift */,
+				92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -975,6 +982,7 @@
 				920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */,
 				921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */,
 				921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */,
+				92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -1436,6 +1444,7 @@
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
+				92A1467824DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
@@ -1519,6 +1528,7 @@
 				92B9E9692465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
+				92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */,
 				9298B70324C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
 				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
 				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
@@ -1644,6 +1654,7 @@
 				921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				92FC39542288370D00791053 /* GameSettings.swift in Sources */,
+				92A1467924DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
 				925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
 				92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */,
@@ -1765,6 +1776,7 @@
 				92328C2424591D64005E0FEE /* WhatsNextButton.swift in Sources */,
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92A6EB8B24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
+				92A1467A24DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
