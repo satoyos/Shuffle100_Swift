@@ -13,6 +13,7 @@ private let intervalTimeLabelSizeBase: CGFloat = 100
 private let intervalSliderHeightBase = intervalTimeLabelSizeBase * 4 / 10
 private let imageOffsetXBase: CGFloat = 30
 private let whatsNextButtonHeightBase: CGFloat = 50
+private let memorizeTimerLabelSizeBase: CGFloat = 100
 
 protocol SizeByDevice {
     func playButtonHeight() -> CGFloat
@@ -22,6 +23,7 @@ protocol SizeByDevice {
     func whatsNextButtonHeight() -> CGFloat
     func imageOffsetX() -> CGFloat
     func fudaSetPickerWidth() -> CGFloat
+    func memorizeTimerLabelPointSize() -> CGFloat
 }
 
 class SizeFactory {
@@ -65,10 +67,15 @@ class PhoneSize: SizeByDevice {
     func fudaSetPickerWidth() -> CGFloat {
         return 270
     }
+    
+    func memorizeTimerLabelPointSize() -> CGFloat {
+        return memorizeTimerLabelSizeBase
+    }
+    
+
 }
 
 class PadSize: SizeByDevice {
-
     func playButtonHeight() -> CGFloat {
         return keyWindow().bounds.width * 2 / 3
     }
@@ -97,6 +104,9 @@ class PadSize: SizeByDevice {
         return 270
     }
     
+    func memorizeTimerLabelPointSize() -> CGFloat {
+        return memorizeTimerLabelSizeBase * 2
+    }
 }
 
 private func keyWindow() -> UIWindow {
