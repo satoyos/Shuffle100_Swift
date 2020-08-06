@@ -14,6 +14,7 @@ class MemorizeTimerScreenTest: XCTestCase {
 
     override func setUpWithError() throws {
         screen.loadViewIfNeeded()
+        screen.view.layoutIfNeeded()
     }
 
     override func tearDownWithError() throws {

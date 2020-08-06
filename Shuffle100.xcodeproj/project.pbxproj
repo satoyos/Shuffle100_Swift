@@ -279,6 +279,9 @@
 		92A1467824DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
 		92A1467924DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
 		92A1467A24DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
+		92A1467C24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
+		92A1467D24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
+		92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
 		92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */; };
 		92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
 		92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
@@ -605,6 +608,7 @@
 		929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsCoordinator.swift; sourceTree = "<group>"; };
 		92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenTest.swift; sourceTree = "<group>"; };
 		92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerViewController.swift; sourceTree = "<group>"; };
+		92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenLayout.swift; sourceTree = "<group>"; };
 		92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingScreenTest.swift; sourceTree = "<group>"; };
 		92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingViewController.swift; sourceTree = "<group>"; };
 		92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingCoordinator.swift; sourceTree = "<group>"; };
@@ -876,6 +880,7 @@
 				925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */,
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
 				92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */,
+				92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -1492,6 +1497,7 @@
 				92AE7C6723FD6D88003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				9208DF1022FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
+				92A1467C24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
 				925994E42444A8D200044253 /* TimeSettingViewController.swift in Sources */,
 				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92AE7C7323FEAEDC003FA07F /* Environment.swift in Sources */,
@@ -1552,6 +1558,7 @@
 				920F6A70247C03D400360C3B /* FudaSetsViewController.swift in Sources */,
 				92FC39502287110D00791053 /* RecitingSettings.swift in Sources */,
 				92ABF9BD23F6DF46000CA91C /* StoreManagerTest.swift in Sources */,
+				92A1467D24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
 				92AE7C7123FEAE6A003FA07F /* EnvironmentTest.swift in Sources */,
 				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
@@ -1692,6 +1699,7 @@
 				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
+				92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				92E5F82D240BCD4900C75FC6 /* ReciteSettingsViewController.swift in Sources */,
 				92AE7C7723FFDF4D003FA07F /* PoemPickerScreenUITestUtils.swift in Sources */,

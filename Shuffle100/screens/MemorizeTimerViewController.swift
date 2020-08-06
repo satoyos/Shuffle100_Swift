@@ -9,22 +9,17 @@
 import UIKit
 
 class MemorizeTimerViewController: UIViewController {
+    let timerContaier = UIView()
+    internal let sizeByDevice = SizeFactory.createSizeByDevice()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "暗記時間タイマー"
+        view.backgroundColor = StandardColor.backgroundColor
+        view.addSubview(timerContaier)
+
+        layoutScreen()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
