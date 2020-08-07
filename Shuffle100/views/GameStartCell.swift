@@ -26,7 +26,9 @@ class GameStartCell: UITableViewCell {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
-        textLabel?.textColor = UIColor.red
+        if accessibilityLabel == GameStartCell.identifier {
+            textLabel?.textColor = UIColor.red
+        }
         textLabel?.textAlignment = .center
     }
 
