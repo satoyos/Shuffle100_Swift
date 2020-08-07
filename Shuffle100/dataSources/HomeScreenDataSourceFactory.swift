@@ -15,7 +15,6 @@ struct HomeScreenDataSourceFactory {
         ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
     ]
     
-//    static func settingsDataSource(for type: HomeCellType, settings: GameSettings) -> HomeScreenDataSource {
     static func settingsDataSource(for type: HomeCellType, settings: Settings) -> TableDataSource {
         var dataSource: TableDataSource!
         
@@ -36,6 +35,12 @@ struct HomeScreenDataSourceFactory {
     
     static func startGameDataSource() -> TableDataSource {
         return TableDataSource(title: "試合開始", accessoryType: .none)
+    }
+    
+    static func memorizeTimerDataSource() -> TableDataSource {
+        var dataSource = TableDataSource(title: "暗記時間タイマー", accessoryType: .disclosureIndicator)
+        dataSource.accessibilityLabel = "memorizeTimer"
+        return dataSource
     }
     
     private static func poemsDataSource(_ selectedNum: Int) -> TableDataSource {

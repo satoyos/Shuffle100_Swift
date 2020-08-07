@@ -11,7 +11,11 @@ import XCTest
 
 class HomeScreenTest: XCTestCase {
     internal func startGameCell(of screen: HomeViewController) ->        GameStartCell {
-        return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1)) as! GameStartCell
+        var gameStartCellIndex = 0
+        if screen.settings.reciteMode == .normal {
+            gameStartCellIndex = 1
+        }
+        return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: gameStartCellIndex, section: 1)) as! GameStartCell
     }
     
     func test_beginnerModeLabelIsBeginner() {
@@ -63,6 +67,17 @@ class HomeScreenTest: XCTestCase {
             return
         }
         XCTAssertTrue(switchView.isOn)
+    }
+    
+    func test_memorizeTimerCellExists() {
+        // given
+        let screen = HomeViewController()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(cell.textLabel?.text, "暗記時間タイマー")
+        
     }
     
     private func beginnerSettings() -> Settings {

@@ -57,6 +57,10 @@ extension HomeViewController: UITableViewDataSource {
         var dataSource = HomeScreenDataSourceFactory.startGameDataSource()
         dataSource.accessibilityLabel = GameStartCell.identifier
         section.dataSources = [dataSource]
+        if settings.reciteMode == .normal {
+            let timerCell = HomeScreenDataSourceFactory.memorizeTimerDataSource()
+            section.dataSources.insert(timerCell, at: 0)
+        }
         return section
     }
 }
