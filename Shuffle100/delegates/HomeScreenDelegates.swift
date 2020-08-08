@@ -15,6 +15,8 @@ extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let cell = self.tableView(tableView, cellForRowAt: indexPath)
+        
         if indexPath.section == 0 {
             let cellsNum = self.tableView(tableView, numberOfRowsInSection: 0)
             switch indexPath.row {
@@ -29,7 +31,11 @@ extension HomeViewController: UITableViewDelegate {
             }
         } else {
             if settings.state100.selectedNum > 0 {
-                startGameAction?()
+                if cell.accessibilityLabel == GameStartCell.identifier {
+                    startGameAction?()
+                } else {
+                    memorizeTimerAction?()
+                }
             } else {
                 tableView.deselectRow(at: indexPath, animated: true)
                 alertZeroPoems()

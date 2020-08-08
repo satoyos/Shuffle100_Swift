@@ -24,10 +24,15 @@ class GameStartCell: UITableViewCell {
 
     func configure(dataSource: TableDataSource) {
         textLabel?.text = dataSource.title
+        guard let defaultFont = textLabel?.font else { return }
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
         if accessibilityLabel == GameStartCell.identifier {
             textLabel?.textColor = UIColor.red
+            textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .bold)
+        } else {
+            textLabel?.textColor = .black
+            textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .regular)
         }
         textLabel?.textAlignment = .center
     }
