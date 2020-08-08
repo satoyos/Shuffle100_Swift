@@ -26,7 +26,8 @@ class HomeViewController: SettingsAttachedViewController {
     var startGameAction: (() -> Void)?
     var reciteSettingsAction: (() -> Void)?
     var helpActioh: (() -> Void)?
-    
+    var memorizeTimerAction: (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = titleName

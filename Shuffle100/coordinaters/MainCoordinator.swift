@@ -18,6 +18,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     private var poemPickerCoordinator: PoemPickerCoordinator!
     private var helpListCoordinator: HelpListCoordinator!
+    private var memorizeTimerCoordinator: MemorizeTimerCoordinator!
 
     func start() {
         self.store = StoreManager()
@@ -44,6 +45,9 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         }
         homeScreen.helpActioh = { [weak self] in
             self?.openHelpList()
+        }
+        homeScreen.memorizeTimerAction = { [weak self] in
+            self?.openMemorizeTimer()
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings)
         AudioPlayerFactory.shared.setupAudioSession()
@@ -109,4 +113,12 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         coordinator.start()
         self.helpListCoordinator = coordinator
     }
+    
+    private func openMemorizeTimer() {
+        print("暗記時間タイマーを開くよ！")
+        let coordinator = MemorizeTimerCoordinator(navigator: navigator)
+        coordinator.start()
+        self.memorizeTimerCoordinator = coordinator
+    }
+
 }
