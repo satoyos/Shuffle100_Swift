@@ -10,6 +10,10 @@ import UIKit
 
 class MemorizeTimerViewController: UIViewController {
     let timerContaier = UIView()
+    let minLabel = UILabel()
+    let secLabel = UILabel()
+    let minCharLabel = UILabel()
+    let secCharLabel = UILabel()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
 
     override func viewDidLoad() {
