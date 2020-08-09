@@ -30,7 +30,6 @@ class HelpListViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "ヘルプ"
-        self.navigationItem.prompt = "百首読み上げ"
         self.tableView = createTableViewForScreen()
         tableView.register(HelpListTableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)

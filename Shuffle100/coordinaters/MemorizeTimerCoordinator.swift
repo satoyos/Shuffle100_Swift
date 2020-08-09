@@ -19,6 +19,7 @@ class MemorizeTimerCoordinator: Coordinator {
     func start() {
         let screen = MemorizeTimerViewController()
         navigator.pushViewController(screen, animated: true)
+        screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
     

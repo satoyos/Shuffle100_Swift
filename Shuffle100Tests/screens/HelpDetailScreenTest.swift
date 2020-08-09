@@ -19,7 +19,6 @@ class HelpDetailScreenTest: XCTestCase {
         // then
         XCTAssertEqual(screen.title, "aaa")
         XCTAssertEqual(screen.view.subviews.count, 1)
-        XCTAssertEqual(screen.navigationItem.prompt, "百首読み上げ")
     }
 
 

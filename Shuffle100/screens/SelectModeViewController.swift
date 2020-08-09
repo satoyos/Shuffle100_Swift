@@ -22,7 +22,6 @@ class SelectModeViewController: SettingsAttachedViewController, UIPickerViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = screenTitle
-        navigationItem.prompt = "百首読み上げ"
         self.view.backgroundColor = StandardColor.backgroundColor
         self.view.addSubview(picker)
         initPicker()
