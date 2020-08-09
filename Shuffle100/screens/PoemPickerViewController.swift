@@ -29,7 +29,6 @@ class PoemPickerViewController: SettingsAttachedViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.prompt = "百首読み上げ"
         self.tableView = createTableViewForScreen()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         makeCellsLongPressable()

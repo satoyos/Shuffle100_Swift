@@ -45,6 +45,7 @@ class HelpListCoordinator: Coordinator {
             self?.goDetailScreen(indexPath: indexPath)
         }
         navigator.pushViewController(screen, animated: true)
+        screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
     
@@ -54,6 +55,7 @@ class HelpListCoordinator: Coordinator {
             print("html for HELP => \(htmlFileName)")
             let screen = HelpDetailViewController(title: dataSource.name, htmlFileName: htmlFileName)
             navigator.pushViewController(screen, animated: true)
+            screen.navigationItem.prompt = navigationItemPrompt()
             self.detailHelpScreen = screen
         } else if dataSource.type == .review {
             showAlertConfirmingGotoReview()

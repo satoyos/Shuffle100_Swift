@@ -25,6 +25,7 @@ final class SelectSingerCoordinator: Coordinator, SaveSettings {
         let screen = SelectSingerViewController(settings: settings)
         setSaveSettingsActionTo(screen: screen, settings: settings)
         navigator.pushViewController(screen, animated: true)
+        screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
     

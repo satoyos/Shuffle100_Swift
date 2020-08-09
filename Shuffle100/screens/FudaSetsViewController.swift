@@ -15,8 +15,6 @@ class FudaSetsViewController: SettingsAttachedViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.prompt = "百首読み上げ"
         self.title = "作った札セットから選ぶ"
         self.tableView = createTableViewForScreen()
         tableView.register(FudaSetsTableViewCell.self, forCellReuseIdentifier: cellReuseId)

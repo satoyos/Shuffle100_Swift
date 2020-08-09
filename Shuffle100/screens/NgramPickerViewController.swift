@@ -33,8 +33,6 @@ class NgramPickerViewController: SettingsAttachedViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.prompt = "百首読み上げ"
         self.title = "1字目で選ぶ"
         self.tableView = createTableViewForScreen()
         tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)

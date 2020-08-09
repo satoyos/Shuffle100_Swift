@@ -39,6 +39,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
             self?.showTorifudaScreenFor(indexPath)
         }
         navigator.pushViewController(screen, animated: true)
+        screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
     

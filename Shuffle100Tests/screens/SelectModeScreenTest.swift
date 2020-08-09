@@ -10,16 +10,7 @@ import XCTest
 @testable import Shuffle100
 
 class SelectModeScreenTest: XCTestCase {
-    func test_topPromptExists() {
-        // given
-        let screen = SelectModeViewController()
-        // when
-        screen.loadViewIfNeeded()
-        // then
-        XCTAssertEqual(screen.navigationItem.prompt, "百首読み上げ")
-    }
-    
-    func test_pickerRowsCountIs3() {
+        func test_pickerRowsCountIs3() {
         // given
         let screen = SelectModeViewController()
         // when

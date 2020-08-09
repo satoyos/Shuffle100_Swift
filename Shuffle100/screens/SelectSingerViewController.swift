@@ -15,7 +15,6 @@ class SelectSingerViewController: SettingsAttachedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "読手を選ぶ"
-        navigationItem.prompt = "百首読み上げ"
         self.view.backgroundColor = StandardColor.backgroundColor
         self.view.addSubview(picker)
         initPicker()

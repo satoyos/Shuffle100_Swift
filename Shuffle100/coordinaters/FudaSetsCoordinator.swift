@@ -28,6 +28,7 @@ class FudaSetsCoordinator: Coordinator, SaveSettings {
             self.saveSettingsPermanently(settings, into: store)
         }
         navigator.pushViewController(screen, animated: true)
+        screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
 }
