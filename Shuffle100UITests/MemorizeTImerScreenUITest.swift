@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import FontAwesome_swift
 
 class MemorizeTImerScreenUITest: XCTestCase {
     let app = XCUIApplication()
@@ -22,6 +23,7 @@ class MemorizeTImerScreenUITest: XCTestCase {
         app.tables.staticTexts["暗記時間タイマー"].tap()
         // then
         XCTAssert(app.navigationBars["暗記時間タイマー"].exists)
+        XCTAssert(app.buttons.staticTexts[String.fontAwesomeIcon(name: .play)].exists)
     }
 
 }

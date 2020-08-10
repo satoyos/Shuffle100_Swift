@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import FontAwesome_swift
 @testable import Shuffle100
 
 class MemorizeTimerScreenTest: XCTestCase {
@@ -25,5 +26,6 @@ class MemorizeTimerScreenTest: XCTestCase {
         XCTAssertEqual(screen.title, "暗記時間タイマー")
         let charLabelSize = SizeFactory.createSizeByDevice().memorizeTimerLabelPointSize() / 3
         XCTAssertEqual(screen.minCharLabel.frame.width, charLabelSize, accuracy: 1.0)
+        XCTAssertEqual(screen.playButton.titleLabel?.text, String.fontAwesomeIcon(name: .play))
     }
 }
