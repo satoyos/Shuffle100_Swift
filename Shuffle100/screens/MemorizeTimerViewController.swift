@@ -14,6 +14,7 @@ class MemorizeTimerViewController: UIViewController {
     let secLabel = UILabel()
     let minCharLabel = UILabel()
     let secCharLabel = UILabel()
+    let playButton = ReciteViewPlayButton()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
 
     override func viewDidLoad() {
@@ -21,7 +22,8 @@ class MemorizeTimerViewController: UIViewController {
         self.title = "暗記時間タイマー"
         view.backgroundColor = StandardColor.backgroundColor
         view.addSubview(timerContaier)
-
+        view.addSubview(playButton)
+        
         layoutScreen()
     }
     
