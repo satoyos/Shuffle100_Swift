@@ -58,7 +58,7 @@ extension RecitePoemView {
     }
     
     private func configureRewindButton() {
-        rewindButton.configure(height: skipButtonSize().height, fontSize: skipButtonFontSize(), iconType: .backward)
+        rewindButton.configure(height: skipButtonSize().height, fontSize: skipButtonFontSize(), iconType: .rewind)
     }
     
     

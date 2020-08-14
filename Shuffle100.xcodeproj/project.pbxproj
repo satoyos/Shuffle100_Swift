@@ -366,6 +366,9 @@
 		92BCFA56241FB95A004B824A /* ReciteSettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */; };
 		92BCFA57241FB95A004B824A /* ReciteSettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */; };
 		92BCFA58241FB95A004B824A /* ReciteSettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */; };
+		92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
+		92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
+		92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
 		92C87DD322E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD422E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD522E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
@@ -651,6 +654,7 @@
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
+		92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphIconProtocol.swift; sourceTree = "<group>"; };
 		92C87DD222E8894900569D15 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
 		92C87DD622E88D5400569D15 /* Singers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Singers.json; sourceTree = "<group>"; };
 		92C87DDA22E88E6900569D15 /* SingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTests.swift; sourceTree = "<group>"; };
@@ -913,6 +917,7 @@
 				92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */,
 				921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */,
 				921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */,
+				92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1431,6 +1436,7 @@
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
+				92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */,
 				925994E024449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				921FF431249E52C60083AC49 /* HelpListViewController.swift in Sources */,
@@ -1551,6 +1557,7 @@
 				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
+				92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				92CE520C2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
@@ -1812,6 +1819,7 @@
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				9246195E248BE29E002B6690 /* FudaSetsUITestUtils.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
+				92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				921FF437249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */,
