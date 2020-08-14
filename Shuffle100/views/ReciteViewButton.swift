@@ -8,9 +8,9 @@
 
 import UIKit
 import DSFloatingButton
-import FontAwesome_swift
+//import FontAwesome_swift
 
-class ReciteViewButton: DSFloatingButton {
+class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
     
 //    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
     fileprivate func standardButtonColor() -> UIColor {
@@ -22,13 +22,13 @@ class ReciteViewButton: DSFloatingButton {
         setGradient()
     }
     
-    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome) {
+    func configure(height: CGFloat, fontSize: CGFloat, iconType: SOHGlyphIconType) {
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
         
 //        self.setTitleColor(Color.konpeki.UIColor, for: .normal)
         self.setTitleColor(standardButtonColor(), for: .normal)
-        self.setTitle(String.fontAwesomeIcon(name: iconType), for: .normal)
+        self.setTitle(stringExpression(of: iconType), for: .normal)
         self.cornerRadius = height / 2
         self.useCornerRadius = true
         setGradient()
