@@ -16,6 +16,7 @@ class MemorizeTimerViewController: UIViewController {
     let secCharLabel = UILabel()
     let playButton = ReciteViewPlayButton()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
+    var remainSec: Int = 15 * 60
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,14 @@ class MemorizeTimerViewController: UIViewController {
         view.addSubview(playButton)
         
         layoutScreen()
+        refleshLabels()
     }
     
+    internal func refleshLabels() {
+        let min: Int = remainSec / 60
+        let sec: Int = remainSec % 60
+        minLabel.text = "\(min)"
+        secLabel.text = String(format: "%02d", sec)
+    }
 
 }
