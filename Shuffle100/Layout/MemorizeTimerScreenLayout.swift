@@ -54,6 +54,7 @@ extension MemorizeTimerViewController {
         _ = minLabel.then {
             $0.text = "00"
             $0.font = UIFont.systemFont(ofSize: labelSize * 0.8)
+            $0.textAlignment = .right
             $0.snp.makeConstraints { (make) in
                 make.size.equalTo(labelSize)
                 make.top.equalToSuperview()
@@ -67,10 +68,11 @@ extension MemorizeTimerViewController {
         _ = secLabel.then {
             $0.text = "00"
             $0.font = UIFont.systemFont(ofSize: labelSize * 0.8)
+            $0.textAlignment = .right
             $0.snp.makeConstraints { (make) in
                 make.size.equalTo(labelSize)
                 make.top.equalToSuperview()
-                make.leading.equalTo(minCharLabel.snp.trailing).offset(10)
+                make.leading.equalTo(minCharLabel.snp.trailing)
             }
         }
     }
