@@ -8,11 +8,9 @@
 
 import UIKit
 import DSFloatingButton
-//import FontAwesome_swift
 
 class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
     
-//    func configure(height: CGFloat, fontSize: CGFloat, iconType: FontAwesome, leftInset: Bool = false) {
     fileprivate func standardButtonColor() -> UIColor {
         return StandardColor.standardButtonColor
     }
@@ -26,7 +24,6 @@ class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
         self.titleLabel?.textAlignment = .center
         self.titleLabel?.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
         
-//        self.setTitleColor(Color.konpeki.UIColor, for: .normal)
         self.setTitleColor(standardButtonColor(), for: .normal)
         self.setTitle(stringExpression(of: iconType), for: .normal)
         self.cornerRadius = height / 2

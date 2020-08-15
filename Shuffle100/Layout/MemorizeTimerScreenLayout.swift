@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 import Then
-import FontAwesome_swift
 
 extension MemorizeTimerViewController {
     internal func layoutScreen() {
