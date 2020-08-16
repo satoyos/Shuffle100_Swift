@@ -369,6 +369,9 @@
 		92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
 		92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
 		92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
+		92C6B4A124E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */; };
+		92C6B4A224E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */; };
+		92C6B4A324E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */; };
 		92C87DD322E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD422E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD522E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
@@ -655,6 +658,7 @@
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92BCFA55241FB95A004B824A /* ReciteSettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCell.swift; sourceTree = "<group>"; };
 		92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphIconProtocol.swift; sourceTree = "<group>"; };
+		92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenDelegate.swift; sourceTree = "<group>"; };
 		92C87DD222E8894900569D15 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
 		92C87DD622E88D5400569D15 /* Singers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Singers.json; sourceTree = "<group>"; };
 		92C87DDA22E88E6900569D15 /* SingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTests.swift; sourceTree = "<group>"; };
@@ -1118,6 +1122,7 @@
 				92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */,
 				920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */,
 				921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */,
+				92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1474,6 +1479,7 @@
 				92B9E9682465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92328C3224596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
 				923B594C23ACF606002027B4 /* GameEndViiew.swift in Sources */,
+				92C6B4A124E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
 				92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				92FC394F2287110D00791053 /* RecitingSettings.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
@@ -1679,6 +1685,7 @@
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				92FC39542288370D00791053 /* GameSettings.swift in Sources */,
 				92A1467924DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
+				92C6B4A224E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
 				925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
 				92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */,
@@ -1771,6 +1778,7 @@
 				92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
+				92C6B4A324E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,

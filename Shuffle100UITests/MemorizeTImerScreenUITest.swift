@@ -18,11 +18,24 @@ class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
     }
 
     func test_showTimerScreen() throws {
+        gotoMemorizeTimerScreen()
+        XCTAssert(app.buttons.staticTexts[stringExpression(of: .play)].exists)
+    }
+    
+    func test_tapPlayButtonToStartCountDown() {
+        // given
+        gotoMemorizeTimerScreen()
+        // when
+        app.buttons.staticTexts[stringExpression(of: .play)].tap()
+        // then
+        XCTAssert(app.buttons.staticTexts[stringExpression(of: .pause)].exists)
+    }
+    
+    private func gotoMemorizeTimerScreen() {
         // when
         app.tables.staticTexts["暗記時間タイマー"].tap()
         // then
         XCTAssert(app.navigationBars["暗記時間タイマー"].exists)
-        XCTAssert(app.buttons.staticTexts[stringExpression(of: .play)].exists)
     }
 
 }
