@@ -17,6 +17,21 @@ class MemorizeTimerViewController: UIViewController {
     let playButton = ReciteViewPlayButton()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var remainSec: Int = 15 * 60
+    private var _isTimerRunning = false
+    
+    var isTimerRunning: Bool {
+        get {
+            return _isTimerRunning
+        }
+        set {
+            _isTimerRunning = newValue
+            if _isTimerRunning {
+                playButton.showAsWaitingFor(.pause)
+            } else {
+                playButton.showAsWaitingFor(.play)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +41,8 @@ class MemorizeTimerViewController: UIViewController {
         view.addSubview(playButton)
         
         layoutScreen()
+        self.isTimerRunning = false
+        setButtonActions()
         refleshLabels()
     }
     
@@ -36,4 +53,10 @@ class MemorizeTimerViewController: UIViewController {
         secLabel.text = String(format: "%02d", sec)
     }
 
+    private func setButtonActions() {
+        playButton.tap = { [weak self] btn in
+            self?.playButtonTapped()
+        }
+    }
+    
 }
