@@ -34,6 +34,18 @@ class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
         XCTAssertFalse(app.staticTexts["15"].exists)
     }
     
+    func test_goThroughMemorizeTime() {
+        // given
+        gotoMemorizeTimerScreen()
+        // when
+        app.buttons.staticTexts[stringExpression(of: .play)].tap()
+        // then
+        XCTContext.runActivity(named: "暗記時間が終わると、自動的にトップ画面に戻る") { _ in
+            sleep(15 * 60)
+            waitToAppear(for: app.navigationBars["トップ"], timeout: 3)
+        }
+    }
+    
     private func gotoMemorizeTimerScreen() {
         // when
         app.tables.staticTexts["暗記時間タイマー"].tap()

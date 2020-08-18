@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MemorizeTimerViewController: UIViewController {
     let timerContaier = UIView()
@@ -19,6 +20,8 @@ class MemorizeTimerViewController: UIViewController {
     var remainSec: Int = 15 * 60
     private var _isTimerRunning = false
     internal var timer: Timer!
+    let player2minites = AudioPlayerFactory.shared.preparePlayer(folder: "audio/sasara", file: "2minutesLeft", title: "競技開始2分前")
+    let playerStgartGame = AudioPlayerFactory.shared.preparePlayer(folder: "audio/sasara", file: "timeToStartGame", title: "暗記時間終了")
     
     var isTimerRunning: Bool {
         get {
@@ -45,6 +48,7 @@ class MemorizeTimerViewController: UIViewController {
         self.isTimerRunning = false
         setButtonActions()
         refleshLabels()
+        setDelegate(of: playerStgartGame)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,11 +67,10 @@ class MemorizeTimerViewController: UIViewController {
         remainSec -= 1
         refleshLabels()
         if remainSec == 2 * 60 {
-            // 残り時間2分のアナウンス
-            print("【ここでアナウンス】残り時間2分です！")
+            declare2minutesLeft()
         } else if remainSec == 0 {
             stopAndDeleteTImer()
-            // 暗記時間終了のアナウンス
+            declareTimeToStartGame()
         }
         
     }
@@ -83,5 +86,15 @@ class MemorizeTimerViewController: UIViewController {
             timer.invalidate()
             self.timer = nil
         }
+    }
+    
+    internal func declare2minutesLeft() {
+        player2minites.currentTime = 0.0
+        player2minites.play()
+    }
+    
+    internal func declareTimeToStartGame() {
+        playerStgartGame.currentTime = 0.0
+        playerStgartGame.play()
     }
 }
