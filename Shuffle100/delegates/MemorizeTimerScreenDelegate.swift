@@ -11,5 +11,6 @@ import Foundation
 extension MemorizeTimerViewController {
     func playButtonTapped() {
         self.isTimerRunning = !isTimerRunning
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
     }
 }

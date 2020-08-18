@@ -18,6 +18,7 @@ class MemorizeTimerViewController: UIViewController {
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var remainSec: Int = 15 * 60
     private var _isTimerRunning = false
+    internal var timer: Timer!
     
     var isTimerRunning: Bool {
         get {
@@ -46,11 +47,29 @@ class MemorizeTimerViewController: UIViewController {
         refleshLabels()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopAndDeleteTImer()
+    }
+    
     internal func refleshLabels() {
         let min: Int = remainSec / 60
         let sec: Int = remainSec % 60
         minLabel.text = "\(min)"
         secLabel.text = String(format: "%02d", sec)
+    }
+    
+    @objc func updateRemainTime() {
+        remainSec -= 1
+        refleshLabels()
+        if remainSec == 2 * 60 {
+            // 残り時間2分のアナウンス
+            print("【ここでアナウンス】残り時間2分です！")
+        } else if remainSec == 0 {
+            stopAndDeleteTImer()
+            // 暗記時間終了のアナウンス
+        }
+        
     }
 
     private func setButtonActions() {
@@ -59,4 +78,10 @@ class MemorizeTimerViewController: UIViewController {
         }
     }
     
+    private func stopAndDeleteTImer() {
+        if let timer = timer {
+            timer.invalidate()
+            self.timer = nil
+        }
+    }
 }
