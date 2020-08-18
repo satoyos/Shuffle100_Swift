@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import AVFoundation
 
-extension MemorizeTimerViewController {
+extension MemorizeTimerViewController: AVAudioPlayerDelegate {
+    internal func setDelegate(of player: AVAudioPlayer) {
+        player.delegate = self
+    }
+    
     func playButtonTapped() {
         self.isTimerRunning = !isTimerRunning
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        guard player == playerStgartGame else { return }
+        guard flag == true else { return }
+        navigationController?.popViewController(animated: true)
     }
 }
