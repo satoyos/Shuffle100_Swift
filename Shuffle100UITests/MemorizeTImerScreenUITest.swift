@@ -25,10 +25,13 @@ class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
     func test_tapPlayButtonToStartCountDown() {
         // given
         gotoMemorizeTimerScreen()
+        XCTAssert(app.staticTexts["15"].exists)
         // when
         app.buttons.staticTexts[stringExpression(of: .play)].tap()
         // then
         XCTAssert(app.buttons.staticTexts[stringExpression(of: .pause)].exists)
+        sleep(1)
+        XCTAssertFalse(app.staticTexts["15"].exists)
     }
     
     private func gotoMemorizeTimerScreen() {
