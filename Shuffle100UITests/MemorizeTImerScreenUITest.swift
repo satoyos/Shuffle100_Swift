@@ -32,6 +32,11 @@ class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
         XCTAssert(app.buttons.staticTexts[stringExpression(of: .pause)].exists)
         sleep(1)
         XCTAssertFalse(app.staticTexts["15"].exists)
+        XCTContext.runActivity(named: "もう一度playButtonをタップすると、ボタンの表示がpauseに変わる") { _ in
+            app.buttons.staticTexts[stringExpression(of: .pause)].tap()
+            // then
+            XCTAssert(app.buttons.staticTexts[stringExpression(of: .play)].exists)
+        }
     }
     
     func test_goThroughMemorizeTime() {

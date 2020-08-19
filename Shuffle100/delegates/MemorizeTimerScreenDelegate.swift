@@ -16,7 +16,6 @@ extension MemorizeTimerViewController: AVAudioPlayerDelegate {
     
     func playButtonTapped() {
         self.isTimerRunning = !isTimerRunning
-        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
