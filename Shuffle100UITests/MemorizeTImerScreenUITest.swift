@@ -42,7 +42,7 @@ class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
         // then
         XCTContext.runActivity(named: "暗記時間が終わると、自動的にトップ画面に戻る") { _ in
             sleep(15 * 60)
-            waitToAppear(for: app.navigationBars["トップ"], timeout: 3)
+            waitToAppear(for: app.navigationBars["トップ"], timeout: 10)
         }
     }
     
