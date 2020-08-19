@@ -28,12 +28,14 @@ class MemorizeTimerViewController: UIViewController {
             return _isTimerRunning
         }
         set {
-            _isTimerRunning = newValue
             if _isTimerRunning {
-                playButton.showAsWaitingFor(.pause)
-            } else {
+                stopAndDeleteTimer()
                 playButton.showAsWaitingFor(.play)
+           } else {
+                setAndStartTimer()
+                playButton.showAsWaitingFor(.pause)
             }
+            _isTimerRunning = newValue
         }
     }
 
@@ -45,7 +47,7 @@ class MemorizeTimerViewController: UIViewController {
         view.addSubview(playButton)
         
         layoutScreen()
-        self.isTimerRunning = false
+//        self.isTimerRunning = false
         setButtonActions()
         refleshLabels()
         setDelegate(of: playerStgartGame)
@@ -53,7 +55,7 @@ class MemorizeTimerViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        stopAndDeleteTImer()
+        stopAndDeleteTimer()
     }
     
     internal func refleshLabels() {
@@ -69,7 +71,7 @@ class MemorizeTimerViewController: UIViewController {
         if remainSec == 2 * 60 {
             declare2minutesLeft()
         } else if remainSec == 0 {
-            stopAndDeleteTImer()
+            stopAndDeleteTimer()
             declareTimeToStartGame()
         }
         
@@ -81,7 +83,11 @@ class MemorizeTimerViewController: UIViewController {
         }
     }
     
-    private func stopAndDeleteTImer() {
+    internal func setAndStartTimer() {
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateRemainTime), userInfo: nil, repeats: true)
+    }
+    
+    private func stopAndDeleteTimer() {
         if let timer = timer {
             timer.invalidate()
             self.timer = nil
@@ -96,5 +102,6 @@ class MemorizeTimerViewController: UIViewController {
     internal func declareTimeToStartGame() {
         playerStgartGame.currentTime = 0.0
         playerStgartGame.play()
+        playButton.isEnabled = false
     }
 }

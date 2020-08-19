@@ -115,7 +115,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
     
     private func openMemorizeTimer() {
-        print("暗記時間タイマーを開くよ！")
+//        print("暗記時間タイマーを開くよ！")
         let coordinator = MemorizeTimerCoordinator(navigator: navigator)
         coordinator.start()
         self.memorizeTimerCoordinator = coordinator
