@@ -31,7 +31,7 @@ class GameStartCell: UITableViewCell {
             textLabel?.textColor = UIColor.red
             textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .bold)
         } else {
-            textLabel?.textColor = .black
+            textLabel?.textColor = .label
             textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .regular)
         }
         textLabel?.textAlignment = .center
