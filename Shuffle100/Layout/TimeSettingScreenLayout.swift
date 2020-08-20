@@ -20,7 +20,7 @@ extension TimeSettingViewController {
     private func configureTimeLabel() {
         _ = timeLabel.then {
             $0.text = "0.00"
-            $0.font = UIFont.systemFont(ofSize: labelPointSize())
+            $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelPointSize(), weight: .medium)
             $0.sizeToFit()
             $0.snp.makeConstraints{ (make) -> Void in
                 // Center => [50%, 40%]

@@ -53,7 +53,7 @@ extension MemorizeTimerViewController {
         let labelSize = sizeByDevice.memorizeTimerLabelPointSize()
         _ = minLabel.then {
             $0.text = "00"
-            $0.font = UIFont.systemFont(ofSize: labelSize * 0.8)
+            $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelSize * 0.8, weight: .medium)
             $0.textAlignment = .right
             $0.snp.makeConstraints { (make) in
                 make.size.equalTo(labelSize)
@@ -67,7 +67,7 @@ extension MemorizeTimerViewController {
         let labelSize = sizeByDevice.memorizeTimerLabelPointSize()
         _ = secLabel.then {
             $0.text = "00"
-            $0.font = UIFont.systemFont(ofSize: labelSize * 0.8)
+            $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelSize * 0.8, weight: .medium)
             $0.textAlignment = .right
             $0.snp.makeConstraints { (make) in
                 make.size.equalTo(labelSize)
