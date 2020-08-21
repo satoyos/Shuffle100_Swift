@@ -15,7 +15,8 @@ private let helpListSections: [HelpListSection] = [
         HelpListDataSource(name: "「初心者モード」とは？", type: .html, fileName: "html/what_is_beginner_mode"),
         HelpListDataSource(name: "試合の流れ (初心者モード)", type: .html,  fileName: "html/beginner_mode_flow"),
         HelpListDataSource(name: "「ノンストップ・モード」とは？", type: .html, fileName: "html/what_is_nonstop_mode"),
-        HelpListDataSource(name: "「札セット」とその使い方", type: .html, fileName: "html/fuda_set")
+        HelpListDataSource(name: "「札セット」とその使い方", type: .html, fileName: "html/fuda_set"),
+        HelpListDataSource(name: "暗記時間タイマー", type: .html, fileName: "html/memorize_timer")
     ]),
     HelpListSection(name: "その他", dataSources: [
         HelpListDataSource(name: "「いなばくん」について", type: .html, fileName: "html/about_inaba_kun"),
