@@ -47,15 +47,22 @@ class MemorizeTimerViewController: UIViewController {
         view.addSubview(playButton)
         
         layoutScreen()
-//        self.isTimerRunning = false
         setButtonActions()
         refleshLabels()
         setDelegate(of: playerStgartGame)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 自動的にスリープに入るのを防ぐ
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopAndDeleteTimer()
+        // スリープを有効に戻す
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
     internal func refleshLabels() {
