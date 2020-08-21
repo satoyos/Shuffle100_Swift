@@ -48,6 +48,8 @@ class RecitePoemViewController: SettingsAttachedViewController {
         
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        // 自動的にスリープに入るのを防ぐ
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     override func viewWillLayoutSubviews() {
@@ -60,6 +62,8 @@ class RecitePoemViewController: SettingsAttachedViewController {
         if let timerForPrgoress = self.timerForPrgoress {
             timerForPrgoress.invalidate()
         }
+        // スリープを有効に戻す
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
     func addActionsToButtons() {

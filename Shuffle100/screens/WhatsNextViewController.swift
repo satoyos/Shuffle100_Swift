@@ -47,6 +47,18 @@ class WhatsNextViewController: UIViewController {
         setButtonActions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 自動的にスリープに入るのを防ぐ
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // スリープを有効に戻す
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+    
     private func setNavBarButtons() {
         let size = CGSize(width: navBarButtonSize, height: navBarButtonSize)
         setGearButton(with: size)
