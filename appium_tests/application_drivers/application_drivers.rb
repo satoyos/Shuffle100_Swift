@@ -26,6 +26,7 @@ STR_SELECT_JUST_20 = 'この20首だけを選ぶ'
 STR_SELECT_POEM_SCREEN = '歌を選ぶ'
 STR_SINGER = '読手'
 STR_START_GAME = '試合開始'
+STR_MEMORIZE_TIMER = '暗記時間タイマー'
 
 
 # Accessibility ID of UI Elements
@@ -54,6 +55,10 @@ end
 
 def get_filtered_cell_names
   find_elements(:class_name, TYPE_CELL).map {|e| e.name}
+end
+
+def goto_memorize_timer_screen
+  click_element_with_text STR_MEMORIZE_TIMER
 end
 
 def goto_select_poem_screen

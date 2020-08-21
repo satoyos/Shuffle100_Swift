@@ -89,7 +89,7 @@ describe 'スクリーンショットの撮影' do
     end
   end
 
-   describe '「歌を選ぶ」画面を撮る' do
+  describe '「歌を選ぶ」画面を撮る' do
     it '歌選択画面を開く' do
       goto_select_poem_screen
       current_screen_is STR_SELECT_POEM_SCREEN
@@ -128,6 +128,16 @@ describe 'スクリーンショットの撮影' do
     end
   end
 
+  describe '暗記時間タイマーのスクリーンショットを撮る' do
+    it '暗記時間タイマー画面を開く' do
+      goto_memorize_timer_screen
+      sleep_while_animation
+    end
+    it 'ここでスクリーンショットを撮る' do
+      take_screenshot_no(6)
+    end
+
+  end
 end
 
 def select_poem_of_no(num)
@@ -151,18 +161,18 @@ def scroll_screen(scroll_up_length)
   startX = 100
   startY = 250
   Appium::TouchAction.new.swipe(
-      start_x: startX,
-      start_y: startY,
-      end_x: startX,
-      end_y: startY-scroll_up_length,
-      duration: 1000).perform
-  make_test_success
-end
+    start_x: startX,
+    start_y: startY,
+    end_x: startX,
+    end_y: startY-scroll_up_length,
+    duration: 1000).perform
+    make_test_success
+  end
 
-def long_press_first_cell
-  first_cell = find_elements(:class_name, TYPE_CELL).first
-  pointX = first_cell.location.x + first_cell.size.width/2
-  pointY = first_cell.location.y + first_cell.size.height/2
-  duration = 2000
-  Appium::TouchAction.new.press(x: pointX, y: pointY).wait(duration).release.perform
-end
+  def long_press_first_cell
+    first_cell = find_elements(:class_name, TYPE_CELL).first
+    pointX = first_cell.location.x + first_cell.size.width/2
+    pointY = first_cell.location.y + first_cell.size.height/2
+    duration = 2000
+    Appium::TouchAction.new.press(x: pointX, y: pointY).wait(duration).release.perform
+  end
