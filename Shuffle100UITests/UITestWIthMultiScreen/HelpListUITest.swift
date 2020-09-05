@@ -42,9 +42,7 @@ class HelpListUITest: XCTestCase {
         // when
         app.tables.staticTexts["このアプリを評価する"].tap()
         // then
-        let button = waitToHittable(for: app.alerts.buttons["立ち上げる"], timeout: 2)
-        // when
-        button.tap()
+        _ = waitToHittable(for: app.alerts.buttons["立ち上げる"], timeout: 2)
     }
 
     private func gotoHelpListScreen() {
