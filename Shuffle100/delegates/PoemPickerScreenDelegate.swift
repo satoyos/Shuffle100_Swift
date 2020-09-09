@@ -49,6 +49,9 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         let ngramAction = UIAlertAction(title: "1字目で選ぶ", style: .default) { action in
             self.openNgramPickerAction?()
         }
+        let fiveColorsAction = UIAlertAction(title: "五色百人一首の色で選ぶ", style: .default) { _ in
+            print("+五色百人一首の色から選ぶよ！")
+        }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)
         if settings.savedFudaSets.count > 0 {
@@ -58,6 +61,7 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
             ac.addAction(selectSavedSetAction)
         }
         ac.addAction(ngramAction)
+        ac.addAction(fiveColorsAction)
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
             pc.sourceView = navigationController!.toolbar
