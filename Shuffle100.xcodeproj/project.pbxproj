@@ -343,6 +343,10 @@
 		92B87D49250A654B003BB51B /* FiveColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsViewController.swift */; };
 		92B87D4A250A654B003BB51B /* FiveColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsViewController.swift */; };
 		92B87D4B250A654B003BB51B /* FiveColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsViewController.swift */; };
+		92B87D4D250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
+		92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
+		92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
+		92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D50250BBE96003BB51B /* FiveColorsTest.swift */; };
 		92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
 		92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
 		92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
@@ -653,6 +657,8 @@
 		92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPickerUITest.swift; sourceTree = "<group>"; };
 		92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenTest.swift; sourceTree = "<group>"; };
 		92B87D48250A654B003BB51B /* FiveColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewController.swift; sourceTree = "<group>"; };
+		92B87D4C250BBE31003BB51B /* FiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColors.swift; sourceTree = "<group>"; };
+		92B87D50250BBE96003BB51B /* FiveColorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsTest.swift; sourceTree = "<group>"; };
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -989,6 +995,7 @@
 				92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */,
 				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
 				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
+				92B87D50250BBE96003BB51B /* FiveColorsTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1113,6 +1120,7 @@
 				92ABF9B823F6D739000CA91C /* StoreManager.swift */,
 				92AE7C7223FEAEDC003FA07F /* Environment.swift */,
 				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
+				92B87D4C250BBE31003BB51B /* FiveColors.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1545,6 +1553,7 @@
 				921FF43D249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */,
 				925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
 				92A6EB9124191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
+				92B87D4D250BBE31003BB51B /* FiveColors.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				92FC39872290457E00791053 /* FudaSet.swift in Sources */,
@@ -1653,6 +1662,7 @@
 				925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */,
 				92A146B324DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9208DF1522FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
+				92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */,
 				92599500244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
 				92A6EB8624191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				92BCFA57241FB95A004B824A /* ReciteSettingsTableCell.swift in Sources */,
@@ -1661,6 +1671,7 @@
 				92AF24A1229E91260085B754 /* LegacyDataConverterTest.swift in Sources */,
 				92B9E96D2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				921FF44E24A603760083AC49 /* HelpDetailViewController.swift in Sources */,
+				92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
 				92ABF9AC23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,
 				92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
@@ -1849,6 +1860,7 @@
 				92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */,
 				92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
+				92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */,
 				921FF44524A0DBDE0083AC49 /* HelpListUITest.swift in Sources */,
 				92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */,
 				92FC39592288389C00791053 /* SelectedStatus100.swift in Sources */,

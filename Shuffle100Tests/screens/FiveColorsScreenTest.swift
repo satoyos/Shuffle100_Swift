@@ -28,7 +28,7 @@ class FiveColorsScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title, "五色百人一首")
-        
+//        XCTAssertEqual(screen.view.subviews.count, 5)
     }
 
 }
