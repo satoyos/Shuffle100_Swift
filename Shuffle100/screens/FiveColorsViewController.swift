@@ -8,13 +8,29 @@
 
 import UIKit
 
-class FiveColorsViewController: UIViewController {
+class FiveColorsViewController: SettingsAttachedViewController {
+    let blueButton = WhatsNextButton()
+    let yellowButton = WhatsNextButton()
+    let greenButton = WhatsNextButton()
+    let pinkButton = WhatsNextButton()
+    let orangeButton = WhatsNextButton()
+    internal let sizes = SizeFactory.createSizeByDevice()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "五色百人一首"
+        view.backgroundColor = StandardColor.backgroundColor
+        addColorButtonsAsSubviews()
+        layoutButtons()
     }
     
+    private func addColorButtonsAsSubviews() {
+        view.addSubview(blueButton)
+        view.addSubview(yellowButton)
+        view.addSubview(greenButton)
+        view.addSubview(pinkButton)
+        view.addSubview(orangeButton)
+    }
 
 }

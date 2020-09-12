@@ -347,6 +347,12 @@
 		92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
 		92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
 		92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D50250BBE96003BB51B /* FiveColorsTest.swift */; };
+		92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
+		92B87D54250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
+		92B87D55250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
+		92B87D57250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
+		92B87D58250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
+		92B87D59250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
 		92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
 		92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
@@ -659,6 +665,8 @@
 		92B87D48250A654B003BB51B /* FiveColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewController.swift; sourceTree = "<group>"; };
 		92B87D4C250BBE31003BB51B /* FiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColors.swift; sourceTree = "<group>"; };
 		92B87D50250BBE96003BB51B /* FiveColorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsTest.swift; sourceTree = "<group>"; };
+		92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenLayout.swift; sourceTree = "<group>"; };
+		92B87D56250CF9C5003BB51B /* 5colors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5colors; sourceTree = "<group>"; };
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -883,6 +891,7 @@
 		9258FAF321FEAB6C00E4E0B7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				92B87D56250CF9C5003BB51B /* 5colors */,
 				92C87DD222E8894900569D15 /* audio */,
 				921FF44624A4D9EF0083AC49 /* html */,
 				92FCCEDC22A51E3C002B589E /* 100.json */,
@@ -911,6 +920,7 @@
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
 				92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */,
 				92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */,
+				92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -1295,6 +1305,7 @@
 				92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92328C2B24591E25005E0FEE /* torifuda.png in Resources */,
 				92FFBF51245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
+				92B87D57250CF9C5003BB51B /* 5colors in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
 				92800394249BAFEE004D03C2 /* half_circle.png in Resources */,
@@ -1322,6 +1333,7 @@
 				92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 				92800395249BAFEE004D03C2 /* half_circle.png in Resources */,
+				92B87D58250CF9C5003BB51B /* 5colors in Resources */,
 				92C87DD422E8894900569D15 /* audio in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1344,6 +1356,7 @@
 				92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 				92800396249BAFEE004D03C2 /* half_circle.png in Resources */,
+				92B87D59250CF9C5003BB51B /* 5colors in Resources */,
 				92C87DD522E8894900569D15 /* audio in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1478,6 +1491,7 @@
 				92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				925994F7244AA47200044253 /* VolumeSettingViewController.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemCoordinator.swift in Sources */,
+				92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
 				92FFBF1E245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
@@ -1660,6 +1674,7 @@
 				929A94B5247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */,
+				92B87D54250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				92A146B324DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9208DF1522FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */,
@@ -1748,6 +1763,7 @@
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
+				92B87D55250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
