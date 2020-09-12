@@ -34,9 +34,11 @@ class FiveColorsTest: XCTestCase {
         // given, when
         let colorsDic = FiveColorsDataHolder.sharedDic
         // then
+        XCTAssertEqual(colorsDic.keys.count, 5)
         XCTAssertNotNil(colorsDic[.blue])
         XCTAssertNotNil(colorsDic[.yellow])
-        XCTAssertEqual(colorsDic[.yellow]?.name, "黄")
+        XCTAssertEqual(colorsDic[.yellow]!.name, "黄")
+        XCTAssert(colorsDic[.yellow]!.poemNumbers.contains(2))
     }
 
 }
