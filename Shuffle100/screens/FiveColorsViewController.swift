@@ -15,6 +15,7 @@ class FiveColorsViewController: SettingsAttachedViewController {
     let pinkButton = WhatsNextButton()
     let orangeButton = WhatsNextButton()
     internal let sizes = SizeFactory.createSizeByDevice()
+    let colorsDic = FiveColorsDataHolder.sharedDic
 
     override func viewDidLoad() {
         super.viewDidLoad()

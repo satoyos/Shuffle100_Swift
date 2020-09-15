@@ -22,8 +22,9 @@ class FiveColorsTest: XCTestCase {
     func test_initFiveColorData () throws {
         // given, when
         let testName = "あっちょんぶりけ"
+        let testPath = "test.png"
         let colorData =
-            FiveColorData(type: .green,                           poemNumbers: [1, 3, 5, 7], name: testName)
+            FiveColorData(type: .green,                           poemNumbers: [1, 3, 5, 7], name: testName, file: testPath)
         // then
         XCTAssertEqual(colorData.type, FiveColors.green)
         XCTAssertEqual(colorData.poemNumbers.count, 4)

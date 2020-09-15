@@ -420,6 +420,9 @@
 		92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
+		92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
+		92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
+		92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
@@ -696,6 +699,7 @@
 		92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenTest.swift; sourceTree = "<group>"; };
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsViewController.swift; sourceTree = "<group>"; };
 		92E6552121CE753200005F85 /* HomeScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDelegates.swift; sourceTree = "<group>"; };
+		92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHViewSizeGetterProtocol.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
@@ -915,6 +919,7 @@
 		925994EB2447522E00044253 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */,
 				925994EC2447528800044253 /* TimeSettingScreenLayout.swift */,
 				925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */,
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
@@ -1574,6 +1579,7 @@
 				921FF439249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
 				92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9208DF1422FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
+				92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1595,6 +1601,7 @@
 				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
 				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
 				92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */,
+				92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
 				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
@@ -1820,6 +1827,7 @@
 				92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
+				92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
 				92C6B4A324E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
 				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
 				92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
