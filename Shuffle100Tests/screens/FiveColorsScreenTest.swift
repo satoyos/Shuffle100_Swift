@@ -28,7 +28,13 @@ class FiveColorsScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title, "五色百人一首")
-//        XCTAssertEqual(screen.view.subviews.count, 5)
+        XCTAssertEqual(screen.view.subviews.count, 5)
+        XCTAssertNotNil(screen.colorsDic)
+        XCTContext.runActivity(named: "「青」ボタンが正しく初期設定されている") { _ in
+            let button = screen.blueButton
+            XCTAssertNotEqual(button.frame.height, 0)
+            XCTAssertEqual(button.titleLabel?.text, "青")
+        }
     }
 
 }
