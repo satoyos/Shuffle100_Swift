@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, ExitGameUITestUtils {
+class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, ExitGameUITestUtils, AdjustWithSliderUtils {
     let app = XCUIApplication()
 
     override func setUp() {
@@ -73,7 +73,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             // when
             app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
             // then
-            XCTAssert(app.staticTexts["0.50"].exists)
+            staticDigitTextExistAround(0.50, in: app)
         }
         XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
             app.buttons["試しに聞いてみる"].tap()
@@ -84,7 +84,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             // when
             app.navigationBars.buttons["いろいろな設定"].tap()
             // then
-            XCTAssert(app.staticTexts["0.50"].exists)
+            staticDigitTextExistAround(0.50, in: app)
         }
         XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
             // when
@@ -132,11 +132,11 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             app.tables.staticTexts["歌と歌の間隔"].tap()
             app.sliders["slider"].adjust(toNormalizedSliderPosition: 1.0)
             // then
-            XCTAssert(app.staticTexts["2.00"].exists)
+            staticDigitTextExistAround(2.00, in: app)
             // when
             app.navigationBars.buttons["いろいろな設定"].tap()
             // then
-            XCTAssert(app.staticTexts["2.00"].exists)
+            staticDigitTextExistAround(2.00, in: app)
             // when
             app.buttons["設定終了"].tap()
             // then
@@ -149,7 +149,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             // when
             gotoReciteSettingsScreen(app)
             // then
-            XCTAssert(app.staticTexts["2.00"].exists)
+            staticDigitTextExistAround(2.00, in: app)
         }
     }
 
@@ -176,7 +176,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             // when
             app.navigationBars.buttons["いろいろな設定"].tap()
             // then
-            XCTAssert(app.staticTexts["2.00"].exists)
+            staticDigitTextExistAround(2.00, in: app)
             // when
             app.buttons["設定終了"].tap()
             // then
@@ -186,7 +186,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
             // when
             gotoReciteSettingsScreen(app)
             // then
-            XCTAssert(app.staticTexts["2.00"].exists)
+            staticDigitTextExistAround(2.00, in: app)
         }
     }
 }
