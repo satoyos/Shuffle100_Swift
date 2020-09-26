@@ -33,6 +33,7 @@ class FiveColorsViewController: SettingsAttachedViewController {
         addColorButtonsAsSubviews()
         layoutButtons()
         self.badgeItem = dummyButtonItem()
+        updateBadgeItem()
         navigationItem.rightBarButtonItem = badgeItem
     }
     
@@ -53,6 +54,10 @@ class FiveColorsViewController: SettingsAttachedViewController {
             $0.badgeOriginY = 0
         }
         return buttonItem
+    }
+    
+    internal func updateBadgeItem() {
+        badgeItem.badgeValue = "\(selectedNum)首"
     }
 
 }

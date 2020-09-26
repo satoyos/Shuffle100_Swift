@@ -39,6 +39,7 @@ class FiveColorsScreenTest: XCTestCase {
         XCTContext.runActivity(named: "バッジアイコンが正しく表示されている") { _ in
             let buttonItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem
             XCTAssertNotNil(buttonItem)
+            XCTAssertEqual(buttonItem?.badgeValue, "100首")
         }
     }
 
