@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BBBadgeBarButtonItem
 
 class FiveColorsViewController: SettingsAttachedViewController {
     let blueButton = WhatsNextButton()
@@ -16,7 +17,14 @@ class FiveColorsViewController: SettingsAttachedViewController {
     let orangeButton = WhatsNextButton()
     internal let sizes = SizeFactory.createSizeByDevice()
     let colorsDic = FiveColorsDataHolder.sharedDic
+    var badgeItem: BBBadgeBarButtonItem!
 
+    var selectedNum: Int {
+        get {
+            return settings.state100.selectedNum
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +32,8 @@ class FiveColorsViewController: SettingsAttachedViewController {
         view.backgroundColor = StandardColor.backgroundColor
         addColorButtonsAsSubviews()
         layoutButtons()
+        self.badgeItem = dummyButtonItem()
+        navigationItem.rightBarButtonItem = badgeItem
     }
     
     private func addColorButtonsAsSubviews() {
@@ -32,6 +42,17 @@ class FiveColorsViewController: SettingsAttachedViewController {
         view.addSubview(greenButton)
         view.addSubview(pinkButton)
         view.addSubview(orangeButton)
+    }
+    
+    private func dummyButtonItem() -> BBBadgeBarButtonItem {
+        let button = UIButton(type: .custom).then {
+            $0.setTitle(" ", for: .normal)
+        }
+        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
+            $0.badgeOriginX = -50
+            $0.badgeOriginY = 0
+        }
+        return buttonItem
     }
 
 }
