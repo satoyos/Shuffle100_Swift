@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import BBBadgeBarButtonItem
 @testable import Shuffle100
 
 class FiveColorsScreenTest: XCTestCase {
@@ -34,6 +35,10 @@ class FiveColorsScreenTest: XCTestCase {
             let button = screen.blueButton
             XCTAssertNotEqual(button.frame.height, 0)
             XCTAssertEqual(button.titleLabel?.text, "青")
+        }
+        XCTContext.runActivity(named: "バッジアイコンが正しく表示されている") { _ in
+            let buttonItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem
+            XCTAssertNotNil(buttonItem)
         }
     }
 
