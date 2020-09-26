@@ -25,7 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = coordinator?.navigator
         window?.makeKeyAndVisible()
-
+        
+        if CommandLine.arguments.contains("--uitesting") {
+//            UIView.setAnimationsEnabled(false)
+            UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5
+        }
+        
+      
         return true
     }
 
