@@ -58,7 +58,8 @@ class HelpListUITest: XCTestCase {
         // then
         XCTAssert(app.navigationBars[title].exists)
         // when
-        let button = waitToHittable(for: app.navigationBars.buttons["ヘルプ"], timeout: 2)
+        let button = waitToHittable(for: app.navigationBars.buttons["ヘルプ"], timeout: 10)
+            // ↑ 初回のWebView読み込み時には結構時間がかかるため、しっかり時間をとる。
         button.tap()
         // then
         XCTAssert(app.navigationBars["ヘルプ"].exists)
