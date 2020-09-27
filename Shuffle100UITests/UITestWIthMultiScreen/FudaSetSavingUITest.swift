@@ -14,6 +14,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     
     private var app = XCUIApplication()
     private let test97SetName = "97枚セット"
+    private let waitTime = 8.0
 
     
     override func setUpWithError() throws {
@@ -39,7 +40,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         add97FudaSetAsNewOne(app, setName: test97SetName)
         XCTContext.runActivity(named: "一旦全ての歌を選択した状態に戻し、トップ画面に戻ると、100首選ばれていることが確認できる") { _ in
             // when
-            let button = waitToHittable(for: app.buttons["全て選択"], timeout: 2)
+            let button = waitToHittable(for: app.buttons["全て選択"], timeout: waitTime)
             button.tap()
             goBackToHomeScreen(app)
             allPoemsAreSelectedAtHomeScreen(app)
@@ -47,7 +48,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         gotoPoemPickerScreen(app)
         XCTContext.runActivity(named: "保存済みの札セットがある状態でツールバーの「まとめて選ぶ」を選択すると、既存の札セットを呼び出す選択肢が現れる") { activity in
             // when
-            let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
+            let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: waitTime)
             button.tap()
             // then
             XCTAssert(app.sheets.buttons[selectBySetStr].exists)
@@ -56,7 +57,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             // when
             app.sheets.buttons[selectBySetStr].tap()
             // then
-            waitToAppear(for: app.navigationBars[selectBySetStr], timeout: 3)
+            waitToAppear(for: app.navigationBars[selectBySetStr], timeout: waitTime)
             XCTAssert(app.cells.staticTexts[test97SetName].exists)
             XCTAssert(app.cells.staticTexts["97首"].exists)
         }
@@ -75,7 +76,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         // given
         gotoPoemPickerScreen(app)
         // when
-        let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+        let button = waitToHittable(for: app.buttons["全て取消"], timeout: waitTime)
         button.tap()
         app.buttons["保存"].tap()
         // then
@@ -94,7 +95,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         // when
         app.buttons["決定"].tap()
         // then
-        let button = waitToHittable(for: app.buttons["戻る"], timeout: 3)
+        let button = waitToHittable(for: app.buttons["戻る"], timeout: waitTime)
         XCTAssert(app.alerts.staticTexts["新しい札セットの名前を決めましょう"].exists)
         button.tap()
         // then
@@ -157,11 +158,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         app.navigationBars.buttons["保存"].tap()
         // then
         XCTContext.runActivity(named: "上書きする札セットを選ぶための、pickerWheel付きのAlert画面が表示される") { _ in
-            let button = waitToHittable(for: app.sheets.buttons[overwriteExisingSetStr], timeout: 2)
+            let button = waitToHittable(for: app.sheets.buttons[overwriteExisingSetStr], timeout: waitTime)
             // when
             button.tap()
             // then
-            waitToAppear(for: app.alerts.staticTexts["上書きする札セットを選ぶ"], timeout: 2)
+            waitToAppear(for: app.alerts.staticTexts["上書きする札セットを選ぶ"], timeout: waitTime)
             XCTAssert(app.alerts.pickerWheels.element.exists)
         }
         // when
@@ -170,7 +171,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             app.alerts.pickerWheels.element.adjust(toPickerWheelValue: name1jiKimariSet + " (7首)")
             app.alerts.buttons["上書きする"].tap()
             // then
-            let button = waitToHittable(for: app.alerts.buttons["OK"], timeout: 2)
+            let button = waitToHittable(for: app.alerts.buttons["OK"], timeout: waitTime)
             XCTAssert(app.alerts.staticTexts["上書き完了"].exists)
             button.tap()
         }
@@ -189,11 +190,11 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     
     private func gotoFudaSetsScreenFromPoemPicker() {
         // when
-        let buttonByGroup = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
+        let buttonByGroup = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: waitTime)
         buttonByGroup.tap()
-        let buttonSavedSet = waitToHittable(for: app.sheets.buttons[selectBySetStr], timeout: 3)
+        let buttonSavedSet = waitToHittable(for: app.sheets.buttons[selectBySetStr], timeout: waitTime)
         buttonSavedSet.tap()
         // then
-        waitToAppear(for: app.navigationBars[selectBySetStr], timeout: 3)
+        waitToAppear(for: app.navigationBars[selectBySetStr], timeout: waitTime)
     }
 }
