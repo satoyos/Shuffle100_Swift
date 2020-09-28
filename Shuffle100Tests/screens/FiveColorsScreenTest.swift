@@ -42,5 +42,18 @@ class FiveColorsScreenTest: XCTestCase {
             XCTAssertEqual(buttonItem?.badgeValue, "100首")
         }
     }
+    
+    func test_badgeIconReflectsSettings() {
+        // given
+        let settings = Settings()
+        var state100 = SelectedState100.createOf(bool: false)
+        state100.selectInNumbers([2,4,7])
+        settings.state100 = state100
+        // when
+        let screen = FiveColorsViewController(settings: settings)
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(screen.badgeItem.badgeValue, "3首")
+    }
 
 }
