@@ -11,9 +11,9 @@ import UIKit
 private let navBarButtonSize: CGFloat = 32
 
 class WhatsNextViewController: UIViewController {
-    var torifudaButton = WhatsNextButton()
-    var refrainButton = WhatsNextButton()
-    var goNextButton = WhatsNextButton()
+    var torifudaButton = LargeImageAttachedButton()
+    var refrainButton = LargeImageAttachedButton()
+    var goNextButton = LargeImageAttachedButton()
     var gearButton: UIBarButtonItem!
     var exitButton: UIBarButtonItem!
     let sizes = SizeFactory.createSizeByDevice()

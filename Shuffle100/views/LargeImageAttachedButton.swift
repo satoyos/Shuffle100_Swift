@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class WhatsNextButton: UIButton {
+class LargeImageAttachedButton: UIButton {
     func initWithImage(filename: String) {
         imageView?.contentMode = .scaleAspectFit
         let image = UIImage(named: filename)!.reSizeImage(reSize: imageSize())

@@ -20,7 +20,7 @@ class WhatsNextButtonTest: XCTestCase {
     }
 
     func test_canBeInitialized() {
-        let button = WhatsNextButton()
+        let button = LargeImageAttachedButton()
         button.frame.size = CGSize(width: 100, height: 100)
         button.initWithImage(filename: "refrain.png")
         XCTAssertNotNil(button)
