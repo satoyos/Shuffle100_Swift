@@ -47,7 +47,7 @@ extension WhatsNextViewController {
         }
     }
     
-    private func setCommonLayout(button: WhatsNextButton) {
+    private func setCommonLayout(button: LargeImageAttachedButton) {
         _ = button.then {
             $0.frame.size = buttonSize()
             $0.center.x = view.center.x
