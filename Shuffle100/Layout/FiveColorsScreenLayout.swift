@@ -22,17 +22,17 @@ import Then
 extension FiveColorsViewController: SHViewSizeGetter {
     
     internal func layoutButtons() {
-        layoutButton(blueButton, with: .blue, centerYRatio: 0.20)
-        layoutButton(pinkButton, with: .pink, centerYRatio: 0.35)
-        layoutButton(yellowButton, with: .yellow, centerYRatio: 0.50)
-        layoutButton(orangeButton, with: .orange, centerYRatio: 0.65)
-        layoutButton(greenButton, with: .green, centerYRatio: 0.80)
+        layoutButton(blueButton,   centerYRatio: 0.20)
+        layoutButton(pinkButton,   centerYRatio: 0.35)
+        layoutButton(yellowButton, centerYRatio: 0.50)
+        layoutButton(orangeButton, centerYRatio: 0.65)
+        layoutButton(greenButton,  centerYRatio: 0.80)
     }
     
-    private func layoutButton(_ button: LargeImageAttachedButton, with color: FiveColors, centerYRatio: CGFloat) {
-        guard let colorDic = colorsDic[color] else { return }
+    private func layoutButton(_ colorButton: ColorOfFiveButton, centerYRatio: CGFloat) {
+        guard let colorDic = colorsDic[colorButton.color] else { return }
         let filePath = "5colors/full/" + colorDic.file
-        _ = button.then {
+        _ = colorButton.then {
             setCommonLayout(button: $0)
             $0.initWithImage(filename: filePath)
             $0.setTitle(colorDic.name, for: .normal)
@@ -41,7 +41,7 @@ extension FiveColorsViewController: SHViewSizeGetter {
         }
     }
     
-    private func setCommonLayout(button: LargeImageAttachedButton) {
+    private func setCommonLayout(button: ColorOfFiveButton) {
         _ = button.then {
             $0.frame.size = buttonSize()
             $0.center.x = view.center.x

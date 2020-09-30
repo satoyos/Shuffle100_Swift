@@ -10,11 +10,11 @@ import UIKit
 import BBBadgeBarButtonItem
 
 class FiveColorsViewController: SettingsAttachedViewController {
-    let blueButton = LargeImageAttachedButton()
-    let yellowButton = LargeImageAttachedButton()
-    let greenButton = LargeImageAttachedButton()
-    let pinkButton = LargeImageAttachedButton()
-    let orangeButton = LargeImageAttachedButton()
+    let blueButton = ColorOfFiveButton(.blue)
+    let yellowButton = ColorOfFiveButton(.yellow)
+    let greenButton = ColorOfFiveButton(.green)
+    let pinkButton = ColorOfFiveButton(.pink)
+    let orangeButton = ColorOfFiveButton(.orange)
     internal let sizes = SizeFactory.createSizeByDevice()
     let colorsDic = FiveColorsDataHolder.sharedDic
     var badgeItem: BBBadgeBarButtonItem!
