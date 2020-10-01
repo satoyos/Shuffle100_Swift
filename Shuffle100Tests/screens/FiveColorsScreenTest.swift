@@ -55,5 +55,15 @@ class FiveColorsScreenTest: XCTestCase {
         // then
         XCTAssertEqual(screen.badgeItem.badgeValue, "3首")
     }
+    
+    func test_just20OfBlueColorSelectedAction() {
+        // given
+        let screen = FiveColorsViewController()
+        screen.loadViewIfNeeded()
+        // when
+        screen.selectJust20Of(color: .blue)
+        // then
+        XCTAssertEqual(screen.badgeItem.badgeValue, "20首")
+    }
 
 }

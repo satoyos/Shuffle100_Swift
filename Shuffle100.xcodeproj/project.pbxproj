@@ -433,6 +433,9 @@
 		92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
 		92F666252524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
 		92F666262524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
+		92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
+		92F66652252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
+		92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -708,6 +711,7 @@
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
 		92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfFiveButton.swift; sourceTree = "<group>"; };
+		92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -1165,6 +1169,7 @@
 				920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */,
 				921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */,
 				92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */,
+				92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1543,6 +1548,7 @@
 				927E4BF6222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
+				92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
 				92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
@@ -1746,6 +1752,7 @@
 				925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
 				92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */,
+				92F66652252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
 				9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */,
 				92328C3324596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
 				9205E1772456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
@@ -1863,6 +1870,7 @@
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92A6EB8724191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
+				92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
 				92FFBF6724650219004D7F79 /* NgramPickerViewController.swift in Sources */,
 				9205E18224571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
 				9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
