@@ -23,4 +23,12 @@ extension FiveColorsViewController {
         // To Be implemented here
         updateBadgeItem()
     }
+    
+    func add20of(color: FiveColors) {
+        guard let colorDic = colorsDic[color] else { return }
+        settings.state100.selectInNumbers(colorDic.poemNumbers)
+        // update button iamges
+        // To Be implemented here
+        updateBadgeItem()
+    }
 }
