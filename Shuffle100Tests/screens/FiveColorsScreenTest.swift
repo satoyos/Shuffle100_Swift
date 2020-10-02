@@ -66,4 +66,18 @@ class FiveColorsScreenTest: XCTestCase {
         XCTAssertEqual(screen.badgeItem.badgeValue, "20首")
     }
 
+    func test_add20OfCororSelectedAction() {
+        // given
+        let settings = Settings()
+        var state100 = SelectedState100.createOf(bool: false)
+        state100.selectInNumbers([2,4,7])
+        settings.state100 = state100
+        let screen = FiveColorsViewController(settings: settings)
+        screen.loadViewIfNeeded()
+        // when
+        screen.add20of(color: .yellow)
+        // then
+        // 既に選ばれている歌と黄色グループは2枚かぶるので、選ばれている歌の数は21になる
+        XCTAssertEqual(screen.badgeItem.badgeValue, "21首")
+    }
 }
