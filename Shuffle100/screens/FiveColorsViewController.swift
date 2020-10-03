@@ -37,6 +37,15 @@ class FiveColorsViewController: SettingsAttachedViewController {
         navigationItem.rightBarButtonItem = badgeItem
     }
     
+    // this method is not private for testability
+    func imageFilePathFor(color: FiveColors) -> String {
+        return "aa/partial/bb"
+    }
+
+    internal func updateBadgeItem() {
+        badgeItem.badgeValue = "\(selectedNum)首"
+    }
+    
     private func addColorButtonsAsSubviews() {
         view.addSubview(blueButton)
         view.addSubview(yellowButton)
@@ -56,8 +65,14 @@ class FiveColorsViewController: SettingsAttachedViewController {
         return buttonItem
     }
     
-    internal func updateBadgeItem() {
-        badgeItem.badgeValue = "\(selectedNum)首"
+    private func comparePoemNumbers(selected: Set<Int>, reference: Set<Int>) -> PoemsSelectedState {
+        let intersection = selected.intersection(reference)
+        if intersection.isEmpty {
+            return .empry
+        } else if intersection == reference {
+            return .full
+        } else {
+            return .partial
+        }
     }
-
 }

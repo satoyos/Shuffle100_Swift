@@ -19,12 +19,6 @@ struct NgramPickerSecion: Codable {
     var items: [NgramPickerItem]
 }
 
-enum NgramSelectedStatus {
-    case full
-    case partial
-    case empry
-}
-
 private let firstCharDic: [String: Character] = [
   "mu": "む",  "su": "す",  "me": "め",  "fu": "ふ",  "sa": "さ",  "ho": "ほ",  "se": "せ",
   "u": "う",  "tsu": "つ",  "shi": "し",  "mo": "も",  "yu": "ゆ",
