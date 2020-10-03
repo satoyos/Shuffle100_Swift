@@ -19,16 +19,14 @@ extension FiveColorsViewController {
         newState100.cancelAll()
         newState100.selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
-        // update button iamges
-        // To Be implemented here
+        refreshImageOnButtons()
         updateBadgeItem()
     }
     
     func add20of(color: FiveColors) {
         guard let colorDic = colorsDic[color] else { return }
         settings.state100.selectInNumbers(colorDic.poemNumbers)
-        // update button iamges
-        // To Be implemented here
+        refreshImageOnButtons()
         updateBadgeItem()
     }
 }
