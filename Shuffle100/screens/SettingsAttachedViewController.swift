@@ -12,6 +12,19 @@ class SettingsAttachedViewController: UIViewController {
 
     var settings: Settings!
     var saveSettingsAction: (() -> Void)?
+    
+    
+    var selectedNum: Int {
+        get {
+            return settings.state100.selectedNum
+        }
+    }
+    
+    var allSelectedNumbers: [Int] {
+        get {
+            return settings.state100.allSelectedNumbers
+        }
+    }
 
     init(settings: Settings = Settings()) {
         self.settings = settings

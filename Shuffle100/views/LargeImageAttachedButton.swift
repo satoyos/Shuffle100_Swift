@@ -12,6 +12,10 @@ import SnapKit
 class LargeImageAttachedButton: UIButton {
     func initWithImage(filename: String) {
         imageView?.contentMode = .scaleAspectFit
+        setImageOf(filename: filename)
+    }
+    
+    func setImageOf(filename: String) {
         let image = UIImage(named: filename)!.reSizeImage(reSize: imageSize())
         setImage(image, for: .normal)
     }

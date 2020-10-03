@@ -19,12 +19,6 @@ class FiveColorsViewController: SettingsAttachedViewController {
     let colorsDic = FiveColorsDataHolder.sharedDic
     var badgeItem: BBBadgeBarButtonItem!
 
-    var selectedNum: Int {
-        get {
-            return settings.state100.selectedNum
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +33,23 @@ class FiveColorsViewController: SettingsAttachedViewController {
     
     // this method is not private for testability
     func imageFilePathFor(color: FiveColors) -> String {
-        return "aa/partial/bb"
+        guard let colorDIc = colorsDic[color] else {
+            assert(false, "No dic for color \(color)")
+            return ""
+        }
+        let referenceSet = Set(colorDIc.poemNumbers)
+        let selectedSet = Set(allSelectedNumbers)
+        let resultStatus = comparePoemNumbers(selected: selectedSet, reference: referenceSet)
+        var path = ""
+        switch resultStatus {
+        case .full:
+            path = "5colors/full/\(colorDIc.file)"
+        case .partial:
+            path = "5colors/partial/\(colorDIc.file)"
+        case .empry:
+            path = "5colors/gray.png"
+        }
+        return path
     }
 
     internal func updateBadgeItem() {

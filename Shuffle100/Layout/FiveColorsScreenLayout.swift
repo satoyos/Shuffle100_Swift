@@ -29,9 +29,15 @@ extension FiveColorsViewController: SHViewSizeGetter {
         layoutButton(greenButton,  centerYRatio: 0.80)
     }
     
+    internal func refreshImageOnButtons() {
+        for button in [blueButton, pinkButton, yellowButton, orangeButton, greenButton] {
+            button.setImageOf(filename: imageFilePathFor(color: button.color))
+        }
+    }
+    
     private func layoutButton(_ colorButton: ColorOfFiveButton, centerYRatio: CGFloat) {
         guard let colorDic = colorsDic[colorButton.color] else { return }
-        let filePath = "5colors/full/" + colorDic.file
+        let filePath = imageFilePathFor(color: colorButton.color)
         _ = colorButton.then {
             setCommonLayout(button: $0)
             $0.initWithImage(filename: filePath)

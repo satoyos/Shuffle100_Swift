@@ -18,19 +18,7 @@ class NgramPickerViewController: SettingsAttachedViewController {
     var sections = NgramDataFactory.createNgramPickerSctions()
     var numbersDic = NgramDataFactory.createNgramNumbersDic()
     var badgeItem: BBBadgeBarButtonItem!
-    
-    var selectedNum: Int {
-        get {
-            return settings.state100.selectedNum
-        }
-    }
-    
-    var allSelectedNumbers: [Int] {
-        get {
-            return settings.state100.allSelectedNumbers
-        }
-    }
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "1字目で選ぶ"
