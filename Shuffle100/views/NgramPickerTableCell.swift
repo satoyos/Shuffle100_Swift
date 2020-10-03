@@ -14,12 +14,12 @@ private let emptyCircleImage = UIImage(named: "empty_circle.png")!
 
 
 class NgramPickerTableCell: UITableViewCell {
-    static let selectedImageDic: [NgramSelectedStatus: UIImage] = [
+    static let selectedImageDic: [PoemsSelectedState: UIImage] = [
         .full: fullCircleImage,
         .partial: halfCircleImage,
         .empry: emptyCircleImage
     ]
-    var selectedStatus: NgramSelectedStatus!
+    var selectedStatus: PoemsSelectedState!
 
     override func awakeFromNib() {
         super.awakeFromNib()

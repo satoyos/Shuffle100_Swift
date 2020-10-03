@@ -9,7 +9,7 @@
 import UIKit
 import Then
 
-extension NgramPickerViewController: UITableViewDataSource {
+extension NgramPickerViewController: UITableViewDataSource, PoemSelectedStateHandler {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
     }
@@ -33,7 +33,6 @@ extension NgramPickerViewController: UITableViewDataSource {
         return cell
     }
     
-    
     private func itemForIndex(_ indexPath: IndexPath) -> NgramPickerItem {
         return sections[indexPath.section].items[indexPath.row]
     }
@@ -42,23 +41,12 @@ extension NgramPickerViewController: UITableViewDataSource {
         return cell.frame.height
     }
     
-    private func  selectedState(for indexPath: IndexPath, withHeight height: CGFloat) -> (status: NgramSelectedStatus, circleImage: UIImage) {
+    private func  selectedState(for indexPath: IndexPath, withHeight height: CGFloat) -> (status: PoemsSelectedState, circleImage: UIImage) {
         let idForCell = itemForIndex(indexPath).id
         let allNumbersSetForId = Set(numbersDic[idForCell]!)
         let selectedNumbersSet = Set(allSelectedNumbers)
-        let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, charRelated: allNumbersSetForId)
+        let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForId)
         let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
         return (resultStatus, image.reSizeImage(reSize: CGSize(width: height, height: height)))
-    }
-    
-    private func comparePoemNumbers(selected: Set<Int>, charRelated: Set<Int>) -> NgramSelectedStatus {
-        let intersection = selected.intersection(charRelated)
-        if intersection.isEmpty {
-            return .empry
-        } else if intersection == charRelated {
-            return .full
-        } else {
-            return .partial
-        }
     }
 }

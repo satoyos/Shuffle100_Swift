@@ -436,6 +436,9 @@
 		92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
 		92F66652252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
 		92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
+		92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
+		92F66669252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
+		92F6666A252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -712,6 +715,7 @@
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
 		92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfFiveButton.swift; sourceTree = "<group>"; };
 		92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenDelegate.swift; sourceTree = "<group>"; };
+		92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsSelectesState.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -1148,6 +1152,7 @@
 				92AE7C7223FEAEDC003FA07F /* Environment.swift */,
 				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
 				92B87D4C250BBE31003BB51B /* FiveColors.swift */,
+				92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1517,6 +1522,7 @@
 				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
 				92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
@@ -1694,6 +1700,7 @@
 				9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				92FC39882290457E00791053 /* FudaSet.swift in Sources */,
 				9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
+				92F66669252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				929A94B5247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
 				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */,
@@ -1839,6 +1846,7 @@
 				92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */,
 				92CE520D2168D4D200538E01 /* TableDataSource.swift in Sources */,
 				920F6A71247C03D400360C3B /* FudaSetsViewController.swift in Sources */,
+				92F6666A252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				92A6EB7F241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,

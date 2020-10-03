@@ -80,4 +80,20 @@ class FiveColorsScreenTest: XCTestCase {
         // 既に選ばれている歌と黄色グループは2枚かぶるので、選ばれている歌の数は21になる
         XCTAssertEqual(screen.badgeItem.badgeValue, "21首")
     }
+    
+    func test_imageFilePathReflectsSelectedPoems() {
+        XCTContext.runActivity(named: "3, 6, 12の3枚が選ばれている場合、青だけがpartial, そのほかの色はempty") { _ in
+            // given
+            let screen = FiveColorsViewController()
+            // when
+            var state100 = SelectedState100.createOf(bool: false)
+            state100.selectInNumbers([3 ,6 ,12])
+            screen.settings.state100 = state100
+            // then
+            let bluePath = screen.imageFilePathFor(color: .blue)
+            XCTAssert(bluePath.contains("partial"))
+//            XCTAssert(bluePath.contains("blue"))
+        }
+
+    }
 }
