@@ -33,9 +33,5 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScree
         
         // バージョン6.2から五色百人一首機能を追加
         XCTAssert(app.buttons["五色百人一首の色で選ぶ"].exists)
-//        XCTContext.runActivity(named: "Version 6.1.1(iOS14の動作確認リリース)では、五色百人一首機能はまだ隠す") { _ in
-//            XCTAssertFalse(app.buttons["五色百人一首の色で選ぶ"].exists)
-//        }
     }
-
 }
