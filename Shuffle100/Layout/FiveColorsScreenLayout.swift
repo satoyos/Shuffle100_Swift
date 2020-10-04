@@ -30,7 +30,7 @@ extension FiveColorsViewController: SHViewSizeGetter {
     }
     
     internal func refreshImageOnButtons() {
-        for button in [blueButton, pinkButton, yellowButton, orangeButton, greenButton] {
+        allColorButtons.forEach { button in
             button.setImageOf(filename: imageFilePathFor(color: button.color))
         }
     }

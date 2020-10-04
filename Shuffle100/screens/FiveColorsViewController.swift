@@ -18,13 +18,16 @@ class FiveColorsViewController: SettingsAttachedViewController {
     internal let sizes = SizeFactory.createSizeByDevice()
     let colorsDic = FiveColorsDataHolder.sharedDic
     var badgeItem: BBBadgeBarButtonItem!
+    internal var allColorButtons: [ColorOfFiveButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "五色百人一首"
         view.backgroundColor = StandardColor.backgroundColor
+        setAllColorButtonsProperty()
         addColorButtonsAsSubviews()
+        setActionForColorButtons()
         layoutButtons()
         self.badgeItem = dummyButtonItem()
         updateBadgeItem()
@@ -57,11 +60,9 @@ class FiveColorsViewController: SettingsAttachedViewController {
     }
     
     private func addColorButtonsAsSubviews() {
-        view.addSubview(blueButton)
-        view.addSubview(yellowButton)
-        view.addSubview(greenButton)
-        view.addSubview(pinkButton)
-        view.addSubview(orangeButton)
+        allColorButtons.forEach {
+            view.addSubview($0)
+        }
     }
     
     private func dummyButtonItem() -> BBBadgeBarButtonItem {
@@ -83,6 +84,16 @@ class FiveColorsViewController: SettingsAttachedViewController {
             return .full
         } else {
             return .partial
+        }
+    }
+    
+    private func setAllColorButtonsProperty() {
+        allColorButtons = [blueButton, yellowButton, greenButton, pinkButton, orangeButton]
+    }
+    
+    private func setActionForColorButtons() {
+        allColorButtons.forEach { button in
+            button.addTarget(self, action: #selector(colorButtonTapped), for: .touchUpInside)
         }
     }
 }
