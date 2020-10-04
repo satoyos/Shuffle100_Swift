@@ -11,6 +11,7 @@ import XCTest
 class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
 
     private var app = XCUIApplication()
+    private let timeOutSec = 8.0
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -26,7 +27,7 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScree
         // given
         gotoPoemPickerScreen(app)
         // when
-        let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
+        let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
         button.tap()
         // then
         XCTAssert(app.buttons["1字目で選ぶ"].exists)
@@ -41,13 +42,26 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScree
         gotoFiveColorsScreen(app)
     }
     
+    func test_whenColorButtonTapped_actionSheetAppears() {
+        // given
+        gotoPoemPickerScreen(app)
+        let toolBarButton = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
+        toolBarButton.tap()
+        gotoFiveColorsScreen(app)
+        // when
+        let blueButton = waitToHittable(for: app.buttons["青"], timeout: timeOutSec)
+        blueButton.tap()
+        // then
+        XCTAssert(app.sheets.buttons["この20首だけを選ぶ"].exists)
+    }
+    
     func gotoFiveColorsScreen(_ app: XCUIApplication) {
         // when
-        let toolBarButton = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: 3)
+        let toolBarButton = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
         toolBarButton.tap()
-        let menuButton = waitToHittable(for: app.sheets.buttons["五色百人一首の色で選ぶ"], timeout: 6)
+        let menuButton = waitToHittable(for: app.sheets.buttons["五色百人一首の色で選ぶ"], timeout: timeOutSec)
         menuButton.tap()
         // then
-        waitToAppear(for: app.navigationBars["五色百人一首"], timeout: 6)
+        waitToAppear(for: app.navigationBars["五色百人一首"], timeout: timeOutSec)
     }
 }
