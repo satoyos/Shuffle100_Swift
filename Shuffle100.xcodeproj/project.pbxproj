@@ -439,6 +439,9 @@
 		92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
 		92F66669252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
 		92F6666A252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
+		92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
+		92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
+		92F666742529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -716,6 +719,7 @@
 		92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfFiveButton.swift; sourceTree = "<group>"; };
 		92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenDelegate.swift; sourceTree = "<group>"; };
 		92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsSelectesState.swift; sourceTree = "<group>"; };
+		92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsCoordinator.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -1088,6 +1092,7 @@
 				9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */,
 				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
 				92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */,
+				92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
@@ -1500,6 +1505,7 @@
 				925994E024449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				921FF431249E52C60083AC49 /* HelpListViewController.swift in Sources */,
+				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
 				92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
@@ -1717,6 +1723,7 @@
 				92B9E96D2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				921FF44E24A603760083AC49 /* HelpDetailViewController.swift in Sources */,
 				92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */,
+				92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
 				92ABF9AC23F42CFA000CA91C /* SelectSingerViewController.swift in Sources */,
 				92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
@@ -1871,6 +1878,7 @@
 				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
 				925994E224449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
+				92F666742529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92599501244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
 				924619622493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
 				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
