@@ -51,7 +51,7 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         }
 //         五色百人一首はVersion 6.2から導入
         let fiveColorsAction = UIAlertAction(title: "五色百人一首の色で選ぶ", style: .default) { _ in
-            print("+五色百人一首の色から選ぶよ！")
+            self.openFiveColorsScreenAction?()
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)

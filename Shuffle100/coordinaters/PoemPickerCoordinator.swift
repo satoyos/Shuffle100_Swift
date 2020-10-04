@@ -15,6 +15,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var screen: UIViewController?
     private var ngramPickerCoordinator: NgramPickerCoordinator!
     private var fudaSetsCoordinator: FudaSetsCoordinator!
+    private var fiveColorsCoordinator: FiveColorsCoordinator!
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
@@ -34,6 +35,9 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         }
         screen.openFudaSetsScreenAction = { [weak self] in
             self?.openFudaSetsScreen()
+        }
+        screen.openFiveColorsScreenAction = { [weak self] in
+            self?.openFiveColorsScreen()
         }
         screen.showTorifudaAction = { [weak self] indexPath  in
             self?.showTorifudaScreenFor(indexPath)
@@ -57,6 +61,14 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.fudaSetsCoordinator = coordinator
+    }
+    
+    internal func openFiveColorsScreen() {
+        guard let settings = settings else { return }
+        guard let store = store else { return }
+        let coordinator = FiveColorsCoordinator(navigator: navigator, settings: settings, store: store)
+        coordinator.start()
+        self.fiveColorsCoordinator = coordinator
     }
     
     internal func showTorifudaScreenFor(_ indexPath: IndexPath) {
