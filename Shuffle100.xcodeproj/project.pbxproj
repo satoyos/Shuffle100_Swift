@@ -442,6 +442,8 @@
 		92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
 		92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
 		92F666742529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
+		92F66679252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66678252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift */; };
+		92F66681252B584C0068E6A1 /* NavigateBackToHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -720,6 +722,8 @@
 		92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenDelegate.swift; sourceTree = "<group>"; };
 		92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsSelectesState.swift; sourceTree = "<group>"; };
 		92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsCoordinator.swift; sourceTree = "<group>"; };
+		92F66678252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateBackToPoemPicker.swift; sourceTree = "<group>"; };
+		92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateBackToHomeScreen.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -1116,6 +1120,8 @@
 				9246195B248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift */,
 				9246195D248BE29E002B6690 /* FudaSetsUITestUtils.swift */,
 				923CFBDF2514F3B900C52630 /* AdjustWithSliderUtil.swift */,
+				92F66678252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift */,
+				92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1800,6 +1806,7 @@
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
+				92F66679252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift in Sources */,
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				92B87D55250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
@@ -1892,6 +1899,7 @@
 				9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
 				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92ABF9A723F00B80000CA91C /* RewindButtonUITest.swift in Sources */,
+				92F66681252B584C0068E6A1 /* NavigateBackToHomeScreen.swift in Sources */,
 				9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				92328C2424591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,

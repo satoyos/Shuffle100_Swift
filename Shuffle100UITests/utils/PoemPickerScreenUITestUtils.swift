@@ -8,17 +8,12 @@
 
 import XCTest
 
-protocol PoemPickerScreenUITestUtils: WaitInUITest {
-    func goBackToHomeScreen(_ app: XCUIApplication)
+protocol PoemPickerScreenUITestUtils: WaitInUITest, NavigateBackToHomeScreen, NavigateBackToPoemPicker {
     func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication)
     func select97Excluding_1_2_4(_ app: XCUIApplication)
 }
 
 extension PoemPickerScreenUITestUtils {
-    func goBackToHomeScreen(_ app: XCUIApplication) {
-        app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
-    }
-    
     func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication) {
         // given
         let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: 3)
