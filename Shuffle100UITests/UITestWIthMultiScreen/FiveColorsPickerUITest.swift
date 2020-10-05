@@ -53,6 +53,26 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScree
         blueButton.tap()
         // then
         XCTAssert(app.sheets.buttons["この20首だけを選ぶ"].exists)
+        XCTAssert(app.sheets.buttons["今選んでいる札に加える"].exists)
+    }
+    
+    func test_selectJust20ofColor() {
+        // given
+        XCTContext.runActivity(named: "デフォルトでは100首が選ばれている") { _ in
+            XCTAssert(app.cells.staticTexts["100首"].exists)
+        }
+        gotoPoemPickerScreen(app)
+        gotoFiveColorsScreen(app)
+        // when
+        let greenButton = waitToHittable(for: app.buttons["緑"], timeout: timeOutSec)
+        greenButton.tap()
+        let just20Button = waitToHittable(for: app.sheets.buttons["この20首だけを選ぶ"], timeout: timeOutSec)
+        just20Button.tap()
+        // then
+        goBackToPoemPickerScreen(app)
+        goBackToHomeScreen(app)
+        XCTAssert(app.cells.staticTexts["20首"].exists)
+        
     }
     
     func gotoFiveColorsScreen(_ app: XCUIApplication) {

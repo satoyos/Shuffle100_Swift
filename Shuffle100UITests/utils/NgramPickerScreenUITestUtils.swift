@@ -12,7 +12,6 @@ protocol NgramPickerScreenTestUtils: PoemPickerScreenUITestUtils {
     func selectAll2maiFudaFromPoemPickerScreen(_ app: XCUIApplication)
     func select93Excluding1jiKimari(_ app: XCUIApplication)
     func select1jiKimari(_ app: XCUIApplication)
-    func goBackToPoemPickerScreen(_ app: XCUIApplication)
 }
 
 extension NgramPickerScreenTestUtils {
@@ -29,12 +28,6 @@ extension NgramPickerScreenTestUtils {
         app.cells["mo"].tap()
         app.cells["yu"].tap()
         goBackToPoemPickerScreen(app)
-    }
-    
-    func goBackToPoemPickerScreen(_ app: XCUIApplication) {
-        app.navigationBars.buttons["歌を選ぶ"].tap()
-        // then
-        XCTAssert(app.navigationBars["歌を選ぶ"].exists)
     }
     
     func select93Excluding1jiKimari(_ app: XCUIApplication) {
