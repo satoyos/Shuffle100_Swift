@@ -94,7 +94,7 @@ class FiveColorsScreenTest: XCTestCase {
             XCTAssert(bluePath.contains("partial"))
             XCTAssert(bluePath.contains("blue"))
             let greenPath = screen.imageFilePathFor(color: .green)
-            XCTAssert(greenPath.contains("gray"))
+            XCTAssert(greenPath.contains("empty"))
         }
 
     }
