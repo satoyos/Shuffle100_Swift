@@ -50,7 +50,7 @@ class FiveColorsViewController: SettingsAttachedViewController {
         case .partial:
             path = "5colors/partial/\(colorDIc.file)"
         case .empry:
-            path = "5colors/gray.png"
+            path = "5colors/empty.png"
         }
         return path
     }
