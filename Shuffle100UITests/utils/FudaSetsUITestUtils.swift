@@ -75,7 +75,8 @@ extension FudaSetsUITestUtils {
             textField.tap()
             textField.typeText(name)
             app.buttons["決定"].tap()
-            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
+//            XCTAssert(app.alerts.staticTexts["保存完了"].exists)
+            waitToAppear(for: app.alerts.staticTexts["保存完了"], timeout: timeOutSec)
             app.alerts.buttons["OK"].tap()
         }
     }
