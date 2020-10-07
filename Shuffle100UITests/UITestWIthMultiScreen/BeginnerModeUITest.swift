@@ -70,7 +70,7 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         app.buttons["goNext"].tap()
         // then
         XCTContext.runActivity(named: "そのまま2首めに移る") { activity in
-            waitToAppear(for: app.staticTexts["2首め:上の句 (全100首)"], timeout: 3)
+            waitToAppear(for: app.staticTexts["2首め:上の句 (全100首)"], timeout: timeOutSec)
         }
     }
     

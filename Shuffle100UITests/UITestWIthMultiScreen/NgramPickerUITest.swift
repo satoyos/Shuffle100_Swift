@@ -43,7 +43,7 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     func test_tapEmptySelectedCell() {
         XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
             gotoPoemPickerScreen(app)
-            let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+            let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
             button.tap()
             gotoNgramPickerScreenFromPickerScreen(app)
         }
@@ -68,7 +68,7 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     
     internal func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication) {
         // given
-        let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: 3)
+        let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: timeOutSec)
         // when
         button.tap()
         // then
@@ -76,6 +76,6 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
         // when
         app.buttons["1字目で選ぶ"].tap()
         // then
-        waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: 5)
+        waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: timeOutSec)
     }
 }
