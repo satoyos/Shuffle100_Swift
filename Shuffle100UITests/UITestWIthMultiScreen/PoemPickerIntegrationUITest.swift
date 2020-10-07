@@ -74,7 +74,7 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPicker
     func test_alertAppearsWhenStartGameWithoutSelectedPoem() {
         // given
         gotoPoemPickerScreen(app)
-        let button = waitToHittable(for: app.buttons["全て取消"], timeout: 5)
+        let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
         button.tap()
         goBackToHomeScreen(app)
         XCTAssert(app.staticTexts["0首"].exists)

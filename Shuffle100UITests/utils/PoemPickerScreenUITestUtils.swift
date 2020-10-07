@@ -16,7 +16,7 @@ protocol PoemPickerScreenUITestUtils: WaitInUITest, NavigateBackToHomeScreen, Na
 extension PoemPickerScreenUITestUtils {
     func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication) {
         // given
-        let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: 3)
+        let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: timeOutSec)
         // when
         button.tap()
         // then
@@ -28,7 +28,7 @@ extension PoemPickerScreenUITestUtils {
     }
     
     func select97Excluding_1_2_4(_ app: XCUIApplication) {
-        let button = waitToHittable(for: app.buttons["全て選択"], timeout: 3)
+        let button = waitToHittable(for: app.buttons["全て選択"], timeout: timeOutSec)
         button.tap()
         app.cells["001"].tap()
         app.cells["002"].tap()

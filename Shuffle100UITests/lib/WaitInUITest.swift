@@ -12,9 +12,14 @@ protocol WaitInUITest {
     func waitToAppear(for element: XCUIElement, timeout: TimeInterval,
  file: StaticString, line: UInt) -> Void
     func waitToHittable(for element: XCUIElement, timeout: TimeInterval, file: StaticString, line: UInt) -> XCUIElement
+    var timeOutSec: TimeInterval { get }
 }
 
 extension WaitInUITest {
+    var timeOutSec: TimeInterval {
+        return 8.0
+    }
+    
     func waitToAppear(for element: XCUIElement,
                       timeout: TimeInterval = 5,
                       file: StaticString = #file,

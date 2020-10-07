@@ -48,7 +48,7 @@ extension FudaSetsUITestUtils {
             // when
             app.buttons["保存"].tap()
             // then
-            waitToAppear(for: app.staticTexts["選んでいる札をどのように保存しますか？"], timeout: 3)
+            waitToAppear(for: app.staticTexts["選んでいる札をどのように保存しますか？"], timeout: timeOutSec)
             XCTAssert(app.buttons[saveNewFudaSetStr].exists)
             // iPadでは、ActionSheetでキャンセルボタンが表示されない。
             if UIDevice.current.userInterfaceIdiom == .phone {
@@ -62,7 +62,7 @@ extension FudaSetsUITestUtils {
             // when
             app.buttons[saveNewFudaSetStr].tap()
             // then
-            waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: 2)
+            waitToAppear(for: app.staticTexts["新しい札セットの名前"], timeout: timeOutSec)
         }
     }
     
