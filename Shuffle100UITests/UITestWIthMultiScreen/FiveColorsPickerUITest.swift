@@ -8,7 +8,7 @@
 
 import XCTest
 
-class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
+class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
 
     private var app = XCUIApplication()
     private let timeOutSec = 8.0
@@ -73,6 +73,29 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScree
         goBackToHomeScreen(app)
         XCTAssert(app.cells.staticTexts["20首"].exists)
         
+    }
+    
+    func test_add20ofColor() {
+        // given
+        XCTContext.runActivity(named: "1字決まりの札を選んでおく") { _ in
+            gotoPoemPickerScreen(app)
+            select1jiKimari(app)
+        }
+        // when
+        XCTContext.runActivity(named: "そこに、五色百人一首の黄色セットを追加する") { _ in
+            gotoFiveColorsScreen(app)
+            let yellowButton = waitToHittable(for: app.buttons["黄"], timeout: timeOutSec)
+            yellowButton.tap()
+            let add20Button = waitToHittable(for: app.sheets.buttons["今選んでいる札に加える"], timeout: timeOutSec)
+            add20Button.tap()
+        }
+        // then
+        XCTContext.runActivity(named: "黄色の20枚には一字決まりの歌が3首含まれているので、足すと27枚ではなく24枚になる") { _ in
+            goBackToPoemPickerScreen(app)
+            goBackToHomeScreen(app)
+            XCTAssert(app.cells.staticTexts["24首"].exists)
+
+        }
     }
     
     func gotoFiveColorsScreen(_ app: XCUIApplication) {
