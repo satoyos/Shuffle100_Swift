@@ -30,14 +30,14 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 tapForwardButton(app)
                 Thread.sleep(forTimeInterval: 0.1)
-                XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
+                kamiRecitingScreenAppearsOf(number: i)
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
                 
                 tapForwardButton(app)
                 tapPlayButton(app)
                 Thread.sleep(forTimeInterval: 0.1)
-                XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
+                shimoRecitingScreenAppearsOf(number: i)
             }
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
@@ -63,12 +63,12 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 tapForwardButton(app)
-                XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
+                kamiRecitingScreenAppearsOf(number: i)
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
                 
                 tapForwardButton(app)
-                XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
+                shimoRecitingScreenAppearsOf(number: i)
             }
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
@@ -95,17 +95,17 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         }
         for i in (1...100) {
             XCTContext.runActivity(named: "\(i)首めの上の句の読み上げが始まる") { (activiti) in
-                XCTAssert(app.staticTexts["\(i)首め:上の句 (全100首)"].exists)
+                kamiRecitingScreenAppearsOf(number: i)
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
                 Thread.sleep(forTimeInterval: 0.1)
                 
                 tapForwardButton(app)
-                XCTAssert(app.staticTexts["\(i)首め:下の句 (全100首)"].exists)
+                shimoRecitingScreenAppearsOf(number: i)
             }
             XCTContext.runActivity(named: "下の句を読み終わると、「次はどうする？」画面になる") { activity in
                 tapForwardButton(app)
-                XCTAssert(app.navigationBars["次はどうする？"].exists)
+                waitToAppear(for: app.navigationBars["次はどうする？"], timeout: timeOutSec)
             }
             XCTContext.runActivity(named: "「次の歌へ！」ボタンを押して、次の歌に進む") { activity in
                 app.buttons["goNext"].tap()
@@ -119,4 +119,14 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             XCTAssert(app.navigationBars["トップ"].exists)
         }
     }
+    
+    private func kamiRecitingScreenAppearsOf(number i: Int) {
+        waitToAppear(for: app.staticTexts["\(i)首め:上の句 (全100首)"], timeout: timeOutSec)
+    }
+    
+    private func shimoRecitingScreenAppearsOf(number i: Int) {
+        waitToAppear(for: app.staticTexts["\(i)首め:下の句 (全100首)"], timeout: timeOutSec)
+    }
+ 
+
 }
