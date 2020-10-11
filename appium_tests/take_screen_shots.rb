@@ -128,6 +128,27 @@ describe 'スクリーンショットの撮影' do
     end
   end
 
+  describe '五色百人一首のスクリーンショットを撮る' do
+    it '歌選択画面を開く' do
+      goto_select_poem_screen
+      current_screen_is STR_SELECT_POEM_SCREEN
+    end
+    it '全ての歌を選び、五色百人一首の画面を開く' do
+      click_button_to_select_all
+      goto_five_colors_screen
+    end
+    it 'ここでスクリーンショットを撮る' do
+      sleep(3)
+      take_screenshot_no(7)
+    end
+    it 'ホーム画面に戻る' do
+      click_back_button
+      click_back_button
+      current_screen_is TOP_TITLE
+    end
+  end
+
+
   describe '暗記時間タイマーのスクリーンショットを撮る' do
     it '暗記時間タイマー画面を開く' do
       goto_memorize_timer_screen
@@ -138,18 +159,6 @@ describe 'スクリーンショットの撮影' do
     end
   end
 
-  describe '五色百人一首のスクリーンショットを撮る' do
-    it '歌選択画面を開く' do
-      goto_select_poem_screen
-      current_screen_is STR_SELECT_POEM_SCREEN
-    end
-    it '五色百人一首の画面を開く' do
-      goto_five_colors_screen
-    end
-    it 'ここでスクリーンショットを撮る' do
-      take_screenshot_no(7)
-    end
-  end
 end
 
 def select_poem_of_no(num)
