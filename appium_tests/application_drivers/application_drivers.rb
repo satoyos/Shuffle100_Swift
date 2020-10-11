@@ -209,7 +209,6 @@ end
 def goto_five_colors_screen
   sleep_while_animation
   toolbar.find_element(:name, STR_SELECT_BY_FIVE_COLORS).click
-  # click_button(STR_SELECT_BY_FIVE_COLORS)
 end
 
 def select_blue_color
