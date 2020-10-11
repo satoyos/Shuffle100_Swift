@@ -136,7 +136,10 @@ describe 'スクリーンショットの撮影' do
     it 'ここでスクリーンショットを撮る' do
       take_screenshot_no(6)
     end
+  end
 
+  describe '五色百人一首のスクリーンショットを撮る' do
+    it 
   end
 end
 
