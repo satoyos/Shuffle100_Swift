@@ -19,7 +19,7 @@ STR_INABA_KUN = 'いなばくん（人間）'
 STR_NGRAM_PICKER = '1字目で選ぶ'
 STR_ONE_CHAR_KIMARI = '一字決まりの歌'
 STR_POEM_SELECTION = '取り札を用意する歌'
-STR_SELECT_BY_FIVE_COLORS = '「五色百人一首」の色で選ぶ'
+STR_SELECT_BY_FIVE_COLORS = '五色百人一首の色で選ぶ'
 STR_SELECT_BY_GROUP = 'まとめて選ぶ'
 STR_SELECT_FROM_FUDA_SETS = '作った札セットから選ぶ'
 STR_SELECT_JUST_20 = 'この20首だけを選ぶ'
@@ -208,7 +208,10 @@ end
 
 def goto_five_colors_screen
   sleep_while_animation
-  toolbar.find_element(:name, STR_SELECT_BY_FIVE_COLORS).click
+  toolbar.find_element(:name, STR_SELECT_BY_GROUP).click
+  sleep_while_animation
+  click_button(STR_SELECT_BY_FIVE_COLORS)
+  sleep_while_animation
 end
 
 def select_blue_color
