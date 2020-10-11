@@ -139,7 +139,16 @@ describe 'スクリーンショットの撮影' do
   end
 
   describe '五色百人一首のスクリーンショットを撮る' do
-    it 
+    it '歌選択画面を開く' do
+      goto_select_poem_screen
+      current_screen_is STR_SELECT_POEM_SCREEN
+    end
+    it '五色百人一首の画面を開く' do
+      goto_five_colors_screen
+    end
+    it 'ここでスクリーンショットを撮る' do
+      take_screenshot_no(7)
+    end
   end
 end
 
