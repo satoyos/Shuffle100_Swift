@@ -13,6 +13,8 @@ class FudaViewController: UIViewController {
     var titleString = "タイトル未定"
     var tatamiView: UIImageView!
     var fudaView: FudaView!
+    var fullLinerView: UITextView?
+    var fullLiner: [String]?
     
     var displayedString: String {
         get {
@@ -21,9 +23,10 @@ class FudaViewController: UIViewController {
         }
     }
     
-    init(shimoString: String, title titleString: String) {
+    init(shimoString: String, title titleString: String, fullLiner: [String]? = nil) {
         self.shimoString = shimoString
         self.titleString = titleString
+        self.fullLiner = fullLiner
 
         // クラスの持つ指定イニシャライザを呼び出す
         super.init(nibName: nil, bundle: nil)
