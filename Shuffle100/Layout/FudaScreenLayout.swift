@@ -18,10 +18,14 @@ private let fudaWidthMeasured: CGFloat = 53.0
 // アスペクト比 (幅/高さ)
 private let aspectRatio = fudaWidthMeasured / fudaHeightMeasured
 
-extension FudaViewController {
+extension FudaViewController: SHDeviceTypeGetter {
     internal func layoutFudaScreen() {
         setTatamiBackground()
         setFudaView()
+        if deviceType == .phone {
+            // pseudo implementation
+            self.fullLinerView = UITextView()
+        }
     }
     
     private func setTatamiBackground() {
