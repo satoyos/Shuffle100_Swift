@@ -37,6 +37,7 @@ extension PoemPickerViewController: UITableViewDataSource, UIPickerViewDataSourc
             $0.backgroundColor = colorFor(poem: poem)
             $0.tag = poem.number
             $0.accessibilityLabel = String(format: "%03d", poem.number)
+            $0.accessoryType = .detailButton
         }
         return cell
     }

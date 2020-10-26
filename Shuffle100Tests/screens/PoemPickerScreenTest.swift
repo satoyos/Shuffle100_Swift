@@ -163,4 +163,13 @@ class PoemPickerScreenTest: XCTestCase {
         let buttons = items?.filter{ $0.target != nil }
         XCTAssertEqual(buttons?.count, 3)
     }
+    
+    func test_eachCellHasDetailButtonAccessory() {
+        // given
+        let picker = PoemPickerViewController()
+        // when
+        picker.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(firstCell().accessoryType, .detailButton)
+    }
 }
