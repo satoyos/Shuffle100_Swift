@@ -50,4 +50,20 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils {
         XCTAssert(app.staticTexts["わ"].exists)
         XCTAssertFalse(app.staticTexts["き"].exists)
     }
+    
+    func test_longPressTestOnSearchResult() {
+        // given
+        gotoPoemPickerScreen(app)
+        // when
+        let searchField = app.searchFields.element
+        searchField.tap()
+        searchField.typeText("はる")
+        let firstCell = app.cells.firstMatch
+        firstCell.press(forDuration: 2.0)
+        // then
+        XCTContext.runActivity(named: "「ころもほすてふ」の取り札が表示される") { _ in
+            XCTAssert(app.staticTexts["ほ"].exists)
+            XCTAssertFalse(app.staticTexts["わ"].exists)
+        }
+    }
 }
