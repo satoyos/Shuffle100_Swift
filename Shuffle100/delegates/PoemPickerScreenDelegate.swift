@@ -11,13 +11,7 @@ import BBBadgeBarButtonItem
 
 extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let number: Int
-        if searchController.isActive {
-            let selectedPoem = filteredPoems[indexPath.row]
-            number = selectedPoem.number
-        } else {
-            number = indexPath.row + 1
-        }
+        let number = poemNumberFromIndexPath(indexPath)
         settings.state100.reverseInNumber(number)
         tableView.reloadData()
         updateBadge()
