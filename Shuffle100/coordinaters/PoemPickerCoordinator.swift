@@ -39,8 +39,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.openFiveColorsScreenAction = { [weak self] in
             self?.openFiveColorsScreen()
         }
-        screen.showTorifudaAction = { [weak self] indexPath  in
-            self?.showTorifudaScreenFor(indexPath)
+        screen.showTorifudaAction = { [weak self] number in
+            self?.showTorifudaScreenFor(number: number)
         }
         navigator.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
@@ -71,8 +71,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         self.fiveColorsCoordinator = coordinator
     }
     
-    internal func showTorifudaScreenFor(_ indexPath: IndexPath) {
-        let poem = Deck.originalPoems[indexPath.row]
+    internal func showTorifudaScreenFor(number: Int) {
+        let poem = Deck.originalPoems[number-1]
         let shimoStr = poem.in_hiragana.shimo
         var title = "\(poem.number)."
         for partStr in poem.liner {

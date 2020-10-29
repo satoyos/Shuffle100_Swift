@@ -24,6 +24,10 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         return
     }
     
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        // To be implemented
+    }
+    
     @objc func saveButtonTapped(button: UIButton) {
         assert(true, "Save Button Tapped!")
         guard selected_num > 0 else {
@@ -49,7 +53,6 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         let ngramAction = UIAlertAction(title: "1字目で選ぶ", style: .default) { action in
             self.openNgramPickerAction?()
         }
-//         五色百人一首はVersion 6.2から導入
         let fiveColorsAction = UIAlertAction(title: "五色百人一首の色で選ぶ", style: .default) { _ in
             self.openFiveColorsScreenAction?()
         }
@@ -62,7 +65,6 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
             ac.addAction(selectSavedSetAction)
         }
         ac.addAction(ngramAction)
-// 五色百人一首はVersion 6.2から導入
         ac.addAction(fiveColorsAction)
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
@@ -76,8 +78,9 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         // 押された位置でcellのPathを取得
         let point = recognizer.location(in: tableView)
         guard let indexPath = tableView.indexPathForRow(at: point) else { return }
-        if recognizer.state == UIGestureRecognizer.State.began  {
-            showTorifudaAction?(indexPath)
+        if recognizer.state == UIGestureRecognizer.State.began {
+            let poemNumber = poemNumberFromIndexPath(indexPath)
+            showTorifudaAction?(poemNumber)
         }
     }
 
@@ -88,6 +91,16 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         present(ac, animated: true)
     }
     
+    private func poemNumberFromIndexPath(_ indexPath: IndexPath) -> Int {
+        let number: Int
+        if searchController.isActive {
+            let selectedPoem = filteredPoems[indexPath.row]
+            number = selectedPoem.number
+        } else {
+            number = indexPath.row + 1
+        }
+        return number
+    }
 
 
  

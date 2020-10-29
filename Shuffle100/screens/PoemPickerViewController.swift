@@ -18,7 +18,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
     var openNgramPickerAction: (() -> Void)?
     var openFudaSetsScreenAction: (() -> Void)?
     var openFiveColorsScreenAction: (() -> Void)?
-    var showTorifudaAction: ((_ indexPath: IndexPath) -> Void)?
+    var showTorifudaAction: ((_ number: Int) -> Void)?
     var rowForFudaSetOverwritten: Int = 0
     var fontSizeOfCell: CGFloat!
     
