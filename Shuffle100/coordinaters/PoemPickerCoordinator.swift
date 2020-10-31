@@ -78,7 +78,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         for partStr in poem.liner {
             title += " \(partStr)"
         }
-        let fudaScreen = FudaViewController(shimoString: shimoStr, title: title)
+        let fudaScreen = FudaViewController(shimoString: shimoStr, title: title, fullLiner: poem.liner)
         let nav = UINavigationController(rootViewController: fudaScreen)
         nav.modalPresentationStyle = .fullScreen
         nav.navigationBar.barTintColor = StandardColor.barTintColor

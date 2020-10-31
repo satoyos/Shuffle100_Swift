@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils {
+class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGetter {
     let app = XCUIApplication()
     
     override func setUp() {
@@ -64,6 +64,19 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils {
         XCTContext.runActivity(named: "「ころもほすてふ」の取り札が表示される") { _ in
             XCTAssert(app.staticTexts["ほ"].exists)
             XCTAssertFalse(app.staticTexts["わ"].exists)
+        }
+    }
+    
+    func test_torifudaShowsFullLinersOnPhoneTypeDevice() {
+        // given
+        gotoPoemPickerScreen(app)
+        // when
+        app.cells["001"].press(forDuration: 2.0)
+        // then
+        if deviceType == .phone {
+            XCTAssert(app.textViews["fullLinersView"].exists)
+        } else {
+            XCTAssertFalse(app.textViews["fullLinersView"].exists)
         }
     }
 }

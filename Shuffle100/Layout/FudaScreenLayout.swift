@@ -18,13 +18,15 @@ private let fudaWidthMeasured: CGFloat = 53.0
 // アスペクト比 (幅/高さ)
 private let aspectRatio = fudaWidthMeasured / fudaHeightMeasured
 
+private let fudaFont = UIFont(name: "HiraMinProN-W6", size: 5)
+private let fudaFontSizeBase: CGFloat = 17
+
 extension FudaViewController: SHDeviceTypeGetter {
     internal func layoutFudaScreen() {
         setTatamiBackground()
         setFudaView()
         if deviceType == .phone {
-            // pseudo implementation
-            self.fullLinerView = UITextView()
+            setFullLinerView()
         }
     }
     
@@ -48,6 +50,26 @@ extension FudaViewController: SHDeviceTypeGetter {
         fudaView.accessibilityLabel = "fudaView"
         self.fudaView = fudaView
     }
+    
+    private func setFullLinerView() {
+        guard let fiveStirings = fullLiner else { return }
+        let kamiStr = "\(fiveStirings[0]) \(fiveStirings[1]) \(fiveStirings[2])"
+        let shimoStr = "\(fiveStirings[3]) \(fiveStirings[4])"
+        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: view.frame.width * 0.95, height: 100)).then {
+            $0.text = "\(kamiStr)\n\(shimoStr)"
+            $0.textAlignment = .center
+            $0.font = fudaFont?.withSize(fudaFontSizeBase)
+            $0.textColor = .black
+            $0.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+            $0.sizeToFit()
+            $0.contentOffset = CGPoint(x: 0, y: -5)
+            $0.center.x = tatamiView.center.x
+            $0.center.y = fullStringsCenterY()
+            $0.accessibilityLabel = "fullLinersView"
+            tatamiView.addSubview($0)
+        }
+        self.fullLinerView = textView
+    }
         
     private func fudaHeight() -> CGFloat {
         return [heightBySuperviewWidth(), heightBySuperviewHeight()].min() ?? 300
@@ -67,6 +89,10 @@ extension FudaViewController: SHDeviceTypeGetter {
         // ナビゲーションバーの高さを取得する
         let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height ?? 0
         return statusBarHeight + navigationBarHeight
+    }
+
+    private func fullStringsCenterY() -> CGFloat {
+        return (fudaView.frame.maxY + tatamiView.frame.maxY) / 2.0
     }
     
 }
