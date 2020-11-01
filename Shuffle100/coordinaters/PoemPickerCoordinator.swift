@@ -16,6 +16,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     private var ngramPickerCoordinator: NgramPickerCoordinator!
     private var fudaSetsCoordinator: FudaSetsCoordinator!
     private var fiveColorsCoordinator: FiveColorsCoordinator!
+    private var torifudaCoordinator: TorifudaCoordinator!
     
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
@@ -73,15 +74,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     
     internal func showTorifudaScreenFor(number: Int) {
         let poem = Deck.originalPoems[number-1]
-        let shimoStr = poem.in_hiragana.shimo
-        var title = "\(poem.number)."
-        for partStr in poem.liner {
-            title += " \(partStr)"
-        }
-        let fudaScreen = FudaViewController(shimoString: shimoStr, title: title, fullLiner: poem.liner)
-        let nav = UINavigationController(rootViewController: fudaScreen)
-        nav.modalPresentationStyle = .fullScreen
-        nav.navigationBar.barTintColor = StandardColor.barTintColor
-        screen?.present(nav, animated: true)
+        let coordinator = TorifudaCoordinator(navigator: navigator, poem: poem)
+        coordinator.start()
+        self.torifudaCoordinator = coordinator
     }
 }
