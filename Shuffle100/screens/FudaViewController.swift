@@ -42,16 +42,5 @@ class FudaViewController: UIViewController {
         
         self.title = titleString
         layoutFudaScreen()
-        setDismissButton()
     }
-
-    private func setDismissButton() {
-        let dismissButton = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(dismissButtonTapped))
-        self.navigationItem.rightBarButtonItem = dismissButton
-    }
-    
-    @objc func dismissButtonTapped() {
-        dismiss(animated: true)
-    }
-    
 }
