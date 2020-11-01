@@ -45,10 +45,17 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
         // given
         gotoPoemPickerScreen(app)
         // when
-        app.cells["001"].press(forDuration: 2.0)
+//        app.cells["001"].press(forDuration: 2.0)
+        detailButtonOfCell(app.cells["001"]).tap()
         // then
         XCTAssert(app.staticTexts["わ"].exists)
         XCTAssertFalse(app.staticTexts["き"].exists)
+                
+        
+    }
+    
+    private func detailButtonOfCell(_ cellElement: XCUIElement) -> XCUIElement {
+        return cellElement.buttons["詳細情報"]
     }
     
     func test_longPressTestOnSearchResult() {

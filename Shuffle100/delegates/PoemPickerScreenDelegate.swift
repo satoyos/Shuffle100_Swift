@@ -19,7 +19,8 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        // To be implemented
+        let number = poemNumberFromIndexPath(indexPath)
+        showTorifudaAction?(number)
     }
     
     @objc func saveButtonTapped(button: UIButton) {
