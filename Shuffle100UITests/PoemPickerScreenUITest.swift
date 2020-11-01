@@ -41,22 +41,19 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
         }
     }
     
-    func test_longPressShowsFudaScreen() {
+    func test_tappingDetailButtonShowsFudaScreen() {
         // given
         gotoPoemPickerScreen(app)
         // when
-//        app.cells["001"].press(forDuration: 2.0)
         detailButtonOfCell(app.cells["001"]).tap()
         // then
         XCTAssert(app.staticTexts["わ"].exists)
         XCTAssertFalse(app.staticTexts["き"].exists)
-                
-        
     }
     
-    private func detailButtonOfCell(_ cellElement: XCUIElement) -> XCUIElement {
-        return cellElement.buttons["詳細情報"]
-    }
+    // ToDo:
+    //    replace "Long press" with "tap detail button"
+    //
     
     func test_longPressTestOnSearchResult() {
         // given
@@ -86,4 +83,10 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
             XCTAssertFalse(app.textViews["fullLinersView"].exists)
         }
     }
+    
+    private func detailButtonOfCell(_ cellElement: XCUIElement) -> XCUIElement {
+        return cellElement.buttons["詳細情報"]
+    }
+    
+
 }
