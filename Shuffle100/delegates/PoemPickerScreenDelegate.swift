@@ -69,6 +69,10 @@ extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDele
         present(ac, animated: true)
     }
     
+    
+    //
+    // To Be Deleted
+    //
     @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
         // 押された位置でcellのPathを取得
         let point = recognizer.location(in: tableView)
