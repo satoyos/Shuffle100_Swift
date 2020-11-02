@@ -51,11 +51,16 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
         XCTAssertFalse(app.staticTexts["き"].exists)
     }
     
-    // ToDo:
-    //    replace "Long press" with "tap detail button"
-    //
+    func test_longPressNetRespondAnyMore() {
+        // given
+        gotoPoemPickerScreen(app)
+        // when
+        app.cells["001"].press(forDuration: 2.0)
+        // then
+        XCTAssertFalse(app.staticTexts["わ"].exists)
+    }
     
-    func test_longPressTestOnSearchResult() {
+    func test_tapDetailButtonOnSearchResult() {
         // given
         gotoPoemPickerScreen(app)
         // when
@@ -63,7 +68,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
         searchField.tap()
         searchField.typeText("はる")
         let firstCell = app.cells.firstMatch
-        firstCell.press(forDuration: 2.0)
+        detailButtonOfCell(firstCell).tap()
         // then
         XCTContext.runActivity(named: "「ころもほすてふ」の取り札が表示される") { _ in
             XCTAssert(app.staticTexts["ほ"].exists)
@@ -75,7 +80,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
         // given
         gotoPoemPickerScreen(app)
         // when
-        app.cells["001"].press(forDuration: 2.0)
+        detailButtonOfCell(app.cells["001"]).tap()
         // then
         if deviceType == .phone {
             XCTAssert(app.textViews["fullLinersView"].exists)
