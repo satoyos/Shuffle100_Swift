@@ -51,6 +51,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal func openNgramPicker() {
         guard let settings = settings else { return }
         guard let store = store else { return }
+        clearSearchResult()
         let coordinator = NgramPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.ngramPickerCoordinator = coordinator
@@ -59,6 +60,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal func openFudaSetsScreen() {
         guard let settings = settings else { return }
         guard let store = store else { return }
+        clearSearchResult()
         let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.fudaSetsCoordinator = coordinator
@@ -67,6 +69,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal func openFiveColorsScreen() {
         guard let settings = settings else { return }
         guard let store = store else { return }
+        clearSearchResult()
         let coordinator = FiveColorsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.fiveColorsCoordinator = coordinator
@@ -77,5 +80,11 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         let coordinator = TorifudaCoordinator(navigator: navigator, poem: poem)
         coordinator.start()
         self.torifudaCoordinator = coordinator
+    }
+    
+    private func clearSearchResult() {
+        if let screen = screen as? PoemPickerViewController {
+            screen.searchController.searchBar.text = ""
+        }
     }
 }
