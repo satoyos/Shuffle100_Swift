@@ -74,6 +74,12 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
             XCTAssert(app.staticTexts["ほ"].exists)
             XCTAssertFalse(app.staticTexts["わ"].exists)
         }
+        XCTContext.runActivity(named: "そこから「歌」を選ぶ画面に戻ると、検索中だった状態が保持されている") { _ in
+            // when
+            app.navigationBars.buttons.firstMatch.tap()
+            // then
+            XCTAssertFalse(app.cells["001"].exists)
+        }
     }
     
     func test_torifudaShowsFullLinersOnPhoneTypeDevice() {
@@ -92,6 +98,4 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
     private func detailButtonOfCell(_ cellElement: XCUIElement) -> XCUIElement {
         return cellElement.buttons["詳細情報"]
     }
-    
-
 }

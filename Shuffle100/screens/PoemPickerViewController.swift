@@ -56,7 +56,7 @@ class PoemPickerViewController: SettingsAttachedViewController {
         self.saveSettingsAction?()
         // searchControllerがActiveなまま強制的にトップスクリーンに戻った場合でも、
         // Active状態を解除する。
-        searchController?.isActive = false
+//        searchController?.isActive = false
         navigationController?.setToolbarHidden(true, animated: true)
         super.viewWillDisappear(animated)
     }
