@@ -12,26 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coordinator: MainCoordinator?
+    var mainCoordinator: MainCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        disableConnectHardwareKeyboard()
+        disableConnectHardwareKeyboardOnSimulator()
         cleanUserDefualtIfUITesting()
 
-        coordinator = MainCoordinator()
-        coordinator?.start()
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = coordinator?.navigator
-        window?.makeKeyAndVisible()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        let coordinator = MainCoordinator(window: window)
+        coordinator.start()
+        self.mainCoordinator = coordinator
         
         if CommandLine.arguments.contains("--uitesting") {
-//            UIView.setAnimationsEnabled(false)
             UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5
         }
-        
-      
+
         return true
     }
 
@@ -66,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func disableConnectHardwareKeyboard() {
+    private func disableConnectHardwareKeyboardOnSimulator() {
 #if targetEnvironment(simulator)
         // Disable hardware keyboards.
         let setHardwareLayout = NSSelectorFromString("setHardwareLayout:")

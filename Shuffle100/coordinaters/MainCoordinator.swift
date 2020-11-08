@@ -9,9 +9,10 @@
 import UIKit
 
 class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
-    var store: StoreManager?
-    var screen: UIViewController?    
-    var navigator = UINavigationController()
+    private let window: UIWindow
+    internal var store: StoreManager?
+    internal var screen: UIViewController?
+    private var navigator: UINavigationController?
     internal var settings: Settings?
     internal let env = Environment()
     private var recitePoemCoordinator: RecitePoemCoordinator!
@@ -20,13 +21,22 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     private var helpListCoordinator: HelpListCoordinator!
     private var memorizeTimerCoordinator: MemorizeTimerCoordinator!
 
+    init(window: UIWindow) {
+        self.window = window
+    }
+    
     func start() {
         self.store = StoreManager()
         self.settings = setUpSettings()
         guard let settings = settings else { return }
         let homeScreen = HomeViewController(settings: settings)
-        navigator.pushViewController(homeScreen, animated: false)
+        self.screen = homeScreen
+        let navigator = UINavigationController(rootViewController: homeScreen)
         setUpNavigationController(navigator)
+        self.navigator = navigator
+        
+        window.rootViewController = navigator
+        window.makeKeyAndVisible()
 
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
@@ -51,11 +61,12 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings)
         AudioPlayerFactory.shared.setupAudioSession()
-        self.screen = homeScreen
+//        self.screen = homeScreen
     }
     
     private func selectPoem(settings: Settings) {
         guard let store = store else { return }
+        guard let navigator = navigator else { return }
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.poemPickerCoordinator = coordinator
@@ -63,6 +74,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     
     private func selectMode(settings: Settings) {
         guard let store = store else { return }
+        guard let navigator = navigator else { return }
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         
@@ -70,6 +82,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     
     private func selectSinger(settings: Settings) {
         guard let store = store else { return }
+        guard let navigator = navigator else { return }
         let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
@@ -78,6 +91,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         var gameDriver: RecitePoemCoordinator!
         
         guard let store = store else { return }
+        guard let navigator = navigator else { return }
         switch settings.mode.reciteMode {
         case .normal:
             gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings, store: store)
@@ -109,16 +123,18 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
     
     private func openHelpList() {
+        guard let navigator = navigator else { return }
+
         let coordinator = HelpListCoordinator(navigator: navigator)
         coordinator.start()
         self.helpListCoordinator = coordinator
     }
     
     private func openMemorizeTimer() {
-//        print("暗記時間タイマーを開くよ！")
+        guard let navigator = navigator else { return }
+
         let coordinator = MemorizeTimerCoordinator(navigator: navigator)
         coordinator.start()
         self.memorizeTimerCoordinator = coordinator
     }
-
 }
