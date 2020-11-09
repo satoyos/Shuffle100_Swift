@@ -26,9 +26,10 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
     
     func start() {
-        self.store = StoreManager()
-        self.settings = setUpSettings()
-        guard let settings = settings else { return }
+        let store = StoreManager()
+        self.store = store
+        let settings = setUpSettings()
+        self.settings = settings
         let homeScreen = HomeViewController(settings: settings)
         self.screen = homeScreen
         let navigator = UINavigationController(rootViewController: homeScreen)
@@ -38,6 +39,11 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         window.rootViewController = navigator
         window.makeKeyAndVisible()
 
+        setActions(in: homeScreen, with: settings)
+        AudioPlayerFactory.shared.setupAudioSession()
+    }
+
+    private func setActions(in homeScreen: HomeViewController, with settings: Settings) {
         homeScreen.selectPoemAction = {[weak self, unowned settings] in
             self?.selectPoem(settings: settings)
         }
@@ -60,10 +66,8 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
             self?.openMemorizeTimer()
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings)
-        AudioPlayerFactory.shared.setupAudioSession()
-//        self.screen = homeScreen
     }
-    
+        
     private func selectPoem(settings: Settings) {
         guard let store = store else { return }
         guard let navigator = navigator else { return }
