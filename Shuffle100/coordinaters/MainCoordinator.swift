@@ -39,25 +39,25 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         window.rootViewController = navigator
         window.makeKeyAndVisible()
 
-        setActions(in: homeScreen, with: settings)
+        setActions(in: homeScreen, settings: settings, store: store)
         AudioPlayerFactory.shared.setupAudioSession()
     }
 
-    private func setActions(in homeScreen: HomeViewController, with settings: Settings) {
-        homeScreen.selectPoemAction = {[weak self, unowned settings] in
-            self?.selectPoem(settings: settings)
+    private func setActions(in homeScreen: HomeViewController, settings: Settings, store: StoreManager) {
+        homeScreen.selectPoemAction = {[weak self, unowned settings, store] in
+            self?.selectPoem(settings: settings, store: store)
         }
-        homeScreen.selectModeAction = {[weak self, unowned settings] in
-            self?.selectMode(settings: settings)
+        homeScreen.selectModeAction = {[weak self, unowned settings, store] in
+            self?.selectMode(settings: settings, store: store)
         }
-        homeScreen.selectSingerAction = {[weak self, unowned settings] in
-            self?.selectSinger(settings: settings)
+        homeScreen.selectSingerAction = {[weak self, unowned settings, store] in
+            self?.selectSinger(settings: settings, store: store)
         }
-        homeScreen.startGameAction = {[weak self, unowned settings] in
-            self?.startGame(settings: settings)
+        homeScreen.startGameAction = {[weak self, unowned settings, store] in
+            self?.startGame(settings: settings, store: store)
         }
-        homeScreen.reciteSettingsAction = { [weak self, unowned settings] in
-            self?.openReciteSettings(settins: settings)
+        homeScreen.reciteSettingsAction = { [weak self, unowned settings, store] in
+            self?.openReciteSettings(settins: settings, store: store)
         }
         homeScreen.helpActioh = { [weak self] in
             self?.openHelpList()
@@ -65,36 +65,32 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         homeScreen.memorizeTimerAction = { [weak self] in
             self?.openMemorizeTimer()
         }
-        setSaveSettingsActionTo(screen: homeScreen, settings: settings)
+        setSaveSettingsActionTo(screen: homeScreen, settings: settings, store: store)
     }
         
-    private func selectPoem(settings: Settings) {
-        guard let store = store else { return }
+    private func selectPoem(settings: Settings, store: StoreManager) {
         guard let navigator = navigator else { return }
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.poemPickerCoordinator = coordinator
     }
     
-    private func selectMode(settings: Settings) {
-        guard let store = store else { return }
+    private func selectMode(settings: Settings, store: StoreManager) {
         guard let navigator = navigator else { return }
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         
     }
     
-    private func selectSinger(settings: Settings) {
-        guard let store = store else { return }
+    private func selectSinger(settings: Settings, store: StoreManager) {
         guard let navigator = navigator else { return }
         let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
     }
 
-    private func startGame(settings: Settings) {
+    private func startGame(settings: Settings, store: StoreManager) {
         var gameDriver: RecitePoemCoordinator!
         
-        guard let store = store else { return }
         guard let navigator = navigator else { return }
         switch settings.mode.reciteMode {
         case .normal:
@@ -111,16 +107,14 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         self.recitePoemCoordinator = coordinator
     }
     
-    private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings ) {
-        guard let store = store else { return }
+    private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings, store: StoreManager) {
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
         }
     }
     
-    private func openReciteSettings(settins: Settings) {
+    private func openReciteSettings(settins: Settings, store: StoreManager) {
         guard let homeScreen = self.screen else { return }
-        guard let store = store else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: homeScreen, store: store)
         coordinator.start()
         self.reciteSettingsCoordinator = coordinator
