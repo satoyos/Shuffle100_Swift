@@ -39,13 +39,13 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         window.rootViewController = navigator
         window.makeKeyAndVisible()
 
-        setActions(in: homeScreen, settings: settings, store: store)
+        setActions(in: homeScreen, settings: settings, store: store, navigator: navigator)
         AudioPlayerFactory.shared.setupAudioSession()
     }
 
-    private func setActions(in homeScreen: HomeViewController, settings: Settings, store: StoreManager) {
-        homeScreen.selectPoemAction = {[weak self, unowned settings, store] in
-            self?.selectPoem(settings: settings, store: store)
+    private func setActions(in homeScreen: HomeViewController, settings: Settings, store: StoreManager, navigator: UINavigationController) {
+        homeScreen.selectPoemAction = {[weak self, unowned settings, store, unowned navigator] in
+            self?.selectPoem(settings: settings, store: store, navigator: navigator)
         }
         homeScreen.selectModeAction = {[weak self, unowned settings, store] in
             self?.selectMode(settings: settings, store: store)
@@ -68,8 +68,8 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         setSaveSettingsActionTo(screen: homeScreen, settings: settings, store: store)
     }
         
-    private func selectPoem(settings: Settings, store: StoreManager) {
-        guard let navigator = navigator else { return }
+    private func selectPoem(settings: Settings, store: StoreManager, navigator: UINavigationController) {
+//        guard let navigator = navigator else { return }
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
         self.poemPickerCoordinator = coordinator
