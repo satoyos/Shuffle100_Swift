@@ -22,8 +22,8 @@ def desired_caps
           platformName:  "iOS",
           # deviceName:    "iPhone 8",
           # deviceName:    "iPhone X",
-          # deviceName:    "iPhone Xs Max",  # 6.5inch
-          deviceName:    "iPhone 8 Plus",  # 5.5inch
+          deviceName:    "iPhone Xs Max",  # 6.5inch
+          # deviceName:    "iPhone 8 Plus",  # 5.5inch
           # deviceName:    "iPad Pro (9.7-inch)",
           # deviceName:    "iPad Pro (12.9-inch) (2nd generation)",
           # deviceName:    "iPad Pro (12.9-inch) (4th generation)",
