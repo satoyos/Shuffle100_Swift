@@ -3,10 +3,6 @@ require_relative 'spec_helper'
 require_relative 'application_drivers/screenshots'
 
 describe 'スクリーンショットの撮影' do
-  def make_test_success
-    expect(1).to be 1
-  end
-
   it 'アプリのタイトルが正しく表示される' do
     current_screen_is TOP_TITLE
   end
@@ -27,22 +23,6 @@ describe 'スクリーンショットの撮影' do
       click_quit_button
       alert_dismiss
       sleep_while_animation
-      current_screen_is TOP_TITLE
-    end
-  end
-
-  describe '取り札画面を撮る' do
-    it '歌選択画面を開く' do
-      goto_select_poem_screen
-      current_screen_is STR_SELECT_POEM_SCREEN
-    end
-    it '1首目を長押しして、取り札画面を表示し、撮る' do
-      long_press_first_cell
-      take_screenshot_no(4)
-    end
-    it 'ホーム画面に戻る' do
-      click_button '閉じる'
-      click_back_button
       current_screen_is TOP_TITLE
     end
   end
@@ -157,8 +137,25 @@ describe 'スクリーンショットの撮影' do
     it 'ここでスクリーンショットを撮る' do
       take_screenshot_no(6)
     end
+    it 'トップ画面に戻る' do
+      click_back_button
+    end
   end
 
+  describe '取り札画面を撮る' do
+    it '歌選択画面を開く' do
+      goto_select_poem_screen
+      current_screen_is STR_SELECT_POEM_SCREEN
+    end
+    it '1首目のアクセサリボタンを押して、スクリーンショットを撮る' do
+      go_detail_of_first_cell
+      take_screenshot_no(4)
+    end
+  end
+end
+
+def make_test_success
+  expect(1).to be 1
 end
 
 def select_poem_of_no(num)
@@ -188,12 +185,17 @@ def scroll_screen(scroll_up_length)
     end_y: startY-scroll_up_length,
     duration: 1000).perform
     make_test_success
-  end
+end
 
-  def long_press_first_cell
-    first_cell = find_elements(:class_name, TYPE_CELL).first
-    pointX = first_cell.location.x + first_cell.size.width/2
-    pointY = first_cell.location.y + first_cell.size.height/2
-    duration = 2000
-    Appium::TouchAction.new.press(x: pointX, y: pointY).wait(duration).release.perform
-  end
+def long_press_first_cell
+  first_cell = find_elements(:class_name, TYPE_CELL).first
+  pointX = first_cell.location.x + first_cell.size.width/2
+  pointY = first_cell.location.y + first_cell.size.height/2
+  duration = 2000
+  Appium::TouchAction.new.press(x: pointX, y: pointY).wait(duration).release.perform
+end
+
+def go_detail_of_first_cell
+  first_cell = find_elements(:class_name, TYPE_CELL).first
+  first_cell.find_element(name: '詳細情報').click
+end
