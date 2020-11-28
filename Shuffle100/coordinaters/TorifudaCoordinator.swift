@@ -12,12 +12,13 @@ final class TorifudaCoordinator: Coordinator {
     var screen: UIViewController?
     private var navigator: UINavigationController
     private var poem: Poem
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, poem: Poem) {
         self.navigator = navigator
         self.poem = poem
     }
-    
+
     func start() {
         let shimoStr = poem.in_hiragana.shimo
         var title = "\(poem.number)."
@@ -29,6 +30,4 @@ final class TorifudaCoordinator: Coordinator {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-    
-    
 }

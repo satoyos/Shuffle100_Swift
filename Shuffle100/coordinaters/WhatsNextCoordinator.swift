@@ -15,18 +15,18 @@ class WhatsNextCoordinator: Coordinator {
     private var currentPoem: Poem!
     private var settings: Settings
     private var store: StoreManager
-    private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     internal var refrainEscalatingAction: (() -> Void)?
     internal var goNextPoemEscalatingAction: (() -> Void)?
     internal var exitGameEscalationgAction: (() -> Void)?
-    
+    var childCoordinators = [Coordinator]()
+
     init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager) {
         self.fromScreen = fromScreen
         self.currentPoem = currentPoem
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         let screen = WhatsNextViewController(currentPoem: currentPoem)
         self.navigator = UINavigationController(rootViewController: screen)
@@ -46,29 +46,29 @@ class WhatsNextCoordinator: Coordinator {
         fromScreen.present(navigator, animated: true)
         self.screen = screen
     }
-    
+
     private func setUpNavigationController() {
         navigator.interactivePopGestureRecognizer?.isEnabled = false
         navigator.navigationBar.barTintColor = StandardColor.barTintColor
         navigator.modalPresentationStyle = .fullScreen
     }
-    
+
     internal func refrainShimo() {
         refrainEscalatingAction?()
     }
-    
+
     internal func goNextPoem() {
         goNextPoemEscalatingAction?()
     }
-    
+
     internal func exitGame() {
         exitGameEscalationgAction?()
     }
-    
+
     internal func openSettingScreen() {
         guard let screen = self.screen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
-        self.reciteSettingsCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
 }

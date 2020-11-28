@@ -14,8 +14,9 @@ class RecitePoemCoordinator: Coordinator{
     internal var settings: Settings
     internal var poemSupplier: PoemSupplier!
     internal var store: StoreManager
-    internal var reciteSettingsCoordinator: ReciteSettingsCoordinator!
-    
+//    internal var reciteSettingsCoordinator: ReciteSettingsCoordinator!
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
@@ -26,7 +27,7 @@ class RecitePoemCoordinator: Coordinator{
             poemSupplier.addFakePoems()
         }
     }
-    
+
     func start() {
         let screen = RecitePoemViewController(settings: settings)
         screen.backToPreviousAction = { [weak self] in
@@ -35,7 +36,7 @@ class RecitePoemCoordinator: Coordinator{
         screen.openSettingsAction = { [weak self] in
             self?.openReciteSettings()
         }
-        
+
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
         CATransaction.begin()
@@ -49,7 +50,7 @@ class RecitePoemCoordinator: Coordinator{
         CATransaction.commit()
         self.screen = screen
     }
-    
+
     internal func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
@@ -61,11 +62,11 @@ class RecitePoemCoordinator: Coordinator{
         }
         screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
-    
+
     internal func reciteKamiFinished(number: Int, counter: Int ) {
         assertionFailure("This method must be override by subclass!")
     }
-    
+
     internal func reciteShimoFinished(number: Int, counter: Int) {
         print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
         guard let screen = self.screen as? RecitePoemViewController else { return }
@@ -76,20 +77,20 @@ class RecitePoemCoordinator: Coordinator{
                 self?.reciteKamiFinished(number: number, counter: counter)
             }
             screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
-        
+
         } else {
             assert(true, "歌は全て読み終えた！")
             screen.stepIntoGameEnd()
         }
     }
-    
+
     internal func rewindToPrevious() {
         guard let side = poemSupplier.side else {
             assert(true, "序歌の冒頭でrewidが押された")
             backToTopScreen()
             return
         }
-        
+
         if side == .kami {
             backToPreviousPoem()
         } else {  // 下の句の冒頭でrewindが押された場合
@@ -125,14 +126,14 @@ class RecitePoemCoordinator: Coordinator{
             backToTopScreen()
         }
     }
-    
+
     // 歯車ボタンが押されたときの画面遷移をここでやる！
     private func openReciteSettings() {
         guard let screen = self.screen as? RecitePoemViewController else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
-        self.reciteSettingsCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
 
 }

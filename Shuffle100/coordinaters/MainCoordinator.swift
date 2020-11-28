@@ -15,16 +15,12 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     private var navigator: UINavigationController?
     internal var settings: Settings?
     internal let env = Environment()
-    private var recitePoemCoordinator: RecitePoemCoordinator!
-    private var reciteSettingsCoordinator: ReciteSettingsCoordinator!
-    private var poemPickerCoordinator: PoemPickerCoordinator!
-    private var helpListCoordinator: HelpListCoordinator!
-    private var memorizeTimerCoordinator: MemorizeTimerCoordinator!
+    var childCoordinators = [Coordinator]()
 
     init(window: UIWindow) {
         self.window = window
     }
-    
+
     func start() {
         let store = StoreManager()
         self.store = store
@@ -35,7 +31,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         let navigator = UINavigationController(rootViewController: homeScreen)
         setUpNavigationController(navigator)
         self.navigator = navigator
-        
+
         window.rootViewController = navigator
         window.makeKeyAndVisible()
 
@@ -67,27 +63,28 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings, store: store)
     }
-        
+
     private func selectPoem(settings: Settings, store: StoreManager, navigator: UINavigationController) {
         let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
-        self.poemPickerCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     private func selectMode(settings: Settings, store: StoreManager, navigator: UINavigationController) {
         let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
-        
+        childCoordinators.append(coordinator)
     }
-    
+
     private func selectSinger(settings: Settings, store: StoreManager, navigator: UINavigationController) {
         let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
+        childCoordinators.append(coordinator)
     }
 
     private func startGame(settings: Settings, store: StoreManager, navigator: UINavigationController) {
         var gameDriver: RecitePoemCoordinator!
-        
+
         switch settings.mode.reciteMode {
         case .normal:
             gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings, store: store)
@@ -100,30 +97,30 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
             gameDriver.start()
         }
         guard let coordinator = gameDriver else { return }
-        self.recitePoemCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings, store: StoreManager) {
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
         }
     }
-    
+
     private func openReciteSettings(from screen: UIViewController, settins: Settings, store: StoreManager) {
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: screen, store: store)
         coordinator.start()
-        self.reciteSettingsCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     private func openHelpList(navigator: UINavigationController) {
         let coordinator = HelpListCoordinator(navigator: navigator)
         coordinator.start()
-        self.helpListCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     private func openMemorizeTimer(navigator: UINavigationController) {
         let coordinator = MemorizeTimerCoordinator(navigator: navigator)
         coordinator.start()
-        self.memorizeTimerCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
 }

@@ -13,13 +13,14 @@ final class KamiShimoIntervalSettingCoordinator: Coordinator, SaveSettings {
     internal var store: StoreManager?
     var screen: UIViewController?
     var navigator: UINavigationController
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, settings: Settings, store: StoreManager = StoreManager()) {
         self.navigator = navigator
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         guard let settings = settings else { return }
         guard let store = store else { return }
@@ -30,6 +31,6 @@ final class KamiShimoIntervalSettingCoordinator: Coordinator, SaveSettings {
         navigator.pushViewController(screen, animated: true)
         self.screen = screen
     }
-    
-    
+
+
 }

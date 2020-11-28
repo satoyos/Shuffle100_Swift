@@ -9,18 +9,19 @@
 import UIKit
 
 final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
-    
+
     internal var settings: Settings?
     internal var store: StoreManager?
     private let navigator: UINavigationController
     internal var screen: UIViewController?
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         guard let settings = settings else { return }
         guard let store = store else { return }
@@ -32,6 +33,6 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-    
+
 
 }

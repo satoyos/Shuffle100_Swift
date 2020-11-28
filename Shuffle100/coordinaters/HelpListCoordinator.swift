@@ -35,8 +35,8 @@ class HelpListCoordinator: Coordinator {
     var screen: UIViewController?
     private var navigator: UINavigationController
     private var detailHelpScreen: HelpDetailViewController!
-    
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController) {
         self.navigator = navigator
     }
@@ -50,7 +50,7 @@ class HelpListCoordinator: Coordinator {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-    
+
     private func goDetailScreen(indexPath: IndexPath) {
         let dataSource = helpListSections[indexPath.section].dataSources[indexPath.row]
         if let htmlFileName = dataSource.fileName {
@@ -63,7 +63,7 @@ class HelpListCoordinator: Coordinator {
             showAlertConfirmingGotoReview()
         }
     }
-    
+
     private func showAlertConfirmingGotoReview() {
         let ac = UIAlertController(title: "このアプリを評価するために、App Storeアプリを立ち上げますか？", message: nil, preferredStyle: .alert)
         let openAction = UIAlertAction(title: "立ち上げる", style: .default) { _ in
@@ -74,7 +74,7 @@ class HelpListCoordinator: Coordinator {
         ac.addAction(cancelAction)
         screen?.present(ac, animated: true)
     }
-    
+
     private func openAppStoreReview() {
         if let url = URL(string: "https://itunes.apple.com/us/app/itunes-u/id857819404?action=write-review") {
            UIApplication.shared.open(url)
