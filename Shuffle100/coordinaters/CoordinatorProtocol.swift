@@ -9,7 +9,8 @@
 import UIKit
 
 protocol Coordinator {
-    var screen: UIViewController? { get set }
+    var childCoordinators: [Coordinator] { get set }
+
     func start()
     func navigationItemPrompt() -> String
 }

@@ -11,16 +11,16 @@ import UIKit
 final class SelectModeCoordinator: Coordinator, SaveSettings {
     internal var settings: Settings?
     internal var store: StoreManager?
-    
     private let navigator: UINavigationController
     var screen: UIViewController?
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, settings: Settings, store: StoreManager  = StoreManager()) {
         self.navigator = navigator
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         guard let settings = settings else { return }
         let screen = SelectModeViewController(settings: settings)
@@ -29,7 +29,7 @@ final class SelectModeCoordinator: Coordinator, SaveSettings {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-    
+
     private func setSaveSettingsActionTo(screen: SelectModeViewController, settings: Settings ) {
         guard let store = store else { return }
         screen.saveSettingsAction = { [store, settings] in

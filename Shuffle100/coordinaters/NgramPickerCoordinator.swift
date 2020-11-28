@@ -13,13 +13,14 @@ class NgramPickerCoordinator: Coordinator {
     private var settings: Settings
     private var store: StoreManager
     private var navigator: UINavigationController
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         let screen = NgramPickerViewController(settings: settings)
         navigator.pushViewController(screen, animated: true)

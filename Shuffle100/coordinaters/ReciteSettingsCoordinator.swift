@@ -14,6 +14,8 @@ class ReciteSettingsCoordinator: Coordinator {
     private var navigator: UINavigationController!
     private var fromScreen: UIViewController
     internal var screen: UIViewController?
+    var childCoordinators = [Coordinator]()
+
 
     init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager()) {
         self.settings = settings
@@ -22,7 +24,6 @@ class ReciteSettingsCoordinator: Coordinator {
     }
     
     func start() {
-//        print("歯車ボタンが押された！")
         let screen = ReciteSettingsViewController(settings: settings)
         self.navigator = UINavigationController(rootViewController: screen)
         setUpNavigationController()

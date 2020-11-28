@@ -9,7 +9,7 @@
 import Foundation
 
 class BeginnerModeCoordinator: RecitePoemCoordinator {
-    var whatsNextCoordinator: WhatsNextCoordinator!
+//    var whatsNextCoordinator: WhatsNextCoordinator!
     
     override func reciteKamiFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")
@@ -40,7 +40,7 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
             self?.exitGame()
         }
         coordinator.start()
-        self.whatsNextCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
     
     internal func refrainShimo() {
@@ -61,7 +61,6 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
     
     internal func exitGame() {
         assert(true, "初心者モードのCoordinatorからゲームを終了させるよ！")
-        whatsNextCoordinator = nil
         backToTopScreen()
     }
 }

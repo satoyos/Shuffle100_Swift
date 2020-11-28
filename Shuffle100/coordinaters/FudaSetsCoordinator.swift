@@ -13,13 +13,14 @@ class FudaSetsCoordinator: Coordinator, SaveSettings {
     internal var store: StoreManager?
     var screen: UIViewController?
     private var navigator: UINavigationController
+    var childCoordinators = [Coordinator]()
 
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         guard let settings = settings else { return }
         guard let store = store else { return }

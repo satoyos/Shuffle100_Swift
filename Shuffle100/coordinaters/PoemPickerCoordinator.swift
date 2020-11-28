@@ -9,21 +9,19 @@
 import UIKit
 
 final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
+
     internal var settings: Settings?
     internal var store: StoreManager?
     private let navigator: UINavigationController
     internal var screen: UIViewController?
-    private var ngramPickerCoordinator: NgramPickerCoordinator!
-    private var fudaSetsCoordinator: FudaSetsCoordinator!
-    private var fiveColorsCoordinator: FiveColorsCoordinator!
-    private var torifudaCoordinator: TorifudaCoordinator!
-    
+    var childCoordinators = [Coordinator]()
+
     init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigator = navigator
         self.settings = settings
         self.store = store
     }
-    
+
     func start() {
         guard let settings = settings else { return }
         guard let store = store else { return }
@@ -47,41 +45,41 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-    
+
     internal func openNgramPicker() {
         guard let settings = settings else { return }
         guard let store = store else { return }
         clearSearchResult()
         let coordinator = NgramPickerCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
-        self.ngramPickerCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     internal func openFudaSetsScreen() {
         guard let settings = settings else { return }
         guard let store = store else { return }
         clearSearchResult()
         let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
-        self.fudaSetsCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     internal func openFiveColorsScreen() {
         guard let settings = settings else { return }
         guard let store = store else { return }
         clearSearchResult()
         let coordinator = FiveColorsCoordinator(navigator: navigator, settings: settings, store: store)
         coordinator.start()
-        self.fiveColorsCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     internal func showTorifudaScreenFor(number: Int) {
         let poem = Deck.originalPoems[number-1]
         let coordinator = TorifudaCoordinator(navigator: navigator, poem: poem)
         coordinator.start()
-        self.torifudaCoordinator = coordinator
+        childCoordinators.append(coordinator)
     }
-    
+
     private func clearSearchResult() {
         if let screen = screen as? PoemPickerViewController {
             screen.searchController.searchBar.text = ""
