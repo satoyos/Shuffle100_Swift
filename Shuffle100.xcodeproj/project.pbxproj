@@ -404,7 +404,6 @@
 		92CE520B2168D4D200538E01 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* TableDataSource.swift */; };
 		92CE520C2168D4D200538E01 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* TableDataSource.swift */; };
 		92CE520D2168D4D200538E01 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* TableDataSource.swift */; };
-		92CE5218216B6ABA00538E01 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE5214216B5AF000538E01 /* RevealServer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57151220EC87700235717 /* GameConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameConfigTest.swift */; };
 		92D57152220ECBC000235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
@@ -758,7 +757,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CE5218216B6ABA00538E01 /* RevealServer.framework in Frameworks */,
 				C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
