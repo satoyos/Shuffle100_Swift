@@ -10,12 +10,12 @@ import UIKit
 
 final class TorifudaCoordinator: Coordinator {
     var screen: UIViewController?
-    private var navigator: UINavigationController
+    var navigationController: UINavigationController
     private var poem: Poem
     var childCoordinators = [Coordinator]()
 
-    init(navigator: UINavigationController, poem: Poem) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController, poem: Poem) {
+        self.navigationController = navigationController
         self.poem = poem
     }
 
@@ -26,7 +26,7 @@ final class TorifudaCoordinator: Coordinator {
             title += " \(partStr)"
         }
         let screen = FudaViewController(shimoString: shimoStr, title: title, fullLiner: poem.liner)
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }

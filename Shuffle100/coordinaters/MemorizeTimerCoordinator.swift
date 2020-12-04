@@ -10,16 +10,16 @@ import UIKit
 
 class MemorizeTimerCoordinator: Coordinator {
     var screen: UIViewController?
-    var navigator: UINavigationController
+    var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
 
-    init(navigator: UINavigationController) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     func start() {
         let screen = MemorizeTimerViewController()
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }

@@ -12,12 +12,12 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
 
     internal var settings: Settings?
     internal var store: StoreManager?
-    private let navigator: UINavigationController
+    var navigationController: UINavigationController
     internal var screen: UIViewController?
     var childCoordinators = [Coordinator]()
 
-    init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
+        self.navigationController = navigationController
         self.settings = settings
         self.store = store
     }
@@ -41,7 +41,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.showTorifudaAction = { [weak self] number in
             self?.showTorifudaScreenFor(number: number)
         }
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
@@ -50,7 +50,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         guard let settings = settings else { return }
         guard let store = store else { return }
         clearSearchResult()
-        let coordinator = NgramPickerCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = NgramPickerCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
@@ -59,7 +59,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         guard let settings = settings else { return }
         guard let store = store else { return }
         clearSearchResult()
-        let coordinator = FudaSetsCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = FudaSetsCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
@@ -68,14 +68,14 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         guard let settings = settings else { return }
         guard let store = store else { return }
         clearSearchResult()
-        let coordinator = FiveColorsCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = FiveColorsCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
     internal func showTorifudaScreenFor(number: Int) {
         let poem = Deck.originalPoems[number-1]
-        let coordinator = TorifudaCoordinator(navigator: navigator, poem: poem)
+        let coordinator = TorifudaCoordinator(navigationController: navigationController, poem: poem)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

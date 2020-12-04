@@ -11,7 +11,7 @@ import UIKit
 class WhatsNextCoordinator: Coordinator {
     internal var screen: UIViewController?
     private var fromScreen: UIViewController
-    private var navigator: UINavigationController!
+    var navigationController: UINavigationController
     private var currentPoem: Poem!
     private var settings: Settings
     private var store: StoreManager
@@ -20,16 +20,17 @@ class WhatsNextCoordinator: Coordinator {
     internal var exitGameEscalationgAction: (() -> Void)?
     var childCoordinators = [Coordinator]()
 
-    init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager) {
+    init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager, navigationController: UINavigationController = UINavigationController()) {
         self.fromScreen = fromScreen
         self.currentPoem = currentPoem
         self.settings = settings
         self.store = store
+        self.navigationController = navigationController
     }
 
     func start() {
         let screen = WhatsNextViewController(currentPoem: currentPoem)
-        self.navigator = UINavigationController(rootViewController: screen)
+        self.navigationController = UINavigationController(rootViewController: screen)
         setUpNavigationController()
         screen.refrainAction = { [weak self] in
             self?.refrainShimo()
@@ -43,14 +44,14 @@ class WhatsNextCoordinator: Coordinator {
         screen.goSettingAction = { [weak self] in
             self?.openSettingScreen()
         }
-        fromScreen.present(navigator, animated: true)
+        fromScreen.present(navigationController, animated: true)
         self.screen = screen
     }
 
     private func setUpNavigationController() {
-        navigator.interactivePopGestureRecognizer?.isEnabled = false
-        navigator.navigationBar.barTintColor = StandardColor.barTintColor
-        navigator.modalPresentationStyle = .fullScreen
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        navigationController.navigationBar.barTintColor = StandardColor.barTintColor
+        navigationController.modalPresentationStyle = .fullScreen
     }
 
     internal func refrainShimo() {

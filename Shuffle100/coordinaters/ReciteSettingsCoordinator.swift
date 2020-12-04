@@ -11,21 +11,22 @@ import UIKit
 class ReciteSettingsCoordinator: Coordinator {
     private var settings: Settings
     private var store: StoreManager
-    private var navigator: UINavigationController!
+    var navigationController: UINavigationController
     private var fromScreen: UIViewController
     internal var screen: UIViewController?
     var childCoordinators = [Coordinator]()
 
 
-    init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager()) {
+    init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager(), navigationController: UINavigationController = UINavigationController()) {
         self.settings = settings
         self.fromScreen = fromScreen
         self.store = store
+        self.navigationController = navigationController
     }
     
     func start() {
         let screen = ReciteSettingsViewController(settings: settings)
-        self.navigator = UINavigationController(rootViewController: screen)
+        self.navigationController = UINavigationController(rootViewController: screen)
         setUpNavigationController()
         screen.intervalSettingAction = { [weak self] in
             self?.openIntervalSettingScreen()
@@ -37,13 +38,13 @@ class ReciteSettingsCoordinator: Coordinator {
             self?.openVolumeSettingScreen()
         }
         
-        fromScreen.present(navigator, animated: true)
+        fromScreen.present(navigationController, animated: true)
         self.screen = screen
     }
     
     private func setUpNavigationController() {
-        navigator.interactivePopGestureRecognizer?.isEnabled = false
-        navigator.navigationBar.barTintColor = StandardColor.barTintColor
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        navigationController.navigationBar.barTintColor = StandardColor.barTintColor
 //
 // 次の modalPresentationStyle の値は、本来はデフォルト値のまま .automaticにしたい
 // デフォルトでは、アプリ画面のスクリーンよりも小さなViewControllerがPopする
@@ -57,24 +58,24 @@ class ReciteSettingsCoordinator: Coordinator {
 // 「なぜか`view.frame.size.width`が違う幅の値になってしまう」問題が
 // 解決したら、ぜひモダンなデフォルト表示にしたい。
 //
-        navigator.modalPresentationStyle = .fullScreen
+        navigationController.modalPresentationStyle = .fullScreen
     }
     
     private func openIntervalSettingScreen() {
         assert(true, "これから、歌の間隔を調整する画面を開きます")
-        let coordinator = IntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = IntervalSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()        
     }
     
     private func openKamiShimoIntervalSettingScreen() {
         assert(true, "これから、上の句と下の句の間隔を調整する画面を開きます")
-        let coordinator = KamiShimoIntervalSettingCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = KamiShimoIntervalSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
     }
     
     private func openVolumeSettingScreen() {
         assert(true, "これから、音量をちょうせうする画面を開きます")
-        let coordinator = VolumeSettingCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = VolumeSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
     }
 }

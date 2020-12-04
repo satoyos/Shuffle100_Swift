@@ -12,12 +12,12 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
 
     internal var settings: Settings?
     internal var store: StoreManager?
-    private let navigator: UINavigationController
+    var navigationController: UINavigationController
     internal var screen: UIViewController?
     var childCoordinators = [Coordinator]()
 
-    init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
+        self.navigationController = navigationController
         self.settings = settings
         self.store = store
     }
@@ -29,7 +29,7 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
         }
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
