@@ -33,12 +33,12 @@ private func appVersion() -> String {
 
 class HelpListCoordinator: Coordinator {
     var screen: UIViewController?
-    private var navigator: UINavigationController
+    var navigationController: UINavigationController
     private var detailHelpScreen: HelpDetailViewController!
     var childCoordinators = [Coordinator]()
 
-    init(navigator: UINavigationController) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     func start() {
@@ -46,7 +46,7 @@ class HelpListCoordinator: Coordinator {
         screen.goDetailAction = { [weak self] indexPath in
             self?.goDetailScreen(indexPath: indexPath)
         }
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
@@ -56,7 +56,7 @@ class HelpListCoordinator: Coordinator {
         if let htmlFileName = dataSource.fileName {
             print("html for HELP => \(htmlFileName)")
             let screen = HelpDetailViewController(title: dataSource.name, htmlFileName: htmlFileName)
-            navigator.pushViewController(screen, animated: true)
+            navigationController.pushViewController(screen, animated: true)
             screen.navigationItem.prompt = navigationItemPrompt()
             self.detailHelpScreen = screen
         } else if dataSource.type == .review {

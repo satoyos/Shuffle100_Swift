@@ -10,15 +10,14 @@ import UIKit
 
 class RecitePoemCoordinator: Coordinator{
     var screen: UIViewController?
-    private let navigator: UINavigationController
+    var navigationController: UINavigationController
     internal var settings: Settings
     internal var poemSupplier: PoemSupplier!
     internal var store: StoreManager
-//    internal var reciteSettingsCoordinator: ReciteSettingsCoordinator!
     var childCoordinators = [Coordinator]()
 
-    init(navigator: UINavigationController, settings: Settings, store: StoreManager) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
+        self.navigationController = navigationController
         self.settings = settings
         self.store = store
         let deck = Deck.createFrom(state100: settings.state100)
@@ -40,7 +39,7 @@ class RecitePoemCoordinator: Coordinator{
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
         CATransaction.begin()
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         CATransaction.setCompletionBlock {
             screen.playerFinishedAction = { [weak self] in
                 self?.jokaFinished()
@@ -107,7 +106,7 @@ class RecitePoemCoordinator: Coordinator{
     }
 
     internal func backToTopScreen() {
-        navigator.popViewController(animated: true)
+        navigationController.popViewController(animated: true)
     }
 
     private func backToPreviousPoem() {

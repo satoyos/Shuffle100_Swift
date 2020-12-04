@@ -12,13 +12,14 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     private let window: UIWindow
     internal var store: StoreManager?
     internal var screen: UIViewController?
-    private var navigator: UINavigationController?
+    var navigationController: UINavigationController
     internal var settings: Settings?
     internal let env = Environment()
     var childCoordinators = [Coordinator]()
 
-    init(window: UIWindow) {
+    init(window: UIWindow, navigationController: UINavigationController) {
         self.window = window
+        self.navigationController = navigationController
     }
 
     func start() {
@@ -30,7 +31,7 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         self.screen = homeScreen
         let navigator = UINavigationController(rootViewController: homeScreen)
         setUpNavigationController(navigator)
-        self.navigator = navigator
+        self.navigationController = navigator
 
         window.rootViewController = navigator
         window.makeKeyAndVisible()
@@ -43,8 +44,8 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         homeScreen.selectPoemAction = {[weak self, unowned settings, store, unowned navigator] in
             self?.selectPoem(settings: settings, store: store, navigator: navigator)
         }
-        homeScreen.selectModeAction = {[weak self, unowned settings, store, unowned navigator] in
-            self?.selectMode(settings: settings, store: store, navigator: navigator)
+        homeScreen.selectModeAction = {[weak self, unowned settings, store, unowned navigationController] in
+            self?.selectMode(settings: settings, store: store, navigationController: navigationController)
         }
         homeScreen.selectSingerAction = {[weak self, unowned settings, store, unowned navigator] in
             self?.selectSinger(settings: settings, store: store, navigator: navigator)
@@ -65,19 +66,19 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     private func selectPoem(settings: Settings, store: StoreManager, navigator: UINavigationController) {
-        let coordinator = PoemPickerCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = PoemPickerCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
-    private func selectMode(settings: Settings, store: StoreManager, navigator: UINavigationController) {
-        let coordinator = SelectModeCoordinator(navigator: navigator, settings: settings, store: store)
+    private func selectMode(settings: Settings, store: StoreManager, navigationController: UINavigationController) {
+        let coordinator = SelectModeCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
     private func selectSinger(settings: Settings, store: StoreManager, navigator: UINavigationController) {
-        let coordinator = SelectSingerCoordinator(navigator: navigator, settings: settings, store: store)
+        let coordinator = SelectSingerCoordinator(navigationController: navigator, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
@@ -87,13 +88,13 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
 
         switch settings.mode.reciteMode {
         case .normal:
-            gameDriver = NormalModeCoordinator(navigator: navigator, settings: settings, store: store)
+            gameDriver = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
             gameDriver.start()
         case .nonstop:
-            gameDriver = NonsotpModeCoordinator(navigator: navigator, settings: settings, store: store)
+            gameDriver = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
             gameDriver.start()
         case .beginner:
-            gameDriver = BeginnerModeCoordinator(navigator: navigator, settings: settings, store: store)
+            gameDriver = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
             gameDriver.start()
         }
         guard let coordinator = gameDriver else { return }
@@ -113,13 +114,13 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     private func openHelpList(navigator: UINavigationController) {
-        let coordinator = HelpListCoordinator(navigator: navigator)
+        let coordinator = HelpListCoordinator(navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
     private func openMemorizeTimer(navigator: UINavigationController) {
-        let coordinator = MemorizeTimerCoordinator(navigator: navigator)
+        let coordinator = MemorizeTimerCoordinator(navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

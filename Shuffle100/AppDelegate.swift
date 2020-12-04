@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mainCoordinator: MainCoordinator?
+    var coordinator: MainCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        let coordinator = MainCoordinator(window: window)
-        coordinator.start()
-        self.mainCoordinator = coordinator
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(window: window, navigationController: navController)
+        coordinator?.start()
         
         if CommandLine.arguments.contains("--uitesting") {
             UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5

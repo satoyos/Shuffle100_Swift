@@ -13,7 +13,7 @@ class HelpListScreenTest: XCTestCase {
 
     func test_initialScreen() throws {
         // given
-        let coordinator = HelpListCoordinator(navigator: UINavigationController())
+        let coordinator = HelpListCoordinator(navigationController: UINavigationController())
         // given, when
         coordinator.start()
         guard let screen = coordinator.screen as? HelpListViewController else {

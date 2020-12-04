@@ -14,10 +14,10 @@ final class IntervalSettingCoordinator: Coordinator, SaveSettings {
     var childCoordinators = [Coordinator]()
 
     internal var screen: UIViewController?
-    var navigator: UINavigationController
+    var navigationController: UINavigationController
 
-    init(navigator: UINavigationController, settings: Settings, store: StoreManager = StoreManager()) {
-        self.navigator = navigator
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager = StoreManager()) {
+        self.navigationController = navigationController
         self.settings = settings
         self.store = store
     }
@@ -29,7 +29,7 @@ final class IntervalSettingCoordinator: Coordinator, SaveSettings {
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
         }
-        navigator.pushViewController(screen, animated: true)
+        navigationController.pushViewController(screen, animated: true)
         self.screen = screen
     }
 }
