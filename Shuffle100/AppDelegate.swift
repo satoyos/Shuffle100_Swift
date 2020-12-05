@@ -19,12 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         disableConnectHardwareKeyboardOnSimulator()
         cleanUserDefualtIfUITesting()
 
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        self.window = window
         let navController = UINavigationController()
-        coordinator = MainCoordinator(window: window, navigationController: navController)
+        coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+    
         if CommandLine.arguments.contains("--uitesting") {
             UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5
         }
