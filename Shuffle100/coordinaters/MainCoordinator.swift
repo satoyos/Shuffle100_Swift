@@ -30,14 +30,15 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         self.settings = settings
         let homeScreen = HomeViewController(settings: settings)
         self.screen = homeScreen
-        let navigator = UINavigationController(rootViewController: homeScreen)
-        setUpNavigationController(navigator)
-        self.navigationController = navigator
+        navigationController.pushViewController(homeScreen, animated: false)
+//        let navigator = UINavigationController(rootViewController: homeScreen)
+        setUpNavigationController(navigationController)
+//        self.navigationController = navigator
 
 //        window.rootViewController = navigator
 //        window.makeKeyAndVisible()
 
-        setActions(in: homeScreen, settings: settings, store: store, navigator: navigator)
+        setActions(in: homeScreen, settings: settings, store: store, navigator: navigationController)
         AudioPlayerFactory.shared.setupAudioSession()
     }
 
