@@ -9,7 +9,7 @@
 import UIKit
 
 class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
-    private let window: UIWindow
+//    private let window: UIWindow
     internal var store: StoreManager?
     internal var screen: UIViewController?
     var navigationController: UINavigationController
@@ -17,8 +17,9 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal let env = Environment()
     var childCoordinators = [Coordinator]()
 
-    init(window: UIWindow, navigationController: UINavigationController) {
-        self.window = window
+//    init(window: UIWindow, navigationController: UINavigationController) {
+//        self.window = window
+    init(navigationController: UINavigationController){
         self.navigationController = navigationController
     }
 
@@ -33,8 +34,8 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         setUpNavigationController(navigator)
         self.navigationController = navigator
 
-        window.rootViewController = navigator
-        window.makeKeyAndVisible()
+//        window.rootViewController = navigator
+//        window.makeKeyAndVisible()
 
         setActions(in: homeScreen, settings: settings, store: store, navigator: navigator)
         AudioPlayerFactory.shared.setupAudioSession()
