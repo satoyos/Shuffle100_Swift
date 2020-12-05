@@ -9,7 +9,6 @@
 import UIKit
 
 class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
-//    private let window: UIWindow
     internal var store: StoreManager?
     internal var screen: UIViewController?
     var navigationController: UINavigationController
@@ -17,8 +16,6 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal let env = Environment()
     var childCoordinators = [Coordinator]()
 
-//    init(window: UIWindow, navigationController: UINavigationController) {
-//        self.window = window
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
     }
@@ -31,61 +28,55 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         let homeScreen = HomeViewController(settings: settings)
         self.screen = homeScreen
         navigationController.pushViewController(homeScreen, animated: false)
-//        let navigator = UINavigationController(rootViewController: homeScreen)
         setUpNavigationController(navigationController)
-//        self.navigationController = navigator
-
-//        window.rootViewController = navigator
-//        window.makeKeyAndVisible()
-
         setActions(in: homeScreen, settings: settings, store: store, navigator: navigationController)
         AudioPlayerFactory.shared.setupAudioSession()
     }
 
     private func setActions(in homeScreen: HomeViewController, settings: Settings, store: StoreManager, navigator: UINavigationController) {
-        homeScreen.selectPoemAction = {[weak self, unowned settings, store, unowned navigator] in
-            self?.selectPoem(settings: settings, store: store, navigator: navigator)
+        homeScreen.selectPoemAction = {[weak self, unowned settings, store] in
+            self?.selectPoem(settings: settings, store: store)
         }
-        homeScreen.selectModeAction = {[weak self, unowned settings, store, unowned navigationController] in
-            self?.selectMode(settings: settings, store: store, navigationController: navigationController)
+        homeScreen.selectModeAction = {[weak self, unowned settings, store] in
+            self?.selectMode(settings: settings, store: store)
         }
-        homeScreen.selectSingerAction = {[weak self, unowned settings, store, unowned navigator] in
-            self?.selectSinger(settings: settings, store: store, navigator: navigator)
+        homeScreen.selectSingerAction = {[weak self, unowned settings, store] in
+            self?.selectSinger(settings: settings, store: store)
         }
-        homeScreen.startGameAction = {[weak self, unowned settings, store, unowned navigator] in
-            self?.startGame(settings: settings, store: store, navigator: navigator)
+        homeScreen.startGameAction = {[weak self, unowned settings, store] in
+            self?.startGame(settings: settings, store: store)
         }
         homeScreen.reciteSettingsAction = { [weak self, unowned settings, store] in
             self?.openReciteSettings(from: homeScreen, settins: settings, store: store)
         }
-        homeScreen.helpActioh = { [weak self, unowned navigator] in
-            self?.openHelpList(navigator: navigator)
+        homeScreen.helpActioh = { [weak self] in
+            self?.openHelpList()
         }
-        homeScreen.memorizeTimerAction = { [weak self, unowned navigator] in
-            self?.openMemorizeTimer(navigator: navigator)
+        homeScreen.memorizeTimerAction = { [weak self] in
+            self?.openMemorizeTimer()
         }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings, store: store)
     }
 
-    private func selectPoem(settings: Settings, store: StoreManager, navigator: UINavigationController) {
+    private func selectPoem(settings: Settings, store: StoreManager) {
         let coordinator = PoemPickerCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
-    private func selectMode(settings: Settings, store: StoreManager, navigationController: UINavigationController) {
+    private func selectMode(settings: Settings, store: StoreManager) {
         let coordinator = SelectModeCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
-    private func selectSinger(settings: Settings, store: StoreManager, navigator: UINavigationController) {
-        let coordinator = SelectSingerCoordinator(navigationController: navigator, settings: settings, store: store)
+    private func selectSinger(settings: Settings, store: StoreManager) {
+        let coordinator = SelectSingerCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
-    private func startGame(settings: Settings, store: StoreManager, navigator: UINavigationController) {
+    private func startGame(settings: Settings, store: StoreManager) {
         var gameDriver: RecitePoemCoordinator!
 
         switch settings.mode.reciteMode {
@@ -115,13 +106,13 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
         childCoordinators.append(coordinator)
     }
 
-    private func openHelpList(navigator: UINavigationController) {
+    private func openHelpList() {
         let coordinator = HelpListCoordinator(navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
     }
 
-    private func openMemorizeTimer(navigator: UINavigationController) {
+    private func openMemorizeTimer() {
         let coordinator = MemorizeTimerCoordinator(navigationController: navigationController)
         coordinator.start()
         childCoordinators.append(coordinator)
