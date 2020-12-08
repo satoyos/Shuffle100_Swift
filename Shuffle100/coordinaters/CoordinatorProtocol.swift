@@ -13,11 +13,4 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
 
     func start()
-    func navigationItemPrompt() -> String
-}
-
-extension Coordinator {
-    func navigationItemPrompt() -> String {
-        return "百首読み上げ"
-    }
 }

@@ -10,13 +10,18 @@ import UIKit
 
 protocol HandleNavigator {
     func setUpNavigationController(_ nc: UINavigationController) -> Void
+    func navigationItemPrompt() -> String
 }
 
 extension HandleNavigator {
     func setUpNavigationController(_ nc: UINavigationController) {
         nc.interactivePopGestureRecognizer?.isEnabled = false
-        nc.navigationBar.topItem?.prompt = "百首読み上げ"
+        nc.navigationBar.topItem?.prompt = navigationItemPrompt()
         nc.navigationBar.barTintColor = StandardColor.barTintColor
+    }
+    
+    func navigationItemPrompt() -> String {
+        return "百首読み上げ"
     }
 }
 

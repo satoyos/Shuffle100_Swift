@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SelectSingerCoordinator: Coordinator, SaveSettings {
+final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var settings: Settings?
     internal var store: StoreManager?
     var navigationController: UINavigationController
