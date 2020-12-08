@@ -31,7 +31,7 @@ private func appVersion() -> String {
     return version
 }
 
-class HelpListCoordinator: Coordinator {
+class HelpListCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
     private var detailHelpScreen: HelpDetailViewController!

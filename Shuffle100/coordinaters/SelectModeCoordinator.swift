@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SelectModeCoordinator: Coordinator, SaveSettings {
+final class SelectModeCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var settings: Settings?
     internal var store: StoreManager?
     var  navigationController: UINavigationController

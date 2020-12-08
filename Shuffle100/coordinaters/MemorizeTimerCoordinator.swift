@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemorizeTimerCoordinator: Coordinator {
+class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
@@ -19,6 +19,7 @@ class MemorizeTimerCoordinator: Coordinator {
 
     func start() {
         let screen = MemorizeTimerViewController()
+        setUpNavigationController(navigationController)
         navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen

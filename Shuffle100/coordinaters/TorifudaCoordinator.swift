@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TorifudaCoordinator: Coordinator {
+final class TorifudaCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
     private var poem: Poem
