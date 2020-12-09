@@ -10,8 +10,8 @@ import UIKit
 
 final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
 
-    internal var settings: Settings?
-    internal var store: StoreManager?
+    internal var settings: Settings
+    internal var store: StoreManager
     var navigationController: UINavigationController
     internal var screen: UIViewController?
     var childCoordinators = [Coordinator]()
@@ -23,8 +23,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-        guard let settings = settings else { return }
-        guard let store = store else { return }
+//        guard let settings = settings else { return }
+//        guard let store = store else { return }
         let screen = PoemPickerViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
@@ -47,8 +47,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     internal func openNgramPicker() {
-        guard let settings = settings else { return }
-        guard let store = store else { return }
+//        guard let settings = settings else { return }
+//        guard let store = store else { return }
         clearSearchResult()
         let coordinator = NgramPickerCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
@@ -56,8 +56,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     internal func openFudaSetsScreen() {
-        guard let settings = settings else { return }
-        guard let store = store else { return }
+//        guard let settings = settings else { return }
+//        guard let store = store else { return }
         clearSearchResult()
         let coordinator = FudaSetsCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
@@ -65,8 +65,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     internal func openFiveColorsScreen() {
-        guard let settings = settings else { return }
-        guard let store = store else { return }
+//        guard let settings = settings else { return }
+//        guard let store = store else { return }
         clearSearchResult()
         let coordinator = FiveColorsCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()

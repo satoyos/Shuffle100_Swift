@@ -9,8 +9,8 @@
 import Foundation
 
 protocol SaveSettings {
-    var settings: Settings? { get set }
-    var store: StoreManager? { get set }
+    var settings: Settings { get set }
+    var store: StoreManager { get set }
     func saveSettingsPermanently(_ settings: Settings, into store: StoreManager) -> Void
 }
 

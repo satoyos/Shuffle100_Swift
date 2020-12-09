@@ -9,22 +9,22 @@
 import UIKit
 
 final class IntervalSettingCoordinator: Coordinator, SaveSettings {
-    internal var settings: Settings?
-    internal var store: StoreManager?
+    internal var settings: Settings
+    internal var store: StoreManager
     var childCoordinators = [Coordinator]()
 
     internal var screen: UIViewController?
     var navigationController: UINavigationController
 
-    init(navigationController: UINavigationController, settings: Settings, store: StoreManager = StoreManager()) {
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigationController = navigationController
         self.settings = settings
         self.store = store
     }
 
     func start() {
-        guard let settings = settings else { return }
-        guard let store = store else { return }
+//        guard let settings = settings else { return }
+//        guard let store = store else { return }
         let screen = IntervalSettingViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)

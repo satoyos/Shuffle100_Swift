@@ -9,8 +9,8 @@
 import UIKit
 
 final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator {
-    internal var settings: Settings?
-    internal var store: StoreManager?
+    internal var settings: Settings
+    internal var store: StoreManager
     var navigationController: UINavigationController
     var screen: UIViewController?
     var childCoordinators = [Coordinator]()
@@ -22,18 +22,21 @@ final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator 
     }
 
     func start() {
-        guard let settings = settings else { return }
+//        guard let settings = settings else { return }
         let screen = SelectSingerViewController(settings: settings)
-        setSaveSettingsActionTo(screen: screen, settings: settings)
+//        setSaveSettingsActionTo(screen: screen, settings: settings)
+        screen.saveSettingsAction = { [store, settings] in
+            self.saveSettingsPermanently(settings, into: store)
+        }
         navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
 
-    private func setSaveSettingsActionTo(screen: SelectSingerViewController, settings: Settings ) {
-        guard let store = store else { return }
-        screen.saveSettingsAction = { [store, settings] in
-            self.saveSettingsPermanently(settings, into: store)
-        }
-    }
+//    private func setSaveSettingsActionTo(screen: SelectSingerViewController, settings: Settings ) {
+//        guard let store = store else { return }
+//        screen.saveSettingsAction = { [store, settings] in
+//            self.saveSettingsPermanently(settings, into: store)
+//        }
+//    }
 }
