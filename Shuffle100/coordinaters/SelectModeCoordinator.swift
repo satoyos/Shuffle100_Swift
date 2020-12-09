@@ -22,9 +22,7 @@ final class SelectModeCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-//        guard let settings = settings else { return }
         let screen = SelectModeViewController(settings: settings)
-//        setSaveSettingsActionTo(screen: screen, settings: settings)
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
         }
@@ -32,11 +30,4 @@ final class SelectModeCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-
-//    private func setSaveSettingsActionTo(screen: SelectModeViewController, settings: Settings ) {
-//        guard let store = store else { return }
-//        screen.saveSettingsAction = { [store, settings] in
-//            self.saveSettingsPermanently(settings, into: store)
-//        }
-//    }
 }

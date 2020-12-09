@@ -22,8 +22,6 @@ class FudaSetsCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-//        guard let settings = settings else { return }
-//        guard let store = store else { return }
         let screen = FudaSetsViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)

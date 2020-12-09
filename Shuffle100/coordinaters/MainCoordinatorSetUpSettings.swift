@@ -11,7 +11,6 @@ import Foundation
 extension MainCoordinator {
     static func setUpSettings(store: StoreManager) -> Settings {
         let defaultSettings = Settings()
-//        guard let store = self.store else { return defaultSettings}
 
         if let loadedSettings = store.load(key: Settings.userDefaultKey) as Settings? {
             if env.ignoreSavedData() {

@@ -22,8 +22,6 @@ final class VolumeSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-//        guard let settings = settings else { return }
-//        guard let store = store else { return }
         let screen = VolumeSettingViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
