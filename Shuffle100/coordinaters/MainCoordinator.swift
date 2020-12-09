@@ -9,22 +9,25 @@
 import UIKit
 
 class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
-    internal var store: StoreManager?
+    internal var settings: Settings
+    internal var store: StoreManager
     internal var screen: UIViewController?
     var navigationController: UINavigationController
-    internal var settings: Settings?
-    internal let env = Environment()
+    static let env = Environment()
     var childCoordinators = [Coordinator]()
 
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
+        let store = StoreManager()
+        self.settings = Self.setUpSettings(store: store)
+        self.store = StoreManager()
     }
 
     func start() {
-        let store = StoreManager()
-        self.store = store
-        let settings = setUpSettings()
-        self.settings = settings
+//        let store = StoreManager()
+//        self.store = store
+//        let settings = setUpSettings()
+//        self.settings = settings
         let homeScreen = HomeViewController(settings: settings)
         self.screen = homeScreen
         navigationController.pushViewController(homeScreen, animated: false)
