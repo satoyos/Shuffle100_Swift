@@ -24,10 +24,6 @@ class MainCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-//        let store = StoreManager()
-//        self.store = store
-//        let settings = setUpSettings()
-//        self.settings = settings
         let homeScreen = HomeViewController(settings: settings)
         self.screen = homeScreen
         navigationController.pushViewController(homeScreen, animated: false)

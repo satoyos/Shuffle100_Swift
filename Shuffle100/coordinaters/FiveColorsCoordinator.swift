@@ -23,8 +23,6 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-//        guard let settings = settings else { return }
-//        guard let store = store else { return }
         let screen = FiveColorsViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings] in
             self.saveSettingsPermanently(settings, into: store)
@@ -33,6 +31,4 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
     }
-
-
 }

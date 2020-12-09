@@ -9,7 +9,6 @@
 import Foundation
 
 class BeginnerModeCoordinator: RecitePoemCoordinator {
-//    var whatsNextCoordinator: WhatsNextCoordinator!
     
     override func reciteKamiFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")
