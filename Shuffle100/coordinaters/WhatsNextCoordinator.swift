@@ -12,7 +12,8 @@ class WhatsNextCoordinator: Coordinator {
     internal var screen: UIViewController?
     private var fromScreen: UIViewController
     var navigationController: UINavigationController
-    private var currentPoem: Poem!
+    var anotherNavController: UINavigationController!
+    private var currentPoem: Poem
     private var settings: Settings
     private var store: StoreManager
     internal var refrainEscalatingAction: (() -> Void)?
@@ -30,8 +31,11 @@ class WhatsNextCoordinator: Coordinator {
 
     func start() {
         let screen = WhatsNextViewController(currentPoem: currentPoem)
-        self.navigationController = UINavigationController(rootViewController: screen)
+        self.anotherNavController = UINavigationController(rootViewController: screen)
         setUpNavigationController()
+        screen.showTorifudaAction = { [weak self] in
+            self?.showTorifuda()
+        }
         screen.refrainAction = { [weak self] in
             self?.refrainShimo()
         }
@@ -44,14 +48,24 @@ class WhatsNextCoordinator: Coordinator {
         screen.goSettingAction = { [weak self] in
             self?.openSettingScreen()
         }
-        fromScreen.present(navigationController, animated: true)
+        fromScreen.present(anotherNavController, animated: true)
         self.screen = screen
     }
 
     private func setUpNavigationController() {
-        navigationController.interactivePopGestureRecognizer?.isEnabled = false
-        navigationController.navigationBar.barTintColor = StandardColor.barTintColor
-        navigationController.modalPresentationStyle = .fullScreen
+        anotherNavController.interactivePopGestureRecognizer?.isEnabled = false
+        anotherNavController.navigationBar.barTintColor = StandardColor.barTintColor
+        anotherNavController.modalPresentationStyle = .fullScreen
+    }
+    
+    private func showTorifuda() {
+        let shimoStr = currentPoem.in_hiragana.shimo
+        var title = "\(currentPoem.number)."
+        for partStr in currentPoem.liner {
+            title += " \(partStr)"
+        }
+        let torifudaScreen = FudaViewController(shimoString: shimoStr, title: title)
+        anotherNavController.pushViewController(torifudaScreen, animated: true)
     }
 
     internal func refrainShimo() {
