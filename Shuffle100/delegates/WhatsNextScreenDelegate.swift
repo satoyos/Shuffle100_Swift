@@ -26,16 +26,7 @@ extension WhatsNextViewController: ExitGameProtocol {
     
     @objc func torifudaButtonTapped() {
         assert(true,"取り札ボタンが押された！")
-        let shimoStr = currentPoem.in_hiragana.shimo
-        var title = "\(currentPoem.number)."
-        for partStr in currentPoem.liner {
-            title += " \(partStr)"
-        }
-        let screen = FudaViewController(shimoString: shimoStr, title: title)
-        let nav = UINavigationController(rootViewController: screen)
-        nav.modalPresentationStyle = .fullScreen
-        nav.navigationBar.barTintColor = StandardColor.barTintColor
-        present(nav, animated: true)
+        showTorifudaAction?()
     }
     
     @objc func refrainButtonTapped() {
@@ -48,6 +39,6 @@ extension WhatsNextViewController: ExitGameProtocol {
         assert(true, "次の歌に進むボタンが押された！")
         dismiss(animated: true, completion: {
             self.goNextAction?()
-            })
+        })
     }
 }
