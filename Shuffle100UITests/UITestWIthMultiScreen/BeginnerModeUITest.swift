@@ -47,6 +47,12 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         XCTAssert(app.staticTexts["ふ"].exists)
         XCTAssert(app.staticTexts["し"].exists)
         XCTAssertFalse(app.staticTexts["あ"].exists)
+        XCTContext.runActivity(named: "「次はどうする？」画面に戻る") { _ in
+            // when
+            app.navigationBars.buttons["次はどうする？"].tap()
+            // then
+            XCTAssert(app.navigationBars["次はどうする？"].exists)
+        }
     }
     
     func test_refrainShimo() {
