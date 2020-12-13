@@ -13,7 +13,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var settings: Settings
     internal var store: StoreManager
     var navigationController: UINavigationController
-    internal var screen: UIViewController?
+    var screen: UIViewController?
     var childCoordinators = [Coordinator]()
 
     init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
@@ -24,8 +24,10 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
 
     func start() {
         let screen = PoemPickerViewController(settings: settings)
-        screen.saveSettingsAction = { [store, settings] in
-            self.saveSettingsPermanently(settings, into: store)
+        screen.saveSettingsAction = { [store, settings, weak self] in
+//        screen.saveSettingsAction = { [store, settings] in
+            self?.saveSettingsPermanently(settings, into: store)
+//            self.saveSettingsPermanently(settings, into: store)
         }
         screen.openNgramPickerAction = { [weak self] in
             self?.openNgramPicker()
