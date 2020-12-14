@@ -23,8 +23,8 @@ final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator 
 
     func start() {
         let screen = SelectSingerViewController(settings: settings)
-        screen.saveSettingsAction = { [store, settings] in
-            self.saveSettingsPermanently(settings, into: store)
+        screen.saveSettingsAction = { [store, settings, weak self] in
+            self?.saveSettingsPermanently(settings, into: store)
         }
         navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
