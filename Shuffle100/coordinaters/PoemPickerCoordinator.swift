@@ -25,9 +25,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     func start() {
         let screen = PoemPickerViewController(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
-//        screen.saveSettingsAction = { [store, settings] in
             self?.saveSettingsPermanently(settings, into: store)
-//            self.saveSettingsPermanently(settings, into: store)
         }
         screen.openNgramPickerAction = { [weak self] in
             self?.openNgramPicker()

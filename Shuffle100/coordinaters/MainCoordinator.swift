@@ -122,8 +122,8 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
     }
 
     private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings, store: StoreManager) {
-        screen.saveSettingsAction = { [store, settings] in
-            self.saveSettingsPermanently(settings, into: store)
+        screen.saveSettingsAction = { [store, settings, weak self] in
+            self?.saveSettingsPermanently(settings, into: store)
         }
     }
 

@@ -23,8 +23,8 @@ final class SelectModeCoordinator: Coordinator, SaveSettings, HandleNavigator {
 
     func start() {
         let screen = SelectModeViewController(settings: settings)
-        screen.saveSettingsAction = { [store, settings] in
-            self.saveSettingsPermanently(settings, into: store)
+        screen.saveSettingsAction = { [store, settings, weak self] in
+            self?.saveSettingsPermanently(settings, into: store)
         }
         navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()

@@ -24,8 +24,8 @@ final class IntervalSettingCoordinator: Coordinator, SaveSettings {
 
     func start() {
         let screen = IntervalSettingViewController(settings: settings)
-        screen.saveSettingsAction = { [store, settings] in
-            self.saveSettingsPermanently(settings, into: store)
+        screen.saveSettingsAction = { [store, settings, weak self] in
+            self?.saveSettingsPermanently(settings, into: store)
         }
         navigationController.pushViewController(screen, animated: true)
         self.screen = screen
