@@ -14,7 +14,8 @@ class RecitePoemCoordinator: Coordinator{
     internal var settings: Settings
     internal var poemSupplier: PoemSupplier!
     internal var store: StoreManager
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
+    var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigationController = navigationController
@@ -131,6 +132,7 @@ class RecitePoemCoordinator: Coordinator{
         guard let screen = self.screen as? RecitePoemViewController else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
-        childCoordinators.append(coordinator)
+//        childCoordinators.append(coordinator)
+        self.childCoordinator = coordinator
     }
 }

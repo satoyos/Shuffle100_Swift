@@ -13,7 +13,8 @@ final class VolumeSettingCoordinator: Coordinator, SaveSettings {
     internal var store: StoreManager
     var screen: UIViewController?
     var navigationController: UINavigationController
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
+    var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigationController = navigationController

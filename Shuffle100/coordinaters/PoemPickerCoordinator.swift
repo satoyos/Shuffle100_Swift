@@ -14,7 +14,8 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var store: StoreManager
     var navigationController: UINavigationController
     var screen: UIViewController?
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
+    var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigationController = navigationController
@@ -48,28 +49,32 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         clearSearchResult()
         let coordinator = NgramPickerCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
-        childCoordinators.append(coordinator)
+//        childCoordinators.append(coordinator)
+        self.childCoordinator = coordinator
     }
 
     internal func openFudaSetsScreen() {
         clearSearchResult()
         let coordinator = FudaSetsCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
-        childCoordinators.append(coordinator)
+//        childCoordinators.append(coordinator)
+        self.childCoordinator = coordinator
     }
 
     internal func openFiveColorsScreen() {
         clearSearchResult()
         let coordinator = FiveColorsCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
-        childCoordinators.append(coordinator)
+//        childCoordinators.append(coordinator)
+        self.childCoordinator = coordinator
     }
 
     internal func showTorifudaScreenFor(number: Int) {
         let poem = Deck.originalPoems[number-1]
         let coordinator = TorifudaCoordinator(navigationController: navigationController, poem: poem)
         coordinator.start()
-        childCoordinators.append(coordinator)
+//        childCoordinators.append(coordinator)
+        self.childCoordinator = coordinator
     }
 
     private func clearSearchResult() {

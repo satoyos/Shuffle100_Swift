@@ -11,7 +11,8 @@ import UIKit
 final class IntervalSettingCoordinator: Coordinator, SaveSettings {
     internal var settings: Settings
     internal var store: StoreManager
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
+    var childCoordinator: Coordinator?
 
     internal var screen: UIViewController?
     var navigationController: UINavigationController
