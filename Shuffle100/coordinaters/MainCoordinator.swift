@@ -15,7 +15,7 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
     internal var screen: UIViewController?
     var navigationController: UINavigationController
     static let env = Environment()
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController){

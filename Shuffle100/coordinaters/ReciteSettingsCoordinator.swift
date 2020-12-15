@@ -14,7 +14,8 @@ class ReciteSettingsCoordinator: Coordinator {
     var navigationController: UINavigationController
     private var fromScreen: UIViewController
     internal var screen: UIViewController?
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
+    var childCoordinator: Coordinator?
 
 
     init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager(), navigationController: UINavigationController = UINavigationController()) {

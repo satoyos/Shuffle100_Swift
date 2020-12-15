@@ -11,7 +11,8 @@ import UIKit
 class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
-    var childCoordinators = [Coordinator]()
+//    var childCoordinators = [Coordinator]()
+    var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

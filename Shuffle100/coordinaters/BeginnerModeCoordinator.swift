@@ -39,7 +39,8 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
             self?.exitGame()
         }
         coordinator.start()
-        childCoordinators.append(coordinator)
+//        childCoordinators.append(coordinator)
+        self.childCoordinator = coordinator
     }
     
     internal func refrainShimo() {
