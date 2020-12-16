@@ -28,7 +28,7 @@ class RecitePoemViewController: SettingsAttachedViewController {
         
         let singerID = settings.singerID
         guard let singer = fetchSinger(id: singerID) else {
-            print("[\(singerID)]に対応する読手が見つかりません。")
+            assertionFailure("[\(singerID)]に対応する読手が見つかりません。")
             return
         }
         self.singer = singer

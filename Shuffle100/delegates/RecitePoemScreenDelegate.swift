@@ -94,9 +94,9 @@ extension RecitePoemViewController: AVAudioPlayerDelegate, ExitGameProtocol {
     }
     
     @objc func onWillResignActive(_ notification: Notification?) {
-        print("-- バックグラウンドに【これから入ります】 (Notificationで検出)")
+        assert(true, "-- バックグラウンドに【これから入ります】 (Notificationで検出)")
         if settings.reciteMode != .nonstop {
-            print("// ノンストップではないので、読み上げを止めます。")
+            assert(true, "// ノンストップではないので、読み上げを止めます。")
             pauseCurrentPlayer()
         } else {
             setupRemoteTransportControls()

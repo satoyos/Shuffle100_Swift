@@ -67,7 +67,7 @@ class RecitePoemCoordinator: Coordinator{
     }
 
     internal func reciteShimoFinished(number: Int, counter: Int) {
-        print("\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
+        assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
         guard let screen = self.screen as? RecitePoemViewController else { return }
         if let poem = poemSupplier.drawNextPoem() {
             let number = poem.number
