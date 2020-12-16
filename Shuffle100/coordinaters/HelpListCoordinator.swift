@@ -35,7 +35,6 @@ class HelpListCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
     private var detailHelpScreen: HelpDetailViewController!
-//    var childCoordinators = [Coordinator]()
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {

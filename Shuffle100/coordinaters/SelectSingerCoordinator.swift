@@ -13,7 +13,6 @@ final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator 
     internal var store: StoreManager
     var navigationController: UINavigationController
     var screen: UIViewController?
-//    var childCoordinators = [Coordinator]()
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {

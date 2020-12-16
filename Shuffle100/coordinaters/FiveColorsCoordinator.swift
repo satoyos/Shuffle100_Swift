@@ -14,7 +14,6 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var store: StoreManager
     var navigationController: UINavigationController
     internal var screen: UIViewController?
-//    var childCoordinators = [Coordinator]()
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {

@@ -12,7 +12,6 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
     private var poem: Poem
-//    var childCoordinators = [Coordinator]()
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, poem: Poem) {
