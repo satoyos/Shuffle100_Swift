@@ -39,7 +39,6 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
             self?.exitGame()
         }
         coordinator.start()
-//        childCoordinators.append(coordinator)
         self.childCoordinator = coordinator
     }
     

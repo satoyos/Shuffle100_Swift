@@ -19,7 +19,6 @@ class WhatsNextCoordinator: Coordinator {
     internal var refrainEscalatingAction: (() -> Void)?
     internal var goNextPoemEscalatingAction: (() -> Void)?
     internal var exitGameEscalationgAction: (() -> Void)?
-//    var childCoordinators = [Coordinator]()
     var childCoordinator: Coordinator?
 
     init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager, navigationController: UINavigationController = UINavigationController()) {
@@ -85,7 +84,6 @@ class WhatsNextCoordinator: Coordinator {
         guard let screen = self.screen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
-//        childCoordinators.append(coordinator)
         self.childCoordinator = coordinator
     }
 }
