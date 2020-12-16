@@ -32,7 +32,7 @@ final class IntervalSettingViewController: TimeSettingViewController {
         if player == shimoPlayer {
             startCountDownTimer()
         } else {
-            print("試し聞きはこれにて終了！")
+            assert(true, "試し聞きはこれにて終了！")
             tryButton.isEnabled = true
             updateTimeLabel()
         }
