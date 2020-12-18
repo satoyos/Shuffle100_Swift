@@ -56,6 +56,9 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
         homeScreen.memorizeTimerAction = { [weak self] in
             self?.openMemorizeTimer()
         }
+        homeScreen.viewDidAppearAction = { [weak self] in
+            self?.childCoordinator = nil
+        }
         setSaveSettingsActionTo(screen: homeScreen, settings: settings, store: store)
     }
 

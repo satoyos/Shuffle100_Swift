@@ -27,6 +27,7 @@ class HomeViewController: SettingsAttachedViewController {
     var reciteSettingsAction: (() -> Void)?
     var helpActioh: (() -> Void)?
     var memorizeTimerAction: (() -> Void)?
+    var viewDidAppearAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,11 @@ class HomeViewController: SettingsAttachedViewController {
         self.tableView = createTableViewForHomeScreen()
         view.addSubview(tableView)
         setNavigationBarButtons()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.viewDidAppearAction?()
+        super.viewDidAppear(animated)
     }
     
     override func viewWillAppear(_ animated: Bool) {
