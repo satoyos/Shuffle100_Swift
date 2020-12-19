@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsAttachedViewController: Screen {
+class SettingsAttachedScreen: Screen {
 
     var settings: Settings!
     var saveSettingsAction: (() -> Void)?

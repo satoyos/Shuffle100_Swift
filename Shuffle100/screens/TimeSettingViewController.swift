@@ -13,7 +13,7 @@ import AVFoundation
 internal let minIntervalDuration: Float = 0.5
 internal let maxIntervalDuration: Float = 2.0
 
-class TimeSettingViewController: SettingsAttachedViewController {
+class TimeSettingViewController: SettingsAttachedScreen {
     let timeLabel = UILabel()
     let slider = UISlider()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()

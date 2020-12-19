@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteSettingsViewController: SettingsAttachedViewController {
+class ReciteSettingsViewController: SettingsAttachedScreen {
     let reuseID = ReciteSettingsTableCell.identifier
     var tableView: UITableView!
     var tableSources: [TableDataSource]!

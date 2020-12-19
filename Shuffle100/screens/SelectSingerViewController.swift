@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SelectSingerViewController: SettingsAttachedViewController {
+class SelectSingerViewController: SettingsAttachedScreen {
     let picker = UIPickerView()
     
     override func viewDidLoad() {

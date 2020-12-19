@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FudaSetsViewController: SettingsAttachedViewController {
+class FudaSetsViewController: SettingsAttachedScreen {
     internal let cellReuseId = "fudaSets"
     var tableView: UITableView!
 

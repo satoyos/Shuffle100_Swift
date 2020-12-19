@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SelectModeViewController: SettingsAttachedViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SelectModeViewController: SettingsAttachedScreen, UIPickerViewDataSource, UIPickerViewDelegate {
     let screenTitle = "読み上げモードを選ぶ"
     let reciteModeHolders = [
         ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
