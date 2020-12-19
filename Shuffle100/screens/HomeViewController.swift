@@ -15,7 +15,7 @@ enum HomeCellType: String {
     case singers = "singersCell"
 }
 
-class HomeViewController: SettingsAttachedViewController {
+final class HomeViewController: SettingsAttachedViewController {
     let titleName = "トップ"
     let navBarButtonSize = 32
     var tableView: UITableView!
@@ -27,7 +27,7 @@ class HomeViewController: SettingsAttachedViewController {
     var reciteSettingsAction: (() -> Void)?
     var helpActioh: (() -> Void)?
     var memorizeTimerAction: (() -> Void)?
-    var viewDidAppearAction: (() -> Void)?
+//    var viewDidAppearAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +38,10 @@ class HomeViewController: SettingsAttachedViewController {
         setNavigationBarButtons()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.viewDidAppearAction?()
-        super.viewDidAppear(animated)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.viewDidAppearAction?()
+//        super.viewDidAppear(animated)
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
