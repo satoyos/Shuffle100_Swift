@@ -14,7 +14,7 @@ import AVFoundation
 let minVolume: Float = 0.0
 let maxVolume: Float = 1.0
 
-class VolumeSettingViewController: SettingsAttachedViewController {
+class VolumeSettingViewController: SettingsAttachedScreen {
     
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var slider = UISlider()

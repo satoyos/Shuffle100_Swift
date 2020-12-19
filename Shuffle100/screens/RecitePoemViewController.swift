@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Then
 
-class RecitePoemViewController: SettingsAttachedViewController {
+class RecitePoemViewController: SettingsAttachedScreen {
     var recitePoemView: RecitePoemView!
     var gameEndView: GameEndViiew!
     var currentPlayer: AVAudioPlayer?

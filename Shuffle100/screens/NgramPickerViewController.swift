@@ -11,7 +11,7 @@ import Then
 import BBBadgeBarButtonItem
 
 
-class NgramPickerViewController: SettingsAttachedViewController {
+class NgramPickerViewController: SettingsAttachedScreen {
     
     internal let cellReuseId = "ngrams"
     var tableView: UITableView!

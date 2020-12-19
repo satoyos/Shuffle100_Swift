@@ -9,7 +9,7 @@
 import UIKit
 import BBBadgeBarButtonItem
 
-class FiveColorsViewController: SettingsAttachedViewController {
+class FiveColorsViewController: SettingsAttachedScreen {
     let blueButton = ColorOfFiveButton(.blue)
     let yellowButton = ColorOfFiveButton(.yellow)
     let greenButton = ColorOfFiveButton(.green)

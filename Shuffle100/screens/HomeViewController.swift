@@ -15,7 +15,7 @@ enum HomeCellType: String {
     case singers = "singersCell"
 }
 
-final class HomeViewController: SettingsAttachedViewController {
+final class HomeViewController: SettingsAttachedScreen {
     let titleName = "トップ"
     let navBarButtonSize = 32
     var tableView: UITableView!
