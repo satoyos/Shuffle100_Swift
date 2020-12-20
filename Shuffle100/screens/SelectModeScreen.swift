@@ -1,5 +1,5 @@
 //
-//  SelectModeViewController.swift
+//  SelectModeScreen.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2019/02/09.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SelectModeViewController: SettingsAttachedScreen, UIPickerViewDataSource, UIPickerViewDelegate {
+final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UIPickerViewDelegate {
     let screenTitle = "読み上げモードを選ぶ"
     let reciteModeHolders = [
         ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),

@@ -22,7 +22,7 @@ final class SelectModeCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-        let screen = SelectModeViewController(settings: settings)
+        let screen = SelectModeScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }
