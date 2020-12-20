@@ -25,7 +25,7 @@ class ReciteSettingsCoordinator: Coordinator {
     }
     
     func start() {
-        let screen = ReciteSettingsViewController(settings: settings)
+        let screen = ReciteSettingsScreen(settings: settings)
         self.navigationController = UINavigationController(rootViewController: screen)
         setUpNavigationController()
         screen.intervalSettingAction = { [weak self] in

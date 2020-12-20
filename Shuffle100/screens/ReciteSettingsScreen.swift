@@ -1,5 +1,5 @@
 //
-//  ReciteSettingsViewController.swift
+//  ReciteSettingsScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/03/01.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteSettingsViewController: SettingsAttachedScreen {
+final class ReciteSettingsScreen: SettingsAttachedScreen {
     let reuseID = ReciteSettingsTableCell.identifier
     var tableView: UITableView!
     var tableSources: [TableDataSource]!

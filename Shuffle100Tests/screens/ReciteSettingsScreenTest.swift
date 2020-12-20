@@ -21,7 +21,7 @@ class ReciteSettingsScreenTest: XCTestCase {
 
     func test_initialScreen() {
         // given, when
-        let screen = ReciteSettingsViewController()
+        let screen = ReciteSettingsScreen()
         // then
         XCTAssertNotNil(screen)
         // when
