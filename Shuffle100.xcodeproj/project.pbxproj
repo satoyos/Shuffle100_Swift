@@ -411,9 +411,9 @@
 		92D57151220EC87700235717 /* GameConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameConfigTest.swift */; };
 		92D57152220ECBC000235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57153220ECBEA00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
-		92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeViewController.swift */; };
-		92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeViewController.swift */; };
-		92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeViewController.swift */; };
+		92D57155220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
+		92D57156220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
+		92D57157220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
 		92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57158220F063100235717 /* SelectModeScreenTest.swift */; };
 		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
@@ -702,7 +702,7 @@
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
 		92D57150220EC87700235717 /* GameConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigTest.swift; sourceTree = "<group>"; };
-		92D57154220F03AF00235717 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
+		92D57154220F03AF00235717 /* SelectModeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreen.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
 		92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenTest.swift; sourceTree = "<group>"; };
@@ -879,7 +879,7 @@
 			isa = PBXGroup;
 			children = (
 				923D59132143BB0A000F5E60 /* HomeScreen.swift */,
-				92D57154220F03AF00235717 /* SelectModeViewController.swift */,
+				92D57154220F03AF00235717 /* SelectModeScreen.swift */,
 				927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */,
 				928E73B522ABE83C00FB1B7B /* RecitePoemViewController.swift */,
 				92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */,
@@ -1510,7 +1510,7 @@
 				92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
-				92D57155220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				92D57155220F03AF00235717 /* SelectModeScreen.swift in Sources */,
 				92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextViewController.swift in Sources */,
@@ -1681,7 +1681,7 @@
 				925994FC244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				9207BB3322996B7300816DC8 /* Settings.swift in Sources */,
-				92D57156220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				92D57156220F03AF00235717 /* SelectModeScreen.swift in Sources */,
 				9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				9204751A254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
@@ -1839,7 +1839,7 @@
 				928E73B822ABE83C00FB1B7B /* RecitePoemViewController.swift in Sources */,
 				92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
 				92C6B4A324E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
-				92D57157220F03AF00235717 /* SelectModeViewController.swift in Sources */,
+				92D57157220F03AF00235717 /* SelectModeScreen.swift in Sources */,
 				92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,

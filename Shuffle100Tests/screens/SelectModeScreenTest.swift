@@ -12,7 +12,7 @@ import XCTest
 class SelectModeScreenTest: XCTestCase {
         func test_pickerRowsCountIs3() {
         // given
-        let screen = SelectModeViewController()
+        let screen = SelectModeScreen()
         // when
         let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)
         // then
@@ -21,7 +21,7 @@ class SelectModeScreenTest: XCTestCase {
 
     func test_deaultSelectedRowIs0() {
         // given
-        let screen = SelectModeViewController()
+        let screen = SelectModeScreen()
         // when
         let selected = screen.picker.selectedRow(inComponent: 0)
         // then
@@ -31,7 +31,7 @@ class SelectModeScreenTest: XCTestCase {
     func test_beginnerModeIsSelected_whenSetSoInGameConfig() {
         // given
         let gameConfigWithBeginnerMode = GameConfig(reciteMode: .beginner)
-        let screenB = SelectModeViewController(settings: Settings(mode: gameConfigWithBeginnerMode))
+        let screenB = SelectModeScreen(settings: Settings(mode: gameConfigWithBeginnerMode))
         // when
         screenB.viewDidLoad()
         let selected = screenB.picker.selectedRow(inComponent: 0)
@@ -41,7 +41,7 @@ class SelectModeScreenTest: XCTestCase {
     
     func test_selectingModeOnPicker_changesGameConfig() {
         // given
-        let screen = SelectModeViewController()
+        let screen = SelectModeScreen()
         // when: screenにイベントを送る
         screen.pickerView(screen.picker, didSelectRow: 1, inComponent: 0)
         // then
@@ -50,7 +50,7 @@ class SelectModeScreenTest: XCTestCase {
 
     func test_backgroundColorIsSetCorrectly() {
         // given
-        let screen = SelectModeViewController()
+        let screen = SelectModeScreen()
         // when
         screen.loadViewIfNeeded()
         // then
