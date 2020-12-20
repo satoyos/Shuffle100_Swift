@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-extension PoemPickerViewController: UIPickerViewDelegate {
+extension PoemPickerScreen: UIPickerViewDelegate {
     internal func showActionSheetForSaving(_ button: UIButton) {
         let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
             self.saveNewFudaSet()

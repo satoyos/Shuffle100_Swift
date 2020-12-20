@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PoemPickerViewController: UISearchResultsUpdating {
+extension PoemPickerScreen: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let text = searchController.searchBar.text ?? ""
         if text.isEmpty {

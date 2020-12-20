@@ -245,9 +245,9 @@
 		927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */; };
 		927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */; };
 		927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C04222E9EC700AF48F7 /* PoemsTests.swift */; };
-		927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */; };
-		927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */; };
-		927E4C0C22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */; };
+		927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */; };
+		927E4C0B22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */; };
+		927E4C0C22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */; };
 		927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0D22329F8000AF48F7 /* PoemPickerScreenTest.swift */; };
 		92800391249BAFEE004D03C2 /* empty_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9280038E249BAFED004D03C2 /* empty_circle.png */; };
 		92800392249BAFEE004D03C2 /* empty_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9280038E249BAFED004D03C2 /* empty_circle.png */; };
@@ -629,7 +629,7 @@
 		927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemSupplierTests.swift; sourceTree = "<group>"; };
 		927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedState100Tests.swift; sourceTree = "<group>"; };
 		927E4C04222E9EC700AF48F7 /* PoemsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemsTests.swift; sourceTree = "<group>"; };
-		927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerViewController.swift; sourceTree = "<group>"; };
+		927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreen.swift; sourceTree = "<group>"; };
 		927E4C0D22329F8000AF48F7 /* PoemPickerScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenTest.swift; sourceTree = "<group>"; };
 		9280038E249BAFED004D03C2 /* empty_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_circle.png; sourceTree = "<group>"; };
 		9280038F249BAFED004D03C2 /* half_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = half_circle.png; sourceTree = "<group>"; };
@@ -880,7 +880,7 @@
 			children = (
 				923D59132143BB0A000F5E60 /* HomeScreen.swift */,
 				92D57154220F03AF00235717 /* SelectModeScreen.swift */,
-				927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */,
+				927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */,
 				928E73B522ABE83C00FB1B7B /* RecitePoemViewController.swift */,
 				92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */,
 				92ABF9AA23F42CFA000CA91C /* SelectSingerViewController.swift */,
@@ -1490,7 +1490,7 @@
 				921FF431249E52C60083AC49 /* HelpListViewController.swift in Sources */,
 				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
-				927E4C0A22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
+				927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
@@ -1645,7 +1645,7 @@
 				92ABF9BA23F6D739000CA91C /* StoreManager.swift in Sources */,
 				9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
 				9298B70724CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
-				927E4C0B22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
+				927E4C0B22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				925994E124449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
 				92A6EB8A24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
@@ -1763,7 +1763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927E4BF8222E9DD200AF48F7 /* Deck.swift in Sources */,
-				927E4C0C22329F2700AF48F7 /* PoemPickerViewController.swift in Sources */,
+				927E4C0C22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92FFBF3F245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */,

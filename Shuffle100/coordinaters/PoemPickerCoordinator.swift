@@ -23,7 +23,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-        let screen = PoemPickerViewController(settings: settings)
+        let screen = PoemPickerScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }
@@ -73,7 +73,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     private func clearSearchResult() {
-        if let screen = screen as? PoemPickerViewController {
+        if let screen = screen as? PoemPickerScreen {
             screen.searchController.searchBar.text = ""
         }
     }

@@ -1,5 +1,5 @@
 //
-//  PoemPickerViewController.swift
+//  PoemPickerScreen.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2019/03/08.
@@ -10,7 +10,7 @@ import UIKit
 import BBBadgeBarButtonItem
 import Then
 
-class PoemPickerViewController: SettingsAttachedScreen {
+class PoemPickerScreen: SettingsAttachedScreen {
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
     var tableView: UITableView!

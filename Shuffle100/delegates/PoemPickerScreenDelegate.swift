@@ -9,7 +9,7 @@
 import UIKit
 import BBBadgeBarButtonItem
 
-extension PoemPickerViewController: UITableViewDelegate, UIGestureRecognizerDelegate {
+extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let number = poemNumberFromIndexPath(indexPath)
         settings.state100.reverseInNumber(number)

@@ -11,11 +11,11 @@ import XCTest
 
 class PoemPickerScreenTest: XCTestCase {
 
-    var screen: PoemPickerViewController!
+    var screen: PoemPickerScreen!
     
     override func setUp() {
         super.setUp()
-        self.screen = PoemPickerViewController()
+        self.screen = PoemPickerScreen()
         screen.loadViewIfNeeded()
     }
 
@@ -142,7 +142,7 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_toolBarExists() {
         // given
-        let picker = PoemPickerViewController()
+        let picker = PoemPickerScreen()
         let _ = UINavigationController(rootViewController: picker)
         picker.loadViewIfNeeded()
         // when
@@ -153,7 +153,7 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_toolBarHas3Buttons() {
         // given
-        let picker = PoemPickerViewController()
+        let picker = PoemPickerScreen()
         let _ = UINavigationController(rootViewController: picker)
         picker.loadViewIfNeeded()
         // when
@@ -166,7 +166,7 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_eachCellHasDetailButtonAccessory() {
         // given
-        let picker = PoemPickerViewController()
+        let picker = PoemPickerScreen()
         // when
         picker.loadViewIfNeeded()
         // then
