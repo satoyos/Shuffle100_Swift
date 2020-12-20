@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension PoemPickerViewController: UITableViewDataSource, UIPickerViewDataSource {
+extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

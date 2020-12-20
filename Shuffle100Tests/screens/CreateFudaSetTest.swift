@@ -20,7 +20,7 @@ class CreateFudaSetTest: XCTestCase {
 
     func test_createNewFudaSet() throws {
         // given, // when
-        let screen = PoemPickerViewController()
+        let screen = PoemPickerScreen()
         XCTContext.runActivity(named: "デフォルトのSettingsでは、保存された札セットはない") { activity in
             // then
             XCTAssertEqual(screen.settings.savedFudaSets.count, 0)
