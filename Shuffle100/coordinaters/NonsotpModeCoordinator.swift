@@ -19,7 +19,7 @@ class NonsotpModeCoordinator: RecitePoemCoordinator {
         assert(true, "ノンストップモードで下の句に突入！")
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
-        guard let screen = self.screen as? RecitePoemViewController else { return }
+        guard let screen = self.screen as? RecitePoemScreen else { return }
         screen.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteShimoFinished(number: number, counter: counter)
         }

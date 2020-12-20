@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-extension RecitePoemViewController: AVAudioPlayerDelegate, ExitGameProtocol {
+extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
     
     func exitGame() {
         currentPlayer?.stop()

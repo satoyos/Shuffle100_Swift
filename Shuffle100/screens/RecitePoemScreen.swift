@@ -1,5 +1,5 @@
 //
-//  RecitePoemViewController.swift
+//  RecitePoemScreen.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2019/06/08.
@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Then
 
-class RecitePoemViewController: SettingsAttachedScreen {
+final class RecitePoemScreen: SettingsAttachedScreen {
     var recitePoemView: RecitePoemView!
     var gameEndView: GameEndViiew!
     var currentPlayer: AVAudioPlayer?
@@ -87,7 +87,7 @@ class RecitePoemViewController: SettingsAttachedScreen {
     private func setNotificationsAboutBackgound() {
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(RecitePoemViewController.onWillResignActive(_:)),
+            selector: #selector(RecitePoemScreen.onWillResignActive(_:)),
             name: UIApplication.willResignActiveNotification,
             object: nil
         )

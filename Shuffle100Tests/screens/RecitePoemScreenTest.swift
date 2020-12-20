@@ -10,7 +10,7 @@ import XCTest
 @testable import Shuffle100
 
 class RecitePoemScreenTest: XCTestCase {
-    var screen = RecitePoemViewController()
+    var screen = RecitePoemScreen()
 
     override func setUp() {
         screen.loadViewIfNeeded()

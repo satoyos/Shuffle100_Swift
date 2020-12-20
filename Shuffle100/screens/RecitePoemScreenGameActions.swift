@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension RecitePoemViewController {
+extension RecitePoemScreen {
     func playJoka() {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
         startPlayingCurrentPlayer(number: nil, side: nil, count: nil )
