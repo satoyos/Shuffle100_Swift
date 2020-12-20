@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ReciteSettingsViewController: UITableViewDataSource {
+extension ReciteSettingsScreen: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
