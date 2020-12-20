@@ -28,7 +28,7 @@ class RecitePoemCoordinator: Coordinator{
     }
 
     func start() {
-        let screen = RecitePoemViewController(settings: settings)
+        let screen = RecitePoemScreen(settings: settings)
         screen.backToPreviousAction = { [weak self] in
             self?.rewindToPrevious()
         }
@@ -53,7 +53,7 @@ class RecitePoemCoordinator: Coordinator{
     internal func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
-        guard let screen = self.screen as? RecitePoemViewController else { return }
+        guard let screen = self.screen as? RecitePoemScreen else { return }
         let number = firstPoem.number
         let counter = poemSupplier.currentIndex
         screen.playerFinishedAction = { [weak self, number, counter] in
@@ -68,7 +68,7 @@ class RecitePoemCoordinator: Coordinator{
 
     internal func reciteShimoFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
-        guard let screen = self.screen as? RecitePoemViewController else { return }
+        guard let screen = self.screen as? RecitePoemScreen else { return }
         if let poem = poemSupplier.drawNextPoem() {
             let number = poem.number
             let counter = poemSupplier.currentIndex
@@ -93,7 +93,7 @@ class RecitePoemCoordinator: Coordinator{
         if side == .kami {
             backToPreviousPoem()
         } else {  // 下の句の冒頭でrewindが押された場合
-            guard let screen = self.screen as? RecitePoemViewController else { return }
+            guard let screen = self.screen as? RecitePoemScreen else { return }
             let number = poemSupplier.poem.number
             let counter = poemSupplier.currentIndex
             let size = poemSupplier.size
@@ -111,7 +111,7 @@ class RecitePoemCoordinator: Coordinator{
 
     private func backToPreviousPoem() {
         if let prevPoem = poemSupplier.rollBackPrevPoem() {
-            guard let screen = self.screen as? RecitePoemViewController else { return }
+            guard let screen = self.screen as? RecitePoemScreen else { return }
             // 一つ前の歌(prevPoem)に戻す
             let number = prevPoem.number
             let counter = poemSupplier.currentIndex
@@ -128,7 +128,7 @@ class RecitePoemCoordinator: Coordinator{
 
     // 歯車ボタンが押されたときの画面遷移をここでやる！
     private func openReciteSettings() {
-        guard let screen = self.screen as? RecitePoemViewController else { return }
+        guard let screen = self.screen as? RecitePoemScreen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
         self.childCoordinator = coordinator
