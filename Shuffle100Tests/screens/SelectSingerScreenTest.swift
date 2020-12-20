@@ -12,7 +12,7 @@ import XCTest
 class SelectSingerScreenTest: XCTestCase {
     func test_initialScreen() {
         // given
-        let screen = SelectSingerViewController()
+        let screen = SelectSingerScreen()
         // when
         screen.loadViewIfNeeded()
         let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)

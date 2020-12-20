@@ -1,5 +1,5 @@
 //
-//  SelectSingerViewController.swift
+//  SelectSingerScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/02/12.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SelectSingerViewController: SettingsAttachedScreen {
+final class SelectSingerScreen: SettingsAttachedScreen {
     let picker = UIPickerView()
     
     override func viewDidLoad() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SelectSingerViewController: UIPickerViewDataSource {
+extension SelectSingerScreen: UIPickerViewDataSource {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

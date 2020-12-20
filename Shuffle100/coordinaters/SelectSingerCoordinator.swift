@@ -22,7 +22,7 @@ final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator 
     }
 
     func start() {
-        let screen = SelectSingerViewController(settings: settings)
+        let screen = SelectSingerScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }
