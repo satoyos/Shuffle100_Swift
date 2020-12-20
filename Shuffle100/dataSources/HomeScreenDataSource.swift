@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeScreen: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count

@@ -25,7 +25,7 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
     }
 
     func start() {
-        let homeScreen = HomeViewController(settings: settings)
+        let homeScreen = HomeScreen(settings: settings)
         self.screen = homeScreen
         navigationController.pushViewController(homeScreen, animated: false)
         setUpNavigationController(navigationController)
@@ -34,7 +34,7 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
         AudioPlayerFactory.shared.setupAudioSession()
     }
 
-    private func setActions(in homeScreen: HomeViewController, settings: Settings, store: StoreManager, navigator: UINavigationController) {
+    private func setActions(in homeScreen: HomeScreen, settings: Settings, store: StoreManager, navigator: UINavigationController) {
         homeScreen.selectPoemAction = {[weak self, unowned settings, store] in
             self?.selectPoem(settings: settings, store: store)
         }
@@ -98,7 +98,7 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
         self.childCoordinator = coordinator
     }
 
-    private func setSaveSettingsActionTo(screen: HomeViewController, settings: Settings, store: StoreManager) {
+    private func setSaveSettingsActionTo(screen: HomeScreen, settings: Settings, store: StoreManager) {
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }

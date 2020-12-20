@@ -12,7 +12,7 @@ import XCTest
 extension HomeScreenTest {
     func test_InitialHomeScreenHas_TOP_titleAndWhiteBackgroudView() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         // then
@@ -22,7 +22,7 @@ extension HomeScreenTest {
     
     func test_allCellsHaveAccessibilityLabel() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         // then
@@ -36,7 +36,7 @@ extension HomeScreenTest {
     
     func test_startGameCellTextIsRed() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         let cell_startGame = startGameCell(of: screen)
@@ -46,7 +46,7 @@ extension HomeScreenTest {
     
     func test_startGameCellStyleIsDefault() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         let cell_startGame = startGameCell(of: screen)
@@ -56,7 +56,7 @@ extension HomeScreenTest {
     
     func test_fakeModeCellHasSwitch_defaultIsOff() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         let fakeModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 2, section: 0))
@@ -71,7 +71,7 @@ extension HomeScreenTest {
     
     func test_defaultReciteModeIsNormal() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         let defaultReciteMode = screen.settings.reciteMode
         // then
@@ -80,7 +80,7 @@ extension HomeScreenTest {
     
     func test_defaultReciteModeLabelIsNormal() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
@@ -90,14 +90,14 @@ extension HomeScreenTest {
     
     func test_defaultSelectedPoemsNumberIs100() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(selectedPoemsCell(of: screen).detailTextLabel?.text, "100首")
     }
     
-    private func selectedPoemsCell(of screen: HomeViewController) -> HomeScreenTableCell {
+    private func selectedPoemsCell(of screen: HomeScreen) -> HomeScreenTableCell {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as! HomeScreenTableCell
     }
 }
