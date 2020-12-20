@@ -10,7 +10,7 @@ import XCTest
 @testable import Shuffle100
 
 class HomeScreenTest: XCTestCase {
-    internal func startGameCell(of screen: HomeViewController) ->        GameStartCell {
+    internal func startGameCell(of screen: HomeScreen) ->        GameStartCell {
         var gameStartCellIndex = 0
         if screen.settings.reciteMode == .normal {
             gameStartCellIndex = 1
@@ -20,7 +20,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_beginnerModeLabelIsBeginner() {
         // given
-        let screen = HomeViewController(settings: beginnerSettings())
+        let screen = HomeScreen(settings: beginnerSettings())
         
         // when
         screen.loadViewIfNeeded()
@@ -32,7 +32,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_fakeModeCellGetsHidden_inBeginnerMode() {
         // given
-        let beginnerModeScreen = HomeViewController(settings: beginnerSettings())
+        let beginnerModeScreen = HomeScreen(settings: beginnerSettings())
         // when
         beginnerModeScreen.loadViewIfNeeded()
         // then
@@ -42,7 +42,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_changeReciteModeInSettings_reclectsModeLabel() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         screen.settings = beginnerSettings()
         // when
         screen.loadViewIfNeeded()
@@ -54,7 +54,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_fakeModeIsOn_whenSetSoInGivenSettings() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         let settingsWithFakeModeOn = GameConfig(fakeMode: true)
         // when
         screen.settings = Settings(mode: settingsWithFakeModeOn)
@@ -71,7 +71,7 @@ class HomeScreenTest: XCTestCase {
     
     func test_memorizeTimerCellExists() {
         // given
-        let screen = HomeViewController()
+        let screen = HomeScreen()
         // when
         screen.loadViewIfNeeded()
         // then

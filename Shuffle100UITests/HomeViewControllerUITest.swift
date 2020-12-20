@@ -1,5 +1,5 @@
 //
-//  HomeViewControllerUITest.swift
+//  HomeScreenUITest.swift
 //  Shuffle100UITests
 //
 //  Created by 里 佳史 on 2018/09/16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class HomeViewControllerUITest: XCTestCase {
+class HomeScreenUITest: XCTestCase {
     let app = XCUIApplication()
     
     override func setUp() {

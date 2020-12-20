@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeScreen.swift
 //  Shuffle100
 //
 //  Created by 里 佳史 on 2018/09/08.
@@ -15,7 +15,7 @@ enum HomeCellType: String {
     case singers = "singersCell"
 }
 
-final class HomeViewController: SettingsAttachedScreen {
+final class HomeScreen: SettingsAttachedScreen {
     let titleName = "トップ"
     let navBarButtonSize = 32
     var tableView: UITableView!
@@ -27,7 +27,6 @@ final class HomeViewController: SettingsAttachedScreen {
     var reciteSettingsAction: (() -> Void)?
     var helpActioh: (() -> Void)?
     var memorizeTimerAction: (() -> Void)?
-//    var viewDidAppearAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +36,6 @@ final class HomeViewController: SettingsAttachedScreen {
         view.addSubview(tableView)
         setNavigationBarButtons()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        self.viewDidAppearAction?()
-//        super.viewDidAppear(animated)
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false

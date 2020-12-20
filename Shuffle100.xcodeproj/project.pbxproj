@@ -115,7 +115,7 @@
 		923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595223ACF9DE002027B4 /* GameEndViewTest.swift */; };
 		923CFBE02514F3B900C52630 /* AdjustWithSliderUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923CFBDF2514F3B900C52630 /* AdjustWithSliderUtil.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
-		923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
+		923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* HomeScreenTest.swift */; };
 		9246195C248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195B248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift */; };
@@ -193,8 +193,8 @@
 		92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
 		92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
 		92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
-		925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
-		925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeViewController.swift */; };
+		925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
+		925CEB50218DB21A00876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
 		925CEB58218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
 		925CEB59218ED64000876E7A /* HomeScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CEB56218ED64000876E7A /* HomeScreenTableCell.swift */; };
@@ -568,7 +568,7 @@
 		923CFBDF2514F3B900C52630 /* AdjustWithSliderUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustWithSliderUtil.swift; sourceTree = "<group>"; };
 		923D590E2143BB0A000F5E60 /* Shuffle100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuffle100.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59112143BB0A000F5E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		923D59132143BB0A000F5E60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		923D59132143BB0A000F5E60 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		923D59182143BB0B000F5E60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923D591D2143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D59222143BB0B000F5E60 /* Shuffle100Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -878,7 +878,7 @@
 		923D593F2143BD50000F5E60 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				923D59132143BB0A000F5E60 /* HomeViewController.swift */,
+				923D59132143BB0A000F5E60 /* HomeScreen.swift */,
 				92D57154220F03AF00235717 /* SelectModeViewController.swift */,
 				927E4C0922329F2700AF48F7 /* PoemPickerViewController.swift */,
 				928E73B522ABE83C00FB1B7B /* RecitePoemViewController.swift */,
@@ -1504,7 +1504,7 @@
 				925994F7244AA47200044253 /* VolumeSettingViewController.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemCoordinator.swift in Sources */,
 				92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
-				923D59142143BB0A000F5E60 /* HomeViewController.swift in Sources */,
+				923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */,
 				92FFBF1E245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
@@ -1749,7 +1749,7 @@
 				92328C3324596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
 				9205E1772456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */,
-				925CEB4F218DB21900876E7A /* HomeViewController.swift in Sources */,
+				925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */,
 				92FFBF42245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
@@ -1909,7 +1909,7 @@
 				92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */,
 				92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
-				925CEB50218DB21A00876E7A /* HomeViewController.swift in Sources */,
+				925CEB50218DB21A00876E7A /* HomeScreen.swift in Sources */,
 				923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */,
 				92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 			);
