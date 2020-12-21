@@ -22,7 +22,7 @@ final class KamiShimoIntervalSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let screen = KamiShimoIntervalSettingViewController(settings: settings)
+        let screen = KamiShimoIntervalSettingScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }

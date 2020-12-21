@@ -165,9 +165,9 @@
 		9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAF821FEE4AA00E4E0B7 /* question_white.png */; };
 		925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */; };
-		925994E024449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */; };
-		925994E124449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */; };
-		925994E224449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */; };
+		925994E024449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
+		925994E124449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
+		925994E224449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
 		925994E42444A8D200044253 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingViewController.swift */; };
 		925994E52444A8D200044253 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingViewController.swift */; };
 		925994E62444A8D200044253 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingViewController.swift */; };
@@ -595,7 +595,7 @@
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9258FAF821FEE4AA00E4E0B7 /* question_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_white.png; sourceTree = "<group>"; };
 		925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingScreenTest.swift; sourceTree = "<group>"; };
-		925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingViewController.swift; sourceTree = "<group>"; };
+		925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingScreen.swift; sourceTree = "<group>"; };
 		925994E32444A8D200044253 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenDelegate.swift; sourceTree = "<group>"; };
 		925994EC2447528800044253 /* TimeSettingScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenLayout.swift; sourceTree = "<group>"; };
@@ -887,7 +887,7 @@
 				92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */,
 				92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */,
 				92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */,
-				925994DF24449C1E00044253 /* KamiShimoIntervalSettingViewController.swift */,
+				925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */,
 				925994E32444A8D200044253 /* TimeSettingViewController.swift */,
 				925994F6244AA47200044253 /* VolumeSettingViewController.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextViewController.swift */,
@@ -1485,7 +1485,7 @@
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */,
-				925994E024449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
+				925994E024449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				921FF431249E52C60083AC49 /* HelpListViewController.swift in Sources */,
 				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
@@ -1647,7 +1647,7 @@
 				9298B70724CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
 				927E4C0B22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
-				925994E124449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
+				925994E124449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
 				92A6EB8A24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
@@ -1854,7 +1854,7 @@
 				921C7853247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
-				925994E224449C1E00044253 /* KamiShimoIntervalSettingViewController.swift in Sources */,
+				925994E224449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
 				92F666742529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92599501244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
 				921791F8258E211C00A38249 /* Screen.swift in Sources */,
