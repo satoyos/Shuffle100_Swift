@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension WhatsNextViewController: ExitGameProtocol {
+extension WhatsNextScreen: ExitGameProtocol {
     func exitGame() {
         dismiss(animated: true, completion: {
             self.exitGameAction?()

@@ -1,5 +1,5 @@
 //
-//  WhatsNextViewController.swift
+//  WhatsNextScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/04/27.
@@ -10,7 +10,7 @@ import UIKit
 
 private let navBarButtonSize: CGFloat = 32
 
-class WhatsNextViewController: UIViewController {
+final class WhatsNextScreen: Screen {
     var torifudaButton = LargeImageAttachedButton()
     var refrainButton = LargeImageAttachedButton()
     var goNextButton = LargeImageAttachedButton()
