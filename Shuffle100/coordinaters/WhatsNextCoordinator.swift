@@ -30,7 +30,7 @@ class WhatsNextCoordinator: Coordinator {
     }
 
     func start() {
-        let screen = WhatsNextViewController(currentPoem: currentPoem)
+        let screen = WhatsNextScreen(currentPoem: currentPoem)
         self.anotherNavController = UINavigationController(rootViewController: screen)
         setUpNavigationController()
         screen.showTorifudaAction = { [weak self] in

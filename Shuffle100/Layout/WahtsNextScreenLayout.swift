@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-extension WhatsNextViewController {
+extension WhatsNextScreen {
     internal func layoutButtons() {
         layoutRefrainButton()
         layoutTorifudaButton()
