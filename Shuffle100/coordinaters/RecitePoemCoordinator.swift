@@ -35,9 +35,6 @@ class RecitePoemCoordinator: Coordinator{
         screen.openSettingsAction = { [weak self] in
             self?.openReciteSettings()
         }
-        screen.viewDidAppearAction = { [weak self] in
-            self?.childCoordinator = nil
-        }
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
         CATransaction.begin()
