@@ -473,9 +473,9 @@
 		92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
 		92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
 		92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
-		92FFBF49245FB4F7004D7F79 /* FudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */; };
-		92FFBF4A245FB4F7004D7F79 /* FudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */; };
-		92FFBF4B245FB4F7004D7F79 /* FudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */; };
+		92FFBF49245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */; };
+		92FFBF4A245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */; };
+		92FFBF4B245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */; };
 		92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
 		92FFBF4F245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
 		92FFBF50245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
@@ -726,7 +726,7 @@
 		92FFBF3C245FB2FF004D7F79 /* String-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-extension.swift"; sourceTree = "<group>"; };
 		92FFBF40245FB3F0004D7F79 /* FudaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaView.swift; sourceTree = "<group>"; };
 		92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaScreenLayout.swift; sourceTree = "<group>"; };
-		92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaViewController.swift; sourceTree = "<group>"; };
+		92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorifudaScreen.swift; sourceTree = "<group>"; };
 		92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tatami_moved.jpg; sourceTree = "<group>"; };
 		92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "washi_darkgreen 001.jpg"; sourceTree = "<group>"; };
 		92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FudaScreenTest.swift; sourceTree = "<group>"; };
@@ -891,7 +891,7 @@
 				925994E32444A8D200044253 /* TimeSettingScreen.swift */,
 				925994F6244AA47200044253 /* VolumeSettingScreen.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */,
-				92FFBF48245FB4F7004D7F79 /* FudaViewController.swift */,
+				92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */,
 				92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */,
 				920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */,
 				921FF430249E52C60083AC49 /* HelpListViewController.swift */,
@@ -1557,7 +1557,7 @@
 				925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
-				92FFBF49245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
+				92FFBF49245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
 				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				924619602493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
 				929A94B4247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
@@ -1708,7 +1708,7 @@
 				921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */,
 				9206CEE222E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				927E4BF7222E9DD200AF48F7 /* Deck.swift in Sources */,
-				92FFBF4A245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
+				92FFBF4A245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
 				925994F8244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
 				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */,
@@ -1846,7 +1846,7 @@
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,
 				92B9E992246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
 				927A198123E06C8A00443322 /* RecitePoemCoordinator.swift in Sources */,
-				92FFBF4B245FB4F7004D7F79 /* FudaViewController.swift in Sources */,
+				92FFBF4B245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
 				92ABF9AD23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
 				92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,

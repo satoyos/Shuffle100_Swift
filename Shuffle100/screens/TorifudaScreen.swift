@@ -1,5 +1,5 @@
 //
-//  FudaViewController.swift
+//  TorifudaScreen.swift
 //  WhatsNextScreen
 //
 //  Created by Yoshifumi Sato on 2020/05/01.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FudaViewController: UIViewController {
+class TorifudaScreen: Screen {
     var shimoString = "下の句がここに入る"
     var titleString = "タイトル未定"
     var tatamiView: UIImageView!

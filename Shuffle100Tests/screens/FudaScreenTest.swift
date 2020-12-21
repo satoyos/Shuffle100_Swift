@@ -22,7 +22,7 @@ class FudaScreenTest: XCTestCase, SHDeviceTypeGetter {
         // given
         let sampleStr = "けふここのへににおひぬるかな"
         let sampleTitle = "サンプルのタイトル"
-        let screen = FudaViewController(shimoString: sampleStr, title: sampleTitle)
+        let screen = TorifudaScreen(shimoString: sampleStr, title: sampleTitle)
         // when
         screen.loadViewIfNeeded()
         // then
@@ -46,7 +46,7 @@ class FudaScreenTest: XCTestCase, SHDeviceTypeGetter {
             "衣干すてふ",
             "天の香具山"
           ]
-        let screen = FudaViewController(shimoString: sampleStr, title: sampleTitle, fullLiner: sampleLiner)
+        let screen = TorifudaScreen(shimoString: sampleStr, title: sampleTitle, fullLiner: sampleLiner)
         // when
         screen.loadViewIfNeeded()
         // then
