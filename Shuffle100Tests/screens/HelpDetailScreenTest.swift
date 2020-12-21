@@ -13,7 +13,7 @@ class HelpDetailScreenTest: XCTestCase {
 
     func test_initialScreen() throws {
         // given
-        let screen = HelpDetailViewController(title: "aaa", htmlFileName: "html/options.html")
+        let screen = HelpDetailScreen(title: "aaa", htmlFileName: "html/options.html")
         // when
         screen.loadViewIfNeeded()
         // then
