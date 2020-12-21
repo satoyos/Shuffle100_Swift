@@ -16,7 +16,7 @@ class HelpListScreenTest: XCTestCase {
         let coordinator = HelpListCoordinator(navigationController: UINavigationController())
         // given, when
         coordinator.start()
-        guard let screen = coordinator.screen as? HelpListViewController else {
+        guard let screen = coordinator.screen as? HelpListScreen else {
             XCTAssert(false, "Failed to fetch HelpListScreen")
             return
         }

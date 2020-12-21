@@ -42,7 +42,7 @@ class HelpListCoordinator: Coordinator, HandleNavigator {
     }
 
     func start() {
-        let screen = HelpListViewController(sections: helpListSections)
+        let screen = HelpListScreen(sections: helpListSections)
         screen.goDetailAction = { [weak self] indexPath in
             self?.goDetailScreen(indexPath: indexPath)
         }
