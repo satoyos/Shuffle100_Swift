@@ -489,9 +489,9 @@
 		92FFBF5F24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
 		92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */; };
 		92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */; };
-		92FFBF6524650219004D7F79 /* NgramPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */; };
-		92FFBF6624650219004D7F79 /* NgramPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */; };
-		92FFBF6724650219004D7F79 /* NgramPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */; };
+		92FFBF6524650219004D7F79 /* NgramPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */; };
+		92FFBF6624650219004D7F79 /* NgramPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */; };
+		92FFBF6724650219004D7F79 /* NgramPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -734,7 +734,7 @@
 		92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameProtocol.swift; sourceTree = "<group>"; };
 		92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerUITest.swift; sourceTree = "<group>"; };
 		92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenTest.swift; sourceTree = "<group>"; };
-		92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerViewController.swift; sourceTree = "<group>"; };
+		92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreen.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDEFB0C29209BF24E28519C4 /* Pods-Shuffle100Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -892,7 +892,7 @@
 				925994F6244AA47200044253 /* VolumeSettingScreen.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */,
 				92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */,
-				92FFBF6424650219004D7F79 /* NgramPickerViewController.swift */,
+				92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */,
 				920F6A6E247C03D400360C3B /* FudaSetsViewController.swift */,
 				921FF430249E52C60083AC49 /* HelpListViewController.swift */,
 				921FF44C24A603760083AC49 /* HelpDetailViewController.swift */,
@@ -1534,7 +1534,7 @@
 				9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
-				92FFBF6524650219004D7F79 /* NgramPickerViewController.swift in Sources */,
+				92FFBF6524650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
@@ -1597,7 +1597,7 @@
 			files = (
 				9258D1A822D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92C87DDE22E88F8600569D15 /* Singer.swift in Sources */,
-				92FFBF6624650219004D7F79 /* NgramPickerViewController.swift in Sources */,
+				92FFBF6624650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92B9E991246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
 				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
@@ -1866,7 +1866,7 @@
 				92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				9204751B254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
 				92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
-				92FFBF6724650219004D7F79 /* NgramPickerViewController.swift in Sources */,
+				92FFBF6724650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				9205E18224571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
 				9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
 				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,

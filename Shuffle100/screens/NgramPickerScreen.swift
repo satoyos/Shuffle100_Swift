@@ -1,5 +1,5 @@
 //
-//  NgramPickerViewController.swift
+//  NgramPickerScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/05/08.
@@ -11,7 +11,7 @@ import Then
 import BBBadgeBarButtonItem
 
 
-class NgramPickerViewController: SettingsAttachedScreen {
+final class NgramPickerScreen: SettingsAttachedScreen {
     
     internal let cellReuseId = "ngrams"
     var tableView: UITableView!
