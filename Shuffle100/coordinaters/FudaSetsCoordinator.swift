@@ -22,7 +22,7 @@ class FudaSetsCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-        let screen = FudaSetsViewController(settings: settings)
+        let screen = FudaSetsScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }

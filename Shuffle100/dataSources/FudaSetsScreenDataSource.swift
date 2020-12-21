@@ -9,7 +9,7 @@
 import UIKit
 import Then
 
-extension FudaSetsViewController: UITableViewDataSource {
+extension FudaSetsScreen: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.savedFudaSets.count
     }

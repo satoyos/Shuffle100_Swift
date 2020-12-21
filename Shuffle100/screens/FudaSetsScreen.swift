@@ -1,5 +1,5 @@
 //
-//  FudaSetsViewController.swift
+//  FudaSetsScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/05/25.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FudaSetsViewController: SettingsAttachedScreen {
+class FudaSetsScreen: SettingsAttachedScreen {
     internal let cellReuseId = "fudaSets"
     var tableView: UITableView!
 
