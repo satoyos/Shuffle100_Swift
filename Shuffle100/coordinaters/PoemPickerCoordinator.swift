@@ -39,6 +39,9 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.showTorifudaAction = { [weak self] number in
             self?.showTorifudaScreenFor(number: number)
         }
+        screen.viewDidAppearAction = { [weak self] in
+            self?.childCoordinator = nil
+        }
         navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
