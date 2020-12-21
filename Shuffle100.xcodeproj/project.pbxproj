@@ -87,9 +87,9 @@
 		921FF44824A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44924A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */; };
-		921FF44D24A603760083AC49 /* HelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailViewController.swift */; };
-		921FF44E24A603760083AC49 /* HelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailViewController.swift */; };
-		921FF44F24A603760083AC49 /* HelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailViewController.swift */; };
+		921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
+		921FF44E24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
+		921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
 		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
 		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
 		92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
@@ -553,7 +553,7 @@
 		921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListUITest.swift; sourceTree = "<group>"; };
 		921FF44624A4D9EF0083AC49 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreenTest.swift; sourceTree = "<group>"; };
-		921FF44C24A603760083AC49 /* HelpDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailViewController.swift; sourceTree = "<group>"; };
+		921FF44C24A603760083AC49 /* HelpDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreen.swift; sourceTree = "<group>"; };
 		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButtonTest.swift; sourceTree = "<group>"; };
 		92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeImageAttachedButton.swift; sourceTree = "<group>"; };
@@ -895,7 +895,7 @@
 				92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */,
 				920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */,
 				921FF430249E52C60083AC49 /* HelpListScreen.swift */,
-				921FF44C24A603760083AC49 /* HelpDetailViewController.swift */,
+				921FF44C24A603760083AC49 /* HelpDetailScreen.swift */,
 				92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */,
 				92B87D48250A654B003BB51B /* FiveColorsViewController.swift */,
 				921791F5258E211C00A38249 /* Screen.swift */,
@@ -1494,7 +1494,7 @@
 				92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
 				925CEB57218ED64000876E7A /* HomeScreenTableCell.swift in Sources */,
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
-				921FF44D24A603760083AC49 /* HelpDetailViewController.swift in Sources */,
+				921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92737E3E238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
@@ -1699,7 +1699,7 @@
 				9205E18124571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92B9E96D2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
-				921FF44E24A603760083AC49 /* HelpDetailViewController.swift in Sources */,
+				921FF44E24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */,
 				92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
@@ -1789,7 +1789,7 @@
 				92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */,
 				925994FD244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */,
-				921FF44F24A603760083AC49 /* HelpDetailViewController.swift in Sources */,
+				921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */,
 				92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,

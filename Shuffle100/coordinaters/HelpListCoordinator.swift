@@ -34,7 +34,7 @@ private func appVersion() -> String {
 class HelpListCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
-    private var detailHelpScreen: HelpDetailViewController!
+    private var detailHelpScreen: HelpDetailScreen!
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {
@@ -55,7 +55,7 @@ class HelpListCoordinator: Coordinator, HandleNavigator {
         let dataSource = helpListSections[indexPath.section].dataSources[indexPath.row]
         if let htmlFileName = dataSource.fileName {
             print("html for HELP => \(htmlFileName)")
-            let screen = HelpDetailViewController(title: dataSource.name, htmlFileName: htmlFileName)
+            let screen = HelpDetailScreen(title: dataSource.name, htmlFileName: htmlFileName)
             navigationController.pushViewController(screen, animated: true)
             screen.navigationItem.prompt = navigationItemPrompt()
             self.detailHelpScreen = screen

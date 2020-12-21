@@ -1,5 +1,5 @@
 //
-//  HelpDetailViewController.swift
+//  HelpDetailScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/06/26.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class HelpDetailViewController: UIViewController {
+class HelpDetailScreen: Screen {
     var helpTitle: String!
     var htmlFileName: String!
     
