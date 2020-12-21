@@ -1,5 +1,5 @@
 //
-//  MemorizeTimerViewController.swift
+//  MemorizeTimerScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/08/06.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MemorizeTimerViewController: UIViewController {
+class MemorizeTimerScreen: Screen {
     let timerContaier = UIView()
     let minLabel = UILabel()
     let secLabel = UILabel()

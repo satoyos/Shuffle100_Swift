@@ -11,7 +11,7 @@ import FontAwesome_swift
 @testable import Shuffle100
 
 class MemorizeTimerScreenTest: XCTestCase {
-    var screen = MemorizeTimerViewController()
+    var screen = MemorizeTimerScreen()
 
     override func setUpWithError() throws {
         screen.loadViewIfNeeded()

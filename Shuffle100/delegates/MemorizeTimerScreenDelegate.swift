@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-extension MemorizeTimerViewController: AVAudioPlayerDelegate {
+extension MemorizeTimerScreen: AVAudioPlayerDelegate {
     internal func setDelegate(of player: AVAudioPlayer) {
         player.delegate = self
     }
