@@ -48,6 +48,9 @@ class WhatsNextCoordinator: Coordinator {
         screen.goSettingAction = { [weak self] in
             self?.openSettingScreen()
         }
+        screen.viewDidAppearAction = { [weak self] in
+            self?.childCoordinator = nil
+        }
         fromScreen.present(anotherNavController, animated: true)
         self.screen = screen
     }
