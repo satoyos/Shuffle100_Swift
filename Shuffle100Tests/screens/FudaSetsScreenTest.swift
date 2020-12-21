@@ -21,7 +21,7 @@ class FudaSetsScreenTest: XCTestCase {
 
     func test_initialScreen() throws {
         // given, when
-        let screen = FudaSetsViewController()
+        let screen = FudaSetsScreen()
         // then
         XCTAssertNotNil(screen)
         // when
@@ -33,7 +33,7 @@ class FudaSetsScreenTest: XCTestCase {
     
     func test_eachCellShowsFudaSetSize() {
         // given
-        let screen = FudaSetsViewController()
+        let screen = FudaSetsScreen()
         screen.loadViewIfNeeded()
         // when
         let set = SavedFudaSet(name: "aaa", state100: SelectedState100.init(bool100: Bool100.allSelected()))
@@ -46,13 +46,13 @@ class FudaSetsScreenTest: XCTestCase {
     
     func test_tapFudaSetCellChangesSelectedPoems() {
         // given
-        var screen: FudaSetsViewController!
+        var screen: FudaSetsScreen!
         let fullSelectedState = SelectedState100.createOf(bool: true)
         
         let partialySelectedState100 = selectedState97()
         XCTContext.runActivity(named: "デフォルトでは100首選ばれている") { _ in
             // when
-            screen = FudaSetsViewController()
+            screen = FudaSetsScreen()
             // then
             XCTAssertEqual(screen.settings.state100, fullSelectedState)
             XCTAssertNotEqual(screen.settings.state100, partialySelectedState100)
@@ -80,7 +80,7 @@ class FudaSetsScreenTest: XCTestCase {
     
     func test_deleteFudaSet() {
         // given
-        let screen = FudaSetsViewController()
+        let screen = FudaSetsScreen()
         let fudaSet = SavedFudaSet(name: "97枚セット", state100: selectedState97())
         screen.settings.savedFudaSets.append(fudaSet)
         // when
