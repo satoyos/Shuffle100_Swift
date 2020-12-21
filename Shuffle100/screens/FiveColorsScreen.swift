@@ -1,5 +1,5 @@
 //
-//  FiveColorsViewController.swift
+//  FiveColorsScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/09/10.
@@ -9,7 +9,7 @@
 import UIKit
 import BBBadgeBarButtonItem
 
-class FiveColorsViewController: SettingsAttachedScreen {
+class FiveColorsScreen: SettingsAttachedScreen {
     let blueButton = ColorOfFiveButton(.blue)
     let yellowButton = ColorOfFiveButton(.yellow)
     let greenButton = ColorOfFiveButton(.green)

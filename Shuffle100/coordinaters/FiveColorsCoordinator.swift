@@ -23,7 +23,7 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
     }
 
     func start() {
-        let screen = FiveColorsViewController(settings: settings)
+        let screen = FiveColorsScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }

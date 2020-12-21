@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension FiveColorsViewController {
+extension FiveColorsScreen {
     @objc func colorButtonTapped(_ colorButton: ColorOfFiveButton) {
         guard let colorDic = colorsDic[colorButton.color] else { return }
         let ac = UIAlertController(
