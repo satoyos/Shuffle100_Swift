@@ -67,9 +67,9 @@
 		921C7852247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
 		921C7853247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
 		921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */; };
-		921FF431249E52C60083AC49 /* HelpListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListViewController.swift */; };
-		921FF432249E52C60083AC49 /* HelpListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListViewController.swift */; };
-		921FF433249E52C60083AC49 /* HelpListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListViewController.swift */; };
+		921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
+		921FF432249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
+		921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
 		921FF435249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
 		921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
 		921FF437249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
@@ -545,7 +545,7 @@
 		921791F5258E211C00A38249 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FudaSetsTableViewCell.swift; path = Shuffle100/FudaSetsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenTest.swift; sourceTree = "<group>"; };
-		921FF430249E52C60083AC49 /* HelpListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListViewController.swift; sourceTree = "<group>"; };
+		921FF430249E52C60083AC49 /* HelpListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreen.swift; sourceTree = "<group>"; };
 		921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenDataSource.swift; sourceTree = "<group>"; };
 		921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListTableViewCell.swift; sourceTree = "<group>"; };
 		921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenDelegate.swift; sourceTree = "<group>"; };
@@ -894,7 +894,7 @@
 				92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */,
 				92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */,
 				920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */,
-				921FF430249E52C60083AC49 /* HelpListViewController.swift */,
+				921FF430249E52C60083AC49 /* HelpListScreen.swift */,
 				921FF44C24A603760083AC49 /* HelpDetailViewController.swift */,
 				92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */,
 				92B87D48250A654B003BB51B /* FiveColorsViewController.swift */,
@@ -1487,7 +1487,7 @@
 				92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */,
 				925994E024449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
-				921FF431249E52C60083AC49 /* HelpListViewController.swift in Sources */,
+				921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */,
 				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
@@ -1625,7 +1625,7 @@
 				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
-				921FF432249E52C60083AC49 /* HelpListViewController.swift in Sources */,
+				921FF432249E52C60083AC49 /* HelpListScreen.swift in Sources */,
 				9205E17D24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
 				92328C2324591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
 				920F6A70247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
@@ -1791,7 +1791,7 @@
 				92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */,
 				921FF44F24A603760083AC49 /* HelpDetailViewController.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
-				921FF433249E52C60083AC49 /* HelpListViewController.swift in Sources */,
+				921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */,
 				92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
 				9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */,

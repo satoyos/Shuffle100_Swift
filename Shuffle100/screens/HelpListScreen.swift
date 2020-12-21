@@ -1,5 +1,5 @@
 //
-//  HelpListViewController.swift
+//  HelpListScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/06/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpListViewController: UIViewController {
+class HelpListScreen: Screen {
     internal var helpListSections: [HelpListSection]!
     var tableView: UITableView!
     let cellReuseId = "HelpList"

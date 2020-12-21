@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HelpListViewController: UITableViewDelegate {
+extension HelpListScreen: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         goDetailAction?(indexPath)
     }

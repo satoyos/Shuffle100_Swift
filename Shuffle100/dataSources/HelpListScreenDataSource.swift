@@ -25,7 +25,7 @@ struct HelpListSection {
     let dataSources: [HelpListDataSource]
 }
 
-extension HelpListViewController: UITableViewDataSource {
+extension HelpListScreen: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return helpListSections.count
     }
