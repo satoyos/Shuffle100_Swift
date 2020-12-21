@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NgramPickerViewController: UITableViewDelegate {
+extension NgramPickerScreen: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tappedCell = cellForIndexPath(indexPath)
         switch tappedCell.selectedStatus {

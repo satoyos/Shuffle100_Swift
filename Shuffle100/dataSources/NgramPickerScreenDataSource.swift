@@ -9,7 +9,7 @@
 import UIKit
 import Then
 
-extension NgramPickerViewController: UITableViewDataSource, PoemSelectedStateHandler {
+extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
     }

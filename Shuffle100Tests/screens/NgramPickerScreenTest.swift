@@ -22,7 +22,7 @@ class NgramPickerScreenTest: XCTestCase {
 
     func test_initialScreen() throws {
         // given
-        let screen = NgramPickerViewController()
+        let screen = NgramPickerScreen()
         // when
         screen.loadViewIfNeeded()
         // then
@@ -35,7 +35,7 @@ class NgramPickerScreenTest: XCTestCase {
     
     func test_loadDataSourceFile() {
         // given
-        let screen = NgramPickerViewController()
+        let screen = NgramPickerScreen()
         // when
         screen.loadViewIfNeeded()
         // then
@@ -58,7 +58,7 @@ class NgramPickerScreenTest: XCTestCase {
         let settings = Settings()
         settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
         // when
-        let screen = NgramPickerViewController(settings: settings)
+        let screen = NgramPickerScreen(settings: settings)
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.badgeItem.badgeValue , "99首")
@@ -72,7 +72,7 @@ class NgramPickerScreenTest: XCTestCase {
         // given
         let settings = Settings()
         settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
-        let screen = NgramPickerViewController(settings: settings)
+        let screen = NgramPickerScreen(settings: settings)
         screen.loadViewIfNeeded()
         let tsuIndex = tsuIndexPath()
         let tsuCell = cellFor(screen, indexPath: tsuIndex)
@@ -87,7 +87,7 @@ class NgramPickerScreenTest: XCTestCase {
     
     func test_tapFullMakesEmpty() {
         // given
-        let screen = NgramPickerViewController()
+        let screen = NgramPickerScreen()
         screen.loadViewIfNeeded()
         let tsuIndex = tsuIndexPath()
         let tsuCell = cellFor(screen, indexPath: tsuIndex)
@@ -100,12 +100,12 @@ class NgramPickerScreenTest: XCTestCase {
         XCTAssertEqual(screen.badgeItem.badgeValue, "98首")
     }
     
-    private func cellFor(_ screen: NgramPickerViewController, section: Int, row: Int) -> NgramPickerTableCell {
+    private func cellFor(_ screen: NgramPickerScreen, section: Int, row: Int) -> NgramPickerTableCell {
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
         return cell as! NgramPickerTableCell
     }
     
-    private func cellFor(_ screen: NgramPickerViewController, indexPath: IndexPath) -> NgramPickerTableCell {
+    private func cellFor(_ screen: NgramPickerScreen, indexPath: IndexPath) -> NgramPickerTableCell {
         let cell = screen.tableView(screen.tableView, cellForRowAt: indexPath)
         return cell as! NgramPickerTableCell
     }
@@ -114,7 +114,7 @@ class NgramPickerScreenTest: XCTestCase {
         return IndexPath(row: 1, section: 1)
     }
     
-    private func tapCellOfIndex(_ indexPath: IndexPath, in screen: NgramPickerViewController) {
+    private func tapCellOfIndex(_ indexPath: IndexPath, in screen: NgramPickerScreen) {
         screen.tableView(screen.tableView, didSelectRowAt: indexPath)
     }
 }
