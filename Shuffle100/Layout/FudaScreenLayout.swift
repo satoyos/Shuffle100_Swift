@@ -21,7 +21,7 @@ private let aspectRatio = fudaWidthMeasured / fudaHeightMeasured
 private let fudaFont = UIFont(name: "HiraMinProN-W6", size: 5)
 private let fudaFontSizeBase: CGFloat = 17
 
-extension FudaViewController: SHDeviceTypeGetter {
+extension TorifudaScreen: SHDeviceTypeGetter {
     internal func layoutFudaScreen() {
         setTatamiBackground()
         setFudaView()

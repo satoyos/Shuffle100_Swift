@@ -64,7 +64,7 @@ class WhatsNextCoordinator: Coordinator {
         for partStr in currentPoem.liner {
             title += " \(partStr)"
         }
-        let torifudaScreen = FudaViewController(shimoString: shimoStr, title: title)
+        let torifudaScreen = TorifudaScreen(shimoString: shimoStr, title: title)
         anotherNavController.pushViewController(torifudaScreen, animated: true)
     }
 

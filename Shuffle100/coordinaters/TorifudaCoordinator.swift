@@ -25,7 +25,7 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
         for partStr in poem.liner {
             title += " \(partStr)"
         }
-        let screen = FudaViewController(shimoString: shimoStr, title: title, fullLiner: poem.liner)
+        let screen = TorifudaScreen(shimoString: shimoStr, title: title, fullLiner: poem.liner)
         navigationController.pushViewController(screen, animated: true)
         screen.navigationItem.prompt = navigationItemPrompt()
         self.screen = screen
