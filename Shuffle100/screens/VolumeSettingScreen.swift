@@ -1,5 +1,5 @@
 //
-//  VolumeSettingViewController.swift
+//  VolumeSettingScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/04/18.
@@ -14,7 +14,7 @@ import AVFoundation
 let minVolume: Float = 0.0
 let maxVolume: Float = 1.0
 
-class VolumeSettingViewController: SettingsAttachedScreen {
+final class VolumeSettingScreen: SettingsAttachedScreen {
     
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var slider = UISlider()

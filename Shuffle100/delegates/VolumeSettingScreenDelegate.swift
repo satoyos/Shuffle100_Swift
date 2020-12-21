@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-extension VolumeSettingViewController: AVAudioPlayerDelegate {
+extension VolumeSettingScreen: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag == false {
             assertionFailure("Playerの再生が正常に終了しなかった！")
