@@ -286,9 +286,9 @@
 		929A94B5247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
 		929A94B6247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
 		92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */; };
-		92A1467824DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
-		92A1467924DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
-		92A1467A24DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */; };
+		92A1467824DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */; };
+		92A1467924DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */; };
+		92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */; };
 		92A1467C24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
 		92A1467D24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
 		92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
@@ -646,7 +646,7 @@
 		929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerCoordinator.swift; sourceTree = "<group>"; };
 		929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsCoordinator.swift; sourceTree = "<group>"; };
 		92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenTest.swift; sourceTree = "<group>"; };
-		92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerViewController.swift; sourceTree = "<group>"; };
+		92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreen.swift; sourceTree = "<group>"; };
 		92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenLayout.swift; sourceTree = "<group>"; };
 		92A146AF24DED8540045D7DF /* MemorizeTImerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTImerScreenUITest.swift; sourceTree = "<group>"; };
 		92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerCoordinator.swift; sourceTree = "<group>"; };
@@ -896,7 +896,7 @@
 				920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */,
 				921FF430249E52C60083AC49 /* HelpListScreen.swift */,
 				921FF44C24A603760083AC49 /* HelpDetailScreen.swift */,
-				92A1467724DC31C00045D7DF /* MemorizeTimerViewController.swift */,
+				92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */,
 				92B87D48250A654B003BB51B /* FiveColorsViewController.swift */,
 				921791F5258E211C00A38249 /* Screen.swift */,
 			);
@@ -1515,7 +1515,7 @@
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
 				92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
-				92A1467824DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
+				92A1467824DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
@@ -1739,7 +1739,7 @@
 				924619612493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
 				921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
-				92A1467924DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
+				92A1467924DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				92C6B4A224E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
 				925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
@@ -1877,7 +1877,7 @@
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92A6EB8B24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				92B87D4B250A654B003BB51B /* FiveColorsViewController.swift in Sources */,
-				92A1467A24DC31C00045D7DF /* MemorizeTimerViewController.swift in Sources */,
+				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,

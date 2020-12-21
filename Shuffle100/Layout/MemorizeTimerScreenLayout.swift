@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-extension MemorizeTimerViewController {
+extension MemorizeTimerScreen {
     internal func layoutScreen() {
         configureTimerContainer()
         configurePlayButton()
