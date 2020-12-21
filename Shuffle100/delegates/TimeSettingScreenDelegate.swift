@@ -11,7 +11,7 @@ import AVFoundation
 
 private let subtractDuration: Float = 0.02
 
-extension TimeSettingViewController: AVAudioPlayerDelegate {
+extension TimeSettingScreen: AVAudioPlayerDelegate {
     
     internal func setDelegate(ofPlayer player: AVAudioPlayer) {
         player.delegate = self

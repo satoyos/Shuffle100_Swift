@@ -11,7 +11,7 @@ import SnapKit
 import Then
 import AVFoundation
 
-final class IntervalSettingViewController: TimeSettingViewController {
+final class IntervalSettingViewController: TimeSettingScreen {
 
     override func viewDidLoad() {
         self.initialTime = settings.interval

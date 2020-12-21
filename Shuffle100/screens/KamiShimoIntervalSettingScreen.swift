@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-final class KamiShimoIntervalSettingScreen: TimeSettingViewController {
+final class KamiShimoIntervalSettingScreen: TimeSettingScreen {
 
     override func viewDidLoad() {
         self.initialTime = settings.kamiShimoInterval

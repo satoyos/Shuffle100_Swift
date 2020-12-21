@@ -1,5 +1,5 @@
 //
-//  TimeSettingViewController.swift
+//  TimeSettingScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/04/13.
@@ -13,7 +13,7 @@ import AVFoundation
 internal let minIntervalDuration: Float = 0.5
 internal let maxIntervalDuration: Float = 2.0
 
-class TimeSettingViewController: SettingsAttachedScreen {
+class TimeSettingScreen: SettingsAttachedScreen {
     let timeLabel = UILabel()
     let slider = UISlider()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
