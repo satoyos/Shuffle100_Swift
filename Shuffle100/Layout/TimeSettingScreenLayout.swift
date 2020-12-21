@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-extension TimeSettingViewController {
+extension TimeSettingScreen {
     
     internal func layoutScreen() {
         configureTimeLabel()
