@@ -22,7 +22,7 @@ class FiveColorsScreenTest: XCTestCase {
 
     func test_initialScreen() throws {
         // given, when
-        let screen = FiveColorsViewController()
+        let screen = FiveColorsScreen()
         // then
         XCTAssertNotNil(screen)
         // when
@@ -50,7 +50,7 @@ class FiveColorsScreenTest: XCTestCase {
         state100.selectInNumbers([2,4,7])
         settings.state100 = state100
         // when
-        let screen = FiveColorsViewController(settings: settings)
+        let screen = FiveColorsScreen(settings: settings)
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.badgeItem.badgeValue, "3首")
@@ -58,7 +58,7 @@ class FiveColorsScreenTest: XCTestCase {
     
     func test_just20OfBlueColorSelectedAction() {
         // given
-        let screen = FiveColorsViewController()
+        let screen = FiveColorsScreen()
         screen.loadViewIfNeeded()
         // when
         screen.selectJust20Of(color: .blue)
@@ -72,7 +72,7 @@ class FiveColorsScreenTest: XCTestCase {
         var state100 = SelectedState100.createOf(bool: false)
         state100.selectInNumbers([2,4,7])
         settings.state100 = state100
-        let screen = FiveColorsViewController(settings: settings)
+        let screen = FiveColorsScreen(settings: settings)
         screen.loadViewIfNeeded()
         // when
         screen.add20of(color: .yellow)
@@ -84,7 +84,7 @@ class FiveColorsScreenTest: XCTestCase {
     func test_imageFilePathReflectsSelectedPoems() {
         XCTContext.runActivity(named: "3, 6, 12の3枚が選ばれている場合、青だけがpartial, そのほかの色はempty") { _ in
             // given
-            let screen = FiveColorsViewController()
+            let screen = FiveColorsScreen()
             // when
             var state100 = SelectedState100.createOf(bool: false)
             state100.selectInNumbers([3 ,6 ,12])

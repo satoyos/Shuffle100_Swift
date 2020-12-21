@@ -19,7 +19,7 @@ import Then
 //}
 
 
-extension FiveColorsViewController: SHViewSizeGetter {
+extension FiveColorsScreen: SHViewSizeGetter {
     
     internal func layoutButtons() {
         layoutButton(blueButton,   centerYRatio: 0.20)
