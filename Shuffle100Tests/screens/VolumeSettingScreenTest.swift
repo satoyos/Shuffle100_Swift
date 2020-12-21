@@ -13,7 +13,7 @@ class VolumeSettingScreenTest: XCTestCase {
 
     func test_initialScreen() {
         // given, when
-        let screen = VolumeSettingViewController()
+        let screen = VolumeSettingScreen()
         // then
         XCTAssertNotNil(screen)
         // when

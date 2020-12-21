@@ -22,7 +22,7 @@ final class VolumeSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let screen = VolumeSettingViewController(settings: settings)
+        let screen = VolumeSettingScreen(settings: settings)
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-extension VolumeSettingViewController {
+extension VolumeSettingScreen {
     
     internal func layoutScreen() {
         view.backgroundColor = StandardColor.backgroundColor
