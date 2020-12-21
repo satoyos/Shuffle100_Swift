@@ -1,5 +1,5 @@
 //
-//  KamiShimoIntervalSettingViewController.swift
+//  KamiShimoIntervalSettingScreen.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/04/13.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class KamiShimoIntervalSettingViewController: TimeSettingViewController {
+final class KamiShimoIntervalSettingScreen: TimeSettingViewController {
 
     override func viewDidLoad() {
         self.initialTime = settings.kamiShimoInterval

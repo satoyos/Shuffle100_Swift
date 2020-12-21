@@ -13,7 +13,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
     
     func test_initialScreen() {
         // given, when
-        let screen = KamiShimoIntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingScreen()
         // then
         XCTAssertNotNil(screen)
         // when
@@ -42,7 +42,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
     
     func test_createAndDeleteTimer() {
         // given, when
-        let screen = KamiShimoIntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingScreen()
 
         XCTContext.runActivity(named: "startCountDownTimer()でtimerがセットされる") { activity in
             // then
@@ -62,7 +62,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
 
     func test_currentPlayerGetSetCorrectly() {
         // given, when
-        let screen = KamiShimoIntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingScreen()
         screen.loadViewIfNeeded()
         screen.view.layoutSubviews()
         // then
@@ -85,7 +85,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
 
     func test_playersGetResetWhenSliderValueChanged() {
         // given, when
-        let screen = KamiShimoIntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingScreen()
         screen.loadViewIfNeeded()
         screen.view.layoutSubviews()
         // then
@@ -111,7 +111,7 @@ class KamiShimoIntervalSettingScreenTest: XCTestCase {
 
     func test_playerGetRestWhenViewWillDisappear() {
         // given
-        let screen = KamiShimoIntervalSettingViewController()
+        let screen = KamiShimoIntervalSettingScreen()
         screen.loadViewIfNeeded()
         screen.view.layoutSubviews()
         screen.tryButtonTapped(screen.tryButton)
