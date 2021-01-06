@@ -30,4 +30,9 @@ class GameConfigTest: XCTestCase {
         let settings = Settings(mode: modeSettings)
         XCTAssertTrue(settings.fakeMode)
     }
+    
+    func test_repeatEnabledIsFalseByDefault() {
+        let modeSettings = GameConfig()
+        XCTAssertFalse(modeSettings.repeatEnabled)
+    }
 }
