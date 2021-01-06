@@ -23,17 +23,12 @@ struct GameConfig: Codable {
     var reciteMode: ReciteMode
     var fakeMode: Bool
     var singerID: String
+    var repeatEnabled: Bool
 
-    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia") {
+    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia", repeadEnabled: Bool = false) {
         self.reciteMode = reciteMode
         self.fakeMode = fakeMode
         self.singerID = singerID
+        self.repeatEnabled = repeadEnabled
     }
-    
-//    func debugPrint() {
-//        print("-----------")
-//        print("GameConfig:")
-//        print("   fake_flg:    \(fakeMode)")
-//        print("   reciteMode:  \(reciteMode)")
-//    }
 }
