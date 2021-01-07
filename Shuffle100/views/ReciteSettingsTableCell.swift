@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteSettingsTableCell: UITableViewCell {
+class ReciteSettingsTableCell: UITableViewCell, ConfigureTableCell {
     static let identifier = "ReciteSettingsTableCell"
     var cellStyle: UITableViewCell.CellStyle
     
