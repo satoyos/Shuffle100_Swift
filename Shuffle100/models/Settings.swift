@@ -75,4 +75,13 @@ class Settings: Codable {
             recitingConfig.kamiShimoInterval = t
         }
     }
+    
+    var repeatEnabled: Bool {
+        get {
+            return mode.repeatEnabled
+        }
+        set(b) {
+            mode.repeatEnabled = b
+        }
+    }
 }

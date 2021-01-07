@@ -45,7 +45,8 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
         self.tableSources = [
             TableDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, detailLabelText: String(format: "%.2F", settings.interval)),
             TableDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, detailLabelText: String(format: "%.2F", settings.kamiShimoInterval)),
-            TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "\(Int(settings.volume * 100))" + "%")
+            TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "\(Int(settings.volume * 100))" + "%"),
+            postMotermTableDataSource()
         ]
     }
     
@@ -53,5 +54,10 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "設定終了", style: .plain, target: self, action: #selector(dismissButtonTapped))
     }
 
+    private func postMotermTableDataSource() -> TableDataSource {
+        var dataSource =             TableDataSource(title: "試合開始時の感想戦選択", accessoryType: .none)
+        dataSource.withSwitchOf = false
+        return dataSource
+    }
 
 }

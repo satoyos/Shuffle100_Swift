@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeScreenTableCell: UITableViewCell {
+class HomeScreenTableCell: UITableViewCell, ConfigureTableCell {
     static let identifier = "HomeScreenTableCell"
     var cellStyle: UITableViewCell.CellStyle
     
@@ -20,19 +20,5 @@ class HomeScreenTableCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configure(dataSource: TableDataSource) {
-        textLabel?.text = dataSource.title
-        accessoryType = dataSource.accessoryType
-        self.accessibilityLabel = dataSource.accessibilityLabel
-        detailTextLabel?.text = dataSource.detailLabelText
-        if let switchValue = dataSource.withSwitchOf {
-            let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            switchView.accessibilityLabel = "fakeModeSwitch"
-            switchView.isOn = switchValue
-            self.accessoryView = switchView
-        } else {
-            self.accessoryView = nil
-        }
-    }
+
 }
