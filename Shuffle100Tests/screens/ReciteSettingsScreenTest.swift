@@ -50,6 +50,7 @@ class ReciteSettingsScreenTest: XCTestCase {
         let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
         XCTAssertNotNil(fourthCell)
         XCTAssertNotNil(fourthCell.accessoryView)
+        XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
     }
     
 }
