@@ -78,10 +78,22 @@ class Settings: Codable {
     
     var repeatEnabled: Bool {
         get {
-            return mode.repeatEnabled
+            fixRepeatenabled()
+            return mode.repeatEnabled!
         }
         set(b) {
             mode.repeatEnabled = b
+        }
+    }
+    
+    func fixOptionalProperties() {
+        fixRepeatenabled()
+    }
+    
+    private func fixRepeatenabled() {
+        guard let _ = mode.repeatEnabled else {
+            mode.repeatEnabled = false
+            return
         }
     }
 }
