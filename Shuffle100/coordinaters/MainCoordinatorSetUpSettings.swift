@@ -16,10 +16,12 @@ extension MainCoordinator {
             if env.ignoreSavedData() {
                 return defaultSettings
             } else {
+                loadedSettings.fixOptionalProperties()
                 return loadedSettings
             }
         } else {
             return defaultSettings
         }
     }
+    
 }
