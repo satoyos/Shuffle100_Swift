@@ -44,11 +44,11 @@ struct HomeScreenDataSourceFactory {
     }
     
     private static func poemsDataSource(_ selectedNum: Int) -> TableDataSource {
-        return TableDataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator, detailLabelText: "\(selectedNum)首")
+        return TableDataSource(title: "取り札を用意する歌", accessoryType: .disclosureIndicator, secondaryText: "\(selectedNum)首")
     }
     
     private static func reciteModeDataSource(for reciteMode: ReciteMode) -> TableDataSource {
-        return TableDataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, detailLabelText: labelString(for: reciteMode)!)
+        return TableDataSource(title: "読み上げモード", accessoryType: .disclosureIndicator, secondaryText: labelString(for: reciteMode)!)
         
     }
     
@@ -59,7 +59,7 @@ struct HomeScreenDataSourceFactory {
     }
     
     private static func singerDataSource(with singerName: String) -> TableDataSource {
-        return TableDataSource(title: "読手", accessoryType: .disclosureIndicator, detailLabelText: singerName)
+        return TableDataSource(title: "読手", accessoryType: .disclosureIndicator, secondaryText: singerName)
     }
     
     private static func labelString(for mode: ReciteMode) -> String? {

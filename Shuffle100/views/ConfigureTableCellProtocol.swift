@@ -17,7 +17,7 @@ extension ConfigureTableCell where Self: UITableViewCell {
         textLabel?.text = dataSource.title
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
-        detailTextLabel?.text = dataSource.detailLabelText
+        detailTextLabel?.text = dataSource.secondaryText
         if let switchValue = dataSource.withSwitchOf {
             let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             switchView.accessibilityLabel = "fakeModeSwitch"
