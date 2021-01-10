@@ -28,12 +28,12 @@ struct TableDataSource {
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String!
     var withSwitchOf: Bool?
-    var detailLabelText: String
+    var secondaryText: String
     
-    init(title: String, accessoryType type: UITableViewCell.AccessoryType, detailLabelText: String = "") {
+    init(title: String, accessoryType type: UITableViewCell.AccessoryType, secondaryText: String = "") {
 
         self.title = title
         self.accessoryType = type
-        self.detailLabelText = detailLabelText
+        self.secondaryText = secondaryText
     }
 }
