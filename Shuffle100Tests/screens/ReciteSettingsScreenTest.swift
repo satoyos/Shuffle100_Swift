@@ -31,7 +31,11 @@ class ReciteSettingsScreenTest: XCTestCase {
         // then
         let tableView = screen.tableView
         XCTAssertNotNil(tableView)
-        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 4)
+        
+        // 一旦、感想戦モードの実装はユーザから隠す
+//        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 4)
+        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
+
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
         XCTAssertEqual(firstCell.textLabel?.text, "歌と歌の間隔")
         XCTAssertEqual(firstCell.detailTextLabel?.text, "1.10")
@@ -41,16 +45,18 @@ class ReciteSettingsScreenTest: XCTestCase {
         XCTAssertEqual(thirdCell.detailTextLabel?.text, "100%")
     }
 
-    func test_fourthCellHasSwith() {
-        // given
-        let screen = ReciteSettingsScreen()
-        // when
-        screen.loadViewIfNeeded()
-        // then
-        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
-        XCTAssertNotNil(fourthCell)
-        XCTAssertNotNil(fourthCell.accessoryView)
-        XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
-    }
+    // 一旦、感想戦モードの実装はユーザから隠す
+
+//    func test_fourthCellHasSwith() {
+//        // given
+//        let screen = ReciteSettingsScreen()
+//        // when
+//        screen.loadViewIfNeeded()
+//        // then
+//        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
+//        XCTAssertNotNil(fourthCell)
+//        XCTAssertNotNil(fourthCell.accessoryView)
+//        XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
+//    }
     
 }
