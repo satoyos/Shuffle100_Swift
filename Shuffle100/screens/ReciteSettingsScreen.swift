@@ -46,7 +46,9 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
             TableDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, detailLabelText: String(format: "%.2F", settings.interval)),
             TableDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, detailLabelText: String(format: "%.2F", settings.kamiShimoInterval)),
             TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, detailLabelText: "\(Int(settings.volume * 100))" + "%"),
-            postMotermTableDataSource()
+            
+            // 一旦、感想戦モードの実装はユーザから隠す
+//            postMotermTableDataSource()
         ]
     }
     
