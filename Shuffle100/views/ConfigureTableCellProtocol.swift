@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Then
 
 protocol ConfigureTableCell {
     func configure(dataSource: TableDataSource)
@@ -14,10 +15,13 @@ protocol ConfigureTableCell {
 
 extension ConfigureTableCell where Self: UITableViewCell {
     func configure(dataSource: TableDataSource) {
-        textLabel?.text = dataSource.title
+        var content: UIListContentConfiguration = .valueCell()
+        content.text = dataSource.title
+        content.secondaryText = dataSource.secondaryText
+        self.contentConfiguration = content
+        
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
-        detailTextLabel?.text = dataSource.secondaryText
         if let switchValue = dataSource.withSwitchOf {
             let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             switchView.accessibilityLabel = "fakeModeSwitch"

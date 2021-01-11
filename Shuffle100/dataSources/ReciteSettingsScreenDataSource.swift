@@ -20,6 +20,10 @@ extension ReciteSettingsScreen: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as! ReciteSettingsTableCell
+        
+//        var content: UIListContentConfiguration = .valueCell()
+//        content.text = "aaa"
+//        cell.contentConfiguration = content
             
         let source = tableSources[indexPath.row]
         cell.configure(dataSource: source)

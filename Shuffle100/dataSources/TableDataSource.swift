@@ -23,6 +23,13 @@ struct TableSection {
     }
 }
 
+// ToDo: 次はここから！
+enum SHCellStyle {
+    case simpe
+    case value
+    case subtitle
+}
+
 struct TableDataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
