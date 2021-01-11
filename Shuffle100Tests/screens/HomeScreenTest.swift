@@ -27,7 +27,11 @@ class HomeScreenTest: XCTestCase {
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         
         //then
-        XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
+        guard let config = reciteModeCell.contentConfiguration as? UIListContentConfiguration else {
+           XCTAssert(false, "reciteModeCell.contentConfiguration should be set!")
+           return
+       }
+        XCTAssertEqual(config.secondaryText, "初心者")
     }
     
     func test_fakeModeCellGetsHidden_inBeginnerMode() {
@@ -49,7 +53,11 @@ class HomeScreenTest: XCTestCase {
         screen.viewWillAppear(false)
         // then
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
-        XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "初心者")
+        guard let config = reciteModeCell.contentConfiguration as? UIListContentConfiguration else {
+            XCTAssert(false, "reciteModeCell.contentConfiguration should be set!")
+            return
+        }
+        XCTAssertEqual(config.secondaryText, "初心者")
     }
     
     func test_fakeModeIsOn_whenSetSoInGivenSettings() {
