@@ -85,7 +85,11 @@ extension HomeScreenTest {
         screen.loadViewIfNeeded()
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         // then
-        XCTAssertEqual(reciteModeCell.detailTextLabel?.text, "通常")
+        guard let conifg = reciteModeCell.contentConfiguration as? UIListContentConfiguration else {
+            XCTAssert(false, "reciteModeCell.contentConfiguration should be set!")
+            return
+        }
+        XCTAssertEqual(conifg.secondaryText, "通常")
     }
     
     func test_defaultSelectedPoemsNumberIs100() {
@@ -94,7 +98,10 @@ extension HomeScreenTest {
         // when
         screen.loadViewIfNeeded()
         // then
-        XCTAssertEqual(selectedPoemsCell(of: screen).detailTextLabel?.text, "100首")
+        guard let config = selectedPoemsCell(of: screen).contentConfiguration as? UIListContentConfiguration else {                XCTAssert(false, "selectedPoemsCell.contentConfiguration should be set!")
+            return
+        }
+        XCTAssertEqual(config.secondaryText, "100首")
     }
     
     private func selectedPoemsCell(of screen: HomeScreen) -> HomeScreenTableCell {
