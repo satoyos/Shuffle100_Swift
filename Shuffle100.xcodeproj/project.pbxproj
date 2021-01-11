@@ -451,6 +451,7 @@
 		92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
 		92F8242125A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
 		92F8242225A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
+		92F8245225AC4878008E031D /* ReciteSettingsTableCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245125AC4878008E031D /* ReciteSettingsTableCellTest.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -721,6 +722,7 @@
 		92F66678252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateBackToPoemPicker.swift; sourceTree = "<group>"; };
 		92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateBackToHomeScreen.swift; sourceTree = "<group>"; };
 		92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTableCellProtocol.swift; sourceTree = "<group>"; };
+		92F8245125AC4878008E031D /* ReciteSettingsTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsTableCellTest.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -803,6 +805,7 @@
 				923B595023ACF927002027B4 /* RecitePoemViewTests.swift */,
 				923B595223ACF9DE002027B4 /* GameEndViewTest.swift */,
 				92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */,
+				92F8245125AC4878008E031D /* ReciteSettingsTableCellTest.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1642,6 +1645,7 @@
 				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
 				92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
+				92F8245225AC4878008E031D /* ReciteSettingsTableCellTest.swift in Sources */,
 				92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */,
