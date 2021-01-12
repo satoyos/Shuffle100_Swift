@@ -10,15 +10,15 @@ import UIKit
 
 class HomeScreenTableCell: UITableViewCell, ConfigureTableCell {
     static let identifier = "HomeScreenTableCell"
-    var cellStyle: UITableViewCell.CellStyle
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        cellStyle = .value1
-        super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    var cellStyle: UITableViewCell.CellStyle
+//    
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//        cellStyle = .value1
+//        super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
 }
