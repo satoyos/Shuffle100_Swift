@@ -9,7 +9,7 @@
 import UIKit
 
 final class ReciteSettingsScreen: SettingsAttachedScreen {
-    let reuseID = ReciteSettingsTableCell.identifier
+    internal let reuseID = "ReciteSettingsTableCell"
     var tableView: UITableView!
     var tableSources: [TableDataSource]!
     var intervalSettingAction: (() -> Void)?
@@ -37,7 +37,7 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(ReciteSettingsTableCell.self, forCellReuseIdentifier: reuseID)
+        tableView.register(SettingTableCell.self, forCellReuseIdentifier: reuseID)
         return tableView
     }
     
