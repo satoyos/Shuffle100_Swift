@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ReciteSettingsTableCellTest: XCTestCase {
+class SettingTableCellTest: XCTestCase {
     let screen = ReciteSettingsScreen()
 
     override func setUpWithError() throws {
