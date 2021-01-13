@@ -9,11 +9,11 @@
 import UIKit
 import Then
 
-protocol ConfigureTableCell {
+protocol ConfigureSettingTableCell {
     func configure(dataSource: TableDataSource)
 }
 
-extension ConfigureTableCell where Self: UITableViewCell {
+extension ConfigureSettingTableCell where Self: UITableViewCell {
     func configure(dataSource: TableDataSource) {
         var content: UIListContentConfiguration = .valueCell()
         content.text = dataSource.title

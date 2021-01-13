@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeScreenTableCell: UITableViewCell, ConfigureTableCell {
+class HomeScreenTableCell: UITableViewCell, ConfigureSettingTableCell {
     static let identifier = "HomeScreenTableCell"
 //    var cellStyle: UITableViewCell.CellStyle
 //    
