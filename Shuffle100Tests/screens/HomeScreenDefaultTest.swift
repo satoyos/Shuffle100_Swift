@@ -104,7 +104,7 @@ extension HomeScreenTest {
         XCTAssertEqual(config.secondaryText, "100首")
     }
     
-    private func selectedPoemsCell(of screen: HomeScreen) -> HomeScreenTableCell {
-        return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as! HomeScreenTableCell
+    private func selectedPoemsCell(of screen: HomeScreen) -> SettingTableCell {
+        return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as! SettingTableCell
     }
 }
