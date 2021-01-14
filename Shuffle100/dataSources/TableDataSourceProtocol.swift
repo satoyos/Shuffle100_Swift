@@ -24,6 +24,8 @@ protocol TableDataSource {
     var accessibilityLabel: String? { get set }
 }
 
+// ToDo: CUT OUT THIS ↓ STRUCT!!
+
 struct ButtonTypeCellDataSource: TableDataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
