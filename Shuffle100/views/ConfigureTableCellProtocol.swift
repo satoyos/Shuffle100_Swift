@@ -10,11 +10,11 @@ import UIKit
 import Then
 
 protocol ConfigureSettingTableCell {
-    func configure(dataSource: TableDataSource)
+    func configure(dataSource: SettingsCellDataSource)
 }
 
 extension ConfigureSettingTableCell where Self: UITableViewCell {
-    func configure(dataSource: TableDataSource) {
+    func configure(dataSource: SettingsCellDataSource) {
         var content: UIListContentConfiguration = .valueCell()
         content.text = dataSource.title
         content.secondaryText = dataSource.secondaryText

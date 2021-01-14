@@ -11,7 +11,7 @@ import UIKit
 final class ReciteSettingsScreen: SettingsAttachedScreen {
     internal let reuseID = "ReciteSettingsTableCell"
     var tableView: UITableView!
-    var tableSources: [TableDataSource]!
+    var tableSources: [SettingsCellDataSource]!
     var intervalSettingAction: (() -> Void)?
     var kamiShimoIntervalSettingAction: (() -> Void)?
     var volumeSettingAction: (() -> Void)?
@@ -43,9 +43,9 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
     
     private func setUpTableSources() {
         self.tableSources = [
-            TableDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.interval)),
-            TableDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.kamiShimoInterval)),
-            TableDataSource(title: "音量調整", accessoryType: .disclosureIndicator, secondaryText: "\(Int(settings.volume * 100))" + "%"),
+            SettingsCellDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.interval)),
+            SettingsCellDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.kamiShimoInterval)),
+            SettingsCellDataSource(title: "音量調整", accessoryType: .disclosureIndicator, secondaryText: "\(Int(settings.volume * 100))" + "%"),
             
             // 一旦、感想戦モードの実装はユーザから隠す
 //            postMotermTableDataSource()
@@ -56,8 +56,8 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "設定終了", style: .plain, target: self, action: #selector(dismissButtonTapped))
     }
 
-    private func postMotermTableDataSource() -> TableDataSource {
-        var dataSource =             TableDataSource(title: "試合開始時の感想戦選択", accessoryType: .none)
+    private func postMotermTableDataSource() -> SettingsCellDataSource {
+        var dataSource =             SettingsCellDataSource(title: "試合開始時の感想戦選択", accessoryType: .none)
         dataSource.withSwitchOf = false
         return dataSource
     }

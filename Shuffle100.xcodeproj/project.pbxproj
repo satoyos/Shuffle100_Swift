@@ -398,9 +398,9 @@
 		92C87DDE22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92C87DDF22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */; };
-		92CE520B2168D4D200538E01 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* TableDataSource.swift */; };
-		92CE520C2168D4D200538E01 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* TableDataSource.swift */; };
-		92CE520D2168D4D200538E01 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* TableDataSource.swift */; };
+		92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
+		92CE520C2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
+		92CE520D2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
 		92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57151220EC87700235717 /* GameConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameConfigTest.swift */; };
 		92D57152220ECBC000235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
@@ -449,6 +449,9 @@
 		92F8245725AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
 		92F8245825AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
 		92F8245925AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
+		92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
+		92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
+		92F8247B25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -697,7 +700,7 @@
 		92C87DDA22E88E6900569D15 /* SingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTests.swift; sourceTree = "<group>"; };
 		92C87DDC22E88F8600569D15 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
 		92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITestUtils.swift; sourceTree = "<group>"; };
-		92CE520A2168D4D200538E01 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
 		92D57150220EC87700235717 /* GameConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigTest.swift; sourceTree = "<group>"; };
@@ -719,6 +722,7 @@
 		92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTableCellProtocol.swift; sourceTree = "<group>"; };
 		92F8245125AC4878008E031D /* SettingTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCellTest.swift; sourceTree = "<group>"; };
 		92F8245625AF0C34008E031D /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
+		92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSourceProtocol.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -852,6 +856,7 @@
 		923D59252143BB0B000F5E60 /* Shuffle100Tests */ = {
 			isa = PBXGroup;
 			children = (
+				92F8246925B076B0008E031D /* dataSources */,
 				92737DD623856754007B5FAD /* coodinators */,
 				9262999C236586A3000EC4F7 /* lib */,
 				927E4BFF222E9E0500AF48F7 /* models */,
@@ -1122,7 +1127,7 @@
 		92CE52052168D45D00538E01 /* dataSources */ = {
 			isa = PBXGroup;
 			children = (
-				92CE520A2168D4D200538E01 /* TableDataSource.swift */,
+				92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */,
 				929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */,
 				92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */,
 				9206CEE022E1FEE500AC0457 /* PoemPickerScreenSearch.swift */,
@@ -1132,6 +1137,7 @@
 				92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */,
 				920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */,
 				921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */,
+				92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */,
 			);
 			path = dataSources;
 			sourceTree = "<group>";
@@ -1180,6 +1186,13 @@
 				92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */,
 			);
 			path = delegates;
+			sourceTree = "<group>";
+		};
+		92F8246925B076B0008E031D /* dataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dataSources;
 			sourceTree = "<group>";
 		};
 		EDFFE9D58434747A8AD3492F /* Pods */ = {
@@ -1477,7 +1490,7 @@
 				92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
 				92ABF9B923F6D739000CA91C /* StoreManager.swift in Sources */,
-				92CE520B2168D4D200538E01 /* TableDataSource.swift in Sources */,
+				92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
 				92ABF9AB23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
 				9298B70624CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
 				920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
@@ -1506,6 +1519,7 @@
 				92B87D49250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				925994F7244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
+				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemCoordinator.swift in Sources */,
 				92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */,
@@ -1619,7 +1633,7 @@
 				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
-				92CE520C2168D4D200538E01 /* TableDataSource.swift in Sources */,
+				92CE520C2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
@@ -1731,6 +1745,7 @@
 				92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */,
 				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
+				92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
@@ -1808,6 +1823,7 @@
 				92F8245925AF0C34008E031D /* SettingTableCell.swift in Sources */,
 				9298B70824CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
 				92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
+				92F8247B25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				929A94B6247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
 				923B594E23ACF606002027B4 /* GameEndViiew.swift in Sources */,
@@ -1832,7 +1848,7 @@
 				9246195C248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift in Sources */,
 				9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */,
-				92CE520D2168D4D200538E01 /* TableDataSource.swift in Sources */,
+				92CE520D2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
 				920F6A71247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
 				92F6666A252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				92A6EB7F241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
