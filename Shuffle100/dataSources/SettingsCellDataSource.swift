@@ -23,12 +23,12 @@ import UIKit
 //    }
 //}
 
-// ToDo: 次はここから！
-enum SHCellStyle {
-    case simpe
-    case value
-    case subtitle
-}
+//// ToDo: 次はここから！
+//enum SHCellStyle {
+//    case simpe
+//    case value
+//    case subtitle
+//}
 
 struct SettingsCellDataSource: TableDataSource {
     var title: String
