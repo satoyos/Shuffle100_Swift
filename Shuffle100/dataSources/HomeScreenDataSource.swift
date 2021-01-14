@@ -32,7 +32,12 @@ extension HomeScreen: UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsReuseId) as! SettingTableCell
             
-            cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
+            guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? SettingsCellDataSource else {
+                assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a SettingsCellDataSource.")
+                return cell
+            }
+                
+            cell.configure(dataSource: dataSource)
             if let switchView = cell.accessoryView as? UISwitch {
                 switchView.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
             }
@@ -40,7 +45,12 @@ extension HomeScreen: UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: GameStartCell.identifier, for: indexPath) as! GameStartCell
             
-            cell.configure(dataSource: sections[indexPath.section].dataSources[indexPath.row])
+            guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? ButtonTypeCellDataSource else {
+                assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a BuottonTypeCellDataSource.")
+                return cell
+            }
+            
+            cell.configure(dataSource: dataSource)
             return cell
         }
     }

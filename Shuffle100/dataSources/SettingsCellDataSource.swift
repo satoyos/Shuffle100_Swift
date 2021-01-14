@@ -13,15 +13,15 @@ import UIKit
 //
 
 
-struct TableSection {
-    var title: String
-    var dataSources: [TableDataSource]
-    
-    init(title: String) {
-        self.title = title
-        self.dataSources = [TableDataSource]()
-    }
-}
+//struct TableSection {
+//    var title: String
+//    var dataSources: [SettingsCellDataSource]
+//
+//    init(title: String) {
+//        self.title = title
+//        self.dataSources = [SettingsCellDataSource]()
+//    }
+//}
 
 // ToDo: 次はここから！
 enum SHCellStyle {
@@ -30,10 +30,10 @@ enum SHCellStyle {
     case subtitle
 }
 
-struct TableDataSource {
+struct SettingsCellDataSource: TableDataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
-    var accessibilityLabel: String!
+    var accessibilityLabel: String?
     var withSwitchOf: Bool?
     var secondaryText: String
     

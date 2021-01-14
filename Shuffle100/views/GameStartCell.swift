@@ -8,6 +8,16 @@
 
 import UIKit
 
+protocol ConfigureButtonTypeCell {
+    func configure(dataSource: SettingsCellDataSource)
+}
+
+extension ConfigureButtonTypeCell {
+    func configure(dataSource: SettingsCellDataSource) {
+        
+    }
+}
+
 class GameStartCell: UITableViewCell {
     static let identifier = "GameStartCell"
     var cellStyle: UITableViewCell.CellStyle
@@ -22,7 +32,7 @@ class GameStartCell: UITableViewCell {
     }
     
 
-    func configure(dataSource: TableDataSource) {
+    func configure(dataSource: ButtonTypeCellDataSource) {
         textLabel?.text = dataSource.title
         guard let defaultFont = textLabel?.font else { return }
         accessoryType = dataSource.accessoryType
