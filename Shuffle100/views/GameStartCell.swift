@@ -9,16 +9,23 @@
 import UIKit
 
 protocol ConfigureButtonTypeCell {
-    func configure(dataSource: SettingsCellDataSource)
+    func configure(dataSource: ButtonTypeCellDataSource)
 }
 
-extension ConfigureButtonTypeCell {
-    func configure(dataSource: SettingsCellDataSource) {
-        
+extension ConfigureButtonTypeCell where Self: UITableViewCell {
+    func configure(dataSource: ButtonTypeCellDataSource) {
+        var content: UIListContentConfiguration = .cell()
+        content.text = dataSource.title
+
+        guard let textProperties = dataSource.textProperties else { return }
+        content.textProperties = textProperties
+    
+        self.contentConfiguration = content
+        self.accessibilityLabel = dataSource.accessibilityLabel
     }
 }
 
-class GameStartCell: UITableViewCell {
+class GameStartCell: UITableViewCell, ConfigureButtonTypeCell {
     static let identifier = "GameStartCell"
     var cellStyle: UITableViewCell.CellStyle
     
@@ -30,21 +37,4 @@ class GameStartCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
-    func configure(dataSource: ButtonTypeCellDataSource) {
-        textLabel?.text = dataSource.title
-        guard let defaultFont = textLabel?.font else { return }
-        accessoryType = dataSource.accessoryType
-        self.accessibilityLabel = dataSource.accessibilityLabel
-        if accessibilityLabel == GameStartCell.identifier {
-            textLabel?.textColor = .systemRed
-            textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .bold)
-        } else {
-            textLabel?.textColor = .label
-            textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .regular)
-        }
-        textLabel?.textAlignment = .center
-    }
-
 }

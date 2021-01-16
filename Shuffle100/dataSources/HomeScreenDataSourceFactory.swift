@@ -6,7 +6,7 @@
 //  Copyright © 2019 里 佳史. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct HomeScreenDataSourceFactory {
     static let reciteModeHolders = [
@@ -34,11 +34,24 @@ struct HomeScreenDataSourceFactory {
     }
     
     static func startGameDataSource() -> ButtonTypeCellDataSource {
-        return ButtonTypeCellDataSource(title: "試合開始", accessoryType: .none)
+        var dataSource = ButtonTypeCellDataSource(title: "試合開始", accessoryType: .none)
+        var content: UIListContentConfiguration = .cell()
+        content.textProperties.color = .systemRed
+        content.textProperties.alignment = .center
+        content.textProperties.font = buttonTypeCellFont
+        dataSource.textProperties = content.textProperties
+        
+        dataSource.accessibilityLabel = "GameStartCell"
+        return dataSource
     }
     
     static func memorizeTimerDataSource() -> ButtonTypeCellDataSource {
         var dataSource = ButtonTypeCellDataSource(title: "暗記時間タイマー", accessoryType: .disclosureIndicator)
+        var content: UIListContentConfiguration = .cell()
+        content.textProperties.color = .label
+        content.textProperties.alignment = .center
+        dataSource.textProperties = content.textProperties
+        
         dataSource.accessibilityLabel = "memorizeTimer"
         return dataSource
     }
@@ -69,5 +82,9 @@ struct HomeScreenDataSourceFactory {
             }
         }
         fatalError("ReciteMode \(mode) is not supported!")
+    }
+    
+    private static var buttonTypeCellFont: UIFont {
+        UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .bold)
     }
 }

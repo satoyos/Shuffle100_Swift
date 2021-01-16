@@ -25,8 +25,12 @@ class HomeScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         let cell = startGameCell(of: screen)
-        XCTAssertEqual(cell.textLabel?.textColor, .systemRed)
-        
+        XCTAssertNotNil(cell.contentConfiguration)
+        guard let config = cell.contentConfiguration as? UIListContentConfiguration else {
+            XCTAssert(false, "cell.contntConfiguration must be UIListCOntentConfiguration!")
+            return
+        }
+        XCTAssertEqual(config.textProperties.color , .systemRed)
     }
     
     func test_beginnerModeLabelIsBeginner() {
@@ -95,7 +99,11 @@ class HomeScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
-        XCTAssertEqual(cell.textLabel?.text, "暗記時間タイマー")
+        guard let config = cell.contentConfiguration as? UIListContentConfiguration else {
+            XCTAssert(false, "cell.contntConfiguration must be UIListCOntentConfiguration!")
+            return
+        }
+        XCTAssertEqual(config.text, "暗記時間タイマー")
         
     }
     
