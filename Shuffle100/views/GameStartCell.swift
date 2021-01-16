@@ -38,7 +38,7 @@ class GameStartCell: UITableViewCell {
         accessoryType = dataSource.accessoryType
         self.accessibilityLabel = dataSource.accessibilityLabel
         if accessibilityLabel == GameStartCell.identifier {
-            textLabel?.textColor = UIColor.red
+            textLabel?.textColor = .systemRed
             textLabel?.font = UIFont.systemFont(ofSize: defaultFont.pointSize, weight: .bold)
         } else {
             textLabel?.textColor = .label

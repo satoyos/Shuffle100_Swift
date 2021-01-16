@@ -18,6 +18,17 @@ class HomeScreenTest: XCTestCase {
         return screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: gameStartCellIndex, section: 1)) as! GameStartCell
     }
     
+    func test_startGameCell() {
+        // given, whe
+        let screen = HomeScreen()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let cell = startGameCell(of: screen)
+        XCTAssertEqual(cell.textLabel?.textColor, .systemRed)
+        
+    }
+    
     func test_beginnerModeLabelIsBeginner() {
         // given
         let screen = HomeScreen(settings: beginnerSettings())
