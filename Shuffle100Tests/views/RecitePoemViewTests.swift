@@ -9,15 +9,10 @@
 import XCTest
 
 class RecitePoemViewTests: XCTestCase {
-
-    class RecitePoemViewTest: XCTestCase {
-        
-        func test_initRcitePoemView() {
-            let view = RecitePoemView()
-            view.initView(title: "test")
-            XCTAssertNotNil(view)
-        }
-        
+    
+    func test_initRcitePoemView() {
+        let view = RecitePoemView()
+        view.initView(title: "test")
+        XCTAssertNotNil(view)
     }
-
 }
