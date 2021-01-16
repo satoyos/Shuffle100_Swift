@@ -41,7 +41,11 @@ extension HomeScreenTest {
         screen.loadViewIfNeeded()
         let cell_startGame = startGameCell(of: screen)
         // then
-        XCTAssertEqual(cell_startGame.textLabel?.textColor, UIColor.red)
+        guard let config = cell_startGame.contentConfiguration as? UIListContentConfiguration else {
+            XCTFail("contentConfiguration should be set as UIListContentConfiguration!")
+            return
+        }
+        XCTAssertEqual(config.textProperties.color, .systemRed)
     }
     
     func test_startGameCellStyleIsDefault() {

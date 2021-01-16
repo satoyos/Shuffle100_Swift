@@ -256,6 +256,9 @@
 		92800398249BAFEE004D03C2 /* full_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92800390249BAFEE004D03C2 /* full_circle.png */; };
 		92800399249BAFEE004D03C2 /* full_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92800390249BAFEE004D03C2 /* full_circle.png */; };
 		928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928450D422E06B5D00D12CA7 /* WaitInUITest.swift */; };
+		9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
+		9287D67825B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
+		9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */; };
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
@@ -638,6 +641,7 @@
 		9280038F249BAFED004D03C2 /* half_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = half_circle.png; sourceTree = "<group>"; };
 		92800390249BAFEE004D03C2 /* full_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = full_circle.png; sourceTree = "<group>"; };
 		928450D422E06B5D00D12CA7 /* WaitInUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitInUITest.swift; sourceTree = "<group>"; };
+		9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeDataSource.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
@@ -1138,6 +1142,7 @@
 				920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */,
 				921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */,
 				92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */,
+				9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */,
 			);
 			path = dataSources;
 			sourceTree = "<group>";
@@ -1572,6 +1577,7 @@
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
+				9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92FFBF49245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
@@ -1692,6 +1698,7 @@
 				92F666252524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */,
 				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
+				9287D67825B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				921FF44224A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				923B594D23ACF606002027B4 /* GameEndViiew.swift in Sources */,
 				927CB8FC240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
@@ -1811,6 +1818,7 @@
 				921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */,
+				9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
 				9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */,
