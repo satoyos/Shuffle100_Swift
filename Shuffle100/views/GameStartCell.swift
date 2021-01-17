@@ -26,15 +26,15 @@ extension ConfigureButtonTypeCell where Self: UITableViewCell {
 }
 
 class GameStartCell: UITableViewCell, ConfigureButtonTypeCell {
-    static let identifier = "GameStartCell"
-    var cellStyle: UITableViewCell.CellStyle
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        cellStyle = .default
-        super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    static let identifier = "GameStartCell"
+//    var cellStyle: UITableViewCell.CellStyle
+//    
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//        cellStyle = .default
+//        super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }

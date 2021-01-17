@@ -20,6 +20,7 @@ final class HomeScreen: SettingsAttachedScreen {
     let navBarButtonSize = 32
     var tableView: UITableView!
     internal let settingsReuseId = "HomeScreenTableCell"
+    internal let startGameReuseId = "GameStartCell"
     var sections: [TableSection]!
     var selectPoemAction: (() -> Void)?
     var selectModeAction: (() -> Void)?
@@ -56,7 +57,7 @@ final class HomeScreen: SettingsAttachedScreen {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SettingTableCell.self, forCellReuseIdentifier: settingsReuseId)
-        tableView.register(GameStartCell.self, forCellReuseIdentifier: GameStartCell.identifier)
+        tableView.register(GameStartCell.self, forCellReuseIdentifier: startGameReuseId)
         return tableView
     }
     
