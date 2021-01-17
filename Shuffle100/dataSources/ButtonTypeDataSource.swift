@@ -20,7 +20,6 @@ struct ButtonTypeCellDataSource: TableDataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String?
-//    var textProperties: UIListContentConfiguration.TextProperties?
     var titleColor: Color = .normal
     var fontWeight: FontWeight = .normal
 }
