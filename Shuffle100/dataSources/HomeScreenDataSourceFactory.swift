@@ -36,12 +36,6 @@ struct HomeScreenDataSourceFactory {
     
     static func startGameDataSource() -> ButtonTypeCellDataSource {
         var dataSource = ButtonTypeCellDataSource(title: "試合開始", accessoryType: .none)
-//        var content: UIListContentConfiguration = .cell()
-//        content.textProperties.color = .systemRed
-//        content.textProperties.alignment = .center
-//        content.textProperties.font = buttonTypeCellFont
-//        dataSource.textProperties = content.textProperties
-
         dataSource.titleColor = .red
         dataSource.fontWeight = .bold
         dataSource.accessibilityLabel = "GameStartCell"
@@ -50,11 +44,6 @@ struct HomeScreenDataSourceFactory {
     
     static func memorizeTimerDataSource() -> ButtonTypeCellDataSource {
         var dataSource = ButtonTypeCellDataSource(title: "暗記時間タイマー", accessoryType: .disclosureIndicator)
-//        var content: UIListContentConfiguration = .cell()
-//        content.textProperties.color = .label
-//        content.textProperties.alignment = .center
-//        dataSource.textProperties = content.textProperties
-        
         dataSource.accessibilityLabel = "memorizeTimer"
         return dataSource
     }
@@ -86,8 +75,5 @@ struct HomeScreenDataSourceFactory {
         }
         fatalError("ReciteMode \(mode) is not supported!")
     }
-    
-//    private static var buttonTypeCellFont: UIFont {
-//        UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .bold)
-//    }
+
 }

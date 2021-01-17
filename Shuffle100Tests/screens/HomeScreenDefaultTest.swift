@@ -48,16 +48,6 @@ extension HomeScreenTest {
         XCTAssertEqual(config.textProperties.color, .systemRed)
     }
     
-//    func test_startGameCellStyleIsDefault() {
-//        // given
-//        let screen = HomeScreen()
-//        // when
-//        screen.loadViewIfNeeded()
-//        let cell_startGame = startGameCell(of: screen)
-//        // then
-//        XCTAssertEqual(cell_startGame.cellStyle, UITableViewCell.CellStyle.default)
-//    }
-    
     func test_fakeModeCellHasSwitch_defaultIsOff() {
         // given
         let screen = HomeScreen()

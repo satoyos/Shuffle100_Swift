@@ -8,28 +8,6 @@
 
 import UIKit
 
-//
-// Going to cut out from here
-//
-
-
-//struct TableSection {
-//    var title: String
-//    var dataSources: [SettingsCellDataSource]
-//
-//    init(title: String) {
-//        self.title = title
-//        self.dataSources = [SettingsCellDataSource]()
-//    }
-//}
-
-//// ToDo: 次はここから！
-//enum SHCellStyle {
-//    case simpe
-//    case value
-//    case subtitle
-//}
-
 struct SettingsCellDataSource: TableDataSource {
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
