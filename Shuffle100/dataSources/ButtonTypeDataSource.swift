@@ -9,8 +9,18 @@
 import UIKit
 
 struct ButtonTypeCellDataSource: TableDataSource {
+    enum Color {
+        case normal
+        case red
+    }
+    enum FontWeight {
+        case normal
+        case bold
+    }
     var title: String
     var accessoryType: UITableViewCell.AccessoryType
     var accessibilityLabel: String?
-    var textProperties: UIListContentConfiguration.TextProperties?
+//    var textProperties: UIListContentConfiguration.TextProperties?
+    var titleColor: Color = .normal
+    var fontWeight: FontWeight = .normal
 }

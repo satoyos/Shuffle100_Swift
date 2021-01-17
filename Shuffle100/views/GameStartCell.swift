@@ -14,27 +14,41 @@ protocol ConfigureButtonTypeCell {
 
 extension ConfigureButtonTypeCell where Self: UITableViewCell {
     func configure(dataSource: ButtonTypeCellDataSource) {
+        
+        self.contentConfiguration = createListContentConfiguration(from: dataSource)
+        self.accessibilityLabel = dataSource.accessibilityLabel
+    }
+    
+    private func createListContentConfiguration(from dataSource: ButtonTypeCellDataSource) -> UIListContentConfiguration {
         var content: UIListContentConfiguration = .cell()
         content.text = dataSource.title
-
-        guard let textProperties = dataSource.textProperties else { return }
-        content.textProperties = textProperties
+        content.textProperties.color = colorFromDataSource(dataSource)
+        content.textProperties.font = UIFont.systemFont(ofSize: UIFont.labelFontSize,                                          weight: fontWeightFromDataSource(dataSource))
+        content.textProperties.alignment = .center
+        return content
+    }
     
-        self.contentConfiguration = content
-        self.accessibilityLabel = dataSource.accessibilityLabel
+    private func colorFromDataSource(_ dataSource: ButtonTypeCellDataSource) -> UIColor {
+        let color: UIColor
+        switch dataSource.titleColor {
+        case .red:
+            color = .systemRed
+        default:
+            color = .label
+        }
+        return color
+    }
+    
+    private func fontWeightFromDataSource(_ dataSource: ButtonTypeCellDataSource) -> UIFont.Weight {
+        let weight: UIFont.Weight
+        switch dataSource.fontWeight {
+        case .bold:
+            weight = .bold
+        default:
+            weight = .regular
+        }
+        return weight
     }
 }
 
-class GameStartCell: UITableViewCell, ConfigureButtonTypeCell {
-//    static let identifier = "GameStartCell"
-//    var cellStyle: UITableViewCell.CellStyle
-//    
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        cellStyle = .default
-//        super.init(style: cellStyle, reuseIdentifier: reuseIdentifier)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-}
+class GameStartCell: UITableViewCell, ConfigureButtonTypeCell { }
