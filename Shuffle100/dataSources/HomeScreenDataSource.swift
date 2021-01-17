@@ -43,7 +43,7 @@ extension HomeScreen: UITableViewDataSource {
             }
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: GameStartCell.identifier, for: indexPath) as! GameStartCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: startGameReuseId, for: indexPath) as! GameStartCell
             
             guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? ButtonTypeCellDataSource else {
                 assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a BuottonTypeCellDataSource.")
@@ -65,7 +65,7 @@ extension HomeScreen: UITableViewDataSource {
     private func gameStartSection() -> TableSection {
         var section = TableSection(title: "試合開始")
         var dataSource = HomeScreenDataSourceFactory.startGameDataSource()
-        dataSource.accessibilityLabel = GameStartCell.identifier
+        dataSource.accessibilityLabel = startGameReuseId
         section.dataSources = [dataSource]
         if settings.reciteMode == .normal {
             let timerCell = HomeScreenDataSourceFactory.memorizeTimerDataSource()

@@ -31,7 +31,7 @@ extension HomeScreen: UITableViewDelegate {
             }
         } else {
             if settings.state100.selectedNum > 0 {
-                if cell.accessibilityLabel == GameStartCell.identifier {
+                if cell.accessibilityLabel == startGameReuseId {
                     startGameAction?()
                 } else {
                     memorizeTimerAction?()
