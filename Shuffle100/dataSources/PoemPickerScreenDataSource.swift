@@ -31,9 +31,7 @@ extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
             poem = Poem100.poems[indexPath.row]
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath).then {
-            $0.textLabel?.text = poem.strWithNumberAndLiner()
-            $0.textLabel?.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForVerse())
-            $0.textLabel?.adjustsFontForContentSizeCategory = true
+            $0.contentConfiguration = poemPickerCellConfiguration(of: poem)
             $0.backgroundColor = colorFor(poem: poem)
             $0.tag = poem.number
             $0.accessibilityLabel = String(format: "%03d", poem.number)
@@ -43,7 +41,7 @@ extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return fontSizeForVerse() * 3
+        return fontSizeForPoem() * 3
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -62,8 +60,18 @@ extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
         label.textAlignment = .center
         return label
     }
+    
+    private func poemPickerCellConfiguration(of poem: Poem) -> UIListContentConfiguration {
+        var content = UIListContentConfiguration.subtitleCell()
+        content.text = poem.strWithNumberAndLiner()
+        content.textProperties.font = UIFont(name: "HiraMinProN-W6", size: fontSizeForPoem()) ?? UIFont.systemFont(ofSize: fontSizeForPoem())
+        content.textProperties.numberOfLines = 1
+        content.secondaryText = "          \(poem.poet) \(poem.living_years)"
+        content.textToSecondaryTextVerticalPadding = fontSizeForPoem() * 0.25
+        return content
+    }
         
-    private func fontSizeForVerse() -> CGFloat {
+    private func fontSizeForPoem() -> CGFloat {
         return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
     }
     
