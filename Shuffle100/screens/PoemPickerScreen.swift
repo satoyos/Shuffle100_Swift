@@ -49,7 +49,12 @@ class PoemPickerScreen: SettingsAttachedScreen {
         super.viewDidAppear(animated)
          navigationController?.setToolbarHidden(false, animated: true)
         let firstCell = self.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0))
-        self.fontSizeOfCell = firstCell.textLabel!.font.pointSize
+//        self.fontSizeOfCell = firstCell.textLabel!.font.pointSize
+        guard let content = firstCell.contentConfiguration as? UIListContentConfiguration else {
+            assertionFailure("contentConfiguration must be UIListConentConfiguration")
+            return
+        }
+        self.fontSizeOfCell = content.textProperties.font.pointSize
     }
     
     override func viewWillDisappear(_ animated: Bool) {
