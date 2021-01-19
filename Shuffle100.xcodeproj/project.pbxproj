@@ -259,6 +259,7 @@
 		9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D67825B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
+		9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */; };
 		928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */; };
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
@@ -642,6 +643,7 @@
 		92800390249BAFEE004D03C2 /* full_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = full_circle.png; sourceTree = "<group>"; };
 		928450D422E06B5D00D12CA7 /* WaitInUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitInUITest.swift; sourceTree = "<group>"; };
 		9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeDataSource.swift; sourceTree = "<group>"; };
+		9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyListContentConfigProtocol.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
@@ -1061,6 +1063,7 @@
 				921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */,
 				92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */,
 				92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */,
+				9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -1738,6 +1741,7 @@
 				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */,
 				92D5715A221014A300235717 /* UIColorExtention.swift in Sources */,
+				9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */,
 				921FF43E249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */,
 				9258D1A422D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				920C00172427A61600593803 /* HomeScreenDataSource.swift in Sources */,

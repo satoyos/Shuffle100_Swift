@@ -17,8 +17,12 @@ extension FudaSetsScreen: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
             let fudaSet = settings.savedFudaSets[indexPath.row]
-            $0.textLabel?.text = fudaSet.name
-            $0.detailTextLabel?.text = "\(fudaSet.state100.selectedNum)首"
+            var content = UIListContentConfiguration.valueCell()
+            content.text = fudaSet.name
+//            $0.textLabel?.text = fudaSet.name
+            content.secondaryText = "\(fudaSet.state100.selectedNum)首"
+//            $0.detailTextLabel?.text = "\(fudaSet.state100.selectedNum)首"
+            $0.contentConfiguration = content
         }
         return cell
     }
