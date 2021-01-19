@@ -9,7 +9,7 @@
 import XCTest
 @testable import BBBadgeBarButtonItem
 
-class PoemPickerScreenTest: XCTestCase {
+class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
 
     var screen: PoemPickerScreen!
     
@@ -36,11 +36,13 @@ class PoemPickerScreenTest: XCTestCase {
     }
     
     func test_1stCellShowsPoemNo1() {
-        XCTAssertEqual(config(of: firstCell()).text, Poem100.poems[0].strWithNumberAndLiner())
+        let config = listContentConfig(of: firstCell())
+        XCTAssertEqual(config.text, Poem100.poems[0].strWithNumberAndLiner())
     }
 
     func test_verseFontIsMinchoAndBodySizeForDynamicType() {
-        let font = config(of: firstCell()).textProperties.font
+        let config = listContentConfig(of: firstCell())
+        let font = config.textProperties.font
         XCTAssertEqual(font.fontName, "HiraMinProN-W6")
         XCTAssertEqual(font.pointSize,                       UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize)
     }
@@ -57,14 +59,6 @@ class PoemPickerScreenTest: XCTestCase {
     
     func test_selectedPoemCellIsNadeshiko() {
         firstCellColorIsSelectedColor()
-    }
-    
-    private func config(of cell: UITableViewCell) -> UIListContentConfiguration {
-        guard let content = cell.contentConfiguration as? UIListContentConfiguration else {
-            XCTFail("contentConfiguration must be set as UIListContentConfigration!")
-            return UIListContentConfiguration.cell()
-        }
-        return content
     }
     
     private func firstCellColorIsUnselectedColor() {
