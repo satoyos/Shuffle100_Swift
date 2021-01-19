@@ -9,7 +9,7 @@
 import XCTest
 @testable import Shuffle100
 
-class ReciteSettingsScreenTest: XCTestCase {
+class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -37,23 +37,14 @@ class ReciteSettingsScreenTest: XCTestCase {
         XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
 
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
-        guard let firstConfig = firstCell.contentConfiguration as? UIListContentConfiguration else {
-            XCTAssert(false, "firstCell.contentConfiguration should be set!")
-            return
-        }
+        let firstConfig = listContentConfig(of: firstCell)
         XCTAssertEqual(firstConfig.text, "歌と歌の間隔")
         XCTAssertEqual(firstConfig.secondaryText, "1.10")
         let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
-        guard let secondConfig = secondCell.contentConfiguration as? UIListContentConfiguration else {
-            XCTAssert(false, "secondCell.contentConfiguration should be set!")
-            return
-        }
+        let secondConfig = listContentConfig(of: secondCell)
         XCTAssertEqual(secondConfig.secondaryText, "1.00")
         let thirdCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 2, section: 0))
-        guard let thirdConfig = thirdCell.contentConfiguration as? UIListContentConfiguration else {
-            XCTAssert(false, "thirdCell.contentConfiguration should be set!")
-            return
-        }
+        let thirdConfig = listContentConfig(of: thirdCell)
         XCTAssertEqual(thirdConfig.secondaryText, "100%")
     }
 
