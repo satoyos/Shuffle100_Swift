@@ -9,7 +9,7 @@
 import XCTest
 @testable import Shuffle100
 
-class HomeScreenTest: XCTestCase {
+class HomeScreenTest: XCTestCase, ApplyListContentConfiguration {
     internal func startGameCell(of screen: HomeScreen) ->        GameStartCell {
         var gameStartCellIndex = 0
         if screen.settings.reciteMode == .normal {
@@ -26,10 +26,7 @@ class HomeScreenTest: XCTestCase {
         // then
         let cell = startGameCell(of: screen)
         XCTAssertNotNil(cell.contentConfiguration)
-        guard let config = cell.contentConfiguration as? UIListContentConfiguration else {
-            XCTAssert(false, "cell.contntConfiguration must be UIListCOntentConfiguration!")
-            return
-        }
+        let config = listContentConfig(of: cell)
         XCTAssertEqual(config.textProperties.color , .systemRed)
     }
     
@@ -41,11 +38,7 @@ class HomeScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         
-        //then
-        guard let config = reciteModeCell.contentConfiguration as? UIListContentConfiguration else {
-           XCTAssert(false, "reciteModeCell.contentConfiguration should be set!")
-           return
-       }
+        let config = listContentConfig(of: reciteModeCell)
         XCTAssertEqual(config.secondaryText, "初心者")
     }
     
@@ -68,10 +61,7 @@ class HomeScreenTest: XCTestCase {
         screen.viewWillAppear(false)
         // then
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
-        guard let config = reciteModeCell.contentConfiguration as? UIListContentConfiguration else {
-            XCTAssert(false, "reciteModeCell.contentConfiguration should be set!")
-            return
-        }
+        let config = listContentConfig(of: reciteModeCell)
         XCTAssertEqual(config.secondaryText, "初心者")
     }
     
@@ -99,10 +89,7 @@ class HomeScreenTest: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
-        guard let config = cell.contentConfiguration as? UIListContentConfiguration else {
-            XCTAssert(false, "cell.contntConfiguration must be UIListCOntentConfiguration!")
-            return
-        }
+        let config = listContentConfig(of: cell)
         XCTAssertEqual(config.text, "暗記時間タイマー")
         
     }
