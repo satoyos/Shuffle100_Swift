@@ -9,7 +9,7 @@
 import XCTest
 @testable import Shuffle100
 
-class FudaSetsScreenTest: XCTestCase {
+class FudaSetsScreenTest: XCTestCase, ApplyListContentConfiguration {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -40,8 +40,10 @@ class FudaSetsScreenTest: XCTestCase {
         screen.settings.savedFudaSets.append(set)
         // then
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(cell.textLabel?.text, "aaa")
-        XCTAssertEqual(cell.detailTextLabel?.text, "100首")
+        let content = listContentConfig(of: cell)
+        XCTAssertEqual(content.text, "aaa")
+        XCTAssertEqual(content.secondaryText, "100首")
+
     }
     
     func test_tapFudaSetCellChangesSelectedPoems() {
