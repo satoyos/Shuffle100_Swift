@@ -9,7 +9,7 @@
 import XCTest
 @testable import Shuffle100
 
-class HelpListScreenTest: XCTestCase {
+class HelpListScreenTest: XCTestCase, ApplyListContentConfiguration {
 
     func test_initialScreen() throws {
         // given
@@ -32,13 +32,9 @@ class HelpListScreenTest: XCTestCase {
         XCTAssertEqual(tableView?.numberOfSections, 2)
         XCTAssertEqual(screen.tableView(tableView!, titleForHeaderInSection: 0), "使い方")
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(firstCell.textLabel?.text, "設定できること")
+        let config = listContentConfig(of: firstCell)
+        XCTAssertEqual(config.text, "設定できること")
         XCTAssertEqual(firstCell.accessoryType, .disclosureIndicator)
-//    XCTAssertEqual(firstCell.detailTextLabel?.text, "1.10")
-//    let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
-//    XCTAssertEqual(secondCell.detailTextLabel?.text, "1.00")
-//    let thirdCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 2, section: 0))
-//    XCTAssertEqual(thirdCell.detailTextLabel?.text, "100%")
 
     }
 
