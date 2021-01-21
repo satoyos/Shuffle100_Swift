@@ -10,7 +10,7 @@ import XCTest
 import BBBadgeBarButtonItem
 @testable import Shuffle100
 
-class NgramPickerScreenTest: XCTestCase {
+class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -48,8 +48,9 @@ class NgramPickerScreenTest: XCTestCase {
         let titleOf2charsGroup = screen.tableView(screen.tableView, titleForHeaderInSection: 1)
         XCTAssertEqual(titleOf2charsGroup, "二枚札")
         let cellOfTopIn2CharsGroup = cellFor(screen, section: 1, row: 0)
-        XCTAssertEqual(cellOfTopIn2CharsGroup.textLabel?.text, "「う」で始まる歌")
-        XCTAssertNotNil(cellOfTopIn2CharsGroup.imageView?.image)
+        let content = listContentConfig(of: cellOfTopIn2CharsGroup)
+        XCTAssertEqual(content.text, "「う」で始まる歌")
+        XCTAssertNotNil(content.image)
         XCTAssertEqual(cellOfTopIn2CharsGroup.selectedStatus, .full)
     }
     
@@ -64,7 +65,8 @@ class NgramPickerScreenTest: XCTestCase {
         XCTAssertEqual(screen.badgeItem.badgeValue , "99首")
         let tsuIndex = tsuIndexPath()
         let tsuCell = cellFor(screen, section:tsuIndex.section, row: tsuIndex.row)
-        XCTAssertEqual(tsuCell.textLabel?.text, "「つ」で始まる歌")
+        let content = listContentConfig(of: tsuCell)
+        XCTAssertEqual(content.text, "「つ」で始まる歌")
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
     }
     
