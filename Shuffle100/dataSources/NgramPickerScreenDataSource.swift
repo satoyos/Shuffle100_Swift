@@ -9,6 +9,8 @@
 import UIKit
 import Then
 
+fileprivate let cellHeight: CGFloat = 44
+
 extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
@@ -24,10 +26,13 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
-            $0.textLabel?.text = itemForIndex(indexPath).title
+            var content = UIListContentConfiguration.cell()
+            content.text = itemForIndex(indexPath).title
+            let state = selectedState(for: indexPath)
+            content.image = state.circleImage
+            content.imageProperties.maximumSize = CGSize(width: cellHeight, height: cellHeight)
+            $0.contentConfiguration = content
             $0.accessibilityLabel = itemForIndex(indexPath).id
-            let state = selectedState(for: indexPath, withHeight: cellHeight(of: $0))
-            $0.imageView?.image = state.circleImage
             ($0 as! NgramPickerTableCell).selectedStatus = state.status
         }
         return cell
@@ -37,16 +42,13 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
         return sections[indexPath.section].items[indexPath.row]
     }
     
-    private func cellHeight(of cell: UITableViewCell) -> CGFloat {
-        return cell.frame.height
-    }
-    
-    private func  selectedState(for indexPath: IndexPath, withHeight height: CGFloat) -> (status: PoemsSelectedState, circleImage: UIImage) {
+    private func  selectedState(for indexPath: IndexPath) -> (status: PoemsSelectedState, circleImage: UIImage) {
         let idForCell = itemForIndex(indexPath).id
         let allNumbersSetForId = Set(numbersDic[idForCell]!)
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForId)
         let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
-        return (resultStatus, image.reSizeImage(reSize: CGSize(width: height, height: height)))
+        return (resultStatus, image)
+
     }
 }
