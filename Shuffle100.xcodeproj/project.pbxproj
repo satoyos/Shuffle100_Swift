@@ -63,9 +63,6 @@
 		921791F6258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
 		921791F7258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
 		921791F8258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
-		921C7851247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
-		921C7852247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
-		921C7853247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */; };
 		921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */; };
 		921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
 		921FF432249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
@@ -551,7 +548,6 @@
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
 		921791F5258E211C00A38249 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FudaSetsTableViewCell.swift; path = Shuffle100/FudaSetsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenTest.swift; sourceTree = "<group>"; };
 		921FF430249E52C60083AC49 /* HelpListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreen.swift; sourceTree = "<group>"; };
 		921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenDataSource.swift; sourceTree = "<group>"; };
@@ -973,7 +969,6 @@
 				92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */,
 				92FFBF40245FB3F0004D7F79 /* FudaView.swift */,
 				92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */,
-				921C7850247D537A00853FB7 /* FudaSetsTableViewCell.swift */,
 				921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */,
 				92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */,
 				92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */,
@@ -1556,7 +1551,6 @@
 				92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
-				921C7851247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
@@ -1695,7 +1689,6 @@
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				92B87D4A250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
-				921C7852247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				92A6EB7E241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92F666252524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
@@ -1883,7 +1876,6 @@
 				92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
-				921C7853247D537A00853FB7 /* FudaSetsTableViewCell.swift in Sources */,
 				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
 				925994E224449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,

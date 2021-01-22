@@ -17,7 +17,7 @@ class FudaSetsScreen: SettingsAttachedScreen {
         super.viewDidLoad()
         self.title = "作った札セットから選ぶ"
         self.tableView = createTableViewForScreen()
-        tableView.register(FudaSetsTableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
         view.addSubview(tableView)
     }
 
