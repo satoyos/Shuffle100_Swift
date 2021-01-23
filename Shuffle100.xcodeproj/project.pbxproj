@@ -257,6 +257,9 @@
 		9287D67825B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */; };
+		9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
+		9287D69025BC238C003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
+		9287D69425BC238D003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
 		928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */; };
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
@@ -640,6 +643,7 @@
 		928450D422E06B5D00D12CA7 /* WaitInUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitInUITest.swift; sourceTree = "<group>"; };
 		9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeDataSource.swift; sourceTree = "<group>"; };
 		9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyListContentConfigProtocol.swift; sourceTree = "<group>"; };
+		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
@@ -974,6 +978,7 @@
 				92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */,
 				92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */,
 				92F8245625AF0C34008E031D /* SettingTableCell.swift */,
+				9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1499,6 +1504,7 @@
 				920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
 				92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
+				9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
@@ -1637,6 +1643,7 @@
 				92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				92CE520C2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
+				9287D69025BC238C003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
@@ -1867,6 +1874,7 @@
 				92D57157220F03AF00235717 /* SelectModeScreen.swift in Sources */,
 				92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
+				9287D69425BC238D003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,
 				92B9E992246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
