@@ -23,7 +23,7 @@ extension ConfigureButtonTypeCell where Self: UITableViewCell {
         var content: UIListContentConfiguration = .cell()
         content.text = dataSource.title
         content.textProperties.color = colorFromDataSource(dataSource)
-        content.textProperties.font = UIFont.systemFont(ofSize: UIFont.labelFontSize,                                          weight: fontWeightFromDataSource(dataSource))
+        content.textProperties.font = UIFont.preferredFont(for: .body, weight: fontWeightFromDataSource(dataSource))
         content.textProperties.alignment = .center
         return content
     }
