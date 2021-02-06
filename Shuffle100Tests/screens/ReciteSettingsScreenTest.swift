@@ -32,9 +32,9 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         let tableView = screen.tableView
         XCTAssertNotNil(tableView)
         
-        // 一旦、感想戦モードの実装はユーザから隠す
-//        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 4)
-        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
+        // 一旦、感想戦モードの実装開始
+        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 4)
+//        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
 
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
         let firstConfig = listContentConfig(of: firstCell)
@@ -48,18 +48,18 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssertEqual(thirdConfig.secondaryText, "100%")
     }
 
-    // 一旦、感想戦モードの実装はユーザから隠す
+    // 感想戦モードの実装再開
 
-//    func test_fourthCellHasSwith() {
-//        // given
-//        let screen = ReciteSettingsScreen()
-//        // when
-//        screen.loadViewIfNeeded()
-//        // then
-//        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
-//        XCTAssertNotNil(fourthCell)
-//        XCTAssertNotNil(fourthCell.accessoryView)
-//        XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
-//    }
+    func test_fourthCellHasSwith() {
+        // given
+        let screen = ReciteSettingsScreen()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
+        XCTAssertNotNil(fourthCell)
+        XCTAssertNotNil(fourthCell.accessoryView)
+        XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
+    }
     
 }
