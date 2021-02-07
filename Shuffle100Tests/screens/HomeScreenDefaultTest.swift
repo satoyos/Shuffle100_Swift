@@ -60,7 +60,7 @@ extension HomeScreenTest {
             return
         }
         XCTAssertFalse(switchView.isOn)
-        XCTAssertEqual(switchView.accessibilityLabel, "fakeModeSwitch")
+        XCTAssertEqual(switchView.accessibilityLabel, "modeSwitch")
     }
     
     func test_defaultReciteModeIsNormal() {
