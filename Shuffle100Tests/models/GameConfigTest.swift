@@ -33,15 +33,15 @@ class GameConfigTest: XCTestCase {
     
     func test_repeatEnabledIsFalseByDefault() {
         let modeSettings = GameConfig()
-        XCTAssertFalse(modeSettings.repeatEnabled!)
+        XCTAssertFalse(modeSettings.postMortemEnabled!)
     }
     
     func test_setRepeatEnableViaSettings() {
         // given
         let settings = Settings()
         // when
-        settings.repeatEnabled = true
+        settings.postMortemEnabled = true
         // then
-        XCTAssert(settings.repeatEnabled)
+        XCTAssert(settings.postMortemEnabled)
     }
 }

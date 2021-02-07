@@ -76,23 +76,23 @@ class Settings: Codable {
         }
     }
     
-    var repeatEnabled: Bool {
+    var postMortemEnabled: Bool {
         get {
-            fixRepeatenabled()
-            return mode.repeatEnabled!
+            fixPostMotermEnabled()
+            return mode.postMortemEnabled!
         }
         set(b) {
-            mode.repeatEnabled = b
+            mode.postMortemEnabled = b
         }
     }
     
     func fixOptionalProperties() {
-        fixRepeatenabled()
+        fixPostMotermEnabled()
     }
     
-    private func fixRepeatenabled() {
-        guard let _ = mode.repeatEnabled else {
-            mode.repeatEnabled = false
+    private func fixPostMotermEnabled() {
+        guard let _ = mode.postMortemEnabled else {
+            mode.postMortemEnabled = false
             return
         }
     }

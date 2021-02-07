@@ -23,12 +23,12 @@ struct GameConfig: Codable {
     var reciteMode: ReciteMode
     var fakeMode: Bool
     var singerID: String
-    var repeatEnabled: Bool?
+    var postMortemEnabled: Bool?
 
-    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia", repeadEnabled: Bool = false) {
+    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia", postMortemEnabled: Bool = false) {
         self.reciteMode = reciteMode
         self.fakeMode = fakeMode
         self.singerID = singerID
-        self.repeatEnabled = repeadEnabled
+        self.postMortemEnabled = postMortemEnabled
     }
 }
