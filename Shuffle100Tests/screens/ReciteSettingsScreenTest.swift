@@ -62,4 +62,19 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
     }
     
+    func test_switchInPostMortemCellReflectsSettings() {
+        // given
+        let screen = ReciteSettingsScreen()
+        // when
+        screen.settings.postMortemEnabled = true
+        screen.loadViewIfNeeded()
+        // then
+        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
+        guard let pmSwitch = fourthCell.accessoryView as? UISwitch else {
+            XCTFail("感想戦セルからUISwitchを取得できない！")
+            return
+        }
+        XCTAssert(pmSwitch.isOn)
+    }
+    
 }

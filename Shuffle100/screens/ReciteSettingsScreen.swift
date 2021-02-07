@@ -58,7 +58,7 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
 
     private func postMotermTableDataSource() -> SettingsCellDataSource {
         var dataSource =             SettingsCellDataSource(title: "試合開始時の感想戦選択", accessoryType: .none)
-        dataSource.withSwitchOf = false
+        dataSource.withSwitchOf = settings.postMortemEnabled
         return dataSource
     }
 
