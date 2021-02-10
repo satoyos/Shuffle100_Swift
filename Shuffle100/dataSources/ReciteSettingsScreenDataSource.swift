@@ -22,6 +22,9 @@ extension ReciteSettingsScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as! SettingTableCell        
         let source = tableSources[indexPath.row]
         cell.configure(dataSource: source)
+        if let switchView = cell.accessoryView as? UISwitch {
+            switchView.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
+        }
         return cell
     }
 }

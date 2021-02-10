@@ -69,12 +69,33 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         screen.settings.postMortemEnabled = true
         screen.loadViewIfNeeded()
         // then
+        let pmSwitch = postMoremSwitch(in: screen)
+        XCTAssert(pmSwitch.isOn)
+    }
+    
+    func test_affectSettings() {
+        // given
+        let screen = ReciteSettingsScreen()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let pmSwitch = postMoremSwitch(in: screen)
+        XCTAssertFalse(pmSwitch.isOn)
+        // when
+        pmSwitch.setOn(true, animated: true)
+        screen.switchValueChanged(sender: pmSwitch) // setOnだけではこのactionが呼ばれないので、明示的に呼ぶ
+        // then
+        XCTAssert(pmSwitch.isOn)
+        XCTAssertEqual(screen.settings.postMortemEnabled, true)
+    }
+    
+    private func postMoremSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
         let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
         guard let pmSwitch = fourthCell.accessoryView as? UISwitch else {
             XCTFail("感想戦セルからUISwitchを取得できない！")
-            return
+            return UISwitch()
         }
-        XCTAssert(pmSwitch.isOn)
+        return pmSwitch
     }
     
 }

@@ -25,4 +25,10 @@ extension ReciteSettingsScreen: UITableViewDelegate {
     @objc func dismissButtonTapped(_ button: UIButton) {
         self.dismiss(animated: true)
     }
+    
+    @objc func switchValueChanged(sender: UISwitch) {
+        settings.postMortemEnabled = sender.isOn
+        self.saveSettingsAction?()
+    }
+    
 }
