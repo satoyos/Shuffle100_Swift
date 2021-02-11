@@ -70,7 +70,7 @@ extension FudaSetsUITestUtils {
         showActionSheetforFudaSetSaving(app)
         selectSaveAsNewSet(app)
         XCTContext.runActivity(named: "表示されるダイアログで名前を入力して「決定」を押すと、「保存完了」ダイアログが表示される") { activity in
-            _ = waitToHittable(for: app.alerts.buttons["決定"], timeout: 2)
+            _ = waitToHittable(for: app.alerts.buttons["決定"], timeout: timeOutSec)
             let textField = app.alerts.textFields["札セットの名前"]
             textField.tap()
             textField.typeText(name)
