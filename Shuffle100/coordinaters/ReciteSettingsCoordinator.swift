@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ReciteSettingsCoordinator: Coordinator {
-    private var settings: Settings
-    private var store: StoreManager
+class ReciteSettingsCoordinator: Coordinator, SaveSettings {
+    internal var settings: Settings
+    internal var store: StoreManager
     var navigationController: UINavigationController
     private var fromScreen: UIViewController
     internal var screen: UIViewController?
@@ -37,7 +37,9 @@ class ReciteSettingsCoordinator: Coordinator {
         screen.volumeSettingAction = { [weak self] in
             self?.openVolumeSettingScreen()
         }
-        
+        screen.saveSettingsAction = { [store, settings, weak self] in
+            self?.saveSettingsPermanently(settings, into: store)
+        }
         fromScreen.present(navigationController, animated: true)
         self.screen = screen
     }

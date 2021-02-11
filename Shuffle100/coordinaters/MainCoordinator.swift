@@ -98,7 +98,7 @@ class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UIN
         self.childCoordinator = coordinator
     }
 
-    private func setSaveSettingsActionTo(screen: HomeScreen, settings: Settings, store: StoreManager) {
+    private func setSaveSettingsActionTo(screen: SettingsAttachedScreen, settings: Settings, store: StoreManager) {
         screen.saveSettingsAction = { [store, settings, weak self] in
             self?.saveSettingsPermanently(settings, into: store)
         }
