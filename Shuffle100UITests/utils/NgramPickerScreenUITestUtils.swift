@@ -17,7 +17,7 @@ protocol NgramPickerScreenTestUtils: PoemPickerScreenUITestUtils {
 extension NgramPickerScreenTestUtils {
     func selectAll2maiFudaFromPoemPickerScreen(_ app: XCUIApplication) {
         XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
-            let button = waitToHittable(for: app.buttons["全て取消"], timeout: 3)
+            let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
             button.tap()
             gotoNgramPickerScreenFromPickerScreen(app)
         }
