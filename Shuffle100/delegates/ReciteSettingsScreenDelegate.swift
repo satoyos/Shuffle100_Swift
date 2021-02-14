@@ -23,6 +23,7 @@ extension ReciteSettingsScreen: UITableViewDelegate {
     }
     
     @objc func dismissButtonTapped(_ button: UIButton) {
+        self.saveSettingsAction?()
         self.dismiss(animated: true)
     }
     
