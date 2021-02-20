@@ -78,11 +78,7 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
             self.skipToNextScreenAction?()
         }
     }
-    
-//    internal func backToHomeScreen() {
-//        _ = navigationController?.popViewController(animated: true)
-//    }
-    
+        
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         keepProgressBarFilled(player)
         self.playFinished = true
