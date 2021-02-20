@@ -138,7 +138,8 @@ extension RecitePoemScreen {
         UIView.transition(with: self.view, duration: interval(), options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
             let gameEndView = GameEndViiew().then {
                 $0.backToHomeButtonAction = { [weak self] in
-                    self?.backToHomeScreen()
+//                    self?.backToHomeScreen()
+                    self?.backToHomeScreenAction?()
                 }
             }
             self.recitePoemView.removeFromSuperview()

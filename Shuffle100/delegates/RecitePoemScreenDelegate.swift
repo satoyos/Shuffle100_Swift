@@ -79,9 +79,9 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
         }
     }
     
-    internal func backToHomeScreen() {
-        _ = navigationController?.popViewController(animated: true)
-    }
+//    internal func backToHomeScreen() {
+//        _ = navigationController?.popViewController(animated: true)
+//    }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         keepProgressBarFilled(player)
