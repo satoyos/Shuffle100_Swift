@@ -60,6 +60,6 @@ class BeginnerModeCoordinator: RecitePoemCoordinator {
     
     internal func exitGame() {
         assert(true, "初心者モードのCoordinatorからゲームを終了させるよ！")
-        backToTopScreen()
+        backToHomeScreen()
     }
 }
