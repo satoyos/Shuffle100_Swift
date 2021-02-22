@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecitePoemCoordinator: Coordinator{
+class RecitePoemCoordinator: Coordinator, BackToHome{
     var screen: UIViewController?
     var navigationController: UINavigationController
     internal var settings: Settings
@@ -107,9 +107,9 @@ class RecitePoemCoordinator: Coordinator{
         }
     }
 
-    internal func backToHomeScreen() {
-        navigationController.popViewController(animated: true)
-    }
+//    internal func backToHomeScreen() {
+//        navigationController.popViewController(animated: true)
+//    }
 
     private func backToPreviousPoem() {
         if let prevPoem = poemSupplier.rollBackPrevPoem() {
