@@ -36,7 +36,7 @@ class RecitePoemCoordinator: Coordinator{
             self?.openReciteSettings()
         }
         screen.backToHomeScreenAction = { [weak self] in
-            self?.backToTopScreen()
+            self?.backToHomeScreen()
         }
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
@@ -88,7 +88,7 @@ class RecitePoemCoordinator: Coordinator{
     internal func rewindToPrevious() {
         guard let side = poemSupplier.side else {
             assert(true, "序歌の冒頭でrewidが押された")
-            backToTopScreen()
+            backToHomeScreen()
             return
         }
 
@@ -107,7 +107,7 @@ class RecitePoemCoordinator: Coordinator{
         }
     }
 
-    internal func backToTopScreen() {
+    internal func backToHomeScreen() {
         navigationController.popViewController(animated: true)
     }
 
@@ -124,7 +124,7 @@ class RecitePoemCoordinator: Coordinator{
         } else {
             // もう戻す歌がない (今が1首め)
             assert(true, "1首目の上の句の冒頭でrewindが押された！")
-            backToTopScreen()
+            backToHomeScreen()
         }
     }
 
