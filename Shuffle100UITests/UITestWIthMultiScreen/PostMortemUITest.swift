@@ -64,7 +64,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         }
         XCTContext.runActivity(named: "感想戦モードが有効な状態で「試合終了」を選択すると、その後どうするかをユーザに問うActionSheetが現れる") { _ in
             // when
-            app.buttons["トップに戻る"].tap()
+            app.buttons["試合を終える"].tap()
             // then
             XCTAssert(app.sheets.element.exists)
         }

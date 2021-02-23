@@ -43,7 +43,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
             tapForwardButton(app)
-            app.buttons["トップに戻る"].tap()
+            app.buttons["試合を終える"].tap()
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
         }
@@ -73,7 +73,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
-            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
+            let button = waitToHittable(for: app.buttons["試合を終える"], timeout: 12)
             button.tap()
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
@@ -113,7 +113,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
-            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
+            let button = waitToHittable(for: app.buttons["試合を終える"], timeout: 12)
             button.tap()
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
