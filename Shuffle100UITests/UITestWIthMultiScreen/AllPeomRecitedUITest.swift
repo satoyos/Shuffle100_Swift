@@ -56,7 +56,7 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
         }
         XCTContext.runActivity(named: "「トップに戻る」ボタンを押すと、トップ画面に戻る") { (activity) in
             // when
-            app.buttons["トップに戻る"].tap()
+            app.buttons["試合を終える"].tap()
             sleep(1)
             XCTAssert(app.navigationBars["トップ"].exists)
         }
