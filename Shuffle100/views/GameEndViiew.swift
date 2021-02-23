@@ -9,7 +9,7 @@
 import UIKit
 
 class GameEndViiew: UIView {
-    let backToHomeButton = UIButton()
+    let exitGameButton = UIButton()
     let headerContainer = UIView()
     var headerTitle: String?
     var backToHomeButtonAction: ( ()->Void )?
@@ -35,17 +35,17 @@ class GameEndViiew: UIView {
     func initView(title: String) {
         self.backgroundColor = backgroundColor()
         self.headerTitle = title
-        backToHomeButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
-        self.addSubview(backToHomeButton)
+        exitGameButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
+        self.addSubview(exitGameButton)
         layoutHeaderContainer()
         layoutBackToHomeButton()
-        backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
+        exitGameButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
     }
     
     private func layoutBackToHomeButton() {
-        backToHomeButton.setTitle("トップに戻る", for: .normal)
-        backToHomeButton.sizeToFit()
-        backToHomeButton.snp.makeConstraints{(make) -> Void in
+        exitGameButton.setTitle("試合を終える", for: .normal)
+        exitGameButton.sizeToFit()
+        exitGameButton.snp.makeConstraints{(make) -> Void in
             make.center.equalTo(self)
         }
     }
