@@ -15,7 +15,15 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
     func exitGame() {
         currentPlayer?.stop()
         self.currentPlayer = nil
-        _ = navigationController?.popViewController(animated: true)
+        if settings.postMortemEnabled {
+            let ac = UIAlertController(title: "感想戦を始めますか？", message: "今の試合と同じ順番に詩を読み上げる「感想戦」を始めることができます。", preferredStyle: .actionSheet)
+            let cancel = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+            ac.addAction(cancel)
+            present(ac, animated: true)
+        } else {
+            //        _ = navigationController?.popViewController(animated: true)
+            self.backToHomeScreenAction?()
+        }
     }
     
     internal func settingsButtonTapped() {
