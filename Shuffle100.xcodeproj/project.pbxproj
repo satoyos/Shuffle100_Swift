@@ -391,6 +391,7 @@
 		92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
 		92C176D225E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
 		92C176D325E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
+		92C176D825E4F07F00DDA46D /* PostMortemUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */; };
 		92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
 		92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
 		92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
@@ -707,6 +708,7 @@
 		92BC8D4D23C6107D00F0033F /* HomeScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToHomeProtocol.swift; sourceTree = "<group>"; };
+		92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemUITest.swift; sourceTree = "<group>"; };
 		92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphIconProtocol.swift; sourceTree = "<group>"; };
 		92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenDelegate.swift; sourceTree = "<group>"; };
 		92C87DD222E8894900569D15 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
@@ -1024,6 +1026,7 @@
 				92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */,
 				921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */,
 				92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */,
+				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -1945,6 +1948,7 @@
 				92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				921FF437249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92BC8D4E23C6107D00F0033F /* HomeScreenUITestUtils.swift in Sources */,
+				92C176D825E4F07F00DDA46D /* PostMortemUITest.swift in Sources */,
 				92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92F666262524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */,
