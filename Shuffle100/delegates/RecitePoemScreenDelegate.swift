@@ -19,6 +19,11 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
             let ac = UIAlertController(title: "感想戦を始めますか？", message: "今の試合と同じ順番に詩を読み上げる「感想戦」を始めることができます。", preferredStyle: .actionSheet)
             let cancel = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
             ac.addAction(cancel)
+            if let pc = ac.popoverPresentationController {
+                let button = gameEndView.exitGameButton
+                pc.sourceView = button
+                pc.sourceRect = CGRect(x: 0, y: 0, width: button.frame.width, height: button.frame.height)
+            }
             present(ac, animated: true)
         } else {
             //        _ = navigationController?.popViewController(animated: true)

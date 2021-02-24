@@ -148,6 +148,7 @@ extension RecitePoemScreen {
                 gameEndView.initView(title: "試合終了")
                 gameEndView.fixLayoutOn(baseView: self.view)
             }
+            self.gameEndView = gameEndView
             self.recitePoemView = nil
             self.currentPlayer = nil
         }, completion: nil)
