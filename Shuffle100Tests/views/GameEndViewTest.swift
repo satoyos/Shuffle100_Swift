@@ -21,7 +21,7 @@ class GameEndViewTest: XCTestCase {
     func test_initGameEndView() {
         let view = GameEndViiew()
         view.initView(title: "test title")
-        XCTAssertEqual(view.exitGameButton.titleLabel?.text, "試合を終える")
+        XCTAssertEqual(view.exitGameButton.titleLabel?.text, "トップに戻る")
     }
 
 
