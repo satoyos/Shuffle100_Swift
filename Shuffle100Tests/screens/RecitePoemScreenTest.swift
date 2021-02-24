@@ -59,4 +59,20 @@ class RecitePoemScreenTest: XCTestCase {
         XCTAssertEqual(screen.recitePoemView.headerTitle, "1首め:上の句 (全100首)")
         
     }
+    
+    func test_postmotermButtonExistsIfPostMortemEnabled() {
+        // given
+        let newSettings = Settings()
+        newSettings.postMortemEnabled = true
+        screen.settings = newSettings
+        // when
+        screen.stepIntoGameEnd()
+        // then
+        let gameEndView = screen.gameEndView
+        XCTAssertNotNil(gameEndView)
+        XCTContext.runActivity(named: "その画面には、ホーム画面に戻るボタンと、感想戦を始めるボタンがある") { _ in
+            XCTAssertNotNil(gameEndView?.exitGameButton)
+//            XCTAssertNotNil(gameEndView?.postMortemButton)
+        }
+    }
 }

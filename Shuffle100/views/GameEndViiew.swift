@@ -10,6 +10,7 @@ import UIKit
 
 class GameEndViiew: UIView {
     let exitGameButton = UIButton()
+    var postMortemButton: UIButton! = nil
     let headerContainer = UIView()
     var headerTitle: String?
     var backToHomeButtonAction: ( ()->Void )?
@@ -32,18 +33,22 @@ class GameEndViiew: UIView {
         }
     }
     
-    func initView(title: String) {
+    func initView(title: String, postMortemEnabled: Bool = false) {
         self.backgroundColor = backgroundColor()
         self.headerTitle = title
         exitGameButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
         self.addSubview(exitGameButton)
         layoutHeaderContainer()
-        layoutBackToHomeButton()
+        if postMortemEnabled {
+            self.postMortemButton = UIButton()
+        } else {
+            layoutBackToHomeButtonCenter()
+        }
         exitGameButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
     }
     
-    private func layoutBackToHomeButton() {
-        exitGameButton.setTitle("試合を終える", for: .normal)
+    private func layoutBackToHomeButtonCenter() {
+        exitGameButton.setTitle("トップに戻る", for: .normal)
         exitGameButton.sizeToFit()
         exitGameButton.snp.makeConstraints{(make) -> Void in
             make.center.equalTo(self)
