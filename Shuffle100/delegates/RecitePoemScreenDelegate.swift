@@ -20,7 +20,7 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
             let cancel = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
             ac.addAction(cancel)
             if let pc = ac.popoverPresentationController {
-                let button = gameEndView.exitGameButton
+                let button = gameEndView.backToHomeButton
                 pc.sourceView = button
                 pc.sourceRect = CGRect(x: 0, y: 0, width: button.frame.width, height: button.frame.height)
             }
