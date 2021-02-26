@@ -8,8 +8,16 @@
 
 import UIKit
 
+//protocol HasBackToHomeButton {
+//    var exitGameButton: UIButton { get set }
+//    
+//    
+//}
+//
+
+
 class GameEndViiew: UIView {
-    let exitGameButton = UIButton()
+    let backToHomeButton = UIButton()
     var postMortemButton: UIButton! = nil
     let headerContainer = UIView()
     var headerTitle: String?
@@ -36,21 +44,21 @@ class GameEndViiew: UIView {
     func initView(title: String, postMortemEnabled: Bool = false) {
         self.backgroundColor = backgroundColor()
         self.headerTitle = title
-        exitGameButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
-        self.addSubview(exitGameButton)
+        backToHomeButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
+        self.addSubview(backToHomeButton)
         layoutHeaderContainer()
         if postMortemEnabled {
             self.postMortemButton = UIButton()
         } else {
             layoutBackToHomeButtonCenter()
         }
-        exitGameButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
+        backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
     }
     
     private func layoutBackToHomeButtonCenter() {
-        exitGameButton.setTitle("トップに戻る", for: .normal)
-        exitGameButton.sizeToFit()
-        exitGameButton.snp.makeConstraints{(make) -> Void in
+        backToHomeButton.setTitle("トップに戻る", for: .normal)
+        backToHomeButton.sizeToFit()
+        backToHomeButton.snp.makeConstraints{(make) -> Void in
             make.center.equalTo(self)
         }
     }
