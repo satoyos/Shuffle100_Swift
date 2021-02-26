@@ -33,16 +33,8 @@ class GameEndViiew: UIView {
         baseView.layoutSubviews()
     }
 
-    private func backgroundColor() -> UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor.systemBackground
-        } else {
-            return .white
-        }
-    }
-    
     func initView(title: String, postMortemEnabled: Bool = false) {
-        self.backgroundColor = backgroundColor()
+        self.backgroundColor = UIColor.systemBackground
         self.headerTitle = title
         backToHomeButton.setTitleColor(StandardColor.standardButtonColor, for: .normal)
         self.addSubview(backToHomeButton)
@@ -81,19 +73,11 @@ class GameEndViiew: UIView {
             $0.textAlignment = .center
             $0.sizeToFit()
             $0.backgroundColor = .clear
-            $0.textColor = textColor()
+            $0.textColor = UIColor.label
         }
         headerContainer.addSubview(titleLabel)
         titleLabel.snp.makeConstraints{(make) -> Void in
             make.center.equalToSuperview()
-        }
-    }
-    
-    fileprivate func textColor() -> UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor.label
-        } else {
-            return .black
         }
     }
     
