@@ -71,7 +71,7 @@ class RecitePoemScreenTest: XCTestCase {
         let gameEndView = screen.gameEndView
         XCTAssertNotNil(gameEndView)
         XCTContext.runActivity(named: "その画面には、ホーム画面に戻るボタンと、感想戦を始めるボタンがある") { _ in
-            XCTAssertNotNil(gameEndView?.exitGameButton)
+            XCTAssertNotNil(gameEndView?.backToHomeButton)
 //            XCTAssertNotNil(gameEndView?.postMortemButton)
         }
     }
