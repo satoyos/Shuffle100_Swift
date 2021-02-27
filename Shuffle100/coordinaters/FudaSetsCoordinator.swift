@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FudaSetsCoordinator: Coordinator, SaveSettings, HandleNavigator {
+final class FudaSetsCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal var settings: Settings
     internal var store: StoreManager
     var screen: UIViewController?

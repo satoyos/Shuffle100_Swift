@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeginnerModeCoordinator: RecitePoemCoordinator {
+final class BeginnerModeCoordinator: RecitePoemCoordinator {
     
     override func reciteKamiFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")

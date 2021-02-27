@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UINavigationControllerDelegate {
+final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigator, UINavigationControllerDelegate {
 
     internal var settings: Settings
     internal var store: StoreManager

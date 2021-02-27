@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NgramPickerCoordinator: Coordinator, HandleNavigator {
+final class NgramPickerCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     private var settings: Settings
     private var store: StoreManager

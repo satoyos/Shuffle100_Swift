@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteSettingsCoordinator: Coordinator, SaveSettings {
+final class ReciteSettingsCoordinator: Coordinator, SaveSettings {
     internal var settings: Settings
     internal var store: StoreManager
     var navigationController: UINavigationController
