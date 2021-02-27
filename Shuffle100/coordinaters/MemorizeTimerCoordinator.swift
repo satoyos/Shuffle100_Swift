@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
+final class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
     var navigationController: UINavigationController
     var childCoordinator: Coordinator?

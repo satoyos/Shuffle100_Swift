@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WhatsNextCoordinator: Coordinator {
+final class WhatsNextCoordinator: Coordinator {
     internal var screen: UIViewController?
     private var fromScreen: UIViewController
     var navigationController: UINavigationController
