@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteViewPlayButton: ReciteViewButton {
+final class ReciteViewPlayButton: ReciteViewButton {
     let colorWaitingForPause = UIColor.dynamicColor(light: Color.shoujouhi.UIColor, dark: Color.tsutsujiiro.UIColor)
     let colorWaitingForPlay = Color.konpeki.UIColor
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpListTableViewCell: UITableViewCell {
+final class HelpListTableViewCell: UITableViewCell {
  
     func configure(with dataSource: HelpListDataSource) {
         var content = UIListContentConfiguration.cell()

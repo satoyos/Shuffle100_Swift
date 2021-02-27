@@ -13,7 +13,7 @@ enum WaitingFor {
     case play
 }
 
-class RecitePoemView: UIView {
+final class RecitePoemView: UIView {
     
     let headerContainer = UIView()
     let lowerContainer = UIView()

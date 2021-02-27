@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MemorizeTimerScreen: Screen {
+final class MemorizeTimerScreen: Screen {
     let timerContaier = UIView()
     let minLabel = UILabel()
     let secLabel = UILabel()

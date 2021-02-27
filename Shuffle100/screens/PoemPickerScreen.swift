@@ -10,7 +10,7 @@ import UIKit
 import BBBadgeBarButtonItem
 import Then
 
-class PoemPickerScreen: SettingsAttachedScreen {
+final class PoemPickerScreen: SettingsAttachedScreen {
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
     var tableView: UITableView!

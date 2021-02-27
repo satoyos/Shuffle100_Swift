@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TorifudaScreen: Screen {
+final class TorifudaScreen: Screen {
     var shimoString = "下の句がここに入る"
     var titleString = "タイトル未定"
     var tatamiView: UIImageView!

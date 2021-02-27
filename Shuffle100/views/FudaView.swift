@@ -16,7 +16,7 @@ private let fudaFont = UIFont(name: "HiraMinProN-W6", size: 5)
 private let fudaFontSizeBase: CGFloat = 11
 
 
-class FudaView: UIImageView {
+final class FudaView: UIImageView {
     var fudaPower: CGFloat
     var shimoString: String
     var whiteBackView: UIView!

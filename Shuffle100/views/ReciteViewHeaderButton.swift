@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReciteViewHeaderButton: UIButton {
+final class ReciteViewHeaderButton: UIButton {
 
     var tappedAction:  ( ()->Void )?
     

@@ -8,4 +8,4 @@
 
 import UIKit
 
-class GameStartCell: UITableViewCell, ConfigureButtonTypeCell { }
+final class GameStartCell: UITableViewCell, ConfigureButtonTypeCell { }

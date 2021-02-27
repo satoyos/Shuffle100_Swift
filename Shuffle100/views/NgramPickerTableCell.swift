@@ -13,7 +13,7 @@ private let halfCircleImage = UIImage(named: "half_circle.png")!
 private let emptyCircleImage = UIImage(named: "empty_circle.png")!
 
 
-class NgramPickerTableCell: UITableViewCell {
+final class NgramPickerTableCell: UITableViewCell {
     static let selectedImageDic: [PoemsSelectedState: UIImage] = [
         .full: fullCircleImage,
         .partial: halfCircleImage,

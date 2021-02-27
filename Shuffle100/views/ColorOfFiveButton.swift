@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ColorOfFiveButton: LargeImageAttachedButton {
+final class ColorOfFiveButton: LargeImageAttachedButton {
     var color: FiveColors
     
     init(_ color: FiveColors) {
