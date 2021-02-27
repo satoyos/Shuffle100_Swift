@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpListScreen: Screen {
+final class HelpListScreen: Screen {
     internal var helpListSections: [HelpListSection]!
     var tableView: UITableView!
     let cellReuseId = "HelpList"

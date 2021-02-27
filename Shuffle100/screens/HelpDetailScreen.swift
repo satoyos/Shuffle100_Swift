@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class HelpDetailScreen: Screen {
+final class HelpDetailScreen: Screen {
     var helpTitle: String!
     var htmlFileName: String!
     

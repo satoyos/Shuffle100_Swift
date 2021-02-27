@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Environment {
+final class Environment {
     private var wontSave: Bool
     private var ignoreSaved: Bool
     

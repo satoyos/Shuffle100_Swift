@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Deck {
+final class Deck {
     static let originalPoems = Poem100.poems
     var poems: [Poem]
     private var count = 0

@@ -13,7 +13,7 @@ enum Side {
 }
 
 
-class PoemSupplier {
+final class PoemSupplier {
     var deck: Deck
     private var current_poem: Poem?
     private var fuda_side: Side?
