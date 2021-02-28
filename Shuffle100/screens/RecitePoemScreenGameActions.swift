@@ -136,7 +136,7 @@ extension RecitePoemScreen {
     
     func stepIntoGameEnd() {
         UIView.transition(with: self.view, duration: interval(), options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
-            let gameEndView = GameEndView().then {
+            var gameEndView = GameEndView().then {
                 $0.backToHomeButtonAction = { [weak self] in
 //                    self?.backToHomeScreenAction?()
                     self?.exitGame()
