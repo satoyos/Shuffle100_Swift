@@ -8,15 +8,7 @@
 
 import UIKit
 
-//protocol HasBackToHomeButton {
-//    var exitGameButton: UIButton { get set }
-//    
-//    
-//}
-//
-
-
-class GameEndViiew: UIView {
+class GameEndView: UIView {
     let backToHomeButton = UIButton()
     var postMortemButton: UIButton! = nil
     let headerContainer = UIView()
