@@ -12,7 +12,7 @@ import Then
 
 final class RecitePoemScreen: SettingsAttachedScreen {
     var recitePoemView: RecitePoemView!
-    var gameEndView: GameEndViiew!
+    var gameEndView: GameEndView!
     var currentPlayer: AVAudioPlayer?
     var timerForPrgoress: Timer!
     var playerFinishedAction: (() -> Void)?

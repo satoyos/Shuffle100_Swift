@@ -941,7 +941,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					DB08FF6211990E31D1BEC4CBDBF92874 = {
 						LastSwiftMigration = 1220;
