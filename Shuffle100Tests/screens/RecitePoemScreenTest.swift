@@ -70,7 +70,7 @@ class RecitePoemScreenTest: XCTestCase {
         // then
         let gameEndView = screen.gameEndView
         XCTAssertNotNil(gameEndView)
-        XCTAssert(gameEndView is PostMortemEnabledGameEndView)
+        XCTAssertFalse(gameEndView is SimpleGameEndView)
         XCTAssertNotNil(gameEndView?.backToHomeButton)
     }
 }
