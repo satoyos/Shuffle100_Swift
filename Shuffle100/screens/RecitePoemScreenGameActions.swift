@@ -136,19 +136,26 @@ extension RecitePoemScreen {
     
     func stepIntoGameEnd() {
         UIView.transition(with: self.view, duration: interval(), options: [.transitionFlipFromLeft, .layoutSubviews], animations: {
-            var gameEndView = SimpleGameEndView().then {
-                $0.backToHomeButtonAction = { [weak self] in
-//                    self?.backToHomeScreenAction?()
-                    self?.exitGame()
+            var allPoemsRecitedView: AllPoemsRecitedView
+            
+            if self.settings.postMortemEnabled {
+                allPoemsRecitedView = PostMortemEnabledGameEndView()
+            } else {
+                allPoemsRecitedView = SimpleGameEndView().then {
+                    $0.backToHomeButtonAction = { [weak self] in
+    //                    self?.backToHomeScreenAction?()
+                        self?.exitGame()
+                    }
                 }
             }
+            
             self.recitePoemView.removeFromSuperview()
             UIView.performWithoutAnimation {
-                self.view.addSubview(gameEndView)
-                gameEndView.initView(title: "試合終了")
-                gameEndView.fixLayoutOn(baseView: self.view)
+                self.view.addSubview(allPoemsRecitedView as! UIView)
+                allPoemsRecitedView.initView(title: "試合終了")
+                allPoemsRecitedView.fixLayoutOn(baseView: self.view)
             }
-            self.gameEndView = gameEndView
+            self.gameEndView = allPoemsRecitedView
             self.recitePoemView = nil
             self.currentPlayer = nil
         }, completion: nil)
