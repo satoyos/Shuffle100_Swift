@@ -76,7 +76,7 @@ extension AllPoemsRecitedView where Self: UIView {
     }
 }
 
-class GameEndView: UIView, AllPoemsRecitedView {
+final class SimpleGameEndView: UIView, AllPoemsRecitedView {
     var backToHomeButton = UIButton()
     var headerContainer = UIView()
     var headerTitle: String?

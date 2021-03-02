@@ -19,7 +19,7 @@ class GameEndViewTest: XCTestCase {
     }
 
     func test_initGameEndView() {
-        var view = GameEndView()
+        var view = SimpleGameEndView()
         view.initView(title: "test title")
         XCTAssertEqual(view.backToHomeButton.titleLabel?.text, "トップに戻る")
     }
