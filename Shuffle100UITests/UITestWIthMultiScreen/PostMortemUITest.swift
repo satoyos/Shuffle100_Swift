@@ -61,16 +61,11 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             tapForwardButton(app)
             sleep(1)
             XCTAssert(app.staticTexts["試合終了"].exists)
-//            XCTContext.runActivity(named: "その画面には、「トップに戻る」ボタンと「感想戦を始める」ボタンがある") { _ in
-//                
-//            }
+            XCTContext.runActivity(named: "その画面には、「トップに戻る」ボタンと「感想戦を始める」ボタンがある") { _ in
+                XCTAssert(app.buttons["トップに戻る"].exists)
+                XCTAssert(app.buttons["感想戦を始める"].exists)
+            }
         }
-//        XCTContext.runActivity(named: "感想戦モードが有効な状態で「試合終了」を選択すると、その後どうするかをユーザに問うActionSheetが現れる") { _ in
-//            // when
-//            app.buttons["試合を終える"].tap()
-//            // then
-//            XCTAssert(app.sheets.element.exists)
-//        }
     }
 
 }

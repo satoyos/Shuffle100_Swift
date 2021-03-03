@@ -16,6 +16,7 @@ protocol AllPoemsRecitedView {
     
     func fixLayoutOn(baseView: UIView) -> Void
     mutating func initView(title: String) -> Void
+    func layoutHeaderContainer()
     func setTargetToButtons() -> Void
     func backToHomeButtonTapped() -> Void
 }
@@ -49,7 +50,7 @@ extension AllPoemsRecitedView where Self: UIView {
         }
     }
     
-    private func layoutHeaderContainer() {
+    func layoutHeaderContainer() {
         self.addSubview(headerContainer)
         headerContainer.backgroundColor = StandardColor.barTintColor
         headerContainer.snp.makeConstraints{(make) -> Void in
