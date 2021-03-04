@@ -43,7 +43,7 @@ class HelpListUITest: XCTestCase {
         // when
         app.tables.staticTexts["このアプリを評価する"].tap()
         // then
-        _ = waitToHittable(for: app.alerts.buttons["立ち上げる"], timeout: 2)
+        _ = waitToHittable(for: app.alerts.buttons["立ち上げる"], timeout: timeOutSec)
     }
 
     private func gotoHelpListScreen() {
@@ -59,7 +59,7 @@ class HelpListUITest: XCTestCase {
         // then
         XCTAssert(app.navigationBars[title].exists)
         // when
-        let button = waitToHittable(for: app.navigationBars.buttons["ヘルプ"], timeout: 10)
+        let button = waitToHittable(for: app.navigationBars.buttons["ヘルプ"], timeout: timeOutSec * 3)
             // ↑ 初回のWebView読み込み時には結構時間がかかるため、しっかり時間をとる。
         button.tap()
         // then
