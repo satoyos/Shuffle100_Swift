@@ -66,6 +66,12 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
                 XCTAssert(app.buttons["感想戦を始める"].exists)
             }
         }
+        XCTContext.runActivity(named: "「感想戦を始める」ボタンを押すと、本当に始めるかどうか聞くアラートが現れる") { _ in
+            // when
+            app.buttons["感想戦を始める"].tap()
+            // then
+            XCTAssert(app.alerts.element.exists)
+        }
     }
 
 }
