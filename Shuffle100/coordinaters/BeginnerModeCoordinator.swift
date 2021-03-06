@@ -6,11 +6,28 @@
 //  Copyright © 2020 里 佳史. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-final class BeginnerModeCoordinator: RecitePoemCoordinator {
+final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
+    var screen: UIViewController?
+    var navigationController: UINavigationController
+    internal var settings: Settings
+    internal var poemSupplier: PoemSupplier
+    internal var store: StoreManager
+    var childCoordinator: Coordinator?
+
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
+        self.navigationController = navigationController
+        self.settings = settings
+        self.store = store
+        let deck = Deck.createFrom(state100: settings.state100)
+        self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
+        if settings.fakeMode {
+            poemSupplier.addFakePoems()
+        }
+    }
     
-    override func reciteKamiFinished(number: Int, counter: Int) {
+    internal func reciteKamiFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")
         stepIntoShimoInBeginnerMode()
     }

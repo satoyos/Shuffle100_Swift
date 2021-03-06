@@ -81,7 +81,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     }
 
     private func startGame(settings: Settings, store: StoreManager) {
-        var gameDriver: RecitePoemCoordinator!
+        var gameDriver: Coordinator!
 
         switch settings.mode.reciteMode {
         case .normal:

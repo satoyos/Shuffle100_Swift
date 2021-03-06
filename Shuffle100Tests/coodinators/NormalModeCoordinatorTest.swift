@@ -22,6 +22,6 @@ class NormalModeCoordinatorTest: XCTestCase {
         let nc = UINavigationController()
         let coordinator = NormalModeCoordinator(navigationController: nc, settings: Settings(), store: StoreManager())
         let supplier = coordinator.poemSupplier
-        XCTAssertNotNil(supplier?.drawNextPoem())
+        XCTAssertNotNil(supplier.drawNextPoem())
     }
 }
