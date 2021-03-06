@@ -1,5 +1,5 @@
 //
-//  RecitePoemCoordinator.swift
+//  RecitePoemProtocol.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/01/28.
@@ -8,25 +8,18 @@
 
 import UIKit
 
-class RecitePoemCoordinator: Coordinator, BackToHome{
-    var screen: UIViewController?
-    var navigationController: UINavigationController
-    internal var settings: Settings
-    internal var poemSupplier: PoemSupplier!
-    internal var store: StoreManager
-    var childCoordinator: Coordinator?
+protocol RecitePoemProtocol: BackToHome {
+    var settings: Settings { get set }
+    var store: StoreManager { get set }
+    var poemSupplier: PoemSupplier { get set }
+    
+    func jokaFinished() -> Void
+    func reciteKamiFinished(number: Int, counter: Int ) -> Void
+    func reciteShimoFinished(number: Int, counter: Int) -> Void
+}
 
-    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
-        self.navigationController = navigationController
-        self.settings = settings
-        self.store = store
-        let deck = Deck.createFrom(state100: settings.state100)
-        self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
-        if settings.fakeMode {
-            poemSupplier.addFakePoems()
-        }
-    }
-
+extension RecitePoemProtocol where Self: Coordinator {
+    
     func start() {
         let screen = RecitePoemScreen(settings: settings)
         screen.backToPreviousAction = { [weak self] in
@@ -51,8 +44,8 @@ class RecitePoemCoordinator: Coordinator, BackToHome{
         CATransaction.commit()
         self.screen = screen
     }
-
-    internal func jokaFinished() {
+    
+    func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
         guard let screen = self.screen as? RecitePoemScreen else { return }
@@ -63,12 +56,8 @@ class RecitePoemCoordinator: Coordinator, BackToHome{
         }
         screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
-
-    internal func reciteKamiFinished(number: Int, counter: Int ) {
-        assertionFailure("This method must be override by subclass!")
-    }
-
-    internal func reciteShimoFinished(number: Int, counter: Int) {
+    
+    func reciteShimoFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
         guard let screen = self.screen as? RecitePoemScreen else { return }
         if let poem = poemSupplier.drawNextPoem() {
@@ -84,7 +73,7 @@ class RecitePoemCoordinator: Coordinator, BackToHome{
             screen.stepIntoGameEnd()
         }
     }
-
+    
     internal func rewindToPrevious() {
         guard let side = poemSupplier.side else {
             assert(true, "序歌の冒頭でrewidが押された")
@@ -106,11 +95,15 @@ class RecitePoemCoordinator: Coordinator, BackToHome{
             }
         }
     }
-
-//    internal func backToHomeScreen() {
-//        navigationController.popViewController(animated: true)
-//    }
-
+    
+    // 歯車ボタンが押されたときの画面遷移をここでやる！
+    private func openReciteSettings() {
+        guard let screen = self.screen as? RecitePoemScreen else { return }
+        let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
+        coordinator.start()
+        self.childCoordinator = coordinator
+    }
+    
     private func backToPreviousPoem() {
         if let prevPoem = poemSupplier.rollBackPrevPoem() {
             guard let screen = self.screen as? RecitePoemScreen else { return }
@@ -126,13 +119,5 @@ class RecitePoemCoordinator: Coordinator, BackToHome{
             assert(true, "1首目の上の句の冒頭でrewindが押された！")
             backToHomeScreen()
         }
-    }
-
-    // 歯車ボタンが押されたときの画面遷移をここでやる！
-    private func openReciteSettings() {
-        guard let screen = self.screen as? RecitePoemScreen else { return }
-        let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
-        coordinator.start()
-        self.childCoordinator = coordinator
     }
 }
