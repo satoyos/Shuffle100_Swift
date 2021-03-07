@@ -23,7 +23,7 @@ final class PoemSupplier {
         self.deck = deck
         self.mustShuffle = mustShuffle
         if mustShuffle {
-            deck.shuffle()
+            self.deck.shuffle()
         }
     }
     
