@@ -50,7 +50,7 @@ class RecitePoemScreenTest: XCTestCase {
     func test_stepIntoNextPoemFlipView() {
         // given
         screen.recitePoemView.initView(title: "aaa")
-        let supplier = PoemSupplier()
+        var supplier = PoemSupplier()
         // when
         let poem = supplier.drawNextPoem()!
         screen.stepIntoNextPoem(number: poem.number, at: supplier.currentIndex, total: supplier.size )

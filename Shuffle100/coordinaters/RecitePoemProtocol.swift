@@ -13,9 +13,10 @@ protocol RecitePoemProtocol: BackToHome {
     var store: StoreManager { get set }
     var poemSupplier: PoemSupplier { get set }
     
-    func jokaFinished() -> Void
-    func reciteKamiFinished(number: Int, counter: Int ) -> Void
-    func reciteShimoFinished(number: Int, counter: Int) -> Void
+    mutating func jokaFinished() -> Void
+    mutating func reciteKamiFinished(number: Int, counter: Int ) -> Void
+    mutating func reciteShimoFinished(number: Int, counter: Int) -> Void
+    mutating func goNextPoem() -> Void
 }
 
 extension RecitePoemProtocol where Self: Coordinator {
@@ -45,7 +46,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         self.screen = screen
     }
     
-    func jokaFinished() {
+    mutating func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
         guard let screen = self.screen as? RecitePoemScreen else { return }
@@ -57,7 +58,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
     
-    func reciteShimoFinished(number: Int, counter: Int) {
+    mutating func reciteShimoFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
         guard let screen = self.screen as? RecitePoemScreen else { return }
         if let poem = poemSupplier.drawNextPoem() {
@@ -74,7 +75,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         }
     }
     
-    internal func rewindToPrevious() {
+    internal mutating func rewindToPrevious() {
         guard let side = poemSupplier.side else {
             assert(true, "序歌の冒頭でrewidが押された")
             backToHomeScreen()
@@ -96,6 +97,14 @@ extension RecitePoemProtocol where Self: Coordinator {
         }
     }
     
+    internal mutating func goNextPoem() {
+        assert(true, "次の詩へ進むボタンが押されたことを、初心者モードのCoordinatorが知ったよ！")
+        let number = poemSupplier.poem.number
+        let counter = poemSupplier.currentIndex
+        // 次の詩に進むことが決まった後は、Normalモードと同じで、デフォルトの動作をする
+        reciteShimoFinished(number: number, counter: counter)
+    }
+    
     // 歯車ボタンが押されたときの画面遷移をここでやる！
     private func openReciteSettings() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
@@ -104,7 +113,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         self.childCoordinator = coordinator
     }
     
-    private func backToPreviousPoem() {
+    private mutating func backToPreviousPoem() {
         if let prevPoem = poemSupplier.rollBackPrevPoem() {
             guard let screen = self.screen as? RecitePoemScreen else { return }
             // 一つ前の歌(prevPoem)に戻す
