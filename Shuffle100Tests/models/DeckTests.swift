@@ -147,4 +147,16 @@ class DeckTests: XCTestCase {
         deck2.addFakePoems()
         XCTAssertEqual(deck2.size, 100)
     }
+    
+    func test_poemNumbers() {
+        // given
+        var st100 = SelectedState100.createOf(bool: false)
+        let numbers = [25, 3, 17]
+        st100.selectInNumbers(numbers)
+        let deck = Deck.createFrom(state100: st100)
+        // when
+        let numbersFromDeck = deck.poemNumbers()
+        // then
+        XCTAssertEqual(numbers.sorted(), numbersFromDeck)
+    }
 }
