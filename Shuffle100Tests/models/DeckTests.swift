@@ -32,7 +32,7 @@ class DeckTests: XCTestCase {
     }
     
     func test_counterAndNextPoem() {
-        let deck = Deck()
+        var deck = Deck()
         // counterの初期値は0
         XCTAssertEqual(deck.counter, 0)
         
@@ -59,7 +59,7 @@ class DeckTests: XCTestCase {
     }
     
     func test_rollbackPrevPoem() {
-        let deck = Deck()
+        var deck = Deck()
         // 2枚めくる
         _ = deck.nextPoem()
         _ = deck.nextPoem()
@@ -81,7 +81,7 @@ class DeckTests: XCTestCase {
     }
     
     func test_shuffleWithSize() {
-        let deck = Deck()
+        var deck = Deck()
         // シャッフルして何枚の数を取得したいか？のサイズを指定できる。
         deck.shuffleWithSize(size: 10)
         XCTAssertEqual(deck.size, 10)
@@ -104,7 +104,7 @@ class DeckTests: XCTestCase {
         // シャッフルする前は、オリジナルの順番通りに並んでいる。
         let org_numbers = Deck.originalPoems.map{$0.number}
         XCTAssertEqual(org_numbers.count, 100)
-        let deck = Deck()
+        var deck = Deck()
         var poems_numbers = deck.poems.map{$0.number}
         XCTAssertEqual(org_numbers, poems_numbers)
         
@@ -133,7 +133,7 @@ class DeckTests: XCTestCase {
 
         // まず、3枚選んだ状態に設定
         st100.selectInNumbers([2, 3, 6])
-        let deck = Deck.createFrom(state100: st100)
+        var deck = Deck.createFrom(state100: st100)
         XCTAssertEqual(deck.size, 3)
         
         // 空札を追加する
@@ -142,7 +142,7 @@ class DeckTests: XCTestCase {
         
         // 50枚以上のデッキに空札を追加しても、デッキのサイズは2倍にならず、100枚の札が全て選ばれた状態になる
         st100.selectInNumbers((Array<Int>)(1...60))
-        let deck2 = Deck.createFrom(state100: st100)
+        var deck2 = Deck.createFrom(state100: st100)
         XCTAssertEqual(deck2.size, 60)
         deck2.addFakePoems()
         XCTAssertEqual(deck2.size, 100)

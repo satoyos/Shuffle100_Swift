@@ -8,19 +8,15 @@
 
 import Foundation
 
-final class Deck {
+struct Deck {
     static let originalPoems = Poem100.poems
     var poems: [Poem]
     private var count = 0
     
-    init(poems: [Poem]) {
+    init(poems: [Poem] = originalPoems) {
         self.poems = poems
     }
-    
-    convenience init() {
-        self.init(poems: Deck.originalPoems)
-    }
-    
+     
     static func createFrom(state100: SelectedState100) -> Deck {
         var resultPoems: [Poem]
         resultPoems = []
@@ -29,9 +25,7 @@ final class Deck {
                 resultPoems.append(originalPoems[i])
             }
         }
-        let deck = Deck()
-        deck.poems = resultPoems
-        return deck
+        return Self(poems: resultPoems)
     }
     
     var size: Int {
@@ -46,7 +40,7 @@ final class Deck {
         }
     }
     
-    func nextPoem() -> Poem? {
+    mutating func nextPoem() -> Poem? {
         if count == poems.count {
             return nil
         } else {
@@ -55,7 +49,7 @@ final class Deck {
         }
     }
     
-    func rollBackPoem() -> Poem? {
+    mutating func rollBackPoem() -> Poem? {
         switch count {
         case 0:
             return nil
@@ -68,7 +62,7 @@ final class Deck {
         }
     }
     
-    func shuffleWithSize(size: Int) {
+    mutating func shuffleWithSize(size: Int) {
         let shuffledPoems = poems.shuffled()
         poems = []
         for i in 0..<size {
@@ -77,13 +71,13 @@ final class Deck {
         
     }
     
-    func shuffle() {
+    mutating func shuffle() {
         shuffleWithSize(size: poems.count)
     }
     
-    func addFakePoems() {
+    mutating func addFakePoems() {
         if self.size >= 50 {
-            poems = Deck.originalPoems
+            poems = Self.originalPoems
             return
         }
         let selectedNums = poems.map{$0.number}
