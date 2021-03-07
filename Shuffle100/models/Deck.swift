@@ -93,4 +93,8 @@ final class Deck {
             poems.append(Deck.originalPoems[restNums[i]-1])
         }
     }
+    
+    func poemNumbers() -> [Int] {
+        return poems.map{$0.number}
+    }
 }
