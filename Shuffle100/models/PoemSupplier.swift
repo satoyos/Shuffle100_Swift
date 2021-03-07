@@ -13,22 +13,18 @@ enum Side {
 }
 
 
-final class PoemSupplier {
+struct PoemSupplier {
     var deck: Deck
     private var current_poem: Poem?
     private var fuda_side: Side?
     private var mustShuffle: Bool
     
-    init(deck: Deck, shuffle mustShuffle: Bool = true) {
+    init(deck: Deck = Deck(), shuffle mustShuffle: Bool = true) {
         self.deck = deck
         self.mustShuffle = mustShuffle
         if mustShuffle {
             self.deck.shuffle()
         }
-    }
-    
-    convenience init() {
-        self.init(deck: Deck(), shuffle: true)
     }
     
     var size: Int {
@@ -64,7 +60,7 @@ final class PoemSupplier {
         return fuda_side
     }
         
-    func drawNextPoem() -> Poem? {
+    mutating func drawNextPoem() -> Poem? {
         current_poem = deck.nextPoem()
         switch current_poem {
         case nil:
@@ -75,7 +71,7 @@ final class PoemSupplier {
         }
     }
     
-    func rollBackPrevPoem() -> Poem? {
+    mutating func rollBackPrevPoem() -> Poem? {
         current_poem = deck.rollBackPoem()
         switch current_poem {
         case nil:
@@ -86,22 +82,22 @@ final class PoemSupplier {
         }
     }
     
-    func stepIntoShimo() {
+    mutating func stepIntoShimo() {
         self.setSideTo(.shimo)
     }
     
-    func backToKami() {
+    mutating func backToKami() {
         self.setSideTo(.kami)
     }
     
-    func addFakePoems() {
+    mutating func addFakePoems() {
         deck.addFakePoems()
         if mustShuffle {
             deck.shuffle()
         }
     }
     
-    private func setSideTo(_ side: Side) {
+    private mutating func setSideTo(_ side: Side) {
         self.fuda_side = side
     }
     
