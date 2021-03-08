@@ -147,6 +147,7 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let okAction = UIAlertAction(title: "始める", style: .default) { _ in
             print("++OK、感想戦を始めましょう")
+            self.startPostMortemAction?()
         }
         ac.addAction(okAction)
         ac.addAction(cancelAction)
