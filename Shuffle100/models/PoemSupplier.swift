@@ -97,6 +97,10 @@ struct PoemSupplier {
         }
     }
     
+    mutating func resetCurrentIndex() {
+        deck.resetCounter()
+    }
+    
     private mutating func setSideTo(_ side: Side) {
         self.fuda_side = side
     }

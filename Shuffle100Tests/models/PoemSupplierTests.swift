@@ -66,7 +66,7 @@ class PoemSupplierTests: XCTestCase {
     
     func test_new_drawNextPoem() {
         // given
-        var supplier = PoemSupplier()        
+        var supplier = PoemSupplier()
         // まだ次の歌があるとき、そのPoemを返す
         let first = supplier.drawNextPoem()
         XCTAssertNotNil(first)
@@ -95,5 +95,21 @@ class PoemSupplierTests: XCTestCase {
         supplier.addFakePoems()
         // then
         XCTAssertEqual(supplier.deck.size, 4)
+    }
+    
+    func test_resetCurrentIndex() {
+        // given
+        var supplier = PoemSupplier()
+        // when
+        XCTAssertEqual(supplier.currentIndex, 0)
+        _ = supplier.drawNextPoem()
+        _ = supplier.drawNextPoem()
+        _ = supplier.drawNextPoem()
+        // then
+        XCTAssertEqual(supplier.currentIndex, 3)
+        // when
+        supplier.resetCurrentIndex()
+        // then
+        XCTAssertEqual(supplier.currentIndex, 0)
     }
 }
