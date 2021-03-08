@@ -88,6 +88,10 @@ struct Deck {
         }
     }
     
+    mutating func resetCounter() {
+        self.count = 0
+    }
+    
     func poemNumbers() -> [Int] {
         return poems.map{$0.number}
     }
