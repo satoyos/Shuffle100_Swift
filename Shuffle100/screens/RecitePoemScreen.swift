@@ -21,6 +21,7 @@ final class RecitePoemScreen: SettingsAttachedScreen {
     var skipToNextScreenAction: (() -> Void)?
     var openSettingsAction: (() -> Void)?
     var backToHomeScreenAction: (() -> Void)?
+    var startPostMortemAction: (() -> Void)?
     var singer: Singer!
     var playFinished: Bool = false
         
