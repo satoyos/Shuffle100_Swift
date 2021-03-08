@@ -105,5 +105,4 @@ struct PoemSupplier {
         self.fuda_side = side
     }
     
-    
 }
