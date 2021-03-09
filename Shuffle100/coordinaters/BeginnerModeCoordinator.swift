@@ -16,19 +16,15 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     internal var store: StoreManager
     var childCoordinator: Coordinator?
 
-    init(navigationController: UINavigationController, settings: Settings, store: StoreManager, givenSupplier: PoemSupplier? = nil) {
+    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
         self.navigationController = navigationController
         self.settings = settings
         self.store = store
-        if let given = givenSupplier {
-            self.poemSupplier = given
-        } else {
-            let deck = Deck.createFrom(state100: settings.state100)
-            self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
-            if settings.fakeMode {
-                poemSupplier.addFakePoems()
-            }
-        }
+        let deck = Deck.createFrom(state100: settings.state100)
+        self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
+        if settings.fakeMode {
+            poemSupplier.addFakePoems()
+        }        
     }
     
     internal func reciteKamiFinished(number: Int, counter: Int) {
