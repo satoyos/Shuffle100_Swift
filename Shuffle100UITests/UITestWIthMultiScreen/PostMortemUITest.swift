@@ -43,6 +43,9 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             // then
             XCTAssertTrue(app.cells.staticTexts["1首"].exists)
         }
+        XCTContext.runActivity(named: "から札を有効にする") { _ in
+            app.switches["modeSwitch"].tap()
+        }
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
             gotoRecitePoemScreen(app)
@@ -52,9 +55,18 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             tapForwardButton(app)
             sleep(1)
             tapPlayButton(app)
-            sleep(1)
             // then
-            XCTAssert(app.staticTexts["1首め:下の句 (全1首)"].exists)
+            waitToAppear(for: app.staticTexts["1首め:下の句 (全2首)"], timeout: timeOutSec)
+        }
+        XCTContext.runActivity(named: "2首めに入り、どんどん飛ばす") { _ in
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
         }
         XCTContext.runActivity(named: "最後の歌を読み終えると、「試合終了」画面が現れる") { (activity) in
             // when
@@ -71,6 +83,44 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             app.buttons["感想戦を始める"].tap()
             // then
             XCTAssert(app.alerts.element.exists)
+        }
+        XCTContext.runActivity(named: "アラートで「始める」をタップすると、実際に感想戦が始まる") { _ in
+            // when
+            app.alerts.buttons["始める"].tap()
+            // then
+            waitToAppear(for: app.staticTexts["序歌"], timeout: timeOutSec * 2)
+        }
+        XCTContext.runActivity(named: "1首め, 2首めとまた進む") { _ in
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["1首め:下の句 (全2首)"], timeout: timeOutSec)
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
+        }
+        gameEndViewWithPostMortemButtonAppars(app)
+    }
+    
+    private func gameEndViewWithPostMortemButtonAppars(_ app: XCUIApplication) {
+        XCTContext.runActivity(named: "最後の歌を読み終えると、「試合終了」画面が現れる") { (activity) in
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            XCTAssert(app.staticTexts["試合終了"].exists)
+            XCTContext.runActivity(named: "その画面には、「トップに戻る」ボタンと「感想戦を始める」ボタンがある") { _ in
+                XCTAssert(app.buttons["トップに戻る"].exists)
+                XCTAssert(app.buttons["感想戦を始める"].exists)
+            }
         }
     }
 
