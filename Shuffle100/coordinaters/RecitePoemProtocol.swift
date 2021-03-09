@@ -17,6 +17,7 @@ protocol RecitePoemProtocol: BackToHome {
     mutating func reciteKamiFinished(number: Int, counter: Int ) -> Void
     mutating func reciteShimoFinished(number: Int, counter: Int) -> Void
     mutating func goNextPoem() -> Void
+    mutating func startPostMortem() -> Void
 }
 
 extension RecitePoemProtocol where Self: Coordinator {
@@ -31,6 +32,11 @@ extension RecitePoemProtocol where Self: Coordinator {
         }
         screen.backToHomeScreenAction = { [weak self] in
             self?.backToHomeScreen()
+        }
+        if settings.postMortemEnabled {
+            screen.startPostMortemAction = { [weak self] in
+                self?.startPostMortem()
+            }
         }
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
@@ -103,6 +109,12 @@ extension RecitePoemProtocol where Self: Coordinator {
         let counter = poemSupplier.currentIndex
         // 次の詩に進むことが決まった後は、Normalモードと同じで、デフォルトの動作をする
         reciteShimoFinished(number: number, counter: counter)
+    }
+    
+    internal mutating func startPostMortem() {
+        print("!! Coordinatorから感想戦を始めますよ！!")
+        poemSupplier.resetCurrentIndex()
+        self.start()
     }
     
     // 歯車ボタンが押されたときの画面遷移をここでやる！
