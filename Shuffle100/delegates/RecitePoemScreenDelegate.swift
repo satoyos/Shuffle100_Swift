@@ -12,23 +12,27 @@ import MediaPlayer
 
 extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
     
-    func exitGame() {
+    func selectPosrMortemOrBackToHome() {
+        guard settings.postMortemEnabled else { return }
         currentPlayer?.stop()
         self.currentPlayer = nil
-        if settings.postMortemEnabled {
-            let ac = UIAlertController(title: "感想戦を始めますか？", message: "今の試合と同じ順番に詩を読み上げる「感想戦」を始めることができます。", preferredStyle: .actionSheet)
-            let cancel = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
-            ac.addAction(cancel)
-            if let pc = ac.popoverPresentationController {
-                let button = gameEndView.backToHomeButton
-                pc.sourceView = button
-                pc.sourceRect = CGRect(x: 0, y: 0, width: button.frame.width, height: button.frame.height)
-            }
-            present(ac, animated: true)
-        } else {
-            //        _ = navigationController?.popViewController(animated: true)
+        let ac = UIAlertController(title: "感想戦を始めますか？", message: "今の試合と同じ順番に詩を読み上げる「感想戦」を始めることができます。", preferredStyle: .actionSheet)
+        let backToHome = UIAlertAction(title: "トップに戻る", style: .default) { _ in
             self.backToHomeScreenAction?()
         }
+        let startPostMortem = UIAlertAction(title: "感想戦を始める", style: .default) { _ in
+            self.startPostMortemAction?()
+        }
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        ac.addAction(backToHome)
+        ac.addAction(startPostMortem)
+        ac.addAction(cancel)
+        if let pc = ac.popoverPresentationController {
+            let button = gameEndView.backToHomeButton
+            pc.sourceView = button
+            pc.sourceRect = CGRect(x: 0, y: 0, width: button.frame.width, height: button.frame.height)
+        }
+        present(ac, animated: true)
     }
     
     internal func settingsButtonTapped() {

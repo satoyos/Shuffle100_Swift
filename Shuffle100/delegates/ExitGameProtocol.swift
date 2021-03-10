@@ -10,15 +10,15 @@ import UIKit
 
 protocol ExitGameProtocol {
     func confirmExittingGame(onScreen: UIViewController?) -> Void
-    func exitGame() -> Void
+//    func exitGame() -> Void
 }
 
 extension ExitGameProtocol {
     func confirmExittingGame(onScreen: UIViewController?) {
-        guard  let screen = onScreen else { return }
+        guard  let screen = onScreen as? RecitePoemScreen else { return }
         let ac = UIAlertController(title: "試合を終了しますか？", message: nil, preferredStyle: .alert)
         let quit = UIAlertAction(title: "終了する", style: .cancel) { action in
-            self.exitGame()
+            screen.backToHomeScreenAction?()
         }
         ac.addAction(quit)
         let cancel = UIAlertAction(title: "続ける", style: .default, handler: nil)

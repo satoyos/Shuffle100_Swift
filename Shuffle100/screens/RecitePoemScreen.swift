@@ -69,8 +69,14 @@ final class RecitePoemScreen: SettingsAttachedScreen {
     }
     
     func addActionsToButtons() {
-        recitePoemView.exitButton.tappedAction = {[weak self] in
-            self?.confirmExittingGame(onScreen: self)
+        if settings.postMortemEnabled {
+            recitePoemView.exitButton.tappedAction = {[weak self] in
+                self?.selectPosrMortemOrBackToHome()
+            }
+        } else {
+            recitePoemView.exitButton.tappedAction = {[weak self] in
+                self?.confirmExittingGame(onScreen: self)
+            }
         }
         recitePoemView.gearButton.tappedAction = { [weak self] in
             self?.settingsButtonTapped()
