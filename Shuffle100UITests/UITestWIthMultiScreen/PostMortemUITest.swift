@@ -24,14 +24,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
     }
 
     func test_postMotermFromGameEndView() throws {
-        XCTContext.runActivity(named: "まず、「いろいろな設定」画面で感想戦モードを有効にする") { _ in
-            // when
-            gotoReciteSettingsScreen(app)
-            app.switches["modeSwitch"].tap()
-            app.navigationBars.buttons["設定終了"].tap()
-            // then
-            XCTAssert(app.navigationBars["トップ"].exists)
-        }
+        activatePostMortemMode()
         XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
             // given
             gotoPoemPickerScreen(app)
@@ -43,7 +36,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             // then
             XCTAssertTrue(app.cells.staticTexts["1首"].exists)
         }
-        XCTContext.runActivity(named: "から札を有効にする") { _ in
+        XCTContext.runActivity(named: "空札を有効にする") { _ in
             app.switches["modeSwitch"].tap()
         }
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
@@ -69,7 +62,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
         }
         
-        gameEndViewWithPostMortemButtonAppars(app)
+        gameEndViewWithPostMortemButtonAppars()
         
         XCTContext.runActivity(named: "「感想戦を始める」ボタンを押すと、本当に始めるかどうか聞くアラートが現れる") { _ in
             // when
@@ -101,10 +94,60 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             // then
             waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
         }
-        gameEndViewWithPostMortemButtonAppars(app)
+        gameEndViewWithPostMortemButtonAppars()
     }
     
-    private func gameEndViewWithPostMortemButtonAppars(_ app: XCUIApplication) {
+    func test_startpostMortemFromExitButton() {
+        activatePostMortemMode()
+        XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
+            // given
+            gotoRecitePoemScreen(app)
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["1首め:下の句 (全100首)"], timeout: timeOutSec)
+        }
+        XCTContext.runActivity(named: "2首めに入り、どんどん飛ばす") { _ in
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["2首め:下の句 (全100首)"], timeout: timeOutSec)
+        }
+        XCTContext.runActivity(named: "Exitボタンを押すと、感想戦も選択肢に入ったActionSheetが現れる") { _ in
+            // when
+            app.buttons["exit"].tap()
+            // then
+            XCTAssertFalse(app.alerts.element.exists)
+            _ =  waitToHittable(for: app.sheets.buttons["感想戦を始める"], timeout: timeOutSec)
+        }
+        XCTContext.runActivity(named: "「感想戦を始める」を選ぶと、実際に始まる") { _ in
+            // when
+            app.sheets.buttons["感想戦を始める"].tap()
+            // then
+            waitToAppear(for: app.staticTexts["序歌"], timeout: timeOutSec * 2)
+        }
+    }
+    
+    private func activatePostMortemMode() {
+        XCTContext.runActivity(named: "まず、「いろいろな設定」画面で感想戦モードを有効にする") { _ in
+            // when
+            gotoReciteSettingsScreen(app)
+            app.switches["modeSwitch"].tap()
+            app.navigationBars.buttons["設定終了"].tap()
+            // then
+            XCTAssert(app.navigationBars["トップ"].exists)
+        }
+    }
+    
+    private func gameEndViewWithPostMortemButtonAppars() {
         XCTContext.runActivity(named: "最後の歌を読み終えると、「試合終了」画面が現れる") { (activity) in
             // when
             tapForwardButton(app)

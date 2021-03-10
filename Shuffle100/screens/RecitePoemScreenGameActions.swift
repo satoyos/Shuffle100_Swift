@@ -141,7 +141,8 @@ extension RecitePoemScreen {
             if self.settings.postMortemEnabled {
                 allPoemsRecitedView = PostMortemEnabledGameEndView().then {
                     $0.backToHomeButtonAction = { [weak self] in
-                        self?.exitGame()
+//                        self?.exitGame()
+                        self?.backToHomeScreenAction?()
                     }
                     $0.gotoPostMortemAction = { [weak self] in
                         self?.confirmStartingPostMortem()
@@ -150,8 +151,8 @@ extension RecitePoemScreen {
             } else {
                 allPoemsRecitedView = SimpleGameEndView().then {
                     $0.backToHomeButtonAction = { [weak self] in
-    //                    self?.backToHomeScreenAction?()
-                        self?.exitGame()
+                        self?.backToHomeScreenAction?()
+//                        self?.exitGame()
                     }
                 }
             }
