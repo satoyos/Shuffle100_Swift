@@ -68,16 +68,9 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             // then
             waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
         }
-        XCTContext.runActivity(named: "最後の歌を読み終えると、「試合終了」画面が現れる") { (activity) in
-            // when
-            tapForwardButton(app)
-            sleep(1)
-            XCTAssert(app.staticTexts["試合終了"].exists)
-            XCTContext.runActivity(named: "その画面には、「トップに戻る」ボタンと「感想戦を始める」ボタンがある") { _ in
-                XCTAssert(app.buttons["トップに戻る"].exists)
-                XCTAssert(app.buttons["感想戦を始める"].exists)
-            }
-        }
+        
+        gameEndViewWithPostMortemButtonAppars(app)
+        
         XCTContext.runActivity(named: "「感想戦を始める」ボタンを押すと、本当に始めるかどうか聞くアラートが現れる") { _ in
             // when
             app.buttons["感想戦を始める"].tap()
