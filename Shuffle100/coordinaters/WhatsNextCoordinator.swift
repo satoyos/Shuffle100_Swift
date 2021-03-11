@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class WhatsNextCoordinator: Coordinator {
+final class WhatsNextCoordinator: Coordinator, BackToHome {
     internal var screen: UIViewController?
     private var fromScreen: UIViewController
     var navigationController: UINavigationController
@@ -21,7 +21,7 @@ final class WhatsNextCoordinator: Coordinator {
     internal var exitGameEscalationgAction: (() -> Void)?
     var childCoordinator: Coordinator?
 
-    init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager, navigationController: UINavigationController = UINavigationController()) {
+    init(fromScreen: UIViewController, currentPoem: Poem, settings: Settings, store: StoreManager, navigationController: UINavigationController) {
         self.fromScreen = fromScreen
         self.currentPoem = currentPoem
         self.settings = settings
@@ -42,8 +42,12 @@ final class WhatsNextCoordinator: Coordinator {
         screen.goNextAction = { [weak self] in
             self?.goNextPoem()
         }
-        screen.exitGameAction = { [weak self] in
-            self?.exitGame()
+//        screen.exitGameAction = { [weak self] in
+//            self?.exitGame()
+//        }
+        screen.backToHomeScreenAction = { [weak self] in
+            screen.dismiss(animated: true)
+            self?.backToHomeScreen()
         }
         screen.goSettingAction = { [weak self] in
             self?.openSettingScreen()

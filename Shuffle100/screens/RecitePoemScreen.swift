@@ -75,7 +75,7 @@ final class RecitePoemScreen: SettingsAttachedScreen {
             }
         } else {
             recitePoemView.exitButton.tappedAction = {[weak self] in
-                self?.confirmExittingGame(onScreen: self)
+                self?.confirmExittingGame()
             }
         }
         recitePoemView.gearButton.tappedAction = { [weak self] in
