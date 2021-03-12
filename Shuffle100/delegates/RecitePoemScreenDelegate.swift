@@ -28,7 +28,7 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
         ac.addAction(startPostMortem)
         ac.addAction(cancel)
         if let pc = ac.popoverPresentationController {
-            let button = gameEndView.backToHomeButton
+            guard let button = recitePoemView.exitButton else { return }
             pc.sourceView = button
             pc.sourceRect = CGRect(x: 0, y: 0, width: button.frame.width, height: button.frame.height)
         }
