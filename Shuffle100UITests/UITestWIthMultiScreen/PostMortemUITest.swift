@@ -136,6 +136,30 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         }
     }
     
+    func test_backToHomeViaExitButtonInPostMortemMode() {
+        activatePostMortemMode()
+        XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
+            // given
+            gotoRecitePoemScreen(app)
+            // when
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["1首め:下の句 (全100首)"], timeout: timeOutSec)
+        }
+        XCTContext.runActivity(named: "Exitボタンを押して現れるActionSheetで「トップに戻る」を選ぶと、その通りに画面遷移する") { _ in
+            // when
+            app.buttons["exit"].tap()
+            let backToHomeButton = waitToHittable(for: app.sheets.buttons["トップに戻る"], timeout: timeOutSec)
+            backToHomeButton.tap()
+            // then
+            waitToAppear(for: app.navigationBars.staticTexts["トップ"], timeout: timeOutSec)
+        }
+    }
+    
     private func activatePostMortemMode() {
         XCTContext.runActivity(named: "まず、「いろいろな設定」画面で感想戦モードを有効にする") { _ in
             // when
