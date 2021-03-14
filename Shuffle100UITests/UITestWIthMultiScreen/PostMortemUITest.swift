@@ -95,6 +95,14 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
         }
         gameEndViewWithPostMortemButtonAppars()
+        XCTContext.runActivity(named: "この画面で「トップに戻る」ボタンを押すと、そのとおりに画面遷移する。") { _ in
+            // given
+            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: timeOutSec)
+            // when
+            button.tap()
+            // then
+            XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
+        }
     }
     
     func test_startpostMortemFromExitButton() {
