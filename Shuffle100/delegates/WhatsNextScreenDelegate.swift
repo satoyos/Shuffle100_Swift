@@ -9,11 +9,6 @@
 import UIKit
 
 extension WhatsNextScreen: ExitGameProtocol {
-//    func exitGame() {
-//        dismiss(animated: true, completion: {
-//            self.exitGameAction?()
-//        })
-//    }
 
     @objc func gearButtonTapped() {
         assert(true, "歯車ボタンが押された！")
