@@ -14,11 +14,13 @@ struct SettingsCellDataSource: TableDataSource {
     var accessibilityLabel: String?
     var withSwitchOf: Bool?
     var secondaryText: String
+    var configType: UIListContentConfiguration
     
-    init(title: String, accessoryType type: UITableViewCell.AccessoryType, secondaryText: String = "") {
+    init(title: String, accessoryType type: UITableViewCell.AccessoryType, secondaryText: String = "", configType: UIListContentConfiguration = .valueCell()) {
 
         self.title = title
         self.accessoryType = type
+        self.configType = configType
         self.secondaryText = secondaryText
     }
 }
