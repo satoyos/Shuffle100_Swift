@@ -42,9 +42,6 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
         screen.goNextAction = { [weak self] in
             self?.goNextPoem()
         }
-//        screen.exitGameAction = { [weak self] in
-//            self?.exitGame()
-//        }
         screen.backToHomeScreenAction = { [weak self] in
             screen.dismiss(animated: true)
             self?.backToHomeScreen()

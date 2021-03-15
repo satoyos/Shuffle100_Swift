@@ -21,7 +21,6 @@ final class WhatsNextScreen: Screen {
     var showTorifudaAction: (() -> Void)?
     var refrainAction: (() -> Void)?
     var goNextAction: (() -> Void)?
-//    var exitGameAction: (() -> Void)?
     var backToHomeScreenAction: (() -> Void)?
     var goSettingAction: (() -> Void)?
 
