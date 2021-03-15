@@ -33,11 +33,11 @@ extension RecitePoemProtocol where Self: Coordinator {
         screen.backToHomeScreenAction = { [weak self] in
             self?.backToHomeScreen()
         }
-        if settings.postMortemEnabled {
+//        if settings.postMortemEnabled {
             screen.startPostMortemAction = { [weak self] in
                 self?.startPostMortem()
             }
-        }
+//        }
         // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
         CATransaction.begin()

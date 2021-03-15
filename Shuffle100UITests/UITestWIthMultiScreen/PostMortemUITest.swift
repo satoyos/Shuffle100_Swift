@@ -25,17 +25,18 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
 
     func test_postMotermFromGameEndView() throws {
         activatePostMortemMode()
-        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
-            // given
-            gotoPoemPickerScreen(app)
-            sleep(1)
-            // when
-            app.buttons["全て取消"].tap()
-            app.tables.cells["001"].tap()
-            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
-            // then
-            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
-        }
+//        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
+//            // given
+//            gotoPoemPickerScreen(app)
+//            sleep(1)
+//            // when
+//            app.buttons["全て取消"].tap()
+//            app.tables.cells["001"].tap()
+//            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+//            // then
+//            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
+//        }
+        selectJustNo1Poem()
         XCTContext.runActivity(named: "空札を有効にする") { _ in
             app.switches["modeSwitch"].tap()
         }
@@ -168,6 +169,51 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         }
     }
     
+    func test_changePostMortemModeDuringGame() {
+        // given
+        gotoRecitePoemScreen(app)
+        XCTContext.runActivity(named: "デフォルトの状態では、Exitボタンを押すと通常のアラート画面が表示される") { _ in
+            app.buttons["exit"].tap()
+            // then
+            let continueButton = waitToHittable(for: app.alerts.buttons["続ける"], timeout: timeOutSec)
+            // when
+            continueButton.tap()
+        }
+        XCTContext.runActivity(named: "「いろいろな設定」画面で感想戦を選べるように設定変更する") { _ in
+            // when
+            let gearButton = waitToHittable(for: app.buttons["gear"], timeout: timeOutSec)
+            gearButton.tap()
+            // then
+            XCTAssert(app.navigationBars.staticTexts["いろいろな設定"].exists)
+            // when
+            sleep(1)
+            app.switches["modeSwitch"].tap()
+            app.buttons["設定終了"].tap()
+            // then
+            XCTAssert(app.staticTexts["序歌"].exists)
+        }
+        XCTContext.runActivity(named: "1種目の下の句まで進める") { _ in
+            tapPlayButton(app)
+            tapForwardButton(app)
+            sleep(1)
+            tapForwardButton(app)
+            sleep(1)
+            tapPlayButton(app)
+            // then
+            waitToAppear(for: app.staticTexts["1首め:下の句 (全100首)"], timeout: timeOutSec)
+        }
+        XCTContext.runActivity(named: "次にExitボタンを押すと、今度は「感想戦を始める」を選べる") { _ in
+            // when
+            app.buttons["exit"].tap()
+            // then
+            let postMortemButton = waitToHittable(for: app.sheets.buttons["感想戦を始める"], timeout: timeOutSec)
+            // when
+            postMortemButton.tap()
+            // then
+            waitToAppear(for: app.staticTexts["序歌"], timeout: timeOutSec)
+        }
+    }
+    
     private func activatePostMortemMode() {
         XCTContext.runActivity(named: "まず、「いろいろな設定」画面で感想戦モードを有効にする") { _ in
             // when
@@ -189,6 +235,20 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
                 XCTAssert(app.buttons["トップに戻る"].exists)
                 XCTAssert(app.buttons["感想戦を始める"].exists)
             }
+        }
+    }
+    
+    private func selectJustNo1Poem() {
+        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
+            // given
+            gotoPoemPickerScreen(app)
+            sleep(1)
+            // when
+            app.buttons["全て取消"].tap()
+            app.tables.cells["001"].tap()
+            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+            // then
+            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
         }
     }
 
