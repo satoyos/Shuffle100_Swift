@@ -57,7 +57,7 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
     }
 
     private func postMotermTableDataSource() -> SettingsCellDataSource {
-        var dataSource =             SettingsCellDataSource(title: "試合開始時の感想戦選択", accessoryType: .none)
+        var dataSource =             SettingsCellDataSource(title: "試合後に感想戦を選択できる", accessoryType: .none, secondaryText: "感想戦では、同じ歌を同じ順序で読み上げます。", configType: .subtitleCell())
         dataSource.withSwitchOf = settings.postMortemEnabled
         return dataSource
     }

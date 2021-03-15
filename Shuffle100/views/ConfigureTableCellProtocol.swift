@@ -15,7 +15,7 @@ protocol ConfigureSettingTableCell {
 
 extension ConfigureSettingTableCell where Self: UITableViewCell {
     func configure(dataSource: SettingsCellDataSource) {
-        var content: UIListContentConfiguration = .valueCell()
+        var content: UIListContentConfiguration = dataSource.configType
         content.text = dataSource.title
         content.secondaryText = dataSource.secondaryText
         self.contentConfiguration = content
