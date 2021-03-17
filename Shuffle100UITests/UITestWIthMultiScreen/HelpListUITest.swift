@@ -34,6 +34,7 @@ class HelpListUITest: XCTestCase {
         canGotoDetailHelp(title: "「札セット」とその使い方")
         canGotoDetailHelp(title: "五色百人一首")
         canGotoDetailHelp(title: "暗記時間タイマー")
+        canGotoDetailHelp(title: "「感想戦」のサポート")
         canGotoDetailHelp(title: "「いなばくん」について")
     }
     
