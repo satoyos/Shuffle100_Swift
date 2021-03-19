@@ -83,7 +83,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     private func startGame(settings: Settings, store: StoreManager) {
         var gameDriver: Coordinator!
 
-        switch settings.mode.reciteMode {
+        switch settings.reciteMode {
         case .normal:
             gameDriver = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
             gameDriver.start()

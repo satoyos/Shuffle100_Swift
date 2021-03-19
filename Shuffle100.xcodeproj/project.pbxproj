@@ -202,6 +202,7 @@
 		9260CCA725C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */; };
+		926489192604480300CC4131 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926489182604480300CC4131 /* SettingsTest.swift */; };
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD42380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD52380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
@@ -629,6 +630,7 @@
 		925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemEnabledGameEndView.swift; sourceTree = "<group>"; };
 		9260CCA525C67AE000B709B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
+		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenGameActions.swift; sourceTree = "<group>"; };
@@ -1059,6 +1061,7 @@
 				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
 				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
 				92B87D50250BBE96003BB51B /* FiveColorsTest.swift */,
+				926489182604480300CC4131 /* SettingsTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1660,6 +1663,7 @@
 				92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */,
 				9298B70324C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
+				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
 				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
 				92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */,
