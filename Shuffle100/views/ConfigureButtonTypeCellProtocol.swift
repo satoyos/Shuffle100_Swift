@@ -17,6 +17,7 @@ extension ConfigureButtonTypeCell where Self: UITableViewCell {
         
         self.contentConfiguration = createListContentConfiguration(from: dataSource)
         self.accessibilityLabel = dataSource.accessibilityLabel
+        self.accessibilityIdentifier = dataSource.title
     }
     
     private func createListContentConfiguration(from dataSource: ButtonTypeCellDataSource) -> UIListContentConfiguration {
