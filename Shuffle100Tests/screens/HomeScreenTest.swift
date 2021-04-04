@@ -26,6 +26,7 @@ class HomeScreenTest: XCTestCase, ApplyListContentConfiguration {
         // then
         let cell = startGameCell(of: screen)
         XCTAssertNotNil(cell.contentConfiguration)
+        XCTAssertEqual(cell.accessibilityIdentifier, "試合開始")
         let config = listContentConfig(of: cell)
         XCTAssertEqual(config.textProperties.color , .systemRed)
     }
@@ -37,6 +38,7 @@ class HomeScreenTest: XCTestCase, ApplyListContentConfiguration {
         // when
         screen.loadViewIfNeeded()
         let reciteModeCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(reciteModeCell.accessibilityIdentifier, "読み上げモード")
         
         let config = listContentConfig(of: reciteModeCell)
         XCTAssertEqual(config.secondaryText, "初心者")

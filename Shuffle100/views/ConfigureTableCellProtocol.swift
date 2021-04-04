@@ -20,7 +20,8 @@ extension ConfigureSettingTableCell where Self: UITableViewCell {
         content.secondaryText = dataSource.secondaryText
         self.contentConfiguration = content
         
-        accessoryType = dataSource.accessoryType
+        self.accessoryType = dataSource.accessoryType
+        self.accessibilityIdentifier = dataSource.title
         self.accessibilityLabel = dataSource.accessibilityLabel
         if let switchValue = dataSource.withSwitchOf {
             let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

@@ -28,12 +28,14 @@ extension PageObjectable {
     }
     
     func elementsExist(_ elements: [XCUIElement], timeout: Double) -> Bool {
-        for element in elements {
-            if !element.waitForExistence(timeout: timeout) {
-                return false
-            }
-        }
-        
-        return true
+//        for element in elements {
+//            if !element.waitForExistence(timeout: timeout) {
+//                return false
+//            }
+//        }
+//        return true
+
+        return elements.allSatisfy{ $0.waitForExistence(timeout: timeout) }
     }
+    
 }
