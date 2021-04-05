@@ -8,15 +8,18 @@
 
 import XCTest
 
-class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
-    
-    let app = XCUIApplication()
+//class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils {
+class PoemPickerIntegrationUITest: XCTestCase, PoemPickerScreenUITestUtils {
+
+    var app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
     
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
         app.launchArguments.append("--uitesting")
         app.launch()
+        self.homePage = HomePage(app: app)
     }
     
     override func tearDown() {
@@ -29,7 +32,8 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPicker
         XCTContext.runActivity(named: "デフォルトのトップ画面に「100首」と書かれたセルが存在する") { (activity) in
             XCTAssertTrue(app.cells.staticTexts["100首"].exists)
         }
-        gotoPoemPickerScreen(app)
+//        gotoPoemPickerScreen(app)
+        XCTAssert(homePage.goToPoemPickerPage().exists, "「歌を選ぶ」画面に到達")
         XCTContext.runActivity(named: "プレースホルダ付きの検索窓がある") { (activity) in
             XCTAssert(app.searchFields["歌を検索"].exists)
         }
@@ -47,7 +51,8 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPicker
     
     func test_searchPoem() {
         // given
-        gotoPoemPickerScreen(app)
+//        gotoPoemPickerScreen(app)
+        XCTAssert(homePage.goToPoemPickerPage().exists)
         XCTContext.runActivity(named: "検索窓に「あき」を入力すると、検索用データがそれにヒットする歌のみ表示される"){
             (activity) in
             // when
@@ -73,7 +78,8 @@ class PoemPickerIntegrationUITest: XCTestCase, HomeScreenUITestUtils, PoemPicker
     
     func test_alertAppearsWhenStartGameWithoutSelectedPoem() {
         // given
-        gotoPoemPickerScreen(app)
+//        gotoPoemPickerScreen(app)
+        XCTAssert(homePage.goToPoemPickerPage().exists, "「歌を選ぶ」画面に到達")
         let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
         button.tap()
         goBackToHomeScreen(app)
