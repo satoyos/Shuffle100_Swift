@@ -89,6 +89,8 @@
 		921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
 		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
 		922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD32618A1CB0093B24A /* PageObjectable.swift */; };
+		922BDDD9261B3B760093B24A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD8261B3B760093B24A /* HomePage.swift */; };
+		922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */; };
 		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
 		92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
 		92328C2324591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
@@ -578,6 +580,8 @@
 		921FF44C24A603760083AC49 /* HelpDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreen.swift; sourceTree = "<group>"; };
 		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		922BDDD32618A1CB0093B24A /* PageObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObjectable.swift; sourceTree = "<group>"; };
+		922BDDD8261B3B760093B24A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerPage.swift; sourceTree = "<group>"; };
 		92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButtonTest.swift; sourceTree = "<group>"; };
 		92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeImageAttachedButton.swift; sourceTree = "<group>"; };
 		92328C2524591E25005E0FEE /* refrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refrain.png; sourceTree = "<group>"; };
@@ -1156,6 +1160,8 @@
 				92F66678252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift */,
 				92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */,
 				922BDDD32618A1CB0093B24A /* PageObjectable.swift */,
+				922BDDD8261B3B760093B24A /* HomePage.swift */,
+				922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1857,6 +1863,7 @@
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
 				92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */,
 				925994FD244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
+				922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */,
 				92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */,
 				921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
@@ -1954,6 +1961,7 @@
 				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
+				922BDDD9261B3B760093B24A /* HomePage.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
