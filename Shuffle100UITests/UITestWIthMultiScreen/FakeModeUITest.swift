@@ -19,7 +19,7 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
     }
 
     func test_fakeModeMakeDeckSize_x_2() {
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         XCTContext.runActivity(named: "2首選んでホーム画面に戻る") { (acitivity) in
             // given
             sleep(1)

@@ -26,7 +26,7 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     func test_GameEndViewAppears() {
         XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
             // given
-            gotoPoemPickerScreen(app)
+            gotoPoemPickerScreen()
             sleep(1)
             // when
             app.buttons["全て取消"].tap()

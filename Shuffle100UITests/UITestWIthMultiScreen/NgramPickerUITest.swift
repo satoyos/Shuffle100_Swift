@@ -22,13 +22,13 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     }
 
     func test_openNgramPicker() throws {
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         gotoNgramPickerScreenFromPickerScreen(app)
     }
 
     func test_tapFullSelectedCell() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         select93Excluding1jiKimari(app)
         // then
@@ -42,7 +42,7 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     
     func test_tapEmptySelectedCell() {
         XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
-            gotoPoemPickerScreen(app)
+            gotoPoemPickerScreen()
             let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
             button.tap()
             gotoNgramPickerScreenFromPickerScreen(app)
@@ -58,7 +58,7 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     
     func test_selectSeveralCells() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // whwn
         selectAll2maiFudaFromPoemPickerScreen(app)
         // then

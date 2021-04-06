@@ -29,7 +29,7 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     func test_showTorifuda() {
         // given
         XCTContext.runActivity(named: "歌を1首(#4)だけ選んだ状態にする") { (activity) in
-            gotoPoemPickerScreen(app)
+            gotoPoemPickerScreen()
             let clearButton = waitToHittable(for: app.buttons["全て取消"])
             clearButton.tap()
             //   tap poems #4

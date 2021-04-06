@@ -12,7 +12,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     let selectBySetStr = "作った札セットから選ぶ"
     let overwriteExisingSetStr = "前に作った札セットを上書きする"
     
-    private var app = XCUIApplication()
+    internal let app = XCUIApplication()
     private let test97SetName = "97枚セット"
     
     override func setUpWithError() throws {
@@ -24,7 +24,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
 
     func test_showActionSheetForFudaSetSaving() throws {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when, then
         showActionSheetforFudaSetSaving(app)
     }
@@ -33,7 +33,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         // given
         // デフォルトの設定では全ての歌が選ばれている状態
         allPoemsAreSelectedAtHomeScreen(app)
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         add97FudaSetAsNewOne(app, setName: test97SetName)
         XCTContext.runActivity(named: "一旦全ての歌を選択した状態に戻し、トップ画面に戻ると、100首選ばれていることが確認できる") { _ in
@@ -43,7 +43,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             goBackToHomeScreen(app)
             allPoemsAreSelectedAtHomeScreen(app)
         }
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         XCTContext.runActivity(named: "保存済みの札セットがある状態でツールバーの「まとめて選ぶ」を選択すると、既存の札セットを呼び出す選択肢が現れる") { activity in
             // when
             let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
@@ -72,7 +72,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
 
     func test_savingEmptyFudaSetIsInhibited() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
         button.tap()
@@ -87,7 +87,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     
     func test_emptyFudaSetNameIsInhibited() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         showActionSheetforFudaSetSaving(app)
         selectSaveAsNewSet(app)
         // when
@@ -109,7 +109,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     //
     func test_fudaSetCellDeletable() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         let set97name = "97枚セット"
         let set2maiFudaName = "2枚札セット"
         add97FudaSetAsNewOne(app, setName: set97name)
@@ -144,7 +144,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     
     func test_overwriteExistingFudaSet() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         let set2maiFudaName = "2枚札セット"
         add2maiFudaSetAsNewOne(app, setName: set2maiFudaName)
         let name1jiKimariSet = "一字決まり札セット"
