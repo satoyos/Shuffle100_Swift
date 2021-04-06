@@ -10,7 +10,7 @@ import XCTest
 
 class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
 
-    private var app = XCUIApplication()
+    internal var app = XCUIApplication()
     private let timeOutSec = 8.0
     
     override func setUpWithError() throws {
@@ -25,7 +25,7 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
 
     func test_selectByGroupActionsIncludsActionFor5Colors() throws {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
         button.tap()
@@ -38,13 +38,13 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
     
     func test_buttonsOn5ColorsScreenWork() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         gotoFiveColorsScreen(app)
     }
     
     func test_whenColorButtonTapped_actionSheetAppears() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         let toolBarButton = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
         toolBarButton.tap()
         gotoFiveColorsScreen(app)
@@ -61,7 +61,7 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
         XCTContext.runActivity(named: "デフォルトでは100首が選ばれている") { _ in
             XCTAssert(app.cells.staticTexts["100首"].exists)
         }
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         gotoFiveColorsScreen(app)
         // when
         let greenButton = waitToHittable(for: app.buttons["緑"], timeout: timeOutSec)
@@ -78,7 +78,7 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
     func test_add20ofColor() {
         // given
         XCTContext.runActivity(named: "1字決まりの札を選んでおく") { _ in
-            gotoPoemPickerScreen(app)
+            gotoPoemPickerScreen()
             select1jiKimari(app)
         }
         // when
@@ -99,7 +99,7 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
     }
     
     func test_select2colors() {
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         gotoFiveColorsScreen(app)
         // when
         let greenButton = waitToHittable(for: app.buttons["緑"], timeout: timeOutSec)

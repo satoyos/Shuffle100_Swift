@@ -9,17 +9,25 @@
 import XCTest
 
 protocol HomeScreenUITestUtils {
-    func gotoPoemPickerScreen(_ app: XCUIApplication) -> Void
+    var app: XCUIApplication { get }
+    var homePage: HomePage { get }
+    func gotoPoemPickerScreen()
     func gotoRecitePoemScreen(_ app: XCUIApplication) -> Void
     func gotoReciteSettingsScreen(_ app: XCUIApplication) -> Void
 }
 
 extension HomeScreenUITestUtils {
-    func gotoPoemPickerScreen(_ app: XCUIApplication) {
-        // when
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        // then
-        XCTAssert(app.navigationBars["歌を選ぶ"].exists)
+    
+    var homePage: HomePage {
+        return HomePage(app: app)
+    }
+    
+    func gotoPoemPickerScreen() {
+//        // when
+//        app.tables/*@START_MENU_TOKEN@*/.staticTexts["取り札を用意する歌"]/*[[".cells[\"poemsCell\"].staticTexts[\"取り札を用意する歌\"]",".staticTexts[\"取り札を用意する歌\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        // then
+//        XCTAssert(app.navigationBars["歌を選ぶ"].exists)
+        XCTAssert(homePage.goToPoemPickerPage().exists, "「歌を選ぶ」ページに到達。")
     }
     
     func gotoRecitePoemScreen(_ app: XCUIApplication) -> Void {

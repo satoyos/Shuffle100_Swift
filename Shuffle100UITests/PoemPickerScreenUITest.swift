@@ -21,7 +21,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
     func test_cancelAllAndSelectAll() {
         XCTContext.runActivity(named: "「全て取消」ボタンを押すと、選ばれている歌が0首になる") { activity in
             // given
-            gotoPoemPickerScreen(app)
+            gotoPoemPickerScreen()
             // when
             sleep(1)
             app.buttons["全て取消"].tap()
@@ -31,7 +31,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
         }
         XCTContext.runActivity(named: "そこから「全て選択」ボタンを押すと、選ばれている歌が100首になる") { activity in
             // given
-            gotoPoemPickerScreen(app)
+            gotoPoemPickerScreen()
             // when
             sleep(1)
             app.buttons["全て選択"].tap()
@@ -43,7 +43,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
     
     func test_tappingDetailButtonShowsFudaScreen() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         detailButtonOfCell(app.cells["001"]).tap()
         // then
@@ -53,7 +53,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
     
     func test_longPressNetRespondAnyMore() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         app.cells["001"].press(forDuration: 2.0)
         // then
@@ -62,7 +62,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
     
     func test_tapDetailButtonOnSearchResult() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         let searchField = app.searchFields.element
         searchField.tap()
@@ -84,7 +84,7 @@ class PoemPickerScreenUITest: XCTestCase, HomeScreenUITestUtils, SHDeviceTypeGet
     
     func test_torifudaShowsFullLinersOnPhoneTypeDevice() {
         // given
-        gotoPoemPickerScreen(app)
+        gotoPoemPickerScreen()
         // when
         detailButtonOfCell(app.cells["001"]).tap()
         // then
