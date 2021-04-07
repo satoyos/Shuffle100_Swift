@@ -59,7 +59,8 @@ struct PoemSupplier {
     var side: Side? {
         return fuda_side
     }
-        
+    
+    @discardableResult
     mutating func drawNextPoem() -> Poem? {
         current_poem = deck.nextPoem()
         switch current_poem {
