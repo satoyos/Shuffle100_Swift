@@ -44,7 +44,7 @@ class PoemSupplierTests: XCTestCase {
     
     func test_stepIntoShimo() {
         var supplier = PoemSupplier()
-        _ = supplier.drawNextPoem()
+        supplier.drawNextPoem()
         XCTAssertTrue(supplier.kamiNow)
         XCTAssertEqual(supplier.side, .kami)
         
@@ -56,7 +56,7 @@ class PoemSupplierTests: XCTestCase {
     func test_againstBugInRubyMotionEra() {
         // 1枚めくり、そこから巻き戻そうとすると、falseが返る
         var supplier = PoemSupplier()
-        _ = supplier.drawNextPoem()
+        supplier.drawNextPoem()
         let poem = supplier.rollBackPrevPoem()
         XCTAssertNil(poem)
         
@@ -102,9 +102,9 @@ class PoemSupplierTests: XCTestCase {
         var supplier = PoemSupplier()
         // when
         XCTAssertEqual(supplier.currentIndex, 0)
-        _ = supplier.drawNextPoem()
-        _ = supplier.drawNextPoem()
-        _ = supplier.drawNextPoem()
+        supplier.drawNextPoem()
+        supplier.drawNextPoem()
+        supplier.drawNextPoem()
         // then
         XCTAssertEqual(supplier.currentIndex, 3)
         // when
