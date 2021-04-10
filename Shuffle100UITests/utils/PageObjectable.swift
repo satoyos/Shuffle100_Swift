@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 
 protocol PageObjectable {
-    associatedtype Ally
+    associatedtype A11y
     var app: XCUIApplication { get }
     init(app: XCUIApplication)
     var exists: Bool { get }

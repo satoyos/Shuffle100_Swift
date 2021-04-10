@@ -17,12 +17,12 @@ class GotoRecitePoemScreenUITest: XCTestCase, HomeScreenUITestUtils, ExitGameUIT
     }
 
     func test_RecitePoemScreenAppearWhenGameStartCellTapped() {
-        gotoRecitePoemScreen(app)
+        gotoRecitePoemScreen()
     }
     
     func test_backToHomeScreenUsingExitButton() {
         // given
-        gotoRecitePoemScreen(app)
+        gotoRecitePoemScreen()
         // when, then
         exitGameSuccessfully(app)
     }

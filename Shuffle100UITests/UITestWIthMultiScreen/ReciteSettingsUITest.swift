@@ -113,7 +113,7 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     
     func test_openSettingsFromRecitePoemScreen() {
         // given
-        gotoRecitePoemScreen(app)
+        gotoRecitePoemScreen()
         // then
         let gearButton = app.buttons["gear"]
         XCTAssert(gearButton.exists)

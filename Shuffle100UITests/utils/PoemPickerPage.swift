@@ -17,10 +17,10 @@ final class PoemPickerPage: PageObjectable {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars[Ally.title].firstMatch
+        return app.navigationBars[A11y.title].firstMatch
     }
     
-    enum Ally {
+    enum A11y {
         static let title = "歌を選ぶ"
     }
 }

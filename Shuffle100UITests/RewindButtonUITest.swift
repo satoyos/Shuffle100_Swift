@@ -20,7 +20,7 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
 
     func test_rewindInJokaGoBackToTop() {
         // given
-        gotoRecitePoemScreen(app)
+        gotoRecitePoemScreen()
         // when
         let rewindButton = app.buttons["rewind"]
         sleep(1)
@@ -33,7 +33,7 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
 
     func test_rewindInNunberedPoem_atKami() {
         XCTContext.runActivity(named: "2首目の上の句まで進む") { (activiti) in
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             app.buttons["forward"].tap()
             app.buttons["forward"].tap()
             app.buttons["forward"].tap()
@@ -54,7 +54,7 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
     
     func test_rewindInNumberedPoem_atShimo() {
         XCTContext.runActivity(named: "1首目の下の句まで進む") { (activiti) in
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             app.buttons["forward"].tap()
             app.buttons["forward"].tap()
             app.buttons["forward"].tap()

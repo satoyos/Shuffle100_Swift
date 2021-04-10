@@ -38,7 +38,7 @@ extension RecitePoemScreenUITestUtils {
             XCTAssert(app.cells.staticTexts["初心者"].exists)
         }
         XCTContext.runActivity(named: "そして序歌へ") { (activity) in
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
         }
         XCTContext.runActivity(named: "forwardボタンを押すと、1首めの上の句へ") { (activity) in
             tapForwardButton(app)
