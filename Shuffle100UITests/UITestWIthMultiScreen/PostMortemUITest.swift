@@ -42,7 +42,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         }
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             // when
             tapForwardButton(app)
             sleep(1)
@@ -110,7 +110,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         activatePostMortemMode()
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             // when
             tapForwardButton(app)
             sleep(1)
@@ -149,7 +149,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         activatePostMortemMode()
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             // when
             tapForwardButton(app)
             sleep(1)
@@ -171,7 +171,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
     
     func test_changePostMortemModeDuringGame() {
         // given
-        gotoRecitePoemScreen(app)
+        gotoRecitePoemScreen()
         XCTContext.runActivity(named: "デフォルトの状態では、Exitボタンを押すと通常のアラート画面が表示される") { _ in
             app.buttons["exit"].tap()
             // then

@@ -17,34 +17,34 @@ final class HomePage: PageObjectable, WaitInUITest {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars[Ally.title].firstMatch
+        return app.navigationBars[A11y.title].firstMatch
     }
     
     var poemsCell: XCUIElement {
-        return app.cells[Ally.poems].firstMatch
+        return app.cells[A11y.poems].firstMatch
     }
     
     var reciteModeCell: XCUIElement {
-        return app.cells[Ally.reciteMode].firstMatch
+        return app.cells[A11y.reciteMode].firstMatch
     }
     
     var fakeModeCell: XCUIElement {
-        return app.cells[Ally.fakeMode].firstMatch
+        return app.cells[A11y.fakeMode].firstMatch
     }
     
     var singerCell: XCUIElement {
-        return app.cells[Ally.singer].firstMatch
+        return app.cells[A11y.singer].firstMatch
     }
     
     var timerCell: XCUIElement {
-        return app.cells[Ally.timer].firstMatch
+        return app.cells[A11y.timer].firstMatch
     }
     
     var gameStartCell: XCUIElement {
-        return app.cells[Ally.gameStart].firstMatch
+        return app.cells[A11y.gameStart].firstMatch
     }
     
-    enum Ally {
+    enum A11y {
         static let title = "トップ"
         static let poems = "取り札を用意する歌"
         static let reciteMode = "読み上げモード"
@@ -58,5 +58,11 @@ final class HomePage: PageObjectable, WaitInUITest {
         let cell = waitToHittable(for: poemsCell, timeout: timeOutSec)
         cell.tap()
         return PoemPickerPage(app: app)
+    }
+    
+    func gotoRecitePoemPage() -> RecitePoemPage {
+        let cell = waitToHittable(for: gameStartCell, timeout: timeOutSec)
+        cell.tap()
+        return RecitePoemPage(app: app)
     }
 }

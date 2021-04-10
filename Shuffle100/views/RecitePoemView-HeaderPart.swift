@@ -39,6 +39,7 @@ extension RecitePoemView {
             $0.sizeToFit()
             $0.backgroundColor = .clear
             $0.textColor = textColor()
+            $0.accessibilityIdentifier = "screenTitle"
         }
         headerContainer.addSubview(titleLabel)
         titleLabel.snp.makeConstraints{(make) -> Void in

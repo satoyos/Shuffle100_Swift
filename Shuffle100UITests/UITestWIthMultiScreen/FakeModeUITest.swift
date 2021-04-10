@@ -35,7 +35,7 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
             // when
 //            app.tables.switches["modeSwitch"].tap()
             turnOnFakeMode()
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             tapForwardButton(app)
             // then
             XCTAssert(app.staticTexts["1首め:上の句 (全4首)"].exists)
@@ -63,7 +63,7 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
         // then
         XCTContext.runActivity(named: "読み上げる枚数が2枚に変わっている") { _ in
             // when
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             tapForwardButton(app)
             // then
             XCTAssert(app.staticTexts["1首め:上の句 (全2首)"].exists)

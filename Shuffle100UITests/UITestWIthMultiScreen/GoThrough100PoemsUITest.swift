@@ -23,7 +23,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
 
     func test_goThroghWithSkipForward() {
         XCTContext.runActivity(named: "まず序歌へ") { (activiti) in
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
         }
 
         for i in (1...100) {
@@ -58,7 +58,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             XCTAssert(app.cells.staticTexts["ノンストップ"].exists)
         }
         XCTContext.runActivity(named: "そして序歌へ") { (activiti) in
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
         }
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
@@ -90,7 +90,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             XCTAssert(app.cells.staticTexts["初心者"].exists)
         }
         XCTContext.runActivity(named: "そして読み上げを開始し、序歌をスキップ") { (activiti) in
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             tapForwardButton(app)
         }
         for i in (1...100) {

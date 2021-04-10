@@ -37,7 +37,7 @@ class AllPeomRecitedUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
         }
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
-            gotoRecitePoemScreen(app)
+            gotoRecitePoemScreen()
             // when
             tapForwardButton(app)
             sleep(1)
