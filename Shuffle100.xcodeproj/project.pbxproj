@@ -87,7 +87,6 @@
 		921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
 		921FF44E24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
 		921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
-		92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */; };
 		922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD32618A1CB0093B24A /* PageObjectable.swift */; };
 		922BDDD9261B3B760093B24A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD8261B3B760093B24A /* HomePage.swift */; };
 		922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */; };
@@ -579,7 +578,6 @@
 		921FF44624A4D9EF0083AC49 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreenTest.swift; sourceTree = "<group>"; };
 		921FF44C24A603760083AC49 /* HelpDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreen.swift; sourceTree = "<group>"; };
-		92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		922BDDD32618A1CB0093B24A /* PageObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObjectable.swift; sourceTree = "<group>"; };
 		922BDDD8261B3B760093B24A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerPage.swift; sourceTree = "<group>"; };
@@ -922,7 +920,6 @@
 				927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */,
 				923D59332143BB0B000F5E60 /* Info.plist */,
 				9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */,
-				92296230232F9D2D00D712A6 /* RecitePoemScreenUITest.swift */,
 				923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */,
 				92ABF9A623F00B80000CA91C /* RewindButtonUITest.swift */,
 				92A146AF24DED8540045D7DF /* MemorizeTImerScreenUITest.swift */,
@@ -1996,7 +1993,6 @@
 				92F666262524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */,
 				921FF44524A0DBDE0083AC49 /* HelpListUITest.swift in Sources */,
-				92296231232F9D2D00D712A6 /* RecitePoemScreenUITest.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
 				925B076025EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
 				9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
