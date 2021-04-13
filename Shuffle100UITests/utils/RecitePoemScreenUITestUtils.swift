@@ -31,7 +31,7 @@ extension RecitePoemScreenUITestUtils {
     func gotoWhatsNextScreen(_ app: XCUIApplication, poemsNumber:Int = 100) {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
-            gotoSelectModeScreen(app)
+            gotoSelectModeScreen()
             app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
             app.buttons["トップ"].tap()
             // then

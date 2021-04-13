@@ -54,7 +54,7 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
         }
         // when
         XCTContext.runActivity(named: "読み上げモードを「初心者」に変更する") { _ in
-            gotoSelectModeScreen(app)
+            gotoSelectModeScreen()
             app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
             app.buttons["トップ"].tap()
             // then

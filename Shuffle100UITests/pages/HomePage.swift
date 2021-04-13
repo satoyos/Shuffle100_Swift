@@ -65,4 +65,10 @@ final class HomePage: PageObjectable, WaitInUITest {
         cell.tap()
         return RecitePoemPage(app: app)
     }
+    
+    func gotoSelectModePage() -> SelectModePage {
+        let cell = waitToHittable(for: reciteModeCell, timeout: timeOutSec)
+        cell.tap()
+        return SelectModePage(app: app)
+    }
 }
