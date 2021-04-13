@@ -834,6 +834,17 @@
 			path = ../lib;
 			sourceTree = "<group>";
 		};
+		922BDDE72625D4B80093B24A /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				922BDDD32618A1CB0093B24A /* PageObjectable.swift */,
+				922BDDD8261B3B760093B24A /* HomePage.swift */,
+				922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */,
+				922BDDE22621CE720093B24A /* RecitePoiemPage.swift */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
 		923B594F23ACF8B1002027B4 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +916,7 @@
 		923D59302143BB0B000F5E60 /* Shuffle100UITests */ = {
 			isa = PBXGroup;
 			children = (
+				922BDDE72625D4B80093B24A /* pages */,
 				92BC8D4C23C6102800F0033F /* utils */,
 				928450D322E06B4B00D12CA7 /* lib */,
 				927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */,
@@ -1161,10 +1173,6 @@
 				923CFBDF2514F3B900C52630 /* AdjustWithSliderUtil.swift */,
 				92F66678252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift */,
 				92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */,
-				922BDDD32618A1CB0093B24A /* PageObjectable.swift */,
-				922BDDD8261B3B760093B24A /* HomePage.swift */,
-				922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */,
-				922BDDE22621CE720093B24A /* RecitePoiemPage.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
