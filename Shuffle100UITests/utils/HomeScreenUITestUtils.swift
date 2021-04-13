@@ -32,11 +32,12 @@ extension HomeScreenUITestUtils {
         XCTAssert(page.jokaTitle.exists, "タイトルが「序歌」である")
     }
     
-    func gotoSelectModeScreen(_ app: XCUIApplication) {
-        // when
-        app.tables.staticTexts["読み上げモード"].tap()
-        // then
-        XCTAssert(app.navigationBars["読み上げモードを選ぶ"].exists)
+    func gotoSelectModeScreen() {
+//        // when
+//        app.tables.staticTexts["読み上げモード"].tap()
+//        // then
+//        XCTAssert(app.navigationBars["読み上げモードを選ぶ"].exists)
+        XCTAssert(homePage.gotoSelectModePage().exists, "「読み上げモードを選ぶ」画面に到達")
     }
         
     func gotoSelectSingerScreen(_ app: XCUIApplication) {

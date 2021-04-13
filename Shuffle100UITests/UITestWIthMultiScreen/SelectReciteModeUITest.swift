@@ -25,7 +25,7 @@ class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
     func test_HomeScreenReflectsSelectedMode() {
         XCTContext.runActivity(named: "トップ画面で「読み上げモード」をタップすると、モード選択画面に遷移する"){
             (acitivity) in
-            gotoSelectModeScreen(app)
+            gotoSelectModeScreen()
         }
         
         XCTContext.runActivity(named: "初心者モードを選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in

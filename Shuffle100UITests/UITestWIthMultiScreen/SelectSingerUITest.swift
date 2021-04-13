@@ -35,7 +35,7 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SelectSingerScreenU
     func test_canGoToSelectSingerScreenWhenBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードに設定する") { _ in
             // given
-            gotoSelectModeScreen(app)
+            gotoSelectModeScreen()
             // then
             app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
             // when

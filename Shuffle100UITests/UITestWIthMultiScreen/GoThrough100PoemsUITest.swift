@@ -52,7 +52,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
     
     func test_goThoughInNonStopMode() {
         XCTContext.runActivity(named: "ノンストップモードを選択") { (activiti) in
-            gotoSelectModeScreen(app)
+            gotoSelectModeScreen()
             app.pickerWheels.element.adjust(toPickerWheelValue: "ノンストップ (止まらない)")
             app.buttons["トップ"].tap()
             XCTAssert(app.cells.staticTexts["ノンストップ"].exists)
@@ -83,7 +83,7 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
     func test_goThorough100InBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // when
-            gotoSelectModeScreen(app)
+            gotoSelectModeScreen()
             app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
             app.buttons["トップ"].tap()
             // then
