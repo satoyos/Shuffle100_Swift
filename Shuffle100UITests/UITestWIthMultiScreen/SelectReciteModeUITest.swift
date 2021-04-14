@@ -30,9 +30,13 @@ class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
         
         XCTContext.runActivity(named: "初心者モードを選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
             // when
-            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
-            app.buttons["トップ"].tap()
-            // then
+//            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
+//            app.buttons["トップ"].tap()
+//            // then
+            let selectModePage = SelectModePage(app: app)
+            selectModePage
+                .selectBeginnerMode(.beginner)
+                .backToTopButton.tap()
             // then
             XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
             // in BeginnerMode, fake mode chell should disappear
