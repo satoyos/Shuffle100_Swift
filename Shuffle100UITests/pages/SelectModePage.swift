@@ -25,7 +25,7 @@ final class SelectModePage: PageObjectable {
         return app.navigationBars.buttons[A11y.backToTop].firstMatch
     }
     
-    func selectBeginnerMode(_ mode: ReciteMode) -> Self {
+    func selectMode(_ mode: ReciteMode) -> Self {
         let label = labelForReciteMode(mode)
         app.pickerWheels.firstMatch.adjust(toPickerWheelValue: label)
         return self
