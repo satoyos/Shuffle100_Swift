@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SelectSingerScreenUITestUtils {
+class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
     let app = XCUIApplication()
     
     override func setUp() {
@@ -19,14 +19,20 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SelectSingerScreenU
     }
 
     func test_HomeScreenReflectsSelectedSinger() {
-        gotoSelectSingerScreen(app)
+        gotoSelectSingerScreen()
         
         XCTContext.runActivity(named: "「いなばくん」を選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
             // given
             let inabaLabel = "いなばくん（人間）"
+//            // when
+//            selectSingerFor(name: "いなばくん", in: app)
+//            goBackToHomeScreen(app)
+//            // then
             // when
-            selectSingerFor(name: "いなばくん", in: app)
-            goBackToHomeScreen(app)
+            let selectSingerPage = SelectSingerPage(app: app)
+            selectSingerPage
+                .selectSingerFor(name: "いなばくん")
+                .backToTopButton.tap()
             // then
             XCTAssertTrue(app.cells.staticTexts[inabaLabel].exists)
         }
@@ -36,15 +42,16 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils, SelectSingerScreenU
         XCTContext.runActivity(named: "初心者モードに設定する") { _ in
             // given
             gotoSelectModeScreen()
-            // then
-            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
             // when
-            app.buttons["トップ"].tap()
+            let selectModePage = SelectModePage(app: app)
+            selectModePage
+                .selectBeginnerMode(.beginner)
+                .backToTopButton.tap()
             // then
             XCTAssert(app.cells.staticTexts["初心者"].exists)
             XCTAssertFalse(app.cells["空札を加える"].exists)
         }
         // when
-        gotoSelectSingerScreen(app)
+        gotoSelectSingerScreen()
     }
 }

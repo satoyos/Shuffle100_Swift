@@ -71,4 +71,10 @@ final class HomePage: PageObjectable, WaitInUITest {
         cell.tap()
         return SelectModePage(app: app)
     }
+    
+    func gotoSelectSingerPage() -> SelectSingerPage {
+        let cell = waitToHittable(for: singerCell, timeout: timeOutSec)
+        cell.tap()
+        return SelectSingerPage(app: app)
+    }
 }

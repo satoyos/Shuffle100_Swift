@@ -40,11 +40,12 @@ extension HomeScreenUITestUtils {
         XCTAssert(homePage.gotoSelectModePage().exists, "「読み上げモードを選ぶ」画面に到達")
     }
         
-    func gotoSelectSingerScreen(_ app: XCUIApplication) {
-        // when
-        app.tables.staticTexts["読手"].tap()
-        // then
-        XCTAssert(app.navigationBars["読手を選ぶ"].exists)
+    func gotoSelectSingerScreen() {
+//        // when
+//        app.tables.staticTexts["読手"].tap()
+//        // then
+//        XCTAssert(app.navigationBars["読手を選ぶ"].exists)
+        XCTAssert(homePage.gotoSelectSingerPage().exists, "「毒手を選ぶ」画面に到達")
     }
     
     func gotoReciteSettingsScreen(_ app: XCUIApplication) {
