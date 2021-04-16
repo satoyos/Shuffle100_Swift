@@ -45,7 +45,7 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
             // when
             let selectModePage = SelectModePage(app: app)
             selectModePage
-                .selectBeginnerMode(.beginner)
+                .selectMode(.beginner)
                 .backToTopButton.tap()
             // then
             XCTAssert(app.cells.staticTexts["初心者"].exists)

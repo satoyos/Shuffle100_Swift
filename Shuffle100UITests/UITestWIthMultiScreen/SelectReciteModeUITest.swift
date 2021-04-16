@@ -35,7 +35,7 @@ class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
 //            // then
             let selectModePage = SelectModePage(app: app)
             selectModePage
-                .selectBeginnerMode(.beginner)
+                .selectMode(.beginner)
                 .backToTopButton.tap()
             // then
             XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
