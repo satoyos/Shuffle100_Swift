@@ -23,18 +23,19 @@ class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
     }
 
     func test_HomeScreenReflectsSelectedMode() {
+        var selectModePage: SelectModePage?
         XCTContext.runActivity(named: "トップ画面で「読み上げモード」をタップすると、モード選択画面に遷移する"){
             (acitivity) in
-            gotoSelectModeScreen()
+            selectModePage = gotoSelectModeScreen()
+        }
+        
+        guard let modePage = selectModePage else {
+            XCTFail("SelectModePageオブジェクトが取得できていない")
+            return
         }
         
         XCTContext.runActivity(named: "初心者モードを選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
-            // when
-//            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
-//            app.buttons["トップ"].tap()
-//            // then
-            let selectModePage = SelectModePage(app: app)
-            selectModePage
+            modePage
                 .selectMode(.beginner)
                 .backToTopButton.tap()
             // then

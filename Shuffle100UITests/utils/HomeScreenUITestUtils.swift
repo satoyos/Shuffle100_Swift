@@ -32,20 +32,19 @@ extension HomeScreenUITestUtils {
         XCTAssert(page.jokaTitle.exists, "タイトルが「序歌」である")
     }
     
-    func gotoSelectModeScreen() {
-//        // when
-//        app.tables.staticTexts["読み上げモード"].tap()
-//        // then
-//        XCTAssert(app.navigationBars["読み上げモードを選ぶ"].exists)
-        XCTAssert(homePage.gotoSelectModePage().exists, "「読み上げモードを選ぶ」画面に到達")
+    @discardableResult
+    func gotoSelectModeScreen() -> SelectModePage {
+        let selectModePage = homePage.gotoSelectModePage()
+        XCTAssert(selectModePage.exists, "「読み上げモードを選ぶ」画面に到達")
+        return selectModePage
     }
-        
-    func gotoSelectSingerScreen() {
-//        // when
-//        app.tables.staticTexts["読手"].tap()
-//        // then
-//        XCTAssert(app.navigationBars["読手を選ぶ"].exists)
-        XCTAssert(homePage.gotoSelectSingerPage().exists, "「毒手を選ぶ」画面に到達")
+    
+    @discardableResult
+    func gotoSelectSingerScreen() -> SelectSingerPage {
+        let selectSingerPage = homePage.gotoSelectSingerPage()
+
+        XCTAssert(selectSingerPage.exists, "「毒手を選ぶ」画面に到達")
+        return selectSingerPage
     }
     
     func gotoReciteSettingsScreen(_ app: XCUIApplication) {

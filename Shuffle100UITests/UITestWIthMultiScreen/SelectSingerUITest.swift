@@ -19,17 +19,13 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
     }
 
     func test_HomeScreenReflectsSelectedSinger() {
-        gotoSelectSingerScreen()
+        let selectSingerPage = gotoSelectSingerScreen()
         
         XCTContext.runActivity(named: "「いなばくん」を選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
             // given
             let inabaLabel = "いなばくん（人間）"
-//            // when
-//            selectSingerFor(name: "いなばくん", in: app)
-//            goBackToHomeScreen(app)
-//            // then
             // when
-            let selectSingerPage = SelectSingerPage(app: app)
+//            let selectSingerPage = SelectSingerPage(app: app)
             selectSingerPage
                 .selectSingerFor(name: "いなばくん")
                 .backToTopButton.tap()
@@ -41,9 +37,9 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
     func test_canGoToSelectSingerScreenWhenBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードに設定する") { _ in
             // given
-            gotoSelectModeScreen()
+            let selectModePage = gotoSelectModeScreen()
             // when
-            let selectModePage = SelectModePage(app: app)
+//            let selectModePage = SelectModePage(app: app)
             selectModePage
                 .selectMode(.beginner)
                 .backToTopButton.tap()
