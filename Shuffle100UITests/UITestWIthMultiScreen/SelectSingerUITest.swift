@@ -25,7 +25,6 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
             // given
             let inabaLabel = "いなばくん（人間）"
             // when
-//            let selectSingerPage = SelectSingerPage(app: app)
             selectSingerPage
                 .selectSingerFor(name: "いなばくん")
                 .backToTopButton.tap()
@@ -39,7 +38,6 @@ class SelectSingerUITest: XCTestCase, HomeScreenUITestUtils {
             // given
             let selectModePage = gotoSelectModeScreen()
             // when
-//            let selectModePage = SelectModePage(app: app)
             selectModePage
                 .selectMode(.beginner)
                 .backToTopButton.tap()
