@@ -30,22 +30,22 @@ class PoemPickerIntegrationUITest: XCTestCase, PoemPickerScreenUITestUtils {
     func test_HomeScreenReflectsSelectioninPoemPicker() {
         
         XCTContext.runActivity(named: "デフォルトのトップ画面に「100首」と書かれたセルが存在する") { (activity) in
-            XCTAssertTrue(app.cells.staticTexts["100首"].exists)
+            XCTAssert(homePage.numberOfSelecttedPoems(is: 100))
         }
-//        gotoPoemPickerScreen(app)
-        XCTAssert(homePage.goToPoemPickerPage().exists, "「歌を選ぶ」画面に到達")
+        let poemPickerPage = homePage.goToPoemPickerPage()
+        XCTAssert(poemPickerPage.exists, "「歌を選ぶ」画面に到達")
         XCTContext.runActivity(named: "プレースホルダ付きの検索窓がある") { (activity) in
             XCTAssert(app.searchFields["歌を検索"].exists)
         }
         XCTContext.runActivity(named: "歌を3つタップして選択状態を解除し、トップ画面に戻ると、歌の数が97首になっている") { (activity) in
             //   tap poems #1,2, 4
-            app.tables.cells["001"].tap()
-            app.tables.cells["002"].tap()
-            app.tables.cells["004"].tap()
-            //   back to HomeScreen
-            goBackToHomeScreen(app)
+            poemPickerPage
+                .tapCellof(number: 1)
+                .tapCellof(number: 2)
+                .tapCellof(number: 4)
+                .backToTopPage()
             // then
-            XCTAssertTrue(app.cells.staticTexts["97首"].exists)
+            XCTAssert(homePage.numberOfSelecttedPoems(is: 97))
         }
     }
     
