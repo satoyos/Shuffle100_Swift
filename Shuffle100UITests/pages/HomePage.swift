@@ -77,4 +77,9 @@ final class HomePage: PageObjectable, WaitInUITest {
         cell.tap()
         return SelectSingerPage(app: app)
     }
+    
+    func numberOfSelecttedPoems(is number: Int) -> Bool {
+        let text = "\(number)首"
+        return poemsCell.staticTexts[text].exists
+    }
 }
