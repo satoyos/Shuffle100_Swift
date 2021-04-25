@@ -44,6 +44,10 @@ final class HomePage: PageObjectable, WaitInUITest {
         return app.cells[A11y.gameStart].firstMatch
     }
     
+    var noPoemSelectedAlert: XCUIElement {
+        return app.alerts.staticTexts[A11y.noPoemSelected].firstMatch
+    }
+    
     enum A11y {
         static let title = "トップ"
         static let poems = "取り札を用意する歌"
@@ -52,6 +56,7 @@ final class HomePage: PageObjectable, WaitInUITest {
         static let singer = "読手"
         static let timer = "暗記時間タイマー"
         static let gameStart = "試合開始"
+        static let noPoemSelected = "詩を選びましょう"
     }
     
     func goToPoemPickerPage() -> PoemPickerPage {
@@ -81,5 +86,9 @@ final class HomePage: PageObjectable, WaitInUITest {
     func numberOfSelecttedPoems(is number: Int) -> Bool {
         let text = "\(number)首"
         return poemsCell.staticTexts[text].exists
+    }
+    
+    func dismissAlert() {
+        app.alerts.buttons.firstMatch.tap()
     }
 }
