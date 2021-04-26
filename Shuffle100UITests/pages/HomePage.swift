@@ -57,6 +57,9 @@ final class HomePage: PageObjectable, WaitInUITest {
         static let timer = "暗記時間タイマー"
         static let gameStart = "試合開始"
         static let noPoemSelected = "詩を選びましょう"
+        static let beginner = "初心者"
+        static let normal = "通常"
+        static let nonStop = "ノンストップ"
     }
     
     func goToPoemPickerPage() -> PoemPickerPage {
@@ -90,5 +93,22 @@ final class HomePage: PageObjectable, WaitInUITest {
     
     func dismissAlert() {
         app.alerts.buttons.firstMatch.tap()
+    }
+    
+    func reciteModeIs(_ mode: ReciteMode) -> Bool {
+        return reciteModeCell.staticTexts[labelForReciteMode(mode)].exists
+    }
+    
+    private func labelForReciteMode(_ mode: ReciteMode) -> String {
+        let label: String
+        switch mode {
+        case .normal:
+            label = A11y.normal
+        case .beginner:
+            label = A11y.beginner
+        case .nonstop:
+            label = A11y.nonStop
+        }
+        return label
     }
 }
