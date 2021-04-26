@@ -33,10 +33,9 @@ class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
                 .selectMode(.beginner)
                 .backToTopButton.tap()
             // then
-            XCTAssertTrue(app.cells.staticTexts["初心者"].exists)
-            // in BeginnerMode, fake mode chell should disappear
+            XCTAssert(homePage.reciteModeIs(.beginner))
+            // in BeginnerMode, fake mode cell should disappear
             XCTAssertFalse(homePage.fakeModeCell.exists)
         }
     }
-
 }
