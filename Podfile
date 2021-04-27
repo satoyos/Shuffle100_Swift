@@ -41,10 +41,10 @@ post_install do |installer|
       config.build_settings['ONLY_ACTIVE_ARCH'] = 'No'
     end
   end
-  installer.aggregate_targets.each do |aggregate_target|
-    aggregate_target.xcconfigs.each do |config_name, config_file|
-      config_file.attributes['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] ='arm64'
-      config_file.save_as(aggregate_target.xcconfig_path(config_name))
-    end
-  end
+#  installer.aggregate_targets.each do |aggregate_target|
+#    aggregate_target.xcconfigs.each do |config_name, config_file|
+#      config_file.attributes['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] ='arm64'
+#      config_file.save_as(aggregate_target.xcconfig_path(config_name))
+#    end
+#  end
 end
