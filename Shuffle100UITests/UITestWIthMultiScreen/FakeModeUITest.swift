@@ -48,7 +48,8 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
         XCTContext.runActivity(named: "試合を中断して、トップ画面に戻る") { _ in
             // when
             app.buttons["exit"].tap()
-            app.alerts.buttons["終了する"].tap()
+            let realyExitButton = waitToHittable(for: app.alerts.buttons["終了する"], timeout: timeOutSec)
+            realyExitButton.tap()
             // then
             waitToAppear(for: app.navigationBars.staticTexts["トップ"], timeout: timeOutSec)
         }
