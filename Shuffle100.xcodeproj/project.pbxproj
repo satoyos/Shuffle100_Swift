@@ -421,6 +421,8 @@
 		92C87DDE22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92C87DDF22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92CDDB0B23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */; };
+		92CE0D5C263AA8AF00372B24 /* ExitGameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5B263AA8AF00372B24 /* ExitGameAlert.swift */; };
+		92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */; };
 		92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
 		92CE520C2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
 		92CE520D2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
@@ -736,6 +738,8 @@
 		92C87DDA22E88E6900569D15 /* SingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTests.swift; sourceTree = "<group>"; };
 		92C87DDC22E88F8600569D15 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
 		92CDDB0A23D1F7FE00A78EE6 /* RecitePoemScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenUITestUtils.swift; sourceTree = "<group>"; };
+		92CE0D5B263AA8AF00372B24 /* ExitGameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameAlert.swift; sourceTree = "<group>"; };
+		92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertObjectable.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
@@ -920,6 +924,7 @@
 		923D59302143BB0B000F5E60 /* Shuffle100UITests */ = {
 			isa = PBXGroup;
 			children = (
+				92CE0D5D263ACA5300372B24 /* alerts */,
 				922BDDE72625D4B80093B24A /* pages */,
 				92BC8D4C23C6102800F0033F /* utils */,
 				928450D322E06B4B00D12CA7 /* lib */,
@@ -1178,6 +1183,15 @@
 				92F66680252B584C0068E6A1 /* NavigateBackToHomeScreen.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		92CE0D5D263ACA5300372B24 /* alerts */ = {
+			isa = PBXGroup;
+			children = (
+				92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */,
+				92CE0D5B263AA8AF00372B24 /* ExitGameAlert.swift */,
+			);
+			path = alerts;
 			sourceTree = "<group>";
 		};
 		92CE52052168D45D00538E01 /* dataSources */ = {
@@ -1909,6 +1923,7 @@
 				92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
+				92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */,
 				9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				92B9E96A2465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */,
@@ -1977,6 +1992,7 @@
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
 				922BDDD9261B3B760093B24A /* HomePage.swift in Sources */,
+				92CE0D5C263AA8AF00372B24 /* ExitGameAlert.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
