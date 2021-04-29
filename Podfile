@@ -37,14 +37,8 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
       config.build_settings['ONLY_ACTIVE_ARCH'] = 'No'
     end
   end
-#  installer.aggregate_targets.each do |aggregate_target|
-#    aggregate_target.xcconfigs.each do |config_name, config_file|
-#      config_file.attributes['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] ='arm64'
-#      config_file.save_as(aggregate_target.xcconfig_path(config_name))
-#    end
-#  end
 end
