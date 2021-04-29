@@ -25,6 +25,8 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         
         let recitePage = homePage.gotoRecitePoemPage()
         let forwordButton = recitePage.forwardButton
+        let playButton = recitePage.playButton
+        
         XCTAssert(recitePage.jokaTitle.exists, "まず序歌へ")
 
         for i in (1...100) {
@@ -36,11 +38,13 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
                 XCTAssert(recitePage.recitePageAppears(number: i, side: .kami))
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
-                
-                tapForwardButton(app)
-                tapPlayButton(app)
-                Thread.sleep(forTimeInterval: 0.1)
-                shimoRecitingScreenAppearsOf(number: i)
+//                tapForwardButton(app)
+//                tapPlayButton(app)
+//                Thread.sleep(forTimeInterval: 0.1)
+//                shimoRecitingScreenAppearsOf(number: i)
+                forwordButton.tap()
+                playButton.tap()
+                XCTAssert(recitePage.recitePageAppears(number: i, side: .shimo))
             }
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
