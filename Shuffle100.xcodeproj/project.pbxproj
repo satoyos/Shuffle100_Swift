@@ -90,7 +90,7 @@
 		922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD32618A1CB0093B24A /* PageObjectable.swift */; };
 		922BDDD9261B3B760093B24A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD8261B3B760093B24A /* HomePage.swift */; };
 		922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */; };
-		922BDDE32621CE720093B24A /* RecitePoiemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDE22621CE720093B24A /* RecitePoiemPage.swift */; };
+		922BDDE32621CE720093B24A /* RecitePoemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDE22621CE720093B24A /* RecitePoemPage.swift */; };
 		922BDDEC2625D5CB0093B24A /* SelectModePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDEB2625D5CB0093B24A /* SelectModePage.swift */; };
 		922BDDF12629BEB60093B24A /* SelectSingerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDF02629BEB60093B24A /* SelectSingerPage.swift */; };
 		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
@@ -585,7 +585,7 @@
 		922BDDD32618A1CB0093B24A /* PageObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObjectable.swift; sourceTree = "<group>"; };
 		922BDDD8261B3B760093B24A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerPage.swift; sourceTree = "<group>"; };
-		922BDDE22621CE720093B24A /* RecitePoiemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoiemPage.swift; sourceTree = "<group>"; };
+		922BDDE22621CE720093B24A /* RecitePoemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemPage.swift; sourceTree = "<group>"; };
 		922BDDEB2625D5CB0093B24A /* SelectModePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModePage.swift; sourceTree = "<group>"; };
 		922BDDF02629BEB60093B24A /* SelectSingerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerPage.swift; sourceTree = "<group>"; };
 		92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButtonTest.swift; sourceTree = "<group>"; };
@@ -846,7 +846,7 @@
 				922BDDD32618A1CB0093B24A /* PageObjectable.swift */,
 				922BDDD8261B3B760093B24A /* HomePage.swift */,
 				922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */,
-				922BDDE22621CE720093B24A /* RecitePoiemPage.swift */,
+				922BDDE22621CE720093B24A /* RecitePoemPage.swift */,
 				922BDDEB2625D5CB0093B24A /* SelectModePage.swift */,
 				922BDDF02629BEB60093B24A /* SelectSingerPage.swift */,
 			);
@@ -1972,7 +1972,7 @@
 				92C176D325E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92F8242225A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
-				922BDDE32621CE720093B24A /* RecitePoiemPage.swift in Sources */,
+				922BDDE32621CE720093B24A /* RecitePoemPage.swift in Sources */,
 				92A6EB8724191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				9204751B254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
