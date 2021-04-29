@@ -17,13 +17,23 @@ class GotoRecitePoemScreenUITest: XCTestCase, HomeScreenUITestUtils, ExitGameUIT
     }
 
     func test_RecitePoemScreenAppearWhenGameStartCellTapped() {
-        gotoRecitePoemScreen()
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        // then
+        XCTAssert(recitePage.exists)
     }
     
     func test_backToHomeScreenUsingExitButton() {
+
         // given
-        gotoRecitePoemScreen()
-        // when, then
-        exitGameSuccessfully(app)
+        let recitePage = homePage.gotoRecitePoemPage()
+        // when
+        recitePage.exitGameButton.tap()
+        // then
+        let exitGameAlert = ExitGameAlert(app: app)
+        XCTAssert(exitGameAlert.exists)
+        // when
+        let home = exitGameAlert.exitGameAndBackToTopPage()
+        XCTAssert(home.exists)
     }
 }

@@ -24,8 +24,14 @@ final class RecitePoemPage: PageObjectable {
         return app.staticTexts[A11y.jokaTitle].firstMatch
     }
     
+    var exitGameButton: XCUIElement {
+        return app.buttons[A11y.exitGame].firstMatch
+    }
+    
     enum A11y {
         static let titleIdentifier = "screenTitle"
         static let jokaTitle = "序歌"
+        static let exitGame = "exit"
     }
+    
 }
