@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-final class RecitePoemPage: PageObjectable {
+final class RecitePoemPage: PageObjectable, WaitInUITest {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
@@ -28,10 +28,26 @@ final class RecitePoemPage: PageObjectable {
         return app.buttons[A11y.exitGame].firstMatch
     }
     
+    var forwardButton: XCUIElement {
+        return app.buttons[A11y.forward].firstMatch
+    }
+    
     enum A11y {
         static let titleIdentifier = "screenTitle"
         static let jokaTitle = "序歌"
         static let exitGame = "exit"
+        static let forward = "forward"
+    }
+    
+    func recitePageAppears(number: Int, side: Side) -> Bool {
+        var headerText = ""
+        switch side {
+        case .kami:
+            headerText = "\(number)首め:上の句 (全100首)"
+        case .shimo:
+            headerText = "\(number)首め:下の句 (全100首)"
+        }
+        return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
     }
     
 }
