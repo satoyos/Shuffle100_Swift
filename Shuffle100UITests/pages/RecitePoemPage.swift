@@ -28,6 +28,10 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         return app.buttons[A11y.exitGame].firstMatch
     }
     
+    var playButton: XCUIElement {
+        return app.buttons[A11y.play].firstMatch
+    }
+    
     var forwardButton: XCUIElement {
         return app.buttons[A11y.forward].firstMatch
     }
@@ -37,6 +41,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let jokaTitle = "序歌"
         static let exitGame = "exit"
         static let forward = "forward"
+        static let play = "play"
     }
     
     func recitePageAppears(number: Int, side: Side) -> Bool {
