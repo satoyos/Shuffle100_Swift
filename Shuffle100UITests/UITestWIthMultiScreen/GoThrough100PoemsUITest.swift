@@ -31,17 +31,10 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
 
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
-//                tapForwardButton(app)
-//                Thread.sleep(forTimeInterval: 0.1)
-//                kamiRecitingScreenAppearsOf(number: i)
                 forwordButton.tap()
                 XCTAssert(recitePage.recitePageAppears(number: i, side: .kami))
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
-//                tapForwardButton(app)
-//                tapPlayButton(app)
-//                Thread.sleep(forTimeInterval: 0.1)
-//                shimoRecitingScreenAppearsOf(number: i)
                 forwordButton.tap()
                 playButton.tap()
                 XCTAssert(recitePage.recitePageAppears(number: i, side: .shimo))
