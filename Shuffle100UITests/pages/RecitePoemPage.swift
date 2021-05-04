@@ -44,13 +44,13 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let play = "play"
     }
     
-    func recitePageAppears(number: Int, side: Side) -> Bool {
+    func recitePageAppears(number: Int, side: Side, total: Int = 100) -> Bool {
         var headerText = ""
         switch side {
         case .kami:
-            headerText = "\(number)首め:上の句 (全100首)"
+            headerText = "\(number)首め:上の句 (全\(total)首)"
         case .shimo:
-            headerText = "\(number)首め:下の句 (全100首)"
+            headerText = "\(number)首め:下の句 (全\(total)首)"
         }
         return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
     }
