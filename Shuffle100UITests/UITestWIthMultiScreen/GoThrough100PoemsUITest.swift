@@ -42,10 +42,14 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
-            tapForwardButton(app)
-            app.buttons["トップに戻る"].tap()
+            forwordButton.tap()
             // then
-            XCTAssert(app.navigationBars["トップ"].exists)
+            let allPoemRecitedPage = AllPoemRecitedPage(app: app)
+            XCTAssert(allPoemRecitedPage.exists, "試合終了ページへ")
+            // when
+            allPoemRecitedPage.backToTopButton.tap()
+            // then
+            XCTAssert(homePage.exists, "トップページに戻ってくる")
         }
         
     }
