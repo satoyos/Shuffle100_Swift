@@ -49,6 +49,6 @@ final class SelectModePage: PageObjectable {
         static let backToTop = "トップ"
         static let beginnrMode = "初心者 (チラし取り)"
         static let normalMode = "通常 (競技かるた)"
-        static let nonStopMode = "ノンストップ (とまらない)"
+        static let nonStopMode = "ノンストップ (止まらない)"
     }
 }
