@@ -56,29 +56,36 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
     
     func test_goThoughInNonStopMode() {
         XCTContext.runActivity(named: "ノンストップモードを選択") { (activiti) in
-            gotoSelectModeScreen()
-            app.pickerWheels.element.adjust(toPickerWheelValue: "ノンストップ (止まらない)")
-            app.buttons["トップ"].tap()
-            XCTAssert(app.cells.staticTexts["ノンストップ"].exists)
+            let selectModePage = gotoSelectModeScreen()
+            // when
+            selectModePage
+                .selectMode(.nonstop)
+                .backToTopButton.tap()
+            // then
+            XCTAssert(homePage.reciteModeIs(.nonstop))
         }
-        XCTContext.runActivity(named: "そして序歌へ") { (activiti) in
-            gotoRecitePoemScreen()
-        }
+
+        let recitePage = homePage.gotoRecitePoemPage()
+
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
-                tapForwardButton(app)
-                kamiRecitingScreenAppearsOf(number: i)
+                // when
+                recitePage.forwardButton.tap()
+                // then
+                XCTAssert(recitePage.recitePageAppears(number: i, side: .kami))
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
-                
-                tapForwardButton(app)
-                shimoRecitingScreenAppearsOf(number: i)
+                // when
+                recitePage.forwardButton.tap()
+                // then
+                XCTAssert(recitePage.recitePageAppears(number: i, side: .shimo))
             }
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
-            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
-            button.tap()
+            let allPoemRecitedPage = AllPoemRecitedPage(app: app)
+            waitToAppear(for: allPoemRecitedPage.pageTitle, timeout: 12)
+            allPoemRecitedPage.backToTopButton.tap()
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
         }
