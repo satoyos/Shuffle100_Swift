@@ -56,7 +56,7 @@ final class HomePage: PageObjectable, WaitInUITest {
         static let singer = "読手"
         static let timer = "暗記時間タイマー"
         static let gameStart = "試合開始"
-        static let noPoemSelected = "詩を選びましょう"
+        static let noPoemSelected = "歌を選びましょう"
         static let beginner = "初心者"
         static let normal = "通常"
         static let nonStop = "ノンストップ"
