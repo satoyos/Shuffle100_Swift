@@ -83,7 +83,8 @@ def open_fuda_set_list_screen
 end
 
 def open_game
-  open_game_without_check
+  # open_game_without_check
+  click_element_of(TYPE_CELL, name: 'GameStartCell')
   can_see(JOKA)
 end
 
