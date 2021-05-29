@@ -86,6 +86,16 @@ final class Settings: Codable {
         }
     }
     
+    var shortenJoka: Bool {
+        get {
+            fixShortenJoka()
+            return mode.shortenJoka!
+        }
+        set(b) {
+            mode.shortenJoka = b
+        }
+    }
+    
     func fixOptionalProperties() {
         fixPostMotermEnabled()
     }
@@ -93,6 +103,13 @@ final class Settings: Codable {
     private func fixPostMotermEnabled() {
         guard let _ = mode.postMortemEnabled else {
             mode.postMortemEnabled = false
+            return
+        }
+    }
+    
+    private func fixShortenJoka() {
+        guard let _ = mode.shortenJoka else {
+            mode.shortenJoka = false
             return
         }
     }

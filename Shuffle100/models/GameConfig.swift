@@ -24,6 +24,7 @@ struct GameConfig: Codable {
     var fakeMode: Bool
     var singerID: String
     var postMortemEnabled: Bool?
+    var shortenJoka: Bool?
     
     var reciteMode: ReciteMode {
         get { _reciteMode ?? .normal }
@@ -35,10 +36,11 @@ struct GameConfig: Codable {
         }
     }
 
-    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia", postMortemEnabled: Bool = false) {
+    init(reciteMode: ReciteMode = .normal, fakeMode: Bool = false, singerID: String = "ia", postMortemEnabled: Bool = false, shortenJoka: Bool = false) {
         self._reciteMode = reciteMode
         self.fakeMode = fakeMode
         self.singerID = singerID
         self.postMortemEnabled = postMortemEnabled
+//        self.shortenJoka = shortenJoka
     }
 }
