@@ -18,6 +18,7 @@ class GameConfigTest: XCTestCase {
         XCTAssertEqual(settings.state100.bools, Bool100.allTrueBoolArray())
         XCTAssertEqual(settings.singerID, "ia")
         XCTAssertEqual(settings.postMortemEnabled, false)
+        XCTAssertEqual(settings.shortenJoka, false)
     }
     
     func test_initWithRecoteModeParameter() {
