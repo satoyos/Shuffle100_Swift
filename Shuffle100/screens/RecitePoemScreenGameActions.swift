@@ -9,8 +9,9 @@
 import UIKit
 
 extension RecitePoemScreen {
-    func playJoka() {
+    func playJoka(shorten: Bool = false) {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
+        if shorten { currentPlayer?.currentTime = 12.0 }
         startPlayingCurrentPlayer(number: nil, side: nil, count: nil )
     }
     
