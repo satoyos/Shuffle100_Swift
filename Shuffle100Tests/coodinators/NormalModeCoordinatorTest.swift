@@ -24,4 +24,26 @@ class NormalModeCoordinatorTest: XCTestCase {
         var supplier = coordinator.poemSupplier
         XCTAssertNotNil(supplier.drawNextPoem())
     }
+    
+    func test_jokaRecitingStartsFromMiddlePointOfThePoem() {
+        // given
+        let nc = UINavigationController()
+        let settings = Settings()
+        // when
+        settings.shortenJoka = true
+        let coordinator = NormalModeCoordinator(navigationController: nc, settings: settings, store: StoreManager())
+        coordinator.start()
+        guard let screen = coordinator.screen as? RecitePoemScreen else {
+            XCTFail("NormalModeCoordinatorのscreenプロパティの中の人が、RecitePoemScreenではない！")
+            return
+        }
+        screen.loadViewIfNeeded()
+        screen.playJoka(shorten: settings.shortenJoka)
+        // then
+        guard let player = screen.currentPlayer else {
+            XCTFail("RecotePoemScreenからcurrentPlayerを取得できない！！")
+            return
+        }
+        XCTAssert(player.currentTime > 10.0, "序歌の途中から始まっている")
+    }
 }

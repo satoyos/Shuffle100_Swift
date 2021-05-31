@@ -40,11 +40,12 @@ extension RecitePoemProtocol where Self: Coordinator {
         // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
         CATransaction.begin()
         navigationController.pushViewController(screen, animated: true)
+        let shorten = settings.shortenJoka
         CATransaction.setCompletionBlock {
             screen.playerFinishedAction = { [weak self] in
                 self?.jokaFinished()
             }
-            screen.playJoka()
+            screen.playJoka(shorten: shorten)
         }
         CATransaction.commit()
         self.screen = screen
