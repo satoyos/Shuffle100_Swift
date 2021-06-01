@@ -48,6 +48,10 @@ final class HomePage: PageObjectable, WaitInUITest {
         return app.alerts.staticTexts[A11y.noPoemSelected].firstMatch
     }
     
+    var gearButton: XCUIElement {
+        return app.navigationBars.buttons[A11y.gear].firstMatch
+    }
+    
     enum A11y {
         static let title = "トップ"
         static let poems = "取り札を用意する歌"
@@ -60,6 +64,7 @@ final class HomePage: PageObjectable, WaitInUITest {
         static let beginner = "初心者"
         static let normal = "通常"
         static let nonStop = "ノンストップ"
+        static let gear = "GearButton"
     }
     
     func goToPoemPickerPage() -> PoemPickerPage {
@@ -97,6 +102,12 @@ final class HomePage: PageObjectable, WaitInUITest {
     
     func reciteModeIs(_ mode: ReciteMode) -> Bool {
         return reciteModeCell.staticTexts[labelForReciteMode(mode)].exists
+    }
+    
+    func gotoReciteSettingPage() -> ReciteSettingsPage {
+        let button = waitToHittable(for: gearButton, timeout: timeOutSec)
+        button.tap()
+        return ReciteSettingsPage(app: app)
     }
     
     private func labelForReciteMode(_ mode: ReciteMode) -> String {

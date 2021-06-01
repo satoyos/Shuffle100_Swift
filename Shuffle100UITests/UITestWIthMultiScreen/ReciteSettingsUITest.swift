@@ -10,6 +10,7 @@ import XCTest
 
 class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, ExitGameUITestUtils, AdjustWithSliderUtils {
     let app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
 
     override func setUp() {
         super.setUp()
@@ -23,20 +24,21 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     }
 
     func test_IntervalSetting() {
-        // given, when
-        gotoReciteSettingsScreen(app)
+        // when
+        let settingsPage = homePage.gotoReciteSettingPage()
         // then
-        app.tables.staticTexts["歌と歌の間隔"].tap()
+        XCTAssert(settingsPage.exists, "「いろいろな設定」画面に到達")
+        // when
+        let intervalSettingPage = settingsPage.gotoIntervalSettingPage()
         // then
-        XCTAssert(app.navigationBars["歌の間隔の調整"].exists)
-        XCTAssertFalse(app.staticTexts["トップ"].exists)
+        XCTAssert(intervalSettingPage.exists, "「歌と歌の間隔」設定画面に到達")
+        XCTAssertFalse(homePage.exists)
         
-        XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
-            // when
-            app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
-            // then
-            staticDigitTextExistAround(0.50, in: app)
-        }
+        // when
+        intervalSettingPage.adjustSliderToLeftLimit()
+        // then
+        intervalSettingPage.staticDigitTextExists(around: 0.50)
+        
         XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
             app.buttons["試しに聞いてみる"].tap()
             waitToAppear(for: app.staticTexts["0.00"], timeout: 10)
