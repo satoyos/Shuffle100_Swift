@@ -437,6 +437,9 @@
 		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */; };
+		92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */; };
+		92E5C53F26665FEF009A46F5 /* IntervalSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */; };
+		92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */; };
 		92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */; };
 		92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */; };
 		92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
@@ -748,6 +751,9 @@
 		92D57154220F03AF00235717 /* SelectModeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreen.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
 		92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemRecitedPage.swift; sourceTree = "<group>"; };
+		92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsPage.swift; sourceTree = "<group>"; };
+		92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingPage.swift; sourceTree = "<group>"; };
+		92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustSliderProtocol.swift; sourceTree = "<group>"; };
 		92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenTest.swift; sourceTree = "<group>"; };
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreen.swift; sourceTree = "<group>"; };
@@ -852,6 +858,9 @@
 				922BDDEB2625D5CB0093B24A /* SelectModePage.swift */,
 				922BDDF02629BEB60093B24A /* SelectSingerPage.swift */,
 				92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */,
+				92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */,
+				92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */,
+				92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1882,11 +1891,13 @@
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
+				92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */,
 				92F66679252B56EE0068E6A1 /* NavigateBackToPoemPicker.swift in Sources */,
 				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				92B87D55250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */,
+				92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */,
 				92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
 				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				92E5F82D240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
@@ -1908,6 +1919,7 @@
 				921FF43B249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
 				9205E17E24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
 				92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
+				92E5C53F26665FEF009A46F5 /* IntervalSettingPage.swift in Sources */,
 				921FF44324A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				92F8245925AF0C34008E031D /* SettingTableCell.swift in Sources */,
 				925B075925EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
