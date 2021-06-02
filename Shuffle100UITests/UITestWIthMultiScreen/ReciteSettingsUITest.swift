@@ -33,29 +33,22 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
         // then
         XCTAssert(intervalSettingPage.exists, "「歌と歌の間隔」設定画面に到達")
         XCTAssertFalse(homePage.exists)
-        
         // when
         intervalSettingPage.adjustSliderToLeftLimit()
         // then
-        intervalSettingPage.staticDigitTextExists(around: 0.50)
-        
-        XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
-            app.buttons["試しに聞いてみる"].tap()
-            waitToAppear(for: app.staticTexts["0.00"], timeout: 10)
-            
-        }
-        XCTContext.runActivity(named: "「いろいろな設定」画面に戻ると、「歌と詩の間隔」の値が書き換わっている") { action in
-            // when
-            app.navigationBars.buttons["いろいろな設定"].tap()
-            // then
-            staticDigitTextExistAround(0.50, in: app)
-        }
-        XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
-            // when
-            app.buttons["設定終了"].tap()
-            // then
-            XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
-        }
+        XCTAssert(intervalSettingPage.staticDigitTextExists(around: 0.50))
+        // when
+        intervalSettingPage.tryButton.tap()
+        // then
+        waitToAppear(for: intervalSettingPage.zeroSecLabel, timeout: 10)
+        // when
+        intervalSettingPage.backToAllSettingsButton.tap()
+        // then
+        XCTAssert(settingsPage.staticDigitTextExists(around: 0.50))
+        // when
+        settingsPage.exitSettingsButton.tap()
+        // then
+        XCTAssert(homePage.exists, "トップページに戻ってくる")
     }
     
     func test_KamiShimoIntervalSetting() {
