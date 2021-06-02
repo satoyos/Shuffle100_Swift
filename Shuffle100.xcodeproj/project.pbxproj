@@ -440,6 +440,7 @@
 		92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */; };
 		92E5C53F26665FEF009A46F5 /* IntervalSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */; };
 		92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */; };
+		92E5C5432667BF82009A46F5 /* DigitTextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */; };
 		92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */; };
 		92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */; };
 		92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
@@ -754,6 +755,7 @@
 		92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsPage.swift; sourceTree = "<group>"; };
 		92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingPage.swift; sourceTree = "<group>"; };
 		92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustSliderProtocol.swift; sourceTree = "<group>"; };
+		92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitTextProtocol.swift; sourceTree = "<group>"; };
 		92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenTest.swift; sourceTree = "<group>"; };
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreen.swift; sourceTree = "<group>"; };
@@ -861,6 +863,7 @@
 				92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */,
 				92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */,
 				92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */,
+				92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1992,6 +1995,7 @@
 				92A6EB8724191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				9204751B254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
+				92E5C5432667BF82009A46F5 /* DigitTextProtocol.swift in Sources */,
 				92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
 				92FFBF6724650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				9205E18224571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,

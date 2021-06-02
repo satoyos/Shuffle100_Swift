@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-final class ReciteSettingsPage: PageObjectable, WaitInUITest {
+final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
@@ -24,9 +24,14 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest {
         return app.cells[A11y.interval].firstMatch
     }
     
+    var exitSettingsButton: XCUIElement {
+        return app.navigationBars.buttons[A11y.exitSetting].firstMatch
+    }
+    
     enum A11y {
         static let title = "いろいろな設定"
         static let interval = "歌と歌の間隔"
+        static let exitSetting = "設定終了"
     }
     
     func gotoIntervalSettingPage() -> IntervalSettingPage {
