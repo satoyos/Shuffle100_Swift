@@ -24,6 +24,10 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         return app.cells[A11y.interval].firstMatch
     }
     
+    var kamiShimoIntervalCell: XCUIElement {
+        return app.cells[A11y.kamiShimoInterval].firstMatch
+    }
+    
     var exitSettingsButton: XCUIElement {
         return app.navigationBars.buttons[A11y.exitSetting].firstMatch
     }
@@ -31,6 +35,7 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     enum A11y {
         static let title = "いろいろな設定"
         static let interval = "歌と歌の間隔"
+        static let kamiShimoInterval = "上の句と下の句の間隔"
         static let exitSetting = "設定終了"
     }
     
@@ -38,5 +43,10 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         let cell = waitToHittable(for: intervalCell, timeout: timeOutSec)
         cell.tap()
         return IntervalSettingPage(app: app)
+    }
+    
+    func gotoKamiShimoIntervalPage() -> KamiShimoIntervalPage {
+        kamiShimoIntervalCell.tap()
+        return KamiShimoIntervalPage(app: app)
     }
 }

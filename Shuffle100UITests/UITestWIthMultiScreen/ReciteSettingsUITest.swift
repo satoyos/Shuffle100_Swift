@@ -52,39 +52,29 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     }
     
     func test_KamiShimoIntervalSetting() {
-        // slider adjsutment doesn't work well on iOS 13.4 SImulator
-        if UIDevice.current.userInterfaceIdiom == .pad { return }
-        // given, when
-        gotoReciteSettingsScreen(app)
+        // given
+        let settingsPage = homePage.gotoReciteSettingPage()
         // when
-        app.tables.staticTexts["上の句と下の句の間隔"].tap()
+        let kamiShimoIntervalPage = settingsPage.gotoKamiShimoIntervalPage()
         // then
-        XCTAssert(app.navigationBars["上の句と下の句の間隔"].exists)
-        XCTAssertFalse(app.staticTexts["トップ"].exists)
-
-        XCTContext.runActivity(named: "スライダーを左端に動かすと、ラベルの値は下限値になる"){ action in
-            // when
-            app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
-            // then
-            staticDigitTextExistAround(0.50, in: app)
-        }
-        XCTContext.runActivity(named: "「試しに聞いてみる」ボタンを押すと、1秒後にはラベルの値が0.00になっている") { activity in
-            app.buttons["試しに聞いてみる"].tap()
-            waitToAppear(for: app.staticTexts["0.00"], timeout: 10)
-            
-        }
-        XCTContext.runActivity(named: "「いろいろな設定」画面に戻ると、「上の句と下の句の間隔」の値が書き換わっている") { action in
-            // when
-            app.navigationBars.buttons["いろいろな設定"].tap()
-            // then
-            staticDigitTextExistAround(0.50, in: app)
-        }
-        XCTContext.runActivity(named: "設定終了ボタンを押すと、ホーム画面に戻る") { activity in
-            // when
-            app.buttons["設定終了"].tap()
-            // then
-            XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
-        }
+        XCTAssert(kamiShimoIntervalPage.exists, "上の句と下の句の間隔調整ページに到達")
+        XCTAssertFalse(homePage.exists)
+        // when
+        kamiShimoIntervalPage.adjustSliderToLeftLimit()
+        // then
+        XCTAssert(kamiShimoIntervalPage.staticDigitTextExists(around: 0.50))
+        // when
+        kamiShimoIntervalPage.tryButton.tap()
+        // then
+        waitToAppear(for: kamiShimoIntervalPage.zeroSecLabel, timeout: 10)
+        // when
+        kamiShimoIntervalPage.backToAllSettingsButton.tap()
+        // then
+        XCTAssert(settingsPage.staticDigitTextExists(around: 0.50))
+        // when
+        settingsPage.exitSettingsButton.tap()
+        // then
+        XCTAssert(homePage.exists, "トップページに戻ってくる")
     }
     
     func test_VolumeSetting() {
