@@ -13,12 +13,14 @@ protocol AdjustSlider {
     var app: XCUIApplication { get }
     var slider: XCUIElement { get }
     
-    func adjustSliderToLeftLimit()
+    func adjustSliderToLeftLimit() -> Self
 }
 
 extension AdjustSlider {
-    func adjustSliderToLeftLimit() {
+    @discardableResult
+    func adjustSliderToLeftLimit() -> Self{
         slider.adjust(toNormalizedSliderPosition: 0.0)
+        return self
     }
 }
 
