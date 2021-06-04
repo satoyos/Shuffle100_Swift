@@ -442,6 +442,7 @@
 		92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */; };
 		92E5C5432667BF82009A46F5 /* DigitTextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */; };
 		92E5C545266903DC009A46F5 /* KamiShimoIntervalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C544266903DC009A46F5 /* KamiShimoIntervalPage.swift */; };
+		92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C546266A6235009A46F5 /* VolumePage.swift */; };
 		92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */; };
 		92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */; };
 		92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
@@ -758,6 +759,7 @@
 		92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustSliderProtocol.swift; sourceTree = "<group>"; };
 		92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitTextProtocol.swift; sourceTree = "<group>"; };
 		92E5C544266903DC009A46F5 /* KamiShimoIntervalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalPage.swift; sourceTree = "<group>"; };
+		92E5C546266A6235009A46F5 /* VolumePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePage.swift; sourceTree = "<group>"; };
 		92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenTest.swift; sourceTree = "<group>"; };
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreen.swift; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 				92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */,
 				92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */,
 				92E5C544266903DC009A46F5 /* KamiShimoIntervalPage.swift */,
+				92E5C546266A6235009A46F5 /* VolumePage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1893,6 +1896,7 @@
 				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
+				92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */,
 				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,

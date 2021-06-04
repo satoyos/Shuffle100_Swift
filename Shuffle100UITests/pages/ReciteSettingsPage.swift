@@ -28,14 +28,29 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         return app.cells[A11y.kamiShimoInterval].firstMatch
     }
     
+    var volumeCell: XCUIElement {
+        return app.cells[A11y.volume].firstMatch
+    }
+    
     var exitSettingsButton: XCUIElement {
         return app.navigationBars.buttons[A11y.exitSetting].firstMatch
+    }
+    
+    var fullVolumeLabel: XCUIElement {
+        return app.cells.staticTexts[A11y.fullVolume].firstMatch
+    }
+    
+    var zeroVolumeLabel: XCUIElement {
+        return app.cells.staticTexts[A11y.zeroVolume].firstMatch
     }
     
     enum A11y {
         static let title = "いろいろな設定"
         static let interval = "歌と歌の間隔"
         static let kamiShimoInterval = "上の句と下の句の間隔"
+        static let volume = "音量調整"
+        static let fullVolume = "100%"
+        static let zeroVolume = "0%"
         static let exitSetting = "設定終了"
     }
     
@@ -48,5 +63,10 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     func gotoKamiShimoIntervalPage() -> KamiShimoIntervalPage {
         kamiShimoIntervalCell.tap()
         return KamiShimoIntervalPage(app: app)
+    }
+    
+    func gotoVolumePage() -> VolumePage {
+        volumeCell.tap()
+        return VolumePage(app: app)
     }
 }

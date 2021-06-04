@@ -79,21 +79,19 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     
     func test_VolumeSetting() {
         // given, when
-        gotoReciteSettingsScreen(app)
+        let settingsPage = homePage.gotoReciteSettingPage()
         // then
-        XCTAssert(app.staticTexts["100%"].exists)
+        XCTAssert(settingsPage.fullVolumeLabel.exists)
         // when
-        app.tables.staticTexts["音量調整"].tap()
+        let volumePage = settingsPage.gotoVolumePage()
         // then
-        XCTAssert(app.staticTexts["音量の調整"].exists)
-        
-        XCTContext.runActivity(named: "スライダーを左端に動かして、元の画面に戻ると、音量が「0%」になっている"){ action in
-            // when
-            app.sliders["slider"].adjust(toNormalizedSliderPosition: 0.0)
-            app.buttons["いろいろな設定"].tap()
-            // then
-            XCTAssert(app.cells.staticTexts["0%"].exists)
-        }
+        XCTAssert(volumePage.exists, "音量調整のページに到達")
+        // when
+        volumePage
+            .adjustSliderToLeftLimit()
+            .backToAllSettingsButton.tap()
+        // then
+        XCTAssert(settingsPage.zeroVolumeLabel.exists)
     }
     
     func test_openSettingsFromRecitePoemScreen() {
