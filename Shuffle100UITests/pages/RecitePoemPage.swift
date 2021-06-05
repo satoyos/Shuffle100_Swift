@@ -36,12 +36,17 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         return app.buttons[A11y.forward].firstMatch
     }
     
+    var gearButton: XCUIElement {
+        return app.buttons[A11y.gear].firstMatch
+    }
+    
     enum A11y {
         static let titleIdentifier = "screenTitle"
         static let jokaTitle = "序歌"
         static let exitGame = "exit"
         static let forward = "forward"
         static let play = "play"
+        static let gear = "gear"
     }
     
     func recitePageAppears(number: Int, side: Side, total: Int = 100) -> Bool {
@@ -53,6 +58,16 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
             headerText = "\(number)首め:下の句 (全\(total)首)"
         }
         return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
+    }
+    
+    func popUpExitGameAlert() -> ExitGameAlert {
+        exitGameButton.tap()
+        return ExitGameAlert(app: app)
+    }
+    
+    func gotoSettingsPage() -> ReciteSettingsPage {
+        gearButton.tap()
+        return ReciteSettingsPage(app: app)
     }
     
 }
