@@ -44,6 +44,10 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         return app.cells.staticTexts[A11y.zeroVolume].firstMatch
     }
     
+    var maxIntarvalLabel: XCUIElement {
+        return app.cells.staticTexts[A11y.maxInterval].firstMatch
+    }
+    
     enum A11y {
         static let title = "いろいろな設定"
         static let interval = "歌と歌の間隔"
@@ -51,6 +55,7 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         static let volume = "音量調整"
         static let fullVolume = "100%"
         static let zeroVolume = "0%"
+        static let maxInterval = "2.00"
         static let exitSetting = "設定終了"
     }
     
