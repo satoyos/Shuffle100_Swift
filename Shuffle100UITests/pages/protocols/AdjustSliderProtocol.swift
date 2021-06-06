@@ -24,6 +24,7 @@ extension AdjustSlider {
         return self
     }
     
+    @discardableResult
     func adjustSliderToRightLimit() -> Self {
         slider.adjust(toNormalizedSliderPosition: 1.0)
         return self

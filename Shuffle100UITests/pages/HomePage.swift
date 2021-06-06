@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-final class HomePage: PageObjectable, WaitInUITest {
+final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {

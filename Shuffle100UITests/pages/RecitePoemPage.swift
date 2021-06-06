@@ -70,4 +70,9 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         return ReciteSettingsPage(app: app)
     }
     
+    @discardableResult
+    func tapForwardButton() -> Self {
+        forwardButton.tap()
+        return self
+    }
 }
