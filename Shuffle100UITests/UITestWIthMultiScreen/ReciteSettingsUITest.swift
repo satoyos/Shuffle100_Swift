@@ -127,40 +127,38 @@ class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenU
     }
 
     func test_openSettingsFromWhatsNextScreen() {
-        // given
-        gotoWhatsNextScreen(app)
+        // when
+        let whatsNextPage = homePage.skipToWhatsNextPage()
         // then
-        let gearButton = app.buttons["gear"]
-        XCTAssert(gearButton.exists)
-        
-        XCTContext.runActivity(named: "歯車ボタンをタップすると、「いろいろな設定」画面が現れる") { activity in
-            // when
-            gearButton.tap()
-            // then
-            XCTAssert(app.navigationBars.staticTexts["いろいろな設定"].exists)
-        }
-        
-        XCTContext.runActivity(named: "上の句と下の句の間隔をMaxにしてホーム画面に戻ると、その値が反映されている") { activity in
-            // when
-            app.tables.staticTexts["歌と歌の間隔"].tap()
-            app.sliders["slider"].adjust(toNormalizedSliderPosition: 1.0)
-            // then
-            XCTAssert(app.staticTexts["2.00"].exists)
-            // when
-            app.navigationBars.buttons["いろいろな設定"].tap()
-            // then
-            staticDigitTextExistAround(2.00, in: app)
-            // when
-            app.buttons["設定終了"].tap()
-            // then
-            XCTAssert(app.staticTexts["次はどうする？"].exists)
-            // when
-            exitGameSuccessfully(app)
-            // when
-            gotoReciteSettingsScreen(app)
-            // then
-            staticDigitTextExistAround(2.00, in: app)
-        }
-    }
+        XCTAssert(whatsNextPage.exists, "「次はどうする？」画面に到達")
+        // when
+        let allSettingsPage = whatsNextPage.gotoReciteSettingsPage()
+        // then
+        XCTAssert(allSettingsPage.exists)
+        // when
+        let kamiShimoPage = allSettingsPage.gotoKamiShimoIntervalPage()
+        // then
+        XCTAssert(kamiShimoPage.exists)
+        // when
+        kamiShimoPage.adjustSliderToRightLimit()
+        // then
+        XCTAssert(kamiShimoPage.staticDigitTextExists(around: 2.00))
+        // when
+        kamiShimoPage.backToAllSettingsButton.tap()
+        // then
+        XCTAssert(allSettingsPage.exists)
+        // when
+        allSettingsPage.exitSettingsButton.tap()
+        // then
+        XCTAssert(whatsNextPage.exists, "「次はどうする？」画面に戻る")
+        // when
+        whatsNextPage.popUpExitGameAlert()
+            .confirmButton.tap()
+        // then
+        waitToAppear(for: homePage.pageTitle, timeout: timeOutSec)
+        // when
+        let newSettingsPage = homePage.gotoReciteSettingPage()
+        // then
+        XCTAssert(newSettingsPage.staticDigitTextExists(around: 2.00))
+     }
 }
-
