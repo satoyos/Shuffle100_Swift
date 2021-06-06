@@ -41,4 +41,10 @@ class SingerTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func test_singerHasTimeForShortenJoka() {
+        let inaba = Singers.all[1]
+        XCTAssertNotNil(inaba.shortenJokaStartTime)
+        XCTAssertEqual(inaba.shortenJokaStartTime, 15.5)
+    }
 }

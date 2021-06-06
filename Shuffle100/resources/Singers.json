@@ -2,12 +2,14 @@
     {
         "id": "ia",
         "name": "IA（ボーカロイド）",
-        "path": "audio/ia"
+        "path": "audio/ia",
+        "shortenJokaStartTime": 13.0
     },
     {
         "id": "inaba",
         "name": "いなばくん（人間）",
-        "path": "audio/inaba"
+        "path": "audio/inaba",
+        "shortenJokaStartTime": 15.5
     }
 ]
 
