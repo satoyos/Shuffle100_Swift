@@ -38,12 +38,15 @@ class NormalModeCoordinatorTest: XCTestCase {
             return
         }
         screen.loadViewIfNeeded()
+        screen.viewWillLayoutSubviews()
         screen.playJoka(shorten: settings.shortenJoka)
+        screen.updateAudioProgressView()
         // then
         guard let player = screen.currentPlayer else {
             XCTFail("RecotePoemScreenからcurrentPlayerを取得できない！！")
             return
         }
         XCTAssert(player.currentTime > 10.0, "序歌の途中から始まっている")
+        XCTAssertGreaterThan(screen.recitePoemView.progressView.progress, 0.5, "ProgressViewも半分以上は超えている")
     }
 }
