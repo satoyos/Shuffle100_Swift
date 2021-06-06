@@ -12,6 +12,7 @@ struct Singer: Codable {
     let id: String
     let path: String
     let name: String
+    let shortenJokaStartTime: Float
 }
 
 struct Singers {
