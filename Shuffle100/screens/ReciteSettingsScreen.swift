@@ -58,12 +58,14 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
     private func postMotermTableDataSource() -> SettingsCellDataSource {
         var dataSource =             SettingsCellDataSource(title: "試合後に感想戦を選択できる", accessoryType: .none, secondaryText: "感想戦では、同じ歌を同じ順序で読み上げます。", configType: .subtitleCell())
         dataSource.withSwitchOf = settings.postMortemEnabled
+        dataSource.accessibilityLabel = "postMortemMode"
         return dataSource
     }
     
     private func shortenJokaTableDataSource() -> SettingsCellDataSource {
         var dataSource = SettingsCellDataSource(title: "序歌の読み上げ時間を短縮", accessoryType: .none, secondaryText: "序歌は、下の句を1回だけ読み上げます。", configType: .subtitleCell())
         dataSource.withSwitchOf = settings.shortenJoka
+        dataSource.accessibilityLabel = "shortenJokaMode"
         return dataSource
     }
 

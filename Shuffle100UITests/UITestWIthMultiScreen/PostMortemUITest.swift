@@ -25,20 +25,9 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
 
     func test_postMotermFromGameEndView() throws {
         activatePostMortemMode()
-//        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
-//            // given
-//            gotoPoemPickerScreen(app)
-//            sleep(1)
-//            // when
-//            app.buttons["全て取消"].tap()
-//            app.tables.cells["001"].tap()
-//            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
-//            // then
-//            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
-//        }
         selectJustNo1Poem()
         XCTContext.runActivity(named: "空札を有効にする") { _ in
-            app.switches["modeSwitch"].tap()
+            app.switches["fakeModeCellSwitch"].tap()
         }
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // given
@@ -187,7 +176,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             XCTAssert(app.navigationBars.staticTexts["いろいろな設定"].exists)
             // when
             sleep(1)
-            app.switches["modeSwitch"].tap()
+            app.switches["postMortemModeSwitch"].tap()
             app.buttons["設定終了"].tap()
             // then
             XCTAssert(app.staticTexts["序歌"].exists)
@@ -218,7 +207,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         XCTContext.runActivity(named: "まず、「いろいろな設定」画面で感想戦モードを有効にする") { _ in
             // when
             gotoReciteSettingsScreen(app)
-            app.switches["modeSwitch"].tap()
+            app.switches["postMortemModeSwitch"].tap()
             app.navigationBars.buttons["設定終了"].tap()
             // then
             XCTAssert(app.navigationBars["トップ"].exists)
