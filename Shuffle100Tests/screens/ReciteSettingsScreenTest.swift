@@ -33,9 +33,7 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssertNotNil(tableView)
         
         // 一旦、感想戦モードの実装開始
-        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 4)
-//        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 3)
-
+        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 5)
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
         let firstConfig = listContentConfig(of: firstCell)
         XCTAssertEqual(firstConfig.text, "歌と歌の間隔")
