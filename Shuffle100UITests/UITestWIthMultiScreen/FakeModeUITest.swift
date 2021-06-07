@@ -33,7 +33,6 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
         }
         XCTContext.runActivity(named: "空札モードにしてゲームを開始すると、読み上げる枚数が倍になっている。") { (acitivity) in
             // when
-//            app.tables.switches["modeSwitch"].tap()
             turnOnFakeMode()
             gotoRecitePoemScreen()
             tapForwardButton(app)
@@ -72,7 +71,7 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
     }
     
     private func turnOnFakeMode() {
-        app.tables.switches["modeSwitch"].tap()
+        app.tables.switches["fakeModeCellSwitch"].tap()
     }
     
     
