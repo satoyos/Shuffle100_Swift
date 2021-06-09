@@ -46,8 +46,6 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssertEqual(thirdConfig.secondaryText, "100%")
     }
 
-    // 感想戦モードの実装再開
-
     func test_fourthCellHasSwith() {
         // given
         let screen = ReciteSettingsScreen()
@@ -71,7 +69,7 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssert(pmSwitch.isOn)
     }
     
-    func test_affectSettings() {
+    func test_postMortemSwitchAffectsSettings() {
         // given
         let screen = ReciteSettingsScreen()
         // when
@@ -87,6 +85,33 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssertEqual(screen.settings.postMortemEnabled, true)
     }
     
+    func test_switchInShortenJokaCellReflectsSettings() {
+        // given
+        let screen = ReciteSettingsScreen()
+        // when
+        screen.settings.shortenJoka = true
+        screen.loadViewIfNeeded()
+        // then
+        let sjSwitch = shorenJokaSwitch(in: screen)
+        XCTAssert(sjSwitch.isOn)
+    }
+    
+    func test_shortenJokaSwitchAffectsSettings() {
+        // given
+        let screen = ReciteSettingsScreen()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let sjSwitch = shorenJokaSwitch(in: screen)
+        XCTAssertFalse(sjSwitch.isOn)
+        // when
+        sjSwitch.setOn(true, animated: true)
+        screen.switchValueChanged(sender: sjSwitch) // setOnだけではこのactionが呼ばれないので、明示的に呼ぶ
+        // then
+        XCTAssert(sjSwitch.isOn)
+        XCTAssertEqual(screen.settings.shortenJoka, true, "Settingsの中の設定値も書き換わっている")
+    }
+    
     private func postMoremSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
         let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
         guard let pmSwitch = fourthCell.accessoryView as? UISwitch else {
@@ -96,4 +121,12 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         return pmSwitch
     }
     
+    private func shorenJokaSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
+        let fifthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 4, section: 0))
+        guard let sjSwitch = fifthCell.accessoryView as? UISwitch else {
+            XCTFail("「序歌を短くする」セルからUISwitchを取得できない！")
+            return UISwitch()
+        }
+        return sjSwitch
+    }
 }

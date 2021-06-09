@@ -28,7 +28,14 @@ extension ReciteSettingsScreen: UITableViewDelegate {
     }
     
     @objc func switchValueChanged(sender: UISwitch) {
-        settings.postMortemEnabled = sender.isOn
+        switch sender.accessibilityLabel {
+        case "postMortemModeSwitch":
+            settings.postMortemEnabled = sender.isOn
+        case  "shortenJokaModeSwitch":
+            settings.shortenJoka = sender.isOn
+        default:
+            assertionFailure("UISwitch of name [\(sender.accessibilityLabel ?? "")] is unknown!")
+        }
         self.saveSettingsAction?()
     }
     
