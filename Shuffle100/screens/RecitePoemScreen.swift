@@ -92,6 +92,7 @@ final class RecitePoemScreen: SettingsAttachedScreen {
         }
     }
     
+    
     private func setNotificationsAboutBackgound() {
         NotificationCenter.default.addObserver(
             self,
