@@ -28,6 +28,7 @@ final class RecitePoemView: UIView {
     var exitButton: ReciteViewHeaderButton!
     let sizeByDevice = SizeFactory.createSizeByDevice()
     var headerTitle = "To be Filled!"
+    var jokaDescLabel: UILabel?
     
     func fixLayoutOn(baseView: UIView, offsetX: CGFloat = 0) {
         self.snp.remakeConstraints{(make) -> Void in
@@ -59,6 +60,17 @@ final class RecitePoemView: UIView {
     
     func showAsWaitingFor(_ waitingFor: WaitingFor) {
         playButton.showAsWaitingFor(waitingFor)
+    }
+    
+    func addNormalJokaDescLabel() {
+        let label = NormalJokaDescLabel()
+        label.text = "試合開始の合図として読まれる歌です。"
+        label.sizeToFit()
+        self.addSubview(label)
+        label.snp.makeConstraints{ (make) -> Void in
+            make.center.equalTo(space1)
+        }
+        self.jokaDescLabel = label
     }
     
     private func setYaxisConstraints() {

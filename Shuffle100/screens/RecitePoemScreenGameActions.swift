@@ -11,8 +11,14 @@ import UIKit
 extension RecitePoemScreen {
     func playJoka(shorten: Bool = false) {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
-        if shorten { currentPlayer?.currentTime = 12.0 }
+        if shorten {
+            currentPlayer?.currentTime = Double(singer.shortenJokaStartTime)
+//            recitePoemView.addShortJokaDescLabel
+        } else{
+            recitePoemView.addNormalJokaDescLabel()
+        }
         startPlayingCurrentPlayer(number: nil, side: nil, count: nil )
+        
     }
     
     func playNumberedPoem(number: Int, side: Side, count: Int) {

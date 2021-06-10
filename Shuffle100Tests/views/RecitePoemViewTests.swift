@@ -14,5 +14,17 @@ class RecitePoemViewTests: XCTestCase {
         let view = RecitePoemView()
         view.initView(title: "test")
         XCTAssertNotNil(view)
+        XCTAssertNil(view.jokaDescLabel)
+    }
+    
+    func test_addNormalJokaDescLabel() {
+        // given
+        let rpView = RecitePoemView()
+        rpView.initView(title: "test")
+        // when
+        rpView.addNormalJokaDescLabel()
+        // then
+        XCTAssertNotNil(rpView.jokaDescLabel)
+        XCTAssertEqual(rpView.jokaDescLabel?.text, "試合開始の合図として読まれる歌です。")
     }
 }
