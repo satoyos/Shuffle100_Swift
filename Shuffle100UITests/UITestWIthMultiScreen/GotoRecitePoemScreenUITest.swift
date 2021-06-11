@@ -8,8 +8,9 @@
 
 import XCTest
 
-class GotoRecitePoemScreenUITest: XCTestCase, HomeScreenUITestUtils, ExitGameUITestUtils {
+class GotoRecitePoemScreenUITest: XCTestCase {
     var app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
 
     override func setUp() {
         continueAfterFailure = false
@@ -21,6 +22,7 @@ class GotoRecitePoemScreenUITest: XCTestCase, HomeScreenUITestUtils, ExitGameUIT
         let recitePage = homePage.gotoRecitePoemPage()
         // then
         XCTAssert(recitePage.exists)
+        XCTAssert(recitePage.normalJokaDescLabel.exists)
     }
     
     func test_backToHomeScreenUsingExitButton() {

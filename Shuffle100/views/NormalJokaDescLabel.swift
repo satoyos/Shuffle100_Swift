@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NormalJokaDescLabel: UILabel {
+final class NormalJokaDescLabel: UILabel, DescriptionViewAnimation {
 
     /*
     // Only override draw() if you perform custom drawing.

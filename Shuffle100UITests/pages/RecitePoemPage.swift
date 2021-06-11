@@ -40,6 +40,10 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         return app.buttons[A11y.gear].firstMatch
     }
     
+    var normalJokaDescLabel: XCUIElement {
+        return app.staticTexts[A11y.normalJokaDesc].firstMatch
+    }
+    
     enum A11y {
         static let titleIdentifier = "screenTitle"
         static let jokaTitle = "序歌"
@@ -47,6 +51,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let forward = "forward"
         static let play = "play"
         static let gear = "gear"
+        static let normalJokaDesc = "試合開始の合図として読まれる歌です。"
     }
     
     func recitePageAppears(number: Int, side: Side, total: Int = 100) -> Bool {
