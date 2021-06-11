@@ -16,7 +16,9 @@ extension RecitePoemScreen {
 //            recitePoemView.addShortJokaDescLabel
         } else{
             recitePoemView.addNormalJokaDescLabel()
+//            recitePoemView.jokaDescLabel?.fadeInFadeOut()
         }
+        
         startPlayingCurrentPlayer(number: nil, side: nil, count: nil )
         
     }

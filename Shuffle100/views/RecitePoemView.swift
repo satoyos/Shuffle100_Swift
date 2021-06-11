@@ -71,6 +71,7 @@ final class RecitePoemView: UIView {
             make.center.equalTo(space1)
         }
         self.jokaDescLabel = label
+        label.fadeInFadeOut()
     }
     
     private func setYaxisConstraints() {
