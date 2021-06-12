@@ -451,6 +451,9 @@
 		92E5C552267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */; };
 		92E5C553267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */; };
 		92E5C554267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */; };
+		92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */; };
+		92E5C5582674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */; };
+		92E5C5592674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */; };
 		92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */; };
 		92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */; };
 		92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
@@ -772,6 +775,7 @@
 		92E5C54A266C7541009A46F5 /* WhatsNextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextPage.swift; sourceTree = "<group>"; };
 		92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalJokaDescLabel.swift; sourceTree = "<group>"; };
 		92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewAnimation.swift; sourceTree = "<group>"; };
+		92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortJokaDescLabel.swift; sourceTree = "<group>"; };
 		92E5F826240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerScreenUITestUtils.swift; sourceTree = "<group>"; };
 		92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenTest.swift; sourceTree = "<group>"; };
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreen.swift; sourceTree = "<group>"; };
@@ -1061,6 +1065,7 @@
 				9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */,
 				925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */,
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
+				92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1609,6 +1614,7 @@
 				9207BB3222996B7300816DC8 /* Settings.swift in Sources */,
 				920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */,
 				92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
+				92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				9207BAF4229579D600816DC8 /* Bool100.swift in Sources */,
 				92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
 				92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
@@ -1802,6 +1808,7 @@
 				925994E124449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
 				92A6EB8A24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */,
+				92E5C5582674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */,
 				92FC39472286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
@@ -2072,6 +2079,7 @@
 				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				922BDDEC2625D5CB0093B24A /* SelectModePage.swift in Sources */,
+				92E5C5592674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				9246195E248BE29E002B6690 /* FudaSetsUITestUtils.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,

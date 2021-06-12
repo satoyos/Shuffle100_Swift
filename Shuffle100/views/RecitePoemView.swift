@@ -64,14 +64,24 @@ final class RecitePoemView: UIView {
     
     func addNormalJokaDescLabel() {
         let label = NormalJokaDescLabel()
-        label.text = "試合開始の合図として読まれる歌です。"
+        addJokaDescLabel(label, ofText: "試合開始の合図として読まれる歌です。")
+        label.fadeInFadeOut()
+    }
+    
+    func addShortJokaDescLabel() {
+        let label = ShortJokaDescLabel()
+        addJokaDescLabel(label, ofText: "序歌を途中から読み上げています。")
+        label.fadeInFadeOut()
+    }
+    
+    private func addJokaDescLabel(_ label: UILabel, ofText text: String) {
+        label.text = text
         label.sizeToFit()
         self.addSubview(label)
         label.snp.makeConstraints{ (make) -> Void in
             make.center.equalTo(space1)
         }
         self.jokaDescLabel = label
-        label.fadeInFadeOut()
     }
     
     private func setYaxisConstraints() {

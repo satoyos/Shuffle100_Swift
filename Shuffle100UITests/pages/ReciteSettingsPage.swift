@@ -48,6 +48,10 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         return app.cells.staticTexts[A11y.maxInterval].firstMatch
     }
     
+    var shortenJokaModeSwitch: XCUIElement {
+        return app.cells.switches[A11y.shortenJokaSwitch].firstMatch
+    }
+    
     enum A11y {
         static let title = "いろいろな設定"
         static let interval = "歌と歌の間隔"
@@ -57,6 +61,7 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         static let zeroVolume = "0%"
         static let maxInterval = "2.00"
         static let exitSetting = "設定終了"
+        static let shortenJokaSwitch = "shortenJokaModeSwitch"
     }
     
     func gotoIntervalSettingPage() -> IntervalSettingPage {
