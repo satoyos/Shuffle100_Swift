@@ -1040,6 +1040,7 @@
 		925CEB51218ED4FF00876E7A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				92E5C5552674D463009A46F5 /* protocols */,
 				9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */,
 				92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */,
 				9258D1A222D9D624003A0EF8 /* ViewSize.swift */,
@@ -1055,15 +1056,11 @@
 				92FFBF40245FB3F0004D7F79 /* FudaView.swift */,
 				92B9E98F246EDE05007C2E75 /* NgramPickerTableCell.swift */,
 				921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */,
-				92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */,
 				92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */,
-				92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */,
 				92F8245625AF0C34008E031D /* SettingTableCell.swift */,
 				9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */,
-				925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */,
 				925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */,
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
-				92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1278,6 +1275,17 @@
 				92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */,
 				92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */,
 				92E5C548266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		92E5C5552674D463009A46F5 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */,
+				92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */,
+				92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */,
+				92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
