@@ -13,10 +13,9 @@ extension RecitePoemScreen {
         currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
         if shorten {
             currentPlayer?.currentTime = Double(singer.shortenJokaStartTime)
-//            recitePoemView.addShortJokaDescLabel
+            recitePoemView.addShortJokaDescLabel()
         } else{
             recitePoemView.addNormalJokaDescLabel()
-//            recitePoemView.jokaDescLabel?.fadeInFadeOut()
         }
         
         startPlayingCurrentPlayer(number: nil, side: nil, count: nil )

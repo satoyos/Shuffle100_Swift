@@ -42,6 +42,7 @@ class NormalModeCoordinatorTest: XCTestCase {
         screen.playJoka(shorten: settings.shortenJoka)
         screen.updateAudioProgressView()
         // then
+        XCTAssertEqual(screen.recitePoemView.jokaDescLabel?.text, "序歌を途中から読み上げています。")
         guard let player = screen.currentPlayer else {
             XCTFail("RecotePoemScreenからcurrentPlayerを取得できない！！")
             return

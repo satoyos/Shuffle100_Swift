@@ -25,6 +25,24 @@ class GotoRecitePoemScreenUITest: XCTestCase {
         XCTAssert(recitePage.normalJokaDescLabel.exists)
     }
     
+    func test_shortenJokaMode() {
+        // when
+        let settingsPage = homePage.gotoReciteSettingPage()
+        // then
+        XCTAssert(settingsPage.exists, "「いろいろな設定」ページに到達")
+        let sjSwitch = waitToHittable(for: settingsPage.shortenJokaModeSwitch, timeout: timeOutSec)
+        // when
+        sjSwitch.tap()
+        settingsPage.exitSettingsButton.tap()
+        // then
+        XCTAssert(homePage.exists)
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        // then
+        XCTAssert(recitePage.exists)
+        XCTAssert(recitePage.shortJokaDescLabel.exists)
+    }
+    
     func test_backToHomeScreenUsingExitButton() {
 
         // given
