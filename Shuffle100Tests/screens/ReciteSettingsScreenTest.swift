@@ -113,7 +113,7 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
     }
     
     private func postMoremSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
-        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
+        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 4, section: 0))
         guard let pmSwitch = fourthCell.accessoryView as? UISwitch else {
             XCTFail("感想戦セルからUISwitchを取得できない！")
             return UISwitch()
@@ -122,7 +122,7 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
     }
     
     private func shorenJokaSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
-        let fifthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 4, section: 0))
+        let fifthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
         guard let sjSwitch = fifthCell.accessoryView as? UISwitch else {
             XCTFail("「序歌を短くする」セルからUISwitchを取得できない！")
             return UISwitch()
