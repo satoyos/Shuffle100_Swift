@@ -11,7 +11,8 @@ import UIKit
 final class ReciteSettingsScreen: SettingsAttachedScreen {
     internal let reuseID = "ReciteSettingsTableCell"
     var tableView: UITableView!
-    var tableSources: [SettingsCellDataSource]!
+//    var tableSources: [SettingsCellDataSource]!
+    var sections: [TableSection]!
     var intervalSettingAction: (() -> Void)?
     var kamiShimoIntervalSettingAction: (() -> Void)?
     var volumeSettingAction: (() -> Void)?
@@ -34,7 +35,7 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
     }
 
     private func createTableViewForReciteSettingsScreen() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .plain)
+        let tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SettingTableCell.self, forCellReuseIdentifier: reuseID)
@@ -42,13 +43,37 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
     }
     
     private func setUpTableSources() {
-        self.tableSources = [
+        self.sections = [
+            createInervalSection(),
+            createVolumeSection(),
+            createModeSection()
+        ]
+    }
+    
+    private func createInervalSection() -> TableSection {
+        var intervalSection = TableSection(title: "読み上げの間隔(秒)")
+        intervalSection.dataSources = [
             SettingsCellDataSource(title: "歌と歌の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.interval)),
-            SettingsCellDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.kamiShimoInterval)),
+            SettingsCellDataSource(title: "上の句と下の句の間隔", accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.kamiShimoInterval))
+        ]
+        return intervalSection
+    }
+    
+    private func createVolumeSection() -> TableSection {
+        var volumeSection = TableSection(title: "音量")
+        volumeSection.dataSources = [
             SettingsCellDataSource(title: "音量調整", accessoryType: .disclosureIndicator, secondaryText: "\(Int(settings.volume * 100))" + "%"),
+        ]
+        return volumeSection
+    }
+    
+    private func createModeSection() -> TableSection {
+        var modeSection = TableSection(title: "試合の詳細なモード")
+        modeSection.dataSources = [
             shortenJokaTableDataSource(),
             postMotermTableDataSource()
         ]
+        return modeSection
     }
     
     private func configureDismissButton() {

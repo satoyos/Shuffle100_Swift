@@ -32,8 +32,9 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         let tableView = screen.tableView
         XCTAssertNotNil(tableView)
         
-        // 一旦、感想戦モードの実装開始
-        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 5)
+        XCTAssertEqual(tableView?.numberOfSections, 3)
+        
+        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 2)
         let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
         let firstConfig = listContentConfig(of: firstCell)
         XCTAssertEqual(firstConfig.text, "歌と歌の間隔")
@@ -41,21 +42,21 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
         let secondConfig = listContentConfig(of: secondCell)
         XCTAssertEqual(secondConfig.secondaryText, "1.00")
-        let thirdCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 2, section: 0))
-        let thirdConfig = listContentConfig(of: thirdCell)
+        let volumeCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 1))
+        let thirdConfig = listContentConfig(of: volumeCell)
         XCTAssertEqual(thirdConfig.secondaryText, "100%")
     }
 
-    func test_fourthCellHasSwith() {
+    func test_shortenJokaCellHasSwith() {
         // given
         let screen = ReciteSettingsScreen()
         // when
         screen.loadViewIfNeeded()
         // then
-        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
-        XCTAssertNotNil(fourthCell)
-        XCTAssertNotNil(fourthCell.accessoryView)
-        XCTAssert(fourthCell.accessoryView!.isKind(of: UISwitch.self))
+        let shortenJokaCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 2))
+        XCTAssertNotNil(shortenJokaCell)
+        XCTAssertNotNil(shortenJokaCell.accessoryView)
+        XCTAssert(shortenJokaCell.accessoryView!.isKind(of: UISwitch.self))
     }
     
     func test_switchInPostMortemCellReflectsSettings() {
@@ -113,7 +114,7 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
     }
     
     private func postMoremSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
-        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 4, section: 0))
+        let fourthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 1, section: 2))
         guard let pmSwitch = fourthCell.accessoryView as? UISwitch else {
             XCTFail("感想戦セルからUISwitchを取得できない！")
             return UISwitch()
@@ -122,7 +123,7 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
     }
     
     private func shorenJokaSwitch(in screen: ReciteSettingsScreen) -> UISwitch {
-        let fifthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 3, section: 0))
+        let fifthCell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 2))
         guard let sjSwitch = fifthCell.accessoryView as? UISwitch else {
             XCTFail("「序歌を短くする」セルからUISwitchを取得できない！")
             return UISwitch()
