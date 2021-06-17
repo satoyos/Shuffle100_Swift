@@ -10,15 +10,17 @@ import UIKit
 
 extension ReciteSettingsScreen: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
+        let cell = self.tableView(self.tableView, cellForRowAt: indexPath)
+        guard let content = cell.contentConfiguration as? UIListContentConfiguration else { return }
+        switch content.text {
+        case A11y.intervalCellTitle:
             self.intervalSettingAction?()
-        case 1:
+        case A11y.kamiShimoIntervalCellTitle:
             self.kamiShimoIntervalSettingAction?()
-        case 2:
+        case A11y.volumeCellTitle:
             self.volumeSettingAction?()
         default:
-            assertionFailure("他の選択肢は対応していません！")
+            return
         }
     }
     
