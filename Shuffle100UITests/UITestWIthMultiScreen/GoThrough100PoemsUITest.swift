@@ -56,7 +56,8 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
     
     func test_goThoughInNonStopMode() {
         XCTContext.runActivity(named: "ノンストップモードを選択") { (activiti) in
-            let selectModePage = gotoSelectModeScreen()
+            // given
+            let selectModePage = homePage.gotoSelectModePage()
             // when
             selectModePage
                 .selectMode(.nonstop)
@@ -87,47 +88,50 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             waitToAppear(for: allPoemRecitedPage.pageTitle, timeout: 12)
             allPoemRecitedPage.backToTopButton.tap()
             // then
-            XCTAssert(app.navigationBars["トップ"].exists)
+//            XCTAssert(app.navigationBars["トップ"].exists)
+            XCTAssert(homePage.exists)
         }
     }
     
     func test_goThorough100InBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
+            // given
+            let selectModePage = homePage.gotoSelectModePage()
             // when
-            gotoSelectModeScreen()
-            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
-            app.buttons["トップ"].tap()
+            selectModePage
+                .selectMode(.beginner)
+                .backToTopButton.tap()
             // then
-            XCTAssert(app.cells.staticTexts["初心者"].exists)
+            XCTAssert(homePage.reciteModeIs(.beginner))
         }
-        XCTContext.runActivity(named: "そして読み上げを開始し、序歌をスキップ") { (activiti) in
-            gotoRecitePoemScreen()
-            tapForwardButton(app)
-        }
+        // given
+        let recitePage = homePage.gotoRecitePoemPage()
+        let forwordButton = recitePage.forwardButton
+        let whatsNextPage = WhatsNextpage(app: app)
+        // when
+        forwordButton.tap()
+        
         for i in (1...100) {
-            XCTContext.runActivity(named: "\(i)首めの上の句の読み上げが始まる") { (activiti) in
-                kamiRecitingScreenAppearsOf(number: i)
-            }
-            XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
-                Thread.sleep(forTimeInterval: 0.1)
-                
-                tapForwardButton(app)
-                shimoRecitingScreenAppearsOf(number: i)
-            }
-            XCTContext.runActivity(named: "下の句を読み終わると、「次はどうする？」画面になる") { activity in
-                tapForwardButton(app)
-                waitToAppear(for: app.navigationBars["次はどうする？"], timeout: timeOutSec)
-            }
-            XCTContext.runActivity(named: "「次の歌へ！」ボタンを押して、次の歌に進む") { activity in
-                app.buttons["goNext"].tap()
-            }
+            // then
+            XCTAssert(recitePage.recitePageAppears(number: i, side: .kami))
+            // when
+            forwordButton.tap()
+            // then
+            XCTAssert(recitePage.recitePageAppears(number: i, side: .shimo))
+            // when
+            forwordButton.tap()
+            // then
+            XCTAssert(whatsNextPage.exists, "「次はどうする？」画面に到達")
+            // when
+            whatsNextPage.nextPoemButton.tap()
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
             let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
             button.tap()
             // then
-            XCTAssert(app.navigationBars["トップ"].exists)
+//            XCTAssert(app.navigationBars["トップ"].exists)
+            XCTAssert(homePage.exists)
         }
     }
     
