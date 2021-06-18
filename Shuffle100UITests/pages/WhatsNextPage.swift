@@ -28,8 +28,13 @@ final class WhatsNextpage: PageObjectable {
         return app.buttons[A11y.exit].firstMatch
     }
     
+    var nextPoemButton: XCUIElement {
+        return app.buttons[A11y.nextPoem].firstMatch
+    }
+    
     enum A11y {
         static let title = "次はどうする？"
+        static let nextPoem = "goNext"
         static let gear = "gear"
         static let exit = "exit"
     }
