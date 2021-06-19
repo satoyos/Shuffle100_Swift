@@ -8,8 +8,9 @@
 
 import XCTest
 
-class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils {
+class GoThrough100PoemsUITest: XCTestCase {
     var app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
     
     override func setUp() {
         continueAfterFailure = false
@@ -51,7 +52,6 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             // then
             XCTAssert(homePage.exists, "トップページに戻ってくる")
         }
-        
     }
     
     func test_goThoughInNonStopMode() {
@@ -88,7 +88,6 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             waitToAppear(for: allPoemRecitedPage.pageTitle, timeout: 12)
             allPoemRecitedPage.backToTopButton.tap()
             // then
-//            XCTAssert(app.navigationBars["トップ"].exists)
             XCTAssert(homePage.exists)
         }
     }
@@ -130,7 +129,6 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
             let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: 12)
             button.tap()
             // then
-//            XCTAssert(app.navigationBars["トップ"].exists)
             XCTAssert(homePage.exists)
         }
     }
@@ -142,6 +140,5 @@ class GoThrough100PoemsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScre
     private func shimoRecitingScreenAppearsOf(number i: Int) {
         waitToAppear(for: app.staticTexts["\(i)首め:下の句 (全100首)"], timeout: timeOutSec)
     }
- 
 
 }
