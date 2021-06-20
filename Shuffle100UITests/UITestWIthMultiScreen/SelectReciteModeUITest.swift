@@ -8,8 +8,9 @@
 
 import XCTest
 
-class SelectReciteModeUITest: XCTestCase, HomeScreenUITestUtils {
+class SelectReciteModeUITest: XCTestCase {
     let app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
     
     override func setUp() {
         super.setUp()
