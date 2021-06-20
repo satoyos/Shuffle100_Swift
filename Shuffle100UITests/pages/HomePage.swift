@@ -65,6 +65,13 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         static let normal = "通常"
         static let nonStop = "ノンストップ"
         static let gear = "GearButton"
+        static let singerIaLabel = "IA（ボーカロイド）"
+        static let singerInabaLabel = "いなばくん（人間）"
+    }
+    
+    enum CurrentSinger {
+        case ia
+        case inaba
     }
     
     func goToPoemPickerPage() -> PoemPickerPage {
@@ -108,6 +115,17 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         let button = waitToHittable(for: gearButton, timeout: timeOutSec)
         button.tap()
         return ReciteSettingsPage(app: app)
+    }
+    
+    func singerIs(_ singer: CurrentSinger) -> Bool {
+        var singerLabel: String
+        switch singer {
+        case .ia:
+            singerLabel = A11y.singerIaLabel
+        case .inaba:
+            singerLabel = A11y.singerInabaLabel
+        }
+        return app.cells.staticTexts[singerLabel].firstMatch.exists
     }
     
     private func labelForReciteMode(_ mode: ReciteMode) -> String {
