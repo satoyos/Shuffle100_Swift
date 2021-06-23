@@ -10,6 +10,7 @@ import XCTest
 
 class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils, RecitePoemScreenUITestUtils {
     let app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
 
     override func setUp() {
         super.setUp()
@@ -19,60 +20,60 @@ class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestU
     }
 
     func test_fakeModeMakeDeckSize_x_2() {
-        gotoPoemPickerScreen()
-        XCTContext.runActivity(named: "2首選んでホーム画面に戻る") { (acitivity) in
-            // given
-            sleep(1)
-            app.buttons["全て取消"].tap()
-            app.tables.cells["001"].tap()
-            app.tables.cells["003"].tap()
-            // when
-            goBackToHomeScreen(app)
-            // then
-            XCTAssert(app.staticTexts["2首"].exists)
-        }
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        pickerPage.cancelAllButton.tap()
+        pickerPage
+            .tapCellof(number: 1)
+            .tapCellof(number: 3)
+            .backToTopButton.tap()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 2))
         XCTContext.runActivity(named: "空札モードにしてゲームを開始すると、読み上げる枚数が倍になっている。") { (acitivity) in
             // when
-            turnOnFakeMode()
-            gotoRecitePoemScreen()
-            tapForwardButton(app)
+            homePage.fakeModeSwitch.tap()
+            let recitePage = homePage.gotoRecitePoemPage()
+            recitePage.tapForwardButton()
             // then
-            XCTAssert(app.staticTexts["1首め:上の句 (全4首)"].exists)
+            XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami, total: 4))
         }
     }
     
     func test_fakeModeShouldBeCanceldWhenChangingReciteModeFromNormal() {
         // given
+        let recitePage = RecitePoemPage(app: app)
         test_fakeModeMakeDeckSize_x_2()
+        
         XCTContext.runActivity(named: "試合を中断して、トップ画面に戻る") { _ in
             // when
-            app.buttons["exit"].tap()
-            let realyExitButton = waitToHittable(for: app.alerts.buttons["終了する"], timeout: timeOutSec)
-            realyExitButton.tap()
+            let alert = recitePage.popUpExitGameAlert()
+            alert.confirmButton.tap()
             // then
-            waitToAppear(for: app.navigationBars.staticTexts["トップ"], timeout: timeOutSec)
+            XCTAssert(homePage.exists)
         }
-        // when
         XCTContext.runActivity(named: "読み上げモードを「初心者」に変更する") { _ in
-            gotoSelectModeScreen()
-            app.pickerWheels.element.adjust(toPickerWheelValue: "初心者 (チラし取り)")
-            app.buttons["トップ"].tap()
+            // when
+            let selectModepage = homePage.gotoSelectModePage()
             // then
-            XCTAssert(app.cells.staticTexts["初心者"].exists)
+            XCTAssert(selectModepage.exists)
+            // when
+            selectModepage
+                .selectMode(.beginner)
+                .backToTopButton.tap()
+            // then
+            XCTAssert(homePage.exists)
+            XCTAssert(homePage.reciteModeIs(.beginner))
         }
         // then
         XCTContext.runActivity(named: "読み上げる枚数が2枚に変わっている") { _ in
             // when
-            gotoRecitePoemScreen()
-            tapForwardButton(app)
+            let recitePage = homePage.gotoRecitePoemPage()
+            recitePage.forwardButton.tap()
             // then
-            XCTAssert(app.staticTexts["1首め:上の句 (全2首)"].exists)
+            XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami, total: 2))
         }
     }
-    
-    private func turnOnFakeMode() {
-        app.tables.switches["fakeModeCellSwitch"].tap()
-    }
-    
-    
 }

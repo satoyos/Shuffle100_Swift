@@ -32,8 +32,12 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         return app.buttons[A11y.cancel].firstMatch
     }
     
-    var allCancellButton: XCUIElement {
-        return waitToHittable(for: app.buttons[A11y.allCancel], timeout: timeOutSec)
+    var cancelAllButton: XCUIElement {
+        return waitToHittable(for: app.buttons[A11y.cancelAll], timeout: timeOutSec)
+    }
+    
+    var selectAllButton: XCUIElement {
+        return waitToHittable(for: app.toolbars.buttons[A11y.selectAll], timeout: timeOutSec)
     }
     
     enum A11y {
@@ -41,7 +45,8 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let backToTop = "トップ"
         static let searchFieldPlaceHolder = "歌を検索"
         static let cancel = "キャンセル"
-        static let allCancel = "全て取消"
+        static let cancelAll = "全て取消"
+        static let selectAll = "全て選択"
     }
     
     @discardableResult

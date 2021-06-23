@@ -76,7 +76,7 @@ final class PoemPickerIntegrationUITest: XCTestCase {
         // given
         let poemPickerPage = homePage.goToPoemPickerPage()
         // when
-        poemPickerPage.allCancellButton.tap()
+        poemPickerPage.cancelAllButton.tap()
         poemPickerPage.backToTopButton.tap()
         // then
         XCTAssert(homePage.numberOfSelecttedPoems(is: 0))
