@@ -8,7 +8,7 @@
 
 import XCTest
 
-class FakeModeUITest: XCTestCase, HomeScreenUITestUtils, PoemPickerScreenUITestUtils, RecitePoemScreenUITestUtils {
+class FakeModeUITest: XCTestCase {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 
