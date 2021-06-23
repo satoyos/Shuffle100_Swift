@@ -52,6 +52,10 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         return app.navigationBars.buttons[A11y.gear].firstMatch
     }
     
+    var fakeModeSwitch: XCUIElement {
+        return fakeModeCell.switches.firstMatch
+    }
+    
     enum A11y {
         static let title = "トップ"
         static let poems = "取り札を用意する歌"

@@ -25,7 +25,7 @@ class AllPeomRecitedUITest: XCTestCase {
         // then
         XCTAssert(pickerPage.exists, "歌選択画面に到達")
         // when
-        pickerPage.allCancellButton.tap()
+        pickerPage.cancelAllButton.tap()
         pickerPage
             .tapCellof(number: 1)
             .backToTopPage()
