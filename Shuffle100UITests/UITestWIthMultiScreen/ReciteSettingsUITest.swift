@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ReciteSettingsUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, ExitGameUITestUtils, AdjustWithSliderUtils {
+class ReciteSettingsUITest: XCTestCase {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 
