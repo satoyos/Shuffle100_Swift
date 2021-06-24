@@ -10,6 +10,7 @@ import XCTest
 
 class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, PoemPickerScreenUITestUtils, ExitGameUITestUtils {
     var app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
 
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -23,7 +24,10 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     }
 
     func test_startBeginnerMode() throws {
-        gotoWhatsNextScreen(app)
+        // when
+        let whatsNextPage = gotoWhatsNextPage()
+        // then
+        XCTAssert(whatsNextPage.exists)
     }
     
     func test_showTorifuda() {
@@ -85,6 +89,34 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         gotoWhatsNextScreen(app)
         // when, then
         exitGameSuccessfully(app)
+    }
+    
+    func gotoWhatsNextPage() -> WhatsNextpage {
+        // when
+        let selectModePage = homePage.gotoSelectModePage()
+        // then
+        XCTAssert(selectModePage.exists)
+        // when
+        selectModePage
+            .selectMode(.beginner)
+            .backToTopButton.tap()
+        // then
+        XCTAssert(homePage.reciteModeIs(.beginner))
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami))
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo))
+        // when
+        recitePage.tapForwardButton()
+        // then
+        let whatsNextPage = WhatsNextpage(app: app)
+        XCTAssert(whatsNextPage.exists)
+        return whatsNextPage
     }
     
 }
