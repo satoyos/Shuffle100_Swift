@@ -19,10 +19,6 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
 
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func test_startBeginnerMode() throws {
         // when
         let whatsNextPage = gotoWhatsNextPage()
@@ -33,30 +29,30 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     func test_showTorifuda() {
         // given
         XCTContext.runActivity(named: "歌を1首(#4)だけ選んだ状態にする") { (activity) in
-            gotoPoemPickerScreen()
-            let clearButton = waitToHittable(for: app.buttons["全て取消"])
-            clearButton.tap()
-            //   tap poems #4
-            app.tables.cells["004"].tap()
-            //   back to HomeScreen
-            goBackToHomeScreen(app)
-            // then
-            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
-        }
-        gotoWhatsNextScreen(app, poemsNumber: 1)
-        // when
-        app.buttons["torifuda"].tap()
-        // then
-        XCTAssert(app.images["fudaView"].exists)
-        XCTAssert(app.staticTexts["ふ"].exists)
-        XCTAssert(app.staticTexts["し"].exists)
-        XCTAssertFalse(app.staticTexts["あ"].exists)
-        XCTContext.runActivity(named: "「次はどうする？」画面に戻る") { _ in
             // when
-            app.navigationBars.buttons["次はどうする？"].tap()
+            let pickerPage = homePage.goToPoemPickerPage()
             // then
-            XCTAssert(app.navigationBars["次はどうする？"].exists)
+            XCTAssert(pickerPage.exists)
+            // when
+            pickerPage.cancelAllButton.tap()
+            pickerPage.cellOf(number: 4).tap()
+            pickerPage.backToTopButton.tap()
+            // then
+            XCTAssert(homePage.numberOfSelecttedPoems(is: 1))
         }
+        // when
+        let whatsNextPage = gotoWhatsNextPage(totalPoemsNum: 1)
+        whatsNextPage.torifudaButton.tap()
+        // then
+        let fudaPage = TorifudaPage(app: app)
+        XCTAssert(fudaPage.exists)
+        XCTAssert(fudaPage.hasChar("ふ"))
+        XCTAssert(fudaPage.hasChar("し"))
+        XCTAssertFalse(fudaPage.hasChar("あ"))
+        // when
+        fudaPage.backToWhatsNextButton.tap()
+        // then
+        XCTAssert(whatsNextPage.exists)
     }
     
     func test_refrainShimo() {
@@ -91,7 +87,7 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         exitGameSuccessfully(app)
     }
     
-    func gotoWhatsNextPage() -> WhatsNextpage {
+    func gotoWhatsNextPage(totalPoemsNum: Int = 100) -> WhatsNextpage {
         // when
         let selectModePage = homePage.gotoSelectModePage()
         // then
@@ -106,11 +102,11 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         let recitePage = homePage.gotoRecitePoemPage()
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami))
+        XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami, total: totalPoemsNum))
         // when
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo))
+        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo, total: totalPoemsNum))
         // when
         recitePage.tapForwardButton()
         // then
