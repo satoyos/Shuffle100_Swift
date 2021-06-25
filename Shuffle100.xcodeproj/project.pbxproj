@@ -208,6 +208,7 @@
 		9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */; };
 		926489192604480300CC4131 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926489182604480300CC4131 /* SettingsTest.swift */; };
+		9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265517B2685F8F400C746D0 /* TorifudaPage.swift */; };
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD42380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD52380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
@@ -661,6 +662,7 @@
 		9260CCA525C67AE000B709B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
+		9265517B2685F8F400C746D0 /* TorifudaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaPage.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenGameActions.swift; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				92E5C544266903DC009A46F5 /* KamiShimoIntervalPage.swift */,
 				92E5C546266A6235009A46F5 /* VolumePage.swift */,
 				92E5C54A266C7541009A46F5 /* WhatsNextPage.swift */,
+				9265517B2685F8F400C746D0 /* TorifudaPage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -2004,6 +2007,7 @@
 				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				9246195C248BC30A002B6690 /* NgramPickerScreenUITestUtils.swift in Sources */,
+				9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */,
 				9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FFBF57246256B5004D7F79 /* ExitGameUITestUtils.swift in Sources */,
 				92CE520D2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,

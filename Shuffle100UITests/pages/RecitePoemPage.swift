@@ -82,8 +82,9 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
     
     @discardableResult
     func tapForwardButton(waiting sec: UInt32 = 0) -> Self {
-        sleep(sec)
-        forwardButton.tap()
+//        sleep(sec)
+        let button = waitToHittable(for: forwardButton, timeout: timeOutSec)
+        button.tap()
         return self
     }
 }
