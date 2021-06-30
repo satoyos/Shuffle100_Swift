@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils, PoemPickerScreenUITestUtils, ExitGameUITestUtils {
+class BeginnerModeUITest: XCTestCase {
     var app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 
@@ -57,34 +57,38 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
     
     func test_refrainShimo() {
         // given
-        gotoWhatsNextScreen(app)
+        let recitePage = RecitePoemPage(app: app)
         // when
-        app.buttons["refrain"].tap()
+        let whatsNextPage = gotoWhatsNextPage()
+        whatsNextPage.refrainButton.tap()
         // then
-        XCTContext.runActivity(named: "読み上げ画面に戻る") { activity in
-            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
-        }
-        XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { activity in
-            waitToAppear(for: app.staticTexts["次はどうする？"], timeout: 15)
+        XCTAssert(recitePage.exists, "読み上げ画面に戻る")
+        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo))
+        XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { _ in
+            waitToAppear(for: whatsNextPage.pageTitle, timeout: 15)
         }
     }
     
     func test_goNext() {
-        // given
-        gotoWhatsNextScreen(app)
         // when
-        app.buttons["goNext"].tap()
+        let whatsNextPage = gotoWhatsNextPage()
+        whatsNextPage.nextPoemButton.tap()
         // then
-        XCTContext.runActivity(named: "そのまま2首めに移る") { activity in
-            waitToAppear(for: app.staticTexts["2首め:上の句 (全100首)"], timeout: timeOutSec)
-        }
+        let recitePage = RecitePoemPage(app: app)
+        XCTAssert(recitePage.recitePageAppears(number: 2, side: .kami))
     }
     
     func test_exitGameFromWhatsNextScreen() {
-        // given
-        gotoWhatsNextScreen(app)
-        // when, then
-        exitGameSuccessfully(app)
+        // when
+        let whatsNextPage = gotoWhatsNextPage()
+        whatsNextPage.exitButton.tap()
+        // then
+        let exitAlert = ExitGameAlert(app: app)
+        XCTAssert(exitAlert.exists, "確認ダイアログが現れる")
+        // when
+        exitAlert.confirmButton.tap()
+        // then
+        XCTAssert(homePage.exists, "トップ画面に戻る")
     }
     
     func gotoWhatsNextPage(totalPoemsNum: Int = 100) -> WhatsNextpage {
@@ -114,5 +118,4 @@ class BeginnerModeUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUIT
         XCTAssert(whatsNextPage.exists)
         return whatsNextPage
     }
-    
 }
