@@ -36,11 +36,15 @@ final class WhatsNextpage: PageObjectable {
         return app.buttons[A11y.torifuda].firstMatch
     }
     
+    var refrainButton: XCUIElement {
+        return app.buttons[A11y.refrain].firstMatch
+    }
     
     enum A11y {
         static let title = "次はどうする？"
         static let nextPoem = "goNext"
         static let torifuda = "torifuda"
+        static let refrain = "refrain"
         static let gear = "gear"
         static let exit = "exit"
     }
