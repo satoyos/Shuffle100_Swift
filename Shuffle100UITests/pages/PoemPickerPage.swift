@@ -40,6 +40,10 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         return waitToHittable(for: app.toolbars.buttons[A11y.selectAll], timeout: timeOutSec)
     }
     
+    var selectByGroupButton: XCUIElement {
+        return waitToHittable(for: app.toolbars.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
+    }
+    
     enum A11y {
         static let title = "歌を選ぶ"
         static let backToTop = "トップ"
@@ -47,6 +51,8 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let cancel = "キャンセル"
         static let cancelAll = "全て取消"
         static let selectAll = "全て選択"
+        static let selectByGroup = "まとめて選ぶ"
+        static let selectByNgram = "1字目で選ぶ"
     }
     
     @discardableResult
@@ -69,5 +75,13 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     func cellOf(number: Int) -> XCUIElement {
         let label = String(format: "%03d", number)
         return app.tables.cells[label]
+    }
+    
+    @discardableResult
+    func gotoNgramPickerPage() -> NgramPickerPage {
+        selectByGroupButton.tap()
+        let button = waitToHittable(for: app.buttons[A11y.selectByNgram], timeout: timeOutSec)
+        button.tap()
+        return NgramPickerPage(app: app)
     }
 }

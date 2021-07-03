@@ -10,6 +10,7 @@ import XCTest
 
 class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
     var app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -17,13 +18,16 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
         app.launch()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    
     func test_openNgramPicker() throws {
-        gotoPoemPickerScreen()
-        gotoNgramPickerScreenFromPickerScreen(app)
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists, "「歌を選ぶ」画面に到達")
+        // when
+        let ngramPage = pickerPage.gotoNgramPickerPage()
+        // then
+        XCTAssert(ngramPage.exists, "「1字目で選ぶ」画面に到達")
     }
 
     func test_tapFullSelectedCell() {
