@@ -8,7 +8,7 @@
 
 import XCTest
 
-class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
+class NgramPickerUITest: XCTestCase {
     var app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
     
@@ -31,55 +31,48 @@ class NgramPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTes
     }
 
     func test_tapFullSelectedCell() {
-        // given
-        gotoPoemPickerScreen()
         // when
-        select93Excluding1jiKimari(app)
-        // then
-        XCTContext.runActivity(named: "トップ画面に戻ると、一字決まり分の選択が外れた「93首」が表示されている") { activity in
+        let pickerPage = homePage.goToPoemPickerPage()
+        XCTContext.runActivity(named: "1字決まり札を除く93枚を選んだ状態にする") { _ in
             // when
-            goBackToHomeScreen(app)
-            // then
-            XCTAssert(app.staticTexts["93首"].exists)
+            pickerPage.selectAllButton.tap()
+            let ngramPage = pickerPage.gotoNgramPickerPage()
+            ngramPage
+                .tapCell(type: .justOne)
+                .backToPickerButton.tap()
         }
+        pickerPage.backToTopButton.tap()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 93), "トップ画面でも93酒が選ばれた状態になっている。")
     }
     
     func test_tapEmptySelectedCell() {
-        XCTContext.runActivity(named: "全ての選択を外して、「1字目で選ぶ」画面へ移動する") { activity in
-            gotoPoemPickerScreen()
-            let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
-            button.tap()
-            gotoNgramPickerScreenFromPickerScreen(app)
-        }
         // when
-        app.cells["shi"].tap()
-        goBackToPoemPickerScreen(app)
-        goBackToHomeScreen(app)
+        let pickerPage = homePage.goToPoemPickerPage()
+        pickerPage.cancelAllButton.tap()
+        let ngramPage = pickerPage.gotoNgramPickerPage()
+        ngramPage
+            .tapCell(type: .shi)
+            .backToPickerButton.tap()
+        pickerPage.backToTopPage()
         // then
-        XCTAssert(app.staticTexts["2首"].exists)
-        
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 2))
     }
     
     func test_selectSeveralCells() {
-        // given
-        gotoPoemPickerScreen()
-        // whwn
-        selectAll2maiFudaFromPoemPickerScreen(app)
-        // then
-        goBackToHomeScreen(app)
-        XCTAssert(app.staticTexts["10首"].exists)
-    }
-    
-    internal func gotoNgramPickerScreenFromPickerScreen(_ app: XCUIApplication) {
-        // given
-        let button = waitToHittable(for: app.buttons["まとめて選ぶ"], timeout: timeOutSec)
         // when
-        button.tap()
+        let pickerPage = homePage.goToPoemPickerPage()
+        pickerPage.cancelAllButton.tap()
+        let ngramPage = pickerPage.gotoNgramPickerPage()
+        ngramPage // 2枚札を一通り選ぶ
+            .tapCell(type: .u)
+            .tapCell(type: .tsu)
+            .tapCell(type: .shi)
+            .tapCell(type: .mo)
+            .tapCell(type: .yu)
+        ngramPage.backToPickerButton.tap()
+        pickerPage.backToTopPage()
         // then
-        XCTAssert(app.staticTexts["どうやって選びますか？"].exists)
-        // when
-        app.buttons["1字目で選ぶ"].tap()
-        // then
-        waitToAppear(for: app.navigationBars["1字目で選ぶ"], timeout: timeOutSec)
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 10))
     }
 }

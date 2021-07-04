@@ -9,6 +9,15 @@
 import Foundation
 import XCTest
 
+enum NgramCellType: String {
+    case justOne = "just_one"
+    case u = "u"
+    case tsu = "tsu"
+    case shi = "shi"
+    case mo = "mo"
+    case yu = "yu"
+}
+
 final class NgramPickerPage: PageObjectable {
     let app: XCUIApplication
     
@@ -20,7 +29,22 @@ final class NgramPickerPage: PageObjectable {
         return app.navigationBars[A11y.title].firstMatch
     }
     
+    var backToPickerButton: XCUIElement {
+        return app.navigationBars.buttons[A11y.backToPicker].firstMatch
+    }
+    
     enum A11y {
         static let title = "1字目で選ぶ"
+        static let backToPicker = "歌を選ぶ"
+    }
+    
+    @discardableResult
+    func tapCell(type: NgramCellType) -> Self {
+        cell(type: type).tap()
+        return self
+    }
+    
+    private func cell(type: NgramCellType) -> XCUIElement {
+        return app.cells[type.rawValue].firstMatch
     }
 }
