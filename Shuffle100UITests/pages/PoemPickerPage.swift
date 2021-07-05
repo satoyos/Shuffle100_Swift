@@ -52,7 +52,6 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let cancelAll = "全て取消"
         static let selectAll = "全て選択"
         static let selectByGroup = "まとめて選ぶ"
-        static let selectByNgram = "1字目で選ぶ"
     }
     
     @discardableResult
@@ -79,9 +78,14 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     
     @discardableResult
     func gotoNgramPickerPage() -> NgramPickerPage {
-        selectByGroupButton.tap()
-        let button = waitToHittable(for: app.buttons[A11y.selectByNgram], timeout: timeOutSec)
-        button.tap()
+        let sheet = showSelectByGroupActionSheet()
+        sheet.selectByNgramButton.tap()
         return NgramPickerPage(app: app)
     }
+    
+    func showSelectByGroupActionSheet() -> SelectByGroupActionSheet {
+        selectByGroupButton.tap()
+        return SelectByGroupActionSheet(app: app)
+    }
+    
 }
