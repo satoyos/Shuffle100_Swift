@@ -497,6 +497,8 @@
 		92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
 		92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
 		92F8247B25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
+		92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB604E269337E1000C3F99 /* FudaSetPage.swift */; };
+		92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -797,6 +799,8 @@
 		92F8245125AC4878008E031D /* SettingTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCellTest.swift; sourceTree = "<group>"; };
 		92F8245625AF0C34008E031D /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
 		92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		92FB604E269337E1000C3F99 /* FudaSetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetPage.swift; sourceTree = "<group>"; };
+		92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectByGroupActionSheet.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDelegate.swift; sourceTree = "<group>"; };
 		92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenDataSource.swift; sourceTree = "<group>"; };
@@ -891,6 +895,7 @@
 				92E5C54A266C7541009A46F5 /* WhatsNextPage.swift */,
 				9265517B2685F8F400C746D0 /* TorifudaPage.swift */,
 				922C638B269094880000D07D /* NgramPickerPage.swift */,
+				92FB604E269337E1000C3F99 /* FudaSetPage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1232,6 +1237,7 @@
 			children = (
 				92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */,
 				92CE0D5B263AA8AF00372B24 /* ExitGameAlert.swift */,
+				92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */,
 			);
 			path = alerts;
 			sourceTree = "<group>";
@@ -1937,6 +1943,7 @@
 				927E4BF8222E9DD200AF48F7 /* Deck.swift in Sources */,
 				927E4C0C22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92FFBF3F245FB2FF004D7F79 /* String-extension.swift in Sources */,
+				92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */,
 				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92E5F827240A649700C75FC6 /* SelectSingerScreenUITestUtils.swift in Sources */,
 				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
@@ -1973,6 +1980,7 @@
 				9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
+				92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */,
 				9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				920F6A79247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				925994E62444A8D200044253 /* TimeSettingScreen.swift in Sources */,
