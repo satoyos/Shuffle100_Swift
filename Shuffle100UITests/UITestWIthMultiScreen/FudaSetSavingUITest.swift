@@ -23,10 +23,12 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
 
 
     func test_showActionSheetForFudaSetSaving() throws {
-        // given
-        gotoPoemPickerScreen()
-        // when, then
-        showActionSheetforFudaSetSaving(app)
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        pickerPage.saveButton.tap()
+        // then
+        let sheet = SaveFudaSetActionSheet(app: app)
+        XCTAssert(sheet.exists, "札セット保存の選択肢が表示される")
     }
     
     func test_saveNewFudaSet() {

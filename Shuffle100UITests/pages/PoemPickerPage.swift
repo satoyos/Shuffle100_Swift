@@ -44,6 +44,10 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         return waitToHittable(for: app.toolbars.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
     }
     
+    var saveButton: XCUIElement {
+        return app.navigationBars.buttons[A11y.save].firstMatch
+    }
+    
     enum A11y {
         static let title = "歌を選ぶ"
         static let backToTop = "トップ"
@@ -52,6 +56,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let cancelAll = "全て取消"
         static let selectAll = "全て選択"
         static let selectByGroup = "まとめて選ぶ"
+        static let save = "保存"
     }
     
     @discardableResult
