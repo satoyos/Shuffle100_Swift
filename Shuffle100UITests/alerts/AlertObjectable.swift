@@ -15,7 +15,7 @@ protocol AlertObjectable {
     init(app: XCUIApplication)
     var exists: Bool { get }
     var title: XCUIElement { get }
-    var cancelButton: XCUIElement { get }
+//    var cancelButton: XCUIElement { get }
     func elementsExist(_ elements: [XCUIElement], timeout: Double) -> Bool
 }
 

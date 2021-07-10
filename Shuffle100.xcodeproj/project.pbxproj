@@ -127,6 +127,8 @@
 		924619612493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */; };
 		924619622493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */; };
 		924BF8E72695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */; };
+		924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */; };
+		924BF8EB2699D18200FCEDA5 /* SaveCompletedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
@@ -637,6 +639,8 @@
 		9246195D248BE29E002B6690 /* FudaSetsUITestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsUITestUtils.swift; sourceTree = "<group>"; };
 		9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoemPickerScreenDelegate+FudaSet.swift"; sourceTree = "<group>"; };
 		924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFudaSetActionSheet.swift; sourceTree = "<group>"; };
+		924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameNewFudaSetAlert.swift; sourceTree = "<group>"; };
+		924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCompletedAlert.swift; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
@@ -1241,6 +1245,8 @@
 				92CE0D5B263AA8AF00372B24 /* ExitGameAlert.swift */,
 				92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */,
 				924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */,
+				924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */,
+				924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */,
 			);
 			path = alerts;
 			sourceTree = "<group>";
@@ -1955,6 +1961,7 @@
 				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
+				924BF8EB2699D18200FCEDA5 /* SaveCompletedAlert.swift in Sources */,
 				92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */,
 				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
@@ -2096,6 +2103,7 @@
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
 				920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */,
+				924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */,
 				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				922BDDEC2625D5CB0093B24A /* SelectModePage.swift in Sources */,

@@ -93,4 +93,28 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         return SelectByGroupActionSheet(app: app)
     }
     
+    @discardableResult
+    func saveCurrentPoemsAsSet(name: String) -> Self {
+        // when
+        saveButton.tap()
+        let sheet = SaveFudaSetActionSheet(app: app)
+        let button = waitToHittable(for: sheet.saveNewFudaSetButton, timeout: timeOutSec)
+        button.tap()
+        // then
+        let alert = NameNewFudaSetAlert(app: app)
+        XCTAssert(alert.exists, "新しい札セットを命名するダイアログが現れる")
+        // when
+        alert.textField.tap()
+        alert.textField.typeText(name)
+        alert.confirmButton.tap()
+        // then
+        let compAlert = SaveCompletedAlert(app: app)
+        XCTAssert(compAlert.exists, "保存が完了した旨のダイアログが現れる")
+        
+        
+        
+        return self
+    }
+    
+    
 }
