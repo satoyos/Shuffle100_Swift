@@ -110,8 +110,10 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         // then
         let compAlert = SaveCompletedAlert(app: app)
         XCTAssert(compAlert.exists, "保存が完了した旨のダイアログが現れる")
-        
-        
+        // when
+        compAlert.confirmButton.tap()
+        // then
+        XCTAssertFalse(compAlert.exists, "確認ダイアログは消えている")
         
         return self
     }

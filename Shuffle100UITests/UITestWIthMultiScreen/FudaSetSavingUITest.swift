@@ -40,46 +40,35 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             .tapCellof(number: 1)
             .tapCellof(number: 2)
             .tapCellof(number: 4)
-        pickerPage.saveCurrentPoemsAsSet(name: test97SetName)
-        
-        
-//        // given
-//        // デフォルトの設定では全ての歌が選ばれている状態
-//        allPoemsAreSelectedAtHomeScreen(app)
-//        gotoPoemPickerScreen()
-//        // when
-//        add97FudaSetAsNewOne(app, setName: test97SetName)
-//        XCTContext.runActivity(named: "一旦全ての歌を選択した状態に戻し、トップ画面に戻ると、100首選ばれていることが確認できる") { _ in
-//            // when
-//            let button = waitToHittable(for: app.buttons["全て選択"], timeout: timeOutSec)
-//            button.tap()
-//            goBackToHomeScreen(app)
-//            allPoemsAreSelectedAtHomeScreen(app)
-//        }
-//        gotoPoemPickerScreen()
-//        XCTContext.runActivity(named: "保存済みの札セットがある状態でツールバーの「まとめて選ぶ」を選択すると、既存の札セットを呼び出す選択肢が現れる") { activity in
-//            // when
-//            let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
-//            button.tap()
-//            // then
-//            XCTAssert(app.sheets.buttons[selectBySetStr].exists)
-//        }
-//        XCTContext.runActivity(named: "既存の札セットから選ぶアクションを選択すると、札セットの一覧画面が表示される") { _ in
-//            // when
-//            app.sheets.buttons[selectBySetStr].tap()
-//            // then
-//            waitToAppear(for: app.navigationBars[selectBySetStr], timeout: timeOutSec)
-//            XCTAssert(app.cells.staticTexts[test97SetName].exists)
-//            XCTAssert(app.cells.staticTexts["97首"].exists)
-//        }
-//        XCTContext.runActivity(named: "選んだ既存の札セットの歌が選択された状態になっている") { _ in
-//            // when
-//            app.cells.staticTexts[test97SetName].tap()
-//            // then
-//            goBackToPoemPickerScreen(app)
-//            goBackToHomeScreen(app)
-//            XCTAssert(app.cells.staticTexts["97首"].exists)
-//        }
+        pickerPage
+            .saveCurrentPoemsAsSet(name: test97SetName)
+            .selectAllButton.tap()  // 一旦百首選んだ状態にする
+        pickerPage.backToTopPage()
+        // then
+        XCTAssert(homePage.exists)
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 100))
+        // when
+        homePage.goToPoemPickerPage()
+        let sheet = pickerPage.showSelectByGroupActionSheet()
+        // then
+        XCTAssert(sheet.selectBySetButton.exists, "作成済みの札セットから選ぶ選択肢が増えている")
+        // when
+        sheet.selectBySetButton.tap()
+        // then
+        let fudaSetPage = FudaSetPage(app: app)
+        XCTAssert(fudaSetPage.exists, "作成済みの札セット一覧のページに到達")
+        let test97Set = fudaSetPage.fudaSetCell(name: test97SetName)
+        XCTAssert(test97Set.exists, "作ったばかりの札セットが登録されている")
+        // when
+        fudaSetPage
+            .selectFudaSetCell(name: test97SetName)
+            .backButton.tap()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        pickerPage.backToTopPage()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 97))
     }
  
 

@@ -19,8 +19,23 @@ final class FudaSetPage: PageObjectable {
     var pageTitle: XCUIElement {
         return app.navigationBars[A11y.title].firstMatch
     }
+    
+    var backButton: XCUIElement {
+        return app.buttons[A11y.back].firstMatch
+    }
 
     enum A11y {
         static let title = "作った札セットから選ぶ"
+        static let back = "歌を選ぶ" // 画面上の見かけと違うんだけど、どうしてだろう？ 2021/07/11
+    }
+    
+    func fudaSetCell(name: String) -> XCUIElement {
+        return app.tables.cells.staticTexts[name].firstMatch
+    }
+    
+    func selectFudaSetCell(name: String) -> Self {
+        let cell = app.tables.cells.staticTexts[name].firstMatch
+        cell.tap()
+        return self
     }
 }

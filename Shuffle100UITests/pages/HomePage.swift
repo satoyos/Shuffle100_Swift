@@ -78,6 +78,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         case inaba
     }
     
+    @discardableResult
     func goToPoemPickerPage() -> PoemPickerPage {
         let cell = waitToHittable(for: poemsCell, timeout: timeOutSec)
         cell.tap()
