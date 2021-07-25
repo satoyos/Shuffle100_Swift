@@ -71,36 +71,43 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         XCTAssert(homePage.numberOfSelecttedPoems(is: 97))
     }
  
-
     func test_savingEmptyFudaSetIsInhibited() {
         // given
-        gotoPoemPickerScreen()
+        let pickerPage = homePage.goToPoemPickerPage()
         // when
-        let button = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
-        button.tap()
-        app.buttons["保存"].tap()
+        pickerPage.cancelAllButton.tap()
+        pickerPage.saveButton.tap()
         // then
-        XCTAssert(app.alerts.staticTexts["歌を選びましょう"].exists)
+        let alert = NoPoemToSaveAlert(app: app)
+        XCTAssert(alert.exists, "選んだ歌がないまま札セット保存をしようとすると、アラート画面で警告")
         // when
-        app.buttons["戻る"].tap()
+        alert.dismissButton.tap()
         // then
-        XCTAssertFalse(app.alerts.staticTexts["歌を選びましょう"].exists)
+        XCTAssertFalse(alert.exists, "アラート画面が消えている")
     }
     
     func test_emptyFudaSetNameIsInhibited() {
-        // given
-        gotoPoemPickerScreen()
-        showActionSheetforFudaSetSaving(app)
-        selectSaveAsNewSet(app)
         // when
-        app.buttons["決定"].tap()
+        let pickerPage = homePage.goToPoemPickerPage()
+        pickerPage.saveButton.tap()
         // then
-        let button = waitToHittable(for: app.buttons["戻る"], timeout: timeOutSec)
-        XCTAssert(app.alerts.staticTexts["新しい札セットの名前を決めましょう"].exists)
-        button.tap()
+        let sheet = SaveFudaSetActionSheet(app: app)
+        XCTAssert(sheet.exists)
+        // when
+        sheet.saveNewFudaSetButton.tap()
         // then
-        XCTAssertFalse(app.staticTexts["新しい札セットの名前を決めましょう"].exists)
-        XCTAssert(app.alerts.staticTexts["新しい札セットの名前"].exists)
+        let alertToNameSet = NameNewFudaSetAlert(app: app)
+        XCTAssert(alertToNameSet.exists)
+        // when
+        alertToNameSet.confirmButton.tap()
+        // then
+        let noNameAlert = NoNameGivenForFudaSetAlert(app: app)
+        XCTAssert(noNameAlert.exists, "札セットの名前が指定せず保存しようとすると、アラート画面で警告")
+        // when
+        noNameAlert.dismissButton.tap()
+        // then
+        XCTAssertFalse(noNameAlert.exists, "警告アラートは消える")
+        XCTAssert(alertToNameSet.exists, "再び命名用のダイアログが現れる")
     }
     
     

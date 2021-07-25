@@ -442,6 +442,8 @@
 		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */; };
+		92E44EF426AD4B2A004A6A1A /* NoPoemToSaveAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */; };
+		92E44EF626AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */; };
 		92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */; };
 		92E5C53F26665FEF009A46F5 /* IntervalSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */; };
 		92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */; };
@@ -777,6 +779,8 @@
 		92D57154220F03AF00235717 /* SelectModeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreen.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
 		92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemRecitedPage.swift; sourceTree = "<group>"; };
+		92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPoemToSaveAlert.swift; sourceTree = "<group>"; };
+		92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNameGivenForFudaSetAlert.swift; sourceTree = "<group>"; };
 		92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsPage.swift; sourceTree = "<group>"; };
 		92E5C53E26665FEF009A46F5 /* IntervalSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingPage.swift; sourceTree = "<group>"; };
 		92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustSliderProtocol.swift; sourceTree = "<group>"; };
@@ -1247,6 +1251,8 @@
 				924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */,
 				924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */,
 				924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */,
+				92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */,
+				92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */,
 			);
 			path = alerts;
 			sourceTree = "<group>";
@@ -2094,6 +2100,7 @@
 				922BDDD9261B3B760093B24A /* HomePage.swift in Sources */,
 				92E5C55026723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
 				92E5C554267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
+				92E44EF626AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift in Sources */,
 				92CE0D5C263AA8AF00372B24 /* ExitGameAlert.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
@@ -2111,6 +2118,7 @@
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				9246195E248BE29E002B6690 /* FudaSetsUITestUtils.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
+				92E44EF426AD4B2A004A6A1A /* NoPoemToSaveAlert.swift in Sources */,
 				92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				922BDDF12629BEB60093B24A /* SelectSingerPage.swift in Sources */,
 				92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */,
