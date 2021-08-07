@@ -37,10 +37,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         // when
         let pickerPage = homePage.goToPoemPickerPage()
         pickerPage
-            .tapCellof(number: 1)
-            .tapCellof(number: 2)
-            .tapCellof(number: 4)
-        pickerPage
+            .tapCellOf_1_2_4()
             .saveCurrentPoemsAsSet(name: test97SetName)
             .selectAllButton.tap()  // 一旦百首選んだ状態にする
         pickerPage.backToTopPage()
@@ -49,14 +46,7 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
         XCTAssert(homePage.numberOfSelecttedPoems(is: 100))
         // when
         homePage.goToPoemPickerPage()
-        let sheet = pickerPage.showSelectByGroupActionSheet()
-        // then
-        XCTAssert(sheet.selectBySetButton.exists, "作成済みの札セットから選ぶ選択肢が増えている")
-        // when
-        sheet.selectBySetButton.tap()
-        // then
-        let fudaSetPage = FudaSetPage(app: app)
-        XCTAssert(fudaSetPage.exists, "作成済みの札セット一覧のページに到達")
+        let fudaSetPage = pickerPage.gotoFudaSetPage()
         let test97Set = fudaSetPage.fudaSetCell(name: test97SetName)
         XCTAssert(test97Set.exists, "作ったばかりの札セットが登録されている")
         // when
@@ -117,38 +107,46 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
     // そうしないと、動作不定になる。
     //
     func test_fudaSetCellDeletable() {
-        // given
-        gotoPoemPickerScreen()
         let set97name = "97枚セット"
         let set2maiFudaName = "2枚札セット"
-        add97FudaSetAsNewOne(app, setName: set97name)
-        add2maiFudaSetAsNewOne(app, setName: set2maiFudaName)
-        gotoFudaSetsScreenFromPoemPicker()
+        
+        // given
+        let pickerPage = homePage.goToPoemPickerPage()
+        // when
+        pickerPage
+            .add97FudaSetAsNewOne(setName: set97name)
+            .add2maiFudaSetAsNewOne(setName: set2maiFudaName)
+        let fudaSetPage = pickerPage.gotoFudaSetPage()
+        // then
+        XCTAssert(fudaSetPage.exists)
         XCTContext.runActivity(named: "札セットのセルを左にスワイプして削除ボタンをタップすると、そのセルが消える") { _ in
-            let cell97 = app.cells.staticTexts[set97name]
-            XCTAssert(cell97.exists)
             // when
-            cell97.swipeLeft()
-            app.tables.buttons["削除"].tap()
+            fudaSetPage
+                .swipeCellLeft(name: set97name)
+                .delteButton.tap()
             // then
-            XCTAssertFalse(cell97.exists)
-            let cell2mai = app.cells.staticTexts[set2maiFudaName]
-            XCTAssert(cell2mai.exists)
+            XCTAssertFalse(fudaSetPage.fudaSetCell(name: set97name).exists)
             // when
-            cell2mai.swipeLeft()
-            app.tables.buttons["削除"].tap()
+            fudaSetPage
+                .swipeCellLeft(name: set2maiFudaName)
+                .delteButton.tap()
             // then
-            XCTAssertFalse(cell2mai.exists)
-            goBackToPoemPickerScreen(app)
+            XCTAssertFalse(fudaSetPage.fudaSetCell(name: set2maiFudaName).exists)
+            // when
+            fudaSetPage.backButton.tap()
+            // then
+            XCTAssert(pickerPage.exists)
         }
         XCTContext.runActivity(named: "その後、さらに札セットを新規追加しても、正しく動作する") { _ in
             let name93 = "一字決まり以外！"
-            add93FudaSetAsNewOne(app, setName: name93)
-            gotoFudaSetsScreenFromPoemPicker()
+            // when
+            pickerPage
+                .add93FudaSetAsNewOne(setName: name93)
+                .gotoFudaSetPage()
             // then
-            XCTAssert(app.cells.staticTexts[name93].exists)
+            XCTAssert(fudaSetPage.exists)
+            XCTAssert(fudaSetPage.fudaSetCell(name: name93).exists)
         }
-        
     }
     
     func test_overwriteExistingFudaSet() {

@@ -23,10 +23,15 @@ final class FudaSetPage: PageObjectable {
     var backButton: XCUIElement {
         return app.buttons[A11y.back].firstMatch
     }
+    
+    var delteButton: XCUIElement {
+        return app.tables.buttons[A11y.delete].firstMatch
+    }
 
     enum A11y {
         static let title = "作った札セットから選ぶ"
         static let back = "歌を選ぶ" // 画面上の見かけと違うんだけど、どうしてだろう？ 2021/07/11
+        static let delete = "削除"
     }
     
     func fudaSetCell(name: String) -> XCUIElement {
@@ -34,8 +39,23 @@ final class FudaSetPage: PageObjectable {
     }
     
     func selectFudaSetCell(name: String) -> Self {
+        // when
         let cell = app.tables.cells.staticTexts[name].firstMatch
+        // then
+        XCTAssert(cell.exists)
+        
         cell.tap()
+        return self
+    }
+    
+    @discardableResult
+    func swipeCellLeft(name: String) -> Self {
+        // when
+        let cell = fudaSetCell(name: name)
+        // then
+        XCTAssert(cell.exists)
+        
+        cell.swipeLeft()
         return self
     }
 }
