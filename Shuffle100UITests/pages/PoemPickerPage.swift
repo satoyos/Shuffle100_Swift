@@ -94,7 +94,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     }
     
     @discardableResult
-    func saveCurrentPoemsAsSet(name: String) -> Self {
+    func saveCurrentPoemsAsNewSet(name: String) -> Self {
         // when
         saveButton.tap()
         let sheet = SaveFudaSetActionSheet(app: app)
@@ -108,13 +108,13 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         alert.textField.typeText(name)
         alert.confirmButton.tap()
         // then
-        let compAlert = SaveCompletedAlert(app: app)
+        let compAlert = SaveNewSetCompletedAlert(app: app)
         XCTAssert(compAlert.exists, "保存が完了した旨のダイアログが現れる")
         // when
         compAlert.confirmButton.tap()
         // then
         XCTAssertFalse(compAlert.exists, "確認ダイアログは消えている")
-        
+        // and
         return self
     }
     

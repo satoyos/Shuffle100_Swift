@@ -28,11 +28,16 @@ final class SaveFudaSetActionSheet: AlertObjectable, WaitInUITest {
         return waitToHittable(for: app.sheets.buttons[A11y.saveAsNewSet].firstMatch, timeout: timeOutSec)
     }
     
+    var overwriteExistingSetButton: XCUIElement {
+        return waitToHittable(for: app.sheets.buttons[A11y.overwriteExistingSet], timeout: timeOutSec)
+    }
+    
     
     enum A11y {
         static let title = "選んでいる札をどのように保存しますか？"
         static let cancel = "キャンセル"
         static let saveAsNewSet = "新しい札セットとして保存する"
+        static let overwriteExistingSet = "前に作った札セットを上書きする"
     }
     
 }

@@ -24,10 +24,35 @@ extension PoemPickerPage {
     }
     
     @discardableResult
+    func saveCurrentPoemsByOverwritingExistingSet(name: String) -> Self {
+        // when
+        saveButton.tap()
+        let sheet = SaveFudaSetActionSheet(app: app)
+        let button = sheet.overwriteExistingSetButton
+        button.tap()
+        // then
+        let overwriteDialog = OverwriteExistingSetDialog(app: app)
+        XCTAssert(overwriteDialog.exists)
+        // when
+        overwriteDialog
+            .selectOverwrittenSet(name: name)
+            .confirmButton.tap()
+        // then
+        let dialog = OverwriteSetCompletedDialog(app: app)
+        XCTAssert(dialog.exists)
+        // when
+        dialog.confirmButton.tap()
+        // then
+        XCTAssertFalse(dialog.exists, "確認ダイアログは消えている")
+        // and
+        return self
+    }
+    
+    @discardableResult
     func add97FudaSetAsNewOne(setName: String) -> Self {
         self
             .tapCellOf_1_2_4()
-            .saveCurrentPoemsAsSet(name: setName)
+            .saveCurrentPoemsAsNewSet(name: setName)
         return self
     }
     
@@ -49,7 +74,7 @@ extension PoemPickerPage {
         // then
         XCTAssert(self.exists)
         // and
-        saveCurrentPoemsAsSet(name: setName)
+        saveCurrentPoemsAsNewSet(name: setName)
         return self
     }
     
@@ -67,7 +92,25 @@ extension PoemPickerPage {
         // then
         XCTAssert(self.exists)
         // and
-        saveCurrentPoemsAsSet(name: setName)
+        saveCurrentPoemsAsNewSet(name: setName)
+        return self
+    }
+    
+    @discardableResult
+    func add1jiKimariFudaSetAsNewOne(setName: String) -> Self {
+        // when
+        cancelAllButton.tap()
+        let ngramPage = gotoNgramPickerPage()
+        // then
+        XCTAssert(ngramPage.exists)
+        // when
+        ngramPage
+            .tapCell(type: .justOne)
+            .backToPickerButton.tap()
+        // then
+        XCTAssert(self.exists)
+        // and
+        saveCurrentPoemsAsNewSet(name: setName)
         return self
     }
     

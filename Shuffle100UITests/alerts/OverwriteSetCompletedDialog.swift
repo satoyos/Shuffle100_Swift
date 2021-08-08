@@ -1,15 +1,14 @@
 //
-//  SaveCompletedAlert.swift
+//  OverwriteSetCompletedDialog.swift
 //  Shuffle100UITests
 //
-//  Created by Yoshifumi Sato on 2021/07/10.
+//  Created by Yoshifumi Sato on 2021/08/08.
 //  Copyright © 2021 里 佳史. All rights reserved.
 //
 
-import Foundation
 import XCTest
 
-final class SaveCompletedAlert: AlertObjectable {
+final class OverwriteSetCompletedDialog: AlertObjectable {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
@@ -21,11 +20,11 @@ final class SaveCompletedAlert: AlertObjectable {
     }
     
     var confirmButton: XCUIElement {
-        return app.alerts.buttons[A11y.ok].firstMatch
+        return app.alerts.buttons[A11y.confirm].firstMatch
     }
     
     enum A11y {
-        static let title = "保存完了"
-        static let ok = "OK"
+        static let title = "上書き完了"
+        static let confirm = "OK"
     }
 }
