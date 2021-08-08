@@ -8,11 +8,9 @@
 
 import XCTest
 
-class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtils {
-    let selectBySetStr = "作った札セットから選ぶ"
-    let overwriteExisingSetStr = "前に作った札セットを上書きする"
-    
+class FudaSetSavingUITest: XCTestCase {
     internal let app = XCUIApplication()
+    private lazy var homePage = HomePage(app: app)
     private let test97SetName = "97枚セット"
     
     override func setUpWithError() throws {
@@ -169,46 +167,5 @@ class FudaSetSavingUITest: XCTestCase, HomeScreenUITestUtils, FudaSetsUITestUtil
             XCTAssert(fudaSetPage.exists)
             XCTAssert(fudaSetPage.numberOfSet(name: name1jiKimariSet, is: 8))
         }
-//        app.navigationBars.buttons["保存"].tap()
-        // then
-//        XCTContext.runActivity(named: "上書きする札セットを選ぶための、pickerWheel付きのAlert画面が表示される") { _ in
-//            let button = waitToHittable(for: app.sheets.buttons[overwriteExisingSetStr], timeout: timeOutSec)
-//            // when
-//            button.tap()
-//            // then
-//            waitToAppear(for: app.alerts.staticTexts["上書きする札セットを選ぶ"], timeout: timeOutSec)
-//            XCTAssert(app.alerts.pickerWheels.element.exists)
-//        }
-//        // when
-//        XCTContext.runActivity(named: "Alert上のPickerWheelで、一字決まり札セットを上書き対象として指示する") { _ in
-//            // when
-//            app.alerts.pickerWheels.element.adjust(toPickerWheelValue: name1jiKimariSet + " (7首)")
-//            app.alerts.buttons["上書きする"].tap()
-//            // then
-//            let button = waitToHittable(for: app.alerts.buttons["OK"], timeout: timeOutSec)
-//            XCTAssert(app.alerts.staticTexts["上書き完了"].exists)
-//            button.tap()
-//        }
-        // then
-//        XCTContext.runActivity(named: "一字決まり札セットの枚数が8枚に上書きされている") { _ in
-//            // when
-//            gotoFudaSetsScreenFromPoemPicker()
-//            // then
-//            XCTAssert(app.cells.staticTexts["8首"].exists)
-//        }
-    }
-    
-//    private func allPoemsAreSelectedAtHomeScreen(_ app: XCUIApplication) {
-//        XCTAssert(app.cells.staticTexts["100首"].exists)
-//    }
-    
-    private func gotoFudaSetsScreenFromPoemPicker() {
-        // when
-        let buttonByGroup = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
-        buttonByGroup.tap()
-        let buttonSavedSet = waitToHittable(for: app.sheets.buttons[selectBySetStr], timeout: timeOutSec)
-        buttonSavedSet.tap()
-        // then
-        waitToAppear(for: app.navigationBars[selectBySetStr], timeout: timeOutSec)
     }
 }
