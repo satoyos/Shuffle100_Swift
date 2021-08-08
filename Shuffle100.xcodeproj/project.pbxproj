@@ -128,7 +128,7 @@
 		924619622493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */; };
 		924BF8E72695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */; };
 		924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */; };
-		924BF8EB2699D18200FCEDA5 /* SaveCompletedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */; };
+		924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
@@ -470,6 +470,8 @@
 		92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E9705426BEAD2E00A6650C /* PoemPickerPageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705326BEAD2E00A6650C /* PoemPickerPageExtension.swift */; };
+		92E9705626BFCC7000A6650C /* OverwriteExistingSetDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */; };
+		92E9705826BFCFC200A6650C /* OverwriteSetCompletedDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */; };
 		92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
@@ -643,7 +645,7 @@
 		9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoemPickerScreenDelegate+FudaSet.swift"; sourceTree = "<group>"; };
 		924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFudaSetActionSheet.swift; sourceTree = "<group>"; };
 		924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameNewFudaSetAlert.swift; sourceTree = "<group>"; };
-		924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCompletedAlert.swift; sourceTree = "<group>"; };
+		924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewSetCompletedAlert.swift; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
@@ -798,6 +800,8 @@
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreen.swift; sourceTree = "<group>"; };
 		92E6552121CE753200005F85 /* HomeScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDelegates.swift; sourceTree = "<group>"; };
 		92E9705326BEAD2E00A6650C /* PoemPickerPageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PoemPickerPageExtension.swift; path = Shuffle100UITests/pages/PoemPickerPageExtension.swift; sourceTree = SOURCE_ROOT; };
+		92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwriteExistingSetDialog.swift; sourceTree = "<group>"; };
+		92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwriteSetCompletedDialog.swift; sourceTree = "<group>"; };
 		92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHViewSizeGetterProtocol.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1253,9 +1257,11 @@
 				92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */,
 				924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */,
 				924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */,
-				924BF8EA2699D18200FCEDA5 /* SaveCompletedAlert.swift */,
+				924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */,
 				92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */,
 				92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */,
+				92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */,
+				92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */,
 			);
 			path = alerts;
 			sourceTree = "<group>";
@@ -1970,7 +1976,7 @@
 				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
-				924BF8EB2699D18200FCEDA5 /* SaveCompletedAlert.swift in Sources */,
+				924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */,
 				92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */,
 				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
@@ -2035,6 +2041,7 @@
 				921FF43F249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */,
 				92737DD52380312F007B5FAD /* StandardColor.swift in Sources */,
 				92E5C549266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift in Sources */,
+				92E9705626BFCC7000A6650C /* OverwriteExistingSetDialog.swift in Sources */,
 				92328C3424596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
 				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
@@ -2093,6 +2100,7 @@
 				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92ABF9A723F00B80000CA91C /* RewindButtonUITest.swift in Sources */,
 				92F66681252B584C0068E6A1 /* NavigateBackToHomeScreen.swift in Sources */,
+				92E9705826BFCFC200A6650C /* OverwriteSetCompletedDialog.swift in Sources */,
 				9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				92328C2424591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,

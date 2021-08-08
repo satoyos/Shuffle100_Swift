@@ -40,10 +40,10 @@ final class FudaSetPage: PageObjectable {
     
     func selectFudaSetCell(name: String) -> Self {
         // when
-        let cell = app.tables.cells.staticTexts[name].firstMatch
+        let cell = fudaSetCell(name: name)
         // then
         XCTAssert(cell.exists)
-        
+        // and
         cell.tap()
         return self
     }
@@ -57,5 +57,16 @@ final class FudaSetPage: PageObjectable {
         
         cell.swipeLeft()
         return self
+    }
+    
+    func numberOfSet(name: String, is num: Int) -> Bool {
+        let cell = fudaSetCell(name: name)
+        guard cell.exists else {
+            XCTFail("札セット「\(name)」が見つからない")
+            return false
+        }
+//        return app.tables.cells[name].staticTexts["\(num)首"].exists
+        // 以下のコードでは、該当セルの表記を厳密に確認できている訳ではないが、なぜか↑のコードが機能しないため、当面はこれでよしとする。(2021/08/08)
+        return app.tables.cells.staticTexts["\(num)首"].exists
     }
 }
