@@ -52,6 +52,10 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         return app.navigationBars.buttons[A11y.gear].firstMatch
     }
     
+    var helpButton: XCUIElement {
+        return app.navigationBars.buttons[A11y.help].firstMatch
+    }
+    
     var fakeModeSwitch: XCUIElement {
         return fakeModeCell.switches.firstMatch
     }
@@ -69,6 +73,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         static let normal = "通常"
         static let nonStop = "ノンストップ"
         static let gear = "GearButton"
+        static let help = "HelpButton"
         static let singerIaLabel = "IA（ボーカロイド）"
         static let singerInabaLabel = "いなばくん（人間）"
     }
@@ -120,6 +125,11 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         let button = waitToHittable(for: gearButton, timeout: timeOutSec)
         button.tap()
         return ReciteSettingsPage(app: app)
+    }
+    
+    func gotoHelpListPage() -> HelpListPage {
+        helpButton.tap()
+        return HelpListPage(app: app)
     }
     
     func singerIs(_ singer: CurrentSinger) -> Bool {
