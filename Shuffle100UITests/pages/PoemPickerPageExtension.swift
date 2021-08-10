@@ -24,6 +24,13 @@ extension PoemPickerPage {
     }
     
     @discardableResult
+    func gotoFiveColorsPage() -> FiveColorsPage {
+        let sheet = showSelectByGroupActionSheet()
+        sheet.selectByColorButton.tap()
+        return FiveColorsPage(app: app)
+    }
+    
+    @discardableResult
     func saveCurrentPoemsByOverwritingExistingSet(name: String) -> Self {
         // when
         saveButton.tap()

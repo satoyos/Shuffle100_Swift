@@ -474,6 +474,7 @@
 		92E9705826BFCFC200A6650C /* OverwriteSetCompletedDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */; };
 		92E9705A26C1418B00A6650C /* HelpListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705926C1418B00A6650C /* HelpListPage.swift */; };
 		92E9705C26C146B900A6650C /* EvaluateAppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */; };
+		92E9705E26C2917C00A6650C /* FiveColorsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705D26C2917C00A6650C /* FiveColorsPage.swift */; };
 		92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
@@ -806,6 +807,7 @@
 		92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwriteSetCompletedDialog.swift; sourceTree = "<group>"; };
 		92E9705926C1418B00A6650C /* HelpListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListPage.swift; sourceTree = "<group>"; };
 		92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateAppDialog.swift; sourceTree = "<group>"; };
+		92E9705D26C2917C00A6650C /* FiveColorsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPage.swift; sourceTree = "<group>"; };
 		92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHViewSizeGetterProtocol.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -918,6 +920,7 @@
 				922C638B269094880000D07D /* NgramPickerPage.swift */,
 				92FB604E269337E1000C3F99 /* FudaSetPage.swift */,
 				92E9705926C1418B00A6650C /* HelpListPage.swift */,
+				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -2104,6 +2107,7 @@
 				92FFBF6724650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				9205E18224571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
 				9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
+				92E9705E26C2917C00A6650C /* FiveColorsPage.swift in Sources */,
 				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92ABF9A723F00B80000CA91C /* RewindButtonUITest.swift in Sources */,
 				92F66681252B584C0068E6A1 /* NavigateBackToHomeScreen.swift in Sources */,
