@@ -11,6 +11,7 @@ import XCTest
 class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
 
     internal var app = XCUIApplication()
+    internal lazy var homePage = HomePage(app: app)
     private let timeOutSec = 8.0
     
     override func setUpWithError() throws {
@@ -24,22 +25,23 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
     }
 
     func test_selectByGroupActionsIncludsActionFor5Colors() throws {
-        // given
-        gotoPoemPickerScreen()
         // when
-        let button = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
-        button.tap()
+        let pickerPage = homePage.goToPoemPickerPage()
+        let sheet = pickerPage.showSelectByGroupActionSheet()
         // then
-        XCTAssert(app.buttons["1字目で選ぶ"].exists)
-        
-        // バージョン6.2から五色百人一首機能を追加
-        XCTAssert(app.sheets.buttons["五色百人一首の色で選ぶ"].exists)
+        XCTAssert(sheet.exists)
+        XCTAssert(sheet.selectByColorButton.exists)
     }
     
     func test_buttonsOn5ColorsScreenWork() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        let fiveColorsPage = pickerPage.gotoFiveColorsPage()
+        // then
+        XCTAssert(fiveColorsPage.exists, "五色百人一首の画面に到達")
         // given
-        gotoPoemPickerScreen()
-        gotoFiveColorsScreen(app)
+//        gotoPoemPickerScreen()
+//        gotoFiveColorsScreen(app)
     }
     
     func test_whenColorButtonTapped_actionSheetAppears() {

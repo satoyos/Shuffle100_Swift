@@ -11,7 +11,7 @@ import XCTest
 
 final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
     let app: XCUIApplication
-    
+
     init(app: XCUIApplication) {
         self.app = app
     }
@@ -32,11 +32,16 @@ final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
         return waitToHittable(for: app.sheets.buttons[A11y.selectBySet].firstMatch, timeout: timeOutSec)
     }
     
+    var selectByColorButton: XCUIElement {
+        return waitToHittable(for: app.sheets.buttons[A11y.selectByColor].firstMatch, timeout: timeOutSec)
+    }
+    
     enum A11y {
         static let title = "どうやって選びますか？"
         static let cancel = "キャンセル"
         static let selectByNgram = "1字目で選ぶ"
         static let selectBySet = "作った札セットから選ぶ"
+        static let selectByColor = "五色百人一首の色で選ぶ"
     }
     
 }
