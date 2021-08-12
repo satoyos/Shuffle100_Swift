@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum FiveColors {
-    case blue
-    case yellow
-    case green
-    case pink
-    case orange
+enum FiveColors: String {
+    case blue   = "青"
+    case yellow = "黄"
+    case green  = "緑"
+    case pink   = "桃(ピンク)"
+    case orange = "橙(オレンジ)"
 }
 
 struct FiveColorData {
@@ -31,10 +31,10 @@ fileprivate let orangeSetNumbers = [19, 21, 25, 27, 43, 44, 45, 49, 52, 53, 56, 
 
 struct FiveColorsDataHolder {
     static let sharedDic: Dictionary<FiveColors,FiveColorData> = [
-        .blue: FiveColorData(type: .blue, poemNumbers: blueSetNumbers, name: "青", file: "blue.png"),
-        .yellow: FiveColorData(type: .yellow, poemNumbers: yellowSetNumbers, name: "黄", file: "yellow.png"),
-        .green: FiveColorData(type: .green, poemNumbers: greenSetNumbers, name: "緑", file: "green.png"),
-        .pink: FiveColorData(type: .pink, poemNumbers: pinkSetNumbers, name: "桃(ピンク)", file: "pink.png"),
-            .orange: FiveColorData(type: .orange, poemNumbers: orangeSetNumbers, name: "橙(オレンジ)", file: "orange.png")
+        .blue: FiveColorData(type: .blue, poemNumbers: blueSetNumbers, name: FiveColors.blue.rawValue, file: "blue.png"),
+        .yellow: FiveColorData(type: .yellow, poemNumbers: yellowSetNumbers, name: FiveColors.yellow.rawValue, file: "yellow.png"),
+        .green: FiveColorData(type: .green, poemNumbers: greenSetNumbers, name: FiveColors.green.rawValue, file: "green.png"),
+        .pink: FiveColorData(type: .pink, poemNumbers: pinkSetNumbers, name: FiveColors.pink.rawValue, file: "pink.png"),
+        .orange: FiveColorData(type: .orange, poemNumbers: orangeSetNumbers, name: FiveColors.orange.rawValue, file: "orange.png")
     ]
 }
