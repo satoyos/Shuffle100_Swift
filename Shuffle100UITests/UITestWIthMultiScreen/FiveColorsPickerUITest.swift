@@ -39,9 +39,6 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
         let fiveColorsPage = pickerPage.gotoFiveColorsPage()
         // then
         XCTAssert(fiveColorsPage.exists, "五色百人一首の画面に到達")
-        // given
-//        gotoPoemPickerScreen()
-//        gotoFiveColorsScreen(app)
     }
     
     func test_whenColorButtonTapped_actionSheetAppears() {
