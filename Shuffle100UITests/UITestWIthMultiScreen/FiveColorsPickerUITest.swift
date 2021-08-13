@@ -42,17 +42,16 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
     }
     
     func test_whenColorButtonTapped_actionSheetAppears() {
-        // given
-        gotoPoemPickerScreen()
-        let toolBarButton = waitToHittable(for: app.buttons["全て取消"], timeout: timeOutSec)
-        toolBarButton.tap()
-        gotoFiveColorsScreen(app)
         // when
-        let blueButton = waitToHittable(for: app.buttons["青"], timeout: timeOutSec)
-        blueButton.tap()
+        let pickerPage = homePage.goToPoemPickerPage()
+        pickerPage.cancelAllButton.tap()
+        let colorsPage = pickerPage.gotoFiveColorsPage()
         // then
-        XCTAssert(app.sheets.buttons["この20首だけを選ぶ"].exists)
-        XCTAssert(app.sheets.buttons["今選んでいる札に加える"].exists)
+        XCTAssert(colorsPage.exists)
+        // when
+        let sheet = colorsPage.tapColorButton(of: .blue)
+        // then
+        XCTAssert(sheet.exists)
     }
     
     func test_selectJust20ofColor() {
