@@ -8,7 +8,7 @@
 
 import XCTest
 
-class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScreenTestUtils {
+class FiveColorsPickerUITest: XCTestCase {
 
     internal var app = XCUIApplication()
     internal lazy var homePage = HomePage(app: app)
@@ -56,71 +56,59 @@ class FiveColorsPickerUITest: XCTestCase, HomeScreenUITestUtils, NgramPickerScre
     
     func test_selectJust20ofColor() {
         // given
-        XCTContext.runActivity(named: "デフォルトでは100首が選ばれている") { _ in
-            XCTAssert(app.cells.staticTexts["100首"].exists)
-        }
-        gotoPoemPickerScreen()
-        gotoFiveColorsScreen(app)
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 100), "デフォルトでは100首が選ばれている")
         // when
-        let greenButton = waitToHittable(for: app.buttons["緑"], timeout: timeOutSec)
-        greenButton.tap()
-        let just20Button = waitToHittable(for: app.sheets.buttons["この20首だけを選ぶ"], timeout: timeOutSec)
-        just20Button.tap()
+        let pickerPage = homePage.goToPoemPickerPage()
+        let colorPage = pickerPage.gotoFiveColorsPage()
         // then
-        goBackToPoemPickerScreen(app)
-        goBackToHomeScreen(app)
-        XCTAssert(app.cells.staticTexts["20首"].exists)
-        
+        XCTAssert(colorPage.exists)
+        // when
+        let sheet = colorPage.tapColorButton(of: .green)
+        // then
+        XCTAssert(sheet.exists)
+        // when
+        sheet.selectOnlyThese20Button.tap()
+        colorPage.backButton.tap()
+        pickerPage.backToTopPage()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 20))
     }
     
     func test_add20ofColor() {
         // given
+        let pickPage = homePage.goToPoemPickerPage()
         XCTContext.runActivity(named: "1字決まりの札を選んでおく") { _ in
-            gotoPoemPickerScreen()
-            select1jiKimari(app)
+            pickPage.cancelAllButton.tap()
+            let ngramPage = pickPage.gotoNgramPickerPage()
+            ngramPage
+                .tapCell(type: .justOne)
+                .backToPickerButton.tap()
         }
         // when
         XCTContext.runActivity(named: "そこに、五色百人一首の黄色セットを追加する") { _ in
-            gotoFiveColorsScreen(app)
-            let yellowButton = waitToHittable(for: app.buttons["黄"], timeout: timeOutSec)
-            yellowButton.tap()
-            let add20Button = waitToHittable(for: app.sheets.buttons["今選んでいる札に加える"], timeout: timeOutSec)
-            add20Button.tap()
+            let colorsPage = pickPage.gotoFiveColorsPage()
+            let sheet = colorsPage.tapColorButton(of: .yellow)
+            sheet.addThese20Button.tap()
+            colorsPage.backButton.tap()
+            pickPage.backToTopPage()
         }
         // then
-        XCTContext.runActivity(named: "黄色の20枚には一字決まりの歌が3首含まれているので、足すと27枚ではなく24枚になる") { _ in
-            goBackToPoemPickerScreen(app)
-            goBackToHomeScreen(app)
-            XCTAssert(app.cells.staticTexts["24首"].exists)
-
-        }
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 24), "黄色の20枚には一字決まりの歌が3首含まれているので、足すと27枚ではなく24枚になる")
     }
     
     func test_select2colors() {
-        gotoPoemPickerScreen()
-        gotoFiveColorsScreen(app)
+        // given
+        let pickerPage = homePage.goToPoemPickerPage()
+        let colorsPage = pickerPage.gotoFiveColorsPage()
         // when
-        let greenButton = waitToHittable(for: app.buttons["緑"], timeout: timeOutSec)
-        greenButton.tap()
-        let just20Button = waitToHittable(for: app.sheets.buttons["この20首だけを選ぶ"], timeout: timeOutSec)
-        just20Button.tap()
-        let pinkButton = waitToHittable(for: app.buttons["桃(ピンク)"], timeout: timeOutSec)
-        pinkButton.tap()
-        let add20Button = waitToHittable(for: app.sheets.buttons["今選んでいる札に加える"], timeout: timeOutSec)
-        add20Button.tap()
+        let sheet1 = colorsPage.tapColorButton(of: .green)
+        sheet1.selectOnlyThese20Button.tap()
+        let sheet2 = colorsPage.tapColorButton(of: .pink)
+        sheet2.addThese20Button.tap()
+        // and
+        colorsPage.backButton.tap()
+        pickerPage.backToTopPage()
         // then
-        goBackToPoemPickerScreen(app)
-        goBackToHomeScreen(app)
-        XCTAssert(app.cells.staticTexts["40首"].exists)
-    }
-    
-    internal func gotoFiveColorsScreen(_ app: XCUIApplication) {
-        // when
-        let toolBarButton = waitToHittable(for: app.toolbars.buttons["まとめて選ぶ"], timeout: timeOutSec)
-        toolBarButton.tap()
-        let menuButton = waitToHittable(for: app.sheets.buttons["五色百人一首の色で選ぶ"], timeout: timeOutSec)
-        menuButton.tap()
-        // then
-        waitToAppear(for: app.navigationBars["五色百人一首"], timeout: timeOutSec)
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 40))
     }
 }

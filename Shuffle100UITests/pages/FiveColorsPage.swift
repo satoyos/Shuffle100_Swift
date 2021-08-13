@@ -19,8 +19,13 @@ final class FiveColorsPage: PageObjectable {
         app.navigationBars[A11y.title].firstMatch
     }
     
+    var backButton: XCUIElement {
+        app.navigationBars.buttons[A11y.back].firstMatch
+    }
+    
     enum A11y {
         static let title = "五色百人一首"
+        static let back = "歌を選ぶ"
     }
     
     private func colorButton(of color: FiveColors) -> XCUIElement {
