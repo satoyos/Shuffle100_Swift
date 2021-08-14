@@ -17,16 +17,21 @@ final class AllPoemRecitedPage: PageObjectable {
     }
     
     var pageTitle: XCUIElement {
-        return app.staticTexts[A11y.title].firstMatch
+        app.staticTexts[A11y.title].firstMatch
     }
     
     var backToTopButton: XCUIElement {
-        return app.buttons[A11y.backToTop].firstMatch
+        app.buttons[A11y.backToTop].firstMatch
+    }
+    
+    var postMortemButton: XCUIElement {
+        app.buttons[A11y.postMortem].firstMatch
     }
     
     enum A11y {
         static let title = "試合終了"
         static let backToTop = "トップに戻る"
+        static let postMortem = "感想戦を始める"
     }
     
     
