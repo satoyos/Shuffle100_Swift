@@ -17,35 +17,35 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
     }
     
     var pageTitle: XCUIElement {
-        return app.staticTexts[A11y.titleIdentifier].firstMatch
+        app.staticTexts[A11y.titleIdentifier].firstMatch
     }
     
     var jokaTitle: XCUIElement {
-        return app.staticTexts[A11y.jokaTitle].firstMatch
+        app.staticTexts[A11y.jokaTitle].firstMatch
     }
     
     var exitGameButton: XCUIElement {
-        return app.buttons[A11y.exitGame].firstMatch
+        app.buttons[A11y.exitGame].firstMatch
     }
     
     var playButton: XCUIElement {
-        return app.buttons[A11y.play].firstMatch
+        app.buttons[A11y.play].firstMatch
     }
     
     var forwardButton: XCUIElement {
-        return app.buttons[A11y.forward].firstMatch
+        app.buttons[A11y.forward].firstMatch
     }
     
     var gearButton: XCUIElement {
-        return app.buttons[A11y.gear].firstMatch
+        app.buttons[A11y.gear].firstMatch
     }
     
     var normalJokaDescLabel: XCUIElement {
-        return app.staticTexts[A11y.normalJokaDesc].firstMatch
+        app.staticTexts[A11y.normalJokaDesc].firstMatch
     }
     
     var shortJokaDescLabel: XCUIElement {
-        return app.staticTexts[A11y.shortJokaDesc].firstMatch
+        app.staticTexts[A11y.shortJokaDesc].firstMatch
     }
     
     enum A11y {
@@ -68,6 +68,11 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
             headerText = "\(number)首め:下の句 (全\(total)首)"
         }
         return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
+    }
+    
+    var isRecitingJoka: Bool {
+        waitToAppear(for: jokaTitle, timeout: timeOutSec)
+        return true
     }
     
     func popUpExitGameAlert() -> ExitGameAlert {

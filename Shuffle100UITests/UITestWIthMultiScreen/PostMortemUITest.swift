@@ -30,6 +30,7 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         selectJustNo1Poem()
         homePage.fakeModeSwitch.tap() // 空札を有効にする
         let recitePage = homePage.gotoRecitePoemPage()
+        let endPage = AllPoemRecitedPage(app: app)
         // when
         XCTContext.runActivity(named: "試合を開始し、第1首の下の句の読み上げまで進める") { _  in
             // when
@@ -49,47 +50,46 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
             // then
             XCTAssert(recitePage.isReciting(number: 2, side: .shimo, total: 2))
         }
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(endPage.exists, "「試合終了」画面が現れる")
+        // when
+        endPage.postMortemButton.tap()
+        // then
+        let dialog = ConfirmPostMortemDialog(app: app)
+        XCTAssert(dialog.exists, "感想戦を始めるかどうか確認するダイアログが現れる")
+        // when
+        dialog.confirmButton.tap()
+        // then
+        XCTAssert(recitePage.isRecitingJoka)
         
-        gameEndViewWithPostMortemButtonAppars()
-        
-        XCTContext.runActivity(named: "「感想戦を始める」ボタンを押すと、本当に始めるかどうか聞くアラートが現れる") { _ in
-            // when
-            app.buttons["感想戦を始める"].tap()
-            // then
-            XCTAssert(app.alerts.element.exists)
-        }
-        XCTContext.runActivity(named: "アラートで「始める」をタップすると、実際に感想戦が始まる") { _ in
-            // when
-            app.alerts.buttons["始める"].tap()
-            // then
-            waitToAppear(for: app.staticTexts["序歌"], timeout: timeOutSec * 2)
-        }
         XCTContext.runActivity(named: "1首め, 2首めとまた進む") { _ in
             // when
-            tapForwardButton(app)
-            sleep(1)
-            tapForwardButton(app)
-            sleep(1)
-            tapPlayButton(app)
+            recitePage
+                .tapForwardButton()
+                .tapForwardButton()
+                .playButton.tap()
             // then
-            waitToAppear(for: app.staticTexts["1首め:下の句 (全2首)"], timeout: timeOutSec)
+            XCTAssert(recitePage.isReciting(number: 1, side: .shimo, total: 2))
             // when
-            tapForwardButton(app)
-            sleep(1)
-            tapForwardButton(app)
-            sleep(1)
-            tapPlayButton(app)
+            recitePage
+                .tapForwardButton()
+                .tapForwardButton()
+                .playButton.tap()
             // then
-            waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
+            XCTAssert(recitePage.isReciting(number: 2, side: .shimo, total: 2))
         }
-        gameEndViewWithPostMortemButtonAppars()
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(endPage.exists)
+        
         XCTContext.runActivity(named: "この画面で「トップに戻る」ボタンを押すと、そのとおりに画面遷移する。") { _ in
-            // given
-            let button = waitToHittable(for: app.buttons["トップに戻る"], timeout: timeOutSec)
             // when
-            button.tap()
+            endPage.backToTopButton.tap()
             // then
-            XCTAssert(app.navigationBars.staticTexts["トップ"].exists)
+            XCTAssert(homePage.exists)
         }
     }
     
