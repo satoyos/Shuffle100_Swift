@@ -38,7 +38,7 @@ class FakeModeUITest: XCTestCase {
             let recitePage = homePage.gotoRecitePoemPage()
             recitePage.tapForwardButton()
             // then
-            XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami, total: 4))
+            XCTAssert(recitePage.appears(number: 1, side: .kami, total: 4))
         }
     }
     
@@ -73,7 +73,7 @@ class FakeModeUITest: XCTestCase {
             let recitePage = homePage.gotoRecitePoemPage()
             recitePage.forwardButton.tap()
             // then
-            XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami, total: 2))
+            XCTAssert(recitePage.appears(number: 1, side: .kami, total: 2))
         }
     }
 }

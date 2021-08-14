@@ -63,7 +63,7 @@ class BeginnerModeUITest: XCTestCase {
         whatsNextPage.refrainButton.tap()
         // then
         XCTAssert(recitePage.exists, "読み上げ画面に戻る")
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo))
+        XCTAssert(recitePage.appears(number: 1, side: .shimo))
         XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { _ in
             waitToAppear(for: whatsNextPage.pageTitle, timeout: 15)
         }
@@ -75,7 +75,7 @@ class BeginnerModeUITest: XCTestCase {
         whatsNextPage.nextPoemButton.tap()
         // then
         let recitePage = RecitePoemPage(app: app)
-        XCTAssert(recitePage.recitePageAppears(number: 2, side: .kami))
+        XCTAssert(recitePage.appears(number: 2, side: .kami))
     }
     
     func test_exitGameFromWhatsNextScreen() {
@@ -106,11 +106,11 @@ class BeginnerModeUITest: XCTestCase {
         let recitePage = homePage.gotoRecitePoemPage()
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami, total: totalPoemsNum))
+        XCTAssert(recitePage.appears(number: 1, side: .kami, total: totalPoemsNum))
         // when
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo, total: totalPoemsNum))
+        XCTAssert(recitePage.appears(number: 1, side: .shimo, total: totalPoemsNum))
         // when
         recitePage.tapForwardButton()
         // then
