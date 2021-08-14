@@ -25,32 +25,32 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
     }
 
     func test_postMotermFromGameEndView() throws {
+        // given
         activatePostMortemMode()
         selectJustNo1Poem()
-        XCTContext.runActivity(named: "空札を有効にする") { _ in
-            app.switches["fakeModeCellSwitch"].tap()
-        }
-        XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
-            // given
-            gotoRecitePoemScreen()
+        homePage.fakeModeSwitch.tap() // 空札を有効にする
+        let recitePage = homePage.gotoRecitePoemPage()
+//        XCTContext.runActivity(named: "空札を有効にする") { _ in
+//            app.switches["fakeModeCellSwitch"].tap()
+//        }
+        // when
+        XCTContext.runActivity(named: "試合を開始し、第1首の下の句の読み上げまで進める") { _  in
             // when
-            tapForwardButton(app)
-            sleep(1)
-            tapForwardButton(app)
-            sleep(1)
-            tapPlayButton(app)
+            recitePage
+                .tapForwardButton(waiting: 1)
+                .tapForwardButton(waiting: 1)
+                .playButton.tap()
             // then
-            waitToAppear(for: app.staticTexts["1首め:下の句 (全2首)"], timeout: timeOutSec)
+            XCTAssert(recitePage.appears(number: 1, side: .shimo, total: 2))
         }
         XCTContext.runActivity(named: "2首めに入り、どんどん飛ばす") { _ in
             // when
-            tapForwardButton(app)
-            sleep(1)
-            tapForwardButton(app)
-            sleep(1)
-            tapPlayButton(app)
+            recitePage
+                .tapForwardButton(waiting: 1)
+                .tapForwardButton(waiting: 1)
+                .playButton.tap()
             // then
-            waitToAppear(for: app.staticTexts["2首め:下の句 (全2首)"], timeout: timeOutSec)
+            XCTAssert(recitePage.appears(number: 2, side: .shimo, total: 2))
         }
         
         gameEndViewWithPostMortemButtonAppars()
@@ -231,16 +231,29 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
     }
     
     private func selectJustNo1Poem() {
-        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") { (activity) in
-            // given
-            gotoPoemPickerScreen()
-            sleep(1)
+        XCTContext.runActivity(named: "第1首のみ選択している状態にする。") {_ in
             // when
-            app.buttons["全て取消"].tap()
-            app.tables.cells["001"].tap()
-            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+            let pickerPage = homePage.goToPoemPickerPage()
             // then
-            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
+            XCTAssert(pickerPage.exists)
+            // when
+            pickerPage.cancelAllButton.tap()
+            pickerPage
+                .tapCellof(number: 1)
+                .backToTopPage()
+            // then
+            XCTAssert(homePage.exists)
+            XCTAssert(homePage.numberOfSelecttedPoems(is: 1))
+            
+//            // given
+//            gotoPoemPickerScreen()
+//            sleep(1)
+//            // when
+//            app.buttons["全て取消"].tap()
+//            app.tables.cells["001"].tap()
+//            app.navigationBars["歌を選ぶ"].buttons["トップ"].tap()
+//            // then
+//            XCTAssertTrue(app.cells.staticTexts["1首"].exists)
         }
     }
 

@@ -30,11 +30,11 @@ extension SkipToWhatsNext where Self: HomePage  {
         // when
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .kami))
+        XCTAssert(recitePage.appears(number: 1, side: .kami))
         // hwn
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo))
+        XCTAssert(recitePage.appears(number: 1, side: .shimo))
         // when
         recitePage.tapForwardButton()
         return WhatsNextpage(app: app)

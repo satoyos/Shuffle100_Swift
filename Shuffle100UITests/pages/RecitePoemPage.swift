@@ -59,7 +59,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let shortJokaDesc = "序歌を途中から読み上げています。"
     }
     
-    func recitePageAppears(number: Int, side: Side, total: Int = 100) -> Bool {
+    func appears(number: Int, side: Side, total: Int = 100) -> Bool {
         var headerText = ""
         switch side {
         case .kami:

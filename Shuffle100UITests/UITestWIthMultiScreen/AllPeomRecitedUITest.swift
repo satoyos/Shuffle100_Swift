@@ -41,7 +41,7 @@ class AllPeomRecitedUITest: XCTestCase {
                 .tapForwardButton(waiting: 1)
                 .playButton.tap()
             // then
-            XCTAssert(recitePage.recitePageAppears(number: 1, side: .shimo, total: 1))
+            XCTAssert(recitePage.appears(number: 1, side: .shimo, total: 1))
         }
         // given
         let endPage = AllPoemRecitedPage(app: app)
