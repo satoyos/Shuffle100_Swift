@@ -30,27 +30,24 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
         selectJustNo1Poem()
         homePage.fakeModeSwitch.tap() // 空札を有効にする
         let recitePage = homePage.gotoRecitePoemPage()
-//        XCTContext.runActivity(named: "空札を有効にする") { _ in
-//            app.switches["fakeModeCellSwitch"].tap()
-//        }
         // when
         XCTContext.runActivity(named: "試合を開始し、第1首の下の句の読み上げまで進める") { _  in
             // when
             recitePage
-                .tapForwardButton(waiting: 1)
-                .tapForwardButton(waiting: 1)
+                .tapForwardButton()
+                .tapForwardButton()
                 .playButton.tap()
             // then
-            XCTAssert(recitePage.appears(number: 1, side: .shimo, total: 2))
+            XCTAssert(recitePage.isReciting(number: 1, side: .shimo, total: 2))
         }
         XCTContext.runActivity(named: "2首めに入り、どんどん飛ばす") { _ in
             // when
             recitePage
-                .tapForwardButton(waiting: 1)
-                .tapForwardButton(waiting: 1)
+                .tapForwardButton()
+                .tapForwardButton()
                 .playButton.tap()
             // then
-            XCTAssert(recitePage.appears(number: 2, side: .shimo, total: 2))
+            XCTAssert(recitePage.isReciting(number: 2, side: .shimo, total: 2))
         }
         
         gameEndViewWithPostMortemButtonAppars()

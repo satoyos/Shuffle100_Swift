@@ -37,11 +37,11 @@ class AllPeomRecitedUITest: XCTestCase {
         XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
             // when
             recitePage
-                .tapForwardButton(waiting: 1)
-                .tapForwardButton(waiting: 1)
+                .tapForwardButton()
+                .tapForwardButton()
                 .playButton.tap()
             // then
-            XCTAssert(recitePage.appears(number: 1, side: .shimo, total: 1))
+            XCTAssert(recitePage.isReciting(number: 1, side: .shimo, total: 1))
         }
         // given
         let endPage = AllPoemRecitedPage(app: app)
