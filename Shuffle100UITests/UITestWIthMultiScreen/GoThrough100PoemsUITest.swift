@@ -33,12 +33,12 @@ class GoThrough100PoemsUITest: XCTestCase {
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in
                 forwordButton.tap()
-                XCTAssert(recitePage.appears(number: i, side: .kami))
+                XCTAssert(recitePage.isReciting(number: i, side: .kami))
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
                 forwordButton.tap()
                 playButton.tap()
-                XCTAssert(recitePage.appears(number: i, side: .shimo))
+                XCTAssert(recitePage.isReciting(number: i, side: .shimo))
             }
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
@@ -73,13 +73,13 @@ class GoThrough100PoemsUITest: XCTestCase {
                 // when
                 recitePage.forwardButton.tap()
                 // then
-                XCTAssert(recitePage.appears(number: i, side: .kami))
+                XCTAssert(recitePage.isReciting(number: i, side: .kami))
             }
             XCTContext.runActivity(named: "上の句の読み上げ後、自動的に下の句へ") { (activiti) in
                 // when
                 recitePage.forwardButton.tap()
                 // then
-                XCTAssert(recitePage.appears(number: i, side: .shimo))
+                XCTAssert(recitePage.isReciting(number: i, side: .shimo))
             }
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
@@ -112,11 +112,11 @@ class GoThrough100PoemsUITest: XCTestCase {
         
         for i in (1...100) {
             // then
-            XCTAssert(recitePage.appears(number: i, side: .kami))
+            XCTAssert(recitePage.isReciting(number: i, side: .kami))
             // when
             forwordButton.tap()
             // then
-            XCTAssert(recitePage.appears(number: i, side: .shimo))
+            XCTAssert(recitePage.isReciting(number: i, side: .shimo))
             // when
             forwordButton.tap()
             // then

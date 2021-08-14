@@ -59,7 +59,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let shortJokaDesc = "序歌を途中から読み上げています。"
     }
     
-    func appears(number: Int, side: Side, total: Int = 100) -> Bool {
+    func isReciting(number: Int, side: Side, total: Int = 100) -> Bool {
         var headerText = ""
         switch side {
         case .kami:
@@ -81,8 +81,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
     }
     
     @discardableResult
-    func tapForwardButton(waiting sec: UInt32 = 0) -> Self {
-//        sleep(sec)
+    func tapForwardButton() -> Self {
         let button = waitToHittable(for: forwardButton, timeout: timeOutSec)
         button.tap()
         return self
