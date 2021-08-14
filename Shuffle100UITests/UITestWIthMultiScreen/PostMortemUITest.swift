@@ -10,7 +10,8 @@ import XCTest
 
 class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITestUtils {
     
-    let app = XCUIApplication()
+    internal let app = XCUIApplication()
+    internal lazy var homePage = HomePage(app: app)
 
     override func setUpWithError() throws {
         super.setUp()
@@ -204,14 +205,16 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
     }
     
     private func activatePostMortemMode() {
-        XCTContext.runActivity(named: "まず、「いろいろな設定」画面で感想戦モードを有効にする") { _ in
-            // when
-            gotoReciteSettingsScreen(app)
-            app.switches["postMortemModeSwitch"].tap()
-            app.navigationBars.buttons["設定終了"].tap()
-            // then
-            XCTAssert(app.navigationBars["トップ"].exists)
-        }
+        // when
+        let settingsPage = homePage.gotoReciteSettingPage()
+        // then
+        XCTAssert(settingsPage.exists)
+        // when
+        settingsPage
+            .switchPostMortemMode()
+            .exitSettingsButton.tap()
+        // then
+        XCTAssert(homePage.exists, "トップページに戻る")
     }
     
     private func gameEndViewWithPostMortemButtonAppars() {

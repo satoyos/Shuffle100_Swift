@@ -25,31 +25,35 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     }
     
     var kamiShimoIntervalCell: XCUIElement {
-        return app.cells[A11y.kamiShimoInterval].firstMatch
+        app.cells[A11y.kamiShimoInterval].firstMatch
     }
     
     var volumeCell: XCUIElement {
-        return app.cells[A11y.volume].firstMatch
+        app.cells[A11y.volume].firstMatch
     }
     
     var exitSettingsButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.exitSetting].firstMatch
+        app.navigationBars.buttons[A11y.exitSetting].firstMatch
     }
     
     var fullVolumeLabel: XCUIElement {
-        return app.cells.staticTexts[A11y.fullVolume].firstMatch
+        app.cells.staticTexts[A11y.fullVolume].firstMatch
     }
     
     var zeroVolumeLabel: XCUIElement {
-        return app.cells.staticTexts[A11y.zeroVolume].firstMatch
+        app.cells.staticTexts[A11y.zeroVolume].firstMatch
     }
     
     var maxIntarvalLabel: XCUIElement {
-        return app.cells.staticTexts[A11y.maxInterval].firstMatch
+        app.cells.staticTexts[A11y.maxInterval].firstMatch
     }
     
     var shortenJokaModeSwitch: XCUIElement {
-        return app.cells.switches[A11y.shortenJokaSwitch].firstMatch
+        app.cells.switches[A11y.shortenJokaSwitch].firstMatch
+    }
+    
+    var posrMortemSwitch: XCUIElement {
+        app.cells.switches[A11y.portMortemSwitch].firstMatch
     }
     
     enum A11y {
@@ -62,6 +66,7 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         static let maxInterval = "2.00"
         static let exitSetting = "設定終了"
         static let shortenJokaSwitch = "shortenJokaModeSwitch"
+        static let portMortemSwitch = "postMortemModeSwitch"
     }
     
     func gotoIntervalSettingPage() -> IntervalSettingPage {
@@ -78,5 +83,11 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     func gotoVolumePage() -> VolumePage {
         volumeCell.tap()
         return VolumePage(app: app)
+    }
+    
+    @discardableResult
+    func switchPostMortemMode() -> Self {
+        posrMortemSwitch.tap()
+        return self
     }
 }
