@@ -116,7 +116,7 @@ class ReciteSettingsUITest: XCTestCase {
         XCTAssert(recitePage.jokaTitle.exists, "序歌の読み上げ画面に戻る")
         // when
         recitePage
-            .popUpExitGameAlert()
+            .popUpExitGameDialog()
             .confirmButton.tap()
         // then
         waitToAppear(for: homePage.pageTitle, timeout: timeOutSec)

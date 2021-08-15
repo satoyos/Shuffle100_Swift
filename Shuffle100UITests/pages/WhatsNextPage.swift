@@ -54,8 +54,8 @@ final class WhatsNextpage: PageObjectable {
         return ReciteSettingsPage(app: app)
     }
     
-    func popUpExitGameAlert() -> ExitGameAlert {
+    func popUpExitGameAlert() -> ExitGameDialog {
         exitButton.tap()
-        return ExitGameAlert(app: app)
+        return ExitGameDialog(app: app)
     }
 }
