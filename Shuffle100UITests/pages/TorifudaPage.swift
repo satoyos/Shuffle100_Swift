@@ -17,16 +17,26 @@ final class TorifudaPage: PageObjectable {
     }
 
     var pageTitle: XCUIElement {
-        return app.images[A11y.fudaView].firstMatch
+        app.images[A11y.fudaView].firstMatch
     }
    
     var backToWhatsNextButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.whatsNext].firstMatch
+        app.navigationBars.buttons[A11y.whatsNext].firstMatch
+    }
+    
+    var backToPickerButton: XCUIElement {
+        app.navigationBars.buttons[A11y.picker].firstMatch
+    }
+    
+    var fullLinersView: XCUIElement {
+        app.textViews[A11y.fullLiner].firstMatch
     }
     
     enum A11y {
         static let fudaView = "fudaView"
         static let whatsNext = "次はどうする？"
+        static let picker = "歌を選ぶ"
+        static let fullLiner = "fullLinersView"
     }
     
     func hasChar(_ char: Character) -> Bool {

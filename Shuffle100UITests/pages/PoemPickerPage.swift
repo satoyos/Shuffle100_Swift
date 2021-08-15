@@ -17,35 +17,39 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars[A11y.title].firstMatch
+        app.navigationBars[A11y.title].firstMatch
     }
     
     var backToTopButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.backToTop].firstMatch
+        app.navigationBars.buttons[A11y.backToTop].firstMatch
     }
     
     var searchField: XCUIElement {
-        return app.searchFields[A11y.searchFieldPlaceHolder].firstMatch
+        app.searchFields[A11y.searchFieldPlaceHolder].firstMatch
     }
     
     var cancelButton: XCUIElement {
-        return app.buttons[A11y.cancel].firstMatch
+        app.buttons[A11y.cancel].firstMatch
     }
     
     var cancelAllButton: XCUIElement {
-        return waitToHittable(for: app.buttons[A11y.cancelAll], timeout: timeOutSec)
+        waitToHittable(for: app.buttons[A11y.cancelAll], timeout: timeOutSec)
     }
     
     var selectAllButton: XCUIElement {
-        return waitToHittable(for: app.toolbars.buttons[A11y.selectAll], timeout: timeOutSec)
+        waitToHittable(for: app.toolbars.buttons[A11y.selectAll], timeout: timeOutSec)
     }
     
     var selectByGroupButton: XCUIElement {
-        return waitToHittable(for: app.toolbars.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
+        waitToHittable(for: app.toolbars.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
     }
     
     var saveButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.save].firstMatch
+        app.navigationBars.buttons[A11y.save].firstMatch
+    }
+    
+    var firstCellInList: XCUIElement {
+        app.cells.firstMatch
     }
     
     enum A11y {
@@ -57,6 +61,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let selectAll = "全て選択"
         static let selectByGroup = "まとめて選ぶ"
         static let save = "保存"
+        static let detail = "詳細情報"
     }
     
     @discardableResult
@@ -69,6 +74,17 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     }
     
     @discardableResult
+    func tapDetailButtonOf(number: Int) -> TorifudaPage {
+        tapDetailButton(of: cellOf(number: number))
+    }
+    
+    @discardableResult
+    func tapDetailButton(of cell: XCUIElement) -> TorifudaPage {
+        cell.buttons[A11y.detail].tap()
+        return TorifudaPage(app: app)
+    }
+    
+    @discardableResult
     func backToTopPage() -> HomePage {
         backToTopButton.tap()
         let homePage = HomePage(app: app)
@@ -78,7 +94,11 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     
     func cellOf(number: Int) -> XCUIElement {
         let label = String(format: "%03d", number)
-        return app.tables.cells[label]
+        return app.tables.cells[label].firstMatch
+    }
+    
+    func longPress(number: Int) {
+        cellOf(number: number).press(forDuration: 2.0)
     }
     
     @discardableResult

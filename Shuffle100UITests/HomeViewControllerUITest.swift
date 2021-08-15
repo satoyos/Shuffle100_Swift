@@ -10,6 +10,7 @@ import XCTest
 
 class HomeScreenUITest: XCTestCase {
     let app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
     
     override func setUp() {
         super.setUp()
@@ -29,19 +30,15 @@ class HomeScreenUITest: XCTestCase {
     }
     
     private func correctLabelAndCellsExist() {
-        XCTAssert(app.navigationBars["トップ"].exists)
-        XCTAssert(cellExistsWithText("取り札を用意する歌"))
-        XCTAssert(cellExistsWithText("読み上げモード"))
-        XCTAssert(cellExistsWithText("空札を加える"))
-        XCTAssert(cellExistsWithText("読手"))
+        XCTAssert(homePage.exists)
+        XCTAssert(homePage.poemsCell.exists)
+        XCTAssert(homePage.reciteModeCell.exists)
+        XCTAssert(homePage.fakeModeCell.exists)
+        XCTAssert(homePage.singerCell.exists)
     }
     
     private func navBarButtonsExists() {
-        XCTAssert(app.navigationBars.buttons["GearButton"].exists)
-        XCTAssert(app.navigationBars.buttons["HelpButton"].exists)
-    }
-    
-    private func cellExistsWithText(_ text: String) -> Bool {
-        return app.tables.cells.staticTexts[text].exists
+        XCTAssert(homePage.gearButton.exists)
+        XCTAssert(homePage.helpButton.exists)
     }
 }
