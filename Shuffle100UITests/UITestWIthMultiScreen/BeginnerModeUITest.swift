@@ -83,7 +83,7 @@ class BeginnerModeUITest: XCTestCase {
         let whatsNextPage = gotoWhatsNextPage()
         whatsNextPage.exitButton.tap()
         // then
-        let exitAlert = ExitGameAlert(app: app)
+        let exitAlert = ExitGameDialog(app: app)
         XCTAssert(exitAlert.exists, "確認ダイアログが現れる")
         // when
         exitAlert.confirmButton.tap()

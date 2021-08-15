@@ -75,9 +75,9 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         return true
     }
     
-    func popUpExitGameAlert() -> ExitGameAlert {
+    func popUpExitGameDialog() -> ExitGameDialog {
         exitGameButton.tap()
-        return ExitGameAlert(app: app)
+        return ExitGameDialog(app: app)
     }
     
     func gotoSettingsPage() -> ReciteSettingsPage {

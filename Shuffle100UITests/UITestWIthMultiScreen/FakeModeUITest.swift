@@ -49,7 +49,7 @@ class FakeModeUITest: XCTestCase {
         
         XCTContext.runActivity(named: "試合を中断して、トップ画面に戻る") { _ in
             // when
-            let alert = recitePage.popUpExitGameAlert()
+            let alert = recitePage.popUpExitGameDialog()
             alert.confirmButton.tap()
             // then
             XCTAssert(homePage.exists)

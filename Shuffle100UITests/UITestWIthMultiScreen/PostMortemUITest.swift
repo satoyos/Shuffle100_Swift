@@ -94,42 +94,33 @@ class PostMortemUITest: XCTestCase, HomeScreenUITestUtils, RecitePoemScreenUITes
     }
     
     func test_startpostMortemFromExitButton() {
+        // given
         activatePostMortemMode()
-        XCTContext.runActivity(named: "試合を開始し、forward -> forward -> playで第1首の下の句の読み上げを開始する") { (activity) in
-            // given
-            gotoRecitePoemScreen()
-            // when
-            tapForwardButton(app)
-            sleep(1)
-            tapForwardButton(app)
-            sleep(1)
-            tapPlayButton(app)
-            // then
-            waitToAppear(for: app.staticTexts["1首め:下の句 (全100首)"], timeout: timeOutSec)
-        }
-        XCTContext.runActivity(named: "2首めに入り、どんどん飛ばす") { _ in
-            // when
-            tapForwardButton(app)
-            sleep(1)
-            tapForwardButton(app)
-            sleep(1)
-            tapPlayButton(app)
-            // then
-            waitToAppear(for: app.staticTexts["2首め:下の句 (全100首)"], timeout: timeOutSec)
-        }
-        XCTContext.runActivity(named: "Exitボタンを押すと、感想戦も選択肢に入ったActionSheetが現れる") { _ in
-            // when
-            app.buttons["exit"].tap()
-            // then
-            XCTAssertFalse(app.alerts.element.exists)
-            _ =  waitToHittable(for: app.sheets.buttons["感想戦を始める"], timeout: timeOutSec)
-        }
-        XCTContext.runActivity(named: "「感想戦を始める」を選ぶと、実際に始まる") { _ in
-            // when
-            app.sheets.buttons["感想戦を始める"].tap()
-            // then
-            waitToAppear(for: app.staticTexts["序歌"], timeout: timeOutSec * 2)
-        }
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        recitePage
+            .tapForwardButton()
+            .tapForwardButton()
+            .playButton.tap()
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+        // when
+        recitePage
+            .tapForwardButton()
+            .tapForwardButton()
+            .playButton.tap()
+        // then
+        XCTAssert(recitePage.isReciting(number: 2, side: .shimo))
+        // when
+        recitePage.exitGameButton.tap()
+        // then
+        let sheet = ExitGameActionSheet(app: app)
+        XCTAssert(sheet.exists)
+        XCTAssert(sheet.postMortemAButton.exists)
+        // when
+        sheet.postMortemAButton.tap()
+        // then
+        XCTAssert(recitePage.isRecitingJoka, "実際に感想戦が始まる")
     }
     
     func test_backToHomeViaExitButtonInPostMortemMode() {

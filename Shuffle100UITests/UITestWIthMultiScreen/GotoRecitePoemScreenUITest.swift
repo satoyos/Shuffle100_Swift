@@ -50,7 +50,7 @@ class GotoRecitePoemScreenUITest: XCTestCase {
         // when
         recitePage.exitGameButton.tap()
         // then
-        let exitGameAlert = ExitGameAlert(app: app)
+        let exitGameAlert = ExitGameDialog(app: app)
         XCTAssert(exitGameAlert.exists)
         // when
         let home = exitGameAlert.exitGameAndBackToTopPage()

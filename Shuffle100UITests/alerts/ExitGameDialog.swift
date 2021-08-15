@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-final class ExitGameAlert: AlertObjectable, WaitInUITest {
+final class ExitGameDialog: AlertObjectable, WaitInUITest {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
