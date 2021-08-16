@@ -9,7 +9,8 @@
 import XCTest
 
 class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUITestUtils {
-    let app = XCUIApplication()
+    internal let app = XCUIApplication()
+    internal lazy var homePage = HomePage(app: app)
 
     override func setUp() {
         super.setUp()
@@ -19,56 +20,55 @@ class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUIT
     }
 
     func test_rewindInJokaGoBackToTop() {
-        // given
-        gotoRecitePoemScreen()
         // when
-        let rewindButton = app.buttons["rewind"]
-        sleep(1)
-        rewindButton.tap()
-        sleep(1)
-        rewindButton.tap()
+        let recitePage = homePage.gotoRecitePoemPage()
+        recitePage
+            .tapRewindButton()
+            .tapRewindButton()
         // then
-        XCTAssertTrue(app.navigationBars["トップ"].exists)
+        XCTAssert(homePage.exists, "トップ画面に戻る")
     }
 
     func test_rewindInNunberedPoem_atKami() {
-        XCTContext.runActivity(named: "2首目の上の句まで進む") { (activiti) in
-            gotoRecitePoemScreen()
-            app.buttons["forward"].tap()
-            app.buttons["forward"].tap()
-            app.buttons["forward"].tap()
-            app.buttons["forward"].tap()
-            XCTAssert(app.staticTexts["2首め:上の句 (全100首)"].exists)
-        }
-        XCTContext.runActivity(named: "2首目の上の句を読み始めた状態でrewindボタンを2回押すと、1首めの下の句に戻る") { (activiti) in
-            // given
-            let rewindButton = app.buttons["rewind"]
-            sleep(1)
+        let recitePage = homePage.gotoRecitePoemPage()
+        XCTContext.runActivity(named: "2首目の上の句まで進む") { _ in
             // when
-            rewindButton.tap()
-            rewindButton.tap()
+            recitePage
+                .tapForwardButton()
+                .tapForwardButton()
+                .tapForwardButton()
+                .tapForwardButton()
             // then
-            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
+            XCTAssert(recitePage.isReciting(number: 2, side: .kami))
+        }
+        XCTContext.runActivity(named: "2首目の上の句を読み始めた状態でrewindボタンを2回押すと、1首めの下の句に戻る") { _ in
+            // when
+            recitePage
+                .tapRewindButton()
+                .tapRewindButton()
+            // then
+            XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
         }
     }
     
     func test_rewindInNumberedPoem_atShimo() {
-        XCTContext.runActivity(named: "1首目の下の句まで進む") { (activiti) in
-            gotoRecitePoemScreen()
-            app.buttons["forward"].tap()
-            app.buttons["forward"].tap()
-            app.buttons["forward"].tap()
-            XCTAssert(app.staticTexts["1首め:下の句 (全100首)"].exists)
-        }
-        XCTContext.runActivity(named: "下の句を読み始めた状態でrewindボタンを2回押すと、上の句に戻る") { (activiti) in
-            // given
-            let rewindButton = app.buttons["rewind"]
-            sleep(1)
+        let recitePage = homePage.gotoRecitePoemPage()
+        XCTContext.runActivity(named: "1首目の下の句まで進む") { _ in
             // when
-            rewindButton.tap()
-            rewindButton.tap()
+            recitePage
+                .tapForwardButton()
+                .tapForwardButton()
+                .tapForwardButton()
             // then
-            XCTAssert(app.staticTexts["1首め:上の句 (全100首)"].exists)
+            XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+        }
+        XCTContext.runActivity(named: "下の句を読み始めた状態でrewindボタンを2回押すと、上の句に戻る") { _ in
+            // when
+            recitePage
+                .tapRewindButton()
+                .tapRewindButton()
+            // then
+            XCTAssert(recitePage.isReciting(number: 1, side: .kami))
         }
     }
     

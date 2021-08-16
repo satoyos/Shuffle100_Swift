@@ -36,6 +36,10 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         app.buttons[A11y.forward].firstMatch
     }
     
+    var rewindButton: XCUIElement {
+        app.buttons[A11y.rewind].firstMatch
+    }
+    
     var gearButton: XCUIElement {
         app.buttons[A11y.gear].firstMatch
     }
@@ -53,6 +57,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let jokaTitle = "序歌"
         static let exitGame = "exit"
         static let forward = "forward"
+        static let rewind = "rewind"
         static let play = "play"
         static let gear = "gear"
         static let normalJokaDesc = "試合開始の合図として読まれる歌です。"
@@ -88,6 +93,13 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
     @discardableResult
     func tapForwardButton() -> Self {
         let button = waitToHittable(for: forwardButton, timeout: timeOutSec)
+        button.tap()
+        return self
+    }
+    
+    @discardableResult
+    func tapRewindButton() -> Self {
+        let button = waitToHittable(for: rewindButton, timeout: timeOutSec)
         button.tap()
         return self
     }
