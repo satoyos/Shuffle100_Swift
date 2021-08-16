@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RewindButtonUITest: XCTestCase, RecitePoemScreenUITestUtils, HomeScreenUITestUtils {
+class RewindButtonUITest: XCTestCase {
     internal let app = XCUIApplication()
     internal lazy var homePage = HomePage(app: app)
 
