@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
+class MemorizeTImerScreenUITest: XCTestCase {
     internal let app = XCUIApplication()
     internal lazy var homePage = HomePage(app: app)
 
