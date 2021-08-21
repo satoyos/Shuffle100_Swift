@@ -444,6 +444,7 @@
 		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */; };
+		92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */; };
 		92E44EF426AD4B2A004A6A1A /* NoPoemToSaveAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */; };
 		92E44EF626AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */; };
 		92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */; };
@@ -790,6 +791,7 @@
 		92D57154220F03AF00235717 /* SelectModeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreen.swift; sourceTree = "<group>"; };
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
 		92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemRecitedPage.swift; sourceTree = "<group>"; };
+		92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerPage.swift; sourceTree = "<group>"; };
 		92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPoemToSaveAlert.swift; sourceTree = "<group>"; };
 		92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNameGivenForFudaSetAlert.swift; sourceTree = "<group>"; };
 		92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsPage.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 				92FB604E269337E1000C3F99 /* FudaSetPage.swift */,
 				92E9705926C1418B00A6650C /* HelpListPage.swift */,
 				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
+				92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1996,6 +1999,7 @@
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
 				924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */,
+				92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */,
 				92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */,
 				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
