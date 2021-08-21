@@ -17,47 +17,47 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars[A11y.title].firstMatch
+        app.navigationBars[A11y.title].firstMatch
     }
     
     var poemsCell: XCUIElement {
-        return app.cells[A11y.poems].firstMatch
+        app.cells[A11y.poems].firstMatch
     }
     
     var reciteModeCell: XCUIElement {
-        return app.cells[A11y.reciteMode].firstMatch
+        app.cells[A11y.reciteMode].firstMatch
     }
     
     var fakeModeCell: XCUIElement {
-        return app.cells[A11y.fakeMode].firstMatch
+        app.cells[A11y.fakeMode].firstMatch
     }
     
     var singerCell: XCUIElement {
-        return app.cells[A11y.singer].firstMatch
+        app.cells[A11y.singer].firstMatch
     }
     
     var timerCell: XCUIElement {
-        return app.cells[A11y.timer].firstMatch
+        app.cells[A11y.timer].firstMatch
     }
     
     var gameStartCell: XCUIElement {
-        return app.cells[A11y.gameStart].firstMatch
+        app.cells[A11y.gameStart].firstMatch
     }
     
     var noPoemSelectedAlert: XCUIElement {
-        return app.alerts.staticTexts[A11y.noPoemSelected].firstMatch
+        app.alerts.staticTexts[A11y.noPoemSelected].firstMatch
     }
     
     var gearButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.gear].firstMatch
+        app.navigationBars.buttons[A11y.gear].firstMatch
     }
     
     var helpButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.help].firstMatch
+        app.navigationBars.buttons[A11y.help].firstMatch
     }
     
     var fakeModeSwitch: XCUIElement {
-        return fakeModeCell.switches.firstMatch
+        fakeModeCell.switches.firstMatch
     }
     
     enum A11y {
@@ -130,6 +130,11 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     func gotoHelpListPage() -> HelpListPage {
         helpButton.tap()
         return HelpListPage(app: app)
+    }
+    
+    func gotoMemorizeTimerPage() -> MemorizeTimerPage {
+        timerCell.tap()
+        return MemorizeTimerPage(app: app)
     }
     
     func singerIs(_ singer: CurrentSinger) -> Bool {

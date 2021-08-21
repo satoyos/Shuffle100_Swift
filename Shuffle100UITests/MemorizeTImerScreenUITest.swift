@@ -9,7 +9,8 @@
 import XCTest
 
 class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
-    let app = XCUIApplication()
+    internal let app = XCUIApplication()
+    internal lazy var homePage = HomePage(app: app)
 
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -18,44 +19,39 @@ class MemorizeTImerScreenUITest: XCTestCase, SOHGlyphIcon {
     }
 
     func test_showTimerScreen() throws {
-        gotoMemorizeTimerScreen()
-        XCTAssert(app.buttons.staticTexts[stringExpression(of: .play)].exists)
+        // when
+        let timerPage = homePage.gotoMemorizeTimerPage()
+        // then
+        XCTAssert(timerPage.exists, "暗記時間タイマー画面に到達")
     }
     
     func test_tapPlayButtonToStartCountDown() {
-        // given
-        gotoMemorizeTimerScreen()
-        XCTAssert(app.staticTexts["15"].exists)
         // when
-        app.buttons.staticTexts[stringExpression(of: .play)].tap()
+        let timerPage = homePage.gotoMemorizeTimerPage()
         // then
-        XCTAssert(app.buttons.staticTexts[stringExpression(of: .pause)].exists)
+        XCTAssert(timerPage.timeIsInitialValue)
+        // when
+        timerPage.buttonToPlay.tap()
+        // then
+        XCTAssert(timerPage.buttonToPause.exists, "ボタンの表示がPause待ちに変わる")
+        // when
         sleep(1)
-        XCTAssertFalse(app.staticTexts["15"].exists)
-        XCTContext.runActivity(named: "もう一度playButtonをタップすると、ボタンの表示がpauseに変わる") { _ in
-            app.buttons.staticTexts[stringExpression(of: .pause)].tap()
+        // then
+        XCTAssertFalse(timerPage.timeIsInitialValue, "カウントダウンが始まる")
+        XCTContext.runActivity(named: "もう一度playButtonをタップすると、ボタンの表示がPlay待ちに変わる") { _ in
+            // when
+            timerPage.buttonToPause.tap()
             // then
-            XCTAssert(app.buttons.staticTexts[stringExpression(of: .play)].exists)
+            XCTAssert(timerPage.buttonToPlay.exists)
         }
     }
     
     func test_goThroughMemorizeTime() {
-        // given
-        gotoMemorizeTimerScreen()
         // when
-        app.buttons.staticTexts[stringExpression(of: .play)].tap()
+        let timerPage = homePage.gotoMemorizeTimerPage()
+        timerPage.buttonToPlay.tap()
+        sleep(15 * 60 + 5)
         // then
-        XCTContext.runActivity(named: "暗記時間が終わると、自動的にトップ画面に戻る") { _ in
-            sleep(15 * 60)
-            waitToAppear(for: app.navigationBars["トップ"], timeout: 10)
-        }
+        XCTAssert(homePage.exists, "暗記時間が終わると、自動的にトップ画面に戻る")
     }
-    
-    private func gotoMemorizeTimerScreen() {
-        // when
-        app.tables.staticTexts["暗記時間タイマー"].tap()
-        // then
-        XCTAssert(app.navigationBars["暗記時間タイマー"].exists)
-    }
-
 }
