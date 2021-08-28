@@ -18,6 +18,7 @@ protocol RecitePoemProtocol: BackToHome {
     mutating func reciteShimoFinished(number: Int, counter: Int) -> Void
     mutating func goNextPoem() -> Void
     mutating func startPostMortem() -> Void
+    func addKamiScreenActions()
 }
 
 extension RecitePoemProtocol where Self: Coordinator {
@@ -51,6 +52,10 @@ extension RecitePoemProtocol where Self: Coordinator {
         self.screen = screen
     }
     
+    func addKamiScreenActions() {
+        // default: Do nothing
+    }
+    
     mutating func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
@@ -60,6 +65,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         screen.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteKamiFinished(number: number, counter: counter)
         }
+        addKamiScreenActions()
         screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
     
