@@ -439,6 +439,7 @@
 		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */; };
 		92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */; };
+		92DCD6DF26DA62E30063AF7A /* SkipPoemUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */; };
 		92E44EF426AD4B2A004A6A1A /* NoPoemToSaveAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */; };
 		92E44EF626AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */; };
 		92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */; };
@@ -776,6 +777,7 @@
 		92D57158220F063100235717 /* SelectModeScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreenTest.swift; sourceTree = "<group>"; };
 		92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemRecitedPage.swift; sourceTree = "<group>"; };
 		92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerPage.swift; sourceTree = "<group>"; };
+		92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipPoemUITest.swift; sourceTree = "<group>"; };
 		92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPoemToSaveAlert.swift; sourceTree = "<group>"; };
 		92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNameGivenForFudaSetAlert.swift; sourceTree = "<group>"; };
 		92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsPage.swift; sourceTree = "<group>"; };
@@ -1127,6 +1129,7 @@
 				921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */,
 				92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */,
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
+				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -2100,6 +2103,7 @@
 				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
+				92DCD6DF26DA62E30063AF7A /* SkipPoemUITest.swift in Sources */,
 				925994F32449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
 				920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
