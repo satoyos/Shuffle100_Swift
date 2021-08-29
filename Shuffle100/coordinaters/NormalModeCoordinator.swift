@@ -31,12 +31,6 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
         guard let screen = self.screen as? RecitePoemScreen else { return }
         screen.waitUserActionAfterFineshdReciing()
         addKamiScreenActions()
-//        screen.playButtonTappedAfterFinishedReciting = { [weak self] in
-//            self?.stepIntoShimoInNormalMode()
-//        }
-//        screen.skipToNextScreenAction = { [weak self] in
-//            self?.stepIntoShimoInNormalMode()
-//        }
         poemSupplier.stepIntoShimo()
     }
     
