@@ -19,7 +19,7 @@ class SkipPoemUITest: XCTestCase {
         app.launch()
     }
 
-    func test_skipButtonOn1stHalfOf1stPoem_ShouldStartReciting2ndHalf() {
+    func test_skipButtonOn1stHalfOf1stPoemShouldWork() {
         // when
         let recitePage = homePage.gotoRecitePoemPage()
         recitePage.tapForwardButton()
@@ -34,5 +34,25 @@ class SkipPoemUITest: XCTestCase {
         // then
         XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
     }
-
+    
+    func test_alsoInBeginnerMode_skipButtonOn1stHalfOf1stPoemShouldWork() {
+        // when
+        let modePage = homePage.gotoSelectModePage()
+        modePage
+            .selectMode(.beginner)
+            .backToTopButton.tap()
+        // then
+        XCTAssert(homePage.reciteModeIs(.beginner))
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        recitePage
+            .tapForwardButton()
+            .playButton.tap()
+        // then
+        XCTAssert(recitePage.isWaitinfForPlay)
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+    }
 }
