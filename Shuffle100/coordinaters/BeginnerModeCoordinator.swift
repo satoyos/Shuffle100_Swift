@@ -32,6 +32,13 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
         stepIntoShimoInBeginnerMode()
     }
     
+    func addKamiScreenActions() {
+        guard let screen = self.screen as? RecitePoemScreen else { return }
+        screen.skipToNextScreenAction = { [weak self] in
+            self?.stepIntoShimoInBeginnerMode()
+        }
+    }
+    
     private func stepIntoShimoInBeginnerMode() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
         assert(true, "初心者モードで下の句に突入！")
