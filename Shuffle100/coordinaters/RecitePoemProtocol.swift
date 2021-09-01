@@ -52,10 +52,6 @@ extension RecitePoemProtocol where Self: Coordinator {
         self.screen = screen
     }
     
-    func addKamiScreenActions() {
-        // default: Do nothing
-    }
-    
     mutating func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
