@@ -55,4 +55,25 @@ class SkipPoemUITest: XCTestCase {
         // then
         XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
     }
+    
+    func test_alsoInNonStopMode_skipButtonOn1stHalfOf1stPoemShouldWork() {
+        // when
+        let modePage = homePage.gotoSelectModePage()
+        modePage
+            .selectMode(.nonstop)
+            .backToTopButton.tap()
+        // then
+        XCTAssert(homePage.reciteModeIs(.nonstop))
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        recitePage
+            .tapForwardButton()
+            .playButton.tap()
+        // then
+        XCTAssert(recitePage.isWaitinfForPlay)
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+    }
 }
