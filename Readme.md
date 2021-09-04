@@ -3,7 +3,7 @@ Shuffle100 (百首読み上げ) Swift Version
 
 [![CircleCI](https://circleci.com/gh/satoyos/Shuffle100_Swift/tree/master.svg?style=svg)](https://circleci.com/gh/satoyos/Shuffle100_Swift/tree/master)
 
-(English follows Japanese)
+(English to follow)
 
 実際の百人一首かるたを使って対戦や練習をするときに、人の代わりに百人一首の歌の読み手を務めるiOSアプリです。
 ![Image](http://postachio-images.s3-website-us-east-1.amazonaws.com/bdc9788b9b5c8ff218c37223f302b9a4/511242b6e6a9f3507107fc8f1c2af6e2/w600_df90791d0bf5c6022857a54b3700d61b.png)
