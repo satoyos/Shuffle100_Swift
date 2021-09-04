@@ -21,7 +21,8 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
         self.navigationController = navigationController
         let store = StoreManager()
         self.settings = Self.setUpSettings(store: store)
-        self.store = StoreManager()
+//        self.store = StoreManager()
+        self.store = store
     }
 
     func start() {
