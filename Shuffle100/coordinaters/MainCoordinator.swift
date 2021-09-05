@@ -21,7 +21,6 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
         self.navigationController = navigationController
         let store = StoreManager()
         self.settings = Self.setUpSettings(store: store)
-//        self.store = StoreManager()
         self.store = store
     }
 
@@ -82,22 +81,21 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     }
 
     private func startGame(settings: Settings, store: StoreManager) {
-        var gameDriver: Coordinator!
+        var gameDriveCoordinator: Coordinator
 
         switch settings.reciteMode {
         case .normal:
-            gameDriver = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-            gameDriver.start()
+            gameDriveCoordinator = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
         case .nonstop:
-            gameDriver = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-            gameDriver.start()
+            gameDriveCoordinator = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
         case .beginner:
-            gameDriver = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-            gameDriver.start()
+            gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
         }
-        guard let coordinator = gameDriver else { return }
-        self.childCoordinator = coordinator
+        gameDriveCoordinator.start()
+        self.childCoordinator = gameDriveCoordinator
+
     }
+
 
     private func setSaveSettingsActionTo(screen: SettingsAttachedScreen, settings: Settings, store: StoreManager) {
         screen.saveSettingsAction = { [store, settings, weak self] in
