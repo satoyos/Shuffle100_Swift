@@ -21,7 +21,7 @@ final class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
         let screen = MemorizeTimerScreen()
         setUpNavigationController(navigationController)
         navigationController.pushViewController(screen, animated: true)
-        screen.navigationItem.prompt = navigationItemPrompt()
+        screen.navigationItem.prompt = navigationItemPrompt
         self.screen = screen
     }
 }

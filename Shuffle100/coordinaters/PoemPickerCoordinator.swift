@@ -43,7 +43,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
             self?.childCoordinator = nil
         }
         navigationController.pushViewController(screen, animated: true)
-        screen.navigationItem.prompt = navigationItemPrompt()
+        screen.navigationItem.prompt = navigationItemPrompt
         self.screen = screen
     }
 

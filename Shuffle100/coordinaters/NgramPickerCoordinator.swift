@@ -24,7 +24,7 @@ final class NgramPickerCoordinator: Coordinator, HandleNavigator {
     func start() {
         let screen = NgramPickerScreen(settings: settings)
         navigationController.pushViewController(screen, animated: true)
-        screen.navigationItem.prompt = navigationItemPrompt()
+        screen.navigationItem.prompt = navigationItemPrompt
         self.screen = screen
     }
 }
