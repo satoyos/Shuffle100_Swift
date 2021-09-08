@@ -28,7 +28,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     }
     
     internal func reciteKamiFinished(number: Int, counter: Int) {
-        assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")
+//        print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(初心者)")
         stepIntoShimoInBeginnerMode()
     }
     
@@ -41,7 +41,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     
     private func stepIntoShimoInBeginnerMode() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
-        assert(true, "初心者モードで下の句に突入！")
+//        print("初心者モードで下の句に突入！")
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen.playerFinishedAction = { [weak self] in

@@ -28,7 +28,7 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
     }
     
     internal func reciteKamiFinished(number: Int, counter: Int ) {
-        assert(true, "\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(ノンストップ)")
+//        print("\(counter)番めの歌(歌番号: \(number))の上の句の読み上げ終了。(ノンストップ)")
         stepIntoShimoInNonstopMode()
     }
     
