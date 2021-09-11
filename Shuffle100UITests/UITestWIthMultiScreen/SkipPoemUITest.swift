@@ -76,4 +76,19 @@ class SkipPoemUITest: XCTestCase {
         // then
         XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
     }
+    
+    func test_skipKamiWhilePlaying_shouldGoToShimoSoon() {
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        // then
+        XCTAssert(recitePage.isRecitingJoka)
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .kami))
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+    }
 }
