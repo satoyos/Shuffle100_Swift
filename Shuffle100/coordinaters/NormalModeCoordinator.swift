@@ -34,7 +34,7 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
         poemSupplier.stepIntoShimo()
     }
     
-    func addKamiScreenActions() {
+    func addKamiScreenActionsForKamiEnding() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
         screen.playButtonTappedAfterFinishedReciting = { [weak self] in
             self?.stepIntoShimoInNormalMode()
@@ -49,6 +49,9 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
         let number = poemSupplier.poem.number
         let counter = poemSupplier.currentIndex
         screen.playerFinishedAction = { [weak self, number, counter] in
+            self?.reciteShimoFinished(number: number, counter: counter)
+        }
+        screen.skipToNextScreenAction = { [weak self, number, counter] in
             self?.reciteShimoFinished(number: number, counter: counter)
         }
         screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)

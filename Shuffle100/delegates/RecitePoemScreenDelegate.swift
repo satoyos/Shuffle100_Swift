@@ -85,15 +85,17 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
     
     internal func forwardButtonTapped() {
         guard let currentPlayer = currentPlayer else { return }
-        if currentPlayer.isPlaying {
-            currentPlayer.currentTime = currentPlayer.duration - 0.1
-            currentPlayer.pause()
-            updateAudioProgressView()
-            currentPlayer.stop()
-            audioPlayerDidFinishPlaying(currentPlayer, successfully: true)
-        } else {
-            self.skipToNextScreenAction?()
-        }
+//        if currentPlayer.isPlaying {
+//            currentPlayer.currentTime = currentPlayer.duration - 0.1
+//            currentPlayer.pause()
+//            updateAudioProgressView()
+//            currentPlayer.stop()
+//            audioPlayerDidFinishPlaying(currentPlayer, successfully: true)
+//        } else {
+//            self.skipToNextScreenAction?()
+//        }
+        currentPlayer.stop()
+        skipToNextScreenAction?()
     }
         
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

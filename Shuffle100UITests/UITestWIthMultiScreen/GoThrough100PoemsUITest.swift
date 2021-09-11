@@ -26,7 +26,7 @@ class GoThrough100PoemsUITest: XCTestCase {
         
         let recitePage = homePage.gotoRecitePoemPage()
         let forwordButton = recitePage.forwardButton
-        let playButton = recitePage.playButton
+//        let playButton = recitePage.playButton
         
         XCTAssert(recitePage.jokaTitle.exists, "まず序歌へ")
 
@@ -35,9 +35,9 @@ class GoThrough100PoemsUITest: XCTestCase {
                 forwordButton.tap()
                 XCTAssert(recitePage.isReciting(number: i, side: .kami))
             }
-            XCTContext.runActivity(named: "上の句の読み上げ後、一旦止まり、Playボタンを押すと、下の句へ。") { (activiti) in
+            XCTContext.runActivity(named: "すぐに早送りボタンを押すと、下の句へ。") { (activiti) in
                 forwordButton.tap()
-                playButton.tap()
+//                playButton.tap()
                 XCTAssert(recitePage.isReciting(number: i, side: .shimo))
             }
         }
