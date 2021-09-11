@@ -973,7 +973,6 @@
 		923D59252143BB0B000F5E60 /* Shuffle100Tests */ = {
 			isa = PBXGroup;
 			children = (
-				92F8246925B076B0008E031D /* dataSources */,
 				92737DD623856754007B5FAD /* coodinators */,
 				9262999C236586A3000EC4F7 /* lib */,
 				927E4BFF222E9E0500AF48F7 /* models */,
@@ -1337,13 +1336,6 @@
 				92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */,
 			);
 			path = delegates;
-			sourceTree = "<group>";
-		};
-		92F8246925B076B0008E031D /* dataSources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = dataSources;
 			sourceTree = "<group>";
 		};
 		EDFFE9D58434747A8AD3492F /* Pods */ = {
