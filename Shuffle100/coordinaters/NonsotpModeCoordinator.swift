@@ -32,7 +32,7 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
         stepIntoShimoInNonstopMode()
     }
     
-    func addKamiScreenActions() {
+    func addKamiScreenActionsForKamiEnding() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
         screen.skipToNextScreenAction = { [weak self] in
             self?.stepIntoShimoInNonstopMode()
