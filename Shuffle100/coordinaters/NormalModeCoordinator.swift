@@ -54,6 +54,7 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
         screen.skipToNextScreenAction = { [weak self, number, counter] in
             self?.reciteShimoFinished(number: number, counter: counter)
         }
+        poemSupplier.stepIntoShimo()
         screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
     }
 }

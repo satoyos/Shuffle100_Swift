@@ -47,6 +47,9 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
         screen.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteShimoFinished(number: number, counter: counter)
         }
+        screen.skipToNextScreenAction = { [weak self, number, counter] in
+            self?.reciteShimoFinished(number: number, counter: counter)
+        }
         screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
     }
 }
