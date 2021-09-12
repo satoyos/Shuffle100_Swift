@@ -22,11 +22,10 @@ class GoThrough100PoemsUITest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_goThroghWithSkipForward() {
+    func test_goThroghWithSkipForward_inNormalMode() {
         
         let recitePage = homePage.gotoRecitePoemPage()
         let forwordButton = recitePage.forwardButton
-//        let playButton = recitePage.playButton
         
         XCTAssert(recitePage.jokaTitle.exists, "まず序歌へ")
 
@@ -37,7 +36,6 @@ class GoThrough100PoemsUITest: XCTestCase {
             }
             XCTContext.runActivity(named: "すぐに早送りボタンを押すと、下の句へ。") { (activiti) in
                 forwordButton.tap()
-//                playButton.tap()
                 XCTAssert(recitePage.isReciting(number: i, side: .shimo))
             }
         }

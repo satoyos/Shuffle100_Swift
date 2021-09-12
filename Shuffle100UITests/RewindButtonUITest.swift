@@ -37,7 +37,6 @@ class RewindButtonUITest: XCTestCase {
                 .tapForwardButton()
                 .tapForwardButton()
                 .tapForwardButton()
-                .tapForwardButton()
             // then
             XCTAssert(recitePage.isReciting(number: 2, side: .kami))
         }
@@ -56,7 +55,6 @@ class RewindButtonUITest: XCTestCase {
         XCTContext.runActivity(named: "1首目の下の句まで進む") { _ in
             // when
             recitePage
-                .tapForwardButton()
                 .tapForwardButton()
                 .tapForwardButton()
             // then

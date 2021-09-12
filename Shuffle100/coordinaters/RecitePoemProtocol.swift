@@ -64,9 +64,6 @@ extension RecitePoemProtocol where Self: Coordinator {
         screen.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteKamiFinished(number: number, counter: counter)
         }
-        screen.skipToNextScreenAction = {[weak self] in
-            self?.addKamiScreenActionsForKamiEnding()
-        }
         addKamiScreenActionsForKamiEnding()
         screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
     }
