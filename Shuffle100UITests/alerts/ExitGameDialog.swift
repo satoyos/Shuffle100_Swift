@@ -21,12 +21,13 @@ final class ExitGameDialog: AlertObjectable, WaitInUITest {
     }
     
     var confirmButton: XCUIElement {
-        return app.alerts.buttons[A11y.confirm].firstMatch
+        waitToHittable(for: app.alerts.buttons[A11y.confirm].firstMatch, timeout: timeOutSec)
     }
     
     var cancelButton: XCUIElement {
-        return app.alerts.buttons[A11y.cancel].firstMatch
+        waitToHittable(for: app.alerts.buttons[A11y.cancel].firstMatch, timeout: timeOutSec)
     }
+    
     
     enum A11y{
         static let confirm = "終了する"
