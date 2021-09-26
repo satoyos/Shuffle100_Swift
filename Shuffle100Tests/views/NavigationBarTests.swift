@@ -10,8 +10,19 @@ import XCTest
 
 class NavigationBarTests: XCTestCase {
 
+    var scrollEdgeAppearance: UINavigationBarAppearance? {
+        UINavigationBar.appearance().scrollEdgeAppearance
+    }
+    
+    var standardAppearance: UINavigationBarAppearance? {
+        UINavigationBar.appearance().standardAppearance
+    }
+    
     func test_scrollEdgeAppearanceIsSet() {
         // This property must be set after iOS 15, Xcode 13
-        XCTAssertNotNil(UINavigationBar.appearance().scrollEdgeAppearance)
+        if #available(iOS 15.0, *) {
+            XCTAssertNotNil(scrollEdgeAppearance)
+            XCTAssertNotNil(standardAppearance)
+        }
     }
 }

@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         disableConnectHardwareKeyboardOnSimulator()
         cleanUserDefualtIfUITesting()
+        if #available(iOS 15.0, *) {
+            setScrollEdgeAppearnceForNavigationBar()
+        }
 
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navController)
@@ -74,5 +77,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .filter({ $0.responds(to: setHardwareLayout) })
             .forEach { $0.perform(setHardwareLayout, with: nil) }
 #endif
+    }
+    
+    private func setScrollEdgeAppearnceForNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = StandardColor.barTintColor
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
     }
 }
