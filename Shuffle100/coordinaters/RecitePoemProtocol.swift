@@ -49,6 +49,7 @@ extension RecitePoemProtocol where Self: Coordinator {
             screen.skipToNextScreenAction = { [weak self] in
                 self?.jokaFinished()
             }
+            screen.loadViewIfNeeded()
             screen.playJoka(shorten: shorten)
         }
         CATransaction.commit()
