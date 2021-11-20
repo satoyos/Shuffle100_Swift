@@ -53,6 +53,9 @@
             reference = "container:Shuffle100.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Test All.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
