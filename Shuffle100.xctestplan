@@ -1,0 +1,48 @@
+{
+  "configurations" : [
+    {
+      "id" : "D1B56273-0FA3-4339-8FA2-092D3990B1B2",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "environmentVariableEntries" : [
+      {
+        "key" : "WONT_SAVE_DATA",
+        "value" : "1"
+      },
+      {
+        "key" : "IGNORE_SAVED_DATA",
+        "value" : "1"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Shuffle100.xcodeproj",
+      "identifier" : "923D590D2143BB0A000F5E60",
+      "name" : "Shuffle100"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Shuffle100.xcodeproj",
+        "identifier" : "923D59212143BB0B000F5E60",
+        "name" : "Shuffle100Tests"
+      }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:Shuffle100.xcodeproj",
+        "identifier" : "923D592C2143BB0B000F5E60",
+        "name" : "Shuffle100UITests"
+      }
+    }
+  ],
+  "version" : 1
+}
