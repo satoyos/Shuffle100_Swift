@@ -47,6 +47,8 @@ class MemorizeTImerScreenUITest: XCTestCase {
     }
     
     func test_goThroughMemorizeTime() {
+        //given
+        self.executionTimeAllowance = 1200
         // when
         let timerPage = homePage.gotoMemorizeTimerPage()
         timerPage.buttonToPlay.tap()
