@@ -9,6 +9,16 @@
     }
   ],
   "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "WONT_SAVE_DATA",
+        "value" : "1"
+      },
+      {
+        "key" : "IGNORE_SAVED_DATA",
+        "value" : "1"
+      }
+    ],
     "testTimeoutsEnabled" : true
   },
   "testTargets" : [
