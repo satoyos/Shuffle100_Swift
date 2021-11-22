@@ -30,6 +30,7 @@
       }
     },
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:Shuffle100.xcodeproj",
         "identifier" : "923D592C2143BB0B000F5E60",
