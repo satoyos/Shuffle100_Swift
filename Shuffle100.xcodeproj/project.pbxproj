@@ -781,7 +781,7 @@
 		92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerPage.swift; sourceTree = "<group>"; };
 		92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipPoemUITest.swift; sourceTree = "<group>"; };
 		92E102C02749117E00889521 /* Shuffle100.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Shuffle100.xctestplan; sourceTree = "<group>"; };
-		92E102C12749BBC400889521 /* Test All.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Test All.xctestplan"; sourceTree = "<group>"; };
+		92E102C12749BBC400889521 /* Test on Cloud.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Test on Cloud.xctestplan"; sourceTree = "<group>"; };
 		92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPoemToSaveAlert.swift; sourceTree = "<group>"; };
 		92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNameGivenForFudaSetAlert.swift; sourceTree = "<group>"; };
 		92E5C53C26665BCC009A46F5 /* ReciteSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsPage.swift; sourceTree = "<group>"; };
@@ -936,7 +936,7 @@
 			isa = PBXGroup;
 			children = (
 				92E102C02749117E00889521 /* Shuffle100.xctestplan */,
-				92E102C12749BBC400889521 /* Test All.xctestplan */,
+				92E102C12749BBC400889521 /* Test on Cloud.xctestplan */,
 				92FC398C22917E6000791053 /* Readme.md */,
 				923D59102143BB0A000F5E60 /* Shuffle100 */,
 				923D59252143BB0B000F5E60 /* Shuffle100Tests */,

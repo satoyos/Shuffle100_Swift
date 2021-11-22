@@ -54,7 +54,7 @@
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:Test All.xctestplan">
+            reference = "container:Test on Cloud.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
