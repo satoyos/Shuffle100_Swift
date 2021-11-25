@@ -64,9 +64,13 @@ class BeginnerModeUITest: XCTestCase {
         // then
         XCTAssert(recitePage.exists, "読み上げ画面に戻る")
         XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
-        XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { _ in
-            waitToAppear(for: whatsNextPage.pageTitle, timeout: 15)
-        }
+//        XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { _ in
+//            waitToAppear(for: whatsNextPage.pageTitle, timeout: 15)
+//        }
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(whatsNextPage.exists, "やっぱり「次はどうする？」画面が現れる")
     }
     
     func test_goNext() {
