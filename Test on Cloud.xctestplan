@@ -31,8 +31,6 @@
     },
     {
       "skippedTests" : [
-        "FakeModeUITest",
-        "FiveColorsPickerUITest",
         "FudaSetSavingUITest",
         "GoThrough100PoemsUITest",
         "GotoRecitePoemScreenUITest",
