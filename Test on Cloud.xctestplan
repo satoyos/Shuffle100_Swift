@@ -31,8 +31,6 @@
     },
     {
       "skippedTests" : [
-        "FudaSetSavingUITest",
-        "GoThrough100PoemsUITest",
         "GotoRecitePoemScreenUITest",
         "HelpListUITest",
         "HomeScreenUITest",
