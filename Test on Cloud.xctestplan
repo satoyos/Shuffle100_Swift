@@ -31,7 +31,7 @@
     },
     {
       "skippedTests" : [
-        "GotoRecitePoemScreenUITest",
+        "GoThrough100PoemsUITest",
         "HelpListUITest",
         "HomeScreenUITest",
         "MemorizeTImerScreenUITest",
