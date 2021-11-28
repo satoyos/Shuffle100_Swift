@@ -82,8 +82,12 @@ class GoThrough100PoemsUITest: XCTestCase {
         }
         XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { activity in
             // when
+            recitePage.forwardButton.tap()
+            // then
+            //            waitToAppear(for: allPoemRecitedPage.pageTitle, timeout: 12)
             let allPoemRecitedPage = AllPoemRecitedPage(app: app)
-            waitToAppear(for: allPoemRecitedPage.pageTitle, timeout: 12)
+            XCTAssert(allPoemRecitedPage.exists)
+            // when
             allPoemRecitedPage.backToTopButton.tap()
             // then
             XCTAssert(homePage.exists)
