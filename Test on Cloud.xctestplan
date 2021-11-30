@@ -33,8 +33,6 @@
       "skippedTests" : [
         "GoThrough100PoemsUITest",
         "MemorizeTImerScreenUITest",
-        "NgramPickerUITest",
-        "PoemPickerIntegrationUITest",
         "PoemPickerScreenUITest",
         "PostMortemUITest",
         "ReciteSettingsUITest",
