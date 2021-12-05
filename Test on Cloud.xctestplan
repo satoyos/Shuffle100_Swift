@@ -33,6 +33,9 @@
       "skippedTests" : [
         "GoThrough100PoemsUITest",
         "MemorizeTImerScreenUITest",
+        "ReciteSettingsUITest\/test_IntervalSetting()",
+        "ReciteSettingsUITest\/test_KamiShimoIntervalSetting()",
+        "RewindButtonUITest",
         "SelectReciteModeUITest",
         "SelectSingerUITest",
         "SkipPoemUITest"
