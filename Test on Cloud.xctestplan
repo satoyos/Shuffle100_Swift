@@ -35,7 +35,8 @@
         "MemorizeTImerScreenUITest",
         "ReciteSettingsUITest\/test_IntervalSetting()",
         "ReciteSettingsUITest\/test_KamiShimoIntervalSetting()",
-        "RewindButtonUITest"
+        "RewindButtonUITest",
+        "SkipPoemUITest"
       ],
       "target" : {
         "containerPath" : "container:Shuffle100.xcodeproj",
