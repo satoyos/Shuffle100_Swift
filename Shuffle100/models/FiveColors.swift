@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum FiveColors: String {
     case blue   = "青"
@@ -21,6 +22,7 @@ struct FiveColorData {
     let poemNumbers: [Int]
     let name: String
     let file: String
+    let uicolor: UIColor
 }
 
 fileprivate let blueSetNumbers =   [ 3,  5,  6, 12, 14, 24, 30, 31, 50, 57, 61, 62, 69, 70, 74, 75, 76, 82, 91, 100]
@@ -31,10 +33,35 @@ fileprivate let orangeSetNumbers = [19, 21, 25, 27, 43, 44, 45, 49, 52, 53, 56, 
 
 struct FiveColorsDataHolder {
     static let sharedDic: Dictionary<FiveColors,FiveColorData> = [
-        .blue: FiveColorData(type: .blue, poemNumbers: blueSetNumbers, name: FiveColors.blue.rawValue, file: "blue.png"),
-        .yellow: FiveColorData(type: .yellow, poemNumbers: yellowSetNumbers, name: FiveColors.yellow.rawValue, file: "yellow.png"),
-        .green: FiveColorData(type: .green, poemNumbers: greenSetNumbers, name: FiveColors.green.rawValue, file: "green.png"),
-        .pink: FiveColorData(type: .pink, poemNumbers: pinkSetNumbers, name: FiveColors.pink.rawValue, file: "pink.png"),
-        .orange: FiveColorData(type: .orange, poemNumbers: orangeSetNumbers, name: FiveColors.orange.rawValue, file: "orange.png")
+        .blue: FiveColorData(
+                    type: .blue,
+                    poemNumbers: blueSetNumbers,
+                    name: FiveColors.blue.rawValue,
+                    file: "blue.png",
+                    uicolor: .systemBlue),
+        .yellow: FiveColorData(
+                    type: .yellow,
+                    poemNumbers: yellowSetNumbers,
+                    name: FiveColors.yellow.rawValue,
+                    file: "yellow.png",
+                    uicolor: .systemYellow),
+        .green: FiveColorData(
+                    type: .green,
+                    poemNumbers: greenSetNumbers,
+                    name: FiveColors.green.rawValue,
+                    file: "green.png",
+                    uicolor: .systemGreen),
+        .pink: FiveColorData(
+                    type: .pink,
+                    poemNumbers: pinkSetNumbers,
+                    name: FiveColors.pink.rawValue,
+                    file: "pink.png",
+                    uicolor: .systemPink),
+        .orange: FiveColorData(
+                    type: .orange,
+                    poemNumbers: orangeSetNumbers,
+                    name: FiveColors.orange.rawValue,
+                    file: "orange.png",
+                    uicolor: .systemOrange)
     ]
 }

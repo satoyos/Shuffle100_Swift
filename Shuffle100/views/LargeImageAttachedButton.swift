@@ -15,8 +15,10 @@ class LargeImageAttachedButton: UIButton {
         setImageOf(filename: filename)
     }
     
-    func setImageOf(filename: String) {
-        let image = UIImage(named: filename)!.reSizeImage(reSize: imageSize())
+    func setImageOf(filename: String, with renderingMode: UIImage.RenderingMode = .automatic) {
+        let image = UIImage(named: filename)!
+            .reSizeImage(reSize: imageSize())
+            .withRenderingMode(renderingMode)
         setImage(image, for: .normal)
     }
     

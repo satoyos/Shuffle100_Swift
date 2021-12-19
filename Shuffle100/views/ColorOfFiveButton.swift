@@ -20,4 +20,11 @@ final class ColorOfFiveButton: LargeImageAttachedButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func initWithImage(filename: String) {
+        imageView?.contentMode = .scaleToFill
+        guard let colorData = FiveColorsDataHolder.sharedDic[color] else { return }
+        imageView?.tintColor = colorData.uicolor
+        setImageOf(filename: filename, with: .alwaysTemplate)
+    }
 }
