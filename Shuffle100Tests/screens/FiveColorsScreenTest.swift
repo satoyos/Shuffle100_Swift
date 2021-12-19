@@ -35,6 +35,10 @@ class FiveColorsScreenTest: XCTestCase {
             let button = screen.blueButton
             XCTAssertNotEqual(button.frame.height, 0)
             XCTAssertEqual(button.titleLabel?.text, "青")
+            XCTAssertEqual(button.imageView?.tintColor, .systemBlue)
+        }
+        XCTContext.runActivity(named: "緑ボタンの色も正しく設定されている") { _ in
+            XCTAssertEqual(screen.greenButton.imageView?.tintColor, .systemGreen)
         }
         XCTContext.runActivity(named: "バッジアイコンが正しく表示されている") { _ in
             let buttonItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem
