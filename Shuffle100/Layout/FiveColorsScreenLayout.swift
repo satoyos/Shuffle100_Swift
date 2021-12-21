@@ -31,7 +31,7 @@ extension FiveColorsScreen: SHViewSizeGetter {
     
     internal func refreshImageOnButtons() {
         allColorButtons.forEach { button in
-            button.setImageOf(filename: imageFilePathFor(color: button.color))
+            button.setImageOf(filename: imageFilePathFor(color: button.color), with: .alwaysTemplate)
         }
     }
     

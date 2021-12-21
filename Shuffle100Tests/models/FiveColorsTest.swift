@@ -22,12 +22,12 @@ class FiveColorsTest: XCTestCase {
     func test_initFiveColorData () throws {
         // given, when
         let testName = "あっちょんぶりけ"
-        let testPath = "test.png"
+//        let testPath = "test.png"
         let colorData = FiveColorData(
                           type: .green,
                           poemNumbers: [1, 3, 5, 7],
                           name: testName,
-                          file: testPath,
+//                          file: testPath,
                           uicolor: .systemGreen)
         // then
         XCTAssertEqual(colorData.type, FiveColors.green)
