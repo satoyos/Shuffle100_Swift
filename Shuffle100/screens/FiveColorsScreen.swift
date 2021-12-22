@@ -46,10 +46,8 @@ final class FiveColorsScreen: SettingsAttachedScreen {
         var path = ""
         switch resultStatus {
         case .full:
-//            path = "5colors/full/\(colorDIc.file)"
             path = "5colors/full_template.png"
         case .partial:
-//            path = "5colors/partial/\(colorDIc.file)"
             path = "5colors/half_template.png"
         case .empry:
             path = "5colors/empty.png"
