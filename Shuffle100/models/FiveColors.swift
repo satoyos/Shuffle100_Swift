@@ -21,7 +21,6 @@ struct FiveColorData {
     let type: FiveColors
     let poemNumbers: [Int]
     let name: String
-//    let file: String
     let uicolor: UIColor
 }
 
@@ -32,37 +31,31 @@ fileprivate let pinkSetNumbers =   [ 1,  4, 13, 16, 22, 28, 34, 40, 48, 51, 58, 
 fileprivate let orangeSetNumbers = [19, 21, 25, 27, 43, 44, 45, 49, 52, 53, 56, 63, 64, 67, 77, 88, 90, 95, 98, 99]
 
 struct FiveColorsDataHolder {
-//    static let sharedDic: Dictionary<FiveColors,FiveColorData> = [
     static let sharedDic: [FiveColors: FiveColorData] = [
         .blue: FiveColorData(
                     type: .blue,
                     poemNumbers: blueSetNumbers,
                     name: FiveColors.blue.rawValue,
-//                    file: "blue.png",
                     uicolor: .systemBlue),
         .yellow: FiveColorData(
                     type: .yellow,
                     poemNumbers: yellowSetNumbers,
                     name: FiveColors.yellow.rawValue,
-//                    file: "yellow.png",
                     uicolor: .systemYellow),
         .green: FiveColorData(
                     type: .green,
                     poemNumbers: greenSetNumbers,
                     name: FiveColors.green.rawValue,
-//                    file: "green.png",
                     uicolor: .systemGreen),
         .pink: FiveColorData(
                     type: .pink,
                     poemNumbers: pinkSetNumbers,
                     name: FiveColors.pink.rawValue,
-//                    file: "pink.png",
                     uicolor: .systemPink),
         .orange: FiveColorData(
                     type: .orange,
                     poemNumbers: orangeSetNumbers,
                     name: FiveColors.orange.rawValue,
-//                    file: "orange.png",
                     uicolor: .systemOrange)
     ]
 }
