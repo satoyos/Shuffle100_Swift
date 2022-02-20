@@ -18,18 +18,14 @@ class AudioPlayerFactory {
         
         let session = AVAudioSession.sharedInstance()
         do {
-            // CategoryをPlaybackにする
-            try session.setCategory(.playback, mode: .default)
-        } catch  {
-            // 予期しない場合
-            fatalError("Category設定失敗")
-        }
-        // session有効化
-        do {
-            try session.setActive(true)
+          // CategoryをPlaybackにする
+          try session.setCategory(.playback, mode: .default)
+          // session有効化
+          try session.setActive(true)  // ← 次はここにオプションを設定する予定
         } catch {
-            // 予期しない場合
-            fatalError("Session有効化失敗")
+          // 何らかの理由でうまく行かない場合 (その場合もアプリを落とさない)
+//          fatalError("Session有効化失敗")
+          assertionFailure("AudioSessionの初期設定時エラー: \(error)")
         }
     }
     
