@@ -83,17 +83,17 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     private func startGame(settings: Settings, store: StoreManager) {
         var gameDriveCoordinator: Coordinator
 
-        switch settings.reciteMode {
-        case .normal:
-            gameDriveCoordinator = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-        case .nonstop:
-            gameDriveCoordinator = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-        case .beginner:
-            gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-        }
-        gameDriveCoordinator.start()
-        self.childCoordinator = gameDriveCoordinator
-
+      AudioPlayerFactory.shared.setupAudioSession()
+      switch settings.reciteMode {
+      case .normal:
+        gameDriveCoordinator = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
+      case .nonstop:
+        gameDriveCoordinator = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
+      case .beginner:
+        gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
+      }
+      gameDriveCoordinator.start()
+      self.childCoordinator = gameDriveCoordinator
     }
 
 
@@ -106,6 +106,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     private func openReciteSettings(from screen: UIViewController, settins: Settings, store: StoreManager) {
         let coordinator = ReciteSettingsCoordinator(settings: settins, fromScreen: screen, store: store)
         coordinator.start()
+        AudioPlayerFactory.shared.setupAudioSession()
         self.childCoordinator = coordinator
     }
 
@@ -118,6 +119,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     private func openMemorizeTimer() {
         let coordinator = MemorizeTimerCoordinator(navigationController: navigationController)
         coordinator.start()
+        AudioPlayerFactory.shared.setupAudioSession()
         self.childCoordinator = coordinator
     }
 }

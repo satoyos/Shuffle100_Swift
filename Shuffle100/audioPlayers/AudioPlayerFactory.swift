@@ -23,9 +23,14 @@ class AudioPlayerFactory {
           // session有効化
           try session.setActive(true, options: [.notifyOthersOnDeactivation])
         } catch {
-          // 何らかの理由でうまく行かない場合 (その場合もアプリを落とさない)
-//          fatalError("Session有効化失敗")
-          assertionFailure("AudioSessionの初期設定時エラー: \(error)")
+          //  Do nothing here:
+          // 何らかの理由でうまく行かない場合もアプリを落とさない
+          //
+          // スクリーンタイムで制限されているときなどは、失敗する。
+          // しかし、何度かsetupのチャンスを用意することで、どこかで成功するはず。
+          // それでも失敗するようなら、どうしようもない。
+          //
+//          assertionFailure("AudioSessionの初期設定時エラー: \(error)")
         }
     }
     
