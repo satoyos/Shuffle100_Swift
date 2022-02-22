@@ -21,7 +21,7 @@ class AudioPlayerFactory {
           // CategoryをPlaybackにする
           try session.setCategory(.playback, mode: .default)
           // session有効化
-          try session.setActive(true, options: .notifyOthersOnDeactivation)  // ← 次はここにオプションを設定する予定
+          try session.setActive(true, options: [.notifyOthersOnDeactivation])
         } catch {
           // 何らかの理由でうまく行かない場合 (その場合もアプリを落とさない)
 //          fatalError("Session有効化失敗")
