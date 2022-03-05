@@ -24,8 +24,9 @@ def desired_caps
           deviceName:    "iPhone 8 Plus",  # 5.5inch
           # deviceName:    "iPad Pro (12.9-inch) (2nd generation)",
           # deviceName:    "iPad Pro (12.9-inch) (4th generation)",
-          platformVersion: "15.0",
-          app: '../DerivedData/Shuffle100/Build/Products/Debug-iphonesimulator/Shuffle100.app',
+          platformVersion: "15.2",
+          # app: '../DerivedData/Shuffle100/Build/Products/Debug-iphonesimulator/Shuffle100.app',
+          app: ENV['HOME'] + '/Library/Developer/Xcode/DerivedData/Shuffle100-abeczwhdckfjwyednyocgmaharlu/Build/Products/Debug-iphonesimulator/Shuffle100.app',
           automationName: 'XCUITest',
           simpleIsVisibleCheck: true,
           iosInstallPause: 10000

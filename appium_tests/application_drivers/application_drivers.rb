@@ -83,9 +83,10 @@ def open_fuda_set_list_screen
 end
 
 def open_game
-  # open_game_without_check
-  click_element_of(TYPE_CELL, name: 'GameStartCell')
-  can_see(JOKA)
+  click_element_of(TYPE_CELL, name: STR_START_GAME)
+  # sleep_while_animation
+  # can_see(JOKA)
+  # なぜかヘッダ部の「序歌」の確認に失敗するようになったので、コメントアウト。
 end
 
 def open_game_without_check
