@@ -60,12 +60,17 @@ final class RecitePoemScreen: SettingsAttachedScreen {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let timerForPrgoress = self.timerForPrgoress {
-            timerForPrgoress.invalidate()
+      super.viewWillDisappear(animated)
+      if let timerForPrgoress = self.timerForPrgoress {
+        timerForPrgoress.invalidate()
+      }
+      if let currentPlayer = currentPlayer {
+        if currentPlayer.isPlaying {
+          currentPlayer.stop()
         }
-        // スリープを有効に戻す
-        UIApplication.shared.isIdleTimerDisabled = false
+      }
+      // スリープを有効に戻す
+      UIApplication.shared.isIdleTimerDisabled = false
     }
     
     func addActionsToButtons() {
