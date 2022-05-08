@@ -40,6 +40,8 @@ final class SelectModePage: PageObjectable {
             label = A11y.nonStopMode
         case .normal:
             label = A11y.normalMode
+        case .hokkaido:
+            label = A11y.hokkaidoMode
         }
         return label
     }
@@ -50,5 +52,6 @@ final class SelectModePage: PageObjectable {
         static let beginnrMode = "初心者 (チラし取り)"
         static let normalMode = "通常 (競技かるた)"
         static let nonStopMode = "ノンストップ (止まらない)"
+        static let hokkaidoMode = "下の句かるた (北海道式)"
     }
 }

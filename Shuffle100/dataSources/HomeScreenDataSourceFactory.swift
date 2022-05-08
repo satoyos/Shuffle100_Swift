@@ -13,7 +13,8 @@ struct HomeScreenDataSourceFactory {
     static let reciteModeHolders = [
         ReciteModeHolder(mode: .normal, title: "通常"),
         ReciteModeHolder(mode: .beginner, title: "初心者"),
-        ReciteModeHolder(mode: .nonstop, title: "ノンストップ")
+        ReciteModeHolder(mode: .nonstop, title: "ノンストップ"),
+        ReciteModeHolder(mode: .hokkaido, title: "下の句かるた")
     ]
     
     static func settingsDataSource(for type: HomeCellType, settings: Settings) -> SettingsCellDataSource {

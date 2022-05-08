@@ -91,6 +91,9 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
         gameDriveCoordinator = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
       case .beginner:
         gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
+      case .hokkaido:
+        // To be implemented
+        return
       }
       gameDriveCoordinator.start()
       self.childCoordinator = gameDriveCoordinator

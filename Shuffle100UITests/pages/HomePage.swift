@@ -72,6 +72,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         static let beginner = "初心者"
         static let normal = "通常"
         static let nonStop = "ノンストップ"
+        static let hokkaido = "下の句かるた"
         static let gear = "GearButton"
         static let help = "HelpButton"
         static let singerIaLabel = "IA（ボーカロイド）"
@@ -157,6 +158,8 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
             label = A11y.beginner
         case .nonstop:
             label = A11y.nonStop
+        case .hokkaido:
+            label = A11y.hokkaido
         }
         return label
     }
