@@ -14,7 +14,8 @@ final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UI
     let reciteModeHolders = [
         ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
         ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
-        ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)")
+        ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)"),
+        ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
     ]
     
     lazy var picker = UIPickerView()
@@ -37,7 +38,7 @@ final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UI
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ReciteMode.allCases.count
+        reciteModeHolders.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

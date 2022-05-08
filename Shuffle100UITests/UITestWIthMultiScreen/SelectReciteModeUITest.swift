@@ -39,4 +39,21 @@ class SelectReciteModeUITest: XCTestCase {
             XCTAssertFalse(homePage.fakeModeCell.exists)
         }
     }
+    
+    func test_reciteModeSupports_HokkaidoMode() {
+        // when
+        let modePage = homePage.gotoSelectModePage()
+        // then
+        XCTAssert(modePage.exists)
+        
+        XCTContext.runActivity(named: "下の句かるたモードを選んでトップ画面に戻ると、その結果が反映されている") { _ in
+            // when
+            modePage
+                .selectMode(.hokkaido)
+                .backToTopButton.tap()
+            // then
+            XCTAssert(homePage.reciteModeIs(.hokkaido))
+//            XCTAssertFalse(homePage.fakeModeCell.exists)
+        }
+    }
 }

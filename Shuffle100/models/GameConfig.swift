@@ -12,6 +12,7 @@ enum ReciteMode: String, CaseIterable, Codable {
     case normal
     case beginner
     case nonstop
+    case hokkaido
 }
 
 struct ReciteModeHolder: Codable {

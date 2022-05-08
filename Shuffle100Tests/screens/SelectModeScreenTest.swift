@@ -16,7 +16,7 @@ class SelectModeScreenTest: XCTestCase {
         // when
         let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)
         // then
-        XCTAssertEqual(rowNum, 3)
+        XCTAssertEqual(rowNum, 4) // 通常, 初心者, ノンストップ, 下の句かるた
     }
 
     func test_deaultSelectedRowIs0() {
