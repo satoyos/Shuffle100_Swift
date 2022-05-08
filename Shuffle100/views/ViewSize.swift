@@ -39,80 +39,72 @@ class SizeFactory {
     }
 }
 
-class PhoneSize: SizeByDevice {
+class PhoneSize: SizeByDevice, AppWindow {
     func playButtonHeight() -> CGFloat {
-        return keyWindow().bounds.width * 300 / 375
+        keyWindow.bounds.width * 300 / 375
     }
     
     func skipButtonHeight() -> CGFloat {
-        return skipButtonHeightBase
+        skipButtonHeightBase
     }
     
     func intervalTimeLabelPointSize() -> CGFloat {
-        return intervalTimeLabelSizeBase
+        intervalTimeLabelSizeBase
     }
     
     func intervalSiderHeight() -> CGFloat {
-        return intervalSliderHeightBase
+        intervalSliderHeightBase
     }
     
     func whatsNextButtonHeight() -> CGFloat {
-        return whatsNextButtonHeightBase
+        whatsNextButtonHeightBase
     }
     
     func imageOffsetX() -> CGFloat {
-        return imageOffsetXBase
+        imageOffsetXBase
     }
     
     func fudaSetPickerWidth() -> CGFloat {
-        return 270
+        270
     }
     
     func memorizeTimerLabelPointSize() -> CGFloat {
-        return memorizeTimerLabelSizeBase
+        memorizeTimerLabelSizeBase
     }
     
 
 }
 
-class PadSize: SizeByDevice {
+class PadSize: SizeByDevice, AppWindow {
     func playButtonHeight() -> CGFloat {
-        return keyWindow().bounds.width * 2 / 3
+        keyWindow.bounds.width * 2 / 3
     }
     
     func skipButtonHeight() -> CGFloat {
-        return skipButtonHeightBase * 2
+        skipButtonHeightBase * 2
     }
     
     func intervalTimeLabelPointSize() -> CGFloat {
-        return intervalTimeLabelSizeBase * 2
+        intervalTimeLabelSizeBase * 2
     }
     
     func intervalSiderHeight() -> CGFloat {
-        return intervalSliderHeightBase * 2
+        intervalSliderHeightBase * 2
     }
     
     func whatsNextButtonHeight() -> CGFloat {
-        return whatsNextButtonHeightBase * 2
+        whatsNextButtonHeightBase * 2
     }
     
     func imageOffsetX() -> CGFloat {
-        return imageOffsetXBase * 2
+        imageOffsetXBase * 2
     }
     
     func fudaSetPickerWidth() -> CGFloat {
-        return 270
+        270
     }
     
     func memorizeTimerLabelPointSize() -> CGFloat {
-        return memorizeTimerLabelSizeBase * 2
-    }
-}
-
-private func keyWindow() -> UIWindow {
-    if let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first {
-        return window
-    } else {
-        fatalError("KeyWindowが取得できません")
+        memorizeTimerLabelSizeBase * 2
     }
 }

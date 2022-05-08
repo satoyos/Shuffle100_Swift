@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AppWindow {
 
     var window: UIWindow?
     var coordinator: MainCoordinator?
@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     
         if CommandLine.arguments.contains("--uitesting") {
-            UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5
+//            UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5
+            let window = keyWindow
+            window.layer.speed = 5
         }
 
         return true
