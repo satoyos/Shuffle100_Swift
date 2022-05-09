@@ -60,7 +60,7 @@ extension VolumeSettingScreen {
     }
     
     private func sliderHeight() -> CGFloat {
-        return sizeByDevice.intervalSiderHeight()
+        sizeByDevice.intervalSiderHeight
     }
 
 }

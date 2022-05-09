@@ -61,11 +61,11 @@ extension TimeSettingScreen {
     }
 
     private func labelPointSize() -> CGFloat {
-        return sizeByDevice.intervalTimeLabelPointSize()
+        sizeByDevice.intervalTimeLabelPointSize
     }
     
     private func one10thOfViewHeight() -> CGFloat {
-        return 0.1 * viewHeiht()
+        0.1 * viewHeiht()
     }
     
     private func blankBetweenLabelAndSlider() -> CGFloat {
@@ -73,7 +73,7 @@ extension TimeSettingScreen {
     }
 
     private func sliderHeight() -> CGFloat {
-        return sizeByDevice.intervalSiderHeight()
+        sizeByDevice.intervalSiderHeight
     }
     
     private func viewWidth() -> CGFloat {

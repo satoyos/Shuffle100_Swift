@@ -24,7 +24,7 @@ class MemorizeTimerScreenTest: XCTestCase {
 
     func test_initialLayout() throws {
         XCTAssertEqual(screen.title, "暗記時間タイマー")
-        let charLabelSize = SizeFactory.createSizeByDevice().memorizeTimerLabelPointSize() / 3
+        let charLabelSize = SizeFactory.createSizeByDevice().memorizeTimerLabelPointSize / 3
         XCTAssertEqual(screen.minCharLabel.frame.width, charLabelSize, accuracy: 1.0)
         XCTAssertEqual(screen.playButton.configuration?.title, String.fontAwesomeIcon(name: .play))
         XCTAssertFalse(screen.isTimerRunning)

@@ -56,7 +56,6 @@ extension FiveColorsScreen: SHViewSizeGetter {
     }
 
     private func buttonSize() -> CGSize {
-        return CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight())
+        return CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight)
     }
-
 }

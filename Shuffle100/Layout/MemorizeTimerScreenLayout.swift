@@ -19,7 +19,7 @@ extension MemorizeTimerScreen {
     private func configureTimerContainer() {
         _ = timerContaier.then {
             $0.snp.makeConstraints { (make) -> Void in
-                let height = sizeByDevice.memorizeTimerLabelPointSize()
+                let height = sizeByDevice.memorizeTimerLabelPointSize
                 make.width.equalToSuperview()
                 make.height.equalTo(height)
                 make.centerX.equalToSuperview()
@@ -37,7 +37,7 @@ extension MemorizeTimerScreen {
     }
     
     private func configureMinCharLabel() {
-        let unitLabelSize = sizeByDevice.memorizeTimerLabelPointSize() / 3
+        let unitLabelSize = sizeByDevice.memorizeTimerLabelPointSize / 3.0
         _ = minCharLabel.then {
             $0.text = "分"
             $0.font = UIFont.systemFont(ofSize: unitLabelSize * 0.8)
@@ -50,7 +50,7 @@ extension MemorizeTimerScreen {
     }
     
     private func configureMinLabel() {
-        let labelSize = sizeByDevice.memorizeTimerLabelPointSize()
+        let labelSize = sizeByDevice.memorizeTimerLabelPointSize
         _ = minLabel.then {
             $0.text = "00"
             $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelSize * 0.8, weight: .medium)
@@ -64,7 +64,7 @@ extension MemorizeTimerScreen {
     }
     
     private func configureSecLabel() {
-        let labelSize = sizeByDevice.memorizeTimerLabelPointSize()
+        let labelSize = sizeByDevice.memorizeTimerLabelPointSize
         _ = secLabel.then {
             $0.text = "00"
             $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelSize * 0.8, weight: .medium)
@@ -78,7 +78,7 @@ extension MemorizeTimerScreen {
     }
     
     private func configureSecCharLabel() {
-        let unitLabelSize = sizeByDevice.memorizeTimerLabelPointSize() / 3
+        let unitLabelSize = sizeByDevice.memorizeTimerLabelPointSize / 3
         _ = secCharLabel.then {
             $0.text = "秒"
             $0.font = UIFont.systemFont(ofSize: unitLabelSize * 0.8)
@@ -91,7 +91,7 @@ extension MemorizeTimerScreen {
     }
     
     private func configurePlayButton() {
-        let buttonSize = sizeByDevice.memorizeTimerLabelPointSize()
+        let buttonSize = sizeByDevice.memorizeTimerLabelPointSize
         _ = playButton.then {
             $0.configurePlayButton(height: buttonSize, fontSize: buttonSize / 2, iconType: .play, leftInset: true)
             $0.snp.makeConstraints { (make) in

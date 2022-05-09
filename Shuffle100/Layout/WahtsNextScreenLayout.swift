@@ -56,7 +56,7 @@ extension WhatsNextScreen {
     }
     
     private func buttonSize() -> CGSize {
-        return CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight())
+        CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight)
     }
     
     private func viewWidth() -> CGFloat {
