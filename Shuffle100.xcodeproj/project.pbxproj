@@ -131,6 +131,7 @@
 		924E892F2827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
 		924E89302827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
 		924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */; };
+		924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
@@ -649,6 +650,7 @@
 		924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewSetCompletedAlert.swift; sourceTree = "<group>"; };
 		924E892D2827F69B00DEB4C5 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
 		924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindowProtocolTest.swift; sourceTree = "<group>"; };
+		924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButtonTest.swift; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
@@ -935,6 +937,7 @@
 				92F8245125AC4878008E031D /* SettingTableCellTest.swift */,
 				9215013027005A5E001E39FE /* NavigationBarTests.swift */,
 				924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */,
+				924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1845,6 +1848,7 @@
 				92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1EC22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
+				924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */,
 				92E5C553267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
 				92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,

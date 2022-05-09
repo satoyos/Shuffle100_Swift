@@ -21,11 +21,22 @@ class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
     }
     
     func configure(height: CGFloat, fontSize: CGFloat, iconType: SOHGlyphIconType) {
-        self.titleLabel?.textAlignment = .center
-        self.titleLabel?.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
+        var config = UIButton.Configuration.plain()
+        var container = AttributeContainer()
+        container.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
+        config.attributedTitle = AttributedString(stringExpression(of: iconType), attributes: container)
+        config.titleAlignment = .automatic
         
-        self.setTitleColor(standardButtonColor(), for: .normal)
-        self.setTitle(stringExpression(of: iconType), for: .normal)
+        // 次のTransformer設定がなせ必要なのか、不明。
+        //  ただ、以下の記事を参考にしたら、本当にフォントがきちんと表示されるようになった。(
+        //  https://zenn.dev/tomsan96/articles/ff777c3730dd45
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.fontAwesome(ofSize: fontSize, style: .solid)
+            return outgoing
+        }
+        
+        self.configuration = config
         self.cornerRadius = height / 2
         self.useCornerRadius = true
         setGradient()

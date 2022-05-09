@@ -11,9 +11,11 @@ import UIKit
 final class ReciteViewPlayButton: ReciteViewButton {
     let colorWaitingForPause = UIColor.dynamicColor(light: Color.shoujouhi.UIColor, dark: Color.tsutsujiiro.UIColor)
     let colorWaitingForPlay = Color.konpeki.UIColor
+    var fontSize: CGFloat?
     
     func configurePlayButton(height: CGFloat, fontSize: CGFloat, iconType: SOHGlyphIconType, leftInset: Bool = false) {
         super.configure(height: height, fontSize: fontSize, iconType: iconType)
+        self.fontSize = fontSize
         switch iconType {
         case .play:
             showAsWaitingFor(.play)
@@ -25,17 +27,24 @@ final class ReciteViewPlayButton: ReciteViewButton {
     }
     
     func showAsWaitingFor(_ waitingFor: WaitingFor) {
+        var config = self.configuration ?? UIButton.Configuration.plain()
         switch waitingFor {
         case .play:
-            self.setTitle(String.fontAwesomeIcon(name: .play), for: .normal)
-            self.setTitleColor(colorWaitingForPlay, for: .normal)
-            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: (titleLabel?.font.pointSize)! * 0.3, bottom: 0, right: 0)
+            config.title = stringExpression(of: .play)
+            config.baseForegroundColor = colorWaitingForPlay
+            config.contentInsets = NSDirectionalEdgeInsets(
+                top: 0,
+                leading: fontSize! * 0.3,
+                bottom: 0,
+                trailing: 0)            
             self.accessibilityIdentifier = "waitingForPlay"
         case .pause:
-            self.setTitle(String.fontAwesomeIcon(name: .pause), for: .normal)
-            self.setTitleColor(colorWaitingForPause, for: .normal)
-            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            config.title = stringExpression(of: .pause)
+            config.baseForegroundColor = colorWaitingForPause
+            config.contentInsets = NSDirectionalEdgeInsets(
+                top: 0, leading: 0, bottom: 0, trailing: 0)
             self.accessibilityIdentifier = "waitingForPause"
         }
+        self.configuration = config
     }
 }
