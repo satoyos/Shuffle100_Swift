@@ -41,11 +41,7 @@ final class RecitePoemView: UIView {
     }
     
     fileprivate func backgroundColor() -> UIColor {
-        if #available(iOS 13.0, *) {
-            return UIColor.systemBackground
-        } else {
-            return .white
-        }
+        UIColor.systemBackground
     }
     
     func initView(title: String) {

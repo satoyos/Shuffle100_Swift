@@ -19,21 +19,16 @@ class UIColorExtensionTest: XCTestCase {
     }
 
     func test_createDynamicColor() {
-        if #available(iOS 13.0, *) {
-            // ライトモードでは白、ダークモードでは黒になるUIColorを生成できる
-            let dynamicColor = UIColor.dynamicColor(light: .white, dark: .black)
-            XCTAssertNotNil(dynamicColor)
-            // ダークモードでは黒になる
-            
-            let tc1 = UITraitCollection(userInterfaceStyle: .dark)
-            
-            XCTAssertEqual(dynamicColor.resolvedColor(with: tc1), UIColor.black)
-            // ライトモードでは白にる
-            let tc2 = UITraitCollection(userInterfaceStyle: .light)
-            XCTAssertEqual(dynamicColor.resolvedColor(with: tc2), UIColor.white)
-
-        } else {
-            XCTAssert(true)
-        }
+        // ライトモードでは白、ダークモードでは黒になるUIColorを生成できる
+        let dynamicColor = UIColor.dynamicColor(light: .white, dark: .black)
+        XCTAssertNotNil(dynamicColor)
+        // ダークモードでは黒になる
+        
+        let tc1 = UITraitCollection(userInterfaceStyle: .dark)
+        
+        XCTAssertEqual(dynamicColor.resolvedColor(with: tc1), UIColor.black)
+        // ライトモードでは白にる
+        let tc2 = UITraitCollection(userInterfaceStyle: .light)
+        XCTAssertEqual(dynamicColor.resolvedColor(with: tc2), UIColor.white)
     }
 }

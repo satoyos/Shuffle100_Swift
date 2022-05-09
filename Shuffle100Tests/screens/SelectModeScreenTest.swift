@@ -54,10 +54,6 @@ class SelectModeScreenTest: XCTestCase {
         // when
         screen.loadViewIfNeeded()
         // then
-        if #available(iOS 13.0, *) {
-            XCTAssertEqual(screen.view.backgroundColor, UIColor.systemBackground)
-        } else {
-            XCTAssertEqual(screen.view.backgroundColor, UIColor.white)
-        }
+        XCTAssertEqual(screen.view.backgroundColor, UIColor.systemBackground)
     }
 }
