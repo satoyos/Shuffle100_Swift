@@ -9,18 +9,24 @@
 import XCTest
 
 class RecitePoemViewTests: XCTestCase {
+    let rpView = RecitePoemView()
+    
+    override func setUpWithError() throws {
+        // when
+        rpView.initView(title: "test")
+    }
     
     func test_initRcitePoemView() {
-        let view = RecitePoemView()
-        view.initView(title: "test")
-        XCTAssertNotNil(view)
-        XCTAssertNil(view.jokaDescLabel)
+        // then
+        XCTAssertNotNil(rpView)
+        XCTAssertNil(rpView.jokaDescLabel)
+        XCTAssertNotNil(rpView.forwardButton)
+        let config = rpView.forwardButton.configuration
+        XCTAssertNotNil(config)
+        XCTAssertEqual(config?.title, String.fontAwesomeIcon(name: .forward))
     }
     
     func test_addNormalJokaDescLabel() {
-        // given
-        let rpView = RecitePoemView()
-        rpView.initView(title: "test")
         // when
         rpView.addNormalJokaDescLabel()
         // then
@@ -29,9 +35,6 @@ class RecitePoemViewTests: XCTestCase {
     }
     
     func test_addShortJokaDescLabel() {
-        // given
-        let rpView = RecitePoemView()
-        rpView.initView(title: "test")
         // when
         rpView.addShortJokaDescLabel()
         // then

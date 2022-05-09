@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let skipButtonHeightBase: CGFloat = 30
+private let skipButtonHeightBase: CGFloat = 40
 private let intervalTimeLabelSizeBase: CGFloat = 100
 private let intervalSliderHeightBase = intervalTimeLabelSizeBase * 4 / 10
 private let imageOffsetXBase: CGFloat = 30
