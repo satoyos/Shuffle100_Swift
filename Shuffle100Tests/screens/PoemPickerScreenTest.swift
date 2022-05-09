@@ -49,12 +49,8 @@ class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
     
     private func firstCellColorIsSelectedColor() {
         // then
-        if #available(iOS 13.0, *) {
-            let firstCellBackColor = firstCell().backgroundColor
-            XCTAssertEqual(firstCellBackColor, StandardColor.selectedPoemBackColor)
-        } else {
-            XCTAssertEqual(firstCell().backgroundColor, Color.nadeshiko.UIColor)
-        }
+        let firstCellBackColor = firstCell().backgroundColor
+        XCTAssertEqual(firstCellBackColor, StandardColor.selectedPoemBackColor)
     }
     
     func test_selectedPoemCellIsNadeshiko() {
