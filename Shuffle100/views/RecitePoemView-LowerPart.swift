@@ -63,7 +63,7 @@ extension RecitePoemView {
     
     
     private func skipButtonSize() -> CGSize {
-        return CGSize(width: sizeByDevice.skipButtonHeight(), height: sizeByDevice.skipButtonHeight())
+        CGSize(width: sizeByDevice.skipButtonHeight, height: sizeByDevice.skipButtonHeight)
     }
     
     private func skipButtonFontSize() -> CGFloat {

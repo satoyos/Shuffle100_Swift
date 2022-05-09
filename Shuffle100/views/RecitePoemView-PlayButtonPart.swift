@@ -24,7 +24,7 @@ extension RecitePoemView {
     }
     
     internal func playButtonSize() -> CGSize {
-        return CGSize(width: sizeByDevice.playButtonHeight(), height: sizeByDevice.playButtonHeight())
+        CGSize(width: sizeByDevice.playButtonHeight, height: sizeByDevice.playButtonHeight)
     }
     
     private func playButtonFontSize() -> CGFloat {

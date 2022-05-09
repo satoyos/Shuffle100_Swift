@@ -16,14 +16,14 @@ private let whatsNextButtonHeightBase: CGFloat = 50
 private let memorizeTimerLabelSizeBase: CGFloat = 100
 
 protocol SizeByDevice {
-    func playButtonHeight() -> CGFloat
-    func skipButtonHeight() -> CGFloat
-    func intervalTimeLabelPointSize() -> CGFloat
-    func intervalSiderHeight() -> CGFloat
-    func whatsNextButtonHeight() -> CGFloat
-    func imageOffsetX() -> CGFloat
-    func fudaSetPickerWidth() -> CGFloat
-    func memorizeTimerLabelPointSize() -> CGFloat
+    var playButtonHeight: CGFloat { get }
+    var skipButtonHeight: CGFloat { get }
+    var intervalTimeLabelPointSize: CGFloat { get }
+    var intervalSiderHeight: CGFloat { get }
+    var whatsNextButtonHeight: CGFloat { get }
+    var imageOffsetX: CGFloat { get }
+    var fudaSetPickerWidth: CGFloat { get }
+    var memorizeTimerLabelPointSize: CGFloat { get }
 }
 
 class SizeFactory {
@@ -40,35 +40,35 @@ class SizeFactory {
 }
 
 class PhoneSize: SizeByDevice, AppWindow {
-    func playButtonHeight() -> CGFloat {
+    var playButtonHeight: CGFloat {
         keyWindow.bounds.width * 300 / 375
     }
     
-    func skipButtonHeight() -> CGFloat {
+    var skipButtonHeight: CGFloat {
         skipButtonHeightBase
     }
     
-    func intervalTimeLabelPointSize() -> CGFloat {
+    var intervalTimeLabelPointSize: CGFloat {
         intervalTimeLabelSizeBase
     }
     
-    func intervalSiderHeight() -> CGFloat {
+    var intervalSiderHeight: CGFloat {
         intervalSliderHeightBase
     }
     
-    func whatsNextButtonHeight() -> CGFloat {
+    var whatsNextButtonHeight: CGFloat {
         whatsNextButtonHeightBase
     }
     
-    func imageOffsetX() -> CGFloat {
+    var imageOffsetX: CGFloat {
         imageOffsetXBase
     }
     
-    func fudaSetPickerWidth() -> CGFloat {
+    var fudaSetPickerWidth: CGFloat {
         270
     }
     
-    func memorizeTimerLabelPointSize() -> CGFloat {
+    var memorizeTimerLabelPointSize: CGFloat {
         memorizeTimerLabelSizeBase
     }
     
@@ -76,35 +76,35 @@ class PhoneSize: SizeByDevice, AppWindow {
 }
 
 class PadSize: SizeByDevice, AppWindow {
-    func playButtonHeight() -> CGFloat {
+    var playButtonHeight: CGFloat {
         keyWindow.bounds.width * 2 / 3
     }
     
-    func skipButtonHeight() -> CGFloat {
+    var skipButtonHeight: CGFloat {
         skipButtonHeightBase * 2
     }
     
-    func intervalTimeLabelPointSize() -> CGFloat {
+    var intervalTimeLabelPointSize: CGFloat {
         intervalTimeLabelSizeBase * 2
     }
     
-    func intervalSiderHeight() -> CGFloat {
+    var intervalSiderHeight: CGFloat {
         intervalSliderHeightBase * 2
     }
     
-    func whatsNextButtonHeight() -> CGFloat {
+    var whatsNextButtonHeight: CGFloat {
         whatsNextButtonHeightBase * 2
     }
     
-    func imageOffsetX() -> CGFloat {
+    var imageOffsetX: CGFloat {
         imageOffsetXBase * 2
     }
     
-    func fudaSetPickerWidth() -> CGFloat {
+    var fudaSetPickerWidth: CGFloat {
         270
     }
     
-    func memorizeTimerLabelPointSize() -> CGFloat {
+    var memorizeTimerLabelPointSize: CGFloat {
         memorizeTimerLabelSizeBase * 2
     }
 }

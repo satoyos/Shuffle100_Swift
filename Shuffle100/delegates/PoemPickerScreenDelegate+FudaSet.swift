@@ -72,7 +72,7 @@ extension PoemPickerScreen: UIPickerViewDelegate {
     
     internal func overwriteExistingFudaSet() {        
         let sizeByDevice = SizeFactory.createSizeByDevice()
-        let fudaSetPickerWidth = sizeByDevice.fudaSetPickerWidth()
+        let fudaSetPickerWidth = sizeByDevice.fudaSetPickerWidth
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: fudaSetPickerWidth, height: 150))
         pickerView.delegate = self
         pickerView.dataSource = self
