@@ -15,7 +15,8 @@ final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UI
         ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
         ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
         ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)"),
-        ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
+        // 下の句かるたは、Ver.7までおあずけ
+//        ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
     ]
     
     lazy var picker = UIPickerView()
