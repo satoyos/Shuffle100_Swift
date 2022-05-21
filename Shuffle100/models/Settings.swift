@@ -15,7 +15,7 @@ final class Settings: Codable {
     var state100: SelectedState100
     var savedFudaSets: [SavedFudaSet]
     
-    init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100(), savedFudaSets: [SavedFudaSet] = []){
+    init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100.allSelected, savedFudaSets: [SavedFudaSet] = []){
         self.mode = mode
         self.recitingConfig = recitingConfig
         self.state100 = SelectedState100(bool100: bool100)

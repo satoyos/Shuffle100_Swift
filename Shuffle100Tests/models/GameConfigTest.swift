@@ -15,7 +15,7 @@ class GameConfigTest: XCTestCase {
         let settings = Settings()
         XCTAssertEqual(settings.reciteMode, .normal)
         XCTAssertFalse(settings.fakeMode)
-        XCTAssertEqual(settings.state100.bools, Bool100.allTrueBoolArray())
+        XCTAssertEqual(settings.state100.bools, Bool100.allSelected)
         XCTAssertEqual(settings.singerID, "ia")
         XCTAssertEqual(settings.postMortemEnabled, false)
         XCTAssertEqual(settings.shortenJoka, false)

@@ -22,24 +22,24 @@ class Bool100Test: XCTestCase {
     
     func test_allSelected() {
         // when
-        let sut = Bool100.allSelected()
+        let sut = Bool100.allSelected
         // then
-        let trueCount = sut.bools.filter{$0}.count
+        let trueCount = sut.filter{$0}.count
         XCTAssertEqual(trueCount, 100)
     }
     
-    func test_creatingAllTrueBoolArray() {
-        let sut = Bool100.allTrueBoolArray()
-        for i in (0..<100) {
-            XCTAssertTrue(sut[i])
-        }
-    }
+//    func test_creatingAllTrueBoolArray() {
+//        let sut = Bool100.allTrueBoolArray()
+//        for i in (0..<100) {
+//            XCTAssertTrue(sut[i])
+//        }
+//    }
     
-    func test_creatingAllFalseBoolArray() {
-        let sut = Bool100.allFalseBoolArray()
-        for i in (0..<100) {
-            XCTAssertFalse(sut[i])
-        }
-    }
+//    func test_creatingAllFalseBoolArray() {
+//        let sut = Bool100.allFalseBoolArray()
+//        for i in (0..<100) {
+//            XCTAssertFalse(sut[i])
+//        }
+//    }
 
 }

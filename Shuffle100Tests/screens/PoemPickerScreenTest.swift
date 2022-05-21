@@ -65,9 +65,9 @@ class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
     
     func test_unselectedPoemCellIsWhite() {
         // given
-        var boolArray = Bool100.allTrueBoolArray()
-        boolArray[0] = false
-        let testSettings = Settings(bool100: Bool100(bools: boolArray))
+        var bool100 = Bool100.allSelected
+        bool100[0] = false
+        let testSettings = Settings(bool100: bool100)
         // when
         screen.settings = testSettings
         screen.tableView.reloadData()
@@ -86,8 +86,8 @@ class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
     
     func test_tappingUnselectedPoem_makeItSelected() {
         // given
-        let testBoolArray = Bool100.allFalseBoolArray()
-        let testSetting = Settings(bool100: Bool100(bools: testBoolArray))
+        let testBool100 = Bool100.allUnselected
+        let testSetting = Settings(bool100: testBool100)
         screen.settings = testSetting
         screen.tableView.reloadData()
         let testIndex = IndexPath(row: 0, section: 0)
