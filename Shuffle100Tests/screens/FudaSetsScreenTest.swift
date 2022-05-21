@@ -36,7 +36,7 @@ class FudaSetsScreenTest: XCTestCase, ApplyListContentConfiguration {
         let screen = FudaSetsScreen()
         screen.loadViewIfNeeded()
         // when
-        let set = SavedFudaSet(name: "aaa", state100: SelectedState100.init(bool100: Bool100.allSelected()))
+        let set = SavedFudaSet(name: "aaa", state100: SelectedState100.init(bool100: Bool100.allSelected))
         screen.settings.savedFudaSets.append(set)
         // then
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
@@ -73,11 +73,11 @@ class FudaSetsScreenTest: XCTestCase, ApplyListContentConfiguration {
     }
     
     private func selectedState97() -> SelectedState100 {
-        var boolArray = Bool100.allFalseBoolArray()
+        var boolArray = Bool100.allUnselected
         boolArray[0] = true
         boolArray[1] = true
         boolArray[4] = true
-        return SelectedState100(bool100: Bool100(bools: boolArray))
+        return SelectedState100(bool100: boolArray)
     }
     
     func test_deleteFudaSet() {

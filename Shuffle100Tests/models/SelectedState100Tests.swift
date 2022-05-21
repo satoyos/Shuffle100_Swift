@@ -24,10 +24,9 @@ class SelectedState100Tests: XCTestCase {
     
     func test_initWithBool100() {
         // given
-        var b_array = Bool100.allFalseBoolArray()
-        b_array[3] = true
-        b_array[25] = true
-        let testBool100 = Bool100(bools: b_array)
+        var testBool100 = Bool100.allUnselected
+        testBool100[3] = true
+        testBool100[25] = true
         // when
         let state100 = SelectedState100(bool100: testBool100)
         // then
@@ -167,11 +166,10 @@ class SelectedState100Tests: XCTestCase {
     
     func test_allSelectedNumbers() {
         // given
-        var bools = Bool100.allFalseBoolArray()
-        bools[1] = true
-        bools[2] = true
-        bools[10] = true
-        let bool100 = Bool100(bools: bools)
+        var bool100 = Bool100.allUnselected
+        bool100[1] = true
+        bool100[2] = true
+        bool100[10] = true
         let state100 = SelectedState100(bool100: bool100)
         // when
         let numbers = state100.allSelectedNumbers

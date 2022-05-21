@@ -17,8 +17,8 @@ struct SelectedState100: Codable, Equatable {
         }
     }
     
-    init(bool100: Bool100 = Bool100()){
-        bools = bool100.bools
+    init(bool100: Bool100 = Bool100.allSelected){
+        bools = bool100
     }
 
     // Equatable
@@ -42,8 +42,8 @@ struct SelectedState100: Codable, Equatable {
     }
     
     private static func get_bool100_of(bool: Bool) -> Bool100 {
-        if bool { return Bool100.allSelected() }
-        else { return Bool100.allUnselected() }
+        if bool { return Bool100.allSelected}
+        else { return Bool100.allUnselected}
     }
     
     func ofNumber(_ number: Int) throws -> Bool {
@@ -63,11 +63,11 @@ struct SelectedState100: Codable, Equatable {
     }
     
     mutating func cancelAll() {
-        self.bools = Bool100.allFalseBoolArray()
+        self.bools = Bool100.allUnselected
     }
     
     mutating func selectAll() {
-        self.bools = Bool100.allTrueBoolArray()
+        self.bools = Bool100.allSelected
     }
     
     mutating func selectOf(number: Int) {
