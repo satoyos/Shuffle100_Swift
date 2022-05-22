@@ -10,7 +10,7 @@ import Foundation
 
 struct SelectedState100: Codable, Equatable {
     static let defaultState = true
-    var bools: Array<Bool>
+    var bools: Bool100
     var selectedNum: Int {
         get {
             return bools.filter{$0 == true}.count
