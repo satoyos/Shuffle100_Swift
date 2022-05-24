@@ -10,6 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
+fileprivate let timeFontScaler = 0.75
+fileprivate let charFontScaler = 0.8
+
 extension MemorizeTimerScreen {
     internal func layoutScreen() {
         configureTimerContainer()
@@ -40,7 +43,7 @@ extension MemorizeTimerScreen {
         let unitLabelSize = sizeByDevice.memorizeTimerLabelPointSize / 3.0
         _ = minCharLabel.then {
             $0.text = "分"
-            $0.font = UIFont.systemFont(ofSize: unitLabelSize * 0.8)
+            $0.font = UIFont.systemFont(ofSize: unitLabelSize * charFontScaler)
             $0.snp.makeConstraints { (make) -> Void in
                 make.size.equalTo(unitLabelSize)
                 make.bottom.equalToSuperview()
@@ -53,7 +56,9 @@ extension MemorizeTimerScreen {
         let labelSize = sizeByDevice.memorizeTimerLabelPointSize
         _ = minLabel.then {
             $0.text = "00"
-            $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelSize * 0.8, weight: .medium)
+            $0.font = UIFont.monospacedDigitSystemFont(
+                    ofSize: labelSize * timeFontScaler,
+                    weight: .medium)
             $0.textAlignment = .right
             $0.snp.makeConstraints { (make) in
                 make.size.equalTo(labelSize)
@@ -67,7 +72,9 @@ extension MemorizeTimerScreen {
         let labelSize = sizeByDevice.memorizeTimerLabelPointSize
         _ = secLabel.then {
             $0.text = "00"
-            $0.font = UIFont.monospacedDigitSystemFont(ofSize: labelSize * 0.8, weight: .medium)
+            $0.font = UIFont.monospacedDigitSystemFont(
+                    ofSize: labelSize * timeFontScaler,
+                    weight: .medium)
             $0.textAlignment = .right
             $0.snp.makeConstraints { (make) in
                 make.size.equalTo(labelSize)
@@ -81,7 +88,7 @@ extension MemorizeTimerScreen {
         let unitLabelSize = sizeByDevice.memorizeTimerLabelPointSize / 3
         _ = secCharLabel.then {
             $0.text = "秒"
-            $0.font = UIFont.systemFont(ofSize: unitLabelSize * 0.8)
+            $0.font = UIFont.systemFont(ofSize: unitLabelSize * charFontScaler)
             $0.snp.makeConstraints { (make) -> Void in
                 make.size.equalTo(unitLabelSize)
                 make.bottom.equalToSuperview()
