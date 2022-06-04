@@ -28,7 +28,7 @@ struct Poem: Codable {
 }
 
 struct Poem100 {
-    static var poems = readPoemsFromJson()
+    static let originalPoems = readPoemsFromJson()
     
     static func readPoemsFromJson() -> [Poem] {
         let jsonPath = Bundle.main.path(forResource: "100", ofType: "json")!

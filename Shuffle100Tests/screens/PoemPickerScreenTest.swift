@@ -37,7 +37,7 @@ class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
     
     func test_1stCellShowsPoemNo1() {
         let config = listContentConfig(of: firstCell())
-        XCTAssertEqual(config.text, Poem100.poems[0].strWithNumberAndLiner())
+        XCTAssertEqual(config.text, Poem100.originalPoems[0].strWithNumberAndLiner())
     }
 
     func test_verseFontIsMinchoAndBodySizeForDynamicType() {
