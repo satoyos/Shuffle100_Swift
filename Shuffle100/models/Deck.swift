@@ -9,7 +9,7 @@
 import Foundation
 
 struct Deck {
-    static let originalPoems = Poem100.poems
+    static let originalPoems = Poem100.originalPoems
     var poems: [Poem]
     private var count = 0
     
