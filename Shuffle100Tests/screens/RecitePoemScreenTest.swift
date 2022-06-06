@@ -50,10 +50,13 @@ class RecitePoemScreenTest: XCTestCase {
     func test_stepIntoNextPoemFlipView() {
         // given
         screen.recitePoemView.initView(title: "aaa")
-        var supplier = PoemSupplier()
+        let supplier = PoemSupplier()
         // when
         let poem = supplier.drawNextPoem()!
-        screen.stepIntoNextPoem(number: poem.number, at: supplier.currentIndex, total: supplier.size )
+        let counter = supplier.currentIndex
+        screen.stepIntoNextPoem(number: poem.number,
+                                at: counter,
+                                total: supplier.size )
         sleep(1)
         // then
         XCTAssertEqual(screen.recitePoemView.headerTitle, "1首め:上の句 (全100首)")

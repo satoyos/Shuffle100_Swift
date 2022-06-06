@@ -20,7 +20,7 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
         self.navigationController = navigationController
         self.settings = settings
         self.store = store
-        let deck = Deck.createFrom(state100: settings.state100)
+        let deck = Poem100.createFrom(state100: settings.state100)
         self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
         if settings.fakeMode {
             poemSupplier.addFakePoems()
@@ -46,7 +46,7 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   
     private func stepIntoShimoInNormalMode() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
-        let number = poemSupplier.poem.number
+        guard let number = poemSupplier.currentPoem?.number else { return }
         let counter = poemSupplier.currentIndex
         screen.playerFinishedAction = { [weak self, number, counter] in
             self?.reciteShimoFinished(number: number, counter: counter)

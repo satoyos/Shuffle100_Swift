@@ -20,7 +20,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
         self.navigationController = navigationController
         self.settings = settings
         self.store = store
-        let deck = Deck.createFrom(state100: settings.state100)
+        let deck = Poem100.createFrom(state100: settings.state100)
         self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
         if settings.fakeMode {
             poemSupplier.addFakePoems()
@@ -42,7 +42,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     private func stepIntoShimoInBeginnerMode() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
 //        print("初心者モードで下の句に突入！")
-        let number = poemSupplier.poem.number
+        guard let number = poemSupplier.currentPoem?.number else { return }
         let counter = poemSupplier.currentIndex
         screen.playerFinishedAction = { [weak self] in
             self?.openWhatsNextScreen()
@@ -55,7 +55,13 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     
     internal func openWhatsNextScreen() {
         guard let screen = screen else { return }
-        let coordinator = WhatsNextCoordinator(fromScreen: screen, currentPoem: poemSupplier.poem, settings: settings, store: store, navigationController: navigationController)
+        guard let currentPoem = poemSupplier.currentPoem else { return }
+        let coordinator = WhatsNextCoordinator(
+                fromScreen: screen,
+                currentPoem: currentPoem,
+                settings: settings,
+                store: store,
+                navigationController: navigationController)
         coordinator.refrainEscalatingAction = { [weak self] in
             self?.refrainShimo()
         }
@@ -72,7 +78,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     internal func refrainShimo() {
         assert(true, "下の句を読み返す処理が、BeginnerModeのCoordinatorに戻ってきた！")
         guard let screen = self.screen as? RecitePoemScreen else { return }
-        let number = poemSupplier.poem.number
+        guard let number = poemSupplier.currentPoem?.number else { return }
         let counter = poemSupplier.currentIndex
         screen.refrainShimo(number: number, count: counter)
     }

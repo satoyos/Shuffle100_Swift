@@ -50,7 +50,7 @@ struct NgramDataFactory {
         var dic = [String: [Int]]()
         
         for (id, char) in firstCharDic {
-            let hitPoems = Deck.originalPoems.filter{$0.kimari_ji.first == char}
+            let hitPoems = Poem100.originalPoems.filter{$0.kimari_ji.first == char}
             dic[id] = hitPoems.map{$0.number}
         }
         var justOneArray = [Int]()
