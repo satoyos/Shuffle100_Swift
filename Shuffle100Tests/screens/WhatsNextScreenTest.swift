@@ -20,7 +20,7 @@ class WhatsNextScreenTest: XCTestCase {
 
     func test_initialScreen() {
         // given
-        var poemSupplier = PoemSupplier()
+        let poemSupplier = PoemSupplier()
         let testPoem = poemSupplier.drawNextPoem()!
         let screen = WhatsNextScreen(currentPoem: testPoem)
         // when

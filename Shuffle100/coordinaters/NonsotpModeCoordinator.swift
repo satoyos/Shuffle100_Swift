@@ -20,7 +20,7 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
         self.navigationController = navigationController
         self.settings = settings
         self.store = store
-        let deck = Deck.createFrom(state100: settings.state100)
+        let deck = Poem100.createFrom(state100: settings.state100)
         self.poemSupplier = PoemSupplier(deck: deck, shuffle: true)
         if settings.fakeMode {
             poemSupplier.addFakePoems()
@@ -41,7 +41,7 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
     
     private func stepIntoShimoInNonstopMode() {
         assert(true, "ノンストップモードで下の句に突入！")
-        let number = poemSupplier.poem.number
+        guard let number = poemSupplier.currentPoem?.number else { return }
         let counter = poemSupplier.currentIndex
         guard let screen = self.screen as? RecitePoemScreen else { return }
         screen.playerFinishedAction = { [weak self, number, counter] in

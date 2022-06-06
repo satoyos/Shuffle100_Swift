@@ -43,4 +43,14 @@ struct Poem100 {
             fatalError("JSONデータの読み込みに失敗")
         }
     }
+    
+    static func createFrom(state100: SelectedState100) -> [Poem] {        
+        var resultPoems = [Poem]()
+        for i in 0..<100 {
+            if state100.bools[i] {
+                resultPoems.append(originalPoems[i])
+            }
+        }
+        return resultPoems
+    }
 }

@@ -19,13 +19,13 @@ class PoemSupplierTests: XCTestCase {
     }
     
     func test_initWithArgs() {
-        let supplier = PoemSupplier(deck: Deck(), shuffle: true)
-        XCTAssertNotNil(supplier.deck)
+        let supplier = PoemSupplier(deck: Poem100.originalPoems, shuffle: true)
+//        XCTAssertNotNil(supplier.deck)
         XCTAssertEqual(supplier.currentIndex, 0)
     }
     
     func test_rollBackPrevPoem() {
-        var supplier = PoemSupplier(deck: Deck(), shuffle: false)
+        let supplier = PoemSupplier(deck: Poem100.originalPoems, shuffle: false)
         // 予め2枚めくっておく
         for _ in (1...2) { _ = supplier.drawNextPoem() }
         XCTAssertEqual(supplier.currentIndex, 2)
@@ -35,7 +35,7 @@ class PoemSupplierTests: XCTestCase {
         XCTAssertNotNil(poem)
         XCTAssertEqual(supplier.currentIndex, 1)
         XCTAssertEqual(poem!.number, 1)
-        XCTAssertEqual(supplier.poem.number, 1)
+        XCTAssertEqual(supplier.currentPoem?.number, 1)
         
         // もう1回ロールバックすると、もう戻る歌がないため、nilを返す
         let poem2 = supplier.rollBackPrevPoem()
@@ -43,8 +43,8 @@ class PoemSupplierTests: XCTestCase {
     }
     
     func test_stepIntoShimo() {
-        var supplier = PoemSupplier()
-        supplier.drawNextPoem()
+        let supplier = PoemSupplier()
+        _ = supplier.drawNextPoem()
         XCTAssertTrue(supplier.kamiNow)
         XCTAssertEqual(supplier.side, .kami)
         
@@ -55,18 +55,18 @@ class PoemSupplierTests: XCTestCase {
     
     func test_againstBugInRubyMotionEra() {
         // 1枚めくり、そこから巻き戻そうとすると、falseが返る
-        var supplier = PoemSupplier()
+        let supplier = PoemSupplier()
         supplier.drawNextPoem()
         let poem = supplier.rollBackPrevPoem()
         XCTAssertNil(poem)
         
         // このとき、poemプロパティの中身は空っぽ(nil)
-        XCTAssertNil(supplier.poem)
+        XCTAssertNil(supplier.currentPoem)
     }
     
     func test_new_drawNextPoem() {
         // given
-        var supplier = PoemSupplier()
+        let supplier = PoemSupplier()
         // まだ次の歌があるとき、そのPoemを返す
         let first = supplier.drawNextPoem()
         XCTAssertNotNil(first)
@@ -88,18 +88,18 @@ class PoemSupplierTests: XCTestCase {
         var state100 = SelectedState100.createOf(bool: false)
         state100.selectOf(number: 3)
         state100.selectOf(number: 5)
-        let deck = Deck.createFrom(state100: state100)
-        var supplier = PoemSupplier(deck: deck, shuffle: true)
-        XCTAssertEqual(supplier.deck.size, 2)
+        let deck = Poem100.createFrom(state100: state100)
+        let supplier = PoemSupplier(deck: deck, shuffle: true)
+        XCTAssertEqual(supplier.size, 2)
         // when
         supplier.addFakePoems()
         // then
-        XCTAssertEqual(supplier.deck.size, 4)
+        XCTAssertEqual(supplier.size, 4)
     }
     
     func test_resetCurrentIndex() {
         // given
-        var supplier = PoemSupplier()
+        let supplier = PoemSupplier()
         // when
         XCTAssertEqual(supplier.currentIndex, 0)
         supplier.drawNextPoem()

@@ -56,17 +56,16 @@ extension RecitePoemProtocol where Self: Coordinator {
         self.screen = screen
     }
     
-    mutating func jokaFinished() {
+    func jokaFinished() {
         assert(true, "序歌の読み上げ終了!!")
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
         guard let screen = self.screen as? RecitePoemScreen else { return }
         let number = firstPoem.number
-        let counter = poemSupplier.currentIndex
-        screen.playerFinishedAction = { [weak self, number, counter] in
-            self?.reciteKamiFinished(number: number, counter: counter)
+        screen.playerFinishedAction = { [weak self, number] in
+            self?.reciteKamiFinished(number: number, counter: 1)  // 序歌を読み上げたばかりなので、counterは1首目確定
         }
         addKamiScreenActionsForKamiEnding()
-        screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+        screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
     }
     
     mutating func reciteShimoFinished(number: Int, counter: Int) {
@@ -98,7 +97,7 @@ extension RecitePoemProtocol where Self: Coordinator {
             backToPreviousPoem()
         } else {  // 下の句の冒頭でrewindが押された場合
             guard let screen = self.screen as? RecitePoemScreen else { return }
-            let number = poemSupplier.poem.number
+            guard let number = poemSupplier.currentPoem?.number else { return }
             let counter = poemSupplier.currentIndex
             let size = poemSupplier.size
             poemSupplier.backToKami()
@@ -111,7 +110,7 @@ extension RecitePoemProtocol where Self: Coordinator {
     
     internal mutating func goNextPoem() {
         assert(true, "次の詩へ進むボタンが押されたことを、初心者モードのCoordinatorが知ったよ！")
-        let number = poemSupplier.poem.number
+        guard let number = poemSupplier.currentPoem?.number else { return }
         let counter = poemSupplier.currentIndex
         // 次の詩に進むことが決まった後は、Normalモードと同じで、デフォルトの動作をする
         reciteShimoFinished(number: number, counter: counter)

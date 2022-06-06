@@ -12,14 +12,16 @@ enum Side {
     case kami, shimo
 }
 
+fileprivate let originalPoems = Poem100.originalPoems
 
-struct PoemSupplier {
-    var deck: Deck
-    private var current_poem: Poem?
+class PoemSupplier {
+    private var deck: [Poem]
+    private var numberOfPoemsDrawn: Int = 0
     private var fuda_side: Side?
     private var mustShuffle: Bool
     
-    init(deck: Deck = Deck(), shuffle mustShuffle: Bool = true) {
+    init(deck: [Poem] = originalPoems,
+         shuffle mustShuffle: Bool = true) {
         self.deck = deck
         self.mustShuffle = mustShuffle
         if mustShuffle {
@@ -28,81 +30,87 @@ struct PoemSupplier {
     }
     
     var size: Int {
-        get {
-            return deck.size
-        }
+        deck.count
+    }
+ 
+    var currentIndex: Int {
+        numberOfPoemsDrawn
     }
     
-    var currentIndex: Int {
-        get {
-            return deck.counter
-        }
-    }
-
-    var poem: Poem! {
-        if let p = self.current_poem {
-            return p
-        } else {
-            return nil
-        }
-        
+    var currentPoem: Poem? {
+        guard currentIndex >= 1 else { return nil}
+        return deck[currentIndex - 1]
     }
     
     var kamiNow: Bool {
-        if let _ = self.current_poem {
-            return fuda_side! == .kami
-        } else {
-            return false
-        }
+        fuda_side == .kami
     }
     
     var side: Side? {
-        return fuda_side
+        fuda_side
+    }
+
+    func shuffleDeck(with size: Int) {
+        let shuffled = deck.shuffled()
+        self.deck = shuffled.prefix(size).map{ $0 }
     }
     
     @discardableResult
-    mutating func drawNextPoem() -> Poem? {
-        current_poem = deck.nextPoem()
-        switch current_poem {
-        case nil:
+    func drawNextPoem() -> Poem? {
+        guard numberOfPoemsDrawn < deck.count else { return nil }
+        let nextPoem = deck[numberOfPoemsDrawn]
+        numberOfPoemsDrawn += 1
+        setSideTo(.kami)
+        return nextPoem
+    }
+    
+    func rollBackPrevPoem() -> Poem? {
+        switch numberOfPoemsDrawn {
+        case 0:
+            return nil
+        case 1:
+            numberOfPoemsDrawn = 0
             return nil
         default:
-            self.fuda_side = .kami
-            return current_poem
+            numberOfPoemsDrawn -= 1
+            return deck[numberOfPoemsDrawn - 1]
         }
     }
     
-    mutating func rollBackPrevPoem() -> Poem? {
-        current_poem = deck.rollBackPoem()
-        switch current_poem {
-        case nil:
-            return nil
-        default:
-            self.fuda_side = .shimo
-            return current_poem
+    func stepIntoShimo() {
+        setSideTo(.shimo)
+    }
+    
+    func backToKami() {
+        setSideTo(.kami)
+    }
+    
+    func addFakePoems() {
+        if size >= 60 {
+            self.deck = originalPoems
+            return
         }
-    }
-    
-    mutating func stepIntoShimo() {
-        self.setSideTo(.shimo)
-    }
-    
-    mutating func backToKami() {
-        self.setSideTo(.kami)
-    }
-    
-    mutating func addFakePoems() {
-        deck.addFakePoems()
+        let selectedPoemNumbers = deck.map{ $0.number }
+        let int100 = Array(1...100)
+        let restNumbers = int100.diff(selectedPoemNumbers.shuffled())
+        for i in 0 ..< selectedPoemNumbers.count {
+            let idx = restNumbers[i]
+            self.deck.append(originalPoems[idx - 1])
+        }
         if mustShuffle {
-            deck.shuffle()
+            self.deck = deck.shuffled()
         }
     }
     
-    mutating func resetCurrentIndex() {
-        deck.resetCounter()
+    func resetCurrentIndex() {
+        self.numberOfPoemsDrawn = 0
     }
     
-    private mutating func setSideTo(_ side: Side) {
+    func poemNumbers() -> [Int] {
+        deck.map{ $0.number }
+    }
+    
+    private func setSideTo(_ side: Side) {
         self.fuda_side = side
     }
     
