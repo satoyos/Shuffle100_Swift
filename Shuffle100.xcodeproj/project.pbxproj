@@ -218,6 +218,10 @@
 		9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265517B2685F8F400C746D0 /* TorifudaPage.swift */; };
 		926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */; };
 		926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */; };
+		92719478284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
+		92719479284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
+		9271947A284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
+		9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271947B284F6FBE008DFB28 /* Poem100Test.swift */; };
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD42380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD52380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
@@ -685,6 +689,8 @@
 		9265517B2685F8F400C746D0 /* TorifudaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaPage.swift; sourceTree = "<group>"; };
 		926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPostMortemDialog.swift; sourceTree = "<group>"; };
 		926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameActionSheet.swift; sourceTree = "<group>"; };
+		92719477284F6F0A008DFB28 /* Poem100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem100.swift; sourceTree = "<group>"; };
+		9271947B284F6FBE008DFB28 /* Poem100Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem100Test.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenGameActions.swift; sourceTree = "<group>"; };
@@ -1169,6 +1175,7 @@
 				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
 				92B87D50250BBE96003BB51B /* FiveColorsTest.swift */,
 				926489182604480300CC4131 /* SettingsTest.swift */,
+				9271947B284F6FBE008DFB28 /* Poem100Test.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1293,6 +1300,7 @@
 				927E4BE7222E9DD200AF48F7 /* Deck.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				927E4BE5222E9DD100AF48F7 /* PoemExt.swift */,
+				92719477284F6F0A008DFB28 /* Poem100.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
 				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
 				92D5714E220EC7DB00235717 /* GameConfig.swift */,
@@ -1736,6 +1744,7 @@
 				92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
+				92719478284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				9298B70224C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
@@ -1897,6 +1906,7 @@
 				92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */,
 				92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				925B075F25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
+				92719479284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
 				92ABF9AC23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
 				92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
@@ -1925,6 +1935,7 @@
 				92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */,
 				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
+				9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */,
 				92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				92C176D225E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
@@ -2034,6 +2045,7 @@
 				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */,
 				9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
+				9271947A284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				92B9E96A2465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */,
 				92FFBF5F24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,

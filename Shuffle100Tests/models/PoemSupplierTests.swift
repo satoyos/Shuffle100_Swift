@@ -25,13 +25,16 @@ class PoemSupplierTests: XCTestCase {
     }
     
     func test_rollBackPrevPoem() {
+        // given
         let supplier = PoemSupplier(deck: Poem100.originalPoems, shuffle: false)
-        // 予め2枚めくっておく
-        for _ in (1...2) { _ = supplier.drawNextPoem() }
+        // when: 予め2枚めくっておく
+        for _ in (1...2) { supplier.drawNextPoem() }
+        // then
         XCTAssertEqual(supplier.currentIndex, 2)
-        
         // 1回ロールバックすると、currentIndexおよび歌番号が1になる。
+        // when
         let poem = supplier.rollBackPrevPoem()
+        // then
         XCTAssertNotNil(poem)
         XCTAssertEqual(supplier.currentIndex, 1)
         XCTAssertEqual(poem!.number, 1)
@@ -64,22 +67,27 @@ class PoemSupplierTests: XCTestCase {
         XCTAssertNil(supplier.currentPoem)
     }
     
-    func test_new_drawNextPoem() {
+    func test_drawNextPoem() {
         // given
         let supplier = PoemSupplier()
         // まだ次の歌があるとき、そのPoemを返す
+        // when
         let first = supplier.drawNextPoem()
+        // then
         XCTAssertNotNil(first)
-        // あと98枚引く
+        XCTAssertEqual(supplier.currentIndex, 1)
+        // when: あと98枚引く
         for _ in 1...98 {
-            _ = supplier.drawNextPoem()
+            supplier.drawNextPoem()
         }
-        // 100枚目を引く
+        // and when: 100枚目を引く
         let at100 = supplier.drawNextPoem()
+        // then
         XCTAssertEqual(supplier.currentIndex, 100)
         XCTAssertNotNil(at100)
-        // 100枚引いた状態で、もう1枚引く
+        // when: 100枚引いた状態で、もう1枚引く
         let after100 = supplier.drawNextPoem()
+        // then
         XCTAssertNil(after100)
     }
     
@@ -97,6 +105,25 @@ class PoemSupplierTests: XCTestCase {
         XCTAssertEqual(supplier.size, 4)
     }
     
+    func test_shuffleWithSize() {
+        // given
+        let supplier = PoemSupplier()
+        // when
+        supplier.shuffleDeck(with: 10)
+        // then
+        XCTAssertEqual(supplier.size, 10)
+        // when: 10枚めくる
+        for _ in 1...10 {
+            let poem = supplier.drawNextPoem()
+            // then
+            XCTAssertNotNil(poem)
+        }
+        // when: さらにもう1枚めくる
+        let drawMore = supplier.drawNextPoem()
+        // then
+        XCTAssertNil(drawMore)
+    }
+    
     func test_resetCurrentIndex() {
         // given
         let supplier = PoemSupplier()
@@ -111,5 +138,18 @@ class PoemSupplierTests: XCTestCase {
         supplier.resetCurrentIndex()
         // then
         XCTAssertEqual(supplier.currentIndex, 0)
+    }
+    
+    func test_poemNumbers() {
+        // given
+        var st100 = SelectedState100.createOf(bool: false)
+        let numbers = [25, 3, 17]
+        st100.selectInNumbers(numbers)
+        let deck = Poem100.createFrom(state100: st100)
+        let supplier = PoemSupplier(deck: deck, shuffle: true)
+        // when
+        let numbersFromDeck = supplier.poemNumbers()
+        // then
+        XCTAssertEqual(numbers.sorted(), numbersFromDeck.sorted())
     }
 }
