@@ -13,11 +13,11 @@ protocol RecitePoemProtocol: BackToHome {
     var store: StoreManager { get set }
     var poemSupplier: PoemSupplier { get set }
     
-    mutating func jokaFinished() -> Void
-    mutating func reciteKamiFinished(number: Int, counter: Int ) -> Void
-    mutating func reciteShimoFinished(number: Int, counter: Int) -> Void
-    mutating func goNextPoem() -> Void
-    mutating func startPostMortem() -> Void
+    func jokaFinished() -> Void
+    func reciteKamiFinished(number: Int, counter: Int ) -> Void
+    func reciteShimoFinished(number: Int, counter: Int) -> Void
+    func goNextPoem() -> Void
+    func startPostMortem() -> Void
     func addKamiScreenActionsForKamiEnding()
 }
 
@@ -68,7 +68,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
     }
     
-    mutating func reciteShimoFinished(number: Int, counter: Int) {
+    func reciteShimoFinished(number: Int, counter: Int) {
         assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
         guard let screen = self.screen as? RecitePoemScreen else { return }
         if let poem = poemSupplier.drawNextPoem() {
@@ -86,7 +86,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         }
     }
     
-    internal mutating func rewindToPrevious() {
+    internal func rewindToPrevious() {
         guard let side = poemSupplier.side else {
             assert(true, "序歌の冒頭でrewidが押された")
             backToHomeScreen()
@@ -108,7 +108,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         }
     }
     
-    internal mutating func goNextPoem() {
+    internal func goNextPoem() {
         assert(true, "次の詩へ進むボタンが押されたことを、初心者モードのCoordinatorが知ったよ！")
         guard let number = poemSupplier.currentPoem?.number else { return }
         let counter = poemSupplier.currentIndex
@@ -116,7 +116,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         reciteShimoFinished(number: number, counter: counter)
     }
     
-    internal mutating func startPostMortem() {
+    internal func startPostMortem() {
         print("!! Coordinatorから感想戦を始めますよ！!")
         poemSupplier.resetCurrentIndex()
         self.start()
@@ -130,7 +130,7 @@ extension RecitePoemProtocol where Self: Coordinator {
         self.childCoordinator = coordinator
     }
     
-    private mutating func backToPreviousPoem() {
+    private func backToPreviousPoem() {
         if let prevPoem = poemSupplier.rollBackPrevPoem() {
             guard let screen = self.screen as? RecitePoemScreen else { return }
             // 一つ前の歌(prevPoem)に戻す
