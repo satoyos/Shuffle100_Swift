@@ -26,14 +26,16 @@ extension NgramPickerScreen: UITableViewDelegate {
     private func makeSelectedFull(cell: NgramPickerTableCell) {
         let id = cell.accessibilityLabel!
         guard let numbers = numbersDic[id] else { fatalError("「\(id)」に対応する歌番号の配列が見つかりません")}
-        settings.state100.selectInNumbers(numbers)
+        let newState100 = settings.state100.selectInNumbers(numbers)
+        settings.state100 = newState100
         updateTableAndBadge()
     }
     
     private func makeSelectedNone(cell: NgramPickerTableCell) {
         let id = cell.accessibilityLabel!
         guard let numbers = numbersDic[id] else { fatalError("「\(id)」に対応する歌番号の配列が見つかりません")}
-        settings.state100.cancelInNumbers(numbers)
+        let newState100 = settings.state100.cancelInNumbers(numbers)
+        settings.state100 = newState100
         updateTableAndBadge()
     }
     

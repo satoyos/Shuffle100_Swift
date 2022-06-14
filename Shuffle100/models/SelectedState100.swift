@@ -12,9 +12,7 @@ struct SelectedState100: Codable, Equatable {
     static let defaultState = true
     var bools: Bool100
     var selectedNum: Int {
-        get {
-            return bools.filter{$0 == true}.count
-        }
+        bools.filter{$0 == true}.count
     }
     
     init(bool100: Bool100 = Bool100.allSelected){
@@ -27,18 +25,16 @@ struct SelectedState100: Codable, Equatable {
     }
       
     static func createOf(bool: Bool) -> SelectedState100 {
-        let initBool100 = SelectedState100.get_bool100_of(bool: bool)
+        let initBool100 = get_bool100_of(bool: bool)
         return SelectedState100(bool100: initBool100)
     }
     
     var allSelectedNumbers: [Int] {
-        get {
-            var  numbers = [Int]()
-            for i in 0 ..< 100 {
-                if bools[i] { numbers.append(i+1) }
-            }
-            return numbers
+        var  numbers = [Int]()
+        for (index, bool) in bools.enumerated() {
+            if bool { numbers.append(index + 1) }
         }
+        return numbers
     }
     
     private static func get_bool100_of(bool: Bool) -> Bool100 {
@@ -47,63 +43,84 @@ struct SelectedState100: Codable, Equatable {
     }
     
     func ofNumber(_ number: Int) throws -> Bool {
-        if number < 1 || number > 100 {
-            throw NSError(domain: "indexが範囲外!", code: -1)
-        } else {
-            return bools[number-1]
+        guard indexIsInBounds(number) else { throw NSError(domain: "indexが範囲外!", code: -1)
         }
+        return bools[number - 1]
     }
     
-    mutating func setStateOfNumber(state: Bool, index: Int) throws {
-        if index < 1 || index > 100 {
-            throw NSError(domain: "indexが範囲外!", code: -1)
-        } else {
-            bools[index-1] = state
+    func setStateOfNumber(state: Bool, index: Int) throws -> Self  {
+        guard indexIsInBounds(index) else { throw NSError(domain: "indexが範囲外!", code: -1)
         }
+        var newBools = bools
+        newBools[index-1] = state
+        return Self.init(bool100: newBools)
     }
     
-    mutating func cancelAll() {
-        self.bools = Bool100.allUnselected
+    private func indexIsInBounds(_ index: Int) -> Bool {
+        index >= 1 && index <= 100
     }
     
-    mutating func selectAll() {
-        self.bools = Bool100.allSelected
+    func cancelAll() -> Self {
+        Self.init(bool100: Bool100.allUnselected)
     }
     
-    mutating func selectOf(number: Int) {
-        do {
-            try self.setStateOfNumber(state: true, index: number)
-        } catch {
+    func selectAll() -> Self{
+        Self.init(bool100: Bool100.allSelected)
+    }
+    
+    func selectOf(number: Int) -> Self {
+//        do {
+//            tru {
+//
+//            }
+//            return try setStateOfNumber(state: true, index: number)
+//        } catch {
+//            fatalError("numberの値[\(number)]がサポート範囲外")
+//        }
+        guard let result = try? setStateOfNumber(state: true, index: number) else {
             fatalError("numberの値[\(number)]がサポート範囲外")
         }
+        return result
     }
     
-    mutating func cancelOf(number: Int) {
-        do {
-            try self.setStateOfNumber(state: false, index: number)
-        } catch {
-            print("numberの値[\(number)]がサポート範囲外")
-            exit(2)
+    func cancelOf(number: Int) -> Self {
+//        do {
+//            try self.setStateOfNumber(state: false, index: number)
+//        } catch {
+//            print("numberの値[\(number)]がサポート範囲外")
+//            exit(2)
+//        }
+        guard let result = try? setStateOfNumber(state: false, index: number) else {
+            fatalError("numberの値[\(number)]がサポート範囲外")
         }
+        return result
     }
     
-    mutating func selectInNumbers(_ array: Array<Int>) {
+    func selectInNumbers(_ array: [Int]) -> Self {
+        var newSS100 = self
         for num in array {
-            selectOf(number: num)
+            newSS100 = newSS100.selectOf(number: num)
         }
+        return newSS100
     }
     
-    mutating func cancelInNumbers(_ array: Array<Int>) {
+    func cancelInNumbers(_ array: [Int]) -> Self {
+        var newSS100 = self
         for num in array {
-            cancelOf(number: num)
+            newSS100 = newSS100.cancelOf(number: num)
         }
+        return newSS100
     }
     
-    mutating func reverseInIndex(_ idx: Int) {
-        self.bools[idx].toggle()
+    func reverseInIndex(_ idx: Int) -> Self {
+        var newBools = bools
+        newBools[idx].toggle()
+        return Self.init(bool100: newBools)
     }
     
-    mutating func reverseInNumber(_ number: Int) {
-        self.bools[number-1].toggle()
+    func reverseInNumber(_ number: Int) -> Self {
+        var newBools = bools
+        newBools[number-1].toggle()
+        return Self.init(bool100: newBools)
     }
 }

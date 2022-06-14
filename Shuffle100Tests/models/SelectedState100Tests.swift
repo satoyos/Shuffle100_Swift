@@ -61,107 +61,118 @@ class SelectedState100Tests: XCTestCase {
     }
     
     func test_setStatusOfNumber() {
-        var state100 = SelectedState100()
+        let state100 = SelectedState100()
         let idx = 15 // 1はじまりの番号
         XCTAssertEqual(try state100.ofNumber(idx),init_value)
         
         // 違う値を設定してみる
-        do {
-            try state100.setStateOfNumber(state: !init_value, index: idx)
-            XCTAssertEqual(try state100.ofNumber(idx), !init_value)
-            // 一つ前の番号については、初期値通り
-            XCTAssertEqual(try state100.ofNumber(idx-1), init_value)
-        } catch {
-            print("xxx this Error shuold not be thrown!")
+        guard let newState100 = try?  state100.setStateOfNumber(state: !init_value, index: idx) else {
+            XCTFail("xxx this Error shuold not be thrown!")
+            return
         }
+        XCTAssertEqual(try newState100.ofNumber(idx), !init_value)
+        // 一つ前の番号については、初期値通り
+        XCTAssertEqual(try state100.ofNumber(idx-1), init_value)
+//        do {
+//            try state100.setStateOfNumber(state: !init_value, index: idx)
+//            XCTAssertEqual(try state100.ofNumber(idx), !init_value)
+//            // 一つ前の番号については、初期値通り
+//            XCTAssertEqual(try state100.ofNumber(idx-1), init_value)
+//        } catch {
+//            print("xxx this Error shuold not be thrown!")
+//        }
     }
 
     func test_cancellAll() {
         // すべて「選択済み」(true)で初期化しておく
-        var state100 = SelectedState100.createOf(bool: true)
+        let state100 = SelectedState100.createOf(bool: true)
         // 全キャンセルのメソッドを呼び出す
-        state100.cancelAll()
+        let newState100 = state100.cancelAll()
         // 結果の確認
         for i in 1...100 {
-            XCTAssertEqual(try state100.ofNumber(i), false)
+            XCTAssertEqual(try newState100.ofNumber(i), false)
         }
     }
     
     func test_selectAll() {
         // 「選択なし」状態で初期化しておく
-        var state100 = SelectedState100.createOf(bool: false)
+        let state100 = SelectedState100.createOf(bool: false)
         XCTAssertEqual(state100.bools[3], false)
         // 全選択のメソッドを呼び出す
-        state100.selectAll()
+        let newState100 = state100.selectAll()
         // 結果の確認
         for i in 1...100 {
-            XCTAssertEqual(try state100.ofNumber(i), true)
+            XCTAssertEqual(try newState100.ofNumber(i), true)
         }
     }
 
     func test_selectedNum() {
-        var state100 = SelectedState100.createOf(bool: false)
-        for i in [1,3,5] {state100.bools[i] = true}
-        XCTAssertEqual(state100.selectedNum, 3)
+        // given
+        let state100 = SelectedState100.createOf(bool: false)
+        var newBools = state100.bools
+        // when
+        for i in [1,3,5] {newBools[i] = true}
+        let newState100 = SelectedState100(bool100: newBools)
+        XCTAssertEqual(newState100.selectedNum, 3)
     }
     
     func test_selectOfNumber() {
         // 10番の要素だけを選択するようにする
-        var state100 = SelectedState100.createOf(bool: false)
+        let state100 = SelectedState100.createOf(bool: false)
         XCTAssertEqual(try state100.ofNumber(10), false)
         
         // 10番目の要素を指定してselectOf()を呼ぶと、その要素だけがtrueに変わる。
-        state100.selectOf(number: 10)
-        XCTAssertEqual(try state100.ofNumber(10), true)
-        XCTAssertEqual(state100.selectedNum, 1)
+        let newState100 = state100.selectOf(number: 10)
+        XCTAssertEqual(try newState100.ofNumber(10), true)
+        XCTAssertEqual(newState100.selectedNum, 1)
     }
     
     func test_cancelOfNumber() {
         // 全て選択(true)状態で初期化する
-        var state100 = SelectedState100.createOf(bool: true)
+        let state100 = SelectedState100.createOf(bool: true)
         XCTAssertEqual(try state100.ofNumber(6), true)
         
         // 6番目の要素を指定してcancelOf()を呼ぶと、その要素だけがfalseに変わる
-        state100.cancelOf(number: 6)
-        XCTAssertEqual(try state100.ofNumber(6), false)
-        XCTAssertEqual(state100.selectedNum, 99)
+        let newState100 = state100.cancelOf(number: 6)
+        XCTAssertEqual(try newState100.ofNumber(6), false)
+        XCTAssertEqual(newState100.selectedNum, 99)
     }
     
     func test_selectInNumbers() {
         // 全て選択(false)状態で初期化する
-        var state100 = SelectedState100.createOf(bool: false)
+        let state100 = SelectedState100.createOf(bool: false)
         // 選択したい要素を、1始まりの番号の配列で指定する
-        state100.selectInNumbers([1, 5, 10])
+        let newState100 = state100.selectInNumbers([1, 5, 10])
         // then
-        XCTAssertEqual(state100.selectedNum, 3)
-        XCTAssertEqual(try state100.ofNumber(5), true)
+        XCTAssertEqual(newState100.selectedNum, 3)
+        XCTAssertEqual(try newState100.ofNumber(5), true)
     }
     
     func test_cancelInNumbers() {
         // 全てキャンセル(false)状態で初期化する
-        var state100 = SelectedState100.createOf(bool: true)
+        let state100 = SelectedState100.createOf(bool: true)
         // キャンセルしたい要素を、1はじまりの番号の配列で指定する
-        state100.cancelInNumbers([2, 4, 8, 16, 32, 64])
-        XCTAssertEqual(try state100.ofNumber(8), false)
-        XCTAssertEqual(state100.selectedNum, 94)
+        let newState100 = state100.cancelInNumbers([2, 4, 8, 16, 32, 64])
+        XCTAssertEqual(try newState100.ofNumber(8), false)
+        XCTAssertEqual(newState100.selectedNum, 94)
     }
     
     func test_reverse_in_index() {
         // given
-        var state100 = SelectedState100.createOf(bool: true)
+        let state100 = SelectedState100.createOf(bool: true)
         // when
-        state100.reverseInIndex(0)
+        let newState100 = state100.reverseInIndex(0)
         // then
-        XCTAssertFalse(try! state100.ofNumber(1))
+        XCTAssertFalse(try! newState100.ofNumber(1))
     }
     
     func test_reverseInNumber() {
         // giben
-        var state100 = SelectedState100.createOf(bool: true)
+        let state100 = SelectedState100.createOf(bool: true)
         // when
-        state100.reverseInNumber(4)
+        let newState100 = state100.reverseInNumber(4)
         // then
-        XCTAssertFalse(try! state100.ofNumber(4))
+        XCTAssertFalse(try! newState100.ofNumber(4))
     }
     
     func test_allSelectedNumbers() {

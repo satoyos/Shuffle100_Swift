@@ -50,8 +50,9 @@ class FiveColorsScreenTest: XCTestCase {
     func test_badgeIconReflectsSettings() {
         // given
         let settings = Settings()
-        var state100 = SelectedState100.createOf(bool: false)
-        state100.selectInNumbers([2,4,7])
+        let state100 = SelectedState100()
+                        .cancelAll()
+                        .selectInNumbers([2,4,7])
         settings.state100 = state100
         // when
         let screen = FiveColorsScreen(settings: settings)
@@ -73,8 +74,9 @@ class FiveColorsScreenTest: XCTestCase {
     func test_add20OfCororSelectedAction() {
         // given
         let settings = Settings()
-        var state100 = SelectedState100.createOf(bool: false)
-        state100.selectInNumbers([2,4,7])
+        let state100 = SelectedState100()
+                        .cancelAll()
+                        .selectInNumbers([2,4,7])
         settings.state100 = state100
         let screen = FiveColorsScreen(settings: settings)
         screen.loadViewIfNeeded()
@@ -90,8 +92,9 @@ class FiveColorsScreenTest: XCTestCase {
             // given
             let screen = FiveColorsScreen()
             // when
-            var state100 = SelectedState100.createOf(bool: false)
-            state100.selectInNumbers([3 ,6 ,12])
+            let state100 = SelectedState100()
+                            .cancelAll()
+                            .selectInNumbers([3 ,6 ,12])
             screen.settings.state100 = state100
             // then
             let bluePath = screen.imageFilePathFor(color: .blue)

@@ -34,9 +34,11 @@ extension FiveColorsScreen {
     
     func selectJust20Of(color: FiveColors) {
         guard let colorDic = colorsDic[color] else { return }
-        var newState100 = SelectedState100()
-        newState100.cancelAll()
-        newState100.selectInNumbers(colorDic.poemNumbers)
+        let newState100 = SelectedState100()
+            .cancelAll()
+            .selectInNumbers(colorDic.poemNumbers)
+//        newState100.cancelAll()
+//        newState100.selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
         updateBadgeItem()
@@ -44,7 +46,9 @@ extension FiveColorsScreen {
     
     func add20of(color: FiveColors) {
         guard let colorDic = colorsDic[color] else { return }
-        settings.state100.selectInNumbers(colorDic.poemNumbers)
+        let newState100 = settings.state100.selectInNumbers(colorDic.poemNumbers)
+//        settings.state100.selectInNumbers(colorDic.poemNumbers)
+        settings.state100 = newState100
         refreshImageOnButtons()
         updateBadgeItem()
     }

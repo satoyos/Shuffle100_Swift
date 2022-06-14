@@ -20,14 +20,16 @@ class Poem100Test: XCTestCase {
 
     func test_createFromSelectedState100() {
         // given
-        var bool100 = SelectedState100.createOf(bool: false)
+        let state100 =
+        SelectedState100.createOf(bool: false)
         // when
-        bool100.selectOf(number: 1)
-        bool100.selectOf(number: 100)
+        let newState100 = state100
+                            .selectOf(number: 1)
+                            .selectOf(number: 100)
         // then
-        XCTAssertEqual(bool100.selectedNum, 2)
+        XCTAssertEqual(newState100.selectedNum, 2)
         // when: 作成したSeletedState100でDockを初期化
-        let deck = Poem100.createFrom(state100: bool100)
+        let deck = Poem100.createFrom(state100: newState100)
         // then: SelectedState100でtrueだった位置の歌だけが選択されている
         XCTAssertEqual(deck.count, 2)
     }
