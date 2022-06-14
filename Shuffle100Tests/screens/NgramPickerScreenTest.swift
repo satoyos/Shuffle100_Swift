@@ -57,7 +57,8 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
     func test_partialSelected() {
         // given
         let settings = Settings()
-        settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
+        let newState100 = settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
+        settings.state100 = newState100
         // when
         let screen = NgramPickerScreen(settings: settings)
         screen.loadViewIfNeeded()
@@ -73,11 +74,14 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
     func test_tapPartialMakesFull() {
         // given
         let settings = Settings()
-        settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
+        let newState100 =         settings.state100.cancelOf(number: 13) // 「つくばねの」を選択から外す
+        settings.state100 = newState100
+        // when
         let screen = NgramPickerScreen(settings: settings)
         screen.loadViewIfNeeded()
         let tsuIndex = tsuIndexPath()
         let tsuCell = cellFor(screen, indexPath: tsuIndex)
+        // then
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
         // when
         tapCellOfIndex(tsuIndexPath(), in: screen)

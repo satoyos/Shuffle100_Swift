@@ -11,8 +11,9 @@ import BBBadgeBarButtonItem
 
 extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let number = poemNumberFromIndexPath(indexPath)
-        settings.state100.reverseInNumber(number)
+       let number = poemNumberFromIndexPath(indexPath)
+       let newState100 = settings.state100.reverseInNumber(number)
+        settings.state100 = newState100
         tableView.reloadData()
         updateBadge()
         return
@@ -33,13 +34,15 @@ extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
     }
 
     @objc func cancelAllButtonTapped() {
-        settings.state100.cancelAll()
+        let newState100 = settings.state100.cancelAll()
+        settings.state100 = newState100
         tableView.reloadData()
         updateBadge()
     }
     
     @objc func selectAllButtonTapped() {
-        settings.state100.selectAll()
+        let newState100 = settings.state100.selectAll()
+        settings.state100 = newState100
         tableView.reloadData()
         updateBadge()
     }
@@ -86,7 +89,4 @@ extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
         }
         return number
     }
-
-
- 
 }
