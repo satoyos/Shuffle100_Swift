@@ -48,12 +48,4 @@ struct StoreManager {
             return nil
         }
     }
-    
-//    func saveSettingsPermanently(_ settings: Settings) {
-//        do {
-//            try self.save(value: settings, key: Settings.userDefaultKey)
-//        } catch {
-//            assertionFailure("SettingsデータのUserDefautへの保存に失敗しました。")
-//        }
-//    }
 }
