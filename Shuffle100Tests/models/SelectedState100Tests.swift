@@ -73,14 +73,6 @@ class SelectedState100Tests: XCTestCase {
         XCTAssertEqual(try newState100.ofNumber(idx), !init_value)
         // 一つ前の番号については、初期値通り
         XCTAssertEqual(try state100.ofNumber(idx-1), init_value)
-//        do {
-//            try state100.setStateOfNumber(state: !init_value, index: idx)
-//            XCTAssertEqual(try state100.ofNumber(idx), !init_value)
-//            // 一つ前の番号については、初期値通り
-//            XCTAssertEqual(try state100.ofNumber(idx-1), init_value)
-//        } catch {
-//            print("xxx this Error shuold not be thrown!")
-//        }
     }
 
     func test_cancellAll() {
