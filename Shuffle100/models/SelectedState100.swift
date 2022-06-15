@@ -8,27 +8,41 @@
 
 import Foundation
 
-struct SelectedState100: Codable, Equatable {
+struct SelectedState100: Codable {
     static let defaultState = true
     var bools: Bool100
-    var selectedNum: Int {
-        bools.filter{$0 == true}.count
-    }
     
     init(bool100: Bool100 = Bool100.allSelected){
         bools = bool100
     }
+}
 
+extension SelectedState100: Equatable {
     // Equatable
-    static func == (lhs: SelectedState100, rhs: SelectedState100) -> Bool {
+    static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.bools == rhs.bools
     }
-      
+}
+
+// static functions to create
+extension SelectedState100 {
     static func createOf(bool: Bool) -> SelectedState100 {
         let initBool100 = get_bool100_of(bool: bool)
         return SelectedState100(bool100: initBool100)
     }
     
+    private static func get_bool100_of(bool: Bool) -> Bool100 {
+        if bool { return Bool100.allSelected}
+        else { return Bool100.allUnselected}
+    }
+}
+
+// looking up this object
+extension SelectedState100 {
+    var selectedNum: Int {
+        bools.filter{$0 == true}.count
+    }
+
     var allSelectedNumbers: [Int] {
         var  numbers = [Int]()
         for (index, bool) in bools.enumerated() {
@@ -37,17 +51,15 @@ struct SelectedState100: Codable, Equatable {
         return numbers
     }
     
-    private static func get_bool100_of(bool: Bool) -> Bool100 {
-        if bool { return Bool100.allSelected}
-        else { return Bool100.allUnselected}
-    }
-    
     func ofNumber(_ number: Int) throws -> Bool {
         guard indexIsInBounds(number) else { throw NSError(domain: "indexが範囲外!", code: -1)
         }
         return bools[number - 1]
     }
-    
+}
+
+// return new instance with modified state
+extension SelectedState100 {
     func setStateOfNumber(state: Bool, index: Int) throws -> Self  {
         guard indexIsInBounds(index) else { throw NSError(domain: "indexが範囲外!", code: -1)
         }
@@ -69,14 +81,6 @@ struct SelectedState100: Codable, Equatable {
     }
     
     func selectOf(number: Int) -> Self {
-//        do {
-//            tru {
-//
-//            }
-//            return try setStateOfNumber(state: true, index: number)
-//        } catch {
-//            fatalError("numberの値[\(number)]がサポート範囲外")
-//        }
         guard let result = try? setStateOfNumber(state: true, index: number) else {
             fatalError("numberの値[\(number)]がサポート範囲外")
         }
@@ -84,12 +88,6 @@ struct SelectedState100: Codable, Equatable {
     }
     
     func cancelOf(number: Int) -> Self {
-//        do {
-//            try self.setStateOfNumber(state: false, index: number)
-//        } catch {
-//            print("numberの値[\(number)]がサポート範囲外")
-//            exit(2)
-//        }
         guard let result = try? setStateOfNumber(state: false, index: number) else {
             fatalError("numberの値[\(number)]がサポート範囲外")
         }
