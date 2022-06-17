@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
+extension PoemPickerScreen: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,15 +41,18 @@ extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return fontSizeForPoem() * 3
+        fontSizeForPoem() * 3
     }
+}
+
+extension PoemPickerScreen:  UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return settings.savedFudaSets.count
+        settings.savedFudaSets.count
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -72,7 +75,8 @@ extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
     }
         
     private func fontSizeForPoem() -> CGFloat {
-        return UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).pointSize
+        UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+            .pointSize
     }
     
     private func colorFor(poem: Poem) -> UIColor {
@@ -81,5 +85,5 @@ extension PoemPickerScreen: UITableViewDataSource, UIPickerViewDataSource {
         }
         return UIColor.systemBackground
     }
-    
+
 }
