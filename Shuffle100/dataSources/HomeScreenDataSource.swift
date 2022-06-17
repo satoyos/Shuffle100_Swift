@@ -30,29 +30,37 @@ extension HomeScreen: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: settingsReuseId) as! SettingTableCell
-            
-            guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? SettingsCellDataSource else {
-                assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a SettingsCellDataSource.")
-                return cell
-            }
-                
-            cell.configure(dataSource: dataSource)
-            if let switchView = cell.accessoryView as? UISwitch {
-                switchView.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
-            }
-            return cell
+            return settingsCell(for: indexPath)
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: startGameReuseId, for: indexPath) as! GameStartCell
-            
-            guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? ButtonTypeCellDataSource else {
-                assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a BuottonTypeCellDataSource.")
-                return cell
-            }
-            
-            cell.configure(dataSource: dataSource)
+            return gameStartCell(for: indexPath)
+        }
+    }
+    
+    private func settingsCell(for indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: settingsReuseId) as! SettingTableCell
+        
+        guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? SettingsCellDataSource else {
+            assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a SettingsCellDataSource.")
             return cell
         }
+            
+        cell.configure(dataSource: dataSource)
+        if let switchView = cell.accessoryView as? UISwitch {
+            switchView.addTarget(self, action: #selector(switchValueChanged) , for: .valueChanged)
+        }
+        return cell
+    }
+    
+    private func gameStartCell(for indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: startGameReuseId, for: indexPath) as! GameStartCell
+        
+        guard let dataSource = sections[indexPath.section].dataSources[indexPath.row] as? ButtonTypeCellDataSource else {
+            assertionFailure("TableDataSource at section: \(indexPath.section), row: \(indexPath.row) should be a BuottonTypeCellDataSource.")
+            return cell
+        }
+        
+        cell.configure(dataSource: dataSource)
+        return cell
     }
     
     private func settingSection(withTypes types: [HomeCellType]) -> TableSection {
