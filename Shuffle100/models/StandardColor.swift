@@ -13,9 +13,5 @@ struct StandardColor {
     static let selectedPoemBackColor = UIColor.dynamicColor(light: Color.nadeshiko.UIColor, dark: Color.koikurenai.UIColor)
     static let standardButtonColor = UIColor.dynamicColor(light: UIColor.systemIndigo, dark: UIColor.systemTeal)
     static let disabledButtonColor = UIColor.dynamicColor(light: .lightGray, dark: .darkGray)
-    static let backgroundColor = standardBackgroundColor()
-    
-    static private func standardBackgroundColor() -> UIColor {
-        return UIColor.systemBackground
-    }
+    static let backgroundColor = UIColor.systemBackground
 }
