@@ -11,7 +11,7 @@ import UIKit
 extension SelectSingerScreen: UIPickerViewDataSource {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -19,7 +19,7 @@ extension SelectSingerScreen: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Singers.all[row].name
+        Singers.all[row].name
     }
     
 }
