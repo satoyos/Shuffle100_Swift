@@ -249,9 +249,6 @@
 		927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
 		927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
 		927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
-		927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE5222E9DD100AF48F7 /* PoemExt.swift */; };
-		927E4BF1222E9DD200AF48F7 /* PoemExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE5222E9DD100AF48F7 /* PoemExt.swift */; };
-		927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE5222E9DD100AF48F7 /* PoemExt.swift */; };
 		927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
 		927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
 		927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
@@ -700,7 +697,6 @@
 		927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDefaultTest.swift; sourceTree = "<group>"; };
 		927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffled.swift"; sourceTree = "<group>"; };
 		927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedState100.swift; sourceTree = "<group>"; };
-		927E4BE5222E9DD100AF48F7 /* PoemExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemExt.swift; sourceTree = "<group>"; };
 		927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemSupplier.swift; sourceTree = "<group>"; };
 		927E4BE8222E9DD200AF48F7 /* Poem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 		927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Diff.swift"; sourceTree = "<group>"; };
@@ -1291,7 +1287,6 @@
 			isa = PBXGroup;
 			children = (
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
-				927E4BE5222E9DD100AF48F7 /* PoemExt.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
 				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
@@ -1747,7 +1742,6 @@
 				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				924619602493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
 				929A94B4247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
-				927E4BF0222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				92AE7C6723FD6D88003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				9208DF1022FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
@@ -1917,7 +1911,6 @@
 				927A198023E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
 				92A6EB9224191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
-				927E4BF1222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
 				9207BAF5229579D600816DC8 /* Bool100.swift in Sources */,
@@ -2073,7 +2066,6 @@
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				922C638C269094880000D07D /* NgramPickerPage.swift in Sources */,
 				92E5C545266903DC009A46F5 /* KamiShimoIntervalPage.swift in Sources */,
-				927E4BF2222E9DD200AF48F7 /* PoemExt.swift in Sources */,
 				92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */,
 				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
