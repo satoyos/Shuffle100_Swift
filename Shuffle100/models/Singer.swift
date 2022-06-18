@@ -32,15 +32,11 @@ struct Singers {
         }
     }
     
-    static func defaultSinger() -> Singer {
-        return all[0]
+    static var defaultSinger: Singer {
+        all[0]
     }
     
     static func getSingerOfID(_ id: String) -> Singer? {
-        if let singer = all.first(where: {$0.id == id}) {
-            return singer
-        } else {
-            return nil
-        }
+        all.first(where: {$0.id == id})
     }
 }

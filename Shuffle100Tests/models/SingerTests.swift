@@ -28,7 +28,7 @@ class SingerTests: XCTestCase {
     
     func test_defaultSinger() {
         // when
-        let singer = Singers.defaultSinger()
+        let singer = Singers.defaultSinger
         // then
         XCTAssertEqual(singer.id, "ia")
     }
