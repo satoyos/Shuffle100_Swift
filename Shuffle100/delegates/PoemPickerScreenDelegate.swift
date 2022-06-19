@@ -9,7 +9,7 @@
 import UIKit
 import BBBadgeBarButtonItem
 
-extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
+extension PoemPickerScreen: UITableViewDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        let number = poemNumberFromIndexPath(indexPath)
        let newState100 = settings.state100.reverseInNumber(number)
@@ -24,8 +24,31 @@ extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
         showTorifudaAction?(number)
     }
     
+    private func poemNumberFromIndexPath(_ indexPath: IndexPath) -> Int {
+        let number: Int
+        if searchController.isActive {
+            let selectedPoem = filteredPoems[indexPath.row]
+            number = selectedPoem.number
+        } else {
+            number = indexPath.row + 1
+        }
+        return number
+    }
+}
+
+extension PoemPickerScreen: UIGestureRecognizerDelegate {
+    
+    internal func showAlertInhibeted(title: String, message: String?, handler: ((UIAlertAction) -> Void)?) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let backAction = UIAlertAction(title: "戻る", style: .cancel, handler: handler)
+        ac.addAction(backAction)
+        present(ac, animated: true)
+    }
+}
+
+// exec actions related to each Button
+extension PoemPickerScreen {
     @objc func saveButtonTapped(button: UIButton) {
-        assert(true, "Save Button Tapped!")
         guard selected_num > 0 else {
             showAlertInhibeted(title: "歌を選びましょう", message: "空の札セットは保存できません。", handler: nil)
             return
@@ -70,23 +93,5 @@ extension PoemPickerScreen: UITableViewDelegate, UIGestureRecognizerDelegate {
             pc.sourceRect = CGRect(x: view.frame.width, y: 0, width: 1, height: 1)
         }
         present(ac, animated: true)
-    }
-    
-    internal func showAlertInhibeted(title: String, message: String?, handler: ((UIAlertAction) -> Void)?) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let backAction = UIAlertAction(title: "戻る", style: .cancel, handler: handler)
-        ac.addAction(backAction)
-        present(ac, animated: true)
-    }
-    
-    private func poemNumberFromIndexPath(_ indexPath: IndexPath) -> Int {
-        let number: Int
-        if searchController.isActive {
-            let selectedPoem = filteredPoems[indexPath.row]
-            number = selectedPoem.number
-        } else {
-            number = indexPath.row + 1
-        }
-        return number
     }
 }
