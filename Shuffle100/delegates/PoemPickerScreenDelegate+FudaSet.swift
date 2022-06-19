@@ -10,6 +10,12 @@ import UIKit
 import SnapKit
 
 extension PoemPickerScreen: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.rowForFudaSetOverwritten = row
+    }
+}
+
+extension PoemPickerScreen {
     internal func showActionSheetForSaving(_ button: UIButton) {
         let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
             self.saveNewFudaSet()
@@ -36,10 +42,6 @@ extension PoemPickerScreen: UIPickerViewDelegate {
         self.settings.savedFudaSets.append(newFudaSet)
         self.saveSettingsAction?()
         showSuccessfullySavedMessage(name: name)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.rowForFudaSetOverwritten = row
     }
     
     internal func saveNewFudaSet() {
