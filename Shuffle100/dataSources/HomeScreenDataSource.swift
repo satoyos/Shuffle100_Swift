@@ -11,21 +11,15 @@ import UIKit
 extension HomeScreen: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        sections.count
     }
 
-    func setupDataSources(withTypes types: [HomeCellType]) {
-        self.sections = [TableSection]()
-        sections.append(settingSection(withTypes: types))
-        sections.append(gameStartSection())
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].dataSources.count
+        sections[section].dataSources.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].title
+        sections[section].title
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,7 +29,7 @@ extension HomeScreen: UITableViewDataSource {
             return gameStartCell(for: indexPath)
         }
     }
-    
+
     private func settingsCell(for indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: settingsReuseId) as! SettingTableCell
         
@@ -63,7 +57,7 @@ extension HomeScreen: UITableViewDataSource {
         return cell
     }
     
-    private func settingSection(withTypes types: [HomeCellType]) -> TableSection {
+    private func settingSection(with types: [HomeCellType]) -> TableSection {
         var section = TableSection(title: "設定")
         section.dataSources = types.map{
             HomeScreenDataSourceFactory.settingsDataSource(for: $0, settings: settings)}
@@ -83,3 +77,10 @@ extension HomeScreen: UITableViewDataSource {
     }
 }
 
+extension HomeScreen {
+    internal func setupDataSources(with types: [HomeCellType]) {
+        self.sections = [TableSection]()
+        sections.append(settingSection(with: types))
+        sections.append(gameStartSection())
+    }
+}

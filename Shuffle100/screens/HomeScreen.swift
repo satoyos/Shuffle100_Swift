@@ -41,7 +41,7 @@ final class HomeScreen: SettingsAttachedScreen {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        setupDataSources(withTypes: homeCells())
+        setupDataSources(with: homeCells())
         tableView.reloadData()
         super.viewWillAppear(animated)
     }
@@ -53,7 +53,7 @@ final class HomeScreen: SettingsAttachedScreen {
     
     private func createTableViewForHomeScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
-        setupDataSources(withTypes: homeCells())
+        setupDataSources(with: homeCells())
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SettingTableCell.self, forCellReuseIdentifier: settingsReuseId)
