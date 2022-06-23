@@ -56,10 +56,17 @@ extension PoemPickerScreen {
             alertTextField?.placeholder = "札セットの名前"
         })
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
-        let okAction = UIAlertAction(title: "決定", style: .default) { _ in
-            if let name = alertTextField?.text {
+        let okAction = okAction(with: alertTextField)
+        ac.addAction(cancelAction)
+        ac.addAction(okAction)
+        present(ac, animated: true)
+    }
+    
+    private func okAction(with textField: UITextField?) ->  UIAlertAction {
+        UIAlertAction(title: "決定", style: .default) { _ in
+            if let name = textField?.text {
                 guard name.count > 0 else {
-                    self.showAlertInhibeted(title: "新しい札セットの名前を決めましょう", message: nil) { action in
+                    self.showAlertInhibeted(title: "新しい札セットの名前を決めましょう", message: nil) { _ in
                         self.saveNewFudaSet()
                     }
                     return
@@ -67,9 +74,6 @@ extension PoemPickerScreen {
                 self.addNewFudaSet(name: name)
             }
         }
-        ac.addAction(cancelAction)
-        ac.addAction(okAction)
-        present(ac, animated: true)
     }
     
     internal func overwriteExistingFudaSet() {        
