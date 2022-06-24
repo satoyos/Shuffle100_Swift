@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import AVFoundation
 import MediaPlayer
 
-extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
+extension RecitePoemScreen {
     
     func selectPosrMortemOrBackToHome() {
         guard settings.postMortemEnabled else { return }
@@ -85,29 +84,21 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
     
     internal func forwardButtonTapped() {
         guard let currentPlayer = currentPlayer else { return }
-//        if currentPlayer.isPlaying {
-//            currentPlayer.currentTime = currentPlayer.duration - 0.1
-//            currentPlayer.pause()
-//            updateAudioProgressView()
-//            currentPlayer.stop()
-//            audioPlayerDidFinishPlaying(currentPlayer, successfully: true)
-//        } else {
-//            self.skipToNextScreenAction?()
-//        }
         currentPlayer.stop()
         skipToNextScreenAction?()
     }
+
+    internal func updateNowPlayingInfo(title: String) {
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = title
+
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
         
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        keepProgressBarFilled(player)
-        self.playFinished = true
-        self.playerFinishedAction?()
+        // Set the metadata
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
-    
-    fileprivate func keepProgressBarFilled(_ player: AVAudioPlayer) {
-        player.currentTime = player.duration
-    }
-    
+
     @objc func onWillResignActive(_ notification: Notification?) {
         assert(true, "-- バックグラウンドに【これから入ります】 (Notificationで検出)")
         if settings.reciteMode != .nonstop {
@@ -135,28 +126,5 @@ extension RecitePoemScreen: AVAudioPlayerDelegate, ExitGameProtocol {
             currentPlayer.pause()
             return .success
         }
-    }
-    
-    internal func updateNowPlayingInfo(title: String) {
-        var nowPlayingInfo = [String : Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-
-        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
-        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
-        
-        // Set the metadata
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-    }
-    
-    internal func confirmStartingPostMortem() {
-        let ac = UIAlertController(title: "感想戦を始めますか？", message: "今の試合と同じ歌を同じ順序で読み上げます", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
-        let okAction = UIAlertAction(title: "始める", style: .default) { _ in
-            print("++OK、感想戦を始めましょう")
-            self.startPostMortemAction?()
-        }
-        ac.addAction(okAction)
-        ac.addAction(cancelAction)
-        present(ac, animated: true)
     }
 }
