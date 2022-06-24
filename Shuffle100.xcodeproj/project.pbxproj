@@ -319,6 +319,12 @@
 		92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
 		92A146B324DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
 		92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
+		92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
+		92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
+		92A2626F2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
+		92A262702865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
+		92A262712865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
+		92A262722865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
 		92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */; };
 		92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
 		92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
@@ -727,6 +733,8 @@
 		92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerScreenLayout.swift; sourceTree = "<group>"; };
 		92A146AF24DED8540045D7DF /* MemorizeTImerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTImerScreenUITest.swift; sourceTree = "<group>"; };
 		92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerCoordinator.swift; sourceTree = "<group>"; };
+		92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+Audio.swift"; sourceTree = "<group>"; };
+		92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+ExitGame.swift"; sourceTree = "<group>"; };
 		92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingScreenTest.swift; sourceTree = "<group>"; };
 		92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingViewController.swift; sourceTree = "<group>"; };
 		92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingCoordinator.swift; sourceTree = "<group>"; };
@@ -1336,6 +1344,8 @@
 				92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */,
 				9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */,
 				9258D1EA22DCA1C7003A0EF8 /* RecitePoemScreenDelegate.swift */,
+				92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */,
+				92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */,
 				92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */,
 				92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */,
 				925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */,
@@ -1706,6 +1716,7 @@
 				921FF435249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92B9E9682465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
 				92328C3224596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
+				92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,
 				92C6B4A124E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
 				92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
@@ -1726,6 +1737,7 @@
 				92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
 				92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
+				92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
 				92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
@@ -1793,6 +1805,7 @@
 				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
 				92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
+				92A262712865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
@@ -1945,6 +1958,7 @@
 				92328C3324596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
 				9205E1772456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */,
+				92A2626F2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
 				925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */,
 				92FFBF42245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
@@ -1973,6 +1987,7 @@
 				92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */,
 				92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */,
 				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
+				92A262702865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
 				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
@@ -2101,6 +2116,7 @@
 				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
+				92A262722865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				922BDDD9261B3B760093B24A /* HomePage.swift in Sources */,
 				92E5C55026723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
 				92E5C554267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
