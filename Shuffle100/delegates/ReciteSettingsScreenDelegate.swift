@@ -23,6 +23,9 @@ extension ReciteSettingsScreen: UITableViewDelegate {
             return
         }
     }
+}
+
+extension ReciteSettingsScreen {
     
     @objc func dismissButtonTapped(_ button: UIButton) {
         self.saveSettingsAction?()
@@ -31,7 +34,6 @@ extension ReciteSettingsScreen: UITableViewDelegate {
     
     @objc func switchValueChanged(sender: UISwitch) {
         switch sender.accessibilityLabel {
-//        case "postMortemModeSwitch":
         case A11y.postMortemA11yLabel + "Switch":
             settings.postMortemEnabled = sender.isOn
         case A11y.shortenJokaA11yLabel + "Switch":
@@ -41,5 +43,4 @@ extension ReciteSettingsScreen: UITableViewDelegate {
         }
         self.saveSettingsAction?()
     }
-    
 }
