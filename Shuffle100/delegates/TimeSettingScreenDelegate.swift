@@ -12,14 +12,17 @@ import AVFoundation
 private let subtractDuration: Float = 0.02
 
 extension TimeSettingScreen: AVAudioPlayerDelegate {
-    
-    internal func setDelegate(ofPlayer player: AVAudioPlayer) {
-        player.delegate = self
-    }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if !flag { return }
         successfullyPlayerFinishedAction(player)
+    }
+}
+
+extension TimeSettingScreen {
+    
+    internal func setDelegate(ofPlayer player: AVAudioPlayer) {
+        player.delegate = self
     }
 
     @objc func tryButtonTapped(_ button: UIButton) {
