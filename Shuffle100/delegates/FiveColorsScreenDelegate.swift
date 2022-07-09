@@ -15,15 +15,9 @@ extension FiveColorsScreen {
             title: "\(colorDic.name)色の20首をどうしますか？",
             message: nil,
             preferredStyle: .actionSheet)
-        let selectJust20Action = UIAlertAction(title: "この20首だけを選ぶ", style: .default) { _ in
-            self.selectJust20Of(color: colorDic.type)
-        }
-        let add20Action = UIAlertAction(title: "今選んでいる札に加える", style: .default) { _ in
-            self.add20of(color: colorDic.type)
-        }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
-        ac.addAction(selectJust20Action)
-        ac.addAction(add20Action)
+        ac.addAction(selectJust20Action(for: colorDic.type))
+        ac.addAction(add20Action(for: colorDic.type))
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
             pc.sourceView = self.view
@@ -32,13 +26,23 @@ extension FiveColorsScreen {
         present(ac, animated: true)
     }
     
+    private func selectJust20Action(for color: FiveColors) -> UIAlertAction {
+        UIAlertAction(title: "この20首だけを選ぶ", style: .default) { _ in
+            self.selectJust20Of(color: color)
+        }
+    }
+    
+    private func add20Action(for color: FiveColors) -> UIAlertAction {
+        UIAlertAction(title: "今選んでいる札に加える", style: .default) { _ in
+            self.add20of(color: color)
+        }
+    }
+    
     func selectJust20Of(color: FiveColors) {
         guard let colorDic = colorsDic[color] else { return }
         let newState100 = SelectedState100()
             .cancelAll()
             .selectInNumbers(colorDic.poemNumbers)
-//        newState100.cancelAll()
-//        newState100.selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
         updateBadgeItem()
@@ -47,7 +51,6 @@ extension FiveColorsScreen {
     func add20of(color: FiveColors) {
         guard let colorDic = colorsDic[color] else { return }
         let newState100 = settings.state100.selectInNumbers(colorDic.poemNumbers)
-//        settings.state100.selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
         updateBadgeItem()
