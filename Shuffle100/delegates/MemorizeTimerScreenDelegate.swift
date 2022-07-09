@@ -14,13 +14,15 @@ extension MemorizeTimerScreen: AVAudioPlayerDelegate {
         player.delegate = self
     }
     
-    func playButtonTapped() {
-        self.isTimerRunning = !isTimerRunning
-    }
-    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         guard player == playerStgartGame else { return }
         guard flag == true else { return }
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension MemorizeTimerScreen {
+    func playButtonTapped() {
+        self.isTimerRunning = !isTimerRunning
     }
 }
