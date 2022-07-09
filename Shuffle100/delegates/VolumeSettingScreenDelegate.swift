@@ -22,7 +22,9 @@ extension VolumeSettingScreen: AVAudioPlayerDelegate {
     internal func setDelegate(ofPlayer player: AVAudioPlayer) {
         player.delegate = self
     }
-    
+}
+
+extension VolumeSettingScreen {
     @objc func tryButtonTapped() {
         assert(true, "試し聴きのボタンが押された！")
         currentPlayer.play()
