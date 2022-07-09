@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension WhatsNextScreen: ExitGameProtocol {
+extension WhatsNextScreen {
 
     @objc func gearButtonTapped() {
         assert(true, "歯車ボタンが押された！")

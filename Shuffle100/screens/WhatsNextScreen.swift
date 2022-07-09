@@ -10,7 +10,7 @@ import UIKit
 
 private let navBarButtonSize: CGFloat = 32
 
-final class WhatsNextScreen: Screen {
+final class WhatsNextScreen: Screen, ExitGameProtocol {
     var torifudaButton = LargeImageAttachedButton()
     var refrainButton = LargeImageAttachedButton()
     var goNextButton = LargeImageAttachedButton()
