@@ -7,7 +7,6 @@
 //
 
 import UIKit
-// import SnapKit
 import Then
 
 //CENTER_Y_POSITIONS = {
@@ -31,7 +30,9 @@ extension FiveColorsScreen: SHViewSizeGetter {
     
     internal func refreshImageOnButtons() {
         allColorButtons.forEach { button in
-            button.setImageOf(filename: imageFilePathFor(color: button.color), with: .alwaysTemplate)
+            button.setImageOf(
+                filename: imageFilePathFor(color: button.color),
+                with: .alwaysTemplate)
         }
     }
     
@@ -43,19 +44,20 @@ extension FiveColorsScreen: SHViewSizeGetter {
             $0.initWithImage(filename: filePath)
             $0.setTitle(colorDic.name, for: .normal)
             // center => [50%, centerYRatio]
-            $0.center.y = viewHeight() * centerYRatio
+            $0.center.y = viewHeight * centerYRatio
         }
     }
     
     private func setCommonLayout(button: ColorOfFiveButton) {
         _ = button.then {
-            $0.frame.size = buttonSize()
+            $0.frame.size = buttonSize
             $0.center.x = view.center.x
             $0.setStandardTitleColor()
         }
     }
 
-    private func buttonSize() -> CGSize {
-        return CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight)
+    private var buttonSize: CGSize {
+        CGSize(width: viewWidth * 0.8,
+               height: sizes.whatsNextButtonHeight)
     }
 }
