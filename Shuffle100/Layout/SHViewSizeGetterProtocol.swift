@@ -9,18 +9,17 @@
 import UIKit
 
 protocol SHViewSizeGetter {
-    var view: UIView! { get }
-    func viewWidth() -> CGFloat
-    func viewHeight() -> CGFloat
+    var viewWidth: CGFloat { get }
+    var viewHeight: CGFloat { get }
 }
 
-extension SHViewSizeGetter {
-    func viewWidth() -> CGFloat {
-        return view.frame.size.width
+extension SHViewSizeGetter where Self: Screen {
+    var viewWidth: CGFloat {
+        view.frame.size.width
     }
     
-    func viewHeight() -> CGFloat {
-        return view.frame.size.height
+    var viewHeight: CGFloat {
+        view.frame.size.height
     }
 }
 
