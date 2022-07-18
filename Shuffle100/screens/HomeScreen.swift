@@ -22,13 +22,13 @@ final class HomeScreen: SettingsAttachedScreen {
     internal let settingsReuseId = "HomeScreenTableCell"
     internal let startGameReuseId = "GameStartCell"
     var sections: [TableSection]!
-    var selectPoemAction: (() -> Void)?
-    var selectModeAction: (() -> Void)?
-    var selectSingerAction: (() -> Void)?
-    var startGameAction: (() -> Void)?
-    var reciteSettingsAction: (() -> Void)?
-    var helpActioh: (() -> Void)?
-    var memorizeTimerAction: (() -> Void)?
+    var selectPoemAction: InjectedAction?
+    var selectModeAction: InjectedAction?
+    var selectSingerAction: InjectedAction?
+    var startGameAction: InjectedAction?
+    var reciteSettingsAction: InjectedAction?
+    var helpActioh: InjectedAction?
+    var memorizeTimerAction: InjectedAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
