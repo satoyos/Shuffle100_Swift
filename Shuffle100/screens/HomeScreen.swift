@@ -16,12 +16,15 @@ enum HomeCellType: String {
 }
 
 final class HomeScreen: SettingsAttachedScreen {
-    let titleName = "トップ"
+    // Constants
+    private let titleName = "トップ"
     let navBarButtonSize = 32
-    var tableView: UITableView!
     internal let settingsReuseId = "HomeScreenTableCell"
     internal let startGameReuseId = "GameStartCell"
+    // Variables
+    var tableView: UITableView!
     var sections: [TableSection]!
+    // Injected actions
     var selectPoemAction: InjectedAction?
     var selectModeAction: InjectedAction?
     var selectSingerAction: InjectedAction?
@@ -33,14 +36,14 @@ final class HomeScreen: SettingsAttachedScreen {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = titleName
-        self.view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.white
         self.tableView = createTableViewForHomeScreen()
         view.addSubview(tableView)
         setNavigationBarButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
         setupDataSources(with: homeCells())
         tableView.reloadData()
         super.viewWillAppear(animated)
