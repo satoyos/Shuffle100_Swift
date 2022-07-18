@@ -44,7 +44,7 @@ final class HomeScreen: SettingsAttachedScreen {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
-        setupDataSources(with: homeCells())
+        setupDataSources(with: homeCells)
         tableView.reloadData()
         super.viewWillAppear(animated)
     }
@@ -56,7 +56,7 @@ final class HomeScreen: SettingsAttachedScreen {
     
     private func createTableViewForHomeScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
-        setupDataSources(with: homeCells())
+        setupDataSources(with: homeCells)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SettingTableCell.self, forCellReuseIdentifier: settingsReuseId)
@@ -64,11 +64,14 @@ final class HomeScreen: SettingsAttachedScreen {
         return tableView
     }
     
-    private func homeCells() -> [HomeCellType] {
-        var homeCellTypes: [HomeCellType] = [.poems, .reciteMode, .fakeMode, .singers]
-        if settings.reciteMode == .beginner {
-           homeCellTypes.remove(at: 2)
+    private var homeCells: [HomeCellType] {
+        var homeCellTypes = [HomeCellType]()
+        homeCellTypes.append(.poems)
+        homeCellTypes.append(.reciteMode)
+        if settings.reciteMode != .beginner {
+            homeCellTypes.append(.fakeMode)
         }
+        homeCellTypes.append(.singers)
         return homeCellTypes
     }
     
@@ -78,20 +81,25 @@ final class HomeScreen: SettingsAttachedScreen {
         setHelpButton(withSize: reSize)
     }
     
-    private func setSettingsButton(withSize reSize: CGSize) {
+    private func setSettingsButton(withSize newSize: CGSize) {
         let gearButton = UIBarButtonItem(
-            image: UIImage(named: "gear-520.png")?.reSizeImage(reSize: reSize),
-            style: UIBarButtonItem.Style.plain, target: self, action: #selector(gearButtonTapped))
+            image: UIImage(named: "gear-520.png")?
+                .reSizeImage(reSize: newSize),
+            style: UIBarButtonItem.Style.plain,
+            target: self,
+            action: #selector(gearButtonTapped))
         gearButton.accessibilityLabel = "GearButton"
-        
-        self.navigationItem.leftBarButtonItem = gearButton
+        navigationItem.leftBarButtonItem = gearButton
     }
     
-    private func setHelpButton(withSize reSize: CGSize) {
+    private func setHelpButton(withSize newSize: CGSize) {
         let helpButton = UIBarButtonItem(
-            image: UIImage(named: "question_white.png")?.reSizeImage(reSize: reSize),
-            style: UIBarButtonItem.Style.plain, target: self, action: #selector(helpButtonTapped))
+            image: UIImage(named: "question_white.png")?
+                .reSizeImage(reSize: newSize),
+            style: UIBarButtonItem.Style.plain,
+            target: self,
+            action: #selector(helpButtonTapped))
         helpButton.accessibilityLabel = "HelpButton"
-        self.navigationItem.rightBarButtonItem = helpButton
+        navigationItem.rightBarButtonItem = helpButton
     }    
 }
