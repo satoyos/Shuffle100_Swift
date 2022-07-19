@@ -9,23 +9,28 @@
 import UIKit
 import SnapKit
 
-final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UIPickerViewDelegate {
+fileprivate let reciteModes = [
+    ReciteModeHolder(mode: .normal,
+                     title: "通常 (競技かるた)"),
+    ReciteModeHolder(mode: .beginner,
+                     title: "初心者 (チラし取り)"),
+    ReciteModeHolder(mode: .nonstop,
+                     title: "ノンストップ (止まらない)"),
+    // 下の句かるたは、Ver.7までおあずけ
+//        ReciteModeHolder(mode: .hokkaido,
+//                        title: "下の句かるた (北海道式)")
+]
+
+final class SelectModeScreen: SettingsAttachedScreen {
     let screenTitle = "読み上げモードを選ぶ"
-    let reciteModeHolders = [
-        ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
-        ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
-        ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)"),
-        // 下の句かるたは、Ver.7までおあずけ
-//        ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
-    ]
-    
+    let reciteModeHolders = reciteModes
     lazy var picker = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = screenTitle
-        self.view.backgroundColor = StandardColor.backgroundColor
-        self.view.addSubview(picker)
+        view.backgroundColor = StandardColor.backgroundColor
+        view.addSubview(picker)
         initPicker()
     }
     
@@ -33,23 +38,7 @@ final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UI
         super.viewWillDisappear(animated)
         self.saveSettingsAction?()
     }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        reciteModeHolders.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return reciteModeHolders[row].title
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        settings.reciteMode = reciteModeHolders[row].mode
-    }
-    
+
     private func initPicker() {
         picker.dataSource = self
         picker.delegate = self
@@ -67,7 +56,10 @@ final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UI
     }
     
     private func initialRowSelectInPicker() {
-        picker.selectRow(row(for: settings.reciteMode)!, inComponent: 0, animated: false)
+        picker.selectRow(
+            row(for: settings.reciteMode)!,
+            inComponent: 0,
+            animated: false)
     }
     
     private func row(for mode: ReciteMode) -> Int? {
@@ -76,7 +68,27 @@ final class SelectModeScreen: SettingsAttachedScreen, UIPickerViewDataSource, UI
                 return i
             }
         }
-        fatalError("ReciteMode \(mode) is not supported!")
+        assertionFailure("ReciteMode \(mode) is not supported!")
+        return nil
+    }
+}
+
+extension SelectModeScreen: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        reciteModeHolders.count
     }
 
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        reciteModeHolders[row].title
+    }
+}
+    
+extension SelectModeScreen: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        settings.reciteMode = reciteModeHolders[row].mode
+    }
 }
