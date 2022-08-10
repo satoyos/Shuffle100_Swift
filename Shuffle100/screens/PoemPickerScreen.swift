@@ -14,27 +14,22 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
     var tableView: UITableView!
-    var selectByGroupAction: (() -> Void)?
-    var openNgramPickerAction: (() -> Void)?
-    var openFudaSetsScreenAction: (() -> Void)?
-    var openFiveColorsScreenAction: (() -> Void)?
+    var selectByGroupAction: InjectedAction?
+    var openNgramPickerAction: InjectedAction?
+    var openFudaSetsScreenAction: InjectedAction?
+    var openFiveColorsScreenAction: InjectedAction?
     var showTorifudaAction: ((_ number: Int) -> Void)?
     var rowForFudaSetOverwritten: Int = 0
     var fontSizeOfCell: CGFloat!
     
     var selected_num: Int {
-        get {
-            return settings.state100.selectedNum
-        }
+        settings.state100.selectedNum
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView = createTableViewForScreen()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
-        view.addSubview(tableView)
-        self.navigationItem.title = "歌を選ぶ"
-        navigationItem.rightBarButtonItem = saveButtonItem()
+        tableViewSetUp()
+        navigationBarSetUp()
         searchSetup()
         toolBarSetup()
     }
@@ -66,6 +61,17 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         if let btnWithBadge = navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem {
             btnWithBadge.badgeValue = "\(selected_num)首"
         }
+    }
+    
+    private func tableViewSetUp() {
+        self.tableView = createTableViewForScreen()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
+        view.addSubview(tableView)
+    }
+    
+    private func navigationBarSetUp() {
+        self.navigationItem.title = "歌を選ぶ"
+        navigationItem.rightBarButtonItem = saveButtonItem()
     }
     
     private func createTableViewForScreen() -> UITableView {
