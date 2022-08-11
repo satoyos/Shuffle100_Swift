@@ -15,48 +15,34 @@ final class RecitePoemScreen: SettingsAttachedScreen {
     var gameEndView: AllPoemsRecitedView!
     var currentPlayer: AVAudioPlayer?
     var timerForPrgoress: Timer!
-    var playerFinishedAction: (() -> Void)?
-    var playButtonTappedAfterFinishedReciting: (() -> Void)?
-    var backToPreviousAction: (() -> Void)?
-    var skipToNextScreenAction: (() -> Void)?
-    var openSettingsAction: (() -> Void)?
-    var backToHomeScreenAction: (() -> Void)?
-    var startPostMortemAction: (() -> Void)?
+    var playerFinishedAction: InjectedAction?
+    var playButtonTappedAfterFinishedReciting: InjectedAction?
+    var backToPreviousAction: InjectedAction?
+    var skipToNextScreenAction: InjectedAction?
+    var openSettingsAction: InjectedAction?
+    var backToHomeScreenAction: InjectedAction?
+    var startPostMortemAction: InjectedAction?
     var singer: Singer!
     var playFinished: Bool = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let singerID = settings.singerID
-        guard let singer = fetchSinger(id: singerID) else {
-            assertionFailure("[\(singerID)]に対応する読手が見つかりません。")
-            return
-        }
-        self.singer = singer
-
-        view.backgroundColor = StandardColor.barTintColor
-        recitePoemView = RecitePoemView()
-        view.addSubview(recitePoemView)
-        recitePoemView.initView(title: "序歌")
+        singerSetUp()
+        setColorArondNotchArea()
+        recitePoemViewSetUp()
         addActionsToButtons()
-        
         setNotificationsAboutBackgound()
     }
     
-    fileprivate func fetchSinger(id: String) -> Singer? {
-        return Singers.getSingerOfID(id)
-    }
-        
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
         // 自動的にスリープに入るのを防ぐ
         UIApplication.shared.isIdleTimerDisabled = true
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        recitePoemView?.fixLayoutOn(baseView: self.view)
+        recitePoemView?.fixLayoutOn(baseView: view)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,7 +59,26 @@ final class RecitePoemScreen: SettingsAttachedScreen {
       UIApplication.shared.isIdleTimerDisabled = false
     }
     
-    func addActionsToButtons() {
+    private func singerSetUp() {
+        let id = settings.singerID
+        guard let singer = Singers.getSingerOfID(id) else {
+            assertionFailure("[\(id)]に対応する読手が見つかりません。")
+            return
+        }
+        self.singer = singer
+    }
+    
+    private func setColorArondNotchArea() {
+        view.backgroundColor = StandardColor.barTintColor
+    }
+    
+    private func recitePoemViewSetUp() {
+        recitePoemView = RecitePoemView()
+        view.addSubview(recitePoemView)
+        recitePoemView.initView(title: "序歌")
+    }
+    
+    internal func addActionsToButtons() {
         if settings.postMortemEnabled {
             recitePoemView.exitButton.tappedAction = {[weak self] in
                 self?.selectPosrMortemOrBackToHome()
@@ -96,7 +101,6 @@ final class RecitePoemScreen: SettingsAttachedScreen {
             self?.forwardButtonTapped()
         }
     }
-    
     
     private func setNotificationsAboutBackgound() {
         NotificationCenter.default.addObserver(
