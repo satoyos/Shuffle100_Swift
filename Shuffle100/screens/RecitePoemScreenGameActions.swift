@@ -25,20 +25,30 @@ extension RecitePoemScreen {
             with: self.view,
             duration: interval,
             options: [.transitionFlipFromLeft, .layoutSubviews],
-            animations: {
-                let newReciteView = RecitePoemView()
-                self.recitePoemView.removeFromSuperview()
-                UIView.performWithoutAnimation {
-                    self.view.addSubview(newReciteView)
-                    newReciteView.initView(title: "\(counter)首め:上の句 (全\(total)首)")
-                }
-                self.recitePoemView = newReciteView
-                self.addActionsToButtons()
-            },
+            animations: stepIntoNextPoemAnimation(          with: titleStr(of: counter, side: .kami, in: total)),
+//                    "\(counter)首め:上の句 (全\(total)首)"),
             completion: { _ in
                 self.reciteKami(number: number, count: counter)
             }
         )
+    }
+    
+    private func titleStr(of counter: Int, side: Side, in total: Int) -> String {
+        let sideStr = side == .kami ? "上" : "下"
+        return "\(counter)首め:" + sideStr + "の句 (全\(total)首)"
+    }
+    
+    private func stepIntoNextPoemAnimation(with title: String) ->  () -> Void {
+        {
+            let newReciteView = RecitePoemView()
+            self.recitePoemView.removeFromSuperview()
+            UIView.performWithoutAnimation {
+                self.view.addSubview(newReciteView)
+                newReciteView.initView(title: title)
+            }
+            self.recitePoemView = newReciteView
+            self.addActionsToButtons()
+        }
     }
     
     func waitUserActionAfterFineshdReciing() {
@@ -54,7 +64,7 @@ extension RecitePoemScreen {
     func slideIntoShimo(number: Int, at counter: Int, total: Int) {
         let newReciteView = RecitePoemView()
         view.addSubview(newReciteView)
-        newReciteView.initView(title: "\(counter)首め:下の句 (全\(total)首)")
+        newReciteView.initView(title: titleStr(of: counter, side: .shimo, in: total))
         newReciteView.fixLayoutOn(baseView: self.view, offsetX: self.view.frame.width)
         
         UIView.animate(
@@ -72,7 +82,7 @@ extension RecitePoemScreen {
     func slideBackToKami(number: Int, at counter: Int, total: Int) {
         let newReciteView = RecitePoemView()
         view.addSubview(newReciteView)
-        newReciteView.initView(title: "\(counter)首め:上の句 (全\(total)首)")
+        newReciteView.initView(title: titleStr(of: counter, side: .kami, in: total))
         newReciteView.fixLayoutOn(baseView: self.view, offsetX: -1 * self.view.frame.width)
         
         UIView.animate(
@@ -98,7 +108,7 @@ extension RecitePoemScreen {
                 self.recitePoemView.removeFromSuperview()
                 UIView.performWithoutAnimation {
                     self.view.addSubview(newReciteView)
-                    newReciteView.initView(title: "\(counter)首め:下の句 (全\(total)首)")
+                    newReciteView.initView(title: self.titleStr(of: counter, side: .shimo, in: total))
                 }
                 self.recitePoemView = newReciteView
                 self.addActionsToButtons()
