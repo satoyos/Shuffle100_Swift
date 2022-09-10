@@ -17,23 +17,24 @@ final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
     }
     
     var title: XCUIElement {
-        return app.sheets.staticTexts[A11y.title].firstMatch
+        app.scrollViews.staticTexts[A11y.title]
     }
     
     var cancelButton: XCUIElement {
-        return waitToHittable(for: app.sheets.buttons[A11y.cancel], timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.cancel],
+                       timeout: timeOutSec)
     }
     
     var selectByNgramButton: XCUIElement {
-        return waitToHittable(for: app.sheets.buttons[A11y.selectByNgram].firstMatch, timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.selectByNgram].firstMatch, timeout: timeOutSec)
     }
     
     var selectBySetButton: XCUIElement {
-        return waitToHittable(for: app.sheets.buttons[A11y.selectBySet].firstMatch, timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.selectBySet].firstMatch, timeout: timeOutSec)
     }
     
     var selectByColorButton: XCUIElement {
-        return waitToHittable(for: app.sheets.buttons[A11y.selectByColor].firstMatch, timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.selectByColor].firstMatch, timeout: timeOutSec)
     }
     
     enum A11y {
@@ -43,5 +44,4 @@ final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
         static let selectBySet = "作った札セットから選ぶ"
         static let selectByColor = "五色百人一首の色で選ぶ"
     }
-    
 }

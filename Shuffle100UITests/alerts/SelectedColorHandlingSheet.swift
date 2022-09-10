@@ -23,15 +23,15 @@ final class SelectedColorHanlingSheet: AlertObjectable, WaitInUITest{
     }
     
     var cancelButton: XCUIElement {
-        waitToHittable(for: app.sheets.buttons[A11y.cancel], timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.cancel], timeout: timeOutSec)
     }
     
     var selectOnlyThese20Button: XCUIElement {
-        waitToHittable(for: app.sheets.buttons[A11y.selectOnlyThese20].firstMatch, timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.selectOnlyThese20].firstMatch, timeout: timeOutSec)
     }
     
     var addThese20Button: XCUIElement {
-        waitToHittable(for: app.sheets.buttons[A11y.addThese20].firstMatch, timeout: timeOutSec)
+        waitToHittable(for: app.scrollViews.buttons[A11y.addThese20].firstMatch, timeout: timeOutSec)
     }
     
     enum A11y {
