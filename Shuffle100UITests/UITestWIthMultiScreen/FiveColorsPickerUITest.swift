@@ -111,4 +111,17 @@ class FiveColorsPickerUITest: XCTestCase {
         // then
         XCTAssert(homePage.numberOfSelecttedPoems(is: 40))
     }
+    
+//    func testTest() {
+//
+//        let app = app2
+//        app/*@START_MENU_TOKEN@*/.toolbars["Toolbar"]/*[[".toolbars[\"ツールバー\"]",".toolbars[\"Toolbar\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["まとめて選ぶ"].tap()
+//
+//        let app2 = app
+//        app2/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"どうやって選びますか？\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.buttons["五色百人一首の色で選ぶ"].tap()
+//        app.buttons["桃(ピンク)"].tap()
+//        app2/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"桃(ピンク)色の20首をどうしますか？\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.buttons["この20首だけを選ぶ"].tap()
+//        app.navigationBars["五色百人一首"].buttons["歌を選ぶ"].tap()
+//
+//    }
 }
