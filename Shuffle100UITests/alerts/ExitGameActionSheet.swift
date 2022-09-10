@@ -16,15 +16,15 @@ final class ExitGameActionSheet: AlertObjectable {
     }
     
     var title: XCUIElement {
-        app.sheets.staticTexts[A11y.title].firstMatch
+        app.scrollViews.staticTexts[A11y.title].firstMatch
     }
     
     var postMortemAButton: XCUIElement {
-        app.sheets.buttons[A11y.postMortem].firstMatch
+        app.scrollViews.buttons[A11y.postMortem].firstMatch
     }
     
     var backToTopButton: XCUIElement {
-        app.sheets.buttons[A11y.backToTop].firstMatch
+        app.scrollViews.buttons[A11y.backToTop].firstMatch
     }
     
     enum A11y {
