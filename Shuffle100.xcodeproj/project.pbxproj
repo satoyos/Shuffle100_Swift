@@ -29,9 +29,9 @@
 		9207514D28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */; };
 		9207514E28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */; };
 		9207514F28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */; };
-		9207515128D85FC200B35285 /* Shuffle100_Icon_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515028D85FC200B35285 /* Shuffle100_Icon_1024.png */; };
-		9207515228D85FC200B35285 /* Shuffle100_Icon_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515028D85FC200B35285 /* Shuffle100_Icon_1024.png */; };
-		9207515328D85FC200B35285 /* Shuffle100_Icon_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515028D85FC200B35285 /* Shuffle100_Icon_1024.png */; };
+		9207515528D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */; };
+		9207515628D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */; };
+		9207515728D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */; };
 		9207BAF4229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
 		9207BAF5229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
 		9207BAF6229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
@@ -599,7 +599,7 @@
 		9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextScreenTest.swift; sourceTree = "<group>"; };
 		9206CEE022E1FEE500AC0457 /* PoemPickerScreenSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenSearch.swift; sourceTree = "<group>"; };
 		9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+NowPlayingInfo.swift"; sourceTree = "<group>"; };
-		9207515028D85FC200B35285 /* Shuffle100_Icon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shuffle100_Icon_1024.png; sourceTree = "<group>"; };
+		9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shuffle100_1024_background_playback.png; sourceTree = "<group>"; };
 		9207BAF3229579D600816DC8 /* Bool100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool100.swift; sourceTree = "<group>"; };
 		9207BAFB2298182000816DC8 /* Bool100Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool100Test.swift; sourceTree = "<group>"; };
 		9207BB3122996B7300816DC8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -1076,7 +1076,7 @@
 				9280038E249BAFED004D03C2 /* empty_circle.png */,
 				92800390249BAFEE004D03C2 /* full_circle.png */,
 				9280038F249BAFED004D03C2 /* half_circle.png */,
-				9207515028D85FC200B35285 /* Shuffle100_Icon_1024.png */,
+				9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -1514,7 +1514,7 @@
 				92800394249BAFEE004D03C2 /* half_circle.png in Resources */,
 				92328C2824591E25005E0FEE /* refrain.png in Resources */,
 				92C87DD722E88D5400569D15 /* Singers.json in Resources */,
-				9207515128D85FC200B35285 /* Shuffle100_Icon_1024.png in Resources */,
+				9207515528D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */,
 				92328C2E24591E25005E0FEE /* go_next.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1527,7 +1527,6 @@
 				9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */,
 				92328C2C24591E25005E0FEE /* torifuda.png in Resources */,
 				92328C2F24591E25005E0FEE /* go_next.png in Resources */,
-				9207515228D85FC200B35285 /* Shuffle100_Icon_1024.png in Resources */,
 				921FF44824A4D9EF0083AC49 /* html in Resources */,
 				92800392249BAFEE004D03C2 /* empty_circle.png in Resources */,
 				92328C2924591E25005E0FEE /* refrain.png in Resources */,
@@ -1535,6 +1534,7 @@
 				92FFBF4F245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92800398249BAFEE004D03C2 /* full_circle.png in Resources */,
 				92C87DD822E88D5400569D15 /* Singers.json in Resources */,
+				9207515628D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */,
 				92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 				92800395249BAFEE004D03C2 /* half_circle.png in Resources */,
@@ -1551,7 +1551,6 @@
 				9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */,
 				92328C2D24591E25005E0FEE /* torifuda.png in Resources */,
 				92328C3024591E25005E0FEE /* go_next.png in Resources */,
-				9207515328D85FC200B35285 /* Shuffle100_Icon_1024.png in Resources */,
 				921FF44924A4D9EF0083AC49 /* html in Resources */,
 				92800393249BAFEE004D03C2 /* empty_circle.png in Resources */,
 				92328C2A24591E25005E0FEE /* refrain.png in Resources */,
@@ -1559,6 +1558,7 @@
 				92FFBF50245FB53A004D7F79 /* tatami_moved.jpg in Resources */,
 				92800399249BAFEE004D03C2 /* full_circle.png in Resources */,
 				92C87DD922E88D5400569D15 /* Singers.json in Resources */,
+				9207515728D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */,
 				92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 				92800396249BAFEE004D03C2 /* half_circle.png in Resources */,

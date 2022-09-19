@@ -25,7 +25,7 @@ extension RecitePoemScreen {
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
-        if let image = UIImage(named: "Shuffle100_Icon_1024.png") {
+        if let image = UIImage(named: "Shuffle100_1024_background_playback") {
             nowPlayingInfo[MPMediaItemPropertyArtwork] =
                 MPMediaItemArtwork(boundsSize: image.size) { size in
                     // Extension used here to return newly sized image
