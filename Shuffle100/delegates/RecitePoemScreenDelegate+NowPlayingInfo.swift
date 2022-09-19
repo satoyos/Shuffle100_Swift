@@ -6,16 +6,32 @@
 //  Copyright © 2022 里 佳史. All rights reserved.
 //
 
+import UIKit
 import MediaPlayer
+
+extension UIImage {
+    func imageWith(newSize: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: newSize)
+        let image = renderer.image { _ in
+            self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
+        }
+        return image.withRenderingMode(self.renderingMode)
+    }
+}
 
 extension RecitePoemScreen {
     internal func updateNowPlayingInfo(title: String) {
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
-
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
-        
+        if let image = UIImage(named: "Shuffle100_Icon_1024.png") {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] =
+                MPMediaItemArtwork(boundsSize: image.size) { size in
+                    // Extension used here to return newly sized image
+                    return image.imageWith(newSize: size)
+            }
+        }
         // Set the metadata
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
