@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import MediaPlayer
 
 extension RecitePoemScreen {
-    
     func selectPosrMortemOrBackToHome() {
         guard settings.postMortemEnabled else { return }
         currentPlayer?.stop()
@@ -86,45 +84,5 @@ extension RecitePoemScreen {
         guard let currentPlayer = currentPlayer else { return }
         currentPlayer.stop()
         skipToNextScreenAction?()
-    }
-
-    internal func updateNowPlayingInfo(title: String) {
-        var nowPlayingInfo = [String : Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-
-        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.currentPlayer?.currentTime
-        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.currentPlayer?.duration
-        
-        // Set the metadata
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-    }
-
-    @objc func onWillResignActive(_ notification: Notification?) {
-        assert(true, "-- バックグラウンドに【これから入ります】 (Notificationで検出)")
-        if settings.reciteMode != .nonstop {
-            assert(true, "// ノンストップではないので、読み上げを止めます。")
-            pauseCurrentPlayer()
-        } else {
-            setupRemoteTransportControls()
-        }
-    }
-    
-    private func setupRemoteTransportControls() {
-        // Get the shared MPRemoteCommandCenter
-        let commandCenter = MPRemoteCommandCenter.shared()
-
-        // Add handler for Play Command
-        commandCenter.playCommand.addTarget { [unowned self] event -> MPRemoteCommandHandlerStatus in
-            guard let currentPlayer = self.currentPlayer else { return .commandFailed}
-            currentPlayer.play()
-            return .success
-        }
-
-        // Add handler for Pause Command
-        commandCenter.pauseCommand.addTarget { [unowned self] event -> MPRemoteCommandHandlerStatus in
-            guard let currentPlayer = self.currentPlayer else { return .commandFailed}
-            currentPlayer.pause()
-            return .success
-        }
     }
 }
