@@ -68,7 +68,8 @@ final class WhatsNextScreen: Screen, ExitGameProtocol {
     
     private func setGearButton(with size: CGSize) {
         let gearButton = UIBarButtonItem(
-            image: UIImage(named: "gear-520.png")?.reSizeImage(reSize: size),
+            image: UIImage(named: "gear-520.png")?
+                .imageWith(newSize: size),
             style: UIBarButtonItem.Style.plain, target: self, action: #selector(gearButtonTapped))
         
         self.navigationItem.leftBarButtonItem = gearButton
@@ -77,7 +78,8 @@ final class WhatsNextScreen: Screen, ExitGameProtocol {
     
     private func setExitButton(with size: CGSize) {
         let exitButton = UIBarButtonItem(
-            image: UIImage(named: "exit_square.png")?.reSizeImage(reSize: size),
+            image: UIImage(named: "exit_square.png")?
+                .imageWith(newSize: size),
             style: UIBarButtonItem.Style.plain, target: self, action: #selector(exitButtonTapped))
         
         self.navigationItem.rightBarButtonItem = exitButton

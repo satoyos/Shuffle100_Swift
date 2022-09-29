@@ -17,7 +17,8 @@ class LargeImageAttachedButton: UIButton {
     
     func setImageOf(filename: String, with renderingMode: UIImage.RenderingMode = .automatic) {
         let image = UIImage(named: filename)!
-            .reSizeImage(reSize: imageSize())
+//            .reSizeImage(reSize: imageSize)
+            .imageWith(newSize: imageSize)
             .withRenderingMode(renderingMode)
         setImage(image, for: .normal)
     }
@@ -38,8 +39,8 @@ class LargeImageAttachedButton: UIButton {
         remakeLayoutConstraints()
     }
     
-    private func imageSize() -> CGSize {
-        return CGSize(width: self.frame.size.height, height: self.frame.size.height)
+    private var imageSize: CGSize {
+        CGSize(width: self.frame.size.height, height: self.frame.size.height)
     }
     
     
