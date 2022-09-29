@@ -49,7 +49,8 @@ extension RecitePoemView {
     
     private func layoutSettingButton() {
         gearButton = ReciteViewHeaderButton(type: .custom).then {
-            let image = UIImage(named: "gear-520.png")!.reSizeImage(reSize: headerButtonSize)
+            let image = UIImage(named: "gear-520.png")!
+                .imageWith(newSize: headerButtonSize)
             $0.setImageWithStarndardColor(image)
             $0.accessibilityLabel = "gear"
             $0.setAction {
@@ -65,7 +66,8 @@ extension RecitePoemView {
     
     private func layoutExitButton() {
         exitButton = ReciteViewHeaderButton(type: .custom).then {
-            let image = UIImage(named: "exit_square.png")!.reSizeImage(reSize: headerButtonSize)
+            let image = UIImage(named: "exit_square.png")!
+                .imageWith(newSize: headerButtonSize)
             $0.setImageWithStarndardColor(image)
             $0.accessibilityLabel = "exit"
             $0.setAction {

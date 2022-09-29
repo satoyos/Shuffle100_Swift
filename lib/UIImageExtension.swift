@@ -8,21 +8,13 @@
 
 import UIKit
 
-extension UIImage {
-    // resize image
-    func reSizeImage(reSize:CGSize)->UIImage {
-        //UIGraphicsBeginImageContext(reSize);
-        UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale);
-        self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height));
-        let reSizeImage:UIImage! = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return reSizeImage;
-    }
-    
-    // scale the image at rates
-    func scaleImage(scaleSize:CGFloat)->UIImage {
-        let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
-        return reSizeImage(reSize: reSize)
+extension UIImage {    
+    func imageWith(newSize: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: newSize)
+        let image = renderer.image { _ in
+            self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
+        }
+        return image.withRenderingMode(self.renderingMode)
     }
     
     func tint(color: UIColor, alpha: CGFloat = 1) -> UIImage {

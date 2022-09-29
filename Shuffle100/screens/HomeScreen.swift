@@ -84,7 +84,7 @@ final class HomeScreen: SettingsAttachedScreen {
     private func setSettingsButton(withSize newSize: CGSize) {
         let gearButton = UIBarButtonItem(
             image: UIImage(named: "gear-520.png")?
-                .reSizeImage(reSize: newSize),
+                .imageWith(newSize: newSize),
             style: UIBarButtonItem.Style.plain,
             target: self,
             action: #selector(gearButtonTapped))
@@ -95,7 +95,7 @@ final class HomeScreen: SettingsAttachedScreen {
     private func setHelpButton(withSize newSize: CGSize) {
         let helpButton = UIBarButtonItem(
             image: UIImage(named: "question_white.png")?
-                .reSizeImage(reSize: newSize),
+                .imageWith(newSize: newSize),
             style: UIBarButtonItem.Style.plain,
             target: self,
             action: #selector(helpButtonTapped))
