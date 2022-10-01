@@ -71,7 +71,11 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     
     private func navigationBarSetUp() {
         self.navigationItem.title = "歌を選ぶ"
-        navigationItem.rightBarButtonItem = saveButtonItem()
+//        navigationItem.rightBarButtonItem = saveButtonItem()
+        navigationItem.rightBarButtonItems = [
+            saveButtonItem(),
+            UIBarButtonItem.fixedSpace(65.0)
+        ]
     }
     
     private func createTableViewForScreen() -> UITableView {
@@ -81,7 +85,7 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         return tableView
     }
     
-    private func saveButtonItem() -> UIBarButtonItem? {
+    private func saveButtonItem() -> UIBarButtonItem {
         let button = UIButton(type: .custom).then {
             $0.setTitle("保存", for: .normal)
             $0.setStandardColor()
