@@ -64,28 +64,27 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     }
     
     private func tableViewSetUp() {
-        self.tableView = createTableViewForScreen()
+        self.tableView = tableViewForPoemPicker
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
         view.addSubview(tableView)
     }
     
     private func navigationBarSetUp() {
         self.navigationItem.title = "歌を選ぶ"
-//        navigationItem.rightBarButtonItem = saveButtonItem()
         navigationItem.rightBarButtonItems = [
-            saveButtonItem(),
+            saveButtonItem,
             UIBarButtonItem.fixedSpace(65.0)
         ]
     }
     
-    private func createTableViewForScreen() -> UITableView {
+    private var tableViewForPoemPicker: UITableView {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
     }
     
-    private func saveButtonItem() -> UIBarButtonItem {
+    private var saveButtonItem: UIBarButtonItem {
         let button = UIButton(type: .custom).then {
             $0.setTitle("保存", for: .normal)
             $0.setStandardColor()
