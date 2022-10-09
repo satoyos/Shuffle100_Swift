@@ -58,7 +58,7 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     }
     
     internal func updateBadge() {
-        if let btnWithBadge = navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem {
+        if let btnWithBadge = navigationItem.rightBarButtonItems?.first as? BBBadgeBarButtonItem {
             btnWithBadge.badgeValue = "\(selected_num)首"
         }
     }
