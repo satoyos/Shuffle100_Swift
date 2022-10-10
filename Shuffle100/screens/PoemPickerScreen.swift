@@ -63,7 +63,7 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         }
         if let numBadgeItem = navigationItem.rightBarButtonItems?.last {
             if let badgeView = numBadgeItem.customView as? BadgeSwift {
-                badgeView.text = "\(selected_num)首"
+                badgeView.setTextWithAnimation("\(selected_num)首")
             } else {
                 print("--- Couldn't get badgeView as BadgeSwift")
             }
@@ -134,7 +134,6 @@ final class PoemPickerScreen: SettingsAttachedScreen {
             $0.font = UIFont.preferredFont(forTextStyle: .caption1)
             $0.textColor = .white
             $0.badgeColor = .systemRed
-//            $0.cornerRadius = $0.height / 2
         }
         return UIBarButtonItem(customView: badgeView)
     }
