@@ -142,6 +142,9 @@
 		924E89302827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
 		924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */; };
 		924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */; };
+		9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
+		9254B4CA28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
+		9254B4CB28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
@@ -668,6 +671,7 @@
 		924E892D2827F69B00DEB4C5 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
 		924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindowProtocolTest.swift; sourceTree = "<group>"; };
 		924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButtonTest.swift; sourceTree = "<group>"; };
+		9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeSwift+Animation.swift"; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
@@ -1129,6 +1133,7 @@
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
 				92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */,
 				920D670228F3D74200952402 /* BadgeSwift.swift */,
+				9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1777,6 +1782,7 @@
 				9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
+				9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
 				92FFBF49245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
 				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				924619602493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
@@ -1960,6 +1966,7 @@
 				92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */,
 				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
+				9254B4CA28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
 				9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */,
 				92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
@@ -2126,6 +2133,7 @@
 				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92F8242225A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
 				922BDDE32621CE720093B24A /* RecitePoemPage.swift in Sources */,
+				9254B4CB28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
 				92A6EB8724191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				9204751B254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
