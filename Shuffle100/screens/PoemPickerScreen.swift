@@ -61,6 +61,15 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         if let btnWithBadge = navigationItem.rightBarButtonItems?.first as? BBBadgeBarButtonItem {
             btnWithBadge.badgeValue = "\(selected_num)首"
         }
+        if let numBadgeItem = navigationItem.rightBarButtonItems?.last {
+            if let badgeView = numBadgeItem.customView as? BadgeSwift {
+                badgeView.text = "\(selected_num)首"
+            } else {
+                print("--- Couldn't get badgeView as BadgeSwift")
+            }
+        } else {
+            print("--- Couldn't get numBadgeItem from rightBarButtonItems")
+        }
     }
     
     private func tableViewSetUp() {
@@ -73,7 +82,8 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItems = [
             saveButtonItem,
-            UIBarButtonItem.fixedSpace(65.0)
+            UIBarButtonItem.fixedSpace(65.0),
+            selectedNumBadgeItem
         ]
     }
     
@@ -115,5 +125,17 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         let selectGroupButton = UIBarButtonItem(title: "まとめて選ぶ", style: .plain, target: self, action: #selector(selectByGroupButtonTapped))
         let flexibleSpace1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         self.toolbarItems = [cancelAllButton, flexibleSpace1, selectAllButton, flexibleSpace1, selectGroupButton]
+    }
+    
+    private var selectedNumBadgeItem: UIBarButtonItem {
+        let badgeView = BadgeSwift().then {
+            $0.text = "\(selected_num)首"
+            $0.insets = CGSize(width: 2, height: 2)
+            $0.font = UIFont.preferredFont(forTextStyle: .caption1)
+            $0.textColor = .white
+            $0.badgeColor = .systemRed
+//            $0.cornerRadius = $0.height / 2
+        }
+        return UIBarButtonItem(customView: badgeView)
     }
 }

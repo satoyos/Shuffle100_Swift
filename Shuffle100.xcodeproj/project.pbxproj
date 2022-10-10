@@ -49,6 +49,10 @@
 		920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920C00172427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
+		920D670328F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
+		920D670428F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
+		920D670528F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
+		920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670628F3D7A500952402 /* BadgeSwiftTests.swift */; };
 		920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */; };
 		920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */; };
 		920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */; };
@@ -607,6 +611,8 @@
 		9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeCoordinator.swift; sourceTree = "<group>"; };
 		9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinator.swift; sourceTree = "<group>"; };
 		920C00152427A61600593803 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
+		920D670228F3D74200952402 /* BadgeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwift.swift; sourceTree = "<group>"; };
+		920D670628F3D7A500952402 /* BadgeSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwiftTests.swift; sourceTree = "<group>"; };
 		920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFudaSetTest.swift; sourceTree = "<group>"; };
 		920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenTest.swift; sourceTree = "<group>"; };
 		920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreen.swift; sourceTree = "<group>"; };
@@ -950,6 +956,7 @@
 				9215013027005A5E001E39FE /* NavigationBarTests.swift */,
 				924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */,
 				924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */,
+				920D670628F3D7A500952402 /* BadgeSwiftTests.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1121,6 +1128,7 @@
 				925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */,
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
 				92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */,
+				920D670228F3D74200952402 /* BadgeSwift.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1666,6 +1674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9207BB3222996B7300816DC8 /* Settings.swift in Sources */,
+				920D670328F3D74200952402 /* BadgeSwift.swift in Sources */,
 				920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */,
 				92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
 				92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
@@ -1901,6 +1910,7 @@
 				925994FC244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				9207BB3322996B7300816DC8 /* Settings.swift in Sources */,
+				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
 				92D57156220F03AF00235717 /* SelectModeScreen.swift in Sources */,
 				9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
@@ -1930,6 +1940,7 @@
 				9206CEE222E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92FFBF4A245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
 				925994F8244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
+				920D670428F3D74200952402 /* BadgeSwift.swift in Sources */,
 				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */,
 				92D5715A221014A300235717 /* UIColorExtention.swift in Sources */,
@@ -2142,6 +2153,7 @@
 				92E44EF626AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift in Sources */,
 				92E9705C26C146B900A6650C /* EvaluateAppDialog.swift in Sources */,
 				92CE0D5C263AA8AF00372B24 /* ExitGameDialog.swift in Sources */,
+				920D670528F3D74200952402 /* BadgeSwift.swift in Sources */,
 				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
