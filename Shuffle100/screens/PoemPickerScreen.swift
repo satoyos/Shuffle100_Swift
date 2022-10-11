@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BBBadgeBarButtonItem
 import Then
 
 final class PoemPickerScreen: SettingsAttachedScreen {
@@ -58,18 +57,11 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     }
     
     internal func updateBadge() {
-        if let btnWithBadge = navigationItem.rightBarButtonItems?.first as? BBBadgeBarButtonItem {
-            btnWithBadge.badgeValue = "\(selected_num)首"
-        }
         if let numBadgeItem = navigationItem.rightBarButtonItems?.last {
             if let badgeView = numBadgeItem.customView as? BadgeSwift {
                 badgeView.setTextWithAnimation("\(selected_num)首")
-            } else {
-                print("--- Couldn't get badgeView as BadgeSwift")
             }
-        } else {
-            print("--- Couldn't get numBadgeItem from rightBarButtonItems")
-        }
+        } 
     }
     
     private func tableViewSetUp() {
@@ -82,7 +74,6 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         self.navigationItem.title = "歌を選ぶ"
         navigationItem.rightBarButtonItems = [
             saveButtonItem,
-            UIBarButtonItem.fixedSpace(65.0),
             selectedNumBadgeItem
         ]
     }
@@ -95,17 +86,11 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     }
     
     private var saveButtonItem: UIBarButtonItem {
-        let button = UIButton(type: .custom).then {
-            $0.setTitle("保存", for: .normal)
-            $0.setStandardColor()
-            $0.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        }
-        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
-            $0.badgeValue = "\(selected_num)首"
-            $0.badgeOriginX = -50
-            $0.badgeOriginY = 5
-        }
-        return buttonItem
+         UIBarButtonItem(
+            title: "保存",
+            style: .plain,
+            target: self,
+            action: #selector(saveButtonTapped))
     }
     
     private func searchSetup() {
@@ -130,10 +115,11 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     private var selectedNumBadgeItem: UIBarButtonItem {
         let badgeView = BadgeSwift().then {
             $0.text = "\(selected_num)首"
-            $0.insets = CGSize(width: 2, height: 2)
+            $0.insets = CGSize(width: 5, height: 5)
             $0.font = UIFont.preferredFont(forTextStyle: .caption1)
             $0.textColor = .white
             $0.badgeColor = .systemRed
+            $0.sizeToFit()
         }
         return UIBarButtonItem(customView: badgeView)
     }

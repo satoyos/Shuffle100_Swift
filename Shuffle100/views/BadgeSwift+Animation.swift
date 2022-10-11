@@ -25,6 +25,7 @@ extension BadgeSwift {
     private func identity() {
         UIView.animate(withDuration: duration) {
             self.transform = .identity
+            self.sizeToFit()
         }
     }
 }
