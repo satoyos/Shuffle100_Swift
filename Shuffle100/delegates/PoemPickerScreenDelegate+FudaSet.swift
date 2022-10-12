@@ -16,7 +16,8 @@ extension PoemPickerScreen: UIPickerViewDelegate {
 }
 
 extension PoemPickerScreen {
-    internal func showActionSheetForSaving(_ button: UIButton) {
+    internal func showActionSheetForSaving() {
+
         let newSetAction = UIAlertAction(title: "新しい札セットとして保存する", style: .default) { action in
             self.saveNewFudaSet()
         }
@@ -31,8 +32,7 @@ extension PoemPickerScreen {
         }
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
-            pc.sourceView = button
-            pc.sourceRect = button.frame
+            pc.barButtonItem = navigationItem.rightBarButtonItems?.first
         }
         present(ac, animated: true)
     }

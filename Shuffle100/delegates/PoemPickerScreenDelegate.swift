@@ -53,7 +53,7 @@ extension PoemPickerScreen {
             showAlertInhibeted(title: "歌を選びましょう", message: "空の札セットは保存できません。", handler: nil)
             return
         }
-        showActionSheetForSaving(button)
+        showActionSheetForSaving()
     }
 
     @objc func cancelAllButtonTapped() {
