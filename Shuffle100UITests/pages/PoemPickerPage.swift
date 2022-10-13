@@ -64,6 +64,10 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let detail = "詳細情報"
     }
     
+    func badge(of number: Int) -> XCUIElement {
+        app.navigationBars.staticTexts["\(number)首"]
+    }
+    
     @discardableResult
     func tapCellof(number: Int) -> Self {
         let a11yId = String(format: "%03d", number)
