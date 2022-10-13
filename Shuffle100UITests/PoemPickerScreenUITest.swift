@@ -21,9 +21,14 @@ class PoemPickerScreenUITest: XCTestCase, SHDeviceTypeGetter {
 
     func test_cancelAllAndSelectAll() {
         XCTContext.runActivity(named: "「全て取消」ボタンを押すと、選ばれている歌が0首になる") { activity in
-            // when
+            // given
             let pickerPage = homePage.goToPoemPickerPage()
+            XCTAssert(pickerPage.badge(of: 100).exists)
+            // when
             pickerPage.cancelAllButton.tap()
+            // then
+            XCTAssert(pickerPage.badge(of: 0).exists)
+            // when
             pickerPage.backToTopPage()
             // then
             XCTAssert(homePage.numberOfSelecttedPoems(is: 0))
