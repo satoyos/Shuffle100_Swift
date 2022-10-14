@@ -9,7 +9,7 @@
 import UIKit
 import Then
 
-final class PoemPickerScreen: SettingsAttachedScreen {
+final class PoemPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     internal var searchController: UISearchController!
     internal var filteredPoems = [Poem]()
     var tableView: UITableView!
@@ -21,10 +21,6 @@ final class PoemPickerScreen: SettingsAttachedScreen {
     var rowForFudaSetOverwritten: Int = 0
     var fontSizeOfCell: CGFloat!
     
-    var selected_num: Int {
-        settings.state100.selectedNum
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetUp()
@@ -112,15 +108,15 @@ final class PoemPickerScreen: SettingsAttachedScreen {
         self.toolbarItems = [cancelAllButton, flexibleSpace1, selectAllButton, flexibleSpace1, selectGroupButton]
     }
     
-    private var selectedNumBadgeItem: UIBarButtonItem {
-        let badgeView = BadgeSwift().then {
-            $0.text = "\(selected_num)首"
-            $0.insets = CGSize(width: 5, height: 5)
-            $0.font = UIFont.preferredFont(forTextStyle: .caption1)
-            $0.textColor = .white
-            $0.badgeColor = .systemRed
-            $0.sizeToFit()
-        }
-        return UIBarButtonItem(customView: badgeView)
-    }
+//    private var selectedNumBadgeItem: UIBarButtonItem {
+//        let badgeView = BadgeSwift().then {
+//            $0.text = "\(selected_num)首"
+//            $0.insets = CGSize(width: 5, height: 5)
+//            $0.font = UIFont.preferredFont(forTextStyle: .caption1)
+//            $0.textColor = .white
+//            $0.badgeColor = .systemRed
+//            $0.sizeToFit()
+//        }
+//        return UIBarButtonItem(customView: badgeView)
+//    }
 }
