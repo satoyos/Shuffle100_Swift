@@ -37,9 +37,8 @@ class PoemPickerScreenUITest: XCTestCase, SHDeviceTypeGetter {
             // when
             let pickerPage = homePage.goToPoemPickerPage()
             pickerPage.selectAllButton.tap()
-            pickerPage.backToTopPage()
             // then
-            XCTAssert(homePage.numberOfSelecttedPoems(is: 100))
+            XCTAssert(pickerPage.badge(of: 100).exists)
         }
     }
     
