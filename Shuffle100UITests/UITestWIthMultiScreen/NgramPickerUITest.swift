@@ -37,10 +37,15 @@ class NgramPickerUITest: XCTestCase {
             // when
             pickerPage.selectAllButton.tap()
             let ngramPage = pickerPage.gotoNgramPickerPage()
-            ngramPage
-                .tapCell(type: .justOne)
-                .backToPickerButton.tap()
+            ngramPage.tapCell(type: .justOne)
+            // then
+            XCTAssert(ngramPage.badge(of: 93).exists)
+            // when
+            ngramPage.backToPickerButton.tap()
         }
+        // then
+        XCTAssert(pickerPage.badge(of: 93).exists)
+        // when
         pickerPage.backToTopButton.tap()
         // then
         XCTAssert(homePage.numberOfSelecttedPoems(is: 93), "トップ画面でも93酒が選ばれた状態になっている。")
@@ -51,9 +56,14 @@ class NgramPickerUITest: XCTestCase {
         let pickerPage = homePage.goToPoemPickerPage()
         pickerPage.cancelAllButton.tap()
         let ngramPage = pickerPage.gotoNgramPickerPage()
-        ngramPage
-            .tapCell(type: .shi)
-            .backToPickerButton.tap()
+        ngramPage.tapCell(type: .shi)
+        // then
+        XCTAssert(ngramPage.badge(of: 2).exists)
+        // when
+        ngramPage.backToPickerButton.tap()
+        // then
+        XCTAssert(pickerPage.badge(of: 2).exists)
+        // when
         pickerPage.backToTopPage()
         // then
         XCTAssert(homePage.numberOfSelecttedPoems(is: 2))
@@ -70,6 +80,9 @@ class NgramPickerUITest: XCTestCase {
             .tapCell(type: .shi)
             .tapCell(type: .mo)
             .tapCell(type: .yu)
+        // then
+        XCTAssert(ngramPage.badge(of: 10).exists)
+        // when
         ngramPage.backToPickerButton.tap()
         pickerPage.backToTopPage()
         // then
