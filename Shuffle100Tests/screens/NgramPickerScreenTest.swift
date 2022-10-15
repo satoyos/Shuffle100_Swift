@@ -7,10 +7,9 @@
 //
 
 import XCTest
-import BBBadgeBarButtonItem
 @testable import Shuffle100
 
-class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
+class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, SelectedNumBadgeTest {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,9 +27,10 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
         // then
         XCTAssertEqual(screen.title, "1字目で選ぶ")
         XCTAssertNotNil(screen.tableView)
-        let buttonItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem
+        let buttonItem = screen.navigationItem.rightBarButtonItems?.last as? UIBarButtonItem
         XCTAssertNotNil(buttonItem)
-        XCTAssertEqual(buttonItem?.badgeValue, "100首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "100首")
+
     }
     
     func test_loadDataSourceFile() {
@@ -63,7 +63,8 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
         let screen = NgramPickerScreen(settings: settings)
         screen.loadViewIfNeeded()
         // then
-        XCTAssertEqual(screen.badgeItem.badgeValue , "99首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "99首")
+
         let tsuIndex = tsuIndexPath()
         let tsuCell = cellFor(screen, section:tsuIndex.section, row: tsuIndex.row)
         let content = listContentConfig(of: tsuCell)
@@ -88,7 +89,7 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
         // then
         let newTsuCell = cellFor(screen, indexPath: tsuIndex)
         XCTAssertEqual(newTsuCell.selectedStatus, .full)
-        XCTAssertEqual(screen.badgeItem.badgeValue, "100首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "100首")
     }
     
     func test_tapFullMakesEmpty() {
@@ -103,7 +104,8 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
         // then
         let newTsuCell = cellFor(screen, indexPath: tsuIndex)
         XCTAssertEqual(newTsuCell.selectedStatus, .empry)
-        XCTAssertEqual(screen.badgeItem.badgeValue, "98首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "98首")
+
     }
     
     private func cellFor(_ screen: NgramPickerScreen, section: Int, row: Int) -> NgramPickerTableCell {

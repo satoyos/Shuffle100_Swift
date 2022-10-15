@@ -40,7 +40,7 @@ extension NgramPickerScreen: UITableViewDelegate {
     }
     
     private func updateTableAndBadge() {
-        updateBadgeItem()
+        updateBadge()
         tableView.reloadData()
     }
 }

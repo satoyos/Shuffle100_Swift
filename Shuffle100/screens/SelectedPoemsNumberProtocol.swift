@@ -11,6 +11,7 @@ import UIKit
 protocol SelectedPoemsNumber {
     var selected_num: Int { get }
     var selectedNumBadgeItem: UIBarButtonItem { get }
+    func updateBadge()
 }
 
 extension SelectedPoemsNumber where Self: SettingsAttachedScreen {
@@ -29,5 +30,13 @@ extension SelectedPoemsNumber where Self: SettingsAttachedScreen {
             $0.sizeToFit()
         }
         return UIBarButtonItem(customView: badgeView)
+    }
+    
+    internal func updateBadge() {
+        if let numBadgeItem = navigationItem.rightBarButtonItems?.last {
+            if let badgeView = numBadgeItem.customView as? BadgeSwift {
+                badgeView.setTextWithAnimation("\(selected_num)首")
+            }
+        }
     }
 }
