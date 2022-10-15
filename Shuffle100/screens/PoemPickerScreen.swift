@@ -52,14 +52,6 @@ final class PoemPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
         super.viewWillDisappear(animated)
     }
     
-    internal func updateBadge() {
-        if let numBadgeItem = navigationItem.rightBarButtonItems?.last {
-            if let badgeView = numBadgeItem.customView as? BadgeSwift {
-                badgeView.setTextWithAnimation("\(selected_num)首")
-            }
-        } 
-    }
-    
     private func tableViewSetUp() {
         self.tableView = tableViewForPoemPicker
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "poems")
@@ -107,16 +99,4 @@ final class PoemPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
         let flexibleSpace1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         self.toolbarItems = [cancelAllButton, flexibleSpace1, selectAllButton, flexibleSpace1, selectGroupButton]
     }
-    
-//    private var selectedNumBadgeItem: UIBarButtonItem {
-//        let badgeView = BadgeSwift().then {
-//            $0.text = "\(selected_num)首"
-//            $0.insets = CGSize(width: 5, height: 5)
-//            $0.font = UIFont.preferredFont(forTextStyle: .caption1)
-//            $0.textColor = .white
-//            $0.badgeColor = .systemRed
-//            $0.sizeToFit()
-//        }
-//        return UIBarButtonItem(customView: badgeView)
-//    }
 }

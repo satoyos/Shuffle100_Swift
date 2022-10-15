@@ -9,7 +9,7 @@
 import XCTest
 @testable import BBBadgeBarButtonItem
 
-class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
+class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration, SelectedNumBadgeTest {
 
     var screen: PoemPickerScreen!
     
@@ -106,25 +106,17 @@ class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration {
         XCTAssertEqual(firstCell().accessibilityLabel, "001")
     }
     
-    private var badgeView: BadgeSwift? {
-        guard let badgeView = screen.navigationItem.rightBarButtonItems?.last?.customView as? BadgeSwift else {
-            XCTAssert(false, "Could't get BarButtonItem as BadgeSwift View")
-            return nil
-        }
-        return badgeView
-    }
-    
     func test_badgeValueShowsSelectedNum() {
-        XCTAssertEqual(badgeView?.text, "100首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "100首")
     }
     
     func test_tappingPoemChangesBadgeValue() {
-        XCTAssertEqual(badgeView?.text, "100首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "100首")
         // when
         let testIndex = IndexPath(row: 0, section: 0)
         screen.tableView(screen.tableView, didSelectRowAt: testIndex)
         // then
-        XCTAssertEqual(badgeView?.text, "99首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "99首")
     }
     
     func test_searchBarExists() {
