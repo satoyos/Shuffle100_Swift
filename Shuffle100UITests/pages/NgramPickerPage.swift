@@ -38,6 +38,10 @@ final class NgramPickerPage: PageObjectable {
         static let backToPicker = "歌を選ぶ"
     }
     
+    func badge(of number: Int) -> XCUIElement {
+        app.navigationBars.staticTexts["\(number)首"]
+    }
+    
     @discardableResult
     func tapCell(type: NgramCellType) -> Self {
         cell(type: type).tap()
