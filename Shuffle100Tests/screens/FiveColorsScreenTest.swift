@@ -7,10 +7,9 @@
 //
 
 import XCTest
-import BBBadgeBarButtonItem
 @testable import Shuffle100
 
-class FiveColorsScreenTest: XCTestCase {
+class FiveColorsScreenTest: XCTestCase, SelectedNumBadgeTest {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -41,9 +40,9 @@ class FiveColorsScreenTest: XCTestCase {
             XCTAssertEqual(screen.greenButton.imageView?.tintColor, .systemGreen)
         }
         XCTContext.runActivity(named: "バッジアイコンが正しく表示されている") { _ in
-            let buttonItem = screen.navigationItem.rightBarButtonItem as? BBBadgeBarButtonItem
+            let buttonItem = screen.navigationItem.rightBarButtonItems?.last as? UIBarButtonItem
             XCTAssertNotNil(buttonItem)
-            XCTAssertEqual(buttonItem?.badgeValue, "100首")
+            XCTAssertEqual(badgeView(of: screen)?.text, "100首")
         }
     }
     
@@ -58,7 +57,7 @@ class FiveColorsScreenTest: XCTestCase {
         let screen = FiveColorsScreen(settings: settings)
         screen.loadViewIfNeeded()
         // then
-        XCTAssertEqual(screen.badgeItem.badgeValue, "3首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "3首")
     }
     
     func test_just20OfBlueColorSelectedAction() {
@@ -68,7 +67,7 @@ class FiveColorsScreenTest: XCTestCase {
         // when
         screen.selectJust20Of(color: .blue)
         // then
-        XCTAssertEqual(screen.badgeItem.badgeValue, "20首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "20首")
     }
 
     func test_add20OfCororSelectedAction() {
@@ -84,7 +83,7 @@ class FiveColorsScreenTest: XCTestCase {
         screen.add20of(color: .yellow)
         // then
         // 既に選ばれている歌と黄色グループは2枚かぶるので、選ばれている歌の数は21になる
-        XCTAssertEqual(screen.badgeItem.badgeValue, "21首")
+        XCTAssertEqual(badgeView(of: screen)?.text, "21首")
     }
     
     func test_imageFilePathReflectsSelectedPoems() {

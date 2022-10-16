@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import BBBadgeBarButtonItem
 
-final class FiveColorsScreen: SettingsAttachedScreen {
+final class FiveColorsScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     let blueButton = ColorOfFiveButton(.blue)
     let yellowButton = ColorOfFiveButton(.yellow)
     let greenButton = ColorOfFiveButton(.green)
@@ -17,21 +16,21 @@ final class FiveColorsScreen: SettingsAttachedScreen {
     let orangeButton = ColorOfFiveButton(.orange)
     internal let sizes = SizeFactory.createSizeByDevice()
     let colorsDic = FiveColorsDataHolder.sharedDic
-    var badgeItem: BBBadgeBarButtonItem!
     internal var allColorButtons: [ColorOfFiveButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "五色百人一首"
         view.backgroundColor = StandardColor.backgroundColor
+        navigationBarSetUp()
         setAllColorButtonsProperty()
         addColorButtonsAsSubviews()
         setActionForColorButtons()
         layoutButtons()
-        self.badgeItem = dummyButtonItem()
-        updateBadgeItem()
-        navigationItem.rightBarButtonItem = badgeItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateBadge()
     }
     
     // this method is not private for testability
@@ -54,26 +53,18 @@ final class FiveColorsScreen: SettingsAttachedScreen {
         }
         return path
     }
-
-    internal func updateBadgeItem() {
-        badgeItem.badgeValue = "\(selectedNum)首"
-    }
     
+    private func navigationBarSetUp() {
+        self.title = "五色百人一首"
+        navigationItem.rightBarButtonItems = [
+            selectedNumBadgeItem
+        ]
+    }
+
     private func addColorButtonsAsSubviews() {
         allColorButtons.forEach {
             view.addSubview($0)
         }
-    }
-    
-    private func dummyButtonItem() -> BBBadgeBarButtonItem {
-        let button = UIButton(type: .custom).then {
-            $0.setTitle(" ", for: .normal)
-        }
-        let buttonItem = BBBadgeBarButtonItem(customUIButton: button)!.then {
-            $0.badgeOriginX = -50
-            $0.badgeOriginY = 0
-        }
-        return buttonItem
     }
     
     private func comparePoemNumbers(selected: Set<Int>, reference: Set<Int>) -> PoemsSelectedState {
