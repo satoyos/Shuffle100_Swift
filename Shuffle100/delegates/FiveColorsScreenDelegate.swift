@@ -45,7 +45,8 @@ extension FiveColorsScreen {
             .selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
-        updateBadgeItem()
+//        updateBadgeItem()
+        updateBadge()
     }
     
     func add20of(color: FiveColors) {
@@ -53,6 +54,7 @@ extension FiveColorsScreen {
         let newState100 = settings.state100.selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
-        updateBadgeItem()
+//        updateBadgeItem()
+        updateBadge()
     }
 }
