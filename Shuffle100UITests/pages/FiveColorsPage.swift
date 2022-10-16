@@ -28,6 +28,10 @@ final class FiveColorsPage: PageObjectable {
         static let back = "歌を選ぶ"
     }
     
+    func badge(of number: Int) -> XCUIElement {
+        app.navigationBars.staticTexts["\(number)首"]
+    }
+    
     private func colorButton(of color: FiveColors) -> XCUIElement {
         app.buttons[color.rawValue].firstMatch
     }
