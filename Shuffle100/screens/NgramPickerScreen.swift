@@ -17,18 +17,11 @@ final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     var tableView: UITableView!
     var sections = NgramDataFactory.createNgramPickerSctions()
     var numbersDic = NgramDataFactory.createNgramNumbersDic()
-//    var badgeItem: BBBadgeBarButtonItem!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetUp()
         navigationBarSetUp()
-//        self.title = "1字目で選ぶ"
-//        self.tableView = createTableViewForScreen()
-//        tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
-//        self.badgeItem = dummyButtonItem()
-//        updateBadgeItem()
-//        navigationItem.rightBarButtonItem = badgeItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
