@@ -8,7 +8,6 @@
 
 import UIKit
 import Then
-import BBBadgeBarButtonItem
 
 
 final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {

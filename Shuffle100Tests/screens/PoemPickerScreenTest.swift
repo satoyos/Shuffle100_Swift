@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import BBBadgeBarButtonItem
 
 class PoemPickerScreenTest: XCTestCase, ApplyListContentConfiguration, SelectedNumBadgeTest {
 
