@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BBBadgeBarButtonItem
 
 extension PoemPickerScreen: UITableViewDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

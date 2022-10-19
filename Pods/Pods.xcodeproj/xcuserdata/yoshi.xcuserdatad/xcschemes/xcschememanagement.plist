@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BBBadgeBarButtonItem.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DSFloatingButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>

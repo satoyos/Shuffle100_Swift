@@ -1,12 +1,10 @@
 PODS:
-  - BBBadgeBarButtonItem (1.2)
   - DSFloatingButton (1.0.1)
   - FontAwesome.swift (1.9.1)
   - SnapKit (5.6.0)
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - BBBadgeBarButtonItem (from `https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git`)
   - DSFloatingButton
   - FontAwesome.swift
   - SnapKit (~> 5.6.0)
@@ -19,22 +17,12 @@ SPEC REPOS:
     - SnapKit
     - Then
 
-EXTERNAL SOURCES:
-  BBBadgeBarButtonItem:
-    :git: https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git
-
-CHECKOUT OPTIONS:
-  BBBadgeBarButtonItem:
-    :commit: 0b705dde8f5c065b05f3482a05b4a3685e52608c
-    :git: https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git
-
 SPEC CHECKSUMS:
-  BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   DSFloatingButton: 2611b44e75736cd2f2686691ee4d2c16f2b62391
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 7be612f1ddcfaf58a393ddb4dde91e3ee5876d2c
+PODFILE CHECKSUM: 6fca8a62f14a145487649a35c135059a7e1467fd
 
 COCOAPODS: 1.11.3
