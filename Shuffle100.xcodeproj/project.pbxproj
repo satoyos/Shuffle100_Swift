@@ -620,6 +620,7 @@
 		920C00152427A61600593803 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		920D670228F3D74200952402 /* BadgeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwift.swift; sourceTree = "<group>"; };
 		920D670628F3D7A500952402 /* BadgeSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwiftTests.swift; sourceTree = "<group>"; };
+		920DBC5D2903E736000DAB0A /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFudaSetTest.swift; sourceTree = "<group>"; };
 		920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenTest.swift; sourceTree = "<group>"; };
 		920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreen.swift; sourceTree = "<group>"; };
@@ -974,6 +975,7 @@
 		923D59052143BB0A000F5E60 = {
 			isa = PBXGroup;
 			children = (
+				920DBC5D2903E736000DAB0A /* Gemfile */,
 				92E102C02749117E00889521 /* Shuffle100.xctestplan */,
 				92E102C12749BBC400889521 /* Test on Cloud.xctestplan */,
 				92FC398C22917E6000791053 /* Readme.md */,
