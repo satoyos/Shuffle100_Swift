@@ -1,0 +1,31 @@
+//
+//  FastlaneSnapshot.swift
+//  Shuffle100UITests
+//
+//  Created by Yoshifumi Sato on 2022/10/23.
+//  Copyright © 2022 里 佳史. All rights reserved.
+//
+
+import XCTest
+
+final class FastlaneSnapshot: XCTestCase {
+    let app = XCUIApplication()
+    lazy var homePage = HomePage(app: app)
+
+    override func setUpWithError() throws {
+        super.setUp()
+        continueAfterFailure = false
+        app.launchArguments.append("--uitesting")
+        setupSnapshot(app)
+        app.launch()
+    }
+
+    
+    func test_ScreenShotExample() throws {
+        // 「歌を選ぶ」画面に遷移した状態のスクリーンショットを撮ってみる
+        homePage.goToPoemPickerPage()
+        XCTAssert(PoemPickerPage(app: app).exists)
+        snapshot("0_trial_screenshot")
+    }
+
+}

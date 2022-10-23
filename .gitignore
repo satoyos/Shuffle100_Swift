@@ -12,3 +12,4 @@ __MACOSX/
 index.html
 vendor/
 fastlane/test_output/
+screenshots/
