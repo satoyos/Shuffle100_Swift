@@ -121,6 +121,8 @@
 		92328C3224596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
 		92328C3324596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
 		92328C3424596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
+		92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370710290570D40013C5AB /* SnapshotHelper.swift */; };
+		92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370712290571330013C5AB /* FastlaneSnapshot.swift */; };
 		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
 		923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
 		923B594D23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
@@ -654,6 +656,8 @@
 		92328C2624591E25005E0FEE /* torifuda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torifuda.png; sourceTree = "<group>"; };
 		92328C2724591E25005E0FEE /* go_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go_next.png; sourceTree = "<group>"; };
 		92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WahtsNextScreenLayout.swift; sourceTree = "<group>"; };
+		92370710290570D40013C5AB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		92370712290571330013C5AB /* FastlaneSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneSnapshot.swift; sourceTree = "<group>"; };
 		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
 		923B594B23ACF606002027B4 /* SimpleGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameEndView.swift; sourceTree = "<group>"; };
 		923B595023ACF927002027B4 /* RecitePoemViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemViewTests.swift; sourceTree = "<group>"; };
@@ -956,6 +960,15 @@
 			path = pages;
 			sourceTree = "<group>";
 		};
+		9237070F2905707E0013C5AB /* fastlane_snapshot */ = {
+			isa = PBXGroup;
+			children = (
+				92370710290570D40013C5AB /* SnapshotHelper.swift */,
+				92370712290571330013C5AB /* FastlaneSnapshot.swift */,
+			);
+			path = fastlane_snapshot;
+			sourceTree = "<group>";
+		};
 		923B594F23ACF8B1002027B4 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1032,6 +1045,7 @@
 		923D59302143BB0B000F5E60 /* Shuffle100UITests */ = {
 			isa = PBXGroup;
 			children = (
+				9237070F2905707E0013C5AB /* fastlane_snapshot */,
 				92CE0D5D263ACA5300372B24 /* alerts */,
 				922BDDE72625D4B80093B24A /* pages */,
 				928450D322E06B4B00D12CA7 /* lib */,
@@ -2051,6 +2065,7 @@
 				92E5F82D240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
 				924E89302827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
+				92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */,
 				92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */,
 				925994FD244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */,
@@ -2165,6 +2180,7 @@
 				92B87D4B250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
+				92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
 				92A262722865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				922BDDD9261B3B760093B24A /* HomePage.swift in Sources */,
