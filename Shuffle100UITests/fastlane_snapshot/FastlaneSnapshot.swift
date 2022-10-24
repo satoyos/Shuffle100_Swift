@@ -43,4 +43,17 @@ final class FastlaneSnapshot: XCTestCase {
         snapshot("1_RecitePoemScreen")
     }
 
+    func test_IntervalScreenShot() {
+        // when
+        let settingsPage = homePage.gotoReciteSettingPage()
+        // then
+        XCTAssert(settingsPage.exists)
+        // when
+        settingsPage.intervalCell.tap()
+        // then
+        let intervalPage = IntervalSettingPage(app: app)
+        XCTAssert(intervalPage.exists)
+        snapshot("5_IntervalSettingScreen")
+    }
+    
 }
