@@ -40,6 +40,7 @@ final class FastlaneSnapshot: XCTestCase {
         recitePage.playButton.tap()
         // then
         XCTAssert(recitePage.isWaitinfForPlay)
+        // take screenshot
         snapshot("1_RecitePoemScreen")
     }
 
@@ -53,7 +54,23 @@ final class FastlaneSnapshot: XCTestCase {
         // then
         let intervalPage = IntervalSettingPage(app: app)
         XCTAssert(intervalPage.exists)
+        // take screenshot
         snapshot("5_IntervalSettingScreen")
     }
     
+    func test_SearchScreenShot() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        let searchField = pickerPage.searchField
+        searchField.tap()
+        searchField.typeText("春")
+        // then
+        XCTAssert(pickerPage.cellOf(number: 2).exists)
+        XCTAssertFalse(pickerPage.cellOf(number: 1).exists)
+        // take screenshot
+        snapshot("3_SearchBar")
+    }
 }
