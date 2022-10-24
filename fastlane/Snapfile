@@ -3,7 +3,8 @@
 # A list of devices you want to take the screenshots from
 devices([
 #   "iPhone 8",
-  "iPhone 8 Plus",
+  "iPhone 8 Plus",      # 5.5inch
+  "iPhone 12 Pro Max",  # 6.5inch
 #   "iPhone SE",
 #   "iPhone X",
 #   "iPad Pro (12.9-inch)",
@@ -22,7 +23,10 @@ output_directory("./screenshots")
 clear_previous_screenshots(true)
 
 #  自動実行するテスト(スクリーンショット取得用メソッド)を個別指定可能
-only_testing(["Shuffle100UITests/FastlaneSnapshot/test_RecitePoemScreenShot"])
+only_testing([
+  "Shuffle100UITests/FastlaneSnapshot/test_RecitePoemScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_IntervalScreenShot",
+])
 
 # The name of the scheme which contains the UI Tests
 scheme("Shuffle100")
