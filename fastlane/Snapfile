@@ -7,8 +7,8 @@ devices([
   "iPhone 12 Pro Max",  # 6.5inch
 #   "iPhone SE",
 #   "iPhone X",
-#   "iPad Pro (12.9-inch)",
-#   "iPad Pro (9.7-inch)",
+  "iPad Pro (12.9-inch) (5th generation)",
+  "iPad Pro (11-inch) (3rd generation)",
 #   "Apple TV 1080p",
 #   "Apple Watch Series 6 - 44mm"
 ])
@@ -26,6 +26,7 @@ clear_previous_screenshots(true)
 only_testing([
   "Shuffle100UITests/FastlaneSnapshot/test_RecitePoemScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_IntervalScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_SearchScreenShot",
 ])
 
 # The name of the scheme which contains the UI Tests
