@@ -73,4 +73,25 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("3_SearchBar")
     }
+    
+    func test_PoemPickerScreenShot() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        pickerPage.cancelAllButton.tap()
+        pickerPage
+            .tapCellof(number: 3)
+            .tapCellof(number: 5)
+            .tapCellof(number: 7)
+        app.gentleSwipe(.Up, adjustment: 0.02)
+        pickerPage
+            .tapCellof(number: 8)
+            .tapCellof(number: 11)
+        // then
+        XCTAssert(pickerPage.badge(of: 5).exists)
+        // take screenshot
+        snapshot("2_PickerScreen")
+    }
 }

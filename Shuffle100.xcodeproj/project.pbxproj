@@ -123,6 +123,7 @@
 		92328C3424596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
 		92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370710290570D40013C5AB /* SnapshotHelper.swift */; };
 		92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370712290571330013C5AB /* FastlaneSnapshot.swift */; };
+		923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */; };
 		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
 		923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
 		923B594D23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
@@ -658,6 +659,7 @@
 		92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WahtsNextScreenLayout.swift; sourceTree = "<group>"; };
 		92370710290570D40013C5AB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		92370712290571330013C5AB /* FastlaneSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneSnapshot.swift; sourceTree = "<group>"; };
+		923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+GentleSwipe.swift"; sourceTree = "<group>"; };
 		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
 		923B594B23ACF606002027B4 /* SimpleGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameEndView.swift; sourceTree = "<group>"; };
 		923B595023ACF927002027B4 /* RecitePoemViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemViewTests.swift; sourceTree = "<group>"; };
@@ -1252,6 +1254,7 @@
 			isa = PBXGroup;
 			children = (
 				928450D422E06B5D00D12CA7 /* WaitInUITest.swift */,
+				923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -2102,6 +2105,7 @@
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
+				923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */,
 				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */,
 				9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
