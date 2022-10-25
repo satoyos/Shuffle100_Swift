@@ -94,4 +94,17 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("2_PickerScreen")
     }
+    
+    func test_5colorsScreenShot() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        let fiveColorsPage = pickerPage.gotoFiveColorsPage()
+        // then
+        XCTAssert(fiveColorsPage.exists)
+        // take screenshot
+        snapshot("7_FiveColorsScreen")
+    }
 }
