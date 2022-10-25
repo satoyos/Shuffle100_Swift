@@ -107,4 +107,27 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("7_FiveColorsScreen")
     }
+    
+    func test_TorifudaScreenShot() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        let firstCell = pickerPage.cellOf(number: 1)
+        pickerPage.tapDetailButton(of: firstCell)
+        // then
+        XCTAssert(TorifudaPage(app: app).exists)
+        // take_screenshot
+        snapshot("4_TorifudaScreen")
+    }
+    
+    func test_MemorizeTimerScreenShot() {
+        // when
+        let timerPage = homePage.gotoMemorizeTimerPage()
+        // then
+        XCTAssert(timerPage.exists)
+        // take screenshot
+        snapshot("6_MemorizeTimerScreen")
+    }
 }
