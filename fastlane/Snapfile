@@ -29,6 +29,7 @@ only_testing([
   "Shuffle100UITests/FastlaneSnapshot/test_SearchScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_SearchScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_PoemPickerScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_5colorsScreenShot",
 ])
 
 # The name of the scheme which contains the UI Tests
