@@ -22,6 +22,10 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
         let store = StoreManager()
         self.settings = Self.setUpSettings(store: store)
         self.store = store
+        
+        #if HOKKAI
+        print("--- Hokkaido Running")
+        #endif
     }
 
     func start() {
