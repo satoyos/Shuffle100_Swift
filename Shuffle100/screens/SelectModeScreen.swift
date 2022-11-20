@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+#if HOKKAI
 fileprivate let reciteModes = [
     ReciteModeHolder(mode: .normal,
                      title: "通常 (競技かるた)"),
@@ -16,10 +17,19 @@ fileprivate let reciteModes = [
                      title: "初心者 (チラし取り)"),
     ReciteModeHolder(mode: .nonstop,
                      title: "ノンストップ (止まらない)"),
-    // 下の句かるたは、Ver.7までおあずけ
-//        ReciteModeHolder(mode: .hokkaido,
-//                        title: "下の句かるた (北海道式)")
+    ReciteModeHolder(mode: .hokkaido,
+                     title: "下の句かるた (北海道式)")
 ]
+#else
+fileprivate let reciteModes = [
+    ReciteModeHolder(mode: .normal,
+                     title: "通常 (競技かるた)"),
+    ReciteModeHolder(mode: .beginner,
+                     title: "初心者 (チラし取り)"),
+    ReciteModeHolder(mode: .nonstop,
+                     title: "ノンストップ (止まらない)")
+]
+#endif
 
 final class SelectModeScreen: SettingsAttachedScreen {
     let screenTitle = "読み上げモードを選ぶ"

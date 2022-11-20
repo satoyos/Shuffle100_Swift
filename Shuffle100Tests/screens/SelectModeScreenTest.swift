@@ -10,15 +10,17 @@ import XCTest
 @testable import Shuffle100
 
 class SelectModeScreenTest: XCTestCase {
-        func test_pickerRowsCountIs3() {
+    func test_pickerRowsCountIs3() {
         // given
         let screen = SelectModeScreen()
         // when
         let rowNum = screen.pickerView(screen.picker, numberOfRowsInComponent: 0)
         // then
-        // 下の句かるたは、Ver.7までおあずけ
-//        XCTAssertEqual(rowNum, 4) // 通常, 初心者, ノンストップ, 下の句かるた
+#if HOKKAI
+        XCTAssertEqual(rowNum, 4) // 通常, 初心者, ノンストップ, 下の句かるた
+#else
         XCTAssertEqual(rowNum, 3) // 通常, 初心者, ノンストップ
+#endif
     }
 
     func test_deaultSelectedRowIs0() {
