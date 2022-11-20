@@ -18,12 +18,6 @@ class NormalModeCoordinatorTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    #if HOKKAI
-    func test_dummyForHokkaiDoMode() {
-        XCTAssert(true)
-    }
-    #endif
-
     func test_canRetrievePoem() {
         let nc = UINavigationController()
         let coordinator = NormalModeCoordinator(navigationController: nc, settings: Settings(), store: StoreManager())
