@@ -257,6 +257,7 @@
 		927A70C62545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */; };
 		927A70C72545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */; };
 		927A70C82545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */; };
+		927AEC3E292B635E006970CF /* HokkaidoModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */; };
 		927CB8F9240D0F3D0044B507 /* ReciteSettingsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */; };
 		927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
 		927CB8FC240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
@@ -728,6 +729,7 @@
 		9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeomRecitedUITest.swift; sourceTree = "<group>"; };
 		927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemProtocol.swift; sourceTree = "<group>"; };
 		927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceTypeGetterProtocol.swift; sourceTree = "<group>"; };
+		927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeUITest.swift; sourceTree = "<group>"; };
 		927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsUITest.swift; sourceTree = "<group>"; };
 		927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsCoordinator.swift; sourceTree = "<group>"; };
 		927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReciteModeUITest.swift; sourceTree = "<group>"; };
@@ -1198,6 +1200,7 @@
 				92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */,
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
+				927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -2051,6 +2054,7 @@
 				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */,
 				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
+				927AEC3E292B635E006970CF /* HokkaidoModeUITest.swift in Sources */,
 				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
