@@ -21,6 +21,19 @@ final class HokkaidoModeUITest: XCTestCase {
 
    
     func test_selectHokkaidoMode() throws {
+        setHokkaidoMode()
+    }
+    
+    func test_startGameInHokkaidoMode() {
+        // given
+        setHokkaidoMode()
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        // then
+        XCTAssert(recitePage.isRecitingJoka)
+    }
+    
+    private func setHokkaidoMode() {
         // when
         let selectModePage = homePage.gotoSelectModePage()
         // then
