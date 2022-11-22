@@ -96,8 +96,12 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
       case .beginner:
         gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
       case .hokkaido:
-        // To be implemented
+#if HOKKAI
+        gameDriveCoordinator =
+          HokkaidoModeCoordinator(navigationController: navigationController, settings: settings, store: store)
+#else
         return
+#endif
       }
       gameDriveCoordinator.start()
       self.childCoordinator = gameDriveCoordinator
