@@ -28,12 +28,24 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         }
     }
     
+    // 下の句かるたでは、序歌終了後に他のモードにはない独特の遷移を行う
+    func jokaFinished() {
+        assert(true, "+++ 北海道モードでの序歌の読み上げ終了!!")
+        guard let firstPoem = poemSupplier.drawNextPoem() else { return }
+        guard let screen = self.screen as? RecitePoemScreen else { return }
+        let number = firstPoem.number
+        screen.playerFinishedAction = { [weak self, number] in
+            self?.reciteShimoFinished(number: number, counter: 1)  // 序歌を読み上げたばかりなので、counterは1首目確定
+        }
+        screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
+    }
+    
     func reciteKamiFinished(number: Int, counter: Int) {
-        // to be implemented
+        assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
     }
     
     func addKamiScreenActionsForKamiEnding() {
-        // to be implemented
+        assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
     }
     
 
