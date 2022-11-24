@@ -31,6 +31,10 @@ final class HokkaidoModeUITest: XCTestCase {
         let recitePage = homePage.gotoRecitePoemPage()
         // then
         XCTAssert(recitePage.isRecitingJoka)
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
     }
     
     private func setHokkaidoMode() {

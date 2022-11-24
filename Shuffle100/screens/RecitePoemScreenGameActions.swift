@@ -21,16 +21,27 @@ extension RecitePoemScreen {
     }
     
     func stepIntoNextPoem(number: Int, at counter: Int, total: Int) {
-        UIView.transition(
-            with: self.view,
-            duration: interval,
-            options: [.transitionFlipFromLeft, .layoutSubviews],
-            animations: stepIntoNextPoemAnimation(          with: titleStr(of: counter, side: .kami, in: total)),
-//                    "\(counter)首め:上の句 (全\(total)首)"),
-            completion: { _ in
-                self.reciteKami(number: number, count: counter)
-            }
-        )
+        if settings.reciteMode == .hokkaido {
+            UIView.transition(
+                with: self.view,
+                duration: interval,
+                options: [.transitionFlipFromLeft, .layoutSubviews],
+                animations: stepIntoNextPoemAnimation(          with: titleStr(of: counter, side: .shimo, in: total)),
+                completion: { _ in
+                    self.reciteShimo(number: number, count: counter)
+                }
+            )
+        } else {
+            UIView.transition(
+                with: self.view,
+                duration: interval,
+                options: [.transitionFlipFromLeft, .layoutSubviews],
+                animations: stepIntoNextPoemAnimation(          with: titleStr(of: counter, side: .kami, in: total)),
+                completion: { _ in
+                    self.reciteKami(number: number, count: counter)
+                }
+            )
+        }
     }
     
     private func titleStr(of counter: Int, side: Side, in total: Int) -> String {
