@@ -34,8 +34,11 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         guard let firstPoem = poemSupplier.drawNextPoem() else { return }
         guard let screen = self.screen as? RecitePoemScreen else { return }
         let number = firstPoem.number
-        screen.playerFinishedAction = { [weak self, number] in
-            self?.reciteShimoFinished(number: number, counter: 1)  // 序歌を読み上げたばかりなので、counterは1首目確定
+        screen.playerFinishedAction = { [weak self] in
+            self?.openWhatsNextScreen()
+        }
+        screen.skipToNextScreenAction = { [weak self] in
+            self?.openWhatsNextScreen()
         }
         screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
     }
@@ -48,5 +51,40 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
     }
     
-
+//    ここから下は、できればWhatsNextScreenを使うモード共通の
+//    プロトコル肉繰り出したい。
+    
+    internal func openWhatsNextScreen() {
+        guard let screen = screen else { return }
+        guard let currentPoem = poemSupplier.currentPoem else { return }
+        let coordinator = WhatsNextCoordinator(
+                fromScreen: screen,
+                currentPoem: currentPoem,
+                settings: settings,
+                store: store,
+                navigationController: navigationController)
+        coordinator.refrainEscalatingAction = { [weak self] in
+            self?.refrainShimo()
+        }
+        coordinator.goNextPoemEscalatingAction = { [weak self] in
+            self?.goNextPoem()
+        }
+        coordinator.exitGameEscalationgAction = { [weak self] in
+            self?.exitGame()
+        }
+        coordinator.start()
+        self.childCoordinator = coordinator
+    }
+    
+    internal func refrainShimo() {
+        guard let screen = self.screen as? RecitePoemScreen else { return }
+        guard let number = poemSupplier.currentPoem?.number else { return }
+        let counter = poemSupplier.currentIndex
+        screen.refrainShimo(number: number, count: counter)
+    }
+    
+    internal func exitGame() {
+        assert(true, "初心者モードのCoordinatorからゲームを終了させるよ！")
+        backToHomeScreen()
+    }
 }

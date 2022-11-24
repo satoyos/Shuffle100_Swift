@@ -35,6 +35,11 @@ final class HokkaidoModeUITest: XCTestCase {
         recitePage.tapForwardButton()
         // then
         XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+        // when
+        recitePage.tapForwardButton()
+        // then
+        let whatsNextPage = WhatsNextpage(app: app)
+        XCTAssert(whatsNextPage.exists)
     }
     
     private func setHokkaidoMode() {
