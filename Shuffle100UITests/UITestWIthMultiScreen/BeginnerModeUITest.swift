@@ -31,18 +31,7 @@ class BeginnerModeUITest: XCTestCase, OnWhatsNextScreenTest {
     }
     
     func test_refrainShimo() {
-        // given
-        let recitePage = RecitePoemPage(app: app)
-        // when
-        let whatsNextPage = homePage.skipToWhatsNextPage()
-        whatsNextPage.refrainButton.tap()
-        // then
-        XCTAssert(recitePage.exists, "読み上げ画面に戻る")
-        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
-        // when
-        recitePage.tapForwardButton()
-        // then
-        XCTAssert(whatsNextPage.exists, "やっぱり「次はどうする？」画面が現れる")
+        refrainShimoTest(mode: .beginner)
     }
     
     func test_goNext() {

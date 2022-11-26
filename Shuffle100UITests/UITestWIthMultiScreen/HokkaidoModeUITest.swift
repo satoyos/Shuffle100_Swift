@@ -27,5 +27,9 @@ final class HokkaidoModeUITest: XCTestCase, OnWhatsNextScreenTest {
     func test_showTorifuda() {
         showTorifudaTest(mode: .hokkaido)
     }
+    
+    func test_refrainShimo() {
+        refrainShimoTest(mode: .hokkaido)
+    }
 }
 #endif
