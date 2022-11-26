@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BeginnerModeUITest: XCTestCase {
+class BeginnerModeUITest: XCTestCase, OnWhatsNextScreenTest {
     var app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 
@@ -27,32 +27,7 @@ class BeginnerModeUITest: XCTestCase {
     }
     
     func test_showTorifuda() {
-        // given
-        XCTContext.runActivity(named: "歌を1首(#4)だけ選んだ状態にする") { (activity) in
-            // when
-            let pickerPage = homePage.goToPoemPickerPage()
-            // then
-            XCTAssert(pickerPage.exists)
-            // when
-            pickerPage.cancelAllButton.tap()
-            pickerPage.cellOf(number: 4).tap()
-            pickerPage.backToTopButton.tap()
-            // then
-            XCTAssert(homePage.numberOfSelecttedPoems(is: 1))
-        }
-        // when
-        let whatsNextPage = homePage.skipToWhatsNextPage(totalPoemsNum: 1)
-        whatsNextPage.torifudaButton.tap()
-        // then
-        let fudaPage = TorifudaPage(app: app)
-        XCTAssert(fudaPage.exists)
-        XCTAssert(fudaPage.hasChar("ふ"))
-        XCTAssert(fudaPage.hasChar("し"))
-        XCTAssertFalse(fudaPage.hasChar("あ"))
-        // when
-        fudaPage.backToWhatsNextButton.tap()
-        // then
-        XCTAssert(whatsNextPage.exists)
+        showTorifudaTest(mode: .beginner)
     }
     
     func test_refrainShimo() {

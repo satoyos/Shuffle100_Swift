@@ -9,7 +9,7 @@
 import XCTest
 
 #if HOKKAI
-final class HokkaidoModeUITest: XCTestCase {
+final class HokkaidoModeUITest: XCTestCase, OnWhatsNextScreenTest {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
     
@@ -19,10 +19,13 @@ final class HokkaidoModeUITest: XCTestCase {
         app.launch()
     }
 
-   
     func test_startGameInHokkaidoMode() {
         let whatsNextPage = homePage.skipToWhatsNextPage(mode: .hokkaido)
         XCTAssert(whatsNextPage.exists)
+    }
+    
+    func test_showTorifuda() {
+        showTorifudaTest(mode: .hokkaido)
     }
 }
 #endif

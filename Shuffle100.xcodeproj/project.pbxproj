@@ -508,6 +508,7 @@
 		92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
+		92EBB3F029323C3A00853FDD /* OnWhatsNextScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBB3EF29323C3A00853FDD /* OnWhatsNextScreenProtocol.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
@@ -854,6 +855,7 @@
 		92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateAppDialog.swift; sourceTree = "<group>"; };
 		92E9705D26C2917C00A6650C /* FiveColorsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPage.swift; sourceTree = "<group>"; };
 		92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHViewSizeGetterProtocol.swift; sourceTree = "<group>"; };
+		92EBB3EF29323C3A00853FDD /* OnWhatsNextScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnWhatsNextScreenProtocol.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorHandlingSheet.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1379,6 +1381,7 @@
 				92E5C54026666A0D009A46F5 /* AdjustSliderProtocol.swift */,
 				92E5C5422667BF82009A46F5 /* DigitTextProtocol.swift */,
 				92E5C548266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift */,
+				92EBB3EF29323C3A00853FDD /* OnWhatsNextScreenProtocol.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -2218,6 +2221,7 @@
 				92DCD6DF26DA62E30063AF7A /* SkipPoemUITest.swift in Sources */,
 				925994F32449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
+				92EBB3F029323C3A00853FDD /* OnWhatsNextScreenProtocol.swift in Sources */,
 				920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */,
 				924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */,
