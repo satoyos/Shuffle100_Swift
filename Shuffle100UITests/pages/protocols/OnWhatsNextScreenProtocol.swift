@@ -14,7 +14,7 @@ protocol OnWhatsNextScreenTest {
     var homePage: HomePage { get }
     
     func showTorifudaTest(mode: ReciteMode)
-//    func refrainShimoTest()
+    func refrainShimoTest(mode: ReciteMode)
 //    func goNextTest()
 }
 
@@ -46,5 +46,20 @@ extension OnWhatsNextScreenTest {
         fudaPage.backToWhatsNextButton.tap()
         // then
         XCTAssert(whatsNextPage.exists)
+    }
+    
+    func refrainShimoTest(mode: ReciteMode) {
+        // given
+        let recitePage = RecitePoemPage(app: app)
+        // when
+        let whatsNextPage = homePage.skipToWhatsNextPage(mode: mode)
+        whatsNextPage.refrainButton.tap()
+        // then
+        XCTAssert(recitePage.exists, "読み上げ画面に戻る")
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(whatsNextPage.exists, "やっぱり「次はどうする？」画面が現れる")
     }
 }
