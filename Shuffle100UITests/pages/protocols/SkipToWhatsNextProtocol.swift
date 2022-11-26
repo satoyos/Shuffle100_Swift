@@ -10,12 +10,12 @@ import Foundation
 import XCTest
 
 protocol SkipToWhatsNext {
-    func skipToWhatsNextPage() -> WhatsNextpage
+    func skipToWhatsNextPage(totalPoemsNum: Int) -> WhatsNextpage
 }
 
 extension SkipToWhatsNext where Self: HomePage  {
     @discardableResult
-    func skipToWhatsNextPage() -> WhatsNextpage {
+    func skipToWhatsNextPage(totalPoemsNum: Int = 100) -> WhatsNextpage {
         // when
         let reciteModePage = gotoSelectModePage()
         reciteModePage
@@ -30,13 +30,17 @@ extension SkipToWhatsNext where Self: HomePage  {
         // when
         recitePage.tapForwardButton()
         // then
-        XCTAssert(recitePage.isReciting(number: 1, side: .kami))
-        // hwn
-        recitePage.tapForwardButton()
-        // then
-        XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+        XCTAssert(recitePage.isReciting(number: 1, side: .kami, total: totalPoemsNum))
         // when
         recitePage.tapForwardButton()
-        return WhatsNextpage(app: app)
+        // then
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo, total: totalPoemsNum))
+        // when
+        recitePage.tapForwardButton()
+        // then
+        let whatsNextPage = WhatsNextpage(app: app)
+        XCTAssert(whatsNextPage.exists)
+        // and
+        return whatsNextPage
     }
 }

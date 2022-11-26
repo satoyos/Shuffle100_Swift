@@ -21,7 +21,7 @@ class BeginnerModeUITest: XCTestCase {
 
     func test_startBeginnerMode() throws {
         // when
-        let whatsNextPage = gotoWhatsNextPage()
+        let whatsNextPage = homePage.skipToWhatsNextPage()
         // then
         XCTAssert(whatsNextPage.exists)
     }
@@ -41,7 +41,7 @@ class BeginnerModeUITest: XCTestCase {
             XCTAssert(homePage.numberOfSelecttedPoems(is: 1))
         }
         // when
-        let whatsNextPage = gotoWhatsNextPage(totalPoemsNum: 1)
+        let whatsNextPage = homePage.skipToWhatsNextPage(totalPoemsNum: 1)
         whatsNextPage.torifudaButton.tap()
         // then
         let fudaPage = TorifudaPage(app: app)
@@ -59,14 +59,11 @@ class BeginnerModeUITest: XCTestCase {
         // given
         let recitePage = RecitePoemPage(app: app)
         // when
-        let whatsNextPage = gotoWhatsNextPage()
+        let whatsNextPage = homePage.skipToWhatsNextPage()
         whatsNextPage.refrainButton.tap()
         // then
         XCTAssert(recitePage.exists, "読み上げ画面に戻る")
         XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
-//        XCTContext.runActivity(named: "そのまま下の句の読み上げが終わると、再び「次はどうする？」画面が現れる") { _ in
-//            waitToAppear(for: whatsNextPage.pageTitle, timeout: 15)
-//        }
         // when
         recitePage.tapForwardButton()
         // then
@@ -75,7 +72,7 @@ class BeginnerModeUITest: XCTestCase {
     
     func test_goNext() {
         // when
-        let whatsNextPage = gotoWhatsNextPage()
+        let whatsNextPage = homePage.skipToWhatsNextPage()
         whatsNextPage.nextPoemButton.tap()
         // then
         let recitePage = RecitePoemPage(app: app)
@@ -84,7 +81,7 @@ class BeginnerModeUITest: XCTestCase {
     
     func test_exitGameFromWhatsNextScreen() {
         // when
-        let whatsNextPage = gotoWhatsNextPage()
+        let whatsNextPage = homePage.skipToWhatsNextPage()
         whatsNextPage.exitButton.tap()
         // then
         let exitAlert = ExitGameDialog(app: app)
@@ -93,33 +90,5 @@ class BeginnerModeUITest: XCTestCase {
         exitAlert.confirmButton.tap()
         // then
         XCTAssert(homePage.exists, "トップ画面に戻る")
-    }
-    
-    func gotoWhatsNextPage(totalPoemsNum: Int = 100) -> WhatsNextpage {
-        // when
-        let selectModePage = homePage.gotoSelectModePage()
-        // then
-        XCTAssert(selectModePage.exists)
-        // when
-        selectModePage
-            .selectMode(.beginner)
-            .backToTopButton.tap()
-        // then
-        XCTAssert(homePage.reciteModeIs(.beginner))
-        // when
-        let recitePage = homePage.gotoRecitePoemPage()
-        recitePage.tapForwardButton()
-        // then
-        XCTAssert(recitePage.isReciting(number: 1, side: .kami, total: totalPoemsNum))
-        // when
-        recitePage.tapForwardButton()
-        // then
-        XCTAssert(recitePage.isReciting(number: 1, side: .shimo, total: totalPoemsNum))
-        // when
-        recitePage.tapForwardButton()
-        // then
-        let whatsNextPage = WhatsNextpage(app: app)
-        XCTAssert(whatsNextPage.exists)
-        return whatsNextPage
     }
 }
