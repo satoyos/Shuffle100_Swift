@@ -26,6 +26,14 @@ class RecitePoemViewTests: XCTestCase {
         XCTAssertEqual(config?.title, String.fontAwesomeIcon(name: .forward))
     }
     
+    func test_titleLabelHasAccessibilityIdentifier() {
+        guard let titleLabel = rpView.headerContainer.subviews.first(where: {$0 is UILabel}) else {
+            XCTFail("Couldn't get header title label of RecitePoemView")
+            return
+        }
+        XCTAssertEqual(titleLabel.accessibilityIdentifier, "screenTitle")
+    }
+    
     func test_addNormalJokaDescLabel() {
         // when
         rpView.addNormalJokaDescLabel()
