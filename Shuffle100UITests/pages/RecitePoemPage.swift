@@ -68,6 +68,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let rewind = "rewind"
         static let play = "play"
         static let gear = "gear"
+        static let headerTitle = "screenTitle"
         static let normalJokaDesc = "試合開始の合図として読まれる歌です。"
         static let shortJokaDesc = "序歌を途中から読み上げています。"
         static let waitingForPlay = "waitingForPlay"
@@ -82,7 +83,18 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         case .shimo:
             headerText = "\(number)首め:下の句 (全\(total)首)"
         }
-        return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
+//        return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
+        return headerText == headerTitleString
+    }
+    
+    var headerTitleString: String {
+        let titleLabel = app.staticTexts[A11y.headerTitle].firstMatch
+        guard titleLabel.exists
+        else {
+            XCTFail("Couldn't get header title label of RecitePoemView")
+            return "Test Failure"
+        }
+        return titleLabel.label
     }
     
     var isRecitingJoka: Bool {
