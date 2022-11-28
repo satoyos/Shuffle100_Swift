@@ -35,8 +35,12 @@ class BeginnerModeUITest: XCTestCase, OnWhatsNextScreenTest {
     }
     
     func test_goNext() {
+        goNextTest()
+    }
+    
+    func goNextTest() {
         // when
-        let whatsNextPage = homePage.skipToWhatsNextPage()
+        let whatsNextPage = homePage.skipToWhatsNextPage(mode: .beginner)
         whatsNextPage.nextPoemButton.tap()
         // then
         let recitePage = RecitePoemPage(app: app)

@@ -31,5 +31,22 @@ final class HokkaidoModeUITest: XCTestCase, OnWhatsNextScreenTest {
     func test_refrainShimo() {
         refrainShimoTest(mode: .hokkaido)
     }
+    
+    func test_goNext() {
+        goNextTest()
+    }
+    
+    func goNextTest() {
+        // when
+        let whatsNextPage = homePage.skipToWhatsNextPage(mode: .hokkaido)
+        whatsNextPage.nextPoemButton.tap()
+        // then
+        let recitePage = RecitePoemPage(app: app)
+        XCTAssert(recitePage.isReciting(number: 1, side: .shimo), "読み上げたばかりに下の句をもう一度読み上げる")
+        // when
+        recitePage.tapForwardButton()
+        // then
+        XCTAssert(recitePage.isReciting(number: 2, side: .shimo), "今度は「次はどうする？」画面に遷移せず、次の詩に進む")
+    }
 }
 #endif

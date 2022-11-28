@@ -15,7 +15,7 @@ protocol OnWhatsNextScreenTest {
     
     func showTorifudaTest(mode: ReciteMode)
     func refrainShimoTest(mode: ReciteMode)
-//    func goNextTest()
+    func goNextTest()
 }
 
 extension OnWhatsNextScreenTest {
