@@ -51,6 +51,47 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
     }
     
+    internal func reciteShimoFinished(number: Int, counter: Int) {
+        assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了(北海道モード)。")
+        guard let screen = self.screen as? RecitePoemScreen else { return }
+        if let poem = poemSupplier.drawNextPoem() {
+            let number = poem.number
+            let counter = poemSupplier.currentIndex
+            
+            screen.playerFinishedAction = { [weak self] in
+                self?.openWhatsNextScreen()
+            }
+            screen.skipToNextScreenAction = { [weak self] in
+                self?.openWhatsNextScreen()
+            }
+            screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+        } else {
+            assert(true, "歌は全て読み終えた！")
+            screen.stepIntoGameEnd()
+        }
+    }
+    
+    internal func goNextPoem() {
+        assert(true, "次の詩へ進むボタンが押されたことを、北海道モードのCoordinatorが知ったよ！")
+        guard let number = poemSupplier.currentPoem?.number else { return }
+        let counter = poemSupplier.currentIndex
+        guard let screen = self.screen as? RecitePoemScreen else { return }
+        guard counter < poemSupplier.size  else {
+            assert(true, "歌は全て読み終えた！")
+            screen.stepIntoGameEnd()
+            return
+        }
+        // 次の詩に進むことが決まった後は、読み終えた下の句をもう一度読み上げる
+        screen.playerFinishedAction = { [weak self] in
+            self?.reciteShimoFinished(number: number, counter: counter)
+        }
+        screen.skipToNextScreenAction = { [weak self] in
+            self?.reciteShimoFinished(number: number, counter: counter)
+        }
+        refrainShimo()
+    }
+    
+    
 //    ここから下は、できればWhatsNextScreenを使うモード共通の
 //    プロトコル肉繰り出したい。
     
