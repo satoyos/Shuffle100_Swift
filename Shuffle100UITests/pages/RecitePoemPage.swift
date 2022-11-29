@@ -83,8 +83,10 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         case .shimo:
             headerText = "\(number)首め:下の句 (全\(total)首)"
         }
-//        return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
-        return headerText == headerTitleString
+        return elementsExist([app.staticTexts[headerText]], timeout: timeOutSec)
+//        こちら↓の判定方法は、iOS 16では成功するが、iOS 15では失敗する
+//        timeout時間のwaitが入らないことの影響か。
+//        return headerText == headerTitleString
     }
     
     var headerTitleString: String {
