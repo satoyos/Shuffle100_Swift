@@ -135,6 +135,52 @@ class GoThrough100PoemsUITest: XCTestCase {
         }
     }
     
+#if HOKKAI
+    func test_goThrough100inHokkaidoMode() {
+        XCTContext.runActivity(named: "北海道モードを選択") { (activity) in
+            // given
+            let selectModePage = homePage.gotoSelectModePage()
+            // when
+            selectModePage
+                .selectMode(.hokkaido)
+                .backToTopButton.tap()
+            // then
+            XCTAssert(homePage.reciteModeIs(.hokkaido))
+        }
+        // given
+        let whatsNextPage = WhatsNextpage(app: app)
+        // when
+        let recitePage = homePage.gotoRecitePoemPage()
+        let forwordButton = recitePage.forwardButton
+        forwordButton.tap()
+        for i in (1...100) {
+            // then
+            XCTAssert(recitePage.isReciting(number: i, side: .shimo))
+            // when
+            forwordButton.tap()
+            // then
+            XCTAssert(whatsNextPage.exists, "「次はどうする？」画面に到達")
+            // when
+            whatsNextPage.nextPoemButton.tap()
+            if i < 100 {
+                // then
+                XCTAssert(recitePage.isReciting(number: i, side: .shimo), "読み上げたばかりの下の句をもう一度読み上げる")
+                // when
+                forwordButton.tap()
+            }
+        }
+        XCTContext.runActivity(named: "試合終了画面から、トップへ戻る)") { _ in
+            // then
+            let endPage = AllPoemRecitedPage(app: app)
+            XCTAssert(endPage.exists)
+            // when
+            endPage.backToTopButton.tap()
+            // then
+            XCTAssert(homePage.exists)
+        }
+    }
+#endif
+    
     private func kamiRecitingScreenAppearsOf(number i: Int) {
         waitToAppear(for: app.staticTexts["\(i)首め:上の句 (全100首)"], timeout: timeOutSec)
     }
