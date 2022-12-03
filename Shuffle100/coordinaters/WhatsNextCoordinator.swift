@@ -28,7 +28,7 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
         self.store = store
         self.navigationController = navigationController
     }
-
+    
     func start() {
         let screen = WhatsNextScreen(currentPoem: currentPoem)
         self.anotherNavController = UINavigationController(rootViewController: screen)
@@ -42,8 +42,8 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
         screen.goNextAction = { [weak self] in
             self?.goNextPoem()
         }
-        screen.backToHomeScreenAction = { [weak self] in
-            screen.dismiss(animated: true)
+        screen.backToHomeScreenAction = { [weak self, weak screen] in
+            screen?.dismiss(animated: true)
             self?.backToHomeScreen()
         }
         screen.goSettingAction = { [weak self] in
