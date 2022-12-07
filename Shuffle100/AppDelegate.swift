@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppWindow {
         window?.makeKeyAndVisible()
     
         if CommandLine.arguments.contains("--uitesting") {
-//            UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.layer.speed = 5
             let window = keyWindow
             window.layer.speed = 5
         }
