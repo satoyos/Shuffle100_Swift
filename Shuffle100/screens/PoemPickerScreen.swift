@@ -31,8 +31,6 @@ final class PoemPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        tableView.reloadData()
-//        updateBadge()
         refreshTableAndBadge()
     }
     
