@@ -13,9 +13,10 @@ extension PoemPickerScreen: UITableViewDelegate {
        let number = poemNumberFromIndexPath(indexPath)
        let newState100 = settings.state100.reverseInNumber(number)
         settings.state100 = newState100
-        tableView.reloadData()
-        updateBadge()
-        return
+//        tableView.reloadData()
+//        updateBadge()
+//        return
+       refreshTableAndBadge()
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -58,15 +59,17 @@ extension PoemPickerScreen {
     @objc func cancelAllButtonTapped() {
         let newState100 = settings.state100.cancelAll()
         settings.state100 = newState100
-        tableView.reloadData()
-        updateBadge()
+//        tableView.reloadData()
+//        updateBadge()
+        refreshTableAndBadge()
     }
     
     @objc func selectAllButtonTapped() {
         let newState100 = settings.state100.selectAll()
         settings.state100 = newState100
-        tableView.reloadData()
-        updateBadge()
+//        tableView.reloadData()
+//        updateBadge()
+        refreshTableAndBadge()
     }
     
     @objc func selectByGroupButtonTapped() {
