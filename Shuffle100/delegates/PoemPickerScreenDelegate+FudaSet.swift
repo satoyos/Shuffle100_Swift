@@ -45,16 +45,10 @@ extension PoemPickerScreen {
     }
     
     internal func saveNewFudaSet() {
-//        var alertTextField: UITextField?
-
         let ac = UIAlertController(
             title: "新しい札セットの名前",
             message: nil,
             preferredStyle: .alert)
-//        ac.addTextField(configurationHandler: { (textField: UITextField!) in
-//            alertTextField = textField
-//            alertTextField?.placeholder = "札セットの名前"
-//        })
         ac.addTextField { textField in
             textField.placeholder = "札セットの名前"
         }
@@ -117,5 +111,4 @@ extension PoemPickerScreen {
         ac.addAction(okAction)
         present(ac, animated: true)
     }
-
 }
