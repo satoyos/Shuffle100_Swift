@@ -39,8 +39,8 @@ extension NgramPickerScreen: UITableViewDelegate {
         updateTableAndBadge()
     }
     
-    private func updateTableAndBadge() {
-        updateBadge()
-        tableView.reloadData()
-    }
+//    private func updateTableAndBadge() {
+//        updateBadge()
+//        tableView.reloadData()
+//    }
 }
