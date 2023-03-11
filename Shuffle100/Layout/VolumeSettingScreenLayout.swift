@@ -20,12 +20,14 @@ extension VolumeSettingScreen {
     
     private func configureSlider() {
         _ = slider.then {
-            $0.snp.makeConstraints{ (make) -> Void in
-                make.width.equalTo(0.8 * viewWidth())
-                make.height.equalTo(sliderHeight())
+            $0.snp.makeConstraints{ make in
+                make.width.equalTo(0.8 * viewWidth)
+                make.height.equalTo(sliderHeight)
                 // Center => [50%, 40%]
                 make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview().offset(-1 * one10thOfViewHeight())
+                make.centerY
+                    .equalToSuperview()
+                    .offset(-1 * one10thOfViewHeight)
             }
             $0.minimumValue = minVolume
             $0.maximumValue = maxVolume
@@ -37,29 +39,33 @@ extension VolumeSettingScreen {
     private func configureTryButton() {
         _ = tryButton.then {
             $0.setTitle("テスト音声を再生する", for: .normal)
-            $0.setTitleColor(StandardColor.standardButtonColor, for: .normal)
-            $0.setTitleColor(StandardColor.disabledButtonColor, for: .disabled)
+            $0.setTitleColor(StandardColor.standardButtonColor,
+                             for: .normal)
+            $0.setTitleColor(StandardColor.disabledButtonColor,
+                             for: .disabled)
             $0.sizeToFit()
-            $0.snp.makeConstraints{ (make) -> Void in
+            $0.snp.makeConstraints{ make in
                 make.centerX.equalToSuperview()
-                make.top.equalTo(slider.snp.bottom).offset(0.5 * one10thOfViewHeight())
+                make.top
+                    .equalTo(slider.snp.bottom)
+                    .offset(0.5 * one10thOfViewHeight)
             }
         }
     }
     
-    private func viewWidth() -> CGFloat {
-        return self.view.frame.size.width
+    private var viewWidth: CGFloat {
+        view.frame.size.width
     }
     
-    private func viewHeiht() -> CGFloat {
-        return view.frame.size.height
+    private var viewHeiht: CGFloat {
+        view.frame.size.height
     }
 
-    private func one10thOfViewHeight() -> CGFloat {
-        return 0.1 * viewHeiht()
+    private var one10thOfViewHeight: CGFloat {
+        0.1 * viewHeiht
     }
     
-    private func sliderHeight() -> CGFloat {
+    private var sliderHeight: CGFloat {
         sizeByDevice.intervalSiderHeight
     }
 
