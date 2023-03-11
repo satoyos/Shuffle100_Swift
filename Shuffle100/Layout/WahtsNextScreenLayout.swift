@@ -33,7 +33,7 @@ extension WhatsNextScreen {
             $0.initWithImage(filename: "torifuda.png")
             $0.setTitle("取り札を見る", for: .normal)
             // center => [50%, 30%]
-            $0.center.y = viewHeight() * 0.3
+            $0.center.y = viewHeight * 0.3
         }
     }
     
@@ -43,33 +43,29 @@ extension WhatsNextScreen {
             $0.initWithImage(filename: "go_next.png")
             $0.setTitle("次の歌へ！", for: .normal)
             // center => [50%, 70%]
-            $0.center.y = viewHeight() * 0.7
+            $0.center.y = viewHeight * 0.7
         }
     }
     
     private func setCommonLayout(button: LargeImageAttachedButton) {
         _ = button.then {
-            $0.frame.size = buttonSize()
+            $0.frame.size = buttonSize
             $0.center.x = view.center.x
             $0.setStandardTitleColor()
         }
     }
     
-    private func buttonSize() -> CGSize {
-        CGSize(width: viewWidth() * 0.8, height: sizes.whatsNextButtonHeight)
+    private var buttonSize: CGSize {
+        CGSize(width: viewWidth * 0.8,
+               height: sizes.whatsNextButtonHeight)
     }
     
-    private func viewWidth() -> CGFloat {
-        return view.frame.size.width
+    private var viewWidth: CGFloat {
+        view.frame.size.width
     }
     
-    private func viewHeight() -> CGFloat {
-        return view.frame.size.height
+    private var viewHeight: CGFloat {
+        view.frame.size.height
     }
-    
-    private func retinaSclae() -> CGFloat {
-        return UIScreen.main.scale
-    }
-
 }
 
