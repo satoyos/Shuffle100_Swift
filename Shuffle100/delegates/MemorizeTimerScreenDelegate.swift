@@ -10,10 +10,10 @@ import Foundation
 import AVFoundation
 
 extension MemorizeTimerScreen: AVAudioPlayerDelegate {
-    internal func setDelegate(of player: AVAudioPlayer) {
-        player.delegate = self
-    }
-    
+//    internal func setDelegate(of player: AVAudioPlayer) {
+//        player.delegate = self
+//    }
+//
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         guard player == playerStgartGame else { return }
         guard flag == true else { return }
@@ -22,6 +22,10 @@ extension MemorizeTimerScreen: AVAudioPlayerDelegate {
 }
 
 extension MemorizeTimerScreen {
+    internal func setDelegate(of player: AVAudioPlayer) {
+        player.delegate = self
+    }
+    
     func playButtonTapped() {
         self.isTimerRunning = !isTimerRunning
     }
