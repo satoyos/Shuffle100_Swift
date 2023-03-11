@@ -45,7 +45,6 @@ extension FiveColorsScreen {
             .selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
-//        updateBadgeItem()
         updateBadge()
     }
     
@@ -54,7 +53,6 @@ extension FiveColorsScreen {
         let newState100 = settings.state100.selectInNumbers(colorDic.poemNumbers)
         settings.state100 = newState100
         refreshImageOnButtons()
-//        updateBadgeItem()
         updateBadge()
     }
 }
