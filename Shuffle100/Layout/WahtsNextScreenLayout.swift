@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-extension WhatsNextScreen {
+extension WhatsNextScreen: SHViewSizeGetter {
     internal func layoutButtons() {
         layoutRefrainButton()
         layoutTorifudaButton()
@@ -58,14 +58,6 @@ extension WhatsNextScreen {
     private var buttonSize: CGSize {
         CGSize(width: viewWidth * 0.8,
                height: sizes.whatsNextButtonHeight)
-    }
-    
-    private var viewWidth: CGFloat {
-        view.frame.size.width
-    }
-    
-    private var viewHeight: CGFloat {
-        view.frame.size.height
     }
 }
 

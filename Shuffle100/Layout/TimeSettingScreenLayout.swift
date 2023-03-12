@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-extension TimeSettingScreen {
+extension TimeSettingScreen: SHViewSizeGetter {
     
     internal func layoutScreen() {
         configureTimeLabel()
@@ -70,7 +70,7 @@ extension TimeSettingScreen {
     }
     
     private var one10thOfViewHeight: CGFloat {
-        0.1 * viewHeiht
+        0.1 * viewHeight
     }
     
     private var blankBetweenLabelAndSlider: CGFloat {
@@ -80,13 +80,4 @@ extension TimeSettingScreen {
     private var sliderHeight: CGFloat {
         sizeByDevice.intervalSiderHeight
     }
-    
-    private var viewWidth: CGFloat {
-        view.frame.size.width
-    }
-    
-    private var viewHeiht: CGFloat {
-        view.frame.size.height
-    }
-
 }

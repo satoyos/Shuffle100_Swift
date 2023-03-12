@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-extension VolumeSettingScreen {
+extension VolumeSettingScreen: SHViewSizeGetter {
     
     internal func layoutScreen() {
         view.backgroundColor = StandardColor.backgroundColor
@@ -53,16 +53,8 @@ extension VolumeSettingScreen {
         }
     }
     
-    private var viewWidth: CGFloat {
-        view.frame.size.width
-    }
-    
-    private var viewHeiht: CGFloat {
-        view.frame.size.height
-    }
-
     private var one10thOfViewHeight: CGFloat {
-        0.1 * viewHeiht
+        0.1 * viewHeight
     }
     
     private var sliderHeight: CGFloat {
