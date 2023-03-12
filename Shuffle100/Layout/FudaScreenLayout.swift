@@ -21,7 +21,7 @@ private let aspectRatio = fudaWidthMeasured / fudaHeightMeasured
 private let fudaFont = UIFont(name: "HiraMinProN-W6", size: 5)
 private let fudaFontSizeBase: CGFloat = 17
 
-extension TorifudaScreen: SHDeviceTypeGetter {
+extension TorifudaScreen: SHDeviceTypeGetter, SHViewSizeGetter {
     internal func layoutFudaScreen() {
         setTatamiBackground()
         setFudaView()
@@ -40,11 +40,16 @@ extension TorifudaScreen: SHDeviceTypeGetter {
     
     private func setFudaView() {
         guard let tatamiView = self.tatamiView else { return }
-        let height = fudaHeight()
+        let height = fudaHeight
         let fudaPower = height / fudaHeightMeasured
-        let fudaFrame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: fudaWidthMeasured * fudaPower, height: height) )
+        let fudaFrame = CGRect(
+            origin: CGPoint(x: 0, y: 0),
+            size: CGSize(width: fudaWidthMeasured * fudaPower,
+                         height: height))
         let fudaView = FudaView(frame: fudaFrame, withPower: fudaPower, shimoString: shimoString).then {
-            $0.center = CGPoint(x: view.center.x, y: view.center.y + topOffset() / 2.0)
+            $0.center = CGPoint(
+                x: view.center.x,
+                y: view.center.y + topOffset / 2.0)
         }
         tatamiView.addSubview(fudaView)
         fudaView.accessibilityLabel = "fudaView"
@@ -64,26 +69,30 @@ extension TorifudaScreen: SHDeviceTypeGetter {
             $0.sizeToFit()
             $0.contentOffset = CGPoint(x: 0, y: -5)
             $0.center.x = tatamiView.center.x
-            $0.center.y = fullStringsCenterY()
+            $0.center.y = fullStringsCenterY
             $0.accessibilityLabel = "fullLinersView"
             tatamiView.addSubview($0)
         }
         self.fullLinerView = textView
     }
         
-    private func fudaHeight() -> CGFloat {
-        return [heightBySuperviewWidth(), heightBySuperviewHeight()].min() ?? 300
+    private var fudaHeight: CGFloat {
+        [heightBySuperviewWidth, heightBySuperviewHeight].min()
+        ?? 300
     }
     
-    private func heightBySuperviewHeight() -> CGFloat {
-        return (view.frame.size.height - topOffset()) * occupyRatio
+    private var heightBySuperviewHeight: CGFloat {
+//        return (view.frame.size.height - topOffset) * occupyRatio
+        (viewHeight - topOffset) * occupyRatio
+
     }
     
-    private func heightBySuperviewWidth() -> CGFloat {
-        return view.frame.size.width / aspectRatio * occupyRatio
+    private var heightBySuperviewWidth: CGFloat {
+//        return view.frame.size.width / aspectRatio * occupyRatio
+        viewWidth / aspectRatio * occupyRatio
     }
     
-    private func topOffset() -> CGFloat {
+    private var topOffset: CGFloat {
         // ステータスバーの高さを取得する
         let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         // ナビゲーションバーの高さを取得する
@@ -91,8 +100,8 @@ extension TorifudaScreen: SHDeviceTypeGetter {
         return statusBarHeight + navigationBarHeight
     }
 
-    private func fullStringsCenterY() -> CGFloat {
-        return (fudaView.frame.maxY + tatamiView.frame.maxY) / 2.0
+    private var fullStringsCenterY: CGFloat {
+        (fudaView.frame.maxY + tatamiView.frame.maxY) / 2.0
     }
     
 }
