@@ -82,13 +82,10 @@ extension TorifudaScreen: SHDeviceTypeGetter, SHViewSizeGetter {
     }
     
     private var heightBySuperviewHeight: CGFloat {
-//        return (view.frame.size.height - topOffset) * occupyRatio
         (viewHeight - topOffset) * occupyRatio
-
     }
     
     private var heightBySuperviewWidth: CGFloat {
-//        return view.frame.size.width / aspectRatio * occupyRatio
         viewWidth / aspectRatio * occupyRatio
     }
     
@@ -103,7 +100,6 @@ extension TorifudaScreen: SHDeviceTypeGetter, SHViewSizeGetter {
     private var fullStringsCenterY: CGFloat {
         (fudaView.frame.maxY + tatamiView.frame.maxY) / 2.0
     }
-    
 }
 
 
