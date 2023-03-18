@@ -10,18 +10,14 @@ import UIKit
 
 final class ReciteViewHeaderButton: UIButton {
 
-    var tappedAction:  ( ()->Void )?
+    var tappedAction:  InjectedAction?
     
-    func setAction(action: @escaping () -> Void) {
+    func setAction(action: @escaping InjectedAction) {
         tappedAction = action
         self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
     
     @objc func tapped(btn: UIButton) {
-        guard let action = tappedAction else {
-            print("No action is set to this button!")
-            return
-        }
-        action()
+        tappedAction?()
     }
 }
