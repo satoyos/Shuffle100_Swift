@@ -44,7 +44,7 @@ class ReciteSettingsUITest: XCTestCase {
         // when
         intervalSettingPage.backToAllSettingsButton.tap()
         // then
-        XCTAssert(settingsPage.staticDigitTextExists(around: 0.50))
+        XCTAssert(settingsPage.staticDigitTextExists(around: 0.50, before: "秒"))
         // when
         settingsPage.exitSettingsButton.tap()
         // then
@@ -70,7 +70,7 @@ class ReciteSettingsUITest: XCTestCase {
         // when
         kamiShimoIntervalPage.backToAllSettingsButton.tap()
         // then
-        XCTAssert(settingsPage.staticDigitTextExists(around: 0.50))
+        XCTAssert(settingsPage.staticDigitTextExists(around: 0.50, before: "秒"))
         // when
         settingsPage.exitSettingsButton.tap()
         // then
@@ -159,6 +159,6 @@ class ReciteSettingsUITest: XCTestCase {
         // when
         let newSettingsPage = homePage.gotoReciteSettingPage()
         // then
-        XCTAssert(newSettingsPage.staticDigitTextExists(around: 2.00))
+        XCTAssert(newSettingsPage.staticDigitTextExists(around: 2.00, before: "秒"))
      }
 }

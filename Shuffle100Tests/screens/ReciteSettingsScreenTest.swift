@@ -29,20 +29,24 @@ class ReciteSettingsScreenTest: XCTestCase, ApplyListContentConfiguration {
         // then
         XCTAssertEqual(screen.title, "いろいろな設定")
         // then
-        let tableView = screen.tableView
-        XCTAssertNotNil(tableView)
+        guard let tableView = screen.tableView else {
+            XCTFail("tableView property is nil on ReciteSettingsScreen")
+            return
+        }
         
-        XCTAssertEqual(tableView?.numberOfSections, 3)
+        XCTAssertEqual(tableView.numberOfSections, 3)
         
-        XCTAssertEqual(screen.tableView(tableView!, numberOfRowsInSection: 0), 2)
-        let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
+        let firstSectionTitle = screen.tableView(tableView, titleForHeaderInSection: 0)
+        XCTAssertEqual(firstSectionTitle, "読み上げの間隔")
+        XCTAssertEqual(screen.tableView(tableView, numberOfRowsInSection: 0), 2)
+        let firstCell = screen.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0))
         let firstConfig = listContentConfig(of: firstCell)
         XCTAssertEqual(firstConfig.text, "歌と歌の間隔")
-        XCTAssertEqual(firstConfig.secondaryText, "1.10")
-        let secondCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(firstConfig.secondaryText, "1.10"+"秒")
+        let secondCell = screen.tableView(tableView, cellForRowAt: IndexPath(row: 1, section: 0))
         let secondConfig = listContentConfig(of: secondCell)
-        XCTAssertEqual(secondConfig.secondaryText, "1.00")
-        let volumeCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(secondConfig.secondaryText, "1.00"+"秒")
+        let volumeCell = screen.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 1))
         let thirdConfig = listContentConfig(of: volumeCell)
         XCTAssertEqual(thirdConfig.secondaryText, "100%")
     }

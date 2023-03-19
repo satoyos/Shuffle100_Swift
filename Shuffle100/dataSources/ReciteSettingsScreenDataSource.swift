@@ -52,8 +52,8 @@ extension ReciteSettingsScreen {
     private func createInervalSection() -> TableSection {
         var intervalSection = TableSection(title: A11y.intervalSectionTitle)
         intervalSection.dataSources = [
-            SettingsCellDataSource(title: A11y.intervalCellTitle, accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.interval)),
-            SettingsCellDataSource(title: A11y.kamiShimoIntervalCellTitle, accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F", settings.kamiShimoInterval))
+            SettingsCellDataSource(title: A11y.intervalCellTitle, accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F"+"秒", settings.interval)),
+            SettingsCellDataSource(title: A11y.kamiShimoIntervalCellTitle, accessoryType: .disclosureIndicator, secondaryText: String(format: "%.2F"+"秒", settings.kamiShimoInterval))
         ]
         return intervalSection
     }

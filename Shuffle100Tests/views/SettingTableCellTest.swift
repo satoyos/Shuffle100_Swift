@@ -24,7 +24,7 @@ class SettingTableCellTest: XCTestCase {
         let cellCoonfig = firstCell.contentConfiguration as? UIListContentConfiguration ?? nil
         XCTAssertNotNil(cellCoonfig)
         XCTAssertEqual(cellCoonfig?.text, "歌と歌の間隔")
-        XCTAssertEqual(cellCoonfig?.secondaryText, "1.10")
+        XCTAssertEqual(cellCoonfig?.secondaryText, "1.10"+"秒")
     }
 
 
