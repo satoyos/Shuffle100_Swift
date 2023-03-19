@@ -31,5 +31,16 @@ final class TimeSettingScreenUITest: XCTestCase {
         XCTAssert(intervalSettingPage.secCharLabel.exists)
     }
 
+    func test_secCharLabelExists_inKamiShimoIntervalScreen() {
+        // given, when
+        let reciteSettingPage = homePage.gotoReciteSettingPage()
+        // then
+        XCTAssert(reciteSettingPage.exists)
+        // when
+        let kamiShimoIntervalPage =  reciteSettingPage.gotoKamiShimoIntervalPage()
+        // when
+        XCTAssert(kamiShimoIntervalPage.exists)
+        XCTAssert(kamiShimoIntervalPage.secCharLabel.exists)
+    }
 
 }
