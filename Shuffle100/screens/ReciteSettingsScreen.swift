@@ -18,7 +18,7 @@ final class ReciteSettingsScreen: SettingsAttachedScreen {
 
     enum A11y {
         static let screenTitle = "いろいろな設定"
-        static let intervalSectionTitle = "読み上げの間隔(秒)"
+        static let intervalSectionTitle = "読み上げの間隔"
         static let volumeSectionTitle = "音量"
         static let detailGameModeScttionTitle = "試合のモードあれこれ"
         static let intervalCellTitle = "歌と歌の間隔"
