@@ -15,6 +15,7 @@ internal let maxIntervalDuration: Float = 2.0
 
 class TimeSettingScreen: SettingsAttachedScreen {
     let timeLabel = UILabel()
+    let secCharLabel = UILabel()
     let slider = UISlider()
     internal let sizeByDevice = SizeFactory.createSizeByDevice()
     var tryButton = UIButton()
@@ -31,6 +32,7 @@ class TimeSettingScreen: SettingsAttachedScreen {
         
         view.backgroundColor = StandardColor.backgroundColor
         view.addSubview(timeLabel)
+        view.addSubview(secCharLabel)
         view.addSubview(slider)
         view.addSubview(tryButton)
         layoutScreen()

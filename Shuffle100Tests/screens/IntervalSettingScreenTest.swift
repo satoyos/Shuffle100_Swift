@@ -23,12 +23,13 @@ class IntervalSettingScreenTest: XCTestCase {
         // when
         screen.view.layoutSubviews()
         // then
-        XCTContext.runActivity(named: "Subviewsが正しく設置されている") { activity in
+        XCTContext.runActivity(named: "Subviewsが正しく設置されている") { _ in
             XCTAssertEqual(screen.timeLabel.font.pointSize, timeLabelSizeByDevice())
             XCTAssertNotNil(screen.slider)
             XCTAssertEqual(screen.timeLabel.text, "1.10")
             XCTAssertEqual(screen.slider.value, 1.1)
             XCTAssertNotNil(screen.tryButton)
+            XCTAssertEqual(screen.secCharLabel.text, "秒")
         }
         
         XCTContext.runActivity(named: "詩を試しに読み上げるPlayerもセットされている") { activity in

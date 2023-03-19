@@ -233,6 +233,7 @@
 		925B076025EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */; };
 		925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		925CEB50218DB21A00876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
+		925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */; };
 		9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9260CCA725C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
@@ -719,6 +720,7 @@
 		92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenDelegate.swift; sourceTree = "<group>"; };
 		925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemsRecitedViewProtocol.swift; sourceTree = "<group>"; };
 		925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemEnabledGameEndView.swift; sourceTree = "<group>"; };
+		925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenUITest.swift; sourceTree = "<group>"; };
 		9260CCA525C67AE000B709B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
@@ -1068,6 +1070,7 @@
 				923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */,
 				92ABF9A623F00B80000CA91C /* RewindButtonUITest.swift */,
 				92A146AF24DED8540045D7DF /* MemorizeTImerScreenUITest.swift */,
+				925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */,
 			);
 			path = Shuffle100UITests;
 			sourceTree = "<group>";
@@ -2227,6 +2230,7 @@
 				924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */,
 				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
+				925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */,
 				922BDDEC2625D5CB0093B24A /* SelectModePage.swift in Sources */,
 				92E5C5592674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,

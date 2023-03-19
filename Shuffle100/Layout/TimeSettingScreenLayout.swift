@@ -13,6 +13,7 @@ extension TimeSettingScreen: SHViewSizeGetter {
     
     internal func layoutScreen() {
         configureTimeLabel()
+        configureSecCharLabel()
         configureSlider()
         confitureTryButton()
     }
@@ -30,6 +31,18 @@ extension TimeSettingScreen: SHViewSizeGetter {
                 make.centerX.equalToSuperview()
                 make.centerY.equalToSuperview()
                     .offset(-1 * one10thOfViewHeight)
+            }
+        }
+    }
+    
+    private func configureSecCharLabel() {
+        _ = secCharLabel.then {
+            $0.text = "秒"
+            $0.font = UIFont.systemFont(ofSize: secCharFontSize)
+            $0.snp.makeConstraints { make in
+                make.size.equalTo(secCharLabelSize)
+                make.bottom.equalTo(timeLabel.snp.bottom)
+                make.leading.equalTo(timeLabel.snp.trailing)
             }
         }
     }
@@ -67,6 +80,14 @@ extension TimeSettingScreen: SHViewSizeGetter {
 
     private var labelPointSize: CGFloat {
         sizeByDevice.intervalTimeLabelPointSize
+    }
+    
+    private var secCharLabelSize: CGFloat {
+        labelPointSize / 3
+    }
+    
+    private var secCharFontSize: CGFloat {
+        secCharLabelSize * 0.8
     }
     
     private var one10thOfViewHeight: CGFloat {
