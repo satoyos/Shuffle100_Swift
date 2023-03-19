@@ -17,23 +17,27 @@ final class IntervalSettingPage: PageObjectable, WaitInUITest, AdjustSlider, Dig
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars[A11y.title].firstMatch
+        app.navigationBars[A11y.title].firstMatch
     }
     
     var slider: XCUIElement {
-        return app.sliders[A11y.slider].firstMatch
+        app.sliders[A11y.slider].firstMatch
     }
     
     var tryButton : XCUIElement {
-        return app.buttons[A11y.tryListening].firstMatch
+        app.buttons[A11y.tryListening].firstMatch
     }
     
     var zeroSecLabel: XCUIElement {
-        return app.staticTexts[A11y.zeroSec].firstMatch
+        app.staticTexts[A11y.zeroSec].firstMatch
     }
     
     var backToAllSettingsButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.allSettings].firstMatch
+        app.navigationBars.buttons[A11y.allSettings].firstMatch
+    }
+    
+    var secCharLabel: XCUIElement {
+        app.staticTexts[A11y.secCharLabel].firstMatch
     }
     
     enum A11y {
@@ -42,5 +46,6 @@ final class IntervalSettingPage: PageObjectable, WaitInUITest, AdjustSlider, Dig
         static let tryListening = "試しに聞いてみる"
         static let zeroSec = "0.00"
         static let allSettings = "いろいろな設定"
+        static let secCharLabel = "秒"
     }
 }
