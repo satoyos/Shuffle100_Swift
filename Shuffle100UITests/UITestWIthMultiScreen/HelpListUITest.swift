@@ -35,6 +35,9 @@ class HelpListUITest: XCTestCase {
             .canGotoDetailHelp(title: "「初心者モード」とは？")
             .canGotoDetailHelp(title: "試合の流れ (初心者モード)")
             .canGotoDetailHelp(title: "「ノンストップ・モード」とは？")
+#if HOKKAI
+            .canGotoDetailHelp(title: "「下の句かるたモード」とは？")
+#endif
             .canGotoDetailHelp(title: "「札セット」とその使い方")
             .canGotoDetailHelp(title: "五色百人一首")
             .canGotoDetailHelp(title: "暗記時間タイマー")

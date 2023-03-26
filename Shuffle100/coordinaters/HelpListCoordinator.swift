@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let helpListSections: [HelpListSection] = [
+private var helpListSections: [HelpListSection] = [
     HelpListSection(name: "使い方", dataSources: [
         HelpListDataSource(name: "設定できること", type: .html, fileName: "html/options"),
         HelpListDataSource(name: "試合の流れ (通常モード)", type: .html, fileName: "html/game_flow"),
@@ -43,6 +43,14 @@ final class HelpListCoordinator: Coordinator, HandleNavigator {
     }
 
     func start() {
+#if HOKKAI
+        helpListSections[0].dataSources.insert(
+            HelpListDataSource(
+                name: "「下の句かるたモード」とは？",
+                type: .html,
+                fileName: "html/what_is_hokkaido_mode"),
+            at: 5)
+#endif
         let screen = HelpListScreen(sections: helpListSections)
         screen.goDetailAction = { [weak self] indexPath in
             self?.goDetailScreen(indexPath: indexPath)
