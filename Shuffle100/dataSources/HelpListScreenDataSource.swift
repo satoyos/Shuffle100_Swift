@@ -22,7 +22,7 @@ struct HelpListDataSource {
 
 struct HelpListSection {
     let name: String
-    let dataSources: [HelpListDataSource]
+    var dataSources: [HelpListDataSource]
 }
 
 extension HelpListScreen: UITableViewDataSource {
