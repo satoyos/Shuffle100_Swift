@@ -1,28 +1,24 @@
 PODS:
-  - DSFloatingButton (1.0.1)
   - FontAwesome.swift (1.9.1)
   - SnapKit (5.6.0)
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - DSFloatingButton
   - FontAwesome.swift
   - SnapKit (~> 5.6.0)
   - Then
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - DSFloatingButton
     - FontAwesome.swift
     - SnapKit
     - Then
 
 SPEC CHECKSUMS:
-  DSFloatingButton: 2611b44e75736cd2f2686691ee4d2c16f2b62391
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 6fca8a62f14a145487649a35c135059a7e1467fd
+PODFILE CHECKSUM: f97dead9c6b38ad95d68e13395921cc1ba257e3a
 
 COCOAPODS: 1.11.3
