@@ -28,6 +28,39 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         }
     }
     
+    // 強制的に序歌を短くするところが、他のモードと異なる。
+    func start() {
+        let screen = RecitePoemScreen(settings: settings)
+        screen.backToPreviousAction = { [weak self] in
+            self?.rewindToPrevious()
+        }
+        screen.openSettingsAction = { [weak self] in
+            self?.openReciteSettings()
+        }
+        screen.backToHomeScreenAction = { [weak self] in
+            self?.backToHomeScreen()
+        }
+        screen.startPostMortemAction = { [weak self] in
+            self?.startPostMortem()
+        }
+        // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
+        // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
+        CATransaction.begin()
+        navigationController.pushViewController(screen, animated: true)
+        CATransaction.setCompletionBlock {
+            screen.playerFinishedAction = { [weak self] in
+                self?.jokaFinished()
+            }
+            screen.skipToNextScreenAction = { [weak self] in
+                self?.jokaFinished()
+            }
+            screen.loadViewIfNeeded()
+            screen.playJoka(shorten: true)
+        }
+        CATransaction.commit()
+        self.screen = screen
+    }
+    
     // 下の句かるたでは、序歌終了後に他のモードにはない独特の遷移を行う
     func jokaFinished() {
         assert(true, "+++ 北海道モードでの序歌の読み上げ終了!!")

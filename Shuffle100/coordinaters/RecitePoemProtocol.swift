@@ -123,7 +123,7 @@ extension RecitePoemProtocol where Self: Coordinator {
     }
     
     // 歯車ボタンが押されたときの画面遷移をここでやる！
-    private func openReciteSettings() {
+    internal func openReciteSettings() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
         let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
         coordinator.start()
