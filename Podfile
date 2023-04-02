@@ -13,7 +13,7 @@ target 'Shuffle100' do
 #  pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
   pod 'Then'
-  pod 'DSFloatingButton'
+#  pod 'DSFloatingButton'
   pod 'FontAwesome.swift', :inhibit_warnings => true
 
   target 'Shuffle100Tests' do
@@ -28,7 +28,7 @@ target 'Shuffle100' do
 #    pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
     pod 'Then'
-    pod 'DSFloatingButton'
+#    pod 'DSFloatingButton'
     pod 'FontAwesome.swift'
   end
 
@@ -37,7 +37,7 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
       config.build_settings['ONLY_ACTIVE_ARCH'] = 'No'
     end
   end

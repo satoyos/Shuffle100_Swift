@@ -234,6 +234,9 @@
 		925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		925CEB50218DB21A00876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */; };
+		925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
+		925F5DA029D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
+		925F5DA129D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
 		9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9260CCA725C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
@@ -721,6 +724,7 @@
 		925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemsRecitedViewProtocol.swift; sourceTree = "<group>"; };
 		925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemEnabledGameEndView.swift; sourceTree = "<group>"; };
 		925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenUITest.swift; sourceTree = "<group>"; };
+		925F5D9E29D950CE006744FB /* DSFloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFloatingButton.swift; sourceTree = "<group>"; };
 		9260CCA525C67AE000B709B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
@@ -937,6 +941,7 @@
 		921737F5214E979F0059EAA4 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				925F5D9E29D950CE006744FB /* DSFloatingButton.swift */,
 				921737F6214E97C00059EAA4 /* UIColorExtention.swift */,
 				9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */,
 				9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */,
@@ -1691,8 +1696,6 @@
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh\"\n";
@@ -1845,6 +1848,7 @@
 				92FFBF41245FB3F0004D7F79 /* FudaView.swift in Sources */,
 				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
+				925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92B9E990246EDE05007C2E75 /* NgramPickerTableCell.swift in Sources */,
 				9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
@@ -1993,6 +1997,7 @@
 				92ABF9AC23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
 				92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */,
+				925F5DA029D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				9206CEE222E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92FFBF4A245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
 				925994F8244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
@@ -2099,6 +2104,7 @@
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
 				921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */,
 				9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
+				925F5DA129D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
 				92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */,
