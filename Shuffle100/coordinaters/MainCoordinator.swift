@@ -22,10 +22,6 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
         let store = StoreManager()
         self.settings = Self.setUpSettings(store: store)
         self.store = store
-        
-        #if HOKKAI
-        print("--- Hokkaido Running")
-        #endif
     }
 
     func start() {
@@ -96,12 +92,8 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
       case .beginner:
         gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
       case .hokkaido:
-#if HOKKAI
         gameDriveCoordinator =
           HokkaidoModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-#else
-        return
-#endif
       }
       gameDriveCoordinator.start()
       self.childCoordinator = gameDriveCoordinator
