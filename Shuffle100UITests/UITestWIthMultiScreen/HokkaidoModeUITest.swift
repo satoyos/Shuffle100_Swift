@@ -8,7 +8,6 @@
 
 import XCTest
 
-#if HOKKAI
 final class HokkaidoModeUITest: XCTestCase, OnWhatsNextScreenTest {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
@@ -49,4 +48,3 @@ final class HokkaidoModeUITest: XCTestCase, OnWhatsNextScreenTest {
         XCTAssert(recitePage.isReciting(number: 2, side: .shimo), "今度は「次はどうする？」画面に遷移せず、次の詩に進む")
     }
 }
-#endif

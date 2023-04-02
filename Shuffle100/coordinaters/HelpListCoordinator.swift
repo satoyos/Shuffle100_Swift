@@ -43,14 +43,12 @@ final class HelpListCoordinator: Coordinator, HandleNavigator {
     }
 
     func start() {
-#if HOKKAI
         helpListSections[0].dataSources.insert(
             HelpListDataSource(
                 name: "「下の句かるたモード」とは？",
                 type: .html,
                 fileName: "html/what_is_hokkaido_mode"),
             at: 5)
-#endif
         let screen = HelpListScreen(sections: helpListSections)
         screen.goDetailAction = { [weak self] indexPath in
             self?.goDetailScreen(indexPath: indexPath)

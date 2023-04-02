@@ -135,7 +135,6 @@ class GoThrough100PoemsUITest: XCTestCase {
         }
     }
     
-#if HOKKAI
     func test_goThrough100inHokkaidoMode() {
         XCTContext.runActivity(named: "北海道モードを選択") { (activity) in
             // given
@@ -179,8 +178,7 @@ class GoThrough100PoemsUITest: XCTestCase {
             XCTAssert(homePage.exists)
         }
     }
-#endif
-    
+
     private func kamiRecitingScreenAppearsOf(number i: Int) {
         waitToAppear(for: app.staticTexts["\(i)首め:上の句 (全100首)"], timeout: timeOutSec)
     }
