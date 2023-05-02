@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -314,6 +314,8 @@
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B822ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
+		9295721C29FFF26600AAB997 /* DigitsPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */; };
+		9295721E29FFF41C00AAB997 /* DigitsPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721D29FFF41C00AAB997 /* DigitsPickerPage.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
 		9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
@@ -764,6 +766,8 @@
 		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
+		9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreenUITest.swift; sourceTree = "<group>"; };
+		9295721D29FFF41C00AAB997 /* DigitsPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
@@ -976,6 +980,7 @@
 				92E9705926C1418B00A6650C /* HelpListPage.swift */,
 				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
 				92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */,
+				9295721D29FFF41C00AAB997 /* DigitsPickerPage.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1215,6 +1220,7 @@
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
 				927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */,
+				9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -1514,8 +1520,9 @@
 		923D59062143BB0A000F5E60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "里 佳史";
 				TargetAttributes = {
 					923D590D2143BB0A000F5E60 = {
@@ -2135,6 +2142,7 @@
 				92F5298E229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */,
+				9295721C29FFF26600AAB997 /* DigitsPickerScreenUITest.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */,
 				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
@@ -2213,6 +2221,7 @@
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92A6EB8B24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				92B87D4B250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
+				9295721E29FFF41C00AAB997 /* DigitsPickerPage.swift in Sources */,
 				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */,
