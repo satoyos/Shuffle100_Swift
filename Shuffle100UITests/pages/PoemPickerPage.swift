@@ -113,10 +113,10 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     }
     
     @discardableResult
-    func gotoDigitsPickerPage() -> DigitsPickerPage {
+    func gotoDigitsPickerPage() -> DigitsPickerPage01 {
         let sheet = showSelectByGroupActionSheet()
         sheet.selectByDigitsButton.tap()
-        return DigitsPickerPage(app: app)
+        return DigitsPickerPage01(app: app)
     }
     
     func showSelectByGroupActionSheet() -> SelectByGroupActionSheet {

@@ -1,5 +1,5 @@
 //
-//  DigitsPickerScreenUITest.swift
+//  DigitsPickerScreen01UITest.swift
 //  Shuffle100UITests
 //
 //  Created by Yoshifumi Sato on 2023/05/01.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-final class DigitsPickerScreenUITest: XCTestCase {
+final class DigitsPickerScreen01UITest: XCTestCase {
     var app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 

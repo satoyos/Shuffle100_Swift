@@ -73,8 +73,8 @@ extension PoemPickerScreen {
             self.openFiveColorsScreenAction?()
         }
         let digitsAction =
-        UIAlertAction(title: "1の位、または10の位の数で選ぶ", style: .default) { _ in
-            print("これからDigitsPickerScreenを開くよ")
+        UIAlertAction(title: "1の位の数で選ぶ", style: .default) { _ in
+            print("これからDigitsPickerScreen01を開くよ")
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)

@@ -1,5 +1,5 @@
 //
-//  DigitsPickerPage.swift
+//  DigitsPickerPage01.swift
 //  Shuffle100UITests
 //
 //  Created by Yoshifumi Sato on 2023/05/01.
@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-final class DigitsPickerPage: PageObjectable, WaitInUITest {
+final class DigitsPickerPage01: PageObjectable, WaitInUITest {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
@@ -21,6 +21,6 @@ final class DigitsPickerPage: PageObjectable, WaitInUITest {
     }
     
     enum A11y {
-        static let title = "1の位、または10の位の数で選ぶ"
+        static let title = "1の位の数で選ぶ"
     }
 }
