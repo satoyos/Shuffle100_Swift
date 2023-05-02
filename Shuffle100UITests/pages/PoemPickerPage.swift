@@ -112,6 +112,13 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         return NgramPickerPage(app: app)
     }
     
+    @discardableResult
+    func gotoDigitsPickerPage() -> DigitsPickerPage {
+        let sheet = showSelectByGroupActionSheet()
+        sheet.selectByDigitsButton.tap()
+        return DigitsPickerPage(app: app)
+    }
+    
     func showSelectByGroupActionSheet() -> SelectByGroupActionSheet {
         selectByGroupButton.tap()
         return SelectByGroupActionSheet(app: app)
