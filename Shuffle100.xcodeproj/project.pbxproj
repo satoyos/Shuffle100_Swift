@@ -315,7 +315,7 @@
 		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B822ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		9295721C29FFF26600AAB997 /* DigitsPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */; };
-		9295721E29FFF41C00AAB997 /* DigitsPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721D29FFF41C00AAB997 /* DigitsPickerPage.swift */; };
+		9295721E29FFF41C00AAB997 /* DigitsPickerPage01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
 		9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
@@ -767,7 +767,7 @@
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
 		9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreenUITest.swift; sourceTree = "<group>"; };
-		9295721D29FFF41C00AAB997 /* DigitsPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage.swift; sourceTree = "<group>"; };
+		9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage01.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
@@ -980,7 +980,7 @@
 				92E9705926C1418B00A6650C /* HelpListPage.swift */,
 				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
 				92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */,
-				9295721D29FFF41C00AAB997 /* DigitsPickerPage.swift */,
+				9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -2221,7 +2221,7 @@
 				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92A6EB8B24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				92B87D4B250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
-				9295721E29FFF41C00AAB997 /* DigitsPickerPage.swift in Sources */,
+				9295721E29FFF41C00AAB997 /* DigitsPickerPage01.swift in Sources */,
 				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */,
