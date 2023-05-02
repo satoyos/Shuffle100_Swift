@@ -72,6 +72,10 @@ extension PoemPickerScreen {
         let fiveColorsAction = UIAlertAction(title: "五色百人一首の色で選ぶ", style: .default) { _ in
             self.openFiveColorsScreenAction?()
         }
+        let digitsAction =
+        UIAlertAction(title: "1の位、または10の位の数で選ぶ", style: .default) { _ in
+            print("これからDigitsPickerScreenを開くよ")
+        }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)
         if settings.savedFudaSets.count > 0 {
@@ -82,6 +86,7 @@ extension PoemPickerScreen {
         }
         ac.addAction(ngramAction)
         ac.addAction(fiveColorsAction)
+        ac.addAction(digitsAction)
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
             pc.sourceView = navigationController!.toolbar

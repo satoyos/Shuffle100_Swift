@@ -37,11 +37,19 @@ final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
         waitToHittable(for: app.scrollViews.buttons[A11y.selectByColor].firstMatch, timeout: timeOutSec)
     }
     
+    var selectByDigitsButton: XCUIElement {
+        waitToHittable(
+            for: app.scrollViews
+                .buttons[A11y.selectByDigits].firstMatch,
+            timeout: timeOutSec)
+    }
+    
     enum A11y {
         static let title = "どうやって選びますか？"
         static let cancel = "キャンセル"
         static let selectByNgram = "1字目で選ぶ"
         static let selectBySet = "作った札セットから選ぶ"
         static let selectByColor = "五色百人一首の色で選ぶ"
+        static let selectByDigits = "1の位、または10の位の数で選ぶ"
     }
 }
