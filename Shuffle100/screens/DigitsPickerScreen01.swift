@@ -9,10 +9,13 @@
 import UIKit
 
 final class DigitsPickerScreen01: UIViewController {
+    
+    let cellReuseId = "digits01"
+    var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableViewSetUp()
         navigationBarSetUp()
     }
     
@@ -23,4 +26,15 @@ final class DigitsPickerScreen01: UIViewController {
 //        ]
     }
 
+    private func tableViewSetUp() {
+        self.tableView = createTableViewForScreen()
+        tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+    }
+    
+    private func createTableViewForScreen() -> UITableView {
+        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+//        tableView.dataSource = self
+//        tableView.delegate = self
+        return tableView
+    }
 }
