@@ -38,6 +38,8 @@ final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
         tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
     }
     
+//    このComputed Propertyはfunctionであるべき。
+//    ToDo: Fix it!
     private var tableViewForScreen: UITableView {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.dataSource = self
