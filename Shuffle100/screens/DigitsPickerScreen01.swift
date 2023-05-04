@@ -33,7 +33,7 @@ final class DigitsPickerScreen01: SettingsAttachedScreen {
     
     private func createTableViewForScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
-//        tableView.dataSource = self
+        tableView.dataSource = self
 //        tableView.delegate = self
         return tableView
     }
