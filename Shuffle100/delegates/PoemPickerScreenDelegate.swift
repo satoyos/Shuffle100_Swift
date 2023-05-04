@@ -74,7 +74,7 @@ extension PoemPickerScreen {
         }
         let digitsAction =
         UIAlertAction(title: "1の位の数で選ぶ", style: .default) { _ in
-            print("これからDigitsPickerScreen01を開くよ")
+            self.openDigitsPicker01Action?()
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)

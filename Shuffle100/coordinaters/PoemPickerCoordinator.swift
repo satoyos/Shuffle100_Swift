@@ -36,6 +36,9 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         screen.openFiveColorsScreenAction = { [weak self] in
             self?.openFiveColorsScreen()
         }
+        screen.openDigitsPicker01Action = { [weak self] in
+            self?.openDigitsPickerScreen01()
+        }
         screen.showTorifudaAction = { [weak self] number in
             self?.showTorifudaScreenFor(number: number)
         }
@@ -64,6 +67,13 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
     internal func openFiveColorsScreen() {
         clearSearchResult()
         let coordinator = FiveColorsCoordinator(navigationController: navigationController, settings: settings, store: store)
+        coordinator.start()
+        self.childCoordinator = coordinator
+    }
+
+    internal func openDigitsPickerScreen01() {
+        clearSearchResult()
+        let coordinator = DigitsPickerScreen01Coordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
         self.childCoordinator = coordinator
     }

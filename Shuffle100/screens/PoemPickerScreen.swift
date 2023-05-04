@@ -17,6 +17,7 @@ final class PoemPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     var openNgramPickerAction: InjectedAction?
     var openFudaSetsScreenAction: InjectedAction?
     var openFiveColorsScreenAction: InjectedAction?
+    var openDigitsPicker01Action: InjectedAction?
     var showTorifudaAction: ((_ number: Int) -> Void)?
     var rowForFudaSetOverwritten: Int = 0
     var fontSizeOfCell: CGFloat!
