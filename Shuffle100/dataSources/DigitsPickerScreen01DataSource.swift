@@ -40,6 +40,12 @@ extension DigitsPickerScreen01: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        let rowNumber = indexPath.row
+        var content = UIListContentConfiguration.cell()
+        content.text = rowNumber.description
+        // To be implemented
+        
+        cell.contentConfiguration = content
         return cell
     }
     
