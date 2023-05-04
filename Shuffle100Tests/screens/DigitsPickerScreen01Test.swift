@@ -30,5 +30,20 @@ final class DigitsPickerScreen01Test: XCTestCase {
         XCTAssertEqual(screen.tableView.numberOfSections, 1)
         let numOfRows = screen.tableView(screen.tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(numOfRows, 10)
+        
+        // when
+        let secondCell = cellFor(screen, section: 0, row: 1)
+        guard let content = secondCell.contentConfiguration
+                as? UIListContentConfiguration else {
+            XCTFail("failure in getting config of secondCell ")
+            return
+        }
+        // then
+        XCTAssertEqual(content.text, "1")
+    }
+    
+    private func cellFor(_ screen: DigitsPickerScreen01, section: Int, row: Int) -> NgramPickerTableCell {
+        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
+        return cell as! NgramPickerTableCell
     }
 }
