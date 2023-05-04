@@ -24,6 +24,8 @@ final class DigitsPickerScreen01UITest: XCTestCase {
         // then
         XCTAssert(pickerPage.exists, "「歌を選ぶ」画面に到達")
         // when
-        let _ = pickerPage.gotoDigitsPickerPage()
+        let digitsPage = pickerPage.gotoDigitsPickerPage()
+        // then
+        XCTAssert(digitsPage.exists)
     }
 }

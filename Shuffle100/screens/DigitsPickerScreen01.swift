@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DigitsPickerScreen01: UIViewController {
+final class DigitsPickerScreen01: SettingsAttachedScreen {
     
     let cellReuseId = "digits01"
     var tableView: UITableView!
