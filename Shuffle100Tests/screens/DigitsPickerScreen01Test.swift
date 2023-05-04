@@ -39,7 +39,8 @@ final class DigitsPickerScreen01Test: XCTestCase {
             return
         }
         // then
-        XCTAssertEqual(content.text, "1")
+        XCTAssertEqual(content.text, "2")
+        XCTAssertNotNil(content.image)
     }
     
     private func cellFor(_ screen: DigitsPickerScreen01, section: Int, row: Int) -> NgramPickerTableCell {
