@@ -43,6 +43,7 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         // then
         XCTAssertEqual(content.text, "2")
         XCTAssertNotNil(content.image)
+        XCTAssertEqual(content.secondaryText, "歌番号: 2, 12, 22, 32, 42, 52, 62, 72, 82, 92")
     }
     
     private func cellFor(_ screen: DigitsPickerScreen01, section: Int, row: Int) -> NgramPickerTableCell {
