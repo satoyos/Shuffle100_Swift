@@ -23,6 +23,7 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
         let (config, selecteeState) = cellContentConfig(for: indexPath.row)
         cell.contentConfiguration = config
         (cell as! NgramPickerTableCell).selectedStatus = selecteeState
+        cell.accessibilityLabel = config.text
         return cell
     }
     
