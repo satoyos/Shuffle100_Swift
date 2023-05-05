@@ -24,8 +24,32 @@ final class DigitsPickerScreen01UITest: XCTestCase {
         // then
         XCTAssert(pickerPage.exists, "「歌を選ぶ」画面に到達")
         // when
-        let digitsPage = pickerPage.gotoDigitsPickerPage()
+        let digitsPage = pickerPage.gotoDigitsPickerPage01()
         // then
         XCTAssert(digitsPage.exists)
+    }
+    
+    func test_tapFullSelectedCell() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        let digitsPage = pickerPage.gotoDigitsPickerPage01()
+        // then
+        XCTAssert(digitsPage.badge(of: 100).exists)
+        // when
+        digitsPage.tapCell(number: 3)
+        // then
+        XCTAssert(digitsPage.badge(of: 90).exists)
+        // when
+        digitsPage.backToPickerButton.tap()
+        // then
+        XCTAssert(pickerPage.badge(of: 90).exists)
+        // when
+        pickerPage.backToTopButton.tap()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 90))
+        
     }
 }
