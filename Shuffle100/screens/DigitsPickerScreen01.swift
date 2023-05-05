@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DigitsPickerScreen01: SettingsAttachedScreen {
+final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
     
     let cellReuseId = "digits01"
     var tableView: UITableView!
@@ -21,9 +21,9 @@ final class DigitsPickerScreen01: SettingsAttachedScreen {
     
     private func navigationBarSetUp() {
         self.title = "1の位の数で選ぶ"
-//        navigationItem.rightBarButtonItems = [
-//            selectedNumBadgeItem
-//        ]
+        navigationItem.rightBarButtonItems = [
+            selectedNumBadgeItem
+        ]
     }
 
     private func tableViewSetUp() {

@@ -8,8 +8,7 @@
 
 import XCTest
 
-final class DigitsPickerScreen01Test: XCTestCase {
-
+final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
 
     func test_initialScreen() throws {
         // given
@@ -19,6 +18,9 @@ final class DigitsPickerScreen01Test: XCTestCase {
         // then
         XCTAssertEqual(screen.title, "1の位の数で選ぶ")
         XCTAssertNotNil(screen.tableView)
+        let buttonItem = screen.navigationItem.rightBarButtonItems?.last as? UIBarButtonItem
+        XCTAssertNotNil(buttonItem)
+        XCTAssertEqual(badgeView(of: screen)?.text, "100首")
     }
     
     func test_dataSource() {
