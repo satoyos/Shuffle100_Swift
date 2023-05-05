@@ -525,6 +525,12 @@
 		92EC11FE2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */; };
 		92EC11FF2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */; };
 		92EC12002A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */; };
+		92EC12022A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */; };
+		92EC12032A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */; };
+		92EC12042A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */; };
+		92EC12062A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
+		92EC12072A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
+		92EC12082A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
@@ -880,6 +886,8 @@
 		92EC11F52A01F43D0071FA6C /* DigitsPickerScreen01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01.swift; sourceTree = "<group>"; };
 		92EC11F92A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01DataSource.swift; sourceTree = "<group>"; };
 		92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01Coordinator.swift; sourceTree = "<group>"; };
+		92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01Delegate.swift; sourceTree = "<group>"; };
+		92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsNumberFactory.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorHandlingSheet.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1402,6 +1410,7 @@
 				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
 				92B87D4C250BBE31003BB51B /* FiveColors.swift */,
 				92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */,
+				92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1451,6 +1460,7 @@
 				92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */,
 				92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */,
 				9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */,
+				92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1789,6 +1799,7 @@
 				92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
 				92F8245725AF0C34008E031D /* SettingTableCell.swift in Sources */,
 				92EC11FE2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
+				92EC12022A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
 				921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92737E3E238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
@@ -1809,6 +1820,7 @@
 				92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
 				92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
 				92EC11F62A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */,
+				92EC12062A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */,
 				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				92D57155220F03AF00235717 /* SelectModeScreen.swift in Sources */,
@@ -1920,6 +1932,7 @@
 				92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				92EC11FF2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
 				92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
+				92EC12072A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */,
 				92A262712865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
@@ -1987,6 +2000,7 @@
 				9254B4CE28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
 				92B87D4A250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
+				92EC12032A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				92467794292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
 				9260CCA725C67AE000B709B6 /* UIFontExtension.swift in Sources */,
@@ -2149,6 +2163,7 @@
 				9254B4CF28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
 				925994E62444A8D200044253 /* TimeSettingScreen.swift in Sources */,
 				921FF43B249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
+				92EC12042A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
 				9205E17E24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
 				92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				92E5C53F26665FEF009A46F5 /* IntervalSettingPage.swift in Sources */,
@@ -2280,6 +2295,7 @@
 				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
 				92E44EF426AD4B2A004A6A1A /* NoPoemToSaveAlert.swift in Sources */,
+				92EC12082A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */,
 				92EC11FC2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */,
 				92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				922BDDF12629BEB60093B24A /* SelectSingerPage.swift in Sources */,

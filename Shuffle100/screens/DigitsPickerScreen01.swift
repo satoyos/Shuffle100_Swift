@@ -11,6 +11,7 @@ import UIKit
 final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
     
     let cellReuseId = "digits01"
+    let cardNumbers = DigitsNumberFacgtory.cardNumbers01
     var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -44,7 +45,7 @@ final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
     private func createTableViewForScreen() -> UITableView {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
         return tableView
     }
 }
