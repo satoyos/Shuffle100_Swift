@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 // [
 //    [ 1, 11, ...,  91],
 //    [ 2, 12, ...,  92],
@@ -29,7 +28,7 @@ fileprivate func calcCardNumbers() -> [[Int]] {
 }
 
 fileprivate let cardNumbers = calcCardNumbers()
-fileprivate let cellHeight: CGFloat = 44
+fileprivate let cellHeight: CGFloat = 40
 
 extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,22 +37,28 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
-        let rowNumber = indexPath.row
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: cellReuseId,
+            for: indexPath)
+        cell.contentConfiguration = cellContentConfig(for: indexPath.row)
+        return cell
+    }
+    
+    private func cellContentConfig(for rowNumber: Int) ->  UIListContentConfiguration  {
+
         var content = UIListContentConfiguration.cell()
         content.text = cardNumbers[rowNumber].first?.description
-        let state = selectedState(for: indexPath)
+        let state = selectedState(for: rowNumber)
         content.image = state.circleImage
         content.imageProperties.maximumSize =
             CGSize(width: cellHeight, height: cellHeight)
         // To be implemented
         
-        cell.contentConfiguration = content
-        return cell
+        return content
     }
 
-    private func  selectedState(for indexPath: IndexPath) -> (status: PoemsSelectedState, circleImage: UIImage) {
-        let allNumbersSetForDigit = Set(cardNumbers[indexPath.row])
+    private func  selectedState(for rowNumber: Int) -> (status: PoemsSelectedState, circleImage: UIImage) {
+        let allNumbersSetForDigit = Set(cardNumbers[rowNumber])
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForDigit)
         let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
