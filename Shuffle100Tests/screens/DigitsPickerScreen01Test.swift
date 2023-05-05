@@ -46,6 +46,20 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertEqual(content.secondaryText, "歌番号: 2, 12, 22, 32, 42, 52, 62, 72, 82, 92")
     }
     
+    func test_partialSelected() {
+        // given
+        let settings = Settings()
+        // 歌番号1, 2, 3の選択を外す
+        let newState100 = settings.state100
+                            .cancelInNumbers([1, 2, 3])
+        settings.state100 = newState100
+        // when
+        let screen = DigitsPickerScreen01(settings: settings)
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(badgeView(of: screen)?.text, "97首")
+    }
+    
     private func cellFor(_ screen: DigitsPickerScreen01, section: Int, row: Int) -> NgramPickerTableCell {
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
         return cell as! NgramPickerTableCell

@@ -19,6 +19,16 @@ final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
         navigationBarSetUp()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateTableAndBadge()
+    }
+    
+    internal  func updateTableAndBadge() {
+        updateBadge()
+        tableView.reloadData()
+    }
+    
     private func navigationBarSetUp() {
         self.title = "1の位の数で選ぶ"
         navigationItem.rightBarButtonItems = [
