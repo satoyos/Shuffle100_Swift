@@ -8,26 +8,6 @@
 
 import UIKit
 
-//// [
-////    [ 1, 11, ...,  91],
-////    [ 2, 12, ...,  92],
-////    ...,
-////    [ 9, 19, ...,  99]
-////    [10, 20, ..., 100],
-//// ]
-//fileprivate func calcCardNumbers() -> [[Int]] {
-//    var result = [[Int]]()
-//    for i in (1...10) {
-//        var row = [Int]()
-//        for j in (0..<10) {
-//            row.append(i + 10*j)
-//        }
-//        result.append(row)
-//    }
-//    return result
-//}
-//
-//fileprivate let cardNumbers = calcCardNumbers()
 fileprivate let cellHeight: CGFloat = 40
 
 extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler {
