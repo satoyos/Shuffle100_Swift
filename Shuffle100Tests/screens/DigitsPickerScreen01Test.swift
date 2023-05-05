@@ -34,7 +34,7 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertEqual(numOfRows, 10)
         
         // when
-        let secondCell = cellFor(screen, section: 0, row: 1)
+        let secondCell = cellFor(screen, row: 1)
         guard let content = secondCell.contentConfiguration
                 as? UIListContentConfiguration else {
             XCTFail("failure in getting config of secondCell ")
@@ -58,10 +58,12 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(badgeView(of: screen)?.text, "97首")
+        let thirdCell = cellFor(screen, row: 2)
+        XCTAssertEqual(thirdCell.selectedStatus, .partial)
     }
     
-    private func cellFor(_ screen: DigitsPickerScreen01, section: Int, row: Int) -> NgramPickerTableCell {
-        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
+    private func cellFor(_ screen: DigitsPickerScreen01, row: Int) -> NgramPickerTableCell {
+        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: 0))
         return cell as! NgramPickerTableCell
     }
 }

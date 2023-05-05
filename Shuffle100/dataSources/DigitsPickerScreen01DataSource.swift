@@ -40,11 +40,13 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
         let cell = tableView.dequeueReusableCell(
             withIdentifier: cellReuseId,
             for: indexPath)
-        cell.contentConfiguration = cellContentConfig(for: indexPath.row)
+        let (config, selecteeState) = cellContentConfig(for: indexPath.row)
+        cell.contentConfiguration = config
+        (cell as! NgramPickerTableCell).selectedStatus = selecteeState
         return cell
     }
     
-    private func cellContentConfig(for rowNumber: Int) ->  UIListContentConfiguration  {
+    private func cellContentConfig(for rowNumber: Int) ->  (config: UIListContentConfiguration, state: PoemsSelectedState)    {
 
         var content = UIListContentConfiguration.cell()
         content.text = cardNumbers[rowNumber].first?.description
@@ -57,10 +59,10 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
             CGSize(width: cellHeight, height: cellHeight)
         // To be implemented
         
-        return content
+        return (content, state.selectedState)
     }
 
-    private func  selectedState(for rowNumber: Int) -> (status: PoemsSelectedState, circleImage: UIImage) {
+    private func  selectedState(for rowNumber: Int) -> (selectedState: PoemsSelectedState, circleImage: UIImage) {
         let allNumbersSetForDigit = Set(cardNumbers[rowNumber])
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForDigit)
