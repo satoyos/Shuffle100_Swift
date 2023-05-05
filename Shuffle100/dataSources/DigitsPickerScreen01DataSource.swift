@@ -48,6 +48,9 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
 
         var content = UIListContentConfiguration.cell()
         content.text = cardNumbers[rowNumber].first?.description
+        content.secondaryText = "歌番号: " + cardNumbers[rowNumber].description
+            .dropFirst()
+            .dropLast()
         let state = selectedState(for: rowNumber)
         content.image = state.circleImage
         content.imageProperties.maximumSize =
