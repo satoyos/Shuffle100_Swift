@@ -1110,6 +1110,7 @@
 		923D593F2143BD50000F5E60 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				92EC12092A05F8ED0071FA6C /* protocols */,
 				923D59132143BB0A000F5E60 /* HomeScreen.swift */,
 				92D57154220F03AF00235717 /* SelectModeScreen.swift */,
 				927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */,
@@ -1131,7 +1132,6 @@
 				92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */,
 				92B87D48250A654B003BB51B /* FiveColorsScreen.swift */,
 				921791F5258E211C00A38249 /* Screen.swift */,
-				9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */,
 				92EC11F52A01F43D0071FA6C /* DigitsPickerScreen01.swift */,
 			);
 			path = screens;
@@ -1463,6 +1463,14 @@
 				92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */,
 			);
 			path = delegates;
+			sourceTree = "<group>";
+		};
+		92EC12092A05F8ED0071FA6C /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 		EDFFE9D58434747A8AD3492F /* Pods */ = {
