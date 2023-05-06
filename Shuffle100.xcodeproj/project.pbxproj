@@ -531,6 +531,9 @@
 		92EC12062A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
 		92EC12072A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
 		92EC12082A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
+		92EC120B2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
+		92EC120C2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
+		92EC120D2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
@@ -888,6 +891,7 @@
 		92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01Coordinator.swift; sourceTree = "<group>"; };
 		92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01Delegate.swift; sourceTree = "<group>"; };
 		92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsNumberFactory.swift; sourceTree = "<group>"; };
+		92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHandlerProtocol.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorHandlingSheet.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1469,6 +1473,7 @@
 			isa = PBXGroup;
 			children = (
 				9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */,
+				92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -1880,6 +1885,7 @@
 				925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
+				92EC120B2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
 				9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
 				92FFBF49245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
@@ -1998,6 +2004,7 @@
 				92E5C553267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
 				9207514E28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */,
 				92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
+				92EC120C2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */,
 				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
@@ -2132,6 +2139,7 @@
 				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				92EC12002A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
 				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
+				92EC120D2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */,
 				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
 				924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */,
 				92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */,
