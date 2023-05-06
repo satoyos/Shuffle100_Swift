@@ -8,18 +8,16 @@
 
 import UIKit
 
-extension DigitsPickerScreen01: UITableViewDelegate {
+extension DigitsPickerScreen01: UITableViewDelegate, TableViewHandler {
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tappedCell = cellForIndexPath(indexPath)
+        let tappedCell = cellFor(path: indexPath) as! NgramPickerTableCell
         let newState100 = flippedState(
             from: tappedCell.selectedStatus,
             for: cardNumbers[indexPath.row])
         settings.state100 = newState100
         updateTableAndBadge()
-    }
-    
-    private func cellForIndexPath(_ indexPath: IndexPath) -> NgramPickerTableCell {
-        return tableView(tableView, cellForRowAt: indexPath) as! NgramPickerTableCell
     }
     
     private func flippedState(
