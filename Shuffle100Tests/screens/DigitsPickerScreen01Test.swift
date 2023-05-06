@@ -81,8 +81,7 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
     }
     
     private func cellFor(_ screen: DigitsPickerScreen01, row: Int) -> NgramPickerTableCell {
-        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: 0))
-        return cell as! NgramPickerTableCell
+        screen.cellIn1stSection(row: row) as! NgramPickerTableCell
     }
     
     private func tapCellOf(row: Int, in screen: DigitsPickerScreen01) {
