@@ -33,7 +33,7 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
             content.imageProperties.maximumSize = CGSize(width: cellHeight, height: cellHeight)
             $0.contentConfiguration = content
             $0.accessibilityLabel = itemForIndex(indexPath).id
-            ($0 as! NgramPickerTableCell).selectedStatus = state.status
+            ($0 as! SelectByGroupCell).selectedStatus = state.status
         }
         return cell
     }
@@ -47,7 +47,7 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
         let allNumbersSetForId = Set(numbersDic[idForCell]!)
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForId)
-        let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
+        let image = SelectByGroupCell.selectedImageDic[resultStatus]!
         return (resultStatus, image)
 
     }

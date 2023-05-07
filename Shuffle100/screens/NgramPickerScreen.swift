@@ -35,7 +35,7 @@ final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     
     private func tableViewSetUp() {
         self.tableView = createTableView()
-        tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+        tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
     }
     
     private func createTableView() -> UITableView {

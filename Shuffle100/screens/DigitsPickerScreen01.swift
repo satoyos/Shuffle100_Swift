@@ -39,7 +39,7 @@ final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
 
     private func tableViewSetUp() {
         self.tableView = createTableViewForScreen()
-        tableView.register(NgramPickerTableCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+        tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
     }
     
     private func createTableViewForScreen() -> UITableView {

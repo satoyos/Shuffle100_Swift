@@ -20,8 +20,8 @@ extension NgramPickerScreen: UITableViewDelegate, TableViewHandler {
         updateTableAndBadge()
     }
     
-    internal func cellForIndexPath(_ indexPath: IndexPath) -> NgramPickerTableCell {
-        cellFor(path: indexPath) as! NgramPickerTableCell
+    internal func cellForIndexPath(_ indexPath: IndexPath) -> SelectByGroupCell {
+        cellFor(path: indexPath) as! SelectByGroupCell
     }
     
     private func flippedState(
