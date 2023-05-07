@@ -36,11 +36,5 @@ final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber, P
         self.tableView = createTableViewForScreen()
         tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
     }
-//
-//    private func createTableViewForScreen() -> UITableView {
-//        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        return tableView
-//    }
+
 }
