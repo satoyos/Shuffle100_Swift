@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NgramPickerScreen: UITableViewDelegate {
+extension NgramPickerScreen: UITableViewDelegate, TableViewHandler {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tappedCell = cellForIndexPath(indexPath)
         let id = tappedCell.accessibilityLabel!
@@ -21,7 +21,7 @@ extension NgramPickerScreen: UITableViewDelegate {
     }
     
     internal func cellForIndexPath(_ indexPath: IndexPath) -> NgramPickerTableCell {
-        return tableView(tableView, cellForRowAt: indexPath) as! NgramPickerTableCell
+        cellFor(path: indexPath) as! NgramPickerTableCell
     }
     
     private func flippedState(
