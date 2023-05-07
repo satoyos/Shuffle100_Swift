@@ -22,7 +22,7 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
             for: indexPath)
         let (config, selecteeState) = cellContentConfig(for: indexPath.row)
         cell.contentConfiguration = config
-        (cell as! NgramPickerTableCell).selectedStatus = selecteeState
+        (cell as! SelectByGroupCell).selectedStatus = selecteeState
         cell.accessibilityLabel = config.text
         return cell
     }
@@ -47,7 +47,7 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
         let allNumbersSetForDigit = Set(cardNumbers[rowNumber])
         let selectedNumbersSet = Set(allSelectedNumbers)
         let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForDigit)
-        let image = NgramPickerTableCell.selectedImageDic[resultStatus]!
+        let image = SelectByGroupCell.selectedImageDic[resultStatus]!
         return (resultStatus, image)
 
     }

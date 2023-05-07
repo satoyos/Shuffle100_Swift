@@ -1,5 +1,5 @@
 //
-//  NgramPickerTableCell.swift
+//  SelectByGroupCell.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2020/05/15.
@@ -13,7 +13,7 @@ private let halfCircleImage = UIImage(named: "half_circle.png")!
 private let emptyCircleImage = UIImage(named: "empty_circle.png")!
 
 
-final class NgramPickerTableCell: UITableViewCell {
+final class SelectByGroupCell: UITableViewCell {
     static let selectedImageDic: [PoemsSelectedState: UIImage] = [
         .full: fullCircleImage,
         .partial: halfCircleImage,

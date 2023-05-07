@@ -12,7 +12,7 @@ extension DigitsPickerScreen01: UITableViewDelegate, TableViewHandler {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tappedCell = cellFor(path: indexPath) as! NgramPickerTableCell
+        let tappedCell = cellFor(path: indexPath) as! SelectByGroupCell
         let newState100 = flippedState(
             from: tappedCell.selectedStatus,
             for: cardNumbers[indexPath.row])

@@ -80,8 +80,8 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertEqual(newThirdCell.selectedStatus, .full)
     }
     
-    private func cellFor(_ screen: DigitsPickerScreen01, row: Int) -> NgramPickerTableCell {
-        screen.cellIn1stSection(row: row) as! NgramPickerTableCell
+    private func cellFor(_ screen: DigitsPickerScreen01, row: Int) -> SelectByGroupCell {
+        screen.cellIn1stSection(row: row) as! SelectByGroupCell
     }
     
     private func tapCellOf(row: Int, in screen: DigitsPickerScreen01) {
