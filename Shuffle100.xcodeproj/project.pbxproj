@@ -534,6 +534,9 @@
 		92EC120B2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
 		92EC120C2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
 		92EC120D2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
+		92EC12122A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
+		92EC12132A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
+		92EC12142A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
@@ -892,6 +895,7 @@
 		92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01Delegate.swift; sourceTree = "<group>"; };
 		92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsNumberFactory.swift; sourceTree = "<group>"; };
 		92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHandlerProtocol.swift; sourceTree = "<group>"; };
+		92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerWithCircleImageProtocol.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorHandlingSheet.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1466,6 +1470,7 @@
 			children = (
 				9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */,
 				92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */,
+				92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -1795,6 +1800,7 @@
 				9207BB3222996B7300816DC8 /* Settings.swift in Sources */,
 				920D670328F3D74200952402 /* BadgeSwift.swift in Sources */,
 				920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */,
+				92EC12122A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */,
 				92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
 				92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				9207BAF4229579D600816DC8 /* Bool100.swift in Sources */,
@@ -2031,6 +2037,7 @@
 				9254B4CE28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
 				92B87D4A250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
+				92EC12132A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */,
 				92EC12032A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
 				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				92467794292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
@@ -2146,6 +2153,7 @@
 				927E4C0C22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92EDBCE226C658E9009F4555 /* SelectedColorHandlingSheet.swift in Sources */,
 				92FFBF3F245FB2FF004D7F79 /* String-extension.swift in Sources */,
+				92EC12142A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */,
 				92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */,
 				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,

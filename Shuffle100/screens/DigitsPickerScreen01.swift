@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
+final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {
     
     let cellReuseId = "digits01"
     let cardNumbers = DigitsNumberFacgtory.cardNumbers01
@@ -25,11 +25,6 @@ final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
         updateTableAndBadge()
     }
     
-    internal  func updateTableAndBadge() {
-        updateBadge()
-        tableView.reloadData()
-    }
-    
     private func navigationBarSetUp() {
         self.title = "1の位の数で選ぶ"
         navigationItem.rightBarButtonItems = [
@@ -41,11 +36,11 @@ final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber {
         self.tableView = createTableViewForScreen()
         tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
     }
-    
-    private func createTableViewForScreen() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }
+//
+//    private func createTableViewForScreen() -> UITableView {
+//        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        return tableView
+//    }
 }
