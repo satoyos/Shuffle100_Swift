@@ -1184,25 +1184,16 @@
 		925CEB51218ED4FF00876E7A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				92EC12102A076CB70071FA6C /* buttons */,
 				92E5C5552674D463009A46F5 /* protocols */,
-				9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */,
-				92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */,
+				92EC120F2A076C340071FA6C /* ttableCells */,
 				9258D1A222D9D624003A0EF8 /* ViewSize.swift */,
-				9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */,
-				9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */,
 				9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */,
 				9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */,
 				9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */,
 				9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */,
-				92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */,
 				923B594B23ACF606002027B4 /* SimpleGameEndView.swift */,
-				92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */,
 				92FFBF40245FB3F0004D7F79 /* FudaView.swift */,
-				92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */,
-				921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */,
-				92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */,
-				92F8245625AF0C34008E031D /* SettingTableCell.swift */,
-				9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */,
 				925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */,
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
 				92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */,
@@ -1434,6 +1425,7 @@
 		92E5C5552674D463009A46F5 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */,
 				925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */,
 				92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */,
 				92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */,
@@ -1476,6 +1468,30 @@
 				92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */,
 			);
 			path = protocols;
+			sourceTree = "<group>";
+		};
+		92EC120F2A076C340071FA6C /* ttableCells */ = {
+			isa = PBXGroup;
+			children = (
+				921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */,
+				9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */,
+				92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */,
+				92F8245625AF0C34008E031D /* SettingTableCell.swift */,
+			);
+			path = ttableCells;
+			sourceTree = "<group>";
+		};
+		92EC12102A076CB70071FA6C /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */,
+				92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */,
+				9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */,
+				9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */,
+				92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */,
+				92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */,
+			);
+			path = buttons;
 			sourceTree = "<group>";
 		};
 		EDFFE9D58434747A8AD3492F /* Pods */ = {
