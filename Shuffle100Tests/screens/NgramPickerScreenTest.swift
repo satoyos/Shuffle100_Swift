@@ -11,14 +11,6 @@ import XCTest
 
 class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, SelectedNumBadgeTest {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func test_initialScreen() throws {
         // given
         let screen = NgramPickerScreen()
@@ -109,15 +101,6 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
         return cell as! NgramPickerTableCell
     }
-    
-//    private func cellFor(_ screen: NgramPickerScreen, indexPath: IndexPath) -> NgramPickerTableCell {
-//        let cell = screen.tableView(screen.tableView, cellForRowAt: indexPath)
-//        return cell as! NgramPickerTableCell
-//    }
-    
-//    private func tsuIndexPath() -> IndexPath {
-//        return IndexPath(row: 1, section: 1)
-//    }
     
     private var tsuIndexPath: IndexPath {
         IndexPath(row: 1, section: 1)
