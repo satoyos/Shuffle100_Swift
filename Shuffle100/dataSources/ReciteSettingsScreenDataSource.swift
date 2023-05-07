@@ -45,10 +45,6 @@ extension ReciteSettingsScreen {
         ]
     }
 
-//
-//    ToDo: 以下の関数は Computed Propertyにできる
-//
-    
     private func createInervalSection() -> TableSection {
         var intervalSection = TableSection(title: A11y.intervalSectionTitle)
         intervalSection.dataSources = [
