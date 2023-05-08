@@ -9,8 +9,7 @@
 import UIKit
 
 protocol PickerWithCircleImage {
-    var tableView: UITableView! { get set }
-    var cellReuseId: String { get }
+    var tableView: UITableView! { get }
     
     func createTableViewForScreen() -> UITableView
     func setTableDataSource(_: UITableView)
