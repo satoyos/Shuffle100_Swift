@@ -98,8 +98,8 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
     }
     
     private func cellFor(_ screen: NgramPickerScreen, section: Int, row: Int) -> SelectByGroupCell {
-        let cell = screen.tableView(screen.tableView, cellForRowAt: IndexPath(row: row, section: section))
-        return cell as! SelectByGroupCell
+        screen.selectByGroupCell(
+            path: IndexPath(row: row, section: section))
     }
     
     private var tsuIndexPath: IndexPath {
