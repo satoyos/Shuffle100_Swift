@@ -24,15 +24,4 @@ extension NgramPickerScreen: UITableViewDelegate, TableViewHandler {
         cellFor(path: indexPath) as! SelectByGroupCell
     }
 
-//    private func flippedState(
-//        from selectedState: PoemsSelectedState,
-//        for numbers: [Int]) -> SelectedState100 {
-//            
-//        switch selectedState {
-//        case .full:
-//            return settings.state100.cancelInNumbers(numbers)
-//        default:
-//            return settings.state100.selectInNumbers(numbers)
-//        }
-//    }
 }
