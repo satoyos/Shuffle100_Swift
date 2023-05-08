@@ -15,6 +15,8 @@ protocol PickerWithCircleImage {
     func setTableDataSource(_: UITableView)
     func setTableDelegate(_: UITableView)
     func updateTableAndBadge()
+    func flippedState(from: PoemsSelectedState,
+                      for: [Int]) -> SelectedState100
 }
 
 extension PickerWithCircleImage where Self: Screen {
@@ -46,3 +48,18 @@ extension PickerWithCircleImage where Self: SelectedPoemsNumber {
         tableView.reloadData()
     }
 }
+
+extension PickerWithCircleImage where Self: SettingsAttachedScreen {
+    func flippedState(
+        from selectedState: PoemsSelectedState,
+        for numbers: [Int]) -> SelectedState100 {
+            
+        switch selectedState {
+        case .full:
+            return settings.state100.cancelInNumbers(numbers)
+        default:
+            return settings.state100.selectInNumbers(numbers)
+        }
+    }
+}
+
