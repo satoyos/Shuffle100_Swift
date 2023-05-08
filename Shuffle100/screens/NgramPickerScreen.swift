@@ -10,7 +10,7 @@ import UIKit
 import Then
 
 
-final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
+final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {
     
     internal let cellReuseId = "ngrams"
     var tableView: UITableView!
@@ -28,22 +28,22 @@ final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber {
         updateTableAndBadge()
     }
     
-    internal  func updateTableAndBadge() {
-        updateBadge()
-        tableView.reloadData()
-    }
+//    internal  func updateTableAndBadge() {
+//        updateBadge()
+//        tableView.reloadData()
+//    }
     
     private func tableViewSetUp() {
-        self.tableView = createTableView()
+        self.tableView = createTableViewForScreen()
         tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
     }
     
-    private func createTableView() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }
+//    private func createTableView() -> UITableView {
+//        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        return tableView
+//    }
     
     private func navigationBarSetUp() {
         self.title = "1字目で選ぶ"
