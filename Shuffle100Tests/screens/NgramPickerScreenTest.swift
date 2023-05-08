@@ -57,7 +57,7 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         // then
         XCTAssertEqual(badgeView(of: screen)?.text, "99首")
 
-        let tsuCell = screen.cellForIndexPath(tsuIndexPath)
+        let tsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         let content = listContentConfig(of: tsuCell)
         XCTAssertEqual(content.text, "「つ」で始まる歌")
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
@@ -71,13 +71,13 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         // when
         let screen = NgramPickerScreen(settings: settings)
         screen.loadViewIfNeeded()
-        let tsuCell = screen.cellForIndexPath(tsuIndexPath)
+        let tsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         // then
         XCTAssertEqual(tsuCell.selectedStatus, .partial)
         // when
         tapCellOfIndex(tsuIndexPath, in: screen)
         // then
-        let newTsuCell = screen.cellForIndexPath(tsuIndexPath)
+        let newTsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         XCTAssertEqual(newTsuCell.selectedStatus, .full)
         XCTAssertEqual(badgeView(of: screen)?.text, "100首")
     }
@@ -86,12 +86,12 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         // given
         let screen = NgramPickerScreen()
         screen.loadViewIfNeeded()
-        let tsuCell = screen.cellForIndexPath(tsuIndexPath)
+        let tsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         XCTAssertEqual(tsuCell.selectedStatus, .full)
         // when
         tapCellOfIndex(tsuIndexPath, in: screen)
         // then
-        let newTsuCell = screen.cellForIndexPath(tsuIndexPath)
+        let newTsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         XCTAssertEqual(newTsuCell.selectedStatus, .empry)
         XCTAssertEqual(badgeView(of: screen)?.text, "98首")
 

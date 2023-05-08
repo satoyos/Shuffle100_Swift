@@ -10,7 +10,7 @@ import UIKit
 
 extension NgramPickerScreen: UITableViewDelegate, TableViewHandler {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tappedCell = cellForIndexPath(indexPath)
+        let tappedCell = selectByGroupCell(path: indexPath)
         let id = tappedCell.accessibilityLabel!
         guard let numbers = numbersDic[id] else { fatalError("「\(id)」に対応する歌番号の配列が見つかりません")}
         let newState100 =
@@ -20,10 +20,10 @@ extension NgramPickerScreen: UITableViewDelegate, TableViewHandler {
         updateTableAndBadge()
     }
     
-    internal func cellForIndexPath(_ indexPath: IndexPath) -> SelectByGroupCell {
+    func selectByGroupCell(path indexPath: IndexPath) -> SelectByGroupCell {
         cellFor(path: indexPath) as! SelectByGroupCell
     }
-    
+
     private func flippedState(
         from selectedState: PoemsSelectedState,
         for numbers: [Int]) -> SelectedState100 {
