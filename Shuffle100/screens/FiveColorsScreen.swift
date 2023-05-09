@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FiveColorsScreen: SettingsAttachedScreen, SelectedPoemsNumber {
+final class FiveColorsScreen: SettingsAttachedScreen, SelectedPoemsNumber, PoemSelectedStateHandler {
     let blueButton = ColorOfFiveButton(.blue)
     let yellowButton = ColorOfFiveButton(.yellow)
     let greenButton = ColorOfFiveButton(.green)
@@ -39,11 +39,11 @@ final class FiveColorsScreen: SettingsAttachedScreen, SelectedPoemsNumber {
             assert(false, "No dic for color \(color)")
             return ""
         }
-        let referenceSet = Set(colorDIc.poemNumbers)
-        let selectedSet = Set(allSelectedNumbers)
-        let resultStatus = comparePoemNumbers(selected: selectedSet, reference: referenceSet)
+        let resultState = selectedState(
+                            of: selectedNumbers,
+                            in: colorDIc.poemNumbers)
         var path = ""
-        switch resultStatus {
+        switch resultState {
         case .full:
             path = "5colors/full_template.png"
         case .partial:
@@ -64,17 +64,6 @@ final class FiveColorsScreen: SettingsAttachedScreen, SelectedPoemsNumber {
     private func addColorButtonsAsSubviews() {
         allColorButtons.forEach {
             view.addSubview($0)
-        }
-    }
-    
-    private func comparePoemNumbers(selected: Set<Int>, reference: Set<Int>) -> PoemsSelectedState {
-        let intersection = selected.intersection(reference)
-        if intersection.isEmpty {
-            return .empry
-        } else if intersection == reference {
-            return .full
-        } else {
-            return .partial
         }
     }
     

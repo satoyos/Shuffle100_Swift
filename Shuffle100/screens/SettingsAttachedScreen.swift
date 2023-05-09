@@ -20,9 +20,9 @@ class SettingsAttachedScreen: Screen {
         }
     }
     
-    var allSelectedNumbers: [Int] {
+    var selectedNumbers: [Int] {
         get {
-            return settings.state100.allSelectedNumbers
+            settings.state100.allSelectedNumbers
         }
     }
 

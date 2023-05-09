@@ -27,7 +27,7 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
         return cell
     }
     
-    private func cellContentConfig(for rowNumber: Int) ->  (config: UIListContentConfiguration, state: PoemsSelectedState)    {
+    private func cellContentConfig(for rowNumber: Int) ->  (config: UIListContentConfiguration, state: PoemsSelectedState) {
 
         var content = UIListContentConfiguration.cell()
         content.text = cardNumbers[rowNumber].first?.description
@@ -38,17 +38,16 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
         content.image = state.circleImage
         content.imageProperties.maximumSize =
             CGSize(width: cellHeight, height: cellHeight)
-        // To be implemented
-        
         return (content, state.selectedState)
     }
 
     private func  selectedState(for rowNumber: Int) -> (selectedState: PoemsSelectedState, circleImage: UIImage) {
-        let allNumbersSetForDigit = Set(cardNumbers[rowNumber])
-        let selectedNumbersSet = Set(allSelectedNumbers)
-        let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForDigit)
-        let image = SelectByGroupCell.selectedImageDic[resultStatus]!
-        return (resultStatus, image)
+        let allNumbersForDigit = cardNumbers[rowNumber]
+        let resultState = selectedState(
+                                of: selectedNumbers,
+                                in: allNumbersForDigit)
+        let image = SelectByGroupCell.selectedImageDic[resultState]!
+        return (resultState, image)
 
     }
     
