@@ -15,11 +15,19 @@ enum PoemsSelectedState {
 }
 
 protocol PoemSelectedStateHandler {
-    func comparePoemNumbers(selected: Set<Int>, with reference: Set<Int>) -> PoemsSelectedState
+    func selectedState(of someNumbers: [Int],
+                       in referenceNumbers: [Int]) -> PoemsSelectedState
 }
 
 extension PoemSelectedStateHandler {
-    func comparePoemNumbers(selected: Set<Int>, with reference: Set<Int>) -> PoemsSelectedState {
+    func selectedState(of someNumbers: [Int],
+                        in referenceNumbers: [Int]) -> PoemsSelectedState {
+        comparePoemNumbers(selected: Set(someNumbers),
+                           in: Set(referenceNumbers))
+    }
+     
+    
+    private func comparePoemNumbers(selected: Set<Int>, in reference: Set<Int>) -> PoemsSelectedState {
         let intersection = selected.intersection(reference)
         if intersection.isEmpty {
             return .empry

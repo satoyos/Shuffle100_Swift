@@ -44,11 +44,12 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
     
     private func  selectedState(for indexPath: IndexPath) -> (status: PoemsSelectedState, circleImage: UIImage) {
         let idForCell = itemForIndex(indexPath).id
-        let allNumbersSetForId = Set(numbersDic[idForCell]!)
-        let selectedNumbersSet = Set(allSelectedNumbers)
-        let resultStatus = comparePoemNumbers(selected: selectedNumbersSet, with: allNumbersSetForId)
-        let image = SelectByGroupCell.selectedImageDic[resultStatus]!
-        return (resultStatus, image)
+        let allNumbersForId = numbersDic[idForCell]!
+        let resultState = selectedState(
+                            of: selectedNumbers,
+                            in: allNumbersForId)
+        let image = SelectByGroupCell.selectedImageDic[resultState]!
+        return (resultState, image)
 
     }
 }
