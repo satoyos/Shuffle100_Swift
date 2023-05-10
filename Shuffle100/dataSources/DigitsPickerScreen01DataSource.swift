@@ -20,14 +20,15 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
         let cell = tableView.dequeueReusableCell(
             withIdentifier: cellReuseId,
             for: indexPath)
-        let (config, selecteeState) = cellContentConfig(for: indexPath.row)
+        let (config, selecteeState) = contentConfigAndSelectedState(for: indexPath.row)
         cell.contentConfiguration = config
         (cell as! SelectByGroupCell).selectedStatus = selecteeState
         cell.accessibilityLabel = config.text
         return cell
     }
     
-    private func cellContentConfig(for rowNumber: Int) ->  (config: UIListContentConfiguration, state: PoemsSelectedState) {
+    private func contentConfigAndSelectedState(for rowNumber: Int) ->  (config: UIListContentConfiguration,
+                  state: PoemsSelectedState) {
 
         var content = UIListContentConfiguration.cell()
         content.text = cardNumbers[rowNumber].first?.description
