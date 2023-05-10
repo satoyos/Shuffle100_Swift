@@ -19,10 +19,10 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: cellReuseId,
-            for: indexPath)
+            for: indexPath) as! SelectByGroupCell
         let (config, selecteeState) = contentConfigAndSelectedState(for: indexPath.row)
         cell.contentConfiguration = config
-        (cell as! SelectByGroupCell).selectedState = selecteeState
+        cell.selectedState = selecteeState
         cell.accessibilityLabel = config.text
         return cell
     }
@@ -36,19 +36,18 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
             .dropFirst()
             .dropLast()
         let state = selectedState(for: rowNumber)
-        content.image = state.circleImage
+        content.image = SelectByGroupCell.circleImage(for: state)
         content.imageProperties.maximumSize =
             CGSize(width: cellHeight, height: cellHeight)
-        return (content, state.selectedState)
+        return (content, state)
     }
 
-    private func  selectedState(for rowNumber: Int) -> (selectedState: PoemsSelectedState, circleImage: UIImage) {
+    private func  selectedState(for rowNumber: Int) -> PoemsSelectedState {
         let allNumbersForDigit = cardNumbers[rowNumber]
         let resultState = selectedState(
                                 of: selectedNumbers,
                                 in: allNumbersForDigit)
-        let image = SelectByGroupCell.selectedImageDic[resultState]!
-        return (resultState, image)
+        return resultState
 
     }
     

@@ -48,7 +48,7 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
         let resultState = selectedState(
                             of: selectedNumbers,
                             in: allNumbersForId)
-        let image = SelectByGroupCell.selectedImageDic[resultState]!
+        let image = SelectByGroupCell.circleImage(for: resultState)
         return (resultState, image)
 
     }
