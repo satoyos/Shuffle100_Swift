@@ -22,7 +22,7 @@ extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler 
             for: indexPath)
         let (config, selecteeState) = contentConfigAndSelectedState(for: indexPath.row)
         cell.contentConfiguration = config
-        (cell as! SelectByGroupCell).selectedStatus = selecteeState
+        (cell as! SelectByGroupCell).selectedState = selecteeState
         cell.accessibilityLabel = config.text
         return cell
     }

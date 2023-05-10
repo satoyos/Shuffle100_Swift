@@ -14,7 +14,7 @@ extension NgramPickerScreen: UITableViewDelegate, TableViewHandler {
         let id = tappedCell.accessibilityLabel!
         guard let numbers = numbersDic[id] else { fatalError("「\(id)」に対応する歌番号の配列が見つかりません")}
         let newState100 =
-        flippedState(from: tappedCell.selectedStatus,
+        flippedState(from: tappedCell.selectedState,
                  for: numbers)
         settings.state100 = newState100
         updateTableAndBadge()

@@ -14,7 +14,7 @@ extension DigitsPickerScreen01: UITableViewDelegate, TableViewHandler {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tappedCell = cellFor(path: indexPath) as! SelectByGroupCell
         let newState100 = flippedState(
-            from: tappedCell.selectedStatus,
+            from: tappedCell.selectedState,
             for: cardNumbers[indexPath.row])
         settings.state100 = newState100
         updateTableAndBadge()

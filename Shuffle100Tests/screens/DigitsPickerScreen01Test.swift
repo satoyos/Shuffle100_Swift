@@ -59,7 +59,7 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         // then
         XCTAssertEqual(badgeView(of: screen)?.text, "97首")
         let thirdCell = cellFor(screen, row: 2)
-        XCTAssertEqual(thirdCell.selectedStatus, .partial)
+        XCTAssertEqual(thirdCell.selectedState, .partial)
     }
     
     func test_tapPartialMakesFull() {
@@ -72,12 +72,12 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         screen.loadViewIfNeeded()
         let thirdCell = cellFor(screen, row: 2)
         // then
-        XCTAssertEqual(thirdCell.selectedStatus, .partial)
+        XCTAssertEqual(thirdCell.selectedState, .partial)
         // when
         tapCellOf(row: 2, in: screen)
         // then
         let newThirdCell = cellFor(screen, row: 2)
-        XCTAssertEqual(newThirdCell.selectedStatus, .full)
+        XCTAssertEqual(newThirdCell.selectedState, .full)
     }
     
     private func cellFor(_ screen: DigitsPickerScreen01, row: Int) -> SelectByGroupCell {
