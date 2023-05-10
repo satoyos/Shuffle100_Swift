@@ -20,6 +20,6 @@ final class SelectByGroupCell: UITableViewCell {
         .empry: emptyCircleImage
     ]
     
-    var selectedStatus: PoemsSelectedState!
+    var selectedState: PoemsSelectedState!
 
 }

@@ -43,7 +43,7 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         let content = listContentConfig(of: cellOfTopIn2CharsGroup)
         XCTAssertEqual(content.text, "「う」で始まる歌")
         XCTAssertNotNil(content.image)
-        XCTAssertEqual(cellOfTopIn2CharsGroup.selectedStatus, .full)
+        XCTAssertEqual(cellOfTopIn2CharsGroup.selectedState, .full)
     }
     
     func test_partialSelected() {
@@ -60,7 +60,7 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         let tsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         let content = listContentConfig(of: tsuCell)
         XCTAssertEqual(content.text, "「つ」で始まる歌")
-        XCTAssertEqual(tsuCell.selectedStatus, .partial)
+        XCTAssertEqual(tsuCell.selectedState, .partial)
     }
     
     func test_tapPartialMakesFull() {
@@ -73,12 +73,12 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         screen.loadViewIfNeeded()
         let tsuCell = screen.selectByGroupCell(path: tsuIndexPath)
         // then
-        XCTAssertEqual(tsuCell.selectedStatus, .partial)
+        XCTAssertEqual(tsuCell.selectedState, .partial)
         // when
         tapCellOfIndex(tsuIndexPath, in: screen)
         // then
         let newTsuCell = screen.selectByGroupCell(path: tsuIndexPath)
-        XCTAssertEqual(newTsuCell.selectedStatus, .full)
+        XCTAssertEqual(newTsuCell.selectedState, .full)
         XCTAssertEqual(badgeView(of: screen)?.text, "100首")
     }
     
@@ -87,12 +87,12 @@ class NgramPickerScreenTest: XCTestCase, ApplyListContentConfiguration, Selected
         let screen = NgramPickerScreen()
         screen.loadViewIfNeeded()
         let tsuCell = screen.selectByGroupCell(path: tsuIndexPath)
-        XCTAssertEqual(tsuCell.selectedStatus, .full)
+        XCTAssertEqual(tsuCell.selectedState, .full)
         // when
         tapCellOfIndex(tsuIndexPath, in: screen)
         // then
         let newTsuCell = screen.selectByGroupCell(path: tsuIndexPath)
-        XCTAssertEqual(newTsuCell.selectedStatus, .empry)
+        XCTAssertEqual(newTsuCell.selectedState, .empry)
         XCTAssertEqual(badgeView(of: screen)?.text, "98首")
 
     }

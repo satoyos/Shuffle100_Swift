@@ -33,7 +33,7 @@ extension NgramPickerScreen: UITableViewDataSource, PoemSelectedStateHandler {
             content.imageProperties.maximumSize = CGSize(width: cellHeight, height: cellHeight)
             $0.contentConfiguration = content
             $0.accessibilityLabel = itemForIndex(indexPath).id
-            ($0 as! SelectByGroupCell).selectedStatus = state.status
+            ($0 as! SelectByGroupCell).selectedState = state.status
         }
         return cell
     }
