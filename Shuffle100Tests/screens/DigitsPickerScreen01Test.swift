@@ -80,6 +80,22 @@ final class DigitsPickerScreen01Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertEqual(newThirdCell.selectedState, .full)
     }
     
+    func test_FullMakessEmpty() {
+        // given
+        let screen = DigitsPickerScreen01()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        let thirdCell = cellFor(screen, row: 2)
+        XCTAssertEqual(thirdCell.selectedState, .full)
+        // when
+        tapCellOf(row: 2, in: screen)
+        // then
+        let newThirdCell = cellFor(screen, row: 2)
+        XCTAssertEqual(newThirdCell.selectedState, .empry)
+        XCTAssertEqual(badgeView(of: screen)?.text, "90首")
+    }
+    
     private func cellFor(_ screen: DigitsPickerScreen01, row: Int) -> SelectByGroupCell {
         screen.cellIn1stSection(row: row) as! SelectByGroupCell
     }
