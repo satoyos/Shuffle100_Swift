@@ -52,4 +52,20 @@ final class DigitsPickerScreen01UITest: XCTestCase {
         XCTAssert(homePage.numberOfSelecttedPoems(is: 90))
         
     }
+    
+    func test_tapEmptyCell() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        pickerPage.cancelAllButton.tap()
+        let digitsPage = pickerPage.gotoDigitsPickerPage01()
+        digitsPage.tapCell(number: 5)
+        // then
+        XCTAssert(digitsPage.badge(of: 10).exists)
+        // when
+        digitsPage.backToPickerButton.tap()
+        pickerPage.backToTopPage()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 10))
+        
+    }
 }
