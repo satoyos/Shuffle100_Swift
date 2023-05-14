@@ -537,6 +537,7 @@
 		92EC12122A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
 		92EC12132A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
 		92EC12142A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
+		92EC12162A10A2830071FA6C /* DigitsPickerScreen10UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12152A10A2830071FA6C /* DigitsPickerScreen10UITest.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
@@ -896,6 +897,7 @@
 		92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsNumberFactory.swift; sourceTree = "<group>"; };
 		92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHandlerProtocol.swift; sourceTree = "<group>"; };
 		92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerWithCircleImageProtocol.swift; sourceTree = "<group>"; };
+		92EC12152A10A2830071FA6C /* DigitsPickerScreen10UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen10UITest.swift; sourceTree = "<group>"; };
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorHandlingSheet.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1243,6 +1245,7 @@
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
 				927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */,
 				9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */,
+				92EC12152A10A2830071FA6C /* DigitsPickerScreen10UITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -2224,6 +2227,7 @@
 				92EC11F82A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */,
+				92EC12162A10A2830071FA6C /* DigitsPickerScreen10UITest.swift in Sources */,
 				9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */,

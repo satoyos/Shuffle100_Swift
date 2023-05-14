@@ -72,7 +72,7 @@ extension PoemPickerScreen {
         let fiveColorsAction = UIAlertAction(title: "五色百人一首の色で選ぶ", style: .default) { _ in
             self.openFiveColorsScreenAction?()
         }
-        let digitsAction =
+        let digits01Action =
         UIAlertAction(title: "1の位の数で選ぶ", style: .default) { _ in
             self.openDigitsPicker01Action?()
         }
@@ -86,12 +86,19 @@ extension PoemPickerScreen {
         }
         ac.addAction(ngramAction)
         ac.addAction(fiveColorsAction)
-        ac.addAction(digitsAction)
+        ac.addAction(digits01Action)
+        ac.addAction(digits10Action)
         ac.addAction(cancelAction)
         if let pc = ac.popoverPresentationController {
             pc.sourceView = navigationController!.toolbar
             pc.sourceRect = CGRect(x: view.frame.width, y: 0, width: 1, height: 1)
         }
         present(ac, animated: true)
+    }
+    
+    private var digits10Action: UIAlertAction {
+        UIAlertAction(title: "10の位の数で選ぶ", style: .default) { _ in
+            // to be implemented
+        }
     }
 }

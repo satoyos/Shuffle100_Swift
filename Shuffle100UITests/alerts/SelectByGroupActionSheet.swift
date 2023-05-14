@@ -44,6 +44,13 @@ final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
             timeout: timeOutSec)
     }
     
+    var selectByDigits10Button: XCUIElement {
+        waitToHittable(
+            for: app.scrollViews
+                .buttons[A11y.selectByDigits10].firstMatch,
+            timeout: timeOutSec)
+    }
+    
     enum A11y {
         static let title = "どうやって選びますか？"
         static let cancel = "キャンセル"
