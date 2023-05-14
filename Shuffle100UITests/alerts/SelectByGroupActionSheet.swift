@@ -37,7 +37,7 @@ final class SelectByGroupActionSheet: AlertObjectable, WaitInUITest {
         waitToHittable(for: app.scrollViews.buttons[A11y.selectByColor].firstMatch, timeout: timeOutSec)
     }
     
-    var selectByDigitsButton: XCUIElement {
+    var selectByDigits01Button: XCUIElement {
         waitToHittable(
             for: app.scrollViews
                 .buttons[A11y.selectByDigits01].firstMatch,
