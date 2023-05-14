@@ -66,22 +66,8 @@ extension PoemPickerScreen {
     }
     
     @objc func selectByGroupButtonTapped() {
-        let ngramAction = UIAlertAction(title: "1字目で選ぶ", style: .default) { action in
-            self.openNgramPickerAction?()
-        }
-        let fiveColorsAction = UIAlertAction(title: "五色百人一首の色で選ぶ", style: .default) { _ in
-            self.openFiveColorsScreenAction?()
-        }
-        let digits01Action =
-        UIAlertAction(title: "1の位の数で選ぶ", style: .default) { _ in
-            self.openDigitsPicker01Action?()
-        }
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         let ac = UIAlertController(title: "どうやって選びますか？", message: nil, preferredStyle: .actionSheet)
         if settings.savedFudaSets.count > 0 {
-            let selectSavedSetAction = UIAlertAction(title: "作った札セットから選ぶ", style: .default) { _ in
-                self.openFudaSetsScreenAction?()
-            }
             ac.addAction(selectSavedSetAction)
         }
         ac.addAction(ngramAction)
@@ -96,9 +82,42 @@ extension PoemPickerScreen {
         present(ac, animated: true)
     }
     
+    private var selectSavedSetAction: UIAlertAction {
+        UIAlertAction(title: "作った札セットから選ぶ",
+                      style: .default) { _ in
+            self.openFudaSetsScreenAction?()
+        }
+    }
+    
+    private var ngramAction: UIAlertAction {
+        UIAlertAction(title: "1字目で選ぶ",
+                      style: .default) { _ in
+            self.openNgramPickerAction?()
+        }
+    }
+    
+    private var digits01Action: UIAlertAction {
+        UIAlertAction(title: "1の位の数で選ぶ",
+                      style: .default) { _ in
+            self.openDigitsPicker01Action?()
+        }
+    }
+    
+    private var fiveColorsAction: UIAlertAction {
+        UIAlertAction(title: "五色百人一首の色で選ぶ",
+                      style: .default) { _ in
+            self.openFiveColorsScreenAction?()
+        }
+    }
+    
     private var digits10Action: UIAlertAction {
-        UIAlertAction(title: "10の位の数で選ぶ", style: .default) { _ in
+        UIAlertAction(title: "10の位の数で選ぶ",
+                      style: .default) { _ in
             // to be implemented
         }
+    }
+    
+    private var cancelAction: UIAlertAction {
+        UIAlertAction(title: "キャンセル", style: .cancel)
     }
 }
