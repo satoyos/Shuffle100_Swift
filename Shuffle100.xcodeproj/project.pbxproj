@@ -314,7 +314,7 @@
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		928E73B822ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
-		9295721C29FFF26600AAB997 /* DigitsPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */; };
+		9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */; };
 		9295721E29FFF41C00AAB997 /* DigitsPickerPage01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
@@ -788,7 +788,7 @@
 		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
-		9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreenUITest.swift; sourceTree = "<group>"; };
+		9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01UITest.swift; sourceTree = "<group>"; };
 		9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage01.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
@@ -1242,7 +1242,7 @@
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
 				927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */,
-				9295721B29FFF26600AAB997 /* DigitsPickerScreenUITest.swift */,
+				9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */,
 			);
 			path = UITestWIthMultiScreen;
 			sourceTree = "<group>";
@@ -2224,7 +2224,7 @@
 				92EC11F82A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */,
 				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */,
-				9295721C29FFF26600AAB997 /* DigitsPickerScreenUITest.swift in Sources */,
+				9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */,
 				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
