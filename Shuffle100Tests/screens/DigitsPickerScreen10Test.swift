@@ -17,6 +17,7 @@ final class DigitsPickerScreen10Test: XCTestCase {
         screen.loadViewIfNeeded()
         // then
         XCTAssertEqual(screen.title,"10の位の数で選ぶ")
+        XCTAssertNotNil(screen.tableView)
     }
 
 }
