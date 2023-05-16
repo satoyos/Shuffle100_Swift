@@ -8,8 +8,24 @@
 
 import UIKit
 
-final class DigitsPickerScreen10: SettingsAttachedScreen {
+final class DigitsPickerScreen10: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {
+
+    let cellReuseId = "digits10"
+    var tableView: UITableView!
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        tableViewSetUp()
         self.title = "10の位の数で選ぶ"
     }
+    
+    private func tableViewSetUp() {
+        self.tableView = createTableViewForScreen()
+        tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+    }
+    
+    func setTableDelegate(_: UITableView) {
+        // to be moved somewhere
+    }
+
 }
