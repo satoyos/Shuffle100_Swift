@@ -16,12 +16,19 @@ final class DigitsPickerScreen10: SettingsAttachedScreen, SelectedPoemsNumber, P
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetUp()
-        self.title = "10の位の数で選ぶ"
+        navigationBarSetup()
     }
     
     private func tableViewSetUp() {
         self.tableView = createTableViewForScreen()
         tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+    }
+    
+    private func navigationBarSetup() {
+        self.title = "10の位の数で選ぶ"
+        navigationItem.rightBarButtonItems = [
+            selectedNumBadgeItem
+        ]
     }
     
     func setTableDelegate(_: UITableView) {
