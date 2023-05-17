@@ -18,6 +18,8 @@ final class DigitsPickerScreen10Test: XCTestCase {
         // then
         XCTAssertEqual(screen.title,"10の位の数で選ぶ")
         XCTAssertNotNil(screen.tableView)
+        let buttonItem = screen.navigationItem.rightBarButtonItems?.last as? UIBarButtonItem
+        XCTAssertNotNil(buttonItem)
     }
 
 }
