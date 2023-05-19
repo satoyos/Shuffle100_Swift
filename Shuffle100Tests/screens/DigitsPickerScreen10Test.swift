@@ -22,5 +22,16 @@ final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertNotNil(buttonItem)
         XCTAssertEqual(badgeView(of: screen)?.text, "100首")
     }
+    
+    func test_dataSource() {
+        // given
+        let screen = DigitsPickerScreen10()
+        // when
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(screen.tableView.numberOfSections, 1)
+        let numOfRows = screen.tableView(screen.tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(numOfRows, 10)
+    }
 
 }
