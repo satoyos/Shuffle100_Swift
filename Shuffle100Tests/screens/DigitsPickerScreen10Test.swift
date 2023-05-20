@@ -32,6 +32,17 @@ final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertEqual(screen.tableView.numberOfSections, 1)
         let numOfRows = screen.tableView(screen.tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(numOfRows, 10)
+        // when
+        let thirdCell = cellFor(screen, row: 2)
+        guard let content = thirdCell.contentConfiguration as? UIListContentConfiguration else {
+            XCTFail("failure in getting config of thirdCell ")
+            return
+        }
+        // then
+        XCTAssertEqual(content.text, "2")
     }
 
+    private func cellFor(_ screen: DigitsPickerScreen10, row: Int) -> SelectByGroupCell {
+        screen.cellIn1stSection(row: row) as! SelectByGroupCell
+    }
 }
