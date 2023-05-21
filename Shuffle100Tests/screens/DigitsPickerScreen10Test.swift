@@ -45,6 +45,22 @@ final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {
                        "歌番号: 20, 21, 22, 23, 24, 25, 26, 27, 28, 29")
     }
 
+    func test_partialSelected() {
+        // given
+        let settings = Settings()
+        // 歌番号1, 2, 3の選択を外す
+        let newState100 = settings.state100
+                            .cancelInNumbers([1, 2, 3])
+        settings.state100 = newState100
+        // when
+        let screen = DigitsPickerScreen10(settings: settings)
+        screen.loadViewIfNeeded()
+        // then
+        XCTAssertEqual(badgeView(of: screen)?.text, "97首")
+        let firstCell = cellFor(screen, row: 0)
+        XCTAssertEqual(firstCell.selectedState, .partial)
+    }
+    
     private func cellFor(_ screen: DigitsPickerScreen10, row: Int) -> SelectByGroupCell {
         screen.cellIn1stSection(row: row) as! SelectByGroupCell
     }
