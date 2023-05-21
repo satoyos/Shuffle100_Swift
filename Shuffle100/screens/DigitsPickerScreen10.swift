@@ -12,6 +12,7 @@ final class DigitsPickerScreen10: SettingsAttachedScreen, SelectedPoemsNumber, P
 
     let cellReuseId = "digits10"
     var tableView: UITableView!
+    let cardNumbers = DigitsNumberFacgtory.cardNumbers10
     
     override func viewDidLoad() {
         super.viewDidLoad()
