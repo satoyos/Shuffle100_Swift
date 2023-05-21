@@ -41,6 +41,8 @@ final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {
         // then
         XCTAssertEqual(content.text, "2")
         XCTAssertNotNil(content.image)
+        XCTAssertEqual(content.secondaryText,
+                       "歌番号: 20, 21, 22, 23, 24, 25, 26, 27, 28, 29")
     }
 
     private func cellFor(_ screen: DigitsPickerScreen10, row: Int) -> SelectByGroupCell {
