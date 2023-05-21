@@ -18,7 +18,7 @@ extension DigitsPickerScreen10: UITableViewDataSource, TableViewHandler, PoemSel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! SelectByGroupCell
         var config = UIListContentConfiguration.cell()
-        config.text = indexPath.row.description
+        config.text = (indexPath.row+1).description
         cell.contentConfiguration = config
         return cell
     }
