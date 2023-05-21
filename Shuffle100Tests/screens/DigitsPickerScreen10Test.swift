@@ -61,7 +61,30 @@ final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {
         XCTAssertEqual(firstCell.selectedState, .partial)
     }
     
+    func test_tapPartialMakesFull() {
+        // given
+        let settings = Settings()
+        let newState100 =         settings.state100.cancelOf(number: 22)
+        settings.state100 = newState100
+        // when
+        let screen = DigitsPickerScreen10(settings: settings)
+        screen.loadViewIfNeeded()
+        let thirdCell = cellFor(screen, row: 2)
+        // then
+        XCTAssertEqual(thirdCell.selectedState, .partial)
+        // when
+        tapCellOf(row: 2, in: screen)
+        // then
+        let newThirdCell = cellFor(screen, row: 2)
+        XCTAssertEqual(newThirdCell.selectedState, .full)
+    }
+    
     private func cellFor(_ screen: DigitsPickerScreen10, row: Int) -> SelectByGroupCell {
         screen.cellIn1stSection(row: row) as! SelectByGroupCell
+    }
+    
+    private func tapCellOf(row: Int, in screen: DigitsPickerScreen10) {
+        let indexPath = IndexPath(row: row, section: 0)
+        screen.tableView(screen.tableView, didSelectRowAt: indexPath)
     }
 }
