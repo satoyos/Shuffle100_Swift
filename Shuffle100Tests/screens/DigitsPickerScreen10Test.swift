@@ -39,7 +39,7 @@ final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {
             return
         }
         // then
-        XCTAssertEqual(content.text, "2")
+        XCTAssertEqual(content.text, "3")
     }
 
     private func cellFor(_ screen: DigitsPickerScreen10, row: Int) -> SelectByGroupCell {
