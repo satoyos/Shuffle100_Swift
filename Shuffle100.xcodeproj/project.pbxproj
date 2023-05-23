@@ -148,6 +148,10 @@
 		924E89302827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
 		924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */; };
 		924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */; };
+		9250C10D2A1CD120001076FA /* DigitsPickerPage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */; };
+		9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
+		9250C1102A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
+		9250C1112A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
 		9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
 		9254B4CA28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
 		9254B4CB28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
@@ -727,6 +731,8 @@
 		924E892D2827F69B00DEB4C5 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
 		924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindowProtocolTest.swift; sourceTree = "<group>"; };
 		924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButtonTest.swift; sourceTree = "<group>"; };
+		9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage10.swift; sourceTree = "<group>"; };
+		9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen10Coordinatorswift.swift; sourceTree = "<group>"; };
 		9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeSwift+Animation.swift"; sourceTree = "<group>"; };
 		9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPoemsNumberProtocol.swift; sourceTree = "<group>"; };
 		9254B4D028FADC1600870795 /* SelectedNumBadggeTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNumBadggeTestProtocol.swift; sourceTree = "<group>"; };
@@ -1027,6 +1033,7 @@
 				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
 				92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */,
 				9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */,
+				9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1356,6 +1363,7 @@
 				92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */,
 				92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */,
 				92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */,
+				9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
@@ -1883,6 +1891,7 @@
 				92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
+				9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
 				9207514D28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */,
 				92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				92A1467824DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
@@ -2027,6 +2036,7 @@
 				92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */,
 				920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */,
 				929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
+				9250C1102A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
 				9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */,
 				92ABF9BA23F6D739000CA91C /* StoreManager.swift in Sources */,
@@ -2217,6 +2227,7 @@
 				92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */,
 				92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */,
 				925994FD244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
+				9250C10D2A1CD120001076FA /* DigitsPickerPage10.swift in Sources */,
 				922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */,
 				921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
@@ -2297,6 +2308,7 @@
 				92B9E992246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */,
 				927A198123E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				92FFBF4B245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
+				9250C1112A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
 				92ABF9AD23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
 				92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
