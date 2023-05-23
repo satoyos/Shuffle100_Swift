@@ -18,19 +18,15 @@ final class DigitsPickerScreen10UITest: XCTestCase {
         app.launch()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func test_OpenDigitsPicker() throws {
+    func test_openDigitsPicker() throws {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
         // then
         XCTAssert(pickerPage.exists)
         // when
-        let sheet = pickerPage.showSelectByGroupActionSheet()
+        let digitsPage = pickerPage.gotoDigitsPickerPage10()
         // then
-        XCTAssert(sheet.selectByDigits10Button.exists)
+        XCTAssert(digitsPage.exists)
     }
 
 }

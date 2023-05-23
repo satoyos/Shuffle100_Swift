@@ -96,13 +96,6 @@ extension PoemPickerScreen {
         }
     }
     
-    private var digits01Action: UIAlertAction {
-        UIAlertAction(title: "1の位の数で選ぶ",
-                      style: .default) { _ in
-            self.openDigitsPicker01Action?()
-        }
-    }
-    
     private var fiveColorsAction: UIAlertAction {
         UIAlertAction(title: "五色百人一首の色で選ぶ",
                       style: .default) { _ in
@@ -110,10 +103,17 @@ extension PoemPickerScreen {
         }
     }
     
+    private var digits01Action: UIAlertAction {
+        UIAlertAction(title: "1の位の数で選ぶ",
+                      style: .default) { _ in
+            self.openDigitsPicker01Action?()
+        }
+    }
+    
     private var digits10Action: UIAlertAction {
         UIAlertAction(title: "10の位の数で選ぶ",
                       style: .default) { _ in
-            // to be implemented
+            self.openDigitsPicker10Action?()
         }
     }
     
