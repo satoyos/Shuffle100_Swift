@@ -29,4 +29,18 @@ final class DigitsPickerScreen10UITest: XCTestCase {
         XCTAssert(digitsPage.exists)
     }
 
+    func test_tapFullSelectedCell() {
+        // when
+        let pickerPage = homePage.goToPoemPickerPage()
+        // then
+        XCTAssert(pickerPage.exists)
+        // when
+        let digitsPage = pickerPage.gotoDigitsPickerPage10()
+        // then
+        XCTAssert(digitsPage.badge(of: 100).exists)
+        // when
+        digitsPage.tapCell(number: 2)
+        // then
+        XCTAssert(digitsPage.badge(of: 90).exists)
+    }
 }
