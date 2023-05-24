@@ -31,9 +31,4 @@ final class DigitsPickerScreen10: SettingsAttachedScreen, SelectedPoemsNumber, P
             selectedNumBadgeItem
         ]
     }
-    
-    func setTableDelegate(_: UITableView) {
-        // to be moved somewhere
-    }
-
 }

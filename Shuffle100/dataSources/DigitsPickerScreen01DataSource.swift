@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let cellHeight: CGFloat = 40
 
-extension DigitsPickerScreen01: UITableViewDataSource, PoemSelectedStateHandler {
+extension DigitsPickerScreen01: UITableViewDataSource, TableViewHandler, PoemSelectedStateHandler {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard section == 0 else { return 0 }
         return cardNumbers.count

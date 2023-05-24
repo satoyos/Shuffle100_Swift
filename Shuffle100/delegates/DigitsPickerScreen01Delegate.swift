@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension DigitsPickerScreen01: UITableViewDelegate, TableViewHandler {
+extension DigitsPickerScreen01: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
