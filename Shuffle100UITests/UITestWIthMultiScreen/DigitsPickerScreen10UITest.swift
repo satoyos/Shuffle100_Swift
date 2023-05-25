@@ -42,5 +42,13 @@ final class DigitsPickerScreen10UITest: XCTestCase {
         digitsPage.tapCell(number: 2)
         // then
         XCTAssert(digitsPage.badge(of: 90).exists)
+        // when
+        digitsPage.backToPickerButton.tap()
+        // then
+        XCTAssert(pickerPage.badge(of: 90).exists)
+        // when
+        pickerPage.backToTopButton.tap()
+        // then
+        XCTAssert(homePage.numberOfSelecttedPoems(is: 90))
     }
 }
