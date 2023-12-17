@@ -69,10 +69,10 @@ final class FudaView: UIImageView {
         for idx in 0..<15 {
             let label = UILabel().then {
                 $0.text = strArray[idx]
-                $0.font = fudaFont?.withSize(fudaFontSize())
+                $0.font = fudaFont?.withSize(fudaFontSize)
                 $0.textAlignment = .center
                 $0.frame = CGRect(origin: labelOriginOf(idx),
-                                  size: labelSize())
+                                  size: labelSize)
 //                accessibilityLabelを設定すると、
 //                UITestの際の表示文字を指定しての存在確認ができないので、
 //                ここでは設定しないでおくが、良い確認方法が見つかったら、再設定する。
@@ -84,13 +84,13 @@ final class FudaView: UIImageView {
         }
     }
     
-    private func fudaFontSize() -> CGFloat {
-        return fudaFontSizeBase * fudaPower
+    private var fudaFontSize: CGFloat {
+        fudaFontSizeBase * fudaPower
     }
     
     private func labelOriginOf(_ index: Int) -> CGPoint{
-        return CGPoint(x: labelOriginZero().x + labelSize().width * CGFloat(columnNumberOf(labelIndex: index )),
-                       y: labelOriginZero().y + labelSize().height * CGFloat((index % 5)))
+        CGPoint(x: labelOriginZero.x + labelSize.width * CGFloat(columnNumberOf(labelIndex: index )),
+                y: labelOriginZero.y + labelSize.height * CGFloat((index % 5)))
     }
     
     private func columnNumberOf(labelIndex: Int) -> Int {
@@ -104,14 +104,14 @@ final class FudaView: UIImageView {
         }
     }
     
-    private func labelSize() -> CGSize {
-        return CGSize(width: whiteBackView.frame.width / 3,
-                      height: whiteBackView.frame.height / 5)
+    private var labelSize: CGSize {
+        CGSize(width: whiteBackView.frame.width / 3,
+               height: whiteBackView.frame.height / 5)
     }
     
-    private func labelOriginZero() -> CGPoint {
-        return CGPoint(x: greenOffsetMeasured * fudaPower,
-                       y: greenOffsetMeasured * fudaPower)
+    private var labelOriginZero: CGPoint {
+        CGPoint(x: greenOffsetMeasured * fudaPower,
+                y: greenOffsetMeasured * fudaPower)
     }
 
 }
