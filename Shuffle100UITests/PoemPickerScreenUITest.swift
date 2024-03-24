@@ -6,11 +6,16 @@
 //  Copyright © 2019 里 佳史. All rights reserved.
 //
 
+import UIKit
 import XCTest
 
-class PoemPickerScreenUITest: XCTestCase, SHDeviceTypeGetter {
+class PoemPickerScreenUITest: XCTestCase {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
+    
+    var deviceType: UIUserInterfaceIdiom {
+        UIDevice.current.userInterfaceIdiom
+    }
     
     override func setUp() {
         super.setUp()

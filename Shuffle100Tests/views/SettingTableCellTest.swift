@@ -6,6 +6,7 @@
 //  Copyright © 2021 里 佳史. All rights reserved.
 //
 
+@testable import Shuffle100
 import XCTest
 
 class SettingTableCellTest: XCTestCase {

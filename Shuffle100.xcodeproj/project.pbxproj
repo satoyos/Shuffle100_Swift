@@ -10,94 +10,48 @@
 		32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */; };
 		8FBC19A0C5FAC73FC692B4EF /* Pods_Shuffle100.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */; };
-		9204751A254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */; };
-		9204751B254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */; };
 		9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
-		9205E1772456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
-		9205E1782456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
 		9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */; };
 		9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */; };
-		9205E17D24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */; };
-		9205E17E24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */; };
 		9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17F24571016003BAEDC /* WhatsNextCoordinator.swift */; };
-		9205E18124571016003BAEDC /* WhatsNextCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17F24571016003BAEDC /* WhatsNextCoordinator.swift */; };
-		9205E18224571016003BAEDC /* WhatsNextCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17F24571016003BAEDC /* WhatsNextCoordinator.swift */; };
 		9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */; };
 		9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206CEE022E1FEE500AC0457 /* PoemPickerScreenSearch.swift */; };
-		9206CEE222E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206CEE022E1FEE500AC0457 /* PoemPickerScreenSearch.swift */; };
-		9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206CEE022E1FEE500AC0457 /* PoemPickerScreenSearch.swift */; };
 		9207514D28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */; };
-		9207514E28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */; };
-		9207514F28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */; };
 		9207515528D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */; };
 		9207515628D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */; };
 		9207515728D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */; };
 		9207BAF4229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
-		9207BAF5229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
-		9207BAF6229579D600816DC8 /* Bool100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAF3229579D600816DC8 /* Bool100.swift */; };
 		9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BAFB2298182000816DC8 /* Bool100Test.swift */; };
 		9207BB3222996B7300816DC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BB3122996B7300816DC8 /* Settings.swift */; };
-		9207BB3322996B7300816DC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BB3122996B7300816DC8 /* Settings.swift */; };
-		9207BB3422996B7300816DC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BB3122996B7300816DC8 /* Settings.swift */; };
 		9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207BB3522996CF200816DC8 /* RecitingConfigTest.swift */; };
 		9208DF1022FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */; };
-		9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */; };
-		9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF0F22FAF9DD00A3F22C /* SelectModeCoordinator.swift */; };
 		9208DF1422FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */; };
-		9208DF1522FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */; };
-		9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */; };
 		920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
-		920C00172427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
-		920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		920D670328F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
-		920D670428F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
-		920D670528F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
 		920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670628F3D7A500952402 /* BadgeSwiftTests.swift */; };
 		920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */; };
 		920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */; };
 		920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */; };
-		920F6A70247C03D400360C3B /* FudaSetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */; };
-		920F6A71247C03D400360C3B /* FudaSetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */; };
 		920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
-		920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
-		920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
 		920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
-		920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
-		920F6A79247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
 		9215013127005A5E001E39FE /* NavigationBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215013027005A5E001E39FE /* NavigationBarTests.swift */; };
 		92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
-		92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
-		92158F7B232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
 		921791F6258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
-		921791F7258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
-		921791F8258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
 		921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */; };
 		921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
-		921FF432249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
-		921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
 		921FF435249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
-		921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
-		921FF437249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
 		921FF439249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */; };
-		921FF43A249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */; };
-		921FF43B249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF438249F896C0083AC49 /* HelpListTableViewCell.swift */; };
 		921FF43D249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */; };
-		921FF43E249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */; };
-		921FF43F249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */; };
 		921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */; };
-		921FF44224A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */; };
-		921FF44324A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */; };
 		921FF44524A0DBDE0083AC49 /* HelpListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */; };
 		921FF44724A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44824A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44924A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */; };
 		921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
-		921FF44E24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
-		921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
 		922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD32618A1CB0093B24A /* PageObjectable.swift */; };
 		922BDDD9261B3B760093B24A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD8261B3B760093B24A /* HomePage.swift */; };
 		922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */; };
@@ -107,8 +61,6 @@
 		922C638C269094880000D07D /* NgramPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C638B269094880000D07D /* NgramPickerPage.swift */; };
 		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
 		92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
-		92328C2324591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
-		92328C2424591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
 		92328C2824591E25005E0FEE /* refrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2524591E25005E0FEE /* refrain.png */; };
 		92328C2924591E25005E0FEE /* refrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2524591E25005E0FEE /* refrain.png */; };
 		92328C2A24591E25005E0FEE /* refrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2524591E25005E0FEE /* refrain.png */; };
@@ -119,15 +71,11 @@
 		92328C2F24591E25005E0FEE /* go_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2724591E25005E0FEE /* go_next.png */; };
 		92328C3024591E25005E0FEE /* go_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2724591E25005E0FEE /* go_next.png */; };
 		92328C3224596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
-		92328C3324596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
-		92328C3424596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */; };
 		92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370710290570D40013C5AB /* SnapshotHelper.swift */; };
 		92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370712290571330013C5AB /* FastlaneSnapshot.swift */; };
 		923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */; };
 		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
 		923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
-		923B594D23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
-		923B594E23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
 		923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595023ACF927002027B4 /* RecitePoemViewTests.swift */; };
 		923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595223ACF9DE002027B4 /* GameEndViewTest.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
@@ -135,167 +83,81 @@
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
 		923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59262143BB0B000F5E60 /* HomeScreenTest.swift */; };
 		924619602493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */; };
-		924619612493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */; };
-		924619622493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246195F2493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift */; };
 		92467793292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */; };
-		92467794292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */; };
-		92467795292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */; };
 		924BF8E72695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */; };
 		924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8E82699CE3200FCEDA5 /* NameNewFudaSetAlert.swift */; };
 		924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */; };
 		924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
-		924E892F2827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
-		924E89302827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
 		924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */; };
 		924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */; };
 		9250C10D2A1CD120001076FA /* DigitsPickerPage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */; };
 		9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
-		9250C1102A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
-		9250C1112A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
 		9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
-		9254B4CA28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
-		9254B4CB28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
 		9254B4CD28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */; };
-		9254B4CE28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */; };
-		9254B4CF28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */; };
 		9254B4D128FADC1600870795 /* SelectedNumBadggeTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4D028FADC1600870795 /* SelectedNumBadggeTestProtocol.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
-		9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
-		9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
-		9258D1A422D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
-		9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
 		9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
-		9258D1A822D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
-		9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
 		9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
-		9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
-		9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
 		9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
-		9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
-		9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
 		9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
-		9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
-		9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
 		9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
-		9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
-		9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
 		9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
-		9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
-		9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
 		9258D1BF22DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1E822DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift */; };
 		9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1EA22DCA1C7003A0EF8 /* RecitePoemScreenDelegate.swift */; };
-		9258D1EC22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1EA22DCA1C7003A0EF8 /* RecitePoemScreenDelegate.swift */; };
-		9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1EA22DCA1C7003A0EF8 /* RecitePoemScreenDelegate.swift */; };
 		9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
-		9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
-		9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */; };
 		9258FAF021FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
 		9258FAF121FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
 		9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
 		9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
-		9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
-		9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAF821FEE4AA00E4E0B7 /* question_white.png */; };
 		925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */; };
 		925994E024449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
-		925994E124449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
-		925994E224449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
 		925994E42444A8D200044253 /* TimeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingScreen.swift */; };
-		925994E52444A8D200044253 /* TimeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingScreen.swift */; };
-		925994E62444A8D200044253 /* TimeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingScreen.swift */; };
 		925994E82444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
-		925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
-		925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
 		925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
-		925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
-		925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
 		925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
-		925994F22449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
-		925994F32449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
 		925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */; };
 		925994F7244AA47200044253 /* VolumeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F6244AA47200044253 /* VolumeSettingScreen.swift */; };
-		925994F8244AA47200044253 /* VolumeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F6244AA47200044253 /* VolumeSettingScreen.swift */; };
-		925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F6244AA47200044253 /* VolumeSettingScreen.swift */; };
 		925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */; };
-		925994FC244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */; };
-		925994FD244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */; };
 		925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
-		92599500244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
-		92599501244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
 		92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
-		92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
-		92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
 		925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */; };
-		925B075825EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */; };
-		925B075925EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */; };
 		925B075E25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */; };
-		925B075F25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */; };
-		925B076025EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */; };
-		925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
-		925CEB50218DB21A00876E7A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */; };
 		925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
-		925F5DA029D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
-		925F5DA129D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
 		9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
-		9260CCA725C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
-		9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */; };
 		926489192604480300CC4131 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926489182604480300CC4131 /* SettingsTest.swift */; };
 		9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265517B2685F8F400C746D0 /* TorifudaPage.swift */; };
 		926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */; };
 		926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */; };
 		92719478284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
-		92719479284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
-		9271947A284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
 		9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271947B284F6FBE008DFB28 /* Poem100Test.swift */; };
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
-		92737DD42380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
-		92737DD52380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */; };
 		92737E3E238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
-		92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
-		92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */; };
 		92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */; };
 		9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */; };
 		927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */; };
-		927A198023E06C8A00443322 /* RecitePoemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */; };
-		927A198123E06C8A00443322 /* RecitePoemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */; };
 		927A70C62545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */; };
-		927A70C72545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */; };
-		927A70C82545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */; };
 		927AEC3E292B635E006970CF /* HokkaidoModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */; };
 		927CB8F9240D0F3D0044B507 /* ReciteSettingsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */; };
 		927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
-		927CB8FC240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
-		927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
 		927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */; };
 		927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */; };
 		927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
-		927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
-		927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
 		927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
-		927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
-		927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */; };
 		927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
-		927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
-		927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */; };
 		927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE8222E9DD200AF48F7 /* Poem.swift */; };
-		927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE8222E9DD200AF48F7 /* Poem.swift */; };
-		927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE8222E9DD200AF48F7 /* Poem.swift */; };
 		927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
-		927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
-		927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */; };
 		927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */; };
 		927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */; };
 		927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C04222E9EC700AF48F7 /* PoemsTests.swift */; };
 		927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */; };
-		927E4C0B22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */; };
-		927E4C0C22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0922329F2700AF48F7 /* PoemPickerScreen.swift */; };
 		927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4C0D22329F8000AF48F7 /* PoemPickerScreenTest.swift */; };
 		92800391249BAFEE004D03C2 /* empty_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9280038E249BAFED004D03C2 /* empty_circle.png */; };
 		92800392249BAFEE004D03C2 /* empty_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9280038E249BAFED004D03C2 /* empty_circle.png */; };
@@ -308,153 +170,77 @@
 		92800399249BAFEE004D03C2 /* full_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92800390249BAFEE004D03C2 /* full_circle.png */; };
 		928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928450D422E06B5D00D12CA7 /* WaitInUITest.swift */; };
 		9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
-		9287D67825B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
-		9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */; };
 		9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
-		9287D69025BC238C003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
-		9287D69425BC238D003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
 		928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */; };
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
-		928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
-		928E73B822ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */; };
 		9295721E29FFF41C00AAB997 /* DigitsPickerPage01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
-		9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
-		9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
 		929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
-		929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
-		929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		9298B70224C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
-		9298B70324C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
-		9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
 		9298B70624CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
-		9298B70724CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
-		9298B70824CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
 		929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */; };
-		929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */; };
-		929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */; };
 		929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */; };
-		929A615622F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */; };
-		929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A615422F6F23000435D2C /* PoemPickerCoordinator.swift */; };
 		929A94B4247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
-		929A94B5247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
-		929A94B6247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */; };
 		92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467524DC314B0045D7DF /* MemorizeTimerScreenTest.swift */; };
 		92A1467824DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */; };
-		92A1467924DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */; };
-		92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467724DC31C00045D7DF /* MemorizeTimerScreen.swift */; };
 		92A1467C24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
-		92A1467D24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
-		92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1467B24DC44430045D7DF /* MemorizeTimerScreenLayout.swift */; };
 		92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146AF24DED8540045D7DF /* MemorizeTImerScreenUITest.swift */; };
 		92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
-		92A146B324DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
-		92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
 		92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
 		92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
-		92A2626F2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
-		92A262702865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
-		92A262712865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
-		92A262722865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
 		92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */; };
 		92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
-		92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
-		92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
 		92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */; };
-		92A6EB7E241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */; };
-		92A6EB7F241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */; };
 		92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */; };
-		92A6EB8224167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */; };
-		92A6EB8324167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */; };
 		92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */; };
-		92A6EB8624191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */; };
-		92A6EB8724191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */; };
 		92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8824191C4900B37A42 /* ReciteSettingsScreenDataSource.swift */; };
-		92A6EB8A24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8824191C4900B37A42 /* ReciteSettingsScreenDataSource.swift */; };
-		92A6EB8B24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8824191C4900B37A42 /* ReciteSettingsScreenDataSource.swift */; };
 		92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */; };
-		92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */; };
-		92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */; };
 		92A6EB9124191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB9024191ED400B37A42 /* SelectSingerScreenDataSource.swift */; };
-		92A6EB9224191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB9024191ED400B37A42 /* SelectSingerScreenDataSource.swift */; };
-		92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB9024191ED400B37A42 /* SelectSingerScreenDataSource.swift */; };
 		92ABF9A723F00B80000CA91C /* RewindButtonUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9A623F00B80000CA91C /* RewindButtonUITest.swift */; };
 		92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */; };
 		92ABF9AB23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9AA23F42CFA000CA91C /* SelectSingerScreen.swift */; };
-		92ABF9AC23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9AA23F42CFA000CA91C /* SelectSingerScreen.swift */; };
-		92ABF9AD23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9AA23F42CFA000CA91C /* SelectSingerScreen.swift */; };
 		92ABF9B523F583E7000CA91C /* SelectSingerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9B423F583E7000CA91C /* SelectSingerUITest.swift */; };
 		92ABF9B923F6D739000CA91C /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9B823F6D739000CA91C /* StoreManager.swift */; };
-		92ABF9BA23F6D739000CA91C /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9B823F6D739000CA91C /* StoreManager.swift */; };
-		92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9B823F6D739000CA91C /* StoreManager.swift */; };
 		92ABF9BD23F6DF46000CA91C /* StoreManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABF9BC23F6DF46000CA91C /* StoreManagerTest.swift */; };
+		92AD8C552BAFFF75004D605D /* ReciteMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C542BAFFF75004D605D /* ReciteMode.swift */; };
+		92AD8C582BB000D1004D605D /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C572BB000D1004D605D /* Side.swift */; };
+		92AD8C5A2BB00134004D605D /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C592BB00134004D605D /* FiveColors.swift */; };
+		92AD8C5C2BB001A8004D605D /* SOHGlyphIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C5B2BB001A8004D605D /* SOHGlyphIconType.swift */; };
 		92AE7C6723FD6D88003FA07F /* SelectSingerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */; };
-		92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */; };
-		92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */; };
 		92AE7C7123FEAE6A003FA07F /* EnvironmentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */; };
 		92AE7C7323FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
-		92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
-		92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* Environment.swift */; };
 		92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
-		92AE7C7A24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
-		92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */; };
 		92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */; };
 		92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */; };
 		92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
-		92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
-		92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
 		92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */; };
 		92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */; };
 		92B87D49250A654B003BB51B /* FiveColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsScreen.swift */; };
-		92B87D4A250A654B003BB51B /* FiveColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsScreen.swift */; };
-		92B87D4B250A654B003BB51B /* FiveColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsScreen.swift */; };
 		92B87D4D250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
-		92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
-		92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
 		92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D50250BBE96003BB51B /* FiveColorsTest.swift */; };
 		92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
-		92B87D54250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
-		92B87D55250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
 		92B87D57250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B87D58250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B87D59250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
-		92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
-		92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */; };
 		92B9E9682465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */; };
-		92B9E9692465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */; };
-		92B9E96A2465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */; };
 		92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */; };
-		92B9E96D2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */; };
-		92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E96B2465A346007C2E75 /* NgramPickerScreenDataSource.swift */; };
 		92B9E97024666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E97124666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E97224666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */; };
 		92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
-		92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
-		92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
 		92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */; };
 		92B9E990246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */; };
-		92B9E991246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */; };
-		92B9E992246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */; };
 		92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
-		92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
-		92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
-		92C176D225E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
-		92C176D325E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
 		92C176D825E4F07F00DDA46D /* PostMortemUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */; };
 		92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
-		92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
-		92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B49C24E6BB0500FFD459 /* GlyphIconProtocol.swift */; };
 		92C6B4A124E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */; };
-		92C6B4A224E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */; };
-		92C6B4A324E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6B4A024E9323400FFD459 /* MemorizeTimerScreenDelegate.swift */; };
 		92C87DD322E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD422E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
 		92C87DD522E8894900569D15 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD222E8894900569D15 /* audio */; };
@@ -463,23 +249,13 @@
 		92C87DD922E88D5400569D15 /* Singers.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C87DD622E88D5400569D15 /* Singers.json */; };
 		92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDA22E88E6900569D15 /* SingerTests.swift */; };
 		92C87DDD22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
-		92C87DDE22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
-		92C87DDF22E88F8600569D15 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C87DDC22E88F8600569D15 /* Singer.swift */; };
 		92CE0D5C263AA8AF00372B24 /* ExitGameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5B263AA8AF00372B24 /* ExitGameDialog.swift */; };
 		92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */; };
 		92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
-		92CE520C2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
-		92CE520D2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
 		92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57151220EC87700235717 /* GameConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameConfigTest.swift */; };
-		92D57152220ECBC000235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
-		92D57153220ECBEA00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57155220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
-		92D57156220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
-		92D57157220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
 		92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57158220F063100235717 /* SelectModeScreenTest.swift */; };
-		92D5715A221014A300235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
-		92D5715B221014A400235717 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D661B826441BB4006E731D /* AllPoemRecitedPage.swift */; };
 		92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */; };
 		92DCD6DF26DA62E30063AF7A /* SkipPoemUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */; };
@@ -494,21 +270,11 @@
 		92E5C549266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C548266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift */; };
 		92E5C54B266C7541009A46F5 /* WhatsNextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54A266C7541009A46F5 /* WhatsNextPage.swift */; };
 		92E5C54E26723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */; };
-		92E5C54F26723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */; };
-		92E5C55026723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */; };
 		92E5C552267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */; };
-		92E5C553267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */; };
-		92E5C554267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C551267384AD009A46F5 /* DescriptionViewAnimation.swift */; };
 		92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */; };
-		92E5C5582674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */; };
-		92E5C5592674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */; };
 		92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */; };
 		92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
-		92E5F82C240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
-		92E5F82D240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
 		92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
-		92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
-		92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E9705426BEAD2E00A6650C /* PoemPickerPageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705326BEAD2E00A6650C /* PoemPickerPageExtension.swift */; };
 		92E9705626BFCC7000A6650C /* OverwriteExistingSetDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */; };
 		92E9705826BFCFC200A6650C /* OverwriteSetCompletedDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */; };
@@ -516,101 +282,43 @@
 		92E9705C26C146B900A6650C /* EvaluateAppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */; };
 		92E9705E26C2917C00A6650C /* FiveColorsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705D26C2917C00A6650C /* FiveColorsPage.swift */; };
 		92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
-		92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
-		92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */; };
 		92EBB3F029323C3A00853FDD /* OnWhatsNextScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBB3EF29323C3A00853FDD /* OnWhatsNextScreenProtocol.swift */; };
 		92EC11F42A01F3510071FA6C /* DigitsPickerScreen01Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F32A01F3510071FA6C /* DigitsPickerScreen01Test.swift */; };
 		92EC11F62A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F52A01F43D0071FA6C /* DigitsPickerScreen01.swift */; };
-		92EC11F72A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F52A01F43D0071FA6C /* DigitsPickerScreen01.swift */; };
-		92EC11F82A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F52A01F43D0071FA6C /* DigitsPickerScreen01.swift */; };
 		92EC11FA2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F92A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift */; };
-		92EC11FB2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F92A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift */; };
-		92EC11FC2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11F92A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift */; };
 		92EC11FE2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */; };
-		92EC11FF2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */; };
-		92EC12002A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */; };
 		92EC12022A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */; };
-		92EC12032A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */; };
-		92EC12042A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */; };
 		92EC12062A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
-		92EC12072A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
-		92EC12082A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */; };
 		92EC120B2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
-		92EC120C2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
-		92EC120D2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC120A2A05F9980071FA6C /* TableViewHandlerProtocol.swift */; };
 		92EC12122A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
-		92EC12132A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
-		92EC12142A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12112A07A0480071FA6C /* PickerWithCircleImageProtocol.swift */; };
 		92EC12162A10A2830071FA6C /* DigitsPickerScreen10UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12152A10A2830071FA6C /* DigitsPickerScreen10UITest.swift */; };
 		92EC12182A124F3F0071FA6C /* DigitsPickerScreen10Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12172A124F3F0071FA6C /* DigitsPickerScreen10Test.swift */; };
 		92EC121A2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12192A124FBD0071FA6C /* DigitsPickerScreen10.swift */; };
-		92EC121B2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12192A124FBD0071FA6C /* DigitsPickerScreen10.swift */; };
-		92EC121C2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12192A124FBD0071FA6C /* DigitsPickerScreen10.swift */; };
 		92EC121E2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC121D2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift */; };
-		92EC121F2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC121D2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift */; };
-		92EC12202A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC121D2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift */; };
 		92EC12222A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12212A139C240071FA6C /* DigitsPickerScreen10DataSource.swift */; };
-		92EC12232A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12212A139C240071FA6C /* DigitsPickerScreen10DataSource.swift */; };
-		92EC12242A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC12212A139C240071FA6C /* DigitsPickerScreen10DataSource.swift */; };
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
-		92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
-		92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92EDBCE226C658E9009F4555 /* SelectedColorHandlingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */; };
 		92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */; };
-		92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */; };
-		92F5298E229AAD6500FC79E7 /* RecitingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */; };
 		92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
-		92F666252524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
-		92F666262524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
 		92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
-		92F66652252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
-		92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
 		92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
-		92F66669252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
-		92F6666A252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
 		92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
-		92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
-		92F666742529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
 		92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
-		92F8242125A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
-		92F8242225A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
 		92F8245225AC4878008E031D /* SettingTableCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245125AC4878008E031D /* SettingTableCellTest.swift */; };
 		92F8245725AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
-		92F8245825AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
-		92F8245925AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
 		92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
-		92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
-		92F8247B25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
 		92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB604E269337E1000C3F99 /* FudaSetPage.swift */; };
 		92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
-		92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
-		92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */; };
-		92FC39472286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */; };
-		92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39452286E94700791053 /* PoemPickerScreenDelegate.swift */; };
 		92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
-		92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
-		92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39492286EA8A00791053 /* PoemPickerScreenDataSource.swift */; };
 		92FC398D22917E6000791053 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 92FC398C22917E6000791053 /* Readme.md */; };
 		92FCCEDD22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
-		92FCCEDE22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
-		92FCCEDF22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
 		92FFBF1E245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */; };
-		92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */; };
-		92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */; };
 		92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
-		92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
-		92FFBF3F245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
 		92FFBF41245FB3F0004D7F79 /* FudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF40245FB3F0004D7F79 /* FudaView.swift */; };
-		92FFBF42245FB3F0004D7F79 /* FudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF40245FB3F0004D7F79 /* FudaView.swift */; };
-		92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF40245FB3F0004D7F79 /* FudaView.swift */; };
 		92FFBF45245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
-		92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
-		92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF44245FB47F004D7F79 /* FudaScreenLayout.swift */; };
 		92FFBF49245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */; };
-		92FFBF4A245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */; };
-		92FFBF4B245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF48245FB4F7004D7F79 /* TorifudaScreen.swift */; };
 		92FFBF4E245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
 		92FFBF4F245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
 		92FFBF50245FB53A004D7F79 /* tatami_moved.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */; };
@@ -619,13 +327,9 @@
 		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF54245FB5C6004D7F79 /* FudaScreenTest.swift */; };
 		92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
-		92FFBF5E24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
-		92FFBF5F24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
 		92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */; };
 		92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */; };
 		92FFBF6524650219004D7F79 /* NgramPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */; };
-		92FFBF6624650219004D7F79 /* NgramPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */; };
-		92FFBF6724650219004D7F79 /* NgramPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -836,6 +540,10 @@
 		92ABF9B423F583E7000CA91C /* SelectSingerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerUITest.swift; sourceTree = "<group>"; };
 		92ABF9B823F6D739000CA91C /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		92ABF9BC23F6DF46000CA91C /* StoreManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManagerTest.swift; sourceTree = "<group>"; };
+		92AD8C542BAFFF75004D605D /* ReciteMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteMode.swift; sourceTree = "<group>"; };
+		92AD8C572BB000D1004D605D /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
+		92AD8C592BB00134004D605D /* FiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColors.swift; sourceTree = "<group>"; };
+		92AD8C5B2BB001A8004D605D /* SOHGlyphIconType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOHGlyphIconType.swift; sourceTree = "<group>"; };
 		92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSingerCoordinator.swift; sourceTree = "<group>"; };
 		92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTest.swift; sourceTree = "<group>"; };
 		92AE7C7223FEAEDC003FA07F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -1013,6 +721,7 @@
 		922BDDE72625D4B80093B24A /* pages */ = {
 			isa = PBXGroup;
 			children = (
+				92AD8C562BB00083004D605D /* enums */,
 				92E5C54C266C754E009A46F5 /* protocols */,
 				922BDDD8261B3B760093B24A /* HomePage.swift */,
 				922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */,
@@ -1376,6 +1085,17 @@
 			path = audioPlayers;
 			sourceTree = "<group>";
 		};
+		92AD8C562BB00083004D605D /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				92AD8C542BAFFF75004D605D /* ReciteMode.swift */,
+				92AD8C572BB000D1004D605D /* Side.swift */,
+				92AD8C592BB00134004D605D /* FiveColors.swift */,
+				92AD8C5B2BB001A8004D605D /* SOHGlyphIconType.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
 		92CE0D5D263ACA5300372B24 /* alerts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1697,7 +1417,6 @@
 				92C87DD822E88D5400569D15 /* Singers.json in Resources */,
 				9207515628D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */,
 				92FFBF52245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
-				92FCCEDE22A51E3C002B589E /* 100.json in Resources */,
 				92800395249BAFEE004D03C2 /* half_circle.png in Resources */,
 				92B87D58250CF9C5003BB51B /* 5colors in Resources */,
 				92C87DD422E8894900569D15 /* audio in Resources */,
@@ -1721,7 +1440,6 @@
 				92C87DD922E88D5400569D15 /* Singers.json in Resources */,
 				9207515728D868AC00B35285 /* Shuffle100_1024_background_playback.png in Resources */,
 				92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
-				92FCCEDF22A51E3C002B589E /* 100.json in Resources */,
 				92800396249BAFEE004D03C2 /* half_circle.png in Resources */,
 				92B87D59250CF9C5003BB51B /* 5colors in Resources */,
 				92C87DD522E8894900569D15 /* audio in Resources */,
@@ -1983,204 +1701,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F8242125A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
-				9258D1A822D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
-				92C87DDE22E88F8600569D15 /* Singer.swift in Sources */,
-				92FFBF6624650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
-				92B9E991246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */,
 				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
-				92B9E9692465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
-				92E6552321CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
-				92158F7A232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */,
-				9298B70324C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
-				92737DD42380312F007B5FAD /* StandardColor.swift in Sources */,
-				92FFBF3E245FB2FF004D7F79 /* String-extension.swift in Sources */,
-				92EC11FF2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
-				92EBACC72510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
-				92EC12072A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */,
-				92A262712865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
-				92A6EB7624151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
-				921FF436249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
-				92A6EB8E24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
-				92C6B49E24E6C1BC00FFD459 /* GlyphIconProtocol.swift in Sources */,
-				920F6A74247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
-				92CE520C2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
-				9287D69025BC238C003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
-				92B9E96124656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
-				92737E3F238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */,
 				9254B4D128FADC1600870795 /* SelectedNumBadggeTestProtocol.swift in Sources */,
-				927A70C72545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */,
-				927E4BF4222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
-				92F5298D229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
-				921FF432249E52C60083AC49 /* HelpListScreen.swift in Sources */,
-				9205E17D24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
-				92328C2324591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
-				920F6A70247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
 				92ABF9BD23F6DF46000CA91C /* StoreManagerTest.swift in Sources */,
-				92A1467D24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
 				92AE7C7123FEAE6A003FA07F /* EnvironmentTest.swift in Sources */,
-				92FC394B2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
-				92AF24AA22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92F8245225AC4878008E031D /* SettingTableCellTest.swift in Sources */,
-				92599504244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
-				92D57152220ECBC000235717 /* GameConfig.swift in Sources */,
 				92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */,
 				920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */,
-				929A615222F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
-				9250C1102A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
-				9297F62822EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */,
-				92ABF9BA23F6D739000CA91C /* StoreManager.swift in Sources */,
-				9208DF1122FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
-				92EC11F72A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */,
-				9298B70724CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
-				927E4C0B22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
-				925994E124449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
-				92A6EB8A24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
-				928E73B722ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */,
-				92E5C5582674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
-				929824972222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */,
-				92FC39472286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
-				92BCDE7B226C8E1E001853DC /* MainCoordinator.swift in Sources */,
-				9258FAF621FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
-				9258D1EC22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
-				92EC11FB2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */,
 				924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */,
-				92E5C553267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
-				9207514E28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */,
-				92FFBF46245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
-				92EC120C2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */,
-				9258FAED21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
-				92ED1A0723E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
-				921FF43A249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
-				92B9E98724682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
-				92EC121F2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
-				9254B4CE28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
-				92B87D4A250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
-				92FFBF1F245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
-				92EC12132A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */,
-				92EC12032A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
-				9258D1B422D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
-				92467794292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
-				9260CCA725C67AE000B709B6 /* UIFontExtension.swift in Sources */,
-				92A6EB7E241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
-				92F666252524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */,
-				927E4BEB222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
-				9287D67825B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
-				921FF44224A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
-				923B594D23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,
-				927CB8FC240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
-				92E5F82C240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
 				92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */,
-				925994FC244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
-				9207BB3322996B7300816DC8 /* Settings.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
-				92D57156220F03AF00235717 /* SelectModeScreen.swift in Sources */,
-				9258D1A022D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
-				9258D1AC22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
-				9204751A254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
-				92F66669252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
-				929A94B5247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
 				92EC11F42A01F3510071FA6C /* DigitsPickerScreen01Test.swift in Sources */,
-				927E4BFA222E9DD200AF48F7 /* Poem.swift in Sources */,
 				925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */,
-				92B87D54250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
-				92A146B324DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
-				9208DF1522FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */,
-				92599500244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
-				92A6EB8624191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
-				9205E18124571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
-				92B9E96D2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
-				921FF44E24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
-				92B87D4E250BBE31003BB51B /* FiveColors.swift in Sources */,
-				92F666732529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
-				925B075F25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
-				92719479284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
-				92ABF9AC23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
-				92FC39432286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */,
-				925F5DA029D950CE006744FB /* DSFloatingButton.swift in Sources */,
-				9206CEE222E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
-				92FFBF4A245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
-				925994F8244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
-				920D670428F3D74200952402 /* BadgeSwift.swift in Sources */,
-				927E4BFD222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */,
-				92D5715A221014A300235717 /* UIColorExtention.swift in Sources */,
 				9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */,
-				921FF43E249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */,
-				9258D1A422D9D624003A0EF8 /* ViewSize.swift in Sources */,
-				920C00172427A61600593803 /* HomeScreenDataSource.swift in Sources */,
-				92EC12232A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */,
-				925994E52444A8D200044253 /* TimeSettingScreen.swift in Sources */,
-				92EC121B2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */,
-				925B075825EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
 				9215013127005A5E001E39FE /* NavigationBarTests.swift in Sources */,
-				927A198023E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
-				92A6EB9224191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
-				9207BAF5229579D600816DC8 /* Bool100.swift in Sources */,
 				92FFBF55245FB5C6004D7F79 /* FudaScreenTest.swift in Sources */,
-				925994EE2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
-				92AE7C6C23FD6EAC003FA07F /* SelectSingerCoordinator.swift in Sources */,
-				9254B4CA28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
 				9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */,
-				92F8247A25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
-				920F6A78247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
-				92C176D225E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
-				927E4BEE222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
-				9258D1B822D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
-				921791F7258E211C00A38249 /* Screen.swift in Sources */,
-				929A615622F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
-				92AE7C7A24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
-				92A6EB8224167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
-				924619612493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
 				924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */,
 				921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
-				92A1467924DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
-				92C6B4A224E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
-				925994E92444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
-				92F8245825AF0C34008E031D /* SettingTableCell.swift in Sources */,
-				92E5C54F26723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
-				92AE7C7423FEAEDC003FA07F /* Environment.swift in Sources */,
-				92F66652252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
-				924E892F2827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
 				9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */,
-				92328C3324596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
-				9205E1772456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */,
 				92EC12182A124F3F0071FA6C /* DigitsPickerScreen10Test.swift in Sources */,
-				92A2626F2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
-				925CEB4F218DB21900876E7A /* HomeScreen.swift in Sources */,
-				92FFBF42245FB3F0004D7F79 /* FudaView.swift in Sources */,
-				9258D1BC22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
-				9258D1B022D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
-				925994F22449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
-				92FFBF5E24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2188,221 +1757,76 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927E4C0C22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				92EDBCE226C658E9009F4555 /* SelectedColorHandlingSheet.swift in Sources */,
-				92FFBF3F245FB2FF004D7F79 /* String-extension.swift in Sources */,
-				92EC12142A07A0480071FA6C /* PickerWithCircleImageProtocol.swift in Sources */,
 				92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */,
-				9258D1A922D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
-				9258D1B122D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */,
-				929824982222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				927AEC3E292B635E006970CF /* HokkaidoModeUITest.swift in Sources */,
-				92599505244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
-				92EC12002A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
-				9207BAF6229579D600816DC8 /* Bool100.swift in Sources */,
-				92EC120D2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */,
-				92EC121C2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */,
-				925994F9244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
 				924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */,
 				92DCD6DD26D12F8B0063AF7A /* MemorizeTimerPage.swift in Sources */,
 				92E5C547266A6235009A46F5 /* VolumePage.swift in Sources */,
-				92FFBF43245FB3F0004D7F79 /* FudaView.swift in Sources */,
-				92A262702865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
+				92AD8C5A2BB00134004D605D /* FiveColors.swift in Sources */,
 				9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */,
-				9208DF1622FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
-				92737E40238A9882007B5FAD /* RecitePoemScreenGameActions.swift in Sources */,
 				92E5C53D26665BCC009A46F5 /* ReciteSettingsPage.swift in Sources */,
 				92E5C54B266C7541009A46F5 /* WhatsNextPage.swift in Sources */,
-				9297F62922EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
-				92B87D55250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
-				927E4BEF222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
-				9260CCA825C67AE000B709B6 /* UIFontExtension.swift in Sources */,
 				92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */,
-				92A1467E24DC44430045D7DF /* MemorizeTimerScreenLayout.swift in Sources */,
-				9258D1AD22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
-				92E5F82D240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
-				924E89302827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
 				92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */,
+				92AD8C5C2BB001A8004D605D /* SOHGlyphIconType.swift in Sources */,
 				92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */,
-				925994FD244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
+				92AD8C582BB000D1004D605D /* Side.swift in Sources */,
 				9250C10D2A1CD120001076FA /* DigitsPickerPage10.swift in Sources */,
 				922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */,
-				921FF44F24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
-				92D57153220ECBEA00235717 /* GameConfig.swift in Sources */,
-				921FF433249E52C60083AC49 /* HelpListScreen.swift in Sources */,
-				9287D67925B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
-				925F5DA129D950CE006744FB /* DSFloatingButton.swift in Sources */,
-				92A146B424DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
-				9207BB3422996B7300816DC8 /* Settings.swift in Sources */,
 				92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */,
-				9258D1A522D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				924BF8E72695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift in Sources */,
-				920F6A79247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
-				9254B4CF28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
-				925994E62444A8D200044253 /* TimeSettingScreen.swift in Sources */,
-				921FF43B249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
-				92EC12042A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
-				9205E17E24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
-				92A6EB9324191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				92E5C53F26665FEF009A46F5 /* IntervalSettingPage.swift in Sources */,
-				921FF44324A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
-				92F8245925AF0C34008E031D /* SettingTableCell.swift in Sources */,
-				925B075925EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
-				92EC12242A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */,
-				9298B70824CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
-				92B9E96224656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
-				92F8247B25B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
-				92BCDE7C226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				92E9705426BEAD2E00A6650C /* PoemPickerPageExtension.swift in Sources */,
-				929A94B6247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
-				923B594E23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,
-				92158F7B232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
-				927A70C82545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */,
 				92ABF9B523F583E7000CA91C /* SelectSingerUITest.swift in Sources */,
-				92EC12202A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */,
-				92F5298E229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
-				92EC11F82A01F43D0071FA6C /* DigitsPickerScreen01.swift in Sources */,
-				92E6552421CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */,
 				92EC12162A10A2830071FA6C /* DigitsPickerScreen10UITest.swift in Sources */,
 				9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */,
 				927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */,
 				923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */,
-				92FFBF20245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */,
-				9258D1B922D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
-				9271947A284F6F0A008DFB28 /* Poem100.swift in Sources */,
-				92B9E96A2465A24A007C2E75 /* NgramPickerScreenDelegate.swift in Sources */,
-				92AE7C7523FEB2D7003FA07F /* Environment.swift in Sources */,
-				92FFBF5F24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
-				921FF43F249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */,
-				92737DD52380312F007B5FAD /* StandardColor.swift in Sources */,
 				92E5C549266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift in Sources */,
 				92E9705626BFCC7000A6650C /* OverwriteExistingSetDialog.swift in Sources */,
-				92328C3424596AF7005E0FEE /* WahtsNextScreenLayout.swift in Sources */,
 				92E9705A26C1418B00A6650C /* HelpListPage.swift in Sources */,
-				927E4BEC222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
-				92D5715B221014A400235717 /* UIColorExtention.swift in Sources */,
 				9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */,
-				9258D1ED22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
-				92CE520D2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
-				920F6A71247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
-				92F6666A252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
-				92A6EB7F241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
+				92AD8C552BAFFF75004D605D /* ReciteMode.swift in Sources */,
 				926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */,
-				92AE7C7B24012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
-				929A615722F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
-				92FC39442286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
-				929A615322F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
-				928E73B822ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */,
-				92EBACC82510F7B900F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
-				92C6B4A324E9323400FFD459 /* MemorizeTimerScreenDelegate.swift in Sources */,
-				92D57157220F03AF00235717 /* SelectModeScreen.swift in Sources */,
-				92B9E98824682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
-				9258D1A122D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
-				9287D69425BC238D003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
-				9258D1B522D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				9258D1E922DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift in Sources */,
-				92B9E992246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */,
-				927A198123E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
-				92FFBF4B245FB4F7004D7F79 /* TorifudaScreen.swift in Sources */,
-				9250C1112A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
-				92ABF9AD23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
-				92B9E96E2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
-				9258FAF721FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				922C638C269094880000D07D /* NgramPickerPage.swift in Sources */,
 				92E5C545266903DC009A46F5 /* KamiShimoIntervalPage.swift in Sources */,
 				92D661B926441BB4006E731D /* AllPoemRecitedPage.swift in Sources */,
-				927CB8FD240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
-				92C87DDF22E88F8600569D15 /* Singer.swift in Sources */,
-				925994E224449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
-				92F666742529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
-				92599501244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
-				921791F8258E211C00A38249 /* Screen.swift in Sources */,
-				924619622493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
 				926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */,
-				927E4BF5222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				927CB8F9240D0F3D0044B507 /* ReciteSettingsUITest.swift in Sources */,
-				92C176D325E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
-				92FC39482286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
-				92F8242225A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
 				922BDDE32621CE720093B24A /* RecitePoemPage.swift in Sources */,
-				9254B4CB28F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
-				92A6EB8724191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
-				92A6EB8F24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
-				9204751B254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
 				92E5C5432667BF82009A46F5 /* DigitTextProtocol.swift in Sources */,
-				92F66656252611720068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
-				92FFBF6724650219004D7F79 /* NgramPickerScreen.swift in Sources */,
-				9205E18224571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
-				9298B70424C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
 				92E9705E26C2917C00A6650C /* FiveColorsPage.swift in Sources */,
-				92AF24AB22A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92ABF9A723F00B80000CA91C /* RewindButtonUITest.swift in Sources */,
 				92E9705826BFCFC200A6650C /* OverwriteSetCompletedDialog.swift in Sources */,
-				9258D1BD22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
-				92328C2424591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
-				9206CEE322E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
-				92A6EB8B24191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
-				92B87D4B250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				9295721E29FFF41C00AAB997 /* DigitsPickerPage01.swift in Sources */,
-				92A1467A24DC31C00045D7DF /* MemorizeTimerScreen.swift in Sources */,
 				928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */,
 				92370711290570D40013C5AB /* SnapshotHelper.swift in Sources */,
 				9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */,
-				92A262722865E96300425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				922BDDD9261B3B760093B24A /* HomePage.swift in Sources */,
-				92E5C55026723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
-				92E5C554267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
 				92E44EF626AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift in Sources */,
 				92E9705C26C146B900A6650C /* EvaluateAppDialog.swift in Sources */,
 				92CE0D5C263AA8AF00372B24 /* ExitGameDialog.swift in Sources */,
-				920D670528F3D74200952402 /* BadgeSwift.swift in Sources */,
-				927E4BFE222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
-				92A6EB7724151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
-				925994EA2444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
-				927E4BFB222E9DD200AF48F7 /* Poem.swift in Sources */,
 				92DCD6DF26DA62E30063AF7A /* SkipPoemUITest.swift in Sources */,
-				925994F32449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
-				92ABF9BB23F6D739000CA91C /* StoreManager.swift in Sources */,
 				92EBB3F029323C3A00853FDD /* OnWhatsNextScreenProtocol.swift in Sources */,
-				920F6A75247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */,
 				924BF8E92699CE3200FCEDA5 /* NameNewFudaSetAlert.swift in Sources */,
-				92FFBF47245FB480004D7F79 /* FudaScreenLayout.swift in Sources */,
-				925994EF2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */,
 				922BDDEC2625D5CB0093B24A /* SelectModePage.swift in Sources */,
-				92E5C5592674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
-				9258FAEE21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
-				920C00182427A61600593803 /* HomeScreenDataSource.swift in Sources */,
 				92E44EF426AD4B2A004A6A1A /* NoPoemToSaveAlert.swift in Sources */,
-				92EC12082A0533E80071FA6C /* DigitsNumberFactory.swift in Sources */,
-				92EC11FC2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */,
-				92C6B49F24E6C1BD00FFD459 /* GlyphIconProtocol.swift in Sources */,
 				922BDDF12629BEB60093B24A /* SelectSingerPage.swift in Sources */,
-				92AE7C6D23FD6EAD003FA07F /* SelectSingerCoordinator.swift in Sources */,
-				921FF437249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
 				92C176D825E4F07F00DDA46D /* PostMortemUITest.swift in Sources */,
-				92FC394C2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
-				92F666262524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
-				92B87D4F250BBE31003BB51B /* FiveColors.swift in Sources */,
 				921FF44524A0DBDE0083AC49 /* HelpListUITest.swift in Sources */,
 				9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */,
-				925B076025EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
-				9208DF1222FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
-				9207514F28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */,
-				9205E1782456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
-				92A6EB8324167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
 				92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */,
-				92467795292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
 				92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
-				925CEB50218DB21A00876E7A /* HomeScreen.swift in Sources */,
 				923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */,
-				92ED1A0823E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
