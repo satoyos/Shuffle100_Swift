@@ -8,7 +8,6 @@
 
 import Foundation
 import XCTest
-// import Shuffle100
 
 final class SelectModePage: PageObjectable {
     let app: XCUIApplication

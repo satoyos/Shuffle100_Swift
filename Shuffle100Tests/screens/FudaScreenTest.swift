@@ -6,6 +6,7 @@
 //  Copyright © 2020 Yoshifumi Sato. All rights reserved.
 //
 
+@testable import Shuffle100
 import XCTest
 
 class FudaScreenTest: XCTestCase, SHDeviceTypeGetter {

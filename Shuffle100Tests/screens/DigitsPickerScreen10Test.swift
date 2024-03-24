@@ -6,6 +6,7 @@
 //  Copyright © 2023 里 佳史. All rights reserved.
 //
 
+@testable import Shuffle100
 import XCTest
 
 final class DigitsPickerScreen10Test: XCTestCase, SelectedNumBadgeTest {

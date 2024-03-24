@@ -1,3 +1,4 @@
+@testable import Shuffle100
 import XCTest
 
 class BadgeSwiftTests: XCTestCase {

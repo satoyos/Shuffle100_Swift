@@ -8,7 +8,7 @@
 
 import XCTest
 
-final class MemorizeTimerPage: PageObjectable, SOHGlyphIcon {
+final class MemorizeTimerPage: PageObjectable {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
