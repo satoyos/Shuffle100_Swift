@@ -15,11 +15,6 @@ class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
         return StandardColor.standardButtonColor
     }
     
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//        setGradient()
-//    }
-    
     func configure(height: CGFloat, fontSize: CGFloat, iconType: SOHGlyphIconType) {
         var config = UIButton.Configuration.plain()
         var container = AttributeContainer()
