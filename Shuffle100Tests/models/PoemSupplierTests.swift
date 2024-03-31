@@ -105,6 +105,23 @@ class PoemSupplierTests: XCTestCase {
         XCTAssertEqual(supplier.size, 4)
     }
     
+    func testEvenLargeDeckMustBeShuffledInFakeMode() {
+        // given
+        let state100 = SelectedState100.createOf(bool: true)
+            .cancelOf(number: 100)
+            .cancelOf(number: 99)
+            .cancelOf(number: 98)
+            .cancelOf(number: 97)
+        let deck = Poem100.createFrom(state100: state100)
+        let supplier = PoemSupplier(deck: deck, shuffle: true)
+        XCTAssertEqual(supplier.size, 96)
+        // when
+        supplier.addFakePoems()
+        // then
+        let array1to100 = (1...100).map{$0}
+        XCTAssertNotEqual(supplier.poemNumbers(), array1to100, "deck must be shuffled!")
+    }
+    
     func test_shuffleWithSize() {
         // given
         let supplier = PoemSupplier()
@@ -139,6 +156,7 @@ class PoemSupplierTests: XCTestCase {
         // then
         XCTAssertEqual(supplier.currentIndex, 0)
     }
+    
     
     func test_poemNumbers() {
         // given
