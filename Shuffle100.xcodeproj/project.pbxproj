@@ -476,6 +476,7 @@
 		9265517B2685F8F400C746D0 /* TorifudaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaPage.swift; sourceTree = "<group>"; };
 		926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPostMortemDialog.swift; sourceTree = "<group>"; };
 		926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameActionSheet.swift; sourceTree = "<group>"; };
+		9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		92719477284F6F0A008DFB28 /* Poem100.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem100.swift; sourceTree = "<group>"; };
 		9271947B284F6FBE008DFB28 /* Poem100Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem100Test.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
@@ -812,6 +813,7 @@
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
 				923D59182143BB0B000F5E60 /* Assets.xcassets */,
 				923D591D2143BB0B000F5E60 /* Info.plist */,
+				9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Shuffle100;
 			sourceTree = "<group>";
