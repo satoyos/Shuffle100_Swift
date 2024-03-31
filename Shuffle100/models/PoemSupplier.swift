@@ -86,8 +86,8 @@ class PoemSupplier {
     }
     
     func addFakePoems() {
-        if size >= 60 {
-            self.deck = originalPoems
+        guard size < 50 else {
+            self.deck = originalPoems.shuffled()
             return
         }
         let selectedPoemNumbers = deck.map{ $0.number }
