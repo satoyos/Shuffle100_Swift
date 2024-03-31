@@ -135,6 +135,7 @@
 		9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265517B2685F8F400C746D0 /* TorifudaPage.swift */; };
 		926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */; };
 		926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */; };
+		927162A02BB93663002D6BA9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */; };
 		92719478284F6F0A008DFB28 /* Poem100.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92719477284F6F0A008DFB28 /* Poem100.swift */; };
 		9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271947B284F6FBE008DFB28 /* Poem100Test.swift */; };
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
@@ -1394,6 +1395,7 @@
 				92B87D57250CF9C5003BB51B /* 5colors in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
+				927162A02BB93663002D6BA9 /* PrivacyInfo.xcprivacy in Resources */,
 				92800394249BAFEE004D03C2 /* half_circle.png in Resources */,
 				92328C2824591E25005E0FEE /* refrain.png in Resources */,
 				92C87DD722E88D5400569D15 /* Singers.json in Resources */,
