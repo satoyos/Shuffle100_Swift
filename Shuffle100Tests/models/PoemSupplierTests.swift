@@ -119,7 +119,7 @@ class PoemSupplierTests: XCTestCase {
         supplier.addFakePoems()
         // then
         let array1to100 = (1...100).map{$0}
-        XCTAssertNotEqual(supplier.poemNumbers(), array1to100, "deck must be shuffled!")
+        XCTAssertNotEqual(supplier.poemNumbers, array1to100, "deck must be shuffled!")
     }
     
     func test_shuffleWithSize() {
@@ -166,7 +166,7 @@ class PoemSupplierTests: XCTestCase {
         let deck = Poem100.createFrom(state100: newState100)
         let supplier = PoemSupplier(deck: deck, shuffle: true)
         // when
-        let numbersFromDeck = supplier.poemNumbers()
+        let numbersFromDeck = supplier.poemNumbers
         // then
         XCTAssertEqual(numbers.sorted(), numbersFromDeck.sorted())
     }

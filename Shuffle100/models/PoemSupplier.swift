@@ -49,6 +49,10 @@ class PoemSupplier {
     var side: Side? {
         fuda_side
     }
+    
+    var poemNumbers: [Int] {
+        deck.map{ $0.number }
+    }
 
     func shuffleDeck(with size: Int) {
         let shuffled = deck.shuffled()
@@ -104,10 +108,6 @@ class PoemSupplier {
     
     func resetCurrentIndex() {
         self.numberOfPoemsDrawn = 0
-    }
-    
-    func poemNumbers() -> [Int] {
-        deck.map{ $0.number }
     }
     
     private func setSideTo(_ side: Side) {
