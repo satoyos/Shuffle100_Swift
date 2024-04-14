@@ -122,3 +122,10 @@ extension SelectedState100 {
         return Self.init(bool100: newBools)
     }
 }
+
+// return deck(=[Poem]) created by self
+extension SelectedState100 {
+    func convertToDeck() -> [Poem] {
+        Poem100.createFrom(state100: self)
+    }
+}
