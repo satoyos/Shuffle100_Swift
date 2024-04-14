@@ -308,6 +308,7 @@
 		92F8245225AC4878008E031D /* SettingTableCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245125AC4878008E031D /* SettingTableCellTest.swift */; };
 		92F8245725AF0C34008E031D /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8245625AF0C34008E031D /* SettingTableCell.swift */; };
 		92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */; };
+		92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */; };
 		92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB604E269337E1000C3F99 /* FudaSetPage.swift */; };
 		92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */; };
 		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
@@ -639,6 +640,7 @@
 		92F8245125AC4878008E031D /* SettingTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCellTest.swift; sourceTree = "<group>"; };
 		92F8245625AF0C34008E031D /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
 		92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSourceProtocol.swift; sourceTree = "<group>"; };
+		92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedState100ModifyTests.swift; sourceTree = "<group>"; };
 		92FB604E269337E1000C3F99 /* FudaSetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetPage.swift; sourceTree = "<group>"; };
 		92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectByGroupActionSheet.swift; sourceTree = "<group>"; };
 		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
@@ -989,7 +991,6 @@
 			children = (
 				927E4C04222E9EC700AF48F7 /* PoemsTests.swift */,
 				927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */,
-				927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */,
 				92D57150220EC87700235717 /* GameConfigTest.swift */,
 				9207BAFB2298182000816DC8 /* Bool100Test.swift */,
 				9207BB3522996CF200816DC8 /* RecitingConfigTest.swift */,
@@ -1001,6 +1002,8 @@
 				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
 				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
 				92B87D50250BBE96003BB51B /* FiveColorsTest.swift */,
+				927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */,
+				92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */,
 				926489182604480300CC4131 /* SettingsTest.swift */,
 				9271947B284F6FBE008DFB28 /* Poem100Test.swift */,
 			);
@@ -1147,12 +1150,12 @@
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
-				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
 				92D5714E220EC7DB00235717 /* GameConfig.swift */,
 				9207BAF3229579D600816DC8 /* Bool100.swift */,
 				9207BB3122996B7300816DC8 /* Settings.swift */,
 				92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */,
 				92AF24A822A15FC60085B754 /* SavedFudaSet.swift */,
+				927E4BE4222E9DD100AF48F7 /* SelectedState100.swift */,
 				92C87DDC22E88F8600569D15 /* Singer.swift */,
 				92737DD22380312F007B5FAD /* StandardColor.swift */,
 				92ABF9B823F6D739000CA91C /* StoreManager.swift */,
@@ -1705,6 +1708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
 				92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */,
