@@ -12,13 +12,15 @@ enum Side {
     case kami, shimo
 }
 
-fileprivate let originalPoems = Poem100.originalPoems
+//fileprivate let originalPoems = Poem100.originalPoems
 
 class PoemSupplier {
     private var deck: [Poem]
     private var numberOfPoemsDrawn: Int = 0
     private var fuda_side: Side?
     private var mustShuffle: Bool
+    static let originalPoems = Poem100.readPoemsFromJson()
+
     
     init(deck: [Poem] = originalPoems,
          shuffle mustShuffle: Bool = true) {
@@ -91,7 +93,7 @@ class PoemSupplier {
     
     func addFakePoems() {
         guard size < 50 else {
-            self.deck = originalPoems.shuffled()
+            self.deck = Self.originalPoems.shuffled()
             return
         }
         let selectedPoemNumbers = deck.map{ $0.number }
@@ -99,7 +101,7 @@ class PoemSupplier {
         let restNumbers = int100.diff(selectedPoemNumbers.shuffled())
         for i in 0 ..< selectedPoemNumbers.count {
             let idx = restNumbers[i]
-            self.deck.append(originalPoems[idx - 1])
+            self.deck.append(Self.originalPoems[idx - 1])
         }
         if mustShuffle {
             self.deck = deck.shuffled()

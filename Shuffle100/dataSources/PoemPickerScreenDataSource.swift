@@ -19,7 +19,7 @@ extension PoemPickerScreen: UITableViewDataSource {
         if searchController.isActive {
             return filteredPoems.count
         } else {
-            return Poem100.originalPoems.count
+            return PoemSupplier.originalPoems.count
         }
     }
     
@@ -28,7 +28,7 @@ extension PoemPickerScreen: UITableViewDataSource {
         if searchController.isActive {
             poem = filteredPoems[indexPath.row]
         } else {
-            poem = Poem100.originalPoems[indexPath.row]
+            poem = PoemSupplier.originalPoems[indexPath.row]
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "poems", for: indexPath).then {
             $0.contentConfiguration = poemPickerCellConfiguration(of: poem)

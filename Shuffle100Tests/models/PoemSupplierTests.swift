@@ -19,14 +19,14 @@ class PoemSupplierTests: XCTestCase {
     }
     
     func test_initWithArgs() {
-        let supplier = PoemSupplier(deck: Poem100.originalPoems, shuffle: true)
+        let supplier = PoemSupplier(deck: PoemSupplier.originalPoems, shuffle: true)
 //        XCTAssertNotNil(supplier.deck)
         XCTAssertEqual(supplier.currentIndex, 0)
     }
     
     func test_rollBackPrevPoem() {
         // given
-        let supplier = PoemSupplier(deck: Poem100.originalPoems, shuffle: false)
+        let supplier = PoemSupplier(deck: PoemSupplier.originalPoems, shuffle: false)
         // when: 予め2枚めくっておく
         for _ in (1...2) { supplier.drawNextPoem() }
         // then
@@ -109,12 +109,12 @@ class PoemSupplierTests: XCTestCase {
     
     func testEvenLargeDeckMustBeShuffledInFakeMode() {
         // given
-        let state100 = SelectedState100.createOf(bool: true)
+        let deck = SelectedState100.createOf(bool: true)
             .cancelOf(number: 100)
             .cancelOf(number: 99)
             .cancelOf(number: 98)
             .cancelOf(number: 97)
-        let deck = Poem100.createFrom(state100: state100)
+            .convertToDeck()
         let supplier = PoemSupplier(deck: deck, shuffle: true)
         XCTAssertEqual(supplier.size, 96)
         // when
@@ -164,8 +164,7 @@ class PoemSupplierTests: XCTestCase {
         // given
         let st100 = SelectedState100.createOf(bool: false)
         let numbers = [25, 3, 17]
-        let newState100 = st100.selectInNumbers(numbers)
-        let deck = Poem100.createFrom(state100: newState100)
+        let deck = st100           .selectInNumbers(numbers)         .convertToDeck()
         let supplier = PoemSupplier(deck: deck, shuffle: true)
         // when
         let numbersFromDeck = supplier.poemNumbers
