@@ -12,9 +12,9 @@ extension PoemPickerScreen: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let text = searchController.searchBar.text ?? ""
         if text.isEmpty {
-            filteredPoems = Poem100.originalPoems
+            filteredPoems = PoemSupplier.originalPoems
         } else {
-            filteredPoems = Poem100.originalPoems.filter {$0.searchText.contains(text)}
+            filteredPoems = PoemSupplier.originalPoems.filter {$0.searchText.contains(text)}
         }
         tableView.reloadData()
     }

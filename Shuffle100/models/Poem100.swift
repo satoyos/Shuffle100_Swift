@@ -8,30 +8,31 @@
 
 import Foundation
 
-struct Poem100 {
-    static let originalPoems = readPoemsFromJson()
-    
-    static func readPoemsFromJson() -> [Poem] {
-        let jsonPath = Bundle.main.path(forResource: "100", ofType: "json")!
-        if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) {
-            let decoder = JSONDecoder()
-            if let poems = try? decoder.decode([Poem].self, from: jsonData) {
-                return poems
+extension PoemSupplier {
+    struct Poem100 {
+        
+        static func readPoemsFromJson() -> [Poem] {
+            let jsonPath = Bundle.main.path(forResource: "100", ofType: "json")!
+            if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) {
+                let decoder = JSONDecoder()
+                if let poems = try? decoder.decode([Poem].self, from: jsonData) {
+                    return poems
+                } else {
+                    fatalError("JSONデータのデコードに失敗")
+                }
             } else {
-                fatalError("JSONデータのデコードに失敗")
-            }
-        } else {
-            fatalError("JSONデータの読み込みに失敗")
-        }
-    }
-    
-    static func createFrom(state100: SelectedState100) -> [Poem] {
-        var resultPoems = [Poem]()
-        for i in 0..<100 {
-            if state100.bools[i] {
-                resultPoems.append(originalPoems[i])
+                fatalError("JSONデータの読み込みに失敗")
             }
         }
-        return resultPoems
+        
+        static func createFrom(state100: SelectedState100) -> [Poem] {
+            var resultPoems = [Poem]()
+            for i in 0..<100 {
+                if state100.bools[i] {
+                    resultPoems.append(originalPoems[i])
+                }
+            }
+            return resultPoems
+        }
     }
 }

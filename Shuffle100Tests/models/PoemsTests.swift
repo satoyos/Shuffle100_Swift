@@ -10,12 +10,7 @@ import XCTest
 @testable import Shuffle100
 
 class PoemsTests: XCTestCase {
-    let originalPoems = Poem100.originalPoems
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    let originalPoems = PoemSupplier.originalPoems
     
     func testInit_canCreateLiner() {
         let liner = Liner2Parts(kami: "aaa", shimo: "bbb")
@@ -35,11 +30,11 @@ class PoemsTests: XCTestCase {
         XCTAssertNotNil(poem)
     }
     
-    func testInit_Poem100shouldHave100Poems() {
+    func testInit_originalPoemsShouldHave100Poems() {
         XCTAssertEqual(originalPoems.count, 100)
     }
     
-    func testInit_Poem100shouldHaveCorrectData() {
+    func testInit_originalPoemsShouldHaveCorrectData() {
         XCTAssertEqual(originalPoems[0].number, 1)
         XCTAssertEqual(originalPoems[1].in_hiragana.shimo, "ころもほすてふあまのかくやま")
         XCTAssertEqual(originalPoems[2].liner.count, 5)
