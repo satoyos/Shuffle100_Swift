@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class TorifudaCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
@@ -25,9 +26,20 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
         for partStr in poem.liner {
             title += " \(partStr)"
         }
-        let screen = TorifudaScreen(shimoString: shimoStr, title: title, fullLiner: poem.liner)
-        navigationController.pushViewController(screen, animated: true)
-        screen.navigationItem.prompt = navigationItemPrompt
-        self.screen = screen
+        let trialTorifudaView = 
+        TrialTorifudaView(
+            shimoStr: shimoStr,
+            fullLiner: poem.liner.reduce(""){$0 + " " + $1}
+        )
+        let hostintController = UIHostingController(rootView: trialTorifudaView).then {
+            $0.navigationItem.prompt = navigationItemPrompt
+            $0.title = title
+        }
+        navigationController.pushViewController(hostintController, animated: true)
+        
+//        let screen = TorifudaScreen(shimoString: shimoStr, title: title, fullLiner: poem.liner)
+//        navigationController.pushViewController(screen, animated: true)
+//        screen.navigationItem.prompt = navigationItemPrompt
+//        self.screen = screen
     }
 }

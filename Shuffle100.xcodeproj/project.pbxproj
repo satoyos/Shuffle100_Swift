@@ -253,6 +253,7 @@
 		92CE0D5C263AA8AF00372B24 /* ExitGameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5B263AA8AF00372B24 /* ExitGameDialog.swift */; };
 		92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */; };
 		92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
+		92D153342BD3CE670075233B /* TrialTorifudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D153332BD3CE670075233B /* TrialTorifudaView.swift */; };
 		92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5714E220EC7DB00235717 /* GameConfig.swift */; };
 		92D57151220EC87700235717 /* GameConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57150220EC87700235717 /* GameConfigTest.swift */; };
 		92D57155220F03AF00235717 /* SelectModeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D57154220F03AF00235717 /* SelectModeScreen.swift */; };
@@ -583,6 +584,7 @@
 		92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertObjectable.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
+		92D153332BD3CE670075233B /* TrialTorifudaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTorifudaView.swift; sourceTree = "<group>"; };
 		92D5714E220EC7DB00235717 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Shuffle100/models/GameConfig.swift; sourceTree = SOURCE_ROOT; };
 		92D57150220EC87700235717 /* GameConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigTest.swift; sourceTree = "<group>"; };
 		92D57154220F03AF00235717 /* SelectModeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeScreen.swift; sourceTree = "<group>"; };
@@ -812,6 +814,7 @@
 				925994EB2447522E00044253 /* Layout */,
 				923D593F2143BD50000F5E60 /* screens */,
 				925CEB51218ED4FF00876E7A /* views */,
+				92D153322BD3CE0E0075233B /* SwiftUI Views */,
 				9258FAF321FEAB6C00E4E0B7 /* resources */,
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
 				923D59182143BB0B000F5E60 /* Assets.xcassets */,
@@ -1142,6 +1145,14 @@
 				92EC12212A139C240071FA6C /* DigitsPickerScreen10DataSource.swift */,
 			);
 			path = dataSources;
+			sourceTree = "<group>";
+		};
+		92D153322BD3CE0E0075233B /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				92D153332BD3CE670075233B /* TrialTorifudaView.swift */,
+			);
+			path = "SwiftUI Views";
 			sourceTree = "<group>";
 		};
 		92D5714D220EC78C00235717 /* models */ = {
@@ -1570,6 +1581,7 @@
 				920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
 				92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
+				92D153342BD3CE670075233B /* TrialTorifudaView.swift in Sources */,
 				9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
