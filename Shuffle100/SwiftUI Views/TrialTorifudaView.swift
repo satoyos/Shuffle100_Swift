@@ -10,33 +10,36 @@ import SwiftUI
 
 struct TrialTorifudaView: View {
     let shimoStr: String
-    let fullLiner: String
+    let fullLiner: [String]
+    
+    @EnvironmentObject var screenSizeStore: ScreenSizeStore
     
     var body: some View {
-        VStack {
-            Spacer() // 上部にスペースを追加して下のテキストが下に移動するのを助ける
-            Text(shimoStr)
-                .font(.title)
-                .padding()
-                .background(.blue)
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, maxHeight: .infinity) // 画面中央に配置
-                .cornerRadius(10)
-                .padding(.bottom, 20) // 下側の余白を追加
-            Text(fullLiner)
-                .font(.headline)
-                .padding()
-                .background(.green)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-            
+        GeometryReader { rootViewGeometry in
+            ZStack {
+                TatamiBackground()
+                Torifuda(viewModel: .init(shimo: shimoStr))
+                FullLiner(viewModel: .init(fullLiner: fullLiner))
+            }
+            .onAppear{
+                screenSizeStore.update(
+                    width: rootViewGeometry.size.width,
+                    height: rootViewGeometry.size.height)
+            }
+            .onChange(of: rootViewGeometry.size) {
+                screenSizeStore.update(
+                    width: rootViewGeometry.size.width,
+                    height: rootViewGeometry.size.height)
+            }
         }
     }
 }
 
+
 #Preview {
     TrialTorifudaView(
         shimoStr: "かたふくまてのつきをみしかな",
-        fullLiner: "やすらはで ねなまし物を さよ更けて かたふくまでの つきをみしかな"
+        fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]
     )
+    .environmentObject(ScreenSizeStore())
 }

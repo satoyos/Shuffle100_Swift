@@ -21,16 +21,15 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
     }
 
     func start() {
-        let shimoStr = poem.in_hiragana.shimo
         var title = "\(poem.number)."
         for partStr in poem.liner {
             title += " \(partStr)"
         }
         let trialTorifudaView = 
         TrialTorifudaView(
-            shimoStr: shimoStr,
-            fullLiner: poem.liner.reduce(""){$0 + " " + $1}
-        )
+            shimoStr: poem.in_hiragana.shimo,
+            fullLiner: poem.liner
+        ).environmentObject(ScreenSizeStore())
         let hostintController = UIHostingController(rootView: trialTorifudaView).then {
             $0.navigationItem.prompt = navigationItemPrompt
             $0.title = title
