@@ -94,10 +94,6 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
         let coordinator = TorifudaCoordinator(navigationController: navigationController, poem: poem)
         coordinator.start()
         self.childCoordinator = coordinator
-//        let trialTorifudaView = TrialTorifudaView()
-//        let hostingController = UIHostingController(rootView: trialTorifudaView)
-//        hostingController.modalPresentationStyle = .fullScreen
-//        screen?.present(hostingController, animated: true)
     }
 
     private func clearSearchResult() {

@@ -14,10 +14,12 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
     var navigationController: UINavigationController
     private var poem: Poem
     var childCoordinator: Coordinator?
+    let showPrompt: Bool
 
-    init(navigationController: UINavigationController, poem: Poem) {
+    init(navigationController: UINavigationController, poem: Poem, showPrompt: Bool = true) {
         self.navigationController = navigationController
         self.poem = poem
+        self.showPrompt = showPrompt
     }
 
     func start() {
@@ -31,14 +33,12 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
             fullLiner: poem.liner
         ).environmentObject(ScreenSizeStore())
         let hostintController = UIHostingController(rootView: trialTorifudaView).then {
-            $0.navigationItem.prompt = navigationItemPrompt
+            if showPrompt {
+                $0.navigationItem.prompt = navigationItemPrompt
+            }
             $0.title = title
         }
         navigationController.pushViewController(hostintController, animated: true)
-        
-//        let screen = TorifudaScreen(shimoString: shimoStr, title: title, fullLiner: poem.liner)
-//        navigationController.pushViewController(screen, animated: true)
-//        screen.navigationItem.prompt = navigationItemPrompt
-//        self.screen = screen
+  
     }
 }

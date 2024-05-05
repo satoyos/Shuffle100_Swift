@@ -63,13 +63,21 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
     }
     
     private func showTorifuda() {
-        let shimoStr = currentPoem.in_hiragana.shimo
-        var title = "\(currentPoem.number)."
-        for partStr in currentPoem.liner {
-            title += " \(partStr)"
-        }
-        let torifudaScreen = TorifudaScreen(shimoString: shimoStr, title: title)
-        anotherNavController.pushViewController(torifudaScreen, animated: true)
+//        let shimoStr = currentPoem.in_hiragana.shimo
+//        var title = "\(currentPoem.number)."
+//        for partStr in currentPoem.liner {
+//            title += " \(partStr)"
+//        }
+//        let torifudaScreen = TorifudaScreen(shimoString: shimoStr, title: title)
+//        anotherNavController.pushViewController(torifudaScreen, animated: true)
+        let coordinator = TorifudaCoordinator(
+            navigationController: anotherNavController,
+                                              
+            poem: currentPoem,
+            showPrompt: false
+        )
+        coordinator.start()
+        self.childCoordinator = coordinator
     }
 
     internal func refrainShimo() {
