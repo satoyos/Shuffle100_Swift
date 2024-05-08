@@ -257,7 +257,7 @@
 		92CE0D5C263AA8AF00372B24 /* ExitGameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5B263AA8AF00372B24 /* ExitGameDialog.swift */; };
 		92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */; };
 		92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */; };
-		92D153342BD3CE670075233B /* TrialTorifudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D153332BD3CE670075233B /* TrialTorifudaView.swift */; };
+		92D153342BD3CE670075233B /* TorifudaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D153332BD3CE670075233B /* TorifudaView.swift */; };
 		92D153372BD4DD5A0075233B /* ScreenSizeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D153362BD4DD5A0075233B /* ScreenSizeStore.swift */; };
 		92D153392BD4E0510075233B /* TatamiBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D153382BD4E0510075233B /* TatamiBackground.swift */; };
 		92D1533B2BD4E2340075233B /* FullLiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1533A2BD4E2340075233B /* FullLiner.swift */; };
@@ -592,7 +592,7 @@
 		92CE0D5E263ACA8100372B24 /* AlertObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertObjectable.swift; sourceTree = "<group>"; };
 		92CE520A2168D4D200538E01 /* SettingsCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellDataSource.swift; sourceTree = "<group>"; };
 		92CE5214216B5AF000538E01 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"; sourceTree = "<group>"; };
-		92D153332BD3CE670075233B /* TrialTorifudaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTorifudaView.swift; sourceTree = "<group>"; };
+		92D153332BD3CE670075233B /* TorifudaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaView.swift; sourceTree = "<group>"; };
 		92D153362BD4DD5A0075233B /* ScreenSizeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizeStore.swift; sourceTree = "<group>"; };
 		92D153382BD4E0510075233B /* TatamiBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatamiBackground.swift; sourceTree = "<group>"; };
 		92D1533A2BD4E2340075233B /* FullLiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLiner.swift; sourceTree = "<group>"; };
@@ -1174,7 +1174,7 @@
 			isa = PBXGroup;
 			children = (
 				92D153352BD4DD430075233B /* supports */,
-				92D153332BD3CE670075233B /* TrialTorifudaView.swift */,
+				92D153332BD3CE670075233B /* TorifudaView.swift */,
 				92D153382BD4E0510075233B /* TatamiBackground.swift */,
 				92D1533A2BD4E2340075233B /* FullLiner.swift */,
 				92D1533C2BD4E4780075233B /* Torifuda.swift */,
@@ -1618,7 +1618,7 @@
 				920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
 				92B9E96C2465A346007C2E75 /* NgramPickerScreenDataSource.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
-				92D153342BD3CE670075233B /* TrialTorifudaView.swift in Sources */,
+				92D153342BD3CE670075233B /* TorifudaView.swift in Sources */,
 				9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
