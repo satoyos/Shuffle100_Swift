@@ -28,7 +28,7 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
             title += " \(partStr)"
         }
         let trialTorifudaView = 
-        TrialTorifudaView(
+        TorifudaView(
             shimoStr: poem.in_hiragana.shimo,
             fullLiner: poem.liner
         ).environmentObject(ScreenSizeStore())

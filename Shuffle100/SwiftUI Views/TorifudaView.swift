@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct TrialTorifudaView: View {
+struct TorifudaView: View {
     let shimoStr: String
     let fullLiner: [String]
     
@@ -37,7 +37,7 @@ struct TrialTorifudaView: View {
 
 
 #Preview {
-    TrialTorifudaView(
+    TorifudaView(
         shimoStr: "かたふくまてのつきをみしかな",
         fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]
     )
