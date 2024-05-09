@@ -52,6 +52,7 @@ struct Torifuda: View {
                         ForEach(0..<5) { row in
                             Text(viewModel.strForPosition(row: row, col: col))
                                 .font(font)
+                                .foregroundColor(.black)
                                 .frame(
                                     width: charWidth,
                                     height: charHeight)
