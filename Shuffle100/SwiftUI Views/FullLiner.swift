@@ -26,9 +26,6 @@ struct FullLiner: View {
                 .background(.white.opacity(0.5))
                 .foregroundColor(.black)
                 .padding(.bottom, fudaFontSizeBase * 2)
-            
-
-            
         }
 
     
