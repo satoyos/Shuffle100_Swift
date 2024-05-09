@@ -85,7 +85,7 @@ class PoemPickerScreenUITest: XCTestCase {
         // then
         XCTAssertFalse(pickerPage.cellOf(number: 1).exists, "検索中だった状態が保持されている")
     }
-    
+
 //
 //    TorifudaViewのSwiftUI移行に伴い、次のテストは削除する。
 //    
