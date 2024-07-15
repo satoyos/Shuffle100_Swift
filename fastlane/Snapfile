@@ -2,15 +2,10 @@
 
 # A list of devices you want to take the screenshots from
 devices([
-#   "iPhone 8",
-  "iPhone 8 Plus",      # 5.5inch
-  "iPhone 14 Plus",  # 6.5inch
-#   "iPhone SE",
-#   "iPhone X",
+  # "iPhone 8 Plus",      # 5.5inch
+  "iPhone 13 Pro Max",  # 6.5inch
   "iPad Pro (12.9-inch) (6th generation)",
   "iPad Pro (11-inch) (4th generation)",
-#   "Apple TV 1080p",
-#   "Apple Watch Series 6 - 44mm"
 ])
 
 #  テスト実行の時に使用する言語一覧
