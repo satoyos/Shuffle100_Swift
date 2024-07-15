@@ -37,11 +37,11 @@ class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
         setGradient()
     }
     
-    fileprivate func playButtonGradientStartColor() -> UIColor {
+    fileprivate var playButtonGradientStartColor: UIColor {
         UIColor.dynamicColor(light: .white, dark: .darkGray)
     }
     
-    fileprivate func playButtonGradietEndColor() -> UIColor {
+    fileprivate var playButtonGradietEndColor: UIColor {
         let lightVersionEndColor = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         let darkVersionEndColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         return UIColor.dynamicColor(light: lightVersionEndColor, dark: darkVersionEndColor)
@@ -49,8 +49,8 @@ class ReciteViewButton: DSFloatingButton, SOHGlyphIcon {
     
     private func setGradient() {
         // gradient
-        self.gradientStartColor = playButtonGradientStartColor()
-        self.gradientEndColor = playButtonGradietEndColor()
+        self.gradientStartColor = playButtonGradientStartColor
+        self.gradientEndColor = playButtonGradietEndColor
         self.gradientStartPoint = CGPoint(x: 0.5, y: 0.0)
         self.gradientEndPoint = CGPoint(x: 0.5, y: 1.0)
     }
