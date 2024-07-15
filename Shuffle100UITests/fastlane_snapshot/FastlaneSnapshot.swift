@@ -12,6 +12,7 @@ final class FastlaneSnapshot: XCTestCase {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 
+    @MainActor
     override func setUpWithError() throws {
         super.setUp()
         continueAfterFailure = false
@@ -20,14 +21,14 @@ final class FastlaneSnapshot: XCTestCase {
         app.launch()
     }
 
-    
+
 //    func test_ScreenShotExample() throws {
 //        // 「歌を選ぶ」画面に遷移した状態のスクリーンショットを撮ってみる
 //        homePage.goToPoemPickerPage()
 //        XCTAssert(PoemPickerPage(app: app).exists)
 //        snapshot("0_trial_screenshot")
 //    }
-    
+    @MainActor
     func test_RecitePoemScreenShot() {
         // given
         let recitePage = homePage.gotoRecitePoemPage()
@@ -44,6 +45,7 @@ final class FastlaneSnapshot: XCTestCase {
         snapshot("1_RecitePoemScreen")
     }
 
+    @MainActor
     func test_IntervalScreenShot() {
         // when
         let settingsPage = homePage.gotoReciteSettingPage()
@@ -57,7 +59,8 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("5_IntervalSettingScreen")
     }
-    
+
+    @MainActor
     func test_SearchScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -73,7 +76,8 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("3_SearchBar")
     }
-    
+
+    @MainActor
     func test_PoemPickerScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -94,7 +98,8 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("2_PickerScreen")
     }
-    
+
+    @MainActor
     func test_5colorsScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -107,7 +112,8 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("7_FiveColorsScreen")
     }
-    
+
+    @MainActor
     func test_TorifudaScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -121,7 +127,8 @@ final class FastlaneSnapshot: XCTestCase {
         // take_screenshot
         snapshot("4_TorifudaScreen")
     }
-    
+
+    @MainActor
     func test_MemorizeTimerScreenShot() {
         // when
         let timerPage = homePage.gotoMemorizeTimerPage()
