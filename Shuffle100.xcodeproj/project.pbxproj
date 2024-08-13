@@ -142,6 +142,14 @@
 		926DD6392C6B3E7800516674 /* RecitePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6382C6B3E7800516674 /* RecitePlayButton.swift */; };
 		926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */; };
 		926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */; };
+		926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */; };
+		926DD6412C6B583E00516674 /* MinSec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6402C6B583E00516674 /* MinSec.swift */; };
+		926DD6432C6B585D00516674 /* MinSec.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */; };
+		926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6442C6B591200516674 /* CountDownTimer.swift */; };
+		926DD6482C6B594100516674 /* CountDownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6472C6B594100516674 /* CountDownTimerTests.swift */; };
+		926DD64A2C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */; };
+		926DD64C2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */; };
+		926DD64E2C6B5A4C00516674 /* MemorizeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64D2C6B5A4C00516674 /* MemorizeTimer.swift */; };
 		926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */; };
 		926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */; };
 		927162A02BB93663002D6BA9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */; };
@@ -495,6 +503,14 @@
 		926DD6382C6B3E7800516674 /* RecitePlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButton.swift; sourceTree = "<group>"; };
 		926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButton.ViewModel.swift; sourceTree = "<group>"; };
 		926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButtonViewModelTests.swift; sourceTree = "<group>"; };
+		926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSecViewModelTests.swift; sourceTree = "<group>"; };
+		926DD6402C6B583E00516674 /* MinSec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSec.swift; sourceTree = "<group>"; };
+		926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSec.ViewModel.swift; sourceTree = "<group>"; };
+		926DD6442C6B591200516674 /* CountDownTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
+		926DD6472C6B594100516674 /* CountDownTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimerTests.swift; sourceTree = "<group>"; };
+		926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorizeTimerViewModelTests.swift; sourceTree = "<group>"; };
+		926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorizeTimer.ViewModel.swift; sourceTree = "<group>"; };
+		926DD64D2C6B5A4C00516674 /* MemorizeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorizeTimer.swift; sourceTree = "<group>"; };
 		926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPostMortemDialog.swift; sourceTree = "<group>"; };
 		926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameActionSheet.swift; sourceTree = "<group>"; };
 		9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -909,6 +925,8 @@
 			children = (
 				9250C8232BE4939100EFBD48 /* Torifuda.ViewModel.swift */,
 				9250C8282BE4BA4200EFBD48 /* FullLiner.ViewModel.swift */,
+				926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */,
+				926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */,
 				926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */,
 			);
 			path = viewModels;
@@ -920,6 +938,8 @@
 				9250C8262BE4967500EFBD48 /* Torifuda.ViewModelTests.swift */,
 				9250C82A2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift */,
 				926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */,
+				926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */,
+				926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -1037,6 +1057,7 @@
 		927E4BFF222E9E0500AF48F7 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				926DD6472C6B594100516674 /* CountDownTimerTests.swift */,
 				927E4C04222E9EC700AF48F7 /* PoemsTests.swift */,
 				927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */,
 				92D57150220EC87700235717 /* GameConfigTest.swift */,
@@ -1198,6 +1219,8 @@
 				92D153332BD3CE670075233B /* TorifudaView.swift */,
 				92D153382BD4E0510075233B /* TatamiBackground.swift */,
 				92D1533A2BD4E2340075233B /* FullLiner.swift */,
+				926DD64D2C6B5A4C00516674 /* MemorizeTimer.swift */,
+				926DD6402C6B583E00516674 /* MinSec.swift */,
 				926DD6382C6B3E7800516674 /* RecitePlayButton.swift */,
 				926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */,
 				92D1533C2BD4E4780075233B /* Torifuda.swift */,
@@ -1217,6 +1240,7 @@
 		92D5714D220EC78C00235717 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				926DD6442C6B591200516674 /* CountDownTimer.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
@@ -1630,6 +1654,7 @@
 				92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */,
 				92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				9207BAF4229579D600816DC8 /* Bool100.swift in Sources */,
+				926DD64C2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift in Sources */,
 				92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
 				92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
 				924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
@@ -1657,6 +1682,7 @@
 				92D1533B2BD4E2340075233B /* FullLiner.swift in Sources */,
 				921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */,
 				926DD6372C6B381000516674 /* ReciteViewGeneralButton.swift in Sources */,
+				926DD6432C6B585D00516674 /* MinSec.ViewModel.swift in Sources */,
 				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
@@ -1688,6 +1714,7 @@
 				927E4BED222E9DD200AF48F7 /* SelectedState100.swift in Sources */,
 				929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */,
 				92D57155220F03AF00235717 /* SelectModeScreen.swift in Sources */,
+				926DD6412C6B583E00516674 /* MinSec.swift in Sources */,
 				92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */,
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */,
@@ -1698,6 +1725,7 @@
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
+				926DD64E2C6B5A4C00516674 /* MemorizeTimer.swift in Sources */,
 				925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				921791F6258E211C00A38249 /* Screen.swift in Sources */,
@@ -1733,6 +1761,7 @@
 				92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
+				926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */,
 				920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				92719478284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				92D153392BD4E0510075233B /* TatamiBackground.swift in Sources */,
@@ -1787,6 +1816,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */,
+				926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
 				92A1467624DC314B0045D7DF /* MemorizeTimerScreenTest.swift in Sources */,
@@ -1797,6 +1827,7 @@
 				926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */,
 				92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */,
 				9254B4D128FADC1600870795 /* SelectedNumBadggeTestProtocol.swift in Sources */,
+				926DD64A2C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift in Sources */,
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
 				92ABF9BD23F6DF46000CA91C /* StoreManagerTest.swift in Sources */,
 				92AE7C7123FEAE6A003FA07F /* EnvironmentTest.swift in Sources */,
@@ -1810,6 +1841,7 @@
 				928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */,
 				924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */,
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
+				926DD6482C6B594100516674 /* CountDownTimerTests.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */,
