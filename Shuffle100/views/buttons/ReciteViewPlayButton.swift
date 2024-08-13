@@ -9,8 +9,8 @@
 import UIKit
 
 final class ReciteViewPlayButton: ReciteViewButton {
-    let colorWaitingForPause = UIColor.dynamicColor(light: Color.shoujouhi.UIColor, dark: Color.tsutsujiiro.UIColor)
-    let colorWaitingForPlay = Color.konpeki.UIColor
+    let colorWaitingForPause = UIColor.dynamicColor(light: SHColor.shoujouhi.UIColor, dark: SHColor.tsutsujiiro.UIColor)
+    let colorWaitingForPlay = SHColor.konpeki.UIColor
     var fontSize: CGFloat?
     
     func configurePlayButton(height: CGFloat, fontSize: CGFloat, iconType: SOHGlyphIconType, leftInset: Bool = false) {
