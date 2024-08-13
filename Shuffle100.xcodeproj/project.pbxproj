@@ -137,6 +137,8 @@
 		9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */; };
 		926489192604480300CC4131 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926489182604480300CC4131 /* SettingsTest.swift */; };
 		9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265517B2685F8F400C746D0 /* TorifudaPage.swift */; };
+		926DD6342C6B36F800516674 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926DD6332C6B36F800516674 /* Colors.xcassets */; };
+		926DD6372C6B381000516674 /* ReciteViewGeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */; };
 		926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */; };
 		926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */; };
 		927162A02BB93663002D6BA9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */; };
@@ -485,6 +487,8 @@
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
 		9265517B2685F8F400C746D0 /* TorifudaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaPage.swift; sourceTree = "<group>"; };
+		926DD6332C6B36F800516674 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReciteViewGeneralButton.swift; sourceTree = "<group>"; };
 		926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPostMortemDialog.swift; sourceTree = "<group>"; };
 		926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameActionSheet.swift; sourceTree = "<group>"; };
 		9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -825,8 +829,8 @@
 				925CEB51218ED4FF00876E7A /* views */,
 				92D153322BD3CE0E0075233B /* SwiftUI Views */,
 				9258FAF321FEAB6C00E4E0B7 /* resources */,
+				926DD6322C6B364200516674 /* assets */,
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
-				923D59182143BB0B000F5E60 /* Assets.xcassets */,
 				923D591D2143BB0B000F5E60 /* Info.plist */,
 				9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */,
 			);
@@ -978,6 +982,15 @@
 				9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		926DD6322C6B364200516674 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				926DD6332C6B36F800516674 /* Colors.xcassets */,
+				923D59182143BB0B000F5E60 /* Assets.xcassets */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 		92737DD623856754007B5FAD /* coodinators */ = {
@@ -1177,6 +1190,7 @@
 				92D153332BD3CE670075233B /* TorifudaView.swift */,
 				92D153382BD4E0510075233B /* TatamiBackground.swift */,
 				92D1533A2BD4E2340075233B /* FullLiner.swift */,
+				926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */,
 				92D1533C2BD4E4780075233B /* Torifuda.swift */,
 				9250C8222BE4936E00EFBD48 /* viewModels */,
 			);
@@ -1443,6 +1457,7 @@
 				92328C2B24591E25005E0FEE /* torifuda.png in Resources */,
 				92FFBF51245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */,
 				92B87D57250CF9C5003BB51B /* 5colors in Resources */,
+				926DD6342C6B36F800516674 /* Colors.xcassets in Resources */,
 				923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */,
 				92FCCEDD22A51E3C002B589E /* 100.json in Resources */,
 				927162A02BB93663002D6BA9 /* PrivacyInfo.xcprivacy in Resources */,
@@ -1632,6 +1647,7 @@
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				92D1533B2BD4E2340075233B /* FullLiner.swift in Sources */,
 				921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */,
+				926DD6372C6B381000516674 /* ReciteViewGeneralButton.swift in Sources */,
 				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,

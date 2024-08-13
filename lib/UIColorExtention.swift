@@ -36,7 +36,7 @@ extension UIColor {
     }
 }
 
-enum Color: String {
+enum SHColor: String {
     case red = "C85D5D"
     case orange = "DD7C3A"
     case yellow = "D8C05B"
