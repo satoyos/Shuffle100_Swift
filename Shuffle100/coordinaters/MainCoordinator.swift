@@ -14,7 +14,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     internal var store: StoreManager
     internal var screen: UIViewController?
     var navigationController: UINavigationController
-    static let env = Environment()
+    static let env = SHEnvironment()
     var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController){

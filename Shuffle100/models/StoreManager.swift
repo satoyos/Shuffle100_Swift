@@ -20,9 +20,9 @@ extension UserDefaults: Storable{}
 struct StoreManager {
 
     let store: Storable
-    private let env: Environment
+    private let env: SHEnvironment
 
-    init(store: Storable = UserDefaults.standard, env: Environment = Environment()) {
+    init(store: Storable = UserDefaults.standard, env: SHEnvironment = SHEnvironment()) {
         self.store = store
         self.env = env
     }

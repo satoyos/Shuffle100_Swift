@@ -20,7 +20,7 @@ class EnvironmentTest: XCTestCase {
     }
 
     func test_defaultEnvironment() {
-        let env = Environment()
+        let env = SHEnvironment()
         XCTAssertNotNil(env)
         XCTAssertTrue(env.wontSaveData())
         XCTAssertTrue(env.ignoreSavedData())
@@ -28,7 +28,7 @@ class EnvironmentTest: XCTestCase {
     
     func test_setEnvWillSaveData() {
         // given
-        let env = Environment()
+        let env = SHEnvironment()
         // when
         env.setEnvWillSaveData()
         // then
@@ -37,7 +37,7 @@ class EnvironmentTest: XCTestCase {
     
     func test_setEnvWontSaveData() {
         // given
-        let env = Environment()
+        let env = SHEnvironment()
         env.setEnvWillSaveData()
         XCTAssertFalse(env.wontSaveData())
         // when
@@ -48,7 +48,7 @@ class EnvironmentTest: XCTestCase {
 
     func test_setEnvLoadDavedData() {
         // given
-        let env = Environment()
+        let env = SHEnvironment()
         // when
         env.setEnvLoadSavedData()
         // then
@@ -57,7 +57,7 @@ class EnvironmentTest: XCTestCase {
     
     func test_setEnvIgnoreSavedData() {
         // given
-        let env = Environment()
+        let env = SHEnvironment()
         env.setEnvLoadSavedData()
         XCTAssertFalse(env.ignoreSavedData())
         // when
