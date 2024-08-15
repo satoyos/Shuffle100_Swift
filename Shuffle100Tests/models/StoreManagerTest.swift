@@ -10,7 +10,7 @@
 import XCTest
 
 class StoreManagerTest: XCTestCase{
-    var env = Environment()
+    var env = SHEnvironment()
     
     override func setUp() {
         
