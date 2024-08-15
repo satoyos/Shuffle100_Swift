@@ -28,20 +28,8 @@ extension ReciteViewGeneralButton: View {
         } label: {
             Image(systemName: name(of: type))
                 .resizable()
-                .frame(width: markSize, height: markSize)
-                .padding(insets(of: type))
-                .foregroundColor(forgroundColor(of: type))
-                .frame(width: diameter, height: diameter)
-                .background(backGradient)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                .background(Circle()
-                    .fill(.background).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/))
-                // transaction below make Image swith WITHOUT animation!
-                .transaction { transaction in
-                    transaction.animation = nil
-                }
         }
-        
+        .buttonStyle(ReciteViewButtonStyle(type: type, diameter: diameter))
         .scaleEffect(isPressed ? 0.9 : 1)
         .simultaneousGesture(
             DragGesture(minimumDistance: 0)
@@ -82,46 +70,20 @@ extension ReciteViewGeneralButton {
         case forward
         case rewind
     }
-}
-
-extension ReciteViewGeneralButton {
-    private func labelConfig(of type: LabelType) -> (imageName: String, paddingInsets: EdgeInsets, color: Color) {
-        let playColor = Color("waiting_for_play")
-        let pauseColor = Color("waiting_for_pause")
-        
-        switch type {
-        case .play:
-            return (imageName: "play.fill",
-                    paddingInsets: EdgeInsets(top: 0, leading: markOffset * 3, bottom: 0, trailing: -1 * markOffset),
-                    color: playColor)
-        case .pause:
-            return (imageName: "pause.fill",
-                    paddingInsets: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0),
-                    color: pauseColor)
-        case .forward:
-            return (imageName: "forward.fill",
-                    paddingInsets: EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: -1 * markOffset),
-                    color: playColor)
-        case .rewind:
-            return (imageName: "backward.fill",
-                    paddingInsets: EdgeInsets(top: 0, leading: -1 * markOffset, bottom: 0, trailing: markOffset),
-                    color: playColor)
-        }
-    }
     
     private func name(of type: LabelType) -> String {
-        labelConfig(of: type).imageName
-    }
-    
-    private func insets(of type: LabelType) ->  EdgeInsets {
-        labelConfig(of: type).paddingInsets
-    }
-    
-    private func forgroundColor(of type: LabelType) -> Color {
-        labelConfig(of: type).color
+        switch type {
+        case .play: return "play.fill"
+        case .pause: return "pause.fill"
+        case .forward: return "forward.fill"
+        case .rewind: return "backward.fill"
+        }
     }
 }
+
+
 
 #Preview {
     ReciteViewGeneralButton(type: .play, diameter: 300) {}
+        .environment(\.isEnabled, true)
 }
