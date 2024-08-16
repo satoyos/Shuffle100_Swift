@@ -23,7 +23,6 @@ extension MinSec {
             self.timer = CountDownTimer(startTime: startTime, intarval: interval)
             self.timeTexts = timeTexts(of: startTime)
             buildDataFlow()
-            AudioPlayerFactory.shared.setupAudioSession()
         }
         
         var minText: String {
