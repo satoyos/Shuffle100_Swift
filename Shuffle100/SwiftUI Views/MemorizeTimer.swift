@@ -25,6 +25,12 @@ extension MemorizeTimer: View {
                 viewModel: viewModel.buttonViewModel)
             .disabled(viewModel.isButtonDisabled)
         }
+        .onAppear{
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+        .onDisappear {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
     }
     
     private var buttonDiameter: Double {
