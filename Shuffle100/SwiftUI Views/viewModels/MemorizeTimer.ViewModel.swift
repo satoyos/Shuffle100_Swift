@@ -40,6 +40,7 @@ extension MemorizeTimer {
             super.init()
             self.action2minLeft = action2minLeft ?? announce2minutesLeft
             self.actionTimeOver = actionTimeOver ?? announceMemorizeTimeIsOver
+            AudioPlayerFactory.shared.setupAudioSession()
             buildDataFlow()
         }
         

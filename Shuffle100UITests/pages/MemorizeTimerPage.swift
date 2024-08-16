@@ -24,16 +24,24 @@ final class MemorizeTimerPage: PageObjectable {
     }
     
     var buttonToPlay: XCUIElement {
-        app.buttons.staticTexts[stringExpression(of: .play)].firstMatch
+        // UIKit version
+//        app.buttons.staticTexts[stringExpression(of: .play)].firstMatch
+        // SwiftUI Version
+        app.buttons[A11y.play].firstMatch
     }
     
     var buttonToPause: XCUIElement {
-        app.buttons.staticTexts[stringExpression(of: .pause)].firstMatch
+        // UIKit Version
+//        app.buttons.staticTexts[stringExpression(of: .pause)].firstMatch
+        // SwiftUI Version
+        app.buttons[A11y.pause].firstMatch
     }
     
     enum A11y {
         static let title = "暗記時間タイマー"
         static let initialMinutes = "15"
+        static let play = "play"
+        static let pause = "pause"
     }
     
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
     var screen: UIViewController?
@@ -18,11 +19,18 @@ final class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
     }
 
     func start() {
-        let screen = MemorizeTimerScreen()
         setUpNavigationController(navigationController)
-        navigationController.pushViewController(screen, animated: true)
-        screen.navigationItem.prompt = navigationItemPrompt
-        self.screen = screen
+        let memorizeTimerView = MemorizeTimer(viewModel: .init(
+            totalSec: 15 * 60,
+            completion: { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }))
+            .environmentObject(ScreenSizeStore())
+        let hostController = UIHostingController(rootView: memorizeTimerView)
+        hostController.navigationItem.prompt = navigationItemPrompt
+        hostController.title = "暗記時間タイマー"
+        
+        navigationController.pushViewController(hostController, animated: true)
     }
 }
 
