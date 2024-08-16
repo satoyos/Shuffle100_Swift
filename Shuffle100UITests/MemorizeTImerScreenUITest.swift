@@ -15,10 +15,12 @@ class MemorizeTImerScreenUITest: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app.launchArguments.append("--uitesting")
-        app.launch()
+//        app.launch()
     }
 
     func test_showTimerScreen() throws {
+        // given
+        app.launch()
         // when
         let timerPage = homePage.gotoMemorizeTimerPage()
         // then
@@ -26,6 +28,8 @@ class MemorizeTImerScreenUITest: XCTestCase {
     }
     
     func test_tapPlayButtonToStartCountDown() {
+        // given
+        app.launch()
         // when
         let timerPage = homePage.gotoMemorizeTimerPage()
         // then
@@ -46,8 +50,22 @@ class MemorizeTImerScreenUITest: XCTestCase {
         }
     }
     
+    func testWhenTimeGetsOverScreenGoBackToHome() {
+        // given
+        let app = XCUIApplication()
+        app.launchEnvironment = ["MEMORIZE_TIME_IN_SEC": "3"]
+        app.launch()
+        // when
+        let timerPage = homePage.gotoMemorizeTimerPage()
+        timerPage.buttonToPlay.tap()
+        sleep(7)
+        // then
+        XCTAssert(homePage.exists, "暗記時間が終わると、自動的にトップ画面に戻る")
+    }
+    
     func test_goThroughMemorizeTime() {
         //given
+        app.launch()
         self.executionTimeAllowance = 1200
         // when
         let timerPage = homePage.gotoMemorizeTimerPage()
