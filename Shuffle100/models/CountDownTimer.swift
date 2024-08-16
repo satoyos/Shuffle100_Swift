@@ -22,6 +22,11 @@ class CountDownTimer: ObservableObject {
         self.intarval = intarval
     }
     
+    deinit {
+        self.timer?.invalidate()
+        self.timer = nil
+    }
+    
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: intarval, repeats: true) { [weak self] _ in
             guard let self = self else { return }
