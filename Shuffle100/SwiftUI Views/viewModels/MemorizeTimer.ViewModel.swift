@@ -63,7 +63,7 @@ extension MemorizeTimer {
             
             timeViewModel.$timeTexts
                 .dropFirst()
-                .print("In Memorize Timer:")
+//                .print("In Memorize Timer:")
                 .sink { [weak self] timeTexts in
                     switch timeTexts {
                     case ("2", "00"):
