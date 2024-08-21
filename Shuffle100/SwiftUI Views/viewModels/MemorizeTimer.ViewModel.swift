@@ -11,7 +11,7 @@ import Combine
 import AVFoundation
 
 extension MemorizeTimer {
-    class ViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
+    class ViewModel: NSObject, AVAudioPlayerDelegate {
         let totalSec: CGFloat
         @ObservedObject var timeViewModel: MinSec.ViewModel
         @ObservedObject var buttonViewModel: RecitePlayButton.ViewModel
