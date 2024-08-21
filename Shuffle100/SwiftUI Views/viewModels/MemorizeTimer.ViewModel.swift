@@ -11,10 +11,10 @@ import Combine
 import AVFoundation
 
 extension MemorizeTimer {
-    class ViewModel: NSObject, AVAudioPlayerDelegate {
+    class ViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         let totalSec: CGFloat
-        @ObservedObject var timeViewModel: MinSec.ViewModel
-        @ObservedObject var buttonViewModel: RecitePlayButton.ViewModel
+        let timeViewModel: MinSec.ViewModel
+        let buttonViewModel: RecitePlayButton.ViewModel
         @Published private(set) var isButtonDisabled = false
         private var action2minLeft: (() -> Void)? = nil
         private var actionTimeOver: (() -> Void)? = nil
