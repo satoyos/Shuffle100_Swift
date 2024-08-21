@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemorizeTimer {
-    @ObservedObject var viewModel: ViewModel
+    let viewModel: ViewModel
     @EnvironmentObject var screenSizeStore: ScreenSizeStore
     
     init(viewModel: ViewModel) {
