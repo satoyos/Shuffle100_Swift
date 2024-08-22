@@ -34,6 +34,7 @@ class CountDownTimer: ObservableObject {
             self.isRunning = true
             
             if self.remainTime <= 0 {
+                self.remainTime = 0.0
                 self.stopAneEraseTimer()
             }
         }
