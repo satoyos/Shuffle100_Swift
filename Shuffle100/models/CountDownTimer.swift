@@ -9,15 +9,14 @@ import Foundation
 import Combine
 
 class CountDownTimer: ObservableObject {
-//    static let initialRemainTime: CGFloat = 120
     // この変数の変化に同期する形でカウントダウンの数字、プログレスバーの表示に動きをつける
-    @Published private(set) var remainTime: CGFloat
+    @Published private(set) var remainTime: Double
     @Published private(set) var isRunning = false
     
-    private let intarval: CGFloat
+    private let intarval: Double
     private var timer: Timer?
     
-    init(startTime remainTime: CGFloat, intarval: CGFloat) {
+    init(startTime remainTime: Double, intarval: Double) {
         self.remainTime = remainTime
         self.intarval = intarval
     }
