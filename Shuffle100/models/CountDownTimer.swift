@@ -29,7 +29,7 @@ class CountDownTimer: ObservableObject {
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: intarval, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            self.remainTime -= CGFloat(self.intarval)
+            self.remainTime -= self.intarval
             self.isRunning = true
             
             if self.remainTime <= 0 {
