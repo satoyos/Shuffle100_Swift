@@ -34,17 +34,17 @@ extension MemorizeTimer: View {
     }
     
     private var buttonDiameter: Double {
-        screenSizeStore.screenWidth * 150.0 / 400.0
+        screenSizeStore.screenWidth * 120.0 / 400.0
     }
     
     private var digitSize: CGFloat {
-        screenSizeStore.screenWidth * 100.0 / 400.0
+        screenSizeStore.screenWidth * 100.0 / 500.0
     }
 }
 
 #Preview {
     MemorizeTimer(
-        viewModel: .init(totalSec: 11,
+        viewModel: .init(totalSec: 15 * 60,
                          completion: {print("** All finished **")}))
     .environmentObject(ScreenSizeStore())
 }

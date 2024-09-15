@@ -49,21 +49,6 @@ extension ReciteViewGeneralButton: View {
 }
 
 extension ReciteViewGeneralButton {
-    private var markSize: Double {
-        diameter * 0.5
-    }
-    
-    private var markOffset: Double {
-        diameter * 5 / 160
-    }
-    
-    private var backGradient: LinearGradient {
-        LinearGradient(gradient: Gradient(colors: [Color("circle_button_back_top"), Color("circle_button_back_bottom")]),
-                       startPoint: .top, endPoint: .bottom)
-    }
-}
-
-extension ReciteViewGeneralButton {
     enum LabelType: String {
         case play
         case pause
@@ -81,9 +66,6 @@ extension ReciteViewGeneralButton {
     }
 }
 
-
-
 #Preview {
-    ReciteViewGeneralButton(type: .play, diameter: 300) {}
-        .environment(\.isEnabled, true)
+    ReciteViewGeneralButton(type: .forward, diameter: 200) {}
 }

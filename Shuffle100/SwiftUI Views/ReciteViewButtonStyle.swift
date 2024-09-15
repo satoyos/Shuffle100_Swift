@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct ReciteViewButtonStyle: ButtonStyle{
-    @SwiftUI.Environment(\.isEnabled) var isEnabled
+struct ReciteViewButtonStyle {
+    @Environment(\.isEnabled) var isEnabled
     
     let type: ReciteViewGeneralButton.LabelType
     let diameter: Double
     @State private var _isPressed: Bool = false
+}
 
+extension ReciteViewButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(width: markSize, height: markSize)
