@@ -124,7 +124,7 @@ open class DSFloatingButton: UIButton {
     open var tap: ((DSFloatingButton) -> Void)?
     
     /// Variable to see if animating.
-    private (set) open var isAnimating = false
+    private(set) open var isAnimating = false
     
     // Gradient colors.
     private var colors: [CGColor] {
