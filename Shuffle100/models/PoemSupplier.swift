@@ -56,11 +56,6 @@ class PoemSupplier {
         deck.map{ $0.number }
     }
 
-    func shuffleDeck(with size: Int) {
-        let shuffled = deck.shuffled()
-        self.deck = shuffled.prefix(size).map{ $0 }
-    }
-    
     @discardableResult
     func drawNextPoem() -> Poem? {
         guard numberOfPoemsDrawn < deck.count else { return nil }
