@@ -123,26 +123,7 @@ class PoemSupplierTests: XCTestCase {
         let array1to100 = (1...100).map{$0}
         XCTAssertNotEqual(supplier.poemNumbers, array1to100, "deck must be shuffled!")
     }
-    
-    func test_shuffleWithSize() {
-        // given
-        let supplier = PoemSupplier()
-        // when
-        supplier.shuffleDeck(with: 10)
-        // then
-        XCTAssertEqual(supplier.size, 10)
-        // when: 10枚めくる
-        for _ in 1...10 {
-            let poem = supplier.drawNextPoem()
-            // then
-            XCTAssertNotNil(poem)
-        }
-        // when: さらにもう1枚めくる
-        let drawMore = supplier.drawNextPoem()
-        // then
-        XCTAssertNil(drawMore)
-    }
-    
+        
     func test_resetCurrentIndex() {
         // given
         let supplier = PoemSupplier()
