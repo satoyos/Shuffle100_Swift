@@ -152,4 +152,23 @@ class PoemSupplierTests: XCTestCase {
         // then
         XCTAssertEqual(numbers.sorted(), numbersFromDeck.sorted())
     }
+    
+    func testAddedFakePoemsMustBeSelectedRandomlyInFakeMode() {
+        // given
+        let deck = SelectedState100.createOf(bool: false)
+            .selectOf(number: 100)
+            .selectOf(number: 99)
+            .selectOf(number: 98)
+            .selectOf(number: 97)
+            .selectOf(number: 96)
+            .convertToDeck()
+        let supplier = PoemSupplier(deck: deck, shuffle: true)
+        XCTAssertEqual(supplier.size, 5)
+        // when
+        supplier.addFakePoems()
+        // then
+        let notRandomlySelectedNumbers = [1, 2, 3, 4, 5, 96, 97, 98, 99, 100]
+        XCTAssertNotEqual(supplier.poemNumbers.sorted(), notRandomlySelectedNumbers,
+                          "Added poems must be selected RANDOMLY!")
+    }
 }

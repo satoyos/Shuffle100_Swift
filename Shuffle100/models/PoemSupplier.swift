@@ -93,7 +93,7 @@ class PoemSupplier {
         }
         let selectedPoemNumbers = deck.map{ $0.number }
         let int100 = Array(1...100)
-        let restNumbers = int100.diff(selectedPoemNumbers.shuffled())
+        let restNumbers = int100.diff(selectedPoemNumbers).shuffled()
         for i in 0 ..< selectedPoemNumbers.count {
             let idx = restNumbers[i]
             self.deck.append(Self.originalPoems[idx - 1])
