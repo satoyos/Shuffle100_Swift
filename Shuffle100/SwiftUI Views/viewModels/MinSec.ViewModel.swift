@@ -1,6 +1,6 @@
 //
 //  MinSec.ViewModel.swift
-//  TrialButtonAnimation
+//  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2024/07/27.
 //
