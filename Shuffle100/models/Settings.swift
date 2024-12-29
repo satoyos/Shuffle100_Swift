@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Settings: Codable {
+final class Settings: Codable, ObservableObject {
     static let userDefaultKey = "Settings"
     var mode: GameConfig
     var recitingConfig: RecitingConfig
@@ -63,6 +63,7 @@ final class Settings: Codable {
             return recitingConfig.interval
         }
         set(t) {
+            objectWillChange.send()
             recitingConfig.interval = t
         }
     }
