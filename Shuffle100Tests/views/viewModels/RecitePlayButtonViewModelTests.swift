@@ -1,6 +1,6 @@
 //
 //  RecitePlayButtonViewModelTests.swift
-//  TrialButtonAnimationTests
+//  Shuffle100Tests
 //
 //  Created by Yoshifumi Sato on 2024/07/23.
 //

@@ -1,6 +1,6 @@
 //
 //  CountdownTimer.swift
-//  TrialButtonAnimation
+//  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2024/07/26.
 //
@@ -29,10 +29,13 @@ class CountDownTimer: ObservableObject {
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: intarval, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            self.remainTime -= self.intarval
-            self.isRunning = true
+            self.remainTime -= CGFloat(self.intarval)
+            if self.isRunning == false {
+                self.isRunning = true
+            }
             
             if self.remainTime <= 0 {
+                self.isRunning = false
                 self.remainTime = 0.0
                 self.stopAneEraseTimer()
             }
@@ -43,9 +46,13 @@ class CountDownTimer: ObservableObject {
         stopAneEraseTimer()
     }
     
+    func reset(to newTime: Double) {
+        stop()
+        self.remainTime = newTime
+    }
+    
     private func stopAneEraseTimer() {
         self.timer?.invalidate()
         self.timer = nil
-        self.isRunning = false
     }
 }

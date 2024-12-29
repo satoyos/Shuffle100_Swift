@@ -1,6 +1,6 @@
 //
 //  ReciteViewButtonStyle.swift
-//  TrialButtonAnimation
+//  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2024/08/14.
 //
