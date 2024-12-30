@@ -79,7 +79,7 @@ final class Sec2FViewModelTests_toreta: XCTestCase {
     
     func testWhenGettingRequestToResetSecTextChangesToGivenTime() {
         // given
-        let viewModel = Sec2FViewModel(startTime: 0.1, interval: 0.02)
+        let viewModel = Sec2FViewModel(startTime: 0.04, interval: 0.02)
         // when
         viewModel.input.startTimerRequest.send()
         // then
@@ -91,7 +91,7 @@ final class Sec2FViewModelTests_toreta: XCTestCase {
                 }
             }
             .store(in: &cancellables)
-        wait(for: [expectation1], timeout: 0.15)
+        wait(for: [expectation1], timeout: 0.10)
         // when
         viewModel.input.resetTimerRequest.send(1.0)
         // then
