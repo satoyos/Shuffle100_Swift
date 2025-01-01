@@ -15,7 +15,7 @@ struct DurationSetting {
 
     @Environment(\.isPresented) private var isPresented
 
-    init(startTime: Double, settings: Settings = .init(), saveSettingsAction: InjectedAction? = nil) {
+    init(startTime: Double, settings: Settings = .init()) {
         self.viewModel = DurationSettingViewModel(startTime: startTime, singer: Singers.fetchSingerFrom(settings))
         self.settings = settings
     }
