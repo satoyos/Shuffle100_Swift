@@ -32,6 +32,7 @@ class ReciteSettingsUITest: XCTestCase {
         let intervalSettingPage = settingsPage.gotoIntervalSettingPage()
         // then
         XCTAssert(intervalSettingPage.exists, "「歌と歌の間隔」設定画面に到達")
+        XCTAssert(intervalSettingPage.slider.exists)
         XCTAssertFalse(homePage.exists)
         // when
         intervalSettingPage.adjustSliderToLeftLimit()
