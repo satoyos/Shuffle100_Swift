@@ -29,15 +29,14 @@ final class DurationSettingViewModel: ViewModelObject {
     let output: Output
     private(set) var timeViewModel: Sec2FViewModel
     private let audioHandler: DurationSettingAudioHandler
-    
     private var cancellables: Set<AnyCancellable> = []
     
-    init(startTime: Double) {
+    init(startTime: Double, singer: Singer = Singers.defaultSinger) {
         let input = Input()
         let binding = Binding()
         let output = Output()
         let timeViewModel = Sec2FViewModel(startTime: startTime, interval: 0.02)
-        let audioHandler = DurationSettingAudioHandler(halfPoem1: .h001b, halfPoem2: .h002a)
+        let audioHandler = DurationSettingAudioHandler(halfPoem1: .h001b, halfPoem2: .h002a, folderPath: singer.path)
         
         binding.startTime = startTime
         
