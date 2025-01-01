@@ -10,6 +10,7 @@ import AVFoundation
 final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
     let player1: AVAudioPlayer
     let player2: AVAudioPlayer
+    let folderPath: String
     var player1FinishedAction: (() -> Void)?
     var player2FinishedAction: (() -> Void)?
     
@@ -19,9 +20,12 @@ final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
         case h002a
     }
     
-    init(halfPoem1: HalfPoem = .h001a, halfPoem2: HalfPoem = .h001b) {
-        self.player1 = Self.fetchInabaPlayer(of: halfPoem1)
-        self.player2 = Self.fetchInabaPlayer(of: halfPoem2)
+    init(halfPoem1: HalfPoem = .h001a, halfPoem2: HalfPoem = .h001b, folderPath: String) {
+        self.player1 = Self.fetchPlayer(of: halfPoem1, in: folderPath)
+        self.player2 = Self.fetchPlayer(of: halfPoem2, in: folderPath)
+//        self.player1 = Self.fetchInabaPlayer(of: halfPoem1)
+//        self.player2 = Self.fetchInabaPlayer(of: halfPoem2)
+        self.folderPath = folderPath
         super.init()
         AudioPlayerFactory.shared.setupAudioSession()
     }
@@ -43,6 +47,11 @@ final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
         default:
             break
         }
+    }
+    
+    private static func fetchPlayer(of halfPoem: HalfPoem, in folderPath: String) -> AVAudioPlayer {
+        let filename = String(halfPoem.rawValue.dropFirst())
+        return AudioPlayerFactory.shared.preparePlayer(folder: folderPath, file: filename, title: filename)
     }
     
     private static func fetchInabaPlayer(of halfPoem: HalfPoem) -> AVAudioPlayer {
