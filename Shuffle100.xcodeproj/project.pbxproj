@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */; };
 		8FBC19A0C5FAC73FC692B4EF /* Pods_Shuffle100.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		92014DB42D23EBC800B2BA85 /* ActionAttachedHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */; };
 		92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */; };
 		9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
 		9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */; };
@@ -385,6 +386,7 @@
 		4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
+		92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAttachedHostingController.swift; sourceTree = "<group>"; };
 		92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaCoordinator.swift; sourceTree = "<group>"; };
 		9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinator.swift; sourceTree = "<group>"; };
 		9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeUITest.swift; sourceTree = "<group>"; };
@@ -802,6 +804,21 @@
 			path = viewModels_ToretaStyle;
 			sourceTree = "<group>";
 		};
+		922B8BE42D2292F90065D50A /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		922B8BE72D22ABDB0065D50A /* supports */ = {
+			isa = PBXGroup;
+			children = (
+				92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */,
+			);
+			path = supports;
+			sourceTree = "<group>";
+		};
 		922BDDE72625D4B80093B24A /* pages */ = {
 			isa = PBXGroup;
 			children = (
@@ -1163,6 +1180,7 @@
 		929A614E22F6D60C00435D2C /* coordinaters */ = {
 			isa = PBXGroup;
 			children = (
+				922B8BE72D22ABDB0065D50A /* supports */,
 				92BCDE79226C8E1E001853DC /* MainCoordinator.swift */,
 				92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */,
 				929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */,
@@ -1279,6 +1297,7 @@
 			isa = PBXGroup;
 			children = (
 				92D153362BD4DD5A0075233B /* ScreenSizeStore.swift */,
+				922B8BE42D2292F90065D50A /* protocols */,
 			);
 			path = supports;
 			sourceTree = "<group>";
@@ -1822,6 +1841,7 @@
 				9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */,
 				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
 				924619602493AF9C002B6690 /* PoemPickerScreenDelegate+FudaSet.swift in Sources */,
+				92014DB42D23EBC800B2BA85 /* ActionAttachedHostingController.swift in Sources */,
 				929A94B4247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
 				92AE7C6723FD6D88003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
