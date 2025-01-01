@@ -9,17 +9,18 @@
 import XCTest
 
 final class DurationSettingAudioHandlerTests: XCTestCase {
+    let folderPath = "audio/inaba"
 
     func testInit() throws {
         // given
-        let handler = DurationSettingAudioHandler()
+        let handler = DurationSettingAudioHandler(folderPath: folderPath)
         // then
         XCTAssertNil(handler.player1FinishedAction)
     }
 
     func testAfterPlayFinishedGivenClosureExecuted() throws {
         // given
-        let handler = DurationSettingAudioHandler()
+        let handler = DurationSettingAudioHandler(folderPath: folderPath)
         let expectation1 = XCTestExpectation(description: "Given closure executed")
         let expectation2 = XCTestExpectation(description: "Another Given closure executed")
         handler.player1FinishedAction = { expectation1.fulfill() }
