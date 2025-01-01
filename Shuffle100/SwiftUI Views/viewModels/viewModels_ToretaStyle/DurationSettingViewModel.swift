@@ -37,7 +37,7 @@ final class DurationSettingViewModel: ViewModelObject {
         let binding = Binding()
         let output = Output()
         let timeViewModel = Sec2FViewModel(startTime: startTime, interval: 0.02)
-        let audioHandler = DurationSettingAudioHandler()
+        let audioHandler = DurationSettingAudioHandler(halfPoem1: .h001b, halfPoem2: .h002a)
         
         binding.startTime = startTime
         
