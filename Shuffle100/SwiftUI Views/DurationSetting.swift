@@ -34,6 +34,7 @@ extension DurationSetting: View {
             }
             .buttonStyle(.borderedProminent)
             .foregroundStyle(Color.white)
+            .padding(.top)
             .disabled(viewModel.output.isUserActionDisabled)
         }
         .onChange(of: isPresented) {
