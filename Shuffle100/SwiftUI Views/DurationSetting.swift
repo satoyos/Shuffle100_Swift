@@ -28,11 +28,13 @@ extension DurationSetting: View {
             Slider(value: viewModel.$binding.startTime, in: 0.5 ... 2.0, step: 0.02 )
                 .accessibilityIdentifier("slider")        
                 .padding(.horizontal)
+                .disabled(viewModel.output.isUserActionDisabled)
             Button("試しに聞いてみる") {
                 viewModel.input.startTrialCountDownRequest.send()
             }
             .buttonStyle(.borderedProminent)
-                .foregroundStyle(Color.white)
+            .foregroundStyle(Color.white)
+            .disabled(viewModel.output.isUserActionDisabled)
         }
         .onChange(of: isPresented) {
             guard !isPresented else { return }
