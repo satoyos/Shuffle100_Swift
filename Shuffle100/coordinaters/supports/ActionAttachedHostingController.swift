@@ -18,7 +18,5 @@ class ActionAttachedHostingController<Content>: UIHostingController<Content> whe
         super.viewWillDisappear(animated)
         actionForViewWillDissappear?()
     }
-    
-    
 }
 

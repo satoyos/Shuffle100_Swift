@@ -23,8 +23,6 @@ final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
     init(halfPoem1: HalfPoem = .h001a, halfPoem2: HalfPoem = .h001b, folderPath: String) {
         self.player1 = Self.fetchPlayer(of: halfPoem1, in: folderPath)
         self.player2 = Self.fetchPlayer(of: halfPoem2, in: folderPath)
-//        self.player1 = Self.fetchInabaPlayer(of: halfPoem1)
-//        self.player2 = Self.fetchInabaPlayer(of: halfPoem2)
         self.folderPath = folderPath
         super.init()
         AudioPlayerFactory.shared.setupAudioSession()
