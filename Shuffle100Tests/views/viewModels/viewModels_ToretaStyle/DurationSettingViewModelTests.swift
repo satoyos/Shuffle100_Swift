@@ -14,7 +14,7 @@ final class DurationSettingViewModelTests: XCTestCase {
 
     func testInitViewModel()  {
         // given
-        let viewModel = DurationSettingViewModel(startTime: 2.0)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 2.0)
         // then
         XCTAssertEqual(viewModel.output.secText, "2.00")
         XCTAssertEqual(viewModel.binding.startTime, 2.0)
@@ -22,7 +22,7 @@ final class DurationSettingViewModelTests: XCTestCase {
 
     func testWhenTimerStartsSecLabelChanges() {
         // given
-        let viewModel = DurationSettingViewModel(startTime: 2.0)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 2.0)
         // when
         viewModel.input.startTimerRequest.send()
         // then
@@ -38,7 +38,7 @@ final class DurationSettingViewModelTests: XCTestCase {
     
     func testWhenTimerStartsIsTimerRunningTurnsToTrue() {
         // given
-        let viewModel = DurationSettingViewModel(startTime: 0.5)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 0.5)
         // then
         XCTAssertFalse(viewModel.output.isTimerRunning)
         // when
@@ -57,7 +57,7 @@ final class DurationSettingViewModelTests: XCTestCase {
     
     func testWhenTimerCompletedCountDownIsTimerRunningTurnsToBeFalse() {
         // given
-        let viewModel = DurationSettingViewModel(startTime: 0.2)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 0.2)
         // then
         XCTAssertFalse(viewModel.output.isTimerRunning)
         // when
@@ -76,7 +76,7 @@ final class DurationSettingViewModelTests: XCTestCase {
     
     func testWhenButtonTappedUserActionsGetDisabled() throws {
         // given
-        let viewModel = DurationSettingViewModel(startTime: 0.2)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 0.2)
         // then
         XCTAssertFalse(viewModel.output.isUserActionDisabled)
         // when
@@ -93,7 +93,7 @@ final class DurationSettingViewModelTests: XCTestCase {
     }
  
     func testWhenPlayer2FinishedUserActionsGetEnabledAndTimeLabelMustBeReset() {
-        let viewModel = DurationSettingViewModel(startTime: 0.2)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 0.2)
         // then
         XCTAssertEqual(viewModel.output.secText, "0.20")
         // when
@@ -116,7 +116,7 @@ final class DurationSettingViewModelTests: XCTestCase {
     
     func testChangingStartTimeMakesSecTimerChange() {
         // given
-        let viewModel = DurationSettingViewModel(startTime: 2.0)
+        let viewModel = DurationSettingViewModel.fixture(startTime: 2.0)
         // then
         XCTAssertEqual(viewModel.output.secText, "2.00")
         // when
