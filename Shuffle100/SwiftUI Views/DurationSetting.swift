@@ -12,11 +12,14 @@ struct DurationSetting {
     @EnvironmentObject var screenSizeStore: ScreenSizeStore
     let settings: Settings
     
-
+    // To catch event: navigation back to Parent View of SwiftUI
     @Environment(\.isPresented) private var isPresented
 
-    init(startTime: Double, settings: Settings = .init()) {
-        self.viewModel = DurationSettingViewModel(startTime: startTime, singer: Singers.fetchSingerFrom(settings))
+    init(durationType: DurationSettingType, startTime: Double, settings: Settings) {
+        self.viewModel = DurationSettingViewModel(
+            durationType: durationType,
+            startTime: startTime,
+            singer: Singers.fetchSingerFrom(settings))
         self.settings = settings
     }
 }
@@ -53,6 +56,6 @@ extension DurationSetting: View {
 }
 
 #Preview {
-    DurationSetting(startTime: 1.1)
+    DurationSetting(durationType: .twoPoems, startTime: 1.1, settings: Settings())
         .environmentObject(ScreenSizeStore())
 }

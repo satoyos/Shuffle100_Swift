@@ -111,6 +111,9 @@
 		9254B4C928F4358C00870795 /* BadgeSwift+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */; };
 		9254B4CD28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */; };
 		9254B4D128FADC1600870795 /* SelectedNumBadggeTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254B4D028FADC1600870795 /* SelectedNumBadggeTestProtocol.swift */; };
+		925648AF2D27D31200688D8B /* KamiShimoDurationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648AE2D27D31200688D8B /* KamiShimoDurationSetting.swift */; };
+		925648B12D27D6C500688D8B /* DurationSettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648B02D27D6BE00688D8B /* DurationSettingType.swift */; };
+		925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
 		9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
@@ -485,6 +488,9 @@
 		9254B4C828F4358C00870795 /* BadgeSwift+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeSwift+Animation.swift"; sourceTree = "<group>"; };
 		9254B4CC28F9890800870795 /* SelectedPoemsNumberProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPoemsNumberProtocol.swift; sourceTree = "<group>"; };
 		9254B4D028FADC1600870795 /* SelectedNumBadggeTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNumBadggeTestProtocol.swift; sourceTree = "<group>"; };
+		925648AE2D27D31200688D8B /* KamiShimoDurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoDurationSetting.swift; sourceTree = "<group>"; };
+		925648B02D27D6BE00688D8B /* DurationSettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSettingType.swift; sourceTree = "<group>"; };
+		925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DurationSettingViewModel+Fixtures.swift"; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
 		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
@@ -925,6 +931,7 @@
 		923D59252143BB0B000F5E60 /* Shuffle100Tests */ = {
 			isa = PBXGroup;
 			children = (
+				925648B32D27DFA700688D8B /* fixtures */,
 				92737DD623856754007B5FAD /* coodinators */,
 				9262999C236586A3000EC4F7 /* lib */,
 				927E4BFF222E9E0500AF48F7 /* models */,
@@ -1006,6 +1013,14 @@
 				926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */,
 			);
 			path = viewModels;
+			sourceTree = "<group>";
+		};
+		925648B32D27DFA700688D8B /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */,
+			);
+			path = fixtures;
 			sourceTree = "<group>";
 		};
 		9258FAF321FEAB6C00E4E0B7 /* resources */ = {
@@ -1291,6 +1306,7 @@
 				922B8BE02D2215AA0065D50A /* Sec2F.swift */,
 				92D1533C2BD4E4780075233B /* Torifuda.swift */,
 				9250C8222BE4936E00EFBD48 /* viewModels */,
+				925648AE2D27D31200688D8B /* KamiShimoDurationSetting.swift */,
 			);
 			path = "SwiftUI Views";
 			sourceTree = "<group>";
@@ -1298,6 +1314,7 @@
 		92D153352BD4DD430075233B /* supports */ = {
 			isa = PBXGroup;
 			children = (
+				925648B02D27D6BE00688D8B /* DurationSettingType.swift */,
 				92D153362BD4DD5A0075233B /* ScreenSizeStore.swift */,
 				922B8BE42D2292F90065D50A /* protocols */,
 			);
@@ -1754,6 +1771,7 @@
 				926DD6432C6B585D00516674 /* MinSec.ViewModel.swift in Sources */,
 				92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */,
 				92D5714F220EC7DB00235717 /* GameConfig.swift in Sources */,
+				925648B12D27D6C500688D8B /* DurationSettingType.swift in Sources */,
 				927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				9250C8292BE4BA4200EFBD48 /* FullLiner.ViewModel.swift in Sources */,
 				92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
@@ -1806,6 +1824,7 @@
 				92D153372BD4DD5A0075233B /* ScreenSizeStore.swift in Sources */,
 				923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,
 				92EC121A2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */,
+				925648AF2D27D31200688D8B /* KamiShimoDurationSetting.swift in Sources */,
 				92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
@@ -1936,6 +1955,7 @@
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,
 				9250C82B2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift in Sources */,
+				925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
 				9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */,
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
