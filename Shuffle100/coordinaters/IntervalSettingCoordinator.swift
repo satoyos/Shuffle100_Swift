@@ -24,7 +24,7 @@ final class IntervalSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let durationSettingView = DurationSetting(
+        let durationSettingView = InterPoemDurationSetting(
             durationType: .twoPoems, startTime: Double(settings.interval),
             settings: settings)
         let hostController = ActionAttachedHostingController(rootView: durationSettingView

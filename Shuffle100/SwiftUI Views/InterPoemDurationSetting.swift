@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DurationSetting {
+struct InterPoemDurationSetting {
     @ObservedObject private var viewModel: DurationSettingViewModel
     @EnvironmentObject var screenSizeStore: ScreenSizeStore
     let settings: Settings
@@ -24,7 +24,7 @@ struct DurationSetting {
     }
 }
 
-extension DurationSetting: View {
+extension InterPoemDurationSetting: View {
     var body: some View {
         VStack(spacing: digitSize / 4) {
             Sec2F(digitSize: 100, viewModel: viewModel.timeViewModel)
@@ -56,6 +56,6 @@ extension DurationSetting: View {
 }
 
 #Preview {
-    DurationSetting(durationType: .twoPoems, startTime: 1.1, settings: Settings())
+    InterPoemDurationSetting(durationType: .twoPoems, startTime: 1.1, settings: Settings())
         .environmentObject(ScreenSizeStore())
 }
