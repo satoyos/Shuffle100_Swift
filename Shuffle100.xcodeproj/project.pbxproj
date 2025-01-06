@@ -63,7 +63,7 @@
 		922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */; };
 		922B8BDA2D215C3E0065D50A /* DurationSettingAudioHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BD72D215C3E0065D50A /* DurationSettingAudioHandlerTests.swift */; };
 		922B8BE12D2215AA0065D50A /* Sec2F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BE02D2215AA0065D50A /* Sec2F.swift */; };
-		922B8BE32D2215E20065D50A /* DurationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BE22D2215E20065D50A /* DurationSetting.swift */; };
+		922B8BE32D2215E20065D50A /* InterPoemDurationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BE22D2215E20065D50A /* InterPoemDurationSetting.swift */; };
 		922BDDD42618A1CB0093B24A /* PageObjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD32618A1CB0093B24A /* PageObjectable.swift */; };
 		922BDDD9261B3B760093B24A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDD8261B3B760093B24A /* HomePage.swift */; };
 		922BDDDE261B3F2A0093B24A /* PoemPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */; };
@@ -433,7 +433,7 @@
 		922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSettingViewModelTests.swift; sourceTree = "<group>"; };
 		922B8BD72D215C3E0065D50A /* DurationSettingAudioHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSettingAudioHandlerTests.swift; sourceTree = "<group>"; };
 		922B8BE02D2215AA0065D50A /* Sec2F.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sec2F.swift; sourceTree = "<group>"; };
-		922B8BE22D2215E20065D50A /* DurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSetting.swift; sourceTree = "<group>"; };
+		922B8BE22D2215E20065D50A /* InterPoemDurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterPoemDurationSetting.swift; sourceTree = "<group>"; };
 		922BDDD32618A1CB0093B24A /* PageObjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObjectable.swift; sourceTree = "<group>"; };
 		922BDDD8261B3B760093B24A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerPage.swift; sourceTree = "<group>"; };
@@ -1274,7 +1274,8 @@
 			isa = PBXGroup;
 			children = (
 				92D153352BD4DD430075233B /* supports */,
-				922B8BE22D2215E20065D50A /* DurationSetting.swift */,
+				922B8BE22D2215E20065D50A /* InterPoemDurationSetting.swift */,
+				925648AE2D27D31200688D8B /* KamiShimoDurationSetting.swift */,
 				92D153332BD3CE670075233B /* TorifudaView.swift */,
 				92D153382BD4E0510075233B /* TatamiBackground.swift */,
 				92D1533A2BD4E2340075233B /* FullLiner.swift */,
@@ -1286,7 +1287,6 @@
 				922B8BE02D2215AA0065D50A /* Sec2F.swift */,
 				92D1533C2BD4E4780075233B /* Torifuda.swift */,
 				9250C8222BE4936E00EFBD48 /* viewModels */,
-				925648AE2D27D31200688D8B /* KamiShimoDurationSetting.swift */,
 			);
 			path = "SwiftUI Views";
 			sourceTree = "<group>";
@@ -1740,7 +1740,7 @@
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
 				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */,
-				922B8BE32D2215E20065D50A /* DurationSetting.swift in Sources */,
+				922B8BE32D2215E20065D50A /* InterPoemDurationSetting.swift in Sources */,
 				9254B4CD28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				92D1533B2BD4E2340075233B /* FullLiner.swift in Sources */,

@@ -16,8 +16,8 @@ struct KamiShimoDurationSetting {
     // To catch event: navigation back to Parent View of SwiftUI
     @Environment(\.isPresented) private var isPresented
     
-    init(durationType: DurationSettingType, startTime: Double, settings: Settings = .init()) {
-        self.viewModel = DurationSettingViewModel(durationType: .kamiShimo, startTime: startTime, singer: Singers.fetchSingerFrom(settings))
+    init(durationType: DurationSettingType, startTime: Double, settings: Settings) {
+        self.viewModel = DurationSettingViewModel(durationType: durationType, startTime: startTime, singer: Singers.fetchSingerFrom(settings))
         self.settings = settings
     }
 }
@@ -54,6 +54,6 @@ extension KamiShimoDurationSetting: View {
 }
 
 #Preview {
-    KamiShimoDurationSetting(durationType: .kamiShimo,  startTime: 1.0)
+    KamiShimoDurationSetting(durationType: .kamiShimo,  startTime: 1.0, settings: Settings())
         .environmentObject(ScreenSizeStore())
 }
