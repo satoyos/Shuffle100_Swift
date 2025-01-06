@@ -133,11 +133,6 @@
 		9258FAF221FEAB3D00E4E0B7 /* gear-520.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */; };
 		9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAF821FEE4AA00E4E0B7 /* question_white.png */; };
-		925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */; };
-		925994E024449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */; };
-		925994E42444A8D200044253 /* TimeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E32444A8D200044253 /* TimeSettingScreen.swift */; };
-		925994E82444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */; };
-		925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994EC2447528800044253 /* TimeSettingScreenLayout.swift */; };
 		925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
 		925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */; };
 		925994F7244AA47200044253 /* VolumeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F6244AA47200044253 /* VolumeSettingScreen.swift */; };
@@ -222,8 +217,6 @@
 		92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
 		92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
 		92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
-		92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */; };
-		92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */; };
 		92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */; };
 		92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */; };
 		92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */; };
@@ -506,11 +499,6 @@
 		9258FAEF21FEAB3D00E4E0B7 /* gear-520.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear-520.png"; sourceTree = "<group>"; };
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9258FAF821FEE4AA00E4E0B7 /* question_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_white.png; sourceTree = "<group>"; };
-		925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingScreenTest.swift; sourceTree = "<group>"; };
-		925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingScreen.swift; sourceTree = "<group>"; };
-		925994E32444A8D200044253 /* TimeSettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreen.swift; sourceTree = "<group>"; };
-		925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenDelegate.swift; sourceTree = "<group>"; };
-		925994EC2447528800044253 /* TimeSettingScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenLayout.swift; sourceTree = "<group>"; };
 		925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingCoordinator.swift; sourceTree = "<group>"; };
 		925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenTest.swift; sourceTree = "<group>"; };
 		925994F6244AA47200044253 /* VolumeSettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreen.swift; sourceTree = "<group>"; };
@@ -589,8 +577,6 @@
 		92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerCoordinator.swift; sourceTree = "<group>"; };
 		92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+Audio.swift"; sourceTree = "<group>"; };
 		92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+ExitGame.swift"; sourceTree = "<group>"; };
-		92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingScreenTest.swift; sourceTree = "<group>"; };
-		92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingViewController.swift; sourceTree = "<group>"; };
 		92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingCoordinator.swift; sourceTree = "<group>"; };
 		92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAttachedScreen.swift; sourceTree = "<group>"; };
 		92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenDelegate.swift; sourceTree = "<group>"; };
@@ -971,10 +957,7 @@
 				92737E3D238A9882007B5FAD /* RecitePoemScreenGameActions.swift */,
 				92ABF9AA23F42CFA000CA91C /* SelectSingerScreen.swift */,
 				92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */,
-				92A6EB7424151F7E00B37A42 /* IntervalSettingViewController.swift */,
 				92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */,
-				925994DF24449C1E00044253 /* KamiShimoIntervalSettingScreen.swift */,
-				925994E32444A8D200044253 /* TimeSettingScreen.swift */,
 				925994F6244AA47200044253 /* VolumeSettingScreen.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */,
 				92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */,
@@ -1053,7 +1036,6 @@
 			children = (
 				92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */,
 				927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */,
-				925994EC2447528800044253 /* TimeSettingScreenLayout.swift */,
 				925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */,
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
 				92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */,
@@ -1167,8 +1149,6 @@
 				928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */,
 				92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */,
 				92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */,
-				92A6EB7224151F1600B37A42 /* IntervalSettingScreenTest.swift */,
-				925994DD24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift */,
 				925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */,
 				9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */,
 				92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */,
@@ -1383,7 +1363,6 @@
 				92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */,
 				92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */,
 				92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */,
-				925994E72444AB3C00044253 /* TimeSettingScreenDelegate.swift */,
 				92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */,
 				92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */,
 				92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */,
@@ -1762,7 +1741,6 @@
 				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				92C6B49D24E6BB0500FFD459 /* GlyphIconProtocol.swift in Sources */,
 				922B8BE32D2215E20065D50A /* DurationSetting.swift in Sources */,
-				925994E024449C1E00044253 /* KamiShimoIntervalSettingScreen.swift in Sources */,
 				9254B4CD28F9890800870795 /* SelectedPoemsNumberProtocol.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				92D1533B2BD4E2340075233B /* FullLiner.swift in Sources */,
@@ -1813,7 +1791,6 @@
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
 				926DD64E2C6B5A4C00516674 /* MemorizeTimer.swift in Sources */,
-				925994ED2447528800044253 /* TimeSettingScreenLayout.swift in Sources */,
 				923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */,
 				921791F6258E211C00A38249 /* Screen.swift in Sources */,
 				921FF435249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */,
@@ -1837,7 +1814,6 @@
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
 				92EC12222A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */,
-				925994E82444AB3C00044253 /* TimeSettingScreenDelegate.swift in Sources */,
 				927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				927A70C62545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */,
@@ -1846,7 +1822,6 @@
 				921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
 				92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
-				92A6EB7524151F7E00B37A42 /* IntervalSettingViewController.swift in Sources */,
 				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */,
 				920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
@@ -1869,7 +1844,6 @@
 				92AE7C6723FD6D88003FA07F /* SelectSingerCoordinator.swift in Sources */,
 				92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */,
 				9208DF1022FAF9DD00A3F22C /* SelectModeCoordinator.swift in Sources */,
-				925994E42444A8D200044253 /* TimeSettingScreen.swift in Sources */,
 				922B8BCC2D215B850065D50A /* ViewModelObject.swift in Sources */,
 				922B8BCD2D215B850065D50A /* BindableObject.swift in Sources */,
 				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
@@ -1920,7 +1894,6 @@
 				922B8BDA2D215C3E0065D50A /* DurationSettingAudioHandlerTests.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */,
-				92A6EB7324151F1600B37A42 /* IntervalSettingScreenTest.swift in Sources */,
 				9254B4D128FADC1600870795 /* SelectedNumBadggeTestProtocol.swift in Sources */,
 				926DD64A2C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift in Sources */,
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
@@ -1939,7 +1912,6 @@
 				926DD6482C6B594100516674 /* CountDownTimerTests.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
-				925994DE24449B1F00044253 /* KamiShimoIntervalSettingScreenTest.swift in Sources */,
 				92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
