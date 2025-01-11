@@ -22,7 +22,7 @@ final class KamiShimoIntervalSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let durationSettingView = KamiShimoDurationSetting(durationType: .kamiShimo, startTime: Double(settings.kamiShimoInterval), settings: settings)
+        let durationSettingView = KamiShimoDurationSetting(startTime: Double(settings.kamiShimoInterval), settings: settings)
         let hostController = ActionAttachedHostingController(rootView: durationSettingView
             .environmentObject(ScreenSizeStore()))
         hostController.actionForViewWillDissappear = { [durationSettingView] in
