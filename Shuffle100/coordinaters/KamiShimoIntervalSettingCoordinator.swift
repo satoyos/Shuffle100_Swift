@@ -22,11 +22,11 @@ final class KamiShimoIntervalSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let durationSettingView = KamiShimoDurationSetting(startTime: Double(settings.kamiShimoInterval), settings: settings)
+        let durationSettingView = KamiShimoDurationSetting(settings: settings)
         let hostController = ActionAttachedHostingController(rootView: durationSettingView
             .environmentObject(ScreenSizeStore()))
         hostController.actionForViewWillDissappear = { [durationSettingView] in
-            durationSettingView.reflectSliderValueToSettings()
+            durationSettingView.tasksForLeavingThisView()
         }
         hostController.title = "上の句と下の句の間隔"
         navigationController.pushViewController(hostController, animated: true)

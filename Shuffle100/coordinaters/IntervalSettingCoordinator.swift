@@ -24,12 +24,11 @@ final class IntervalSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let durationSettingView = InterPoemDurationSetting( startTime: Double(settings.interval),
-            settings: settings)
+        let durationSettingView = InterPoemDurationSetting(settings: settings)
         let hostController = ActionAttachedHostingController(rootView: durationSettingView
             .environmentObject(ScreenSizeStore()))
         hostController.actionForViewWillDissappear = { [durationSettingView] in
-            durationSettingView.reflectSliderValueToSettings()
+            durationSettingView.tasksForLeavingThisView()
         }
         hostController.title = "歌の間隔の調整"
         navigationController.pushViewController(hostController, animated: true)

@@ -12,8 +12,8 @@ enum DurationSettingType {
 }
 
 extension DurationSettingType {
-    var halfPoems: (DurationSettingAudioHandler.HalfPoem,
-                    DurationSettingAudioHandler.HalfPoem) {
+    var halfPoems: (ReciteSettingAudioHandler.HalfPoem,
+                    ReciteSettingAudioHandler.HalfPoem) {
         switch self {
         case .twoPoems:
             return (.h001b, .h002a)

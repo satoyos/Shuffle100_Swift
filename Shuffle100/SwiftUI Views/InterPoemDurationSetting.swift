@@ -14,10 +14,12 @@ struct InterPoemDurationSetting {
     // To catch event: navigation back to Parent View of SwiftUI
     @Environment(\.isPresented) private var isPresented
     
-    init(startTime: Double, settings: Settings) {
+  init(startTime givenTime: Float? = nil,
+         settings: Settings) {
+        let startTime = givenTime ?? settings.interval
         self.viewModel = .init(
             durationType: .twoPoems,
-            startTime: startTime,
+            startTime: Double(startTime),
             singer: Singers.fetchSingerFrom(settings))
         self.settings = settings
     }
@@ -28,16 +30,22 @@ extension InterPoemDurationSetting: View {
         DurationSetting(viewModel: viewModel)
         .onChange(of: isPresented) {
             guard !isPresented else { return }
-            reflectSliderValueToSettings()
+            tasksForLeavingThisView()
         }
     }
+  
+    func tasksForLeavingThisView() {
+        reflectSliderValueToSettings()
+        viewModel.stopReciting()
+    }
     
-    func reflectSliderValueToSettings() {
+    private func reflectSliderValueToSettings() {
         settings.interval = Float(viewModel.binding.startTime)
     }
 }
 
 #Preview {
-    InterPoemDurationSetting(startTime: 1.1, settings: Settings())
+    InterPoemDurationSetting(startTime: 1.2,
+                             settings: Settings())
         .environmentObject(ScreenSizeStore())
 }

@@ -28,7 +28,7 @@ final class DurationSettingViewModel: ViewModelObject {
     @BindableObject private(set) var binding: Binding
     let output: Output
     private(set) var timeViewModel: Sec2FViewModel
-    private let audioHandler: DurationSettingAudioHandler
+    private let audioHandler: ReciteSettingAudioHandler
     private var cancellables: Set<AnyCancellable> = []
     
     init(durationType: DurationSettingType,
@@ -39,7 +39,7 @@ final class DurationSettingViewModel: ViewModelObject {
         let output = Output()
         let timeViewModel = Sec2FViewModel(startTime: startTime, interval: 0.02)
         let (halfPoem1, halfPoem2) = durationType.halfPoems
-        let audioHandler = DurationSettingAudioHandler(
+        let audioHandler = ReciteSettingAudioHandler(
                 halfPoem1: halfPoem1,
                 halfPoem2: halfPoem2,
                 folderPath: singer.path)
@@ -96,4 +96,10 @@ final class DurationSettingViewModel: ViewModelObject {
         self.audioHandler = audioHandler
 
     }
+}
+
+extension DurationSettingViewModel {
+  func stopReciting() {
+    audioHandler.stopAllPlayers()
+  }
 }

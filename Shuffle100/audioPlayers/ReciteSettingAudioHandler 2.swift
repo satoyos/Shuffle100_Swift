@@ -1,5 +1,5 @@
 //
-//  DurationSettingAudioHandler.swift
+//  ReciteSettingAudioHandler.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2024/11/17.
@@ -7,7 +7,7 @@
 
 import AVFoundation
 
-final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
+final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
     let player1: AVAudioPlayer
     let player2: AVAudioPlayer
     let folderPath: String
@@ -35,6 +35,15 @@ final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
     func startPlayer2() {
         startPlaying(player2)
     }
+  
+  func stopAllPlayers() {
+    if player1.isPlaying {
+      player1.stop()
+    }
+    if player2.isPlaying {
+      player2.stop()
+    }
+  }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         switch player {
@@ -46,7 +55,7 @@ final class DurationSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
             break
         }
     }
-    
+  
     private static func fetchPlayer(of halfPoem: HalfPoem, in folderPath: String) -> AVAudioPlayer {
         let filename = String(halfPoem.rawValue.dropFirst())
         return AudioPlayerFactory.shared.preparePlayer(folder: folderPath, file: filename, title: filename)
