@@ -79,5 +79,6 @@ final class ReciteSettingsCoordinator: Coordinator, SaveSettings {
         assert(true, "これから、音量をちょうせうする画面を開きます")
         let coordinator = VolumeSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
+        self.childCoordinator = coordinator
     }
 }

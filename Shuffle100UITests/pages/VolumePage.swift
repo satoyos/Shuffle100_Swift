@@ -21,7 +21,7 @@ final class VolumePage: PageObjectable, WaitInUITest, AdjustSlider {
     }
 
     var slider: XCUIElement {
-        return app.sliders[A11y.slider].firstMatch
+        return app.sliders.firstMatch
     }
     
     var backToAllSettingsButton: XCUIElement {
