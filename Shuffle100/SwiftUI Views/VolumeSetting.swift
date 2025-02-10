@@ -43,7 +43,7 @@ extension VolumeSetting: View {
       }
       .padding()
       
-      Slider(value: viewModel.$binding.volume, in: 0.01 ... 1.0, step: 0.01)
+      Slider(value: viewModel.$binding.volume, in: 0.0 ... 1.0, step: 0.01)
         .padding(.horizontal)
       
       Button("試しに聞いてみる") {

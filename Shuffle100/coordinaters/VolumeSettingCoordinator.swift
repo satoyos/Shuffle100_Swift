@@ -22,10 +22,22 @@ final class VolumeSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-        let screen = VolumeSettingScreen(settings: settings)
-        screen.saveSettingsAction = { [store, settings, weak self] in
-            self?.saveSettingsPermanently(settings, into: store)
+//        let screen = VolumeSettingScreen(settings: settings)
+//        screen.saveSettingsAction = { [store, settings, weak self] in
+//            self?.saveSettingsPermanently(settings, into: store)
+//        }
+        let volumeSettingView = VolumeSetting(settings: settings)
+        let hostController = ActionAttachedHostingController(rootView: volumeSettingView
+            .environmentObject(ScreenSizeStore()))
+        hostController.actionForViewWillDissappear = {
+            [volumeSettingView,weak self] in
+            volumeSettingView.tasksForLeavingThisView()
+            if let settings = self?.settings, let store = self?.store {
+                self?.saveSettingsPermanently(settings, into: store)
+            }
         }
-        navigationController.pushViewController(screen, animated: true)
+        hostController.title = "音量の調整"
+        navigationController.pushViewController(hostController, animated: true)
+        self.screen = hostController
     }
 }
