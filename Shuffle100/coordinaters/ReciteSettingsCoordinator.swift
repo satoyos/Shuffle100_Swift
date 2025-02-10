@@ -66,13 +66,15 @@ final class ReciteSettingsCoordinator: Coordinator, SaveSettings {
     private func openIntervalSettingScreen() {
         assert(true, "これから、歌の間隔を調整する画面を開きます")
         let coordinator = IntervalSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
-        coordinator.start()        
+        coordinator.start()
+        self.childCoordinator = coordinator
     }
     
     private func openKamiShimoIntervalSettingScreen() {
         assert(true, "これから、上の句と下の句の間隔を調整する画面を開きます")
         let coordinator = KamiShimoIntervalSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
         coordinator.start()
+        self.childCoordinator = coordinator
     }
     
     private func openVolumeSettingScreen() {
