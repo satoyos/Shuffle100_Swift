@@ -139,11 +139,7 @@
 		9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */; };
 		9258FAF921FEE4AA00E4E0B7 /* question_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258FAF821FEE4AA00E4E0B7 /* question_white.png */; };
 		925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
-		925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */; };
-		925994F7244AA47200044253 /* VolumeSettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F6244AA47200044253 /* VolumeSettingScreen.swift */; };
-		925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */; };
 		925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
-		92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */; };
 		925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */; };
 		925B075E25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */; };
 		925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */; };
@@ -510,11 +506,7 @@
 		9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9258FAF821FEE4AA00E4E0B7 /* question_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_white.png; sourceTree = "<group>"; };
 		925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingCoordinator.swift; sourceTree = "<group>"; };
-		925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenTest.swift; sourceTree = "<group>"; };
-		925994F6244AA47200044253 /* VolumeSettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreen.swift; sourceTree = "<group>"; };
-		925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenLayout.swift; sourceTree = "<group>"; };
 		925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingCoordinator.swift; sourceTree = "<group>"; };
-		92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingScreenDelegate.swift; sourceTree = "<group>"; };
 		925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemsRecitedViewProtocol.swift; sourceTree = "<group>"; };
 		925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemEnabledGameEndView.swift; sourceTree = "<group>"; };
 		925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenUITest.swift; sourceTree = "<group>"; };
@@ -969,7 +961,6 @@
 				92ABF9AA23F42CFA000CA91C /* SelectSingerScreen.swift */,
 				92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */,
 				92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */,
-				925994F6244AA47200044253 /* VolumeSettingScreen.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */,
 				92FFBF6424650219004D7F79 /* NgramPickerScreen.swift */,
 				920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */,
@@ -1057,7 +1048,6 @@
 			children = (
 				92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */,
 				927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */,
-				925994FA244B295800044253 /* VolumeSettingScreenLayout.swift */,
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
 				92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */,
 			);
@@ -1169,7 +1159,6 @@
 				928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */,
 				92ABF9A823F42C74000CA91C /* SelectSingerScreenTest.swift */,
 				92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */,
-				925994F4244AA30C00044253 /* VolumeSettingScreenTest.swift */,
 				9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */,
 				92FFBF622465019B004D7F79 /* NgramPickerScreenTest.swift */,
 				920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */,
@@ -1386,7 +1375,6 @@
 				92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */,
 				92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */,
 				92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */,
-				92599502244C785B00044253 /* VolumeSettingScreenDelegate.swift */,
 				92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */,
 				92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */,
 				92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */,
@@ -1792,7 +1780,6 @@
 				925648D92D325EC500688D8B /* DurationSetting.swift in Sources */,
 				925B075E25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
 				92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
-				925994F7244AA47200044253 /* VolumeSettingScreen.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
@@ -1826,7 +1813,6 @@
 				92D153372BD4DD5A0075233B /* ScreenSizeStore.swift in Sources */,
 				923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,
 				92EC121A2A124FBD0071FA6C /* DigitsPickerScreen10.swift in Sources */,
-				92599503244C785B00044253 /* VolumeSettingScreenDelegate.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
@@ -1857,7 +1843,6 @@
 				926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */,
 				924275DE2D583DE1001D5940 /* KamiShimoDurationSetting.swift in Sources */,
 				924275DF2D583DE1001D5940 /* InterPoemDurationSetting.swift in Sources */,
-				925994FB244B295800044253 /* VolumeSettingScreenLayout.swift in Sources */,
 				924275E12D583E16001D5940 /* VolumeSetting.swift in Sources */,
 				9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */,
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
@@ -1943,7 +1928,6 @@
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
 				92EC11F42A01F3510071FA6C /* DigitsPickerScreen01Test.swift in Sources */,
-				925994F5244AA30C00044253 /* VolumeSettingScreenTest.swift in Sources */,
 				92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
