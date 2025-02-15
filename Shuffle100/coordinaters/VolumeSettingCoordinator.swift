@@ -22,10 +22,6 @@ final class VolumeSettingCoordinator: Coordinator, SaveSettings {
     }
 
     func start() {
-//        let screen = VolumeSettingScreen(settings: settings)
-//        screen.saveSettingsAction = { [store, settings, weak self] in
-//            self?.saveSettingsPermanently(settings, into: store)
-//        }
         let volumeSettingView = VolumeSetting(settings: settings)
         let hostController = ActionAttachedHostingController(rootView: volumeSettingView
             .environmentObject(ScreenSizeStore()))
