@@ -16,6 +16,8 @@ final class ReciteSettingsCoordinator: Coordinator, SaveSettings {
     internal var screen: UIViewController?
     var childCoordinator: Coordinator?
 
+// ToDo: init()のデフォルト値は基本的に不要では？
+//       テスト時に必要なら、fixtureで対応すべきでは？
 
     init(settings: Settings, fromScreen: UIViewController, store: StoreManager = StoreManager(), navigationController: UINavigationController = UINavigationController()) {
         self.settings = settings
