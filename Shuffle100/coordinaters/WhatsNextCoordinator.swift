@@ -87,7 +87,12 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
 
     internal func openSettingScreen() {
         guard let screen = self.screen else { return }
-        let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
+        let newNavController = UINavigationController()
+        let coordinator = ReciteSettingsCoordinator(
+            settings: settings,
+            fromScreen: screen,
+            store: store,
+            navigationController: newNavController)
         coordinator.start()
         self.childCoordinator = coordinator
     }

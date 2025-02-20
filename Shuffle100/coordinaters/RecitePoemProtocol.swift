@@ -125,7 +125,12 @@ extension RecitePoemProtocol where Self: Coordinator {
     // 歯車ボタンが押されたときの画面遷移をここでやる！
     internal func openReciteSettings() {
         guard let screen = self.screen as? RecitePoemScreen else { return }
-        let coordinator = ReciteSettingsCoordinator(settings: settings, fromScreen: screen, store: store)
+        let newNavController = UINavigationController()
+        let coordinator = ReciteSettingsCoordinator(
+            settings: settings,
+            fromScreen: screen,
+            store: store,
+            navigationController: newNavController)
         coordinator.start()
         self.childCoordinator = coordinator
     }
