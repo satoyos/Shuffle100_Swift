@@ -10,29 +10,28 @@ import UIKit
 import SwiftUI
 
 final class IntervalSettingCoordinator: Coordinator, SaveSettings {
-    internal var settings: Settings
-    internal var store: StoreManager
-    var childCoordinator: Coordinator?
-
-    internal var screen: UIViewController?
-    var navigationController: UINavigationController
-
-    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
-        self.navigationController = navigationController
-        self.settings = settings
-        self.store = store
+  internal var settings: Settings
+  internal var store: StoreManager
+  var childCoordinator: Coordinator?
+  
+  internal var screen: UIViewController?
+  var navigationController: UINavigationController
+  
+  init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
+    self.navigationController = navigationController
+    self.settings = settings
+    self.store = store
+  }
+  
+  func start() {
+    let durationSettingView = InterPoemDurationSetting(settings: settings)
+    let hostController = ActionAttachedHostingController(rootView: durationSettingView
+      .environmentObject(ScreenSizeStore()))
+    hostController.actionForViewWillDissappear = { [durationSettingView] in
+      durationSettingView.tasksForLeavingThisView()
     }
-
-    func start() {
-        let durationSettingView = InterPoemDurationSetting(settings: settings)
-        let hostController = ActionAttachedHostingController(rootView: durationSettingView
-            .environmentObject(ScreenSizeStore()))
-        hostController.actionForViewWillDissappear = { [durationSettingView] in
-            durationSettingView.tasksForLeavingThisView()
-        }
-        hostController.title = "歌の間隔の調整"
-        navigationController.pushViewController(hostController, animated: true)
-        self.screen = hostController
-
-    }
+    hostController.title = "歌の間隔の調整"
+    navigationController.pushViewController(hostController, animated: true)
+    self.screen = hostController
+  }
 }

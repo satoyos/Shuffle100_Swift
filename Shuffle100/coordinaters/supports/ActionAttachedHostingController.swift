@@ -11,12 +11,12 @@ import UIKit
 import SwiftUI
 
 class ActionAttachedHostingController<Content>: UIHostingController<Content> where Content: View {
-    
-    var actionForViewWillDissappear: InjectedAction?
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        actionForViewWillDissappear?()
-    }
+  
+  var actionForViewWillDissappear: InjectedAction?
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    actionForViewWillDissappear?()
+  }
 }
 

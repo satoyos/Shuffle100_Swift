@@ -9,9 +9,9 @@
 import UIKit
 
 protocol Coordinator: AnyObject {
-    var childCoordinator: Coordinator? { get set }
-    var navigationController: UINavigationController { get set }
-    var screen: UIViewController? { get set }
-
-    func start()
+  var childCoordinator: Coordinator? { get set }
+  var navigationController: UINavigationController { get set }
+  var screen: UIViewController? { get set }
+  
+  func start()
 }

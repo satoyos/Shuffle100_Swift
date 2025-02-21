@@ -10,27 +10,27 @@ import UIKit
 import SwiftUI
 
 final class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
-    var screen: UIViewController?
-    var navigationController: UINavigationController
-    var childCoordinator: Coordinator?
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func start() {
-        setUpNavigationController(navigationController)
-        let memorizeTimerView = MemorizeTimer(viewModel: .init(
-            totalSec: 15 * 60,
-            completion: { [weak self] in
-                self?.navigationController.popViewController(animated: true)
-            }))
-            .environmentObject(ScreenSizeStore())
-        let hostController = UIHostingController(rootView: memorizeTimerView)
-        hostController.navigationItem.prompt = navigationItemPrompt
-        hostController.title = "暗記時間タイマー"
-        
-        navigationController.pushViewController(hostController, animated: true)
-    }
+  var screen: UIViewController?
+  var navigationController: UINavigationController
+  var childCoordinator: Coordinator?
+  
+  init(navigationController: UINavigationController) {
+    self.navigationController = navigationController
+  }
+  
+  func start() {
+    setUpNavigationController(navigationController)
+    let memorizeTimerView = MemorizeTimer(viewModel: .init(
+      totalSec: 15 * 60,
+      completion: { [weak self] in
+        self?.navigationController.popViewController(animated: true)
+      }))
+      .environmentObject(ScreenSizeStore())
+    let hostController = UIHostingController(rootView: memorizeTimerView)
+    hostController.navigationItem.prompt = navigationItemPrompt
+    hostController.title = "暗記時間タイマー"
+    
+    navigationController.pushViewController(hostController, animated: true)
+  }
 }
 
