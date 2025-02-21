@@ -8,23 +8,23 @@
 
 import UIKit
 
-extension UIImage {    
-    func imageWith(newSize: CGSize) -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: newSize)
-        let image = renderer.image { _ in
-            self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
-        }
-        return image.withRenderingMode(self.renderingMode)
+extension UIImage {
+  func imageWith(newSize: CGSize) -> UIImage {
+    let renderer = UIGraphicsImageRenderer(size: newSize)
+    let image = renderer.image { _ in
+      self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
     }
-    
-    func tint(color: UIColor, alpha: CGFloat = 1) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        color.setFill()
-        let drawRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        UIRectFill(drawRect)
-        draw(in: drawRect, blendMode: .destinationIn, alpha: alpha)
-        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return tintedImage!
-    }
+    return image.withRenderingMode(self.renderingMode)
+  }
+  
+  func tint(color: UIColor, alpha: CGFloat = 1) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    color.setFill()
+    let drawRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    UIRectFill(drawRect)
+    draw(in: drawRect, blendMode: .destinationIn, alpha: alpha)
+    let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return tintedImage!
+  }
 }

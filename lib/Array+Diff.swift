@@ -12,11 +12,11 @@
 import Foundation
 
 extension Array where Element: Hashable {
-    typealias E = Element
-    func diff(_ other: [E]) -> [E] {
-        let all = self + other
-        var counter: [E: Int] = [:]
-        all.forEach { counter[$0] = (counter[$0] ?? 0) + 1 }
-        return all.filter { (counter[$0] ?? 0) == 1 }
-    }
+  typealias E = Element
+  func diff(_ other: [E]) -> [E] {
+    let all = self + other
+    var counter: [E: Int] = [:]
+    all.forEach { counter[$0] = (counter[$0] ?? 0) + 1 }
+    return all.filter { (counter[$0] ?? 0) == 1 }
+  }
 }
