@@ -9,16 +9,16 @@
 import Foundation
 
 extension MainCoordinator {
-    static func setUpSettings(store: StoreManager) -> Settings {
-        let defaultSettings = Settings()
-        
-        guard !env.ignoreSavedData() else { return defaultSettings }
-        guard let loadedSettings =
-                store.load(key: Settings.userDefaultKey) as Settings? else {
-            return defaultSettings
-        }
-        
-        loadedSettings.fixOptionalProperties()
-        return loadedSettings
+  static func setUpSettings(store: StoreManager) -> Settings {
+    let defaultSettings = Settings()
+    
+    guard !env.ignoreSavedData() else { return defaultSettings }
+    guard let loadedSettings =
+            store.load(key: Settings.userDefaultKey) as Settings? else {
+      return defaultSettings
     }
+    
+    loadedSettings.fixOptionalProperties()
+    return loadedSettings
+  }
 }

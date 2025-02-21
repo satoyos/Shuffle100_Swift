@@ -9,31 +9,31 @@
 import UIKit
 
 final class VolumeSettingCoordinator: Coordinator, SaveSettings {
-    internal var settings: Settings
-    internal var store: StoreManager
-    var screen: UIViewController?
-    var navigationController: UINavigationController
-    var childCoordinator: Coordinator?
-
-    init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
-        self.navigationController = navigationController
-        self.settings = settings
-        self.store = store
+  internal var settings: Settings
+  internal var store: StoreManager
+  var screen: UIViewController?
+  var navigationController: UINavigationController
+  var childCoordinator: Coordinator?
+  
+  init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
+    self.navigationController = navigationController
+    self.settings = settings
+    self.store = store
+  }
+  
+  func start() {
+    let volumeSettingView = VolumeSetting(settings: settings)
+    let hostController = ActionAttachedHostingController(rootView: volumeSettingView
+      .environmentObject(ScreenSizeStore()))
+    hostController.actionForViewWillDissappear = {
+      [volumeSettingView,weak self] in
+      volumeSettingView.tasksForLeavingThisView()
+      if let settings = self?.settings, let store = self?.store {
+        self?.saveSettingsPermanently(settings, into: store)
+      }
     }
-
-    func start() {
-        let volumeSettingView = VolumeSetting(settings: settings)
-        let hostController = ActionAttachedHostingController(rootView: volumeSettingView
-            .environmentObject(ScreenSizeStore()))
-        hostController.actionForViewWillDissappear = {
-            [volumeSettingView,weak self] in
-            volumeSettingView.tasksForLeavingThisView()
-            if let settings = self?.settings, let store = self?.store {
-                self?.saveSettingsPermanently(settings, into: store)
-            }
-        }
-        hostController.title = "音量の調整"
-        navigationController.pushViewController(hostController, animated: true)
-        self.screen = hostController
-    }
+    hostController.title = "音量の調整"
+    navigationController.pushViewController(hostController, animated: true)
+    self.screen = hostController
+  }
 }

@@ -882,7 +882,9 @@
 				EDFFE9D58434747A8AD3492F /* Pods */,
 				4C3CD687E0E31257ACF883AB /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		923D590F2143BB0A000F5E60 /* Products */ = {
 			isa = PBXGroup;
@@ -1174,6 +1176,16 @@
 			path = screens;
 			sourceTree = "<group>";
 		};
+		9282CF692D6880F500516FDE /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */,
+				9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */,
+				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		928450D322E06B4B00D12CA7 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1198,7 @@
 		929A614E22F6D60C00435D2C /* coordinaters */ = {
 			isa = PBXGroup;
 			children = (
+				9282CF692D6880F500516FDE /* protocols */,
 				922B8BE72D22ABDB0065D50A /* supports */,
 				92BCDE79226C8E1E001853DC /* MainCoordinator.swift */,
 				92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */,
@@ -1205,12 +1218,9 @@
 				92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */,
 				929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */,
 				921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */,
-				9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */,
-				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
 				92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */,
 				92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */,
 				92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */,
-				92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */,
 				92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */,
 				92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */,
 				9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */,

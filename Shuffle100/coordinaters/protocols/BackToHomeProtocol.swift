@@ -9,12 +9,12 @@
 import Foundation
 
 protocol BackToHome {
-    func backToHomeScreen()
+  func backToHomeScreen()
 }
 
 extension BackToHome where Self: Coordinator {
-    func backToHomeScreen() {
-        navigationController.popToRootViewController(animated: true)
-    }
+  func backToHomeScreen() {
+    navigationController.popToRootViewController(animated: true)
+  }
 }
 
