@@ -8,6 +8,4 @@
 
 import UIKit
 
-final class ShortJokaDescLabel: UILabel, DescriptionViewAnimation {
-    
-}
+final class ShortJokaDescLabel: UILabel, DescriptionViewAnimation {}

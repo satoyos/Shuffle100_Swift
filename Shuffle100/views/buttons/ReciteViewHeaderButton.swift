@@ -9,15 +9,14 @@
 import UIKit
 
 final class ReciteViewHeaderButton: UIButton {
-
-    var tappedAction:  InjectedAction?
-    
-    func setAction(action: @escaping InjectedAction) {
-        tappedAction = action
-        self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-    }
-    
-    @objc func tapped(btn: UIButton) {
-        tappedAction?()
-    }
+  var tappedAction:  InjectedAction?
+  
+  func setAction(action: @escaping InjectedAction) {
+    tappedAction = action
+    self.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+  }
+  
+  @objc func tapped(btn: UIButton) {
+    tappedAction?()
+  }
 }

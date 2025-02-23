@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 extension UIButton {
-    func setStandardColor() {
-        self.setTitleColor(UIColor(displayP3Red: 0.0, green: 0.5, blue: 1.0, alpha: 1.0), for: .normal)
-        self.setTitleColor(UIColor(displayP3Red: 0.0, green: 0.5, blue: 1.0, alpha: 0.3), for: .highlighted)
-        self.setTitleColor(UIColor.lightGray, for: .disabled)
-    }
+  func setStandardColor() {
+    self.setTitleColor(UIColor(displayP3Red: 0.0, green: 0.5, blue: 1.0, alpha: 1.0), for: .normal)
+    self.setTitleColor(UIColor(displayP3Red: 0.0, green: 0.5, blue: 1.0, alpha: 0.3), for: .highlighted)
+    self.setTitleColor(UIColor.lightGray, for: .disabled)
+  }
 }

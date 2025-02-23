@@ -14,16 +14,16 @@ private let emptyCircleImage = UIImage(named: "empty_circle.png")!
 
 
 final class SelectByGroupCell: UITableViewCell {
-    static private let selectedImageDic: [PoemsSelectedState: UIImage] = [
-        .full: fullCircleImage,
-        .partial: halfCircleImage,
-        .empry: emptyCircleImage
-    ]
-    
-    static func circleImage(for state: PoemsSelectedState) -> UIImage {
-        selectedImageDic[state]!
-    }
-    
-    var selectedState: PoemsSelectedState!
-
+  static private let selectedImageDic: [PoemsSelectedState: UIImage] = [
+    .full: fullCircleImage,
+    .partial: halfCircleImage,
+    .empry: emptyCircleImage
+  ]
+  
+  static func circleImage(for state: PoemsSelectedState) -> UIImage {
+    selectedImageDic[state]!
+  }
+  
+  var selectedState: PoemsSelectedState!
+  
 }

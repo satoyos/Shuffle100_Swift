@@ -9,17 +9,17 @@
 import UIKit
 
 protocol AppWindow {
-    var keyWindow: UIWindow { get }
+  var keyWindow: UIWindow { get }
 }
 
 extension AppWindow {
-    var keyWindow: UIWindow {
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScenes = scenes.first as? UIWindowScene
-        if let window = windowScenes?.windows.first{
-            return window
-        } else {
-            fatalError("Couldn't get KeyWindow...")
-        }
+  var keyWindow: UIWindow {
+    let scenes = UIApplication.shared.connectedScenes
+    let windowScenes = scenes.first as? UIWindowScene
+    if let window = windowScenes?.windows.first{
+      return window
+    } else {
+      fatalError("Couldn't get KeyWindow...")
     }
+  }
 }

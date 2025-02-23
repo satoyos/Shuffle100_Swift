@@ -151,10 +151,10 @@ import UIKit
     } else {
       path = UIBezierPath(roundedRect: rectInset, cornerRadius: actualCornerRadius)
     }
-
+    
     badgeColor.setFill()
     path?.fill()
-
+    
     if borderWidth > 0 {
       borderColor.setStroke()
       path?.lineWidth = borderWidth
