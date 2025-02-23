@@ -11,10 +11,10 @@ import UIKit
 typealias InjectedAction = () -> Void
 
 class Screen: UIViewController {
-    var viewDidAppearAction: InjectedAction?
-
-    override func viewDidAppear(_ animated: Bool) {
-        self.viewDidAppearAction?()
-        super.viewDidAppear(animated)
-    }
+  var viewDidAppearAction: InjectedAction?
+  
+  override func viewDidAppear(_ animated: Bool) {
+    self.viewDidAppearAction?()
+    super.viewDidAppear(animated)
+  }
 }

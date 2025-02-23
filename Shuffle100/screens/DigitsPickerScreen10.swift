@@ -9,26 +9,25 @@
 import UIKit
 
 final class DigitsPickerScreen10: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {
-
-    let cellReuseId = "digits10"
-    var tableView: UITableView!
-    let cardNumbers = DigitsNumberFacgtory.cardNumbers10
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableViewSetUp()
-        navigationBarSetup()
-    }
-    
-    private func tableViewSetUp() {
-        self.tableView = createTableViewForScreen()
-        tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
-    }
-    
-    private func navigationBarSetup() {
-        self.title = "10の位の数で選ぶ"
-        navigationItem.rightBarButtonItems = [
-            selectedNumBadgeItem
-        ]
-    }
+  let cellReuseId = "digits10"
+  var tableView: UITableView!
+  let cardNumbers = DigitsNumberFacgtory.cardNumbers10
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableViewSetUp()
+    navigationBarSetup()
+  }
+  
+  private func tableViewSetUp() {
+    self.tableView = createTableViewForScreen()
+    tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+  }
+  
+  private func navigationBarSetup() {
+    self.title = "10の位の数で選ぶ"
+    navigationItem.rightBarButtonItems = [
+      selectedNumBadgeItem
+    ]
+  }
 }
