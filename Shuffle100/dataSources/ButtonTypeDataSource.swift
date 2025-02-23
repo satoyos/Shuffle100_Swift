@@ -9,17 +9,17 @@
 import UIKit
 
 struct ButtonTypeCellDataSource: TableDataSource {
-    enum Color {
-        case normal
-        case red
-    }
-    enum FontWeight {
-        case normal
-        case bold
-    }
-    var title: String
-    var accessoryType: UITableViewCell.AccessoryType
-    var accessibilityLabel: String?
-    var titleColor: Color = .normal
-    var fontWeight: FontWeight = .normal
+  enum Color {
+    case normal
+    case red
+  }
+  enum FontWeight {
+    case normal
+    case bold
+  }
+  var title: String
+  var accessoryType: UITableViewCell.AccessoryType
+  var accessibilityLabel: String?
+  var titleColor: Color = .normal
+  var fontWeight: FontWeight = .normal
 }

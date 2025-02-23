@@ -9,43 +9,43 @@
 import UIKit
 
 struct HelpListDataSource {
-    enum SourceType {
-        case html
-        case review
-        case value1
-    }
-    let name: String
-    let type: SourceType
-    let fileName: String?
-    var detail: String? = nil
+  enum SourceType {
+    case html
+    case review
+    case value1
+  }
+  let name: String
+  let type: SourceType
+  let fileName: String?
+  var detail: String? = nil
 }
 
 struct HelpListSection {
-    let name: String
-    var dataSources: [HelpListDataSource]
+  let name: String
+  var dataSources: [HelpListDataSource]
 }
 
 extension HelpListScreen: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return helpListSections.count
-    }
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return helpListSections.count
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return helpListSections[section].name
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return helpListSections[section].dataSources.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! HelpListTableViewCell
+    let section = helpListSections[indexPath.section]
+    let dataSource = section.dataSources[indexPath.row]
+    cell.configure(with: dataSource)
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return helpListSections[section].name
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return helpListSections[section].dataSources.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath) as! HelpListTableViewCell
-        let section = helpListSections[indexPath.section]
-        let dataSource = section.dataSources[indexPath.row]
-        cell.configure(with: dataSource)
-        
-        return cell
-    }
-    
-    
+    return cell
+  }
+  
+  
 }

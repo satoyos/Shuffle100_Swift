@@ -10,20 +10,20 @@ import UIKit
 import Then
 
 extension FudaSetsScreen: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settings.savedFudaSets.count
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return settings.savedFudaSets.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
+      let fudaSet = settings.savedFudaSets[indexPath.row]
+      var content = UIListContentConfiguration.valueCell()
+      content.text = fudaSet.name
+      content.secondaryText = "\(fudaSet.state100.selectedNum)首"
+      $0.contentConfiguration = content
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath).then {
-            let fudaSet = settings.savedFudaSets[indexPath.row]
-            var content = UIListContentConfiguration.valueCell()
-            content.text = fudaSet.name
-            content.secondaryText = "\(fudaSet.state100.selectedNum)首"
-            $0.contentConfiguration = content
-        }
-        return cell
-    }
-    
-    
+    return cell
+  }
+  
+  
 }

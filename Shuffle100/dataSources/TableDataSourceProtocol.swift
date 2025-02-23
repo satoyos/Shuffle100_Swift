@@ -9,18 +9,18 @@
 import UIKit
 
 struct TableSection {
-    var title: String
-    var dataSources: [TableDataSource]
-    
-    init(title: String) {
-        self.title = title
-        self.dataSources = [TableDataSource]()
-    }
+  var title: String
+  var dataSources: [TableDataSource]
+  
+  init(title: String) {
+    self.title = title
+    self.dataSources = [TableDataSource]()
+  }
 }
 
 protocol TableDataSource {
-    var title: String { get set}
-    var accessoryType: UITableViewCell.AccessoryType { get set }
-    var accessibilityLabel: String? { get set }
+  var title: String { get set}
+  var accessoryType: UITableViewCell.AccessoryType { get set }
+  var accessibilityLabel: String? { get set }
 }
 
