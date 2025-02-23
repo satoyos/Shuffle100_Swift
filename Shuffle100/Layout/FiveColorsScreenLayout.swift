@@ -19,45 +19,45 @@ import Then
 
 
 extension FiveColorsScreen: SHViewSizeGetter {
-    
-    internal func layoutButtons() {
-        layoutButton(blueButton,   centerYRatio: 0.20)
-        layoutButton(pinkButton,   centerYRatio: 0.35)
-        layoutButton(yellowButton, centerYRatio: 0.50)
-        layoutButton(orangeButton, centerYRatio: 0.65)
-        layoutButton(greenButton,  centerYRatio: 0.80)
+  
+  internal func layoutButtons() {
+    layoutButton(blueButton,   centerYRatio: 0.20)
+    layoutButton(pinkButton,   centerYRatio: 0.35)
+    layoutButton(yellowButton, centerYRatio: 0.50)
+    layoutButton(orangeButton, centerYRatio: 0.65)
+    layoutButton(greenButton,  centerYRatio: 0.80)
+  }
+  
+  internal func refreshImageOnButtons() {
+    allColorButtons.forEach { button in
+      button.setImageOf(
+        filename: imageFilePathFor(color: button.color),
+        with: .alwaysTemplate)
     }
-    
-    internal func refreshImageOnButtons() {
-        allColorButtons.forEach { button in
-            button.setImageOf(
-                filename: imageFilePathFor(color: button.color),
-                with: .alwaysTemplate)
-        }
+  }
+  
+  private func layoutButton(_ colorButton: ColorOfFiveButton, centerYRatio: CGFloat) {
+    guard let colorDic = colorsDic[colorButton.color] else { return }
+    let filePath = imageFilePathFor(color: colorButton.color)
+    _ = colorButton.then {
+      setCommonLayout(button: $0)
+      $0.initWithImage(filename: filePath)
+      $0.setTitle(colorDic.name, for: .normal)
+      // center => [50%, centerYRatio]
+      $0.center.y = viewHeight * centerYRatio
     }
-    
-    private func layoutButton(_ colorButton: ColorOfFiveButton, centerYRatio: CGFloat) {
-        guard let colorDic = colorsDic[colorButton.color] else { return }
-        let filePath = imageFilePathFor(color: colorButton.color)
-        _ = colorButton.then {
-            setCommonLayout(button: $0)
-            $0.initWithImage(filename: filePath)
-            $0.setTitle(colorDic.name, for: .normal)
-            // center => [50%, centerYRatio]
-            $0.center.y = viewHeight * centerYRatio
-        }
+  }
+  
+  private func setCommonLayout(button: ColorOfFiveButton) {
+    _ = button.then {
+      $0.frame.size = buttonSize
+      $0.center.x = view.center.x
+      $0.setStandardTitleColor()
     }
-    
-    private func setCommonLayout(button: ColorOfFiveButton) {
-        _ = button.then {
-            $0.frame.size = buttonSize
-            $0.center.x = view.center.x
-            $0.setStandardTitleColor()
-        }
-    }
-
-    private var buttonSize: CGSize {
-        CGSize(width: viewWidth * 0.8,
-               height: sizes.whatsNextButtonHeight)
-    }
+  }
+  
+  private var buttonSize: CGSize {
+    CGSize(width: viewWidth * 0.8,
+           height: sizes.whatsNextButtonHeight)
+  }
 }
