@@ -9,15 +9,14 @@
 import UIKit
 
 extension DigitsPickerScreen10: UITableViewDelegate {
-    
-    // thid code is fully copied from DigitsPickerScreen01Delegate
-    // ToDo: refactor!
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tappedCell = cellFor(path: indexPath) as! SelectByGroupCell
-        let newState100 = flippedState(
-            from: tappedCell.selectedState,
-            for: cardNumbers[indexPath.row])
-        settings.state100 = newState100
-        updateTableAndBadge()
-    }
+  // thid code is fully copied from DigitsPickerScreen01Delegate
+  // ToDo: refactor!
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let tappedCell = cellFor(path: indexPath) as! SelectByGroupCell
+    let newState100 = flippedState(
+      from: tappedCell.selectedState,
+      for: cardNumbers[indexPath.row])
+    settings.state100 = newState100
+    updateTableAndBadge()
+  }
 }
