@@ -9,11 +9,11 @@
 import UIKit
 
 protocol SHDeviceTypeGetter {
-    var deviceType: UIUserInterfaceIdiom { get }
+  var deviceType: UIUserInterfaceIdiom { get }
 }
 
 extension SHDeviceTypeGetter {
-    var deviceType: UIUserInterfaceIdiom {
-        UIDevice.current.userInterfaceIdiom
-    }
+  var deviceType: UIUserInterfaceIdiom {
+    UIDevice.current.userInterfaceIdiom
+  }
 }

@@ -9,18 +9,18 @@
 import UIKit
 
 protocol SHViewSizeGetter {
-    var viewWidth: CGFloat { get }
-    var viewHeight: CGFloat { get }
+  var viewWidth: CGFloat { get }
+  var viewHeight: CGFloat { get }
 }
 
 extension SHViewSizeGetter where Self: Screen {
-    var viewWidth: CGFloat {
-        view.frame.size.width
-    }
-    
-    var viewHeight: CGFloat {
-        view.frame.size.height
-    }
+  var viewWidth: CGFloat {
+    view.frame.size.width
+  }
+  
+  var viewHeight: CGFloat {
+    view.frame.size.height
+  }
 }
 
 

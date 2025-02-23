@@ -11,53 +11,53 @@ import SnapKit
 import Then
 
 extension WhatsNextScreen: SHViewSizeGetter {
-    internal func layoutButtons() {
-        layoutRefrainButton()
-        layoutTorifudaButton()
-        layoutGoNextButton()
+  internal func layoutButtons() {
+    layoutRefrainButton()
+    layoutTorifudaButton()
+    layoutGoNextButton()
+  }
+  
+  private func layoutRefrainButton() {
+    _ = refrainButton.then {
+      setCommonLayout(button: $0)
+      $0.initWithImage(filename: "refrain.png")
+      $0.setTitle("下の句をもう一度読む", for: .normal)
+      // center => [50%, 50%]
+      $0.center.y = view.center.y
     }
-    
-    private func layoutRefrainButton() {
-        _ = refrainButton.then {
-            setCommonLayout(button: $0)
-            $0.initWithImage(filename: "refrain.png")
-            $0.setTitle("下の句をもう一度読む", for: .normal)
-            // center => [50%, 50%]
-            $0.center.y = view.center.y
-        }
+  }
+  
+  private func layoutTorifudaButton() {
+    _ = torifudaButton.then {
+      setCommonLayout(button: $0)
+      $0.initWithImage(filename: "torifuda.png")
+      $0.setTitle("取り札を見る", for: .normal)
+      // center => [50%, 30%]
+      $0.center.y = viewHeight * 0.3
     }
-    
-    private func layoutTorifudaButton() {
-        _ = torifudaButton.then {
-            setCommonLayout(button: $0)
-            $0.initWithImage(filename: "torifuda.png")
-            $0.setTitle("取り札を見る", for: .normal)
-            // center => [50%, 30%]
-            $0.center.y = viewHeight * 0.3
-        }
+  }
+  
+  private func layoutGoNextButton() {
+    _ = goNextButton.then {
+      setCommonLayout(button: $0)
+      $0.initWithImage(filename: "go_next.png")
+      $0.setTitle("次の歌へ！", for: .normal)
+      // center => [50%, 70%]
+      $0.center.y = viewHeight * 0.7
     }
-    
-    private func layoutGoNextButton() {
-        _ = goNextButton.then {
-            setCommonLayout(button: $0)
-            $0.initWithImage(filename: "go_next.png")
-            $0.setTitle("次の歌へ！", for: .normal)
-            // center => [50%, 70%]
-            $0.center.y = viewHeight * 0.7
-        }
+  }
+  
+  private func setCommonLayout(button: LargeImageAttachedButton) {
+    _ = button.then {
+      $0.frame.size = buttonSize
+      $0.center.x = view.center.x
+      $0.setStandardTitleColor()
     }
-    
-    private func setCommonLayout(button: LargeImageAttachedButton) {
-        _ = button.then {
-            $0.frame.size = buttonSize
-            $0.center.x = view.center.x
-            $0.setStandardTitleColor()
-        }
-    }
-    
-    private var buttonSize: CGSize {
-        CGSize(width: viewWidth * 0.8,
-               height: sizes.whatsNextButtonHeight)
-    }
+  }
+  
+  private var buttonSize: CGSize {
+    CGSize(width: viewWidth * 0.8,
+           height: sizes.whatsNextButtonHeight)
+  }
 }
 
