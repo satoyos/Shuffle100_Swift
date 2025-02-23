@@ -13,18 +13,18 @@ fileprivate let fadeInDuration = 2.0
 fileprivate let fadeOutDuration = fadeInDuration * goldenRetio
 
 protocol DescriptionViewAnimation {
-    func fadeInFadeOut()
+  func fadeInFadeOut()
 }
 
 extension DescriptionViewAnimation where Self: UILabel {
-    func fadeInFadeOut() {
+  func fadeInFadeOut() {
+    self.alpha = 0.0
+    UIView.animate(withDuration: fadeInDuration, animations: {
+      self.alpha = 1.0
+    }, completion: { _ in
+      UIView.animate(withDuration: fadeOutDuration, animations: {
         self.alpha = 0.0
-        UIView.animate(withDuration: fadeInDuration, animations: {
-            self.alpha = 1.0
-        }, completion: { _ in
-            UIView.animate(withDuration: fadeOutDuration, animations: {
-                self.alpha = 0.0
-            })
-        })
-    }
+      })
+    })
+  }
 }

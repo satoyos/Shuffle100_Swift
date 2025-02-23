@@ -12,20 +12,20 @@ fileprivate let duration = 0.1
 fileprivate let scale = 1.25
 
 extension BadgeSwift {
-    func setTextWithAnimation(_ text: String) {
-        self.text = text
-        let transform = CGAffineTransform(scaleX: scale, y: scale)
-        UIView.animate(withDuration: duration, animations: {
-                self.transform = transform
-            }) { _ in
-                self.identity()
-            }
+  func setTextWithAnimation(_ text: String) {
+    self.text = text
+    let transform = CGAffineTransform(scaleX: scale, y: scale)
+    UIView.animate(withDuration: duration, animations: {
+      self.transform = transform
+    }) { _ in
+      self.identity()
     }
-    
-    private func identity() {
-        UIView.animate(withDuration: duration) {
-            self.transform = .identity
-            self.sizeToFit()
-        }
+  }
+  
+  private func identity() {
+    UIView.animate(withDuration: duration) {
+      self.transform = .identity
+      self.sizeToFit()
     }
+  }
 }

@@ -9,17 +9,16 @@
 import UIKit
 
 final class SimpleGameEndView: UIView, AllPoemsRecitedView {
-    var backToHomeButton = UIButton()
-    var headerContainer = UIView()
-    var headerTitle: String?
-    var backToHomeButtonAction: ( ()->Void )?
-
-
-    internal func setTargetToButtons() {
-        backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc func backToHomeButtonTapped() {
-        backToHomeButtonAction?()
-    }
+  var backToHomeButton = UIButton()
+  var headerContainer = UIView()
+  var headerTitle: String?
+  var backToHomeButtonAction: ( ()->Void )?
+  
+  internal func setTargetToButtons() {
+    backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped), for: .touchUpInside)
+  }
+  
+  @objc func backToHomeButtonTapped() {
+    backToHomeButtonAction?()
+  }
 }

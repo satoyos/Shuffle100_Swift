@@ -8,6 +8,4 @@
 
 import UIKit
 
-final class SettingTableCell: UITableViewCell, ConfigureSettingTableCell {
-
-}
+final class SettingTableCell: UITableViewCell, ConfigureSettingTableCell {}

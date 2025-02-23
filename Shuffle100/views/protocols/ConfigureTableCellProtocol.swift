@@ -10,27 +10,27 @@ import UIKit
 import Then
 
 protocol ConfigureSettingTableCell {
-    func configure(dataSource: SettingsCellDataSource)
+  func configure(dataSource: SettingsCellDataSource)
 }
 
 extension ConfigureSettingTableCell where Self: UITableViewCell {
-    func configure(dataSource: SettingsCellDataSource) {
-        var content: UIListContentConfiguration = dataSource.configType
-        content.text = dataSource.title
-        content.secondaryText = dataSource.secondaryText
-        self.contentConfiguration = content
-        
-        self.accessoryType = dataSource.accessoryType
-        self.accessibilityIdentifier = dataSource.title
-        self.accessibilityLabel = dataSource.accessibilityLabel
-        if let switchValue = dataSource.withSwitchOf {
-            let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            let labelPrefix = self.accessibilityLabel ?? ""
-            switchView.accessibilityLabel = labelPrefix + "Switch"
-            switchView.isOn = switchValue
-            self.accessoryView = switchView
-        } else {
-            self.accessoryView = nil
-        }
+  func configure(dataSource: SettingsCellDataSource) {
+    var content: UIListContentConfiguration = dataSource.configType
+    content.text = dataSource.title
+    content.secondaryText = dataSource.secondaryText
+    self.contentConfiguration = content
+    
+    self.accessoryType = dataSource.accessoryType
+    self.accessibilityIdentifier = dataSource.title
+    self.accessibilityLabel = dataSource.accessibilityLabel
+    if let switchValue = dataSource.withSwitchOf {
+      let switchView = UISwitch(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+      let labelPrefix = self.accessibilityLabel ?? ""
+      switchView.accessibilityLabel = labelPrefix + "Switch"
+      switchView.isOn = switchValue
+      self.accessoryView = switchView
+    } else {
+      self.accessoryView = nil
     }
+  }
 }

@@ -10,34 +10,34 @@ import UIKit
 import FontAwesome_swift
 
 enum SOHGlyphIconType {
-    case play
-    case pause
-    case forward
-    case rewind
+  case play
+  case pause
+  case forward
+  case rewind
 }
 
 protocol SOHGlyphIcon {
-    func glyphFontOfSize(_ pointSize: CGFloat) -> UIFont
-    func stringExpression(of type: SOHGlyphIconType) -> String
+  func glyphFontOfSize(_ pointSize: CGFloat) -> UIFont
+  func stringExpression(of type: SOHGlyphIconType) -> String
 }
 
 extension SOHGlyphIcon {
-    func glyphFontOfSize(_ pointSize: CGFloat) -> UIFont {
-        return UIFont.fontAwesome(ofSize: pointSize, style: .regular)
+  func glyphFontOfSize(_ pointSize: CGFloat) -> UIFont {
+    return UIFont.fontAwesome(ofSize: pointSize, style: .regular)
+  }
+  
+  func stringExpression(of type: SOHGlyphIconType) -> String {
+    switch type {
+    case .play:
+      return String.fontAwesomeIcon(name: .play)
+    case .pause:
+      return String.fontAwesomeIcon(name: .pause)
+    case .forward:
+      return String.fontAwesomeIcon(name: .forward)
+    case .rewind:
+      return String.fontAwesomeIcon(name: .backward)
     }
-    
-    func stringExpression(of type: SOHGlyphIconType) -> String {
-        switch type {
-        case .play:
-            return String.fontAwesomeIcon(name: .play)
-        case .pause:
-            return String.fontAwesomeIcon(name: .pause)
-        case .forward:
-            return String.fontAwesomeIcon(name: .forward)
-        case .rewind:
-            return String.fontAwesomeIcon(name: .backward)
-        }
-    }
+  }
 }
 
 
