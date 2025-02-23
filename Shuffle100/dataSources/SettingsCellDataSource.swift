@@ -9,18 +9,18 @@
 import UIKit
 
 struct SettingsCellDataSource: TableDataSource {
-    var title: String
-    var accessoryType: UITableViewCell.AccessoryType
-    var accessibilityLabel: String?
-    var withSwitchOf: Bool?
-    var secondaryText: String
-    var configType: UIListContentConfiguration
+  var title: String
+  var accessoryType: UITableViewCell.AccessoryType
+  var accessibilityLabel: String?
+  var withSwitchOf: Bool?
+  var secondaryText: String
+  var configType: UIListContentConfiguration
+  
+  init(title: String, accessoryType type: UITableViewCell.AccessoryType, secondaryText: String = "", configType: UIListContentConfiguration = .valueCell()) {
     
-    init(title: String, accessoryType type: UITableViewCell.AccessoryType, secondaryText: String = "", configType: UIListContentConfiguration = .valueCell()) {
-
-        self.title = title
-        self.accessoryType = type
-        self.configType = configType
-        self.secondaryText = secondaryText
-    }
+    self.title = title
+    self.accessoryType = type
+    self.configType = configType
+    self.secondaryText = secondaryText
+  }
 }
