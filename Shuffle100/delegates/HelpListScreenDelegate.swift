@@ -9,7 +9,7 @@
 import UIKit
 
 extension HelpListScreen: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goDetailAction?(indexPath)
-    }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    goDetailAction?(indexPath)
+  }
 }

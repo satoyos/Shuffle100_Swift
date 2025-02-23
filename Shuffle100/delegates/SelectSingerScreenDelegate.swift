@@ -9,10 +9,10 @@
 import UIKit
 
 extension SelectSingerScreen: UIPickerViewDelegate {
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let index = pickerView.selectedRow(inComponent: 0)
-        settings.singerID = Singers.all[index].id
-    }
-    
+  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    let index = pickerView.selectedRow(inComponent: 0)
+    settings.singerID = Singers.all[index].id
+  }
+  
 }
