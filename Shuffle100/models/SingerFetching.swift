@@ -7,10 +7,10 @@
 //
 
 extension Singers {
-    static func fetchSingerFrom(_ settings: Settings) -> Singer {
-        guard let singer = Self.getSingerOfID(settings.singerID) else {
-            fatalError("Singer of ID \(settings.singerID) is not found.")
-        }
-        return singer
+  static func fetchSingerFrom(_ settings: Settings) -> Singer {
+    guard let singer = Self.getSingerOfID(settings.singerID) else {
+      fatalError("Singer of ID \(settings.singerID) is not found.")
     }
+    return singer
+  }
 }

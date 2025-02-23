@@ -9,11 +9,11 @@
 import Foundation
 
 struct SavedFudaSet: Codable {
-    var name: String
-    var state100: SelectedState100
-    
-    init(name: String = "名前を付けましょう", state100: SelectedState100 = SelectedState100()) {
-        self.name = name
-        self.state100 = state100
-    }
+  var name: String
+  var state100: SelectedState100
+  
+  init(name: String = "名前を付けましょう", state100: SelectedState100 = SelectedState100()) {
+    self.name = name
+    self.state100 = state100
+  }
 }

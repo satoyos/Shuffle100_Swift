@@ -9,32 +9,32 @@
 import Foundation
 
 enum PoemsSelectedState {
-    case full
-    case partial
-    case empry
+  case full
+  case partial
+  case empry
 }
 
 protocol PoemSelectedStateHandler {
-    func selectedState(of someNumbers: [Int],
-                       in referenceNumbers: [Int]) -> PoemsSelectedState
+  func selectedState(of someNumbers: [Int],
+                     in referenceNumbers: [Int]) -> PoemsSelectedState
 }
 
 extension PoemSelectedStateHandler {
-    func selectedState(of someNumbers: [Int],
-                        in referenceNumbers: [Int]) -> PoemsSelectedState {
-        comparePoemNumbers(selected: Set(someNumbers),
-                           in: Set(referenceNumbers))
+  func selectedState(of someNumbers: [Int],
+                     in referenceNumbers: [Int]) -> PoemsSelectedState {
+    comparePoemNumbers(selected: Set(someNumbers),
+                       in: Set(referenceNumbers))
+  }
+  
+  
+  private func comparePoemNumbers(selected: Set<Int>, in reference: Set<Int>) -> PoemsSelectedState {
+    let intersection = selected.intersection(reference)
+    if intersection.isEmpty {
+      return .empry
+    } else if intersection == reference {
+      return .full
+    } else {
+      return .partial
     }
-     
-    
-    private func comparePoemNumbers(selected: Set<Int>, in reference: Set<Int>) -> PoemsSelectedState {
-        let intersection = selected.intersection(reference)
-        if intersection.isEmpty {
-            return .empry
-        } else if intersection == reference {
-            return .full
-        } else {
-            return .partial
-        }
-    }
+  }
 }

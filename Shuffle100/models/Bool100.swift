@@ -11,13 +11,13 @@ import Foundation
 typealias Bool100 = [Bool]
 
 extension Bool100 {
-    static var allSelected: Bool100 {
-        [Bool](repeating: true, count: 100)
-    }
-    
-    static var allUnselected: Bool100 {
-        [Bool](repeating: false, count: 100)
-    }
+  static var allSelected: Bool100 {
+    [Bool](repeating: true, count: 100)
+  }
+  
+  static var allUnselected: Bool100 {
+    [Bool](repeating: false, count: 100)
+  }
 }
 
 
