@@ -9,109 +9,109 @@
 import Foundation
 
 final class Settings: Codable, ObservableObject {
-    static let userDefaultKey = "Settings"
-    var mode: GameConfig
-    var recitingConfig: RecitingConfig
-    var state100: SelectedState100
-    var savedFudaSets: [SavedFudaSet]
-    
-    init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100.allSelected, savedFudaSets: [SavedFudaSet] = []){
-        self.mode = mode
-        self.recitingConfig = recitingConfig
-        self.state100 = SelectedState100(bool100: bool100)
-        self.savedFudaSets = savedFudaSets
+  static let userDefaultKey = "Settings"
+  var mode: GameConfig
+  var recitingConfig: RecitingConfig
+  var state100: SelectedState100
+  var savedFudaSets: [SavedFudaSet]
+  
+  init(mode: GameConfig = GameConfig(), recitingConfig: RecitingConfig = RecitingConfig(), bool100: Bool100 = Bool100.allSelected, savedFudaSets: [SavedFudaSet] = []){
+    self.mode = mode
+    self.recitingConfig = recitingConfig
+    self.state100 = SelectedState100(bool100: bool100)
+    self.savedFudaSets = savedFudaSets
+  }
+  
+  var reciteMode: ReciteMode {
+    get {
+      return mode.reciteMode
     }
-    
-    var reciteMode: ReciteMode {
-        get {
-            return mode.reciteMode
-        }
-        set(m) {
-            mode.reciteMode = m
-        }
+    set(m) {
+      mode.reciteMode = m
     }
-    
-    var fakeMode: Bool {
-        get {
-            return mode.fakeMode
-        }
-        set(m) {
-            mode.fakeMode = m
-        }
+  }
+  
+  var fakeMode: Bool {
+    get {
+      return mode.fakeMode
     }
-    
-    var singerID: String {
-        get {
-            return mode.singerID
-        }
-        set(m) {
-            mode.singerID = m
-        }
+    set(m) {
+      mode.fakeMode = m
     }
-    
-    var volume: Float {
-        get {
-            return recitingConfig.volume
-        }
-        set(v) {
-            recitingConfig.volume = v
-        }
+  }
+  
+  var singerID: String {
+    get {
+      return mode.singerID
     }
-    
-    var interval: Float {
-        get {
-            return recitingConfig.interval
-        }
-        set(t) {
-            objectWillChange.send()
-            recitingConfig.interval = t
-        }
+    set(m) {
+      mode.singerID = m
     }
-    
-    var kamiShimoInterval: Float {
-        get {
-            return recitingConfig.kamiShimoInterval
-        }
-        set(t) {
-            recitingConfig.kamiShimoInterval = t
-        }
+  }
+  
+  var volume: Float {
+    get {
+      return recitingConfig.volume
     }
-    
-    var postMortemEnabled: Bool {
-        get {
-            fixPostMotermEnabled()
-            return mode.postMortemEnabled!
-        }
-        set(b) {
-            mode.postMortemEnabled = b
-        }
+    set(v) {
+      recitingConfig.volume = v
     }
-    
-    var shortenJoka: Bool {
-        get {
-            fixShortenJoka()
-            return mode.shortenJoka!
-        }
-        set(b) {
-            mode.shortenJoka = b
-        }
+  }
+  
+  var interval: Float {
+    get {
+      return recitingConfig.interval
     }
-    
-    func fixOptionalProperties() {
-        fixPostMotermEnabled()
+    set(t) {
+      objectWillChange.send()
+      recitingConfig.interval = t
     }
-    
-    private func fixPostMotermEnabled() {
-        guard let _ = mode.postMortemEnabled else {
-            mode.postMortemEnabled = false
-            return
-        }
+  }
+  
+  var kamiShimoInterval: Float {
+    get {
+      return recitingConfig.kamiShimoInterval
     }
-    
-    private func fixShortenJoka() {
-        guard let _ = mode.shortenJoka else {
-            mode.shortenJoka = false
-            return
-        }
+    set(t) {
+      recitingConfig.kamiShimoInterval = t
     }
+  }
+  
+  var postMortemEnabled: Bool {
+    get {
+      fixPostMotermEnabled()
+      return mode.postMortemEnabled!
+    }
+    set(b) {
+      mode.postMortemEnabled = b
+    }
+  }
+  
+  var shortenJoka: Bool {
+    get {
+      fixShortenJoka()
+      return mode.shortenJoka!
+    }
+    set(b) {
+      mode.shortenJoka = b
+    }
+  }
+  
+  func fixOptionalProperties() {
+    fixPostMotermEnabled()
+  }
+  
+  private func fixPostMotermEnabled() {
+    guard let _ = mode.postMortemEnabled else {
+      mode.postMortemEnabled = false
+      return
+    }
+  }
+  
+  private func fixShortenJoka() {
+    guard let _ = mode.shortenJoka else {
+      mode.shortenJoka = false
+      return
+    }
+  }
 }

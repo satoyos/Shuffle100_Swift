@@ -10,18 +10,18 @@ import Foundation
 import UIKit
 
 enum FiveColors: String {
-    case blue   = "青"
-    case yellow = "黄"
-    case green  = "緑"
-    case pink   = "桃(ピンク)"
-    case orange = "橙(オレンジ)"
+  case blue   = "青"
+  case yellow = "黄"
+  case green  = "緑"
+  case pink   = "桃(ピンク)"
+  case orange = "橙(オレンジ)"
 }
 
 struct FiveColorData {
-    let type: FiveColors
-    let poemNumbers: [Int]
-    let name: String
-    let uicolor: UIColor
+  let type: FiveColors
+  let poemNumbers: [Int]
+  let name: String
+  let uicolor: UIColor
 }
 
 fileprivate let blueSetNumbers =   [ 3,  5,  6, 12, 14, 24, 30, 31, 50, 57, 61, 62, 69, 70, 74, 75, 76, 82, 91, 100]
@@ -31,31 +31,31 @@ fileprivate let pinkSetNumbers =   [ 1,  4, 13, 16, 22, 28, 34, 40, 48, 51, 58, 
 fileprivate let orangeSetNumbers = [19, 21, 25, 27, 43, 44, 45, 49, 52, 53, 56, 63, 64, 67, 77, 88, 90, 95, 98, 99]
 
 struct FiveColorsDataHolder {
-    static let sharedDic: [FiveColors: FiveColorData] = [
-        .blue: FiveColorData(
-                    type: .blue,
-                    poemNumbers: blueSetNumbers,
-                    name: FiveColors.blue.rawValue,
-                    uicolor: .systemBlue),
-        .yellow: FiveColorData(
-                    type: .yellow,
-                    poemNumbers: yellowSetNumbers,
-                    name: FiveColors.yellow.rawValue,
-                    uicolor: .systemYellow),
-        .green: FiveColorData(
-                    type: .green,
-                    poemNumbers: greenSetNumbers,
-                    name: FiveColors.green.rawValue,
-                    uicolor: .systemGreen),
-        .pink: FiveColorData(
-                    type: .pink,
-                    poemNumbers: pinkSetNumbers,
-                    name: FiveColors.pink.rawValue,
-                    uicolor: .systemPink),
-        .orange: FiveColorData(
-                    type: .orange,
-                    poemNumbers: orangeSetNumbers,
-                    name: FiveColors.orange.rawValue,
-                    uicolor: .systemOrange)
-    ]
+  static let sharedDic: [FiveColors: FiveColorData] = [
+    .blue: FiveColorData(
+      type: .blue,
+      poemNumbers: blueSetNumbers,
+      name: FiveColors.blue.rawValue,
+      uicolor: .systemBlue),
+    .yellow: FiveColorData(
+      type: .yellow,
+      poemNumbers: yellowSetNumbers,
+      name: FiveColors.yellow.rawValue,
+      uicolor: .systemYellow),
+    .green: FiveColorData(
+      type: .green,
+      poemNumbers: greenSetNumbers,
+      name: FiveColors.green.rawValue,
+      uicolor: .systemGreen),
+    .pink: FiveColorData(
+      type: .pink,
+      poemNumbers: pinkSetNumbers,
+      name: FiveColors.pink.rawValue,
+      uicolor: .systemPink),
+    .orange: FiveColorData(
+      type: .orange,
+      poemNumbers: orangeSetNumbers,
+      name: FiveColors.orange.rawValue,
+      uicolor: .systemOrange)
+  ]
 }
