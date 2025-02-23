@@ -9,36 +9,36 @@
 import UIKit
 
 final class HelpListScreen: Screen {
-    internal var helpListSections: [HelpListSection]!
-    var tableView: UITableView!
-    let cellReuseId = "HelpList"
-    var goDetailAction: ((_ indexPath: IndexPath) -> Void)?
+  internal var helpListSections: [HelpListSection]!
+  var tableView: UITableView!
+  let cellReuseId = "HelpList"
+  var goDetailAction: ((_ indexPath: IndexPath) -> Void)?
+  
+  init(sections: [HelpListSection] = []) {
+    self.helpListSections = sections
     
-    init(sections: [HelpListSection] = []) {
-        self.helpListSections = sections
-
-        // クラスの持つ指定イニシャライザを呼び出す
-        super.init(nibName: nil, bundle: nil)
-    }
+    // クラスの持つ指定イニシャライザを呼び出す
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  // 新しく init を定義した場合に必須
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    // 新しく init を定義した場合に必須
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.title = "ヘルプ"
-        self.tableView = createTableViewForScreen()
-        tableView.register(HelpListTableViewCell.self, forCellReuseIdentifier: cellReuseId)
-        view.addSubview(tableView)
-    }
-    
-    private func createTableViewForScreen() -> UITableView {
-        let tableView = UITableView(frame: view.bounds, style: .grouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }
+    self.title = "ヘルプ"
+    self.tableView = createTableViewForScreen()
+    tableView.register(HelpListTableViewCell.self, forCellReuseIdentifier: cellReuseId)
+    view.addSubview(tableView)
+  }
+  
+  private func createTableViewForScreen() -> UITableView {
+    let tableView = UITableView(frame: view.bounds, style: .grouped)
+    tableView.dataSource = self
+    tableView.delegate = self
+    return tableView
+  }
 }

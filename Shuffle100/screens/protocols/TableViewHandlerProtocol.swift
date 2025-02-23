@@ -9,20 +9,20 @@
 import UIKit
 
 protocol TableViewHandler where Self: UITableViewDataSource {
-    var tableView: UITableView! { get }
-    
-    func cellFor(path: IndexPath) -> UITableViewCell
-    func cellIn1stSection(row: Int) -> UITableViewCell
+  var tableView: UITableView! { get }
+  
+  func cellFor(path: IndexPath) -> UITableViewCell
+  func cellIn1stSection(row: Int) -> UITableViewCell
 }
 
 extension TableViewHandler {
-    func cellFor(path: IndexPath) -> UITableViewCell {
-        tableView(tableView, cellForRowAt: path)
-    }
-    
-    func cellIn1stSection(row: Int) -> UITableViewCell {
-        cellFor(path: IndexPath(row: row, section: 0))
-    }
+  func cellFor(path: IndexPath) -> UITableViewCell {
+    tableView(tableView, cellForRowAt: path)
+  }
+  
+  func cellIn1stSection(row: Int) -> UITableViewCell {
+    cellFor(path: IndexPath(row: row, section: 0))
+  }
 }
 
 

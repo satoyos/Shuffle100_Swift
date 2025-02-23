@@ -9,34 +9,32 @@
 import UIKit
 import Then
 
-
 final class NgramPickerScreen: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {
-    
-    internal let cellReuseId = "ngrams"
-    var tableView: UITableView!
-    var sections = NgramDataFactory.createNgramPickerSctions()
-    var numbersDic = NgramDataFactory.createNgramNumbersDic()
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableViewSetUp()
-        navigationBarSetUp()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateTableAndBadge()
-    }
-    
-    private func tableViewSetUp() {
-        self.tableView = createTableViewForScreen()
-        tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
-    }
-    
-    private func navigationBarSetUp() {
-        self.title = "1字目で選ぶ"
-        navigationItem.rightBarButtonItems = [
-            selectedNumBadgeItem
-        ]
-    }
+  internal let cellReuseId = "ngrams"
+  var tableView: UITableView!
+  var sections = NgramDataFactory.createNgramPickerSctions()
+  var numbersDic = NgramDataFactory.createNgramNumbersDic()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableViewSetUp()
+    navigationBarSetUp()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    updateTableAndBadge()
+  }
+  
+  private func tableViewSetUp() {
+    self.tableView = createTableViewForScreen()
+    tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+  }
+  
+  private func navigationBarSetUp() {
+    self.title = "1字目で選ぶ"
+    navigationItem.rightBarButtonItems = [
+      selectedNumBadgeItem
+    ]
+  }
 }

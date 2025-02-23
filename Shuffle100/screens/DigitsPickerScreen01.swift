@@ -8,33 +8,32 @@
 
 import UIKit
 
-final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {
-    
-    let cellReuseId = "digits01"
-    let cardNumbers = DigitsNumberFacgtory.cardNumbers01
-    var tableView: UITableView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableViewSetUp()
-        navigationBarSetUp()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateTableAndBadge()
-    }
-    
-    private func navigationBarSetUp() {
-        self.title = "1の位の数で選ぶ"
-        navigationItem.rightBarButtonItems = [
-            selectedNumBadgeItem
-        ]
-    }
-
-    private func tableViewSetUp() {
-        self.tableView = createTableViewForScreen()
-        tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
-    }
-
+final class DigitsPickerScreen01: SettingsAttachedScreen, SelectedPoemsNumber, PickerWithCircleImage {  
+  let cellReuseId = "digits01"
+  let cardNumbers = DigitsNumberFacgtory.cardNumbers01
+  var tableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableViewSetUp()
+    navigationBarSetUp()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    updateTableAndBadge()
+  }
+  
+  private func navigationBarSetUp() {
+    self.title = "1の位の数で選ぶ"
+    navigationItem.rightBarButtonItems = [
+      selectedNumBadgeItem
+    ]
+  }
+  
+  private func tableViewSetUp() {
+    self.tableView = createTableViewForScreen()
+    tableView.register(SelectByGroupCell.self, forCellReuseIdentifier: cellReuseId);        view.addSubview(tableView)
+  }
+  
 }
