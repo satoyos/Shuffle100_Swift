@@ -7,18 +7,18 @@
 //
 
 enum DurationSettingType {
-    case twoPoems
-    case kamiShimo
+  case twoPoems
+  case kamiShimo
 }
 
 extension DurationSettingType {
-    var halfPoems: (ReciteSettingAudioHandler.HalfPoem,
-                    ReciteSettingAudioHandler.HalfPoem) {
-        switch self {
-        case .twoPoems:
-            return (.h001b, .h002a)
-        case .kamiShimo:
-            return (.h001a, .h001b)
-        }
+  var halfPoems: (ReciteSettingAudioHandler.HalfPoem,
+                  ReciteSettingAudioHandler.HalfPoem) {
+    switch self {
+    case .twoPoems:
+      return (.h001b, .h002a)
+    case .kamiShimo:
+      return (.h001a, .h001b)
     }
+  }
 }

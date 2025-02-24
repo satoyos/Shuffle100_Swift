@@ -800,13 +800,6 @@
 			path = viewModels_ToretaStyle;
 			sourceTree = "<group>";
 		};
-		922B8BE42D2292F90065D50A /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = protocols;
-			sourceTree = "<group>";
-		};
 		922B8BE72D22ABDB0065D50A /* supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,7 +1311,6 @@
 			children = (
 				924275E82D583F22001D5940 /* DurationSettingType.swift */,
 				92D153362BD4DD5A0075233B /* ScreenSizeStore.swift */,
-				922B8BE42D2292F90065D50A /* protocols */,
 			);
 			path = supports;
 			sourceTree = "<group>";

@@ -25,7 +25,7 @@ final class VolumeSettingViewModel: ViewModelObject {
   @BindableObject private(set) var binding: Binding
   let output: Output
   private let audioHandler: ReciteSettingAudioHandler
-
+  
   private var cancellables: Set<AnyCancellable> = []
   
   init(volume: Double, singer: Singer) {
@@ -67,7 +67,7 @@ final class VolumeSettingViewModel: ViewModelObject {
   }
   
   private static func percentStrOf(ratio: Double) -> String {
-      String(format: "% 3d", Int(ratio * 100))
+    String(format: "% 3d", Int(ratio * 100))
   }
 }
 

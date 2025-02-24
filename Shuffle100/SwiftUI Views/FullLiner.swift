@@ -11,27 +11,27 @@ import SwiftUI
 private let fudaFontSizeBase: CGFloat = 17
 
 struct FullLiner: View {
-    let viewModel: ViewModel
-    let font =  Font.custom("HiraMinProN-W6",
-                            fixedSize: fudaFontSizeBase)
-
-    var body: some View {
-        VStack {
-            Spacer()
-            Text(viewModel.text)
-                .font(font)
-                .lineSpacing(fudaFontSizeBase / 2)
-            //                .background(.white.opacity(0.4))
-                .padding(.all, 10)
-                .background(.white.opacity(0.5))
-                .foregroundColor(.black)
-                .padding(.bottom, fudaFontSizeBase * 2)
-        }
-
-    
+  let viewModel: ViewModel
+  let font =  Font.custom("HiraMinProN-W6",
+                          fixedSize: fudaFontSizeBase)
+  
+  var body: some View {
+    VStack {
+      Spacer()
+      Text(viewModel.text)
+        .font(font)
+        .lineSpacing(fudaFontSizeBase / 2)
+      //                .background(.white.opacity(0.4))
+        .padding(.all, 10)
+        .background(.white.opacity(0.5))
+        .foregroundColor(.black)
+        .padding(.bottom, fudaFontSizeBase * 2)
     }
+    
+    
+  }
 }
 
 #Preview {
-    FullLiner(viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]))
+  FullLiner(viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]))
 }
