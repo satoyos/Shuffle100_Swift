@@ -11,7 +11,7 @@ struct VolumeSetting {
   let settings: Settings
   @ObservedObject private var viewModel: VolumeSettingViewModel
   @EnvironmentObject var screenSizeStore: ScreenSizeStore
-
+  
   // To catch event: navigation back to Parent View of SwiftUI
   @Environment(\.isPresented) private var isPresented
   
@@ -65,13 +65,13 @@ extension VolumeSetting: View {
     reflectSliderValueToSettings()
     viewModel.stopReciting()
   }
-
+  
   private func reflectSliderValueToSettings() {
     settings.volume = Float(viewModel.binding.volume)
   }
-
+  
   private var digitSize: Double {
-      screenSizeStore.screenWidth / 5.0
+    screenSizeStore.screenWidth / 5.0
   }
 }
 

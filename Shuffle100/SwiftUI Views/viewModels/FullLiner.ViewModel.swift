@@ -9,17 +9,17 @@
 import Foundation
 
 extension FullLiner {
-    struct ViewModel {
-        let fullLiner: [String]
-        
-        var text: String {
-            guard fullLiner.count == 5 else { return ""}
-            return fullLiner[0] + " "
-            + fullLiner[1] + " "
-            + fullLiner[2] + "\n"
-            + fullLiner[3] + " "
-            + fullLiner[4]
-        }
-    }
+  struct ViewModel {
+    let fullLiner: [String]
     
+    var text: String {
+      guard fullLiner.count == 5 else { return ""}
+      return fullLiner[0] + " "
+      + fullLiner[1] + " "
+      + fullLiner[2] + "\n"
+      + fullLiner[3] + " "
+      + fullLiner[4]
+    }
+  }
+  
 }

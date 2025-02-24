@@ -11,45 +11,41 @@ import SwiftUI
 private let occupyRatio: CGFloat = 3.0 / 4.0
 
 struct MinSec {
-    let digitSize: CGFloat
-    let unitSize: CGFloat
-    @ObservedObject private var viewModel: ViewModel
-
-    @EnvironmentObject var screenSizeStore: ScreenSizeStore
-    
-    init(digitSize: CGFloat, viewModel: ViewModel = .init(startTime: 60, interval: 1)) {
-        self.digitSize = digitSize
-        self.unitSize = digitSize / 4
-        self.viewModel = viewModel
-    }
+  let digitSize: CGFloat
+  let unitSize: CGFloat
+  @ObservedObject private var viewModel: ViewModel
+  
+  @EnvironmentObject var screenSizeStore: ScreenSizeStore
+  
+  init(digitSize: CGFloat, viewModel: ViewModel = .init(startTime: 60, interval: 1)) {
+    self.digitSize = digitSize
+    self.unitSize = digitSize / 4
+    self.viewModel = viewModel
+  }
 }
 
 extension MinSec: View {
-    var body: some View {
-        HStack (spacing: 0) {
-            HStack (alignment: .bottom, spacing: 0) {
-                Text(viewModel.minText)
-                    .monospacedDigit()
-                    .font(.system(size: digitSize, weight: .medium))
-//                    .background(Color.green)
-                Text("分")
-                    .font(.system(size: unitSize, weight: .medium))
-//                    .background(Color.white)
-            }
-//            .background(Color.cyan)
-            HStack (alignment: .bottom, spacing: 0) {
-                Text(viewModel.secText)
-                    .monospacedDigit()
-                    .font(.system(size: digitSize, weight: .medium))
-                Text("秒")
-                    .font(.system(size: unitSize, weight: .medium))
-            }
-//            .background(Color.mint)
-        }
+  var body: some View {
+    HStack (spacing: 0) {
+      HStack (alignment: .bottom, spacing: 0) {
+        Text(viewModel.minText)
+          .monospacedDigit()
+          .font(.system(size: digitSize, weight: .medium))
+        Text("分")
+          .font(.system(size: unitSize, weight: .medium))
+      }
+      HStack (alignment: .bottom, spacing: 0) {
+        Text(viewModel.secText)
+          .monospacedDigit()
+          .font(.system(size: digitSize, weight: .medium))
+        Text("秒")
+          .font(.system(size: unitSize, weight: .medium))
+      }
     }
+  }
 }
 
 #Preview {
-    MinSec(digitSize: 130)
-        .environmentObject(ScreenSizeStore())
+  MinSec(digitSize: 130)
+    .environmentObject(ScreenSizeStore())
 }

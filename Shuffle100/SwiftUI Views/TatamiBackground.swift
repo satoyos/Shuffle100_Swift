@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct TatamiBackground: View {
-    var body: some View {
-        Image(decorative: "tatami")
-            .resizable()
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-    }
+  var body: some View {
+    Image(decorative: "tatami")
+      .resizable()
+      .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+  }
 }
 
 #Preview {
-    TatamiBackground()
+  TatamiBackground()
 }
