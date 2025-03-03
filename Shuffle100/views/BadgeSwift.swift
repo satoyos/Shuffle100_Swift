@@ -178,7 +178,6 @@ import UIKit
   }
   
   /// Draw the stars in interface builder
-  @available(iOS 8.0, *)
   override open func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     
