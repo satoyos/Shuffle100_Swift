@@ -8,18 +8,24 @@
 
 import SwiftUI
 
-struct TorifudaView: View {
+struct TorifudaView {
   let shimoStr: String
   let fullLiner: [String]
-  
   @EnvironmentObject var screenSizeStore: ScreenSizeStore
-  
+}
+ 
+extension TorifudaView: View {
   var body: some View {
     GeometryReader { rootViewGeometry in
       ZStack {
         TatamiBackground()
-        Torifuda(viewModel: .init(shimo: shimoStr))
-        FullLiner(viewModel: .init(fullLiner: fullLiner))
+        VStack {
+          Spacer()
+          Torifuda(viewModel: .init(shimo: shimoStr))
+          Spacer()
+          FullLiner(viewModel: .init(fullLiner: fullLiner))
+          Spacer()
+        }
       }
       .onAppear{
         screenSizeStore.update(
