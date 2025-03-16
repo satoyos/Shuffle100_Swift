@@ -8,30 +8,33 @@
 
 import SwiftUI
 
-private let fudaFontSizeBase: CGFloat = 17
+fileprivate let fontSizeBase: CGFloat = 17
+fileprivate let minimumScreenHeight: CGFloat = 667.0
+fileprivate let fontName = "HiraMinProN-W6"
 
-struct FullLiner: View {
+struct FullLiner {
   let viewModel: ViewModel
-  let font =  Font.custom("HiraMinProN-W6",
-                          fixedSize: fudaFontSizeBase)
-  
+  @EnvironmentObject private var screenSizeStore: ScreenSizeStore
+}
+
+extension FullLiner: View {
   var body: some View {
+    let power = screenSizeStore.screenHeight / minimumScreenHeight
+    let fontSize = fontSizeBase * power
+    let font = Font.custom(fontName, fixedSize: fontSize)
+    
     VStack {
-      Spacer()
       Text(viewModel.text)
         .font(font)
-        .lineSpacing(fudaFontSizeBase / 2)
-      //                .background(.white.opacity(0.4))
+        .lineSpacing(fontSize / 2)
         .padding(.all, 10)
         .background(.white.opacity(0.5))
         .foregroundColor(.black)
-        .padding(.bottom, fudaFontSizeBase * 2)
     }
-    
-    
   }
 }
 
 #Preview {
   FullLiner(viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]))
+    .environmentObject(ScreenSizeStore())
 }
