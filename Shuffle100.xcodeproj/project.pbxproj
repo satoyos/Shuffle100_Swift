@@ -244,7 +244,7 @@
 		92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */; };
 		92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */; };
 		92B87D49250A654B003BB51B /* FiveColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsScreen.swift */; };
-		92B87D4D250BBE31003BB51B /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* FiveColors.swift */; };
+		92B87D4D250BBE31003BB51B /* OldFiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* OldFiveColors.swift */; };
 		92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D50250BBE96003BB51B /* FiveColorsTest.swift */; };
 		92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
 		92B87D57250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
@@ -605,7 +605,7 @@
 		92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPickerUITest.swift; sourceTree = "<group>"; };
 		92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenTest.swift; sourceTree = "<group>"; };
 		92B87D48250A654B003BB51B /* FiveColorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreen.swift; sourceTree = "<group>"; };
-		92B87D4C250BBE31003BB51B /* FiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColors.swift; sourceTree = "<group>"; };
+		92B87D4C250BBE31003BB51B /* OldFiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldFiveColors.swift; sourceTree = "<group>"; };
 		92B87D50250BBE96003BB51B /* FiveColorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsTest.swift; sourceTree = "<group>"; };
 		92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenLayout.swift; sourceTree = "<group>"; };
 		92B87D56250CF9C5003BB51B /* 5colors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5colors; sourceTree = "<group>"; };
@@ -1334,7 +1334,7 @@
 				92ABF9B823F6D739000CA91C /* StoreManager.swift */,
 				92AE7C7223FEAEDC003FA07F /* SHEnvironment.swift */,
 				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
-				92B87D4C250BBE31003BB51B /* FiveColors.swift */,
+				92B87D4C250BBE31003BB51B /* OldFiveColors.swift */,
 				92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */,
 				92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */,
 			);
@@ -1635,9 +1635,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1688,9 +1692,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1880,7 +1888,7 @@
 				92A6EB9124191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				92467793292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
 				9250C8242BE4939100EFBD48 /* Torifuda.ViewModel.swift in Sources */,
-				92B87D4D250BBE31003BB51B /* FiveColors.swift in Sources */,
+				92B87D4D250BBE31003BB51B /* OldFiveColors.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				921FF439249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,

@@ -34,7 +34,7 @@ final class FiveColorsScreen: SettingsAttachedScreen, SelectedPoemsNumber, PoemS
   }
   
   // this method is not private for testability
-  func imageFilePathFor(color: FiveColors) -> String {
+  func imageFilePathFor(color: OldFiveColors) -> String {
     guard let colorDIc = colorsDic[color] else {
       assert(false, "No dic for color \(color)")
       return ""
