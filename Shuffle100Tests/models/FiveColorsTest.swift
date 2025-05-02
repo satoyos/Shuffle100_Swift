@@ -30,7 +30,7 @@ class FiveColorsTest: XCTestCase {
 //                          file: testPath,
                           uicolor: .systemGreen)
         // then
-        XCTAssertEqual(colorData.type, FiveColors.green)
+        XCTAssertEqual(colorData.type, OldFiveColors.green)
         XCTAssertEqual(colorData.poemNumbers.count, 4)
         XCTAssertEqual(colorData.name, testName)
     }

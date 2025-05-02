@@ -10,9 +10,9 @@ import UIKit
 
 
 final class ColorOfFiveButton: LargeImageAttachedButton {
-  var color: FiveColors
+  var color: OldFiveColors
   
-  init(_ color: FiveColors) {
+  init(_ color: OldFiveColors) {
     self.color = color
     super.init(frame: CGRect.zero)
   }

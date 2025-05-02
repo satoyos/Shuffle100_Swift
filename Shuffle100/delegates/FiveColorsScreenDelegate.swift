@@ -26,19 +26,19 @@ extension FiveColorsScreen {
     present(ac, animated: true)
   }
   
-  private func selectJust20Action(for color: FiveColors) -> UIAlertAction {
+  private func selectJust20Action(for color: OldFiveColors) -> UIAlertAction {
     UIAlertAction(title: "この20首だけを選ぶ", style: .default) { _ in
       self.selectJust20Of(color: color)
     }
   }
   
-  private func add20Action(for color: FiveColors) -> UIAlertAction {
+  private func add20Action(for color: OldFiveColors) -> UIAlertAction {
     UIAlertAction(title: "今選んでいる札に加える", style: .default) { _ in
       self.add20of(color: color)
     }
   }
   
-  func selectJust20Of(color: FiveColors) {
+  func selectJust20Of(color: OldFiveColors) {
     guard let colorDic = colorsDic[color] else { return }
     let newState100 = SelectedState100()
       .cancelAll()
@@ -48,7 +48,7 @@ extension FiveColorsScreen {
     updateBadge()
   }
   
-  func add20of(color: FiveColors) {
+  func add20of(color: OldFiveColors) {
     guard let colorDic = colorsDic[color] else { return }
     let newState100 = settings.state100.selectInNumbers(colorDic.poemNumbers)
     settings.state100 = newState100
