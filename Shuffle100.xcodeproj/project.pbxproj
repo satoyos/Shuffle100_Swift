@@ -218,6 +218,13 @@
 		92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
 		92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
 		92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
+		92A5B6B22DC4D49300DEFA69 /* FillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B12DC4D49300DEFA69 /* FillType.swift */; };
+		92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */; };
+		92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */; };
+		92A5B6B82DC4D51500DEFA69 /* FiveColorButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */; };
+		92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */; };
+		92A5B6BD2DC4D5D400DEFA69 /* FillTypeHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */; };
+		92A5B6BF2DC4D5F000DEFA69 /* FiveColors 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */; };
 		92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */; };
 		92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */; };
 		92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */; };
@@ -579,6 +586,13 @@
 		92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerCoordinator.swift; sourceTree = "<group>"; };
 		92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+Audio.swift"; sourceTree = "<group>"; };
 		92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+ExitGame.swift"; sourceTree = "<group>"; };
+		92A5B6B12DC4D49300DEFA69 /* FillType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillType.swift; sourceTree = "<group>"; };
+		92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorButtonViewModelTests.swift; sourceTree = "<group>"; };
+		92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewModel.swift; sourceTree = "<group>"; };
+		92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorButtonViewModel.swift; sourceTree = "<group>"; };
+		92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewModel.swift; sourceTree = "<group>"; };
+		92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillTypeHandlable.swift; sourceTree = "<group>"; };
+		92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiveColors 2.swift"; sourceTree = "<group>"; };
 		92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingCoordinator.swift; sourceTree = "<group>"; };
 		92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAttachedScreen.swift; sourceTree = "<group>"; };
 		92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenDelegate.swift; sourceTree = "<group>"; };
@@ -773,6 +787,8 @@
 		922B8BC92D215B740065D50A /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */,
+				92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */,
 				924275EA2D583F98001D5940 /* DurationSettingViewModel 2.swift */,
 				922B8BCA2D215B850065D50A /* BindableObject.swift */,
 				922B8BCB2D215B850065D50A /* ViewModelObject.swift */,
@@ -783,6 +799,8 @@
 		922B8BD42D215C340065D50A /* viewModels_ToretaStyle */ = {
 			isa = PBXGroup;
 			children = (
+				92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */,
+				92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
 				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
@@ -1230,6 +1248,14 @@
 			path = audioPlayers;
 			sourceTree = "<group>";
 		};
+		92A5B6BB2DC4D59F00DEFA69 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		92AD8C562BB00083004D605D /* enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,7 +1344,10 @@
 		92D5714D220EC78C00235717 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				92A5B6BB2DC4D59F00DEFA69 /* protocols */,
 				926DD6442C6B591200516674 /* CountDownTimer.swift */,
+				92A5B6B12DC4D49300DEFA69 /* FillType.swift */,
+				92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
@@ -1756,6 +1785,7 @@
 				92D153342BD3CE670075233B /* TorifudaView.swift in Sources */,
 				9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */,
 				92B9E96024656680007C2E75 /* NgramPickerCoordinator.swift in Sources */,
+				92A5B6B82DC4D51500DEFA69 /* FiveColorButtonViewModel.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
 				92EC11FA2A0297ED0071FA6C /* DigitsPickerScreen01DataSource.swift in Sources */,
@@ -1833,6 +1863,7 @@
 				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
+				92A5B6BD2DC4D5D400DEFA69 /* FillTypeHandlable.swift in Sources */,
 				92EC12222A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */,
 				927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
@@ -1851,6 +1882,7 @@
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */,
+				92A5B6B22DC4D49300DEFA69 /* FillType.swift in Sources */,
 				924275DE2D583DE1001D5940 /* KamiShimoDurationSetting.swift in Sources */,
 				924275DF2D583DE1001D5940 /* InterPoemDurationSetting.swift in Sources */,
 				924275E12D583E16001D5940 /* VolumeSetting.swift in Sources */,
@@ -1880,6 +1912,7 @@
 				925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92B9E990246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */,
+				92A5B6BF2DC4D5F000DEFA69 /* FiveColors 2.swift in Sources */,
 				9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92EC121E2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */,
@@ -1888,6 +1921,7 @@
 				92A6EB9124191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				92467793292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
 				9250C8242BE4939100EFBD48 /* Torifuda.ViewModel.swift in Sources */,
+				92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */,
 				92B87D4D250BBE31003BB51B /* OldFiveColors.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
@@ -1905,6 +1939,7 @@
 			files = (
 				92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */,
 				926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */,
+				92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
 				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
@@ -1934,6 +1969,7 @@
 				926DD6482C6B594100516674 /* CountDownTimerTests.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
+				92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */,
 				92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
