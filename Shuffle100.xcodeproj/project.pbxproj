@@ -225,6 +225,9 @@
 		92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */; };
 		92A5B6BD2DC4D5D400DEFA69 /* FillTypeHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */; };
 		92A5B6BF2DC4D5F000DEFA69 /* FiveColors 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */; };
+		92A5B6C32DC5A64300DEFA69 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6C22DC5A64300DEFA69 /* BadgeView.swift */; };
+		92A5B6C42DC5A64300DEFA69 /* FiveColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */; };
+		92A5B6C52DC5A64300DEFA69 /* FiveColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */; };
 		92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */; };
 		92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */; };
 		92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */; };
@@ -593,6 +596,9 @@
 		92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewModel.swift; sourceTree = "<group>"; };
 		92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillTypeHandlable.swift; sourceTree = "<group>"; };
 		92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiveColors 2.swift"; sourceTree = "<group>"; };
+		92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorButton.swift; sourceTree = "<group>"; };
+		92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsView.swift; sourceTree = "<group>"; };
+		92A5B6C22DC5A64300DEFA69 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		92A6EB7C241528E900B37A42 /* IntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingCoordinator.swift; sourceTree = "<group>"; };
 		92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAttachedScreen.swift; sourceTree = "<group>"; };
 		92A6EB8424191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreenDelegate.swift; sourceTree = "<group>"; };
@@ -1313,7 +1319,10 @@
 			isa = PBXGroup;
 			children = (
 				92D153352BD4DD430075233B /* supports */,
+				92A5B6C22DC5A64300DEFA69 /* BadgeView.swift */,
 				925648D62D325EC500688D8B /* DurationSetting.swift */,
+				92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */,
+				92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */,
 				924275DC2D583DE1001D5940 /* InterPoemDurationSetting.swift */,
 				924275DD2D583DE1001D5940 /* KamiShimoDurationSetting.swift */,
 				92D153332BD3CE670075233B /* TorifudaView.swift */,
@@ -1862,6 +1871,9 @@
 				92FFBF6524650219004D7F79 /* NgramPickerScreen.swift in Sources */,
 				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
+				92A5B6C32DC5A64300DEFA69 /* BadgeView.swift in Sources */,
+				92A5B6C42DC5A64300DEFA69 /* FiveColorsView.swift in Sources */,
+				92A5B6C52DC5A64300DEFA69 /* FiveColorButton.swift in Sources */,
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
 				92A5B6BD2DC4D5D400DEFA69 /* FillTypeHandlable.swift in Sources */,
 				92EC12222A139C240071FA6C /* DigitsPickerScreen10DataSource.swift in Sources */,
