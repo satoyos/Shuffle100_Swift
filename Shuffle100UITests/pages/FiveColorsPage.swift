@@ -29,7 +29,8 @@ final class FiveColorsPage: PageObjectable {
     }
     
     func badge(of number: Int) -> XCUIElement {
-        app.navigationBars.staticTexts["\(number)首"]
+//        app.navigationBars.staticTexts["\(number)首"]
+      app.staticTexts["\(number)首"]
     }
     
     private func colorButton(of color: FiveColors) -> XCUIElement {
