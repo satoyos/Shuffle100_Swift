@@ -837,6 +837,7 @@
 			children = (
 				92AD8C562BB00083004D605D /* enums */,
 				92E5C54C266C754E009A46F5 /* protocols */,
+				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
 				922BDDD8261B3B760093B24A /* HomePage.swift */,
 				922BDDDD261B3F2A0093B24A /* PoemPickerPage.swift */,
 				92E9705326BEAD2E00A6650C /* PoemPickerPageExtension.swift */,
@@ -853,7 +854,6 @@
 				922C638B269094880000D07D /* NgramPickerPage.swift */,
 				92FB604E269337E1000C3F99 /* FudaSetPage.swift */,
 				92E9705926C1418B00A6650C /* HelpListPage.swift */,
-				92E9705D26C2917C00A6650C /* FiveColorsPage.swift */,
 				92DCD6DC26D12F8B0063AF7A /* MemorizeTimerPage.swift */,
 				9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */,
 				9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */,
@@ -1122,6 +1122,7 @@
 		927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */ = {
 			isa = PBXGroup;
 			children = (
+				92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */,
 				927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */,
 				921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */,
 				9258D1E822DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift */,
@@ -1134,7 +1135,6 @@
 				92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */,
 				92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */,
 				921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */,
-				92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */,
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
 				927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */,
@@ -1217,6 +1217,7 @@
 			children = (
 				9282CF692D6880F500516FDE /* protocols */,
 				922B8BE72D22ABDB0065D50A /* supports */,
+				92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */,
 				92BCDE79226C8E1E001853DC /* MainCoordinator.swift */,
 				92AE7C7824012872003FA07F /* MainCoordinatorSetUpSettings.swift */,
 				929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */,
@@ -1236,7 +1237,6 @@
 				929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */,
 				921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */,
 				92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */,
-				92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */,
 				92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */,
 				92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */,
 				92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */,

@@ -35,13 +35,28 @@ extension FiveColorsView: View {
                        content: fiveColorsActionSheet)
         }
       }
-      .toolbar {
-        ToolbarItem(placement: .confirmationAction) {
+      //
+      // 本当は、以下のように toolbarを使って実装したい。
+      //
+//      .toolbar {
+//        ToolbarItem(placement: .confirmationAction) {
+//          BadgeView(number: viewModel.output.state100.selectedNum)
+//        }
+//        ToolbarItem(placement: .principal) {
+//          Text("五色百人一首")
+//        }
+//      }
+      //
+      // ただ、Shuffle100がまだUIKitからこのViewを呼び出しているので、
+      //  表示の整合性のために、次のように saveAreaInsetを使う
+      //
+      .safeAreaInset(edge: .top) {
+        HStack {
+          Spacer()
           BadgeView(number: viewModel.output.state100.selectedNum)
+            .padding()
         }
-        ToolbarItem(placement: .principal) {
-          Text("五色百人一首")
-        }
+        .frame(height: 30)
       }
     }
     .onChange(of: isPresented) {

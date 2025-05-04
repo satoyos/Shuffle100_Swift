@@ -23,12 +23,19 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
   }
   
   func start() {
-    let screen = FiveColorsScreen(settings: settings)
-    screen.saveSettingsAction = { [store, settings, weak self] in
-      self?.saveSettingsPermanently(settings, into: store)
+    let fiveColorsView = FiveColorsView(settings: settings)
+    let hostController = ActionAttachedHostingController(
+      rootView: fiveColorsView
+        .environmentObject(ScreenSizeStore()))
+    hostController.navigationItem.prompt = navigationItemPrompt
+    hostController.navigationItem.title = "五色百人一首"
+    hostController.actionForViewWillDissappear = { [fiveColorsView, weak self] in
+      fiveColorsView.tasksForLeavingThisVIew()
+      if let settings = self?.settings, let store = self?.store {
+        self?.saveSettingsPermanently(settings, into: store)
+      }
     }
-    navigationController.pushViewController(screen, animated: true)
-    screen.navigationItem.prompt = navigationItemPrompt
-    self.screen = screen
+    navigationController.pushViewController(hostController, animated: true)
+    self.screen = hostController
   }
 }
