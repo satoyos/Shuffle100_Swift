@@ -252,11 +252,6 @@
 		92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */; };
 		92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
 		92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */; };
-		92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */; };
-		92B87D49250A654B003BB51B /* FiveColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D48250A654B003BB51B /* FiveColorsScreen.swift */; };
-		92B87D4D250BBE31003BB51B /* OldFiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D4C250BBE31003BB51B /* OldFiveColors.swift */; };
-		92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D50250BBE96003BB51B /* FiveColorsTest.swift */; };
-		92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */; };
 		92B87D57250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B87D58250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B87D59250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
@@ -338,8 +333,6 @@
 		92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */; };
 		92EDBCE226C658E9009F4555 /* SelectedColorHandlingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */; };
 		92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */; };
-		92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */; };
-		92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */; };
 		92F66668252893ED0068E6A1 /* PoemsSelectesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */; };
 		92F666722529DFEF0068E6A1 /* FiveColorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */; };
 		92F8242025A748E3008E031D /* ConfigureTableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */; };
@@ -623,11 +616,6 @@
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
 		92AF24A822A15FC60085B754 /* SavedFudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSet.swift; sourceTree = "<group>"; };
 		92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPickerUITest.swift; sourceTree = "<group>"; };
-		92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenTest.swift; sourceTree = "<group>"; };
-		92B87D48250A654B003BB51B /* FiveColorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreen.swift; sourceTree = "<group>"; };
-		92B87D4C250BBE31003BB51B /* OldFiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldFiveColors.swift; sourceTree = "<group>"; };
-		92B87D50250BBE96003BB51B /* FiveColorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsTest.swift; sourceTree = "<group>"; };
-		92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenLayout.swift; sourceTree = "<group>"; };
 		92B87D56250CF9C5003BB51B /* 5colors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5colors; sourceTree = "<group>"; };
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerScreenDelegate.swift; sourceTree = "<group>"; };
@@ -704,8 +692,6 @@
 		92ED1A0523E1AA6B00A431B6 /* NonsotpModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonsotpModeCoordinator.swift; sourceTree = "<group>"; };
 		92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorHandlingSheet.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
-		92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfFiveButton.swift; sourceTree = "<group>"; };
-		92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsScreenDelegate.swift; sourceTree = "<group>"; };
 		92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsSelectesState.swift; sourceTree = "<group>"; };
 		92F666712529DFEF0068E6A1 /* FiveColorsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsCoordinator.swift; sourceTree = "<group>"; };
 		92F8241F25A748E3008E031D /* ConfigureTableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTableCellProtocol.swift; sourceTree = "<group>"; };
@@ -985,7 +971,6 @@
 				920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */,
 				921FF430249E52C60083AC49 /* HelpListScreen.swift */,
 				921FF44C24A603760083AC49 /* HelpDetailScreen.swift */,
-				92B87D48250A654B003BB51B /* FiveColorsScreen.swift */,
 				921791F5258E211C00A38249 /* Screen.swift */,
 				92EC11F52A01F43D0071FA6C /* DigitsPickerScreen01.swift */,
 				92EC12192A124FBD0071FA6C /* DigitsPickerScreen10.swift */,
@@ -1068,7 +1053,6 @@
 				92EBACC52510F6A200F2B0B4 /* SHViewSizeGetterProtocol.swift */,
 				927A70C52545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift */,
 				92328C3124596AF7005E0FEE /* WahtsNextScreenLayout.swift */,
-				92B87D52250CF7DD003BB51B /* FiveColorsScreenLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -1159,7 +1143,6 @@
 				92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */,
 				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
 				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
-				92B87D50250BBE96003BB51B /* FiveColorsTest.swift */,
 				927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */,
 				92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */,
 				926489182604480300CC4131 /* SettingsTest.swift */,
@@ -1184,7 +1167,6 @@
 				920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */,
 				921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */,
 				921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */,
-				92B87D46250A64E3003BB51B /* FiveColorsScreenTest.swift */,
 				9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */,
 				9254B4D028FADC1600870795 /* SelectedNumBadggeTestProtocol.swift */,
 				92EC11F32A01F3510071FA6C /* DigitsPickerScreen01Test.swift */,
@@ -1372,7 +1354,6 @@
 				92ABF9B823F6D739000CA91C /* StoreManager.swift */,
 				92AE7C7223FEAEDC003FA07F /* SHEnvironment.swift */,
 				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
-				92B87D4C250BBE31003BB51B /* OldFiveColors.swift */,
 				92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */,
 				92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */,
 			);
@@ -1420,7 +1401,6 @@
 				92B9E9672465A24A007C2E75 /* NgramPickerScreenDelegate.swift */,
 				920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */,
 				921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */,
-				92F6662A25260C560068E6A1 /* FiveColorsScreenDelegate.swift */,
 				9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */,
 				92EC12012A0531400071FA6C /* DigitsPickerScreen01Delegate.swift */,
 				92EC121D2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift */,
@@ -1452,7 +1432,6 @@
 		92EC12102A076CB70071FA6C /* buttons */ = {
 			isa = PBXGroup;
 			children = (
-				92F666232524B1600068E6A1 /* ColorOfFiveButton.swift */,
 				92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */,
 				9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */,
 				9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */,
@@ -1823,7 +1802,6 @@
 				92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
 				9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
-				92B87D49250A654B003BB51B /* FiveColorsScreen.swift in Sources */,
 				9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */,
 				92E5C54E26723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
 				925648D92D325EC500688D8B /* DurationSetting.swift in Sources */,
@@ -1831,7 +1809,6 @@
 				92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
-				92B87D53250CF7DD003BB51B /* FiveColorsScreenLayout.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */,
 				92FFBF1E245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
@@ -1880,11 +1857,9 @@
 				927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
 				9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				927A70C62545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */,
-				92F6662B25260C560068E6A1 /* FiveColorsScreenDelegate.swift in Sources */,
 				92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */,
 				921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
-				92F666242524B1600068E6A1 /* ColorOfFiveButton.swift in Sources */,
 				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */,
 				920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
@@ -1934,7 +1909,6 @@
 				92467793292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
 				9250C8242BE4939100EFBD48 /* Torifuda.ViewModel.swift in Sources */,
 				92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */,
-				92B87D4D250BBE31003BB51B /* OldFiveColors.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				921FF439249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
@@ -1982,11 +1956,9 @@
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */,
-				92B87D47250A64E3003BB51B /* FiveColorsScreenTest.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
 				92EC11F42A01F3510071FA6C /* DigitsPickerScreen01Test.swift in Sources */,
-				92B87D51250BBE96003BB51B /* FiveColorsTest.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
 				921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */,
