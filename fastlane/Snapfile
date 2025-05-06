@@ -5,7 +5,7 @@ devices([
   # "iPhone 8 Plus",      # 5.5inch
   "iPhone 13 Pro Max",  # 6.5inch
   "iPad Pro (12.9-inch) (6th generation)",
-  "iPad Pro (11-inch) (4th generation)",
+  # "iPad Pro (11-inch) (4th generation)",
 ])
 
 #  テスト実行の時に使用する言語一覧
