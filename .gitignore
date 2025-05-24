@@ -9,3 +9,4 @@ index.html
 vendor/
 fastlane/test_output/
 screenshots/
+buildServer.json
