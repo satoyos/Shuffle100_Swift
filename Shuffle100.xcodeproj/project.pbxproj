@@ -760,6 +760,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9205DA302DEAF4C60098CE3B /* Ngram */ = {
+			isa = PBXGroup;
+			children = (
+				9280038E249BAFED004D03C2 /* empty_circle.png */,
+				92800390249BAFEE004D03C2 /* full_circle.png */,
+				9280038F249BAFED004D03C2 /* half_circle.png */,
+			);
+			path = Ngram;
+			sourceTree = "<group>";
+		};
 		921737F5214E979F0059EAA4 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1035,7 @@
 		9258FAF321FEAB6C00E4E0B7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9205DA302DEAF4C60098CE3B /* Ngram */,
 				92B87D56250CF9C5003BB51B /* 5colors */,
 				92C87DD222E8894900569D15 /* audio */,
 				921FF44624A4D9EF0083AC49 /* html */,
@@ -1039,9 +1050,6 @@
 				92328C2624591E25005E0FEE /* torifuda.png */,
 				92FFBF4C245FB53A004D7F79 /* tatami_moved.jpg */,
 				92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */,
-				9280038E249BAFED004D03C2 /* empty_circle.png */,
-				92800390249BAFEE004D03C2 /* full_circle.png */,
-				9280038F249BAFED004D03C2 /* half_circle.png */,
 				9207515428D868AC00B35285 /* Shuffle100_1024_background_playback.png */,
 			);
 			path = resources;
