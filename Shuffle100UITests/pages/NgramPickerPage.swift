@@ -10,12 +10,12 @@ import Foundation
 import XCTest
 
 enum NgramCellType: String {
-    case justOne = "just_one"
-    case u = "u"
-    case tsu = "tsu"
-    case shi = "shi"
-    case mo = "mo"
-    case yu = "yu"
+    case justOne = "一字決まりの歌"
+    case u   = "「う」で始まる歌"
+    case tsu = "「つ」で始まる歌"
+    case shi = "「し」で始まる歌"
+    case mo  = "「も」で始まる歌"
+    case yu  = "「ゆ」で始まる歌"
 }
 
 final class NgramPickerPage: PageObjectable {
@@ -39,7 +39,8 @@ final class NgramPickerPage: PageObjectable {
     }
     
     func badge(of number: Int) -> XCUIElement {
-        app.navigationBars.staticTexts["\(number)首"]
+//        app.navigationBars.staticTexts["\(number)首"]
+      app.staticTexts["\(number)首"]
     }
     
     @discardableResult
@@ -49,6 +50,6 @@ final class NgramPickerPage: PageObjectable {
     }
     
     private func cell(type: NgramCellType) -> XCUIElement {
-        return app.cells[type.rawValue].firstMatch
+        return app.buttons[type.rawValue].firstMatch
     }
 }

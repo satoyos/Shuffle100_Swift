@@ -11,6 +11,7 @@ import Combine
 import SwiftUI
 
 final class ScreenSizeStore: ObservableObject {
+  static let shared = ScreenSizeStore()
   @Published private(set) var screenWidth: CGFloat
   @Published private(set) var screenHeight: CGFloat
   

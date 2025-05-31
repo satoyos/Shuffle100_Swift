@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class NgramPickerCoordinator: Coordinator, HandleNavigator {
+final class NgramPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
   var screen: UIViewController?
-  private var settings: Settings
-  private var store: StoreManager
+  internal var settings: Settings
+  internal var store: StoreManager
   var navigationController: UINavigationController
   var childCoordinator: Coordinator?
   
@@ -21,10 +21,21 @@ final class NgramPickerCoordinator: Coordinator, HandleNavigator {
     self.store = store
   }
   
-  func start() {
-    let screen = NgramPickerScreen(settings: settings)
-    navigationController.pushViewController(screen, animated: true)
-    screen.navigationItem.prompt = navigationItemPrompt
-    self.screen = screen
+  func start() {   
+    let ngramPickerView = NgramPickerView(settings: settings)
+    let hostController = ActionAttachedHostingController(
+      rootView: ngramPickerView
+        .environmentObject(ScreenSizeStore.shared))
+    hostController.navigationItem.prompt = navigationItemPrompt
+    hostController.navigationItem.title = "1字目で選ぶ"
+    hostController.actionForViewWillDissappear = { [ngramPickerView, weak self] in
+      ngramPickerView.tasksForLeavingThisView()
+      if let settings = self?.settings,
+         let store = self?.store {
+        self?.saveSettingsPermanently(settings, into: store)
+      }
+    }
+    navigationController.pushViewController(hostController, animated: true)
+    self.screen = hostController
   }
 }
