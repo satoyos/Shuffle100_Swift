@@ -12,6 +12,7 @@
 		92014DB42D23EBC800B2BA85 /* ActionAttachedHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */; };
 		92014DB62D2560CA00B2BA85 /* SingerFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92014DB52D25608600B2BA85 /* SingerFetching.swift */; };
 		92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */; };
+		9205DA342DEAF6000098CE3B /* FirstChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA332DEAF6000098CE3B /* FirstChar.swift */; };
 		9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
 		9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */; };
 		9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */; };
@@ -390,6 +391,7 @@
 		92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAttachedHostingController.swift; sourceTree = "<group>"; };
 		92014DB52D25608600B2BA85 /* SingerFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerFetching.swift; sourceTree = "<group>"; };
 		92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaCoordinator.swift; sourceTree = "<group>"; };
+		9205DA332DEAF6000098CE3B /* FirstChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstChar.swift; sourceTree = "<group>"; };
 		9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinator.swift; sourceTree = "<group>"; };
 		9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeUITest.swift; sourceTree = "<group>"; };
 		9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextScreen.swift; sourceTree = "<group>"; };
@@ -1346,6 +1348,7 @@
 				92A5B6BB2DC4D59F00DEFA69 /* protocols */,
 				926DD6442C6B591200516674 /* CountDownTimer.swift */,
 				92A5B6B12DC4D49300DEFA69 /* FillType.swift */,
+				9205DA332DEAF6000098CE3B /* FirstChar.swift */,
 				92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
@@ -1765,6 +1768,7 @@
 				92E5C5572674D5BB009A46F5 /* ShortJokaDescLabel.swift in Sources */,
 				9207BAF4229579D600816DC8 /* Bool100.swift in Sources */,
 				926DD64C2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift in Sources */,
+				9205DA342DEAF6000098CE3B /* FirstChar.swift in Sources */,
 				92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
 				92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
 				924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
