@@ -18,6 +18,9 @@
 		9205DA3C2DEAF7440098CE3B /* NgramButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */; };
 		9205DA3E2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */; };
 		9205DA402DEAF7CA0098CE3B /* NgramButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */; };
+		9205DA422DEAF95B0098CE3B /* NgramButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA412DEAF95B0098CE3B /* NgramButton.swift */; };
+		9205DA442DEAF9840098CE3B /* NgramPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA432DEAF9840098CE3B /* NgramPickerView.swift */; };
+		9205DA462DEAF9F00098CE3B /* NgramSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA452DEAF9F00098CE3B /* NgramSection.swift */; };
 		9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
 		9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */; };
 		9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */; };
@@ -402,6 +405,9 @@
 		9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramButtonViewModelTests.swift; sourceTree = "<group>"; };
 		9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerViewModelTests.swift; sourceTree = "<group>"; };
 		9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramButtonViewModel.swift; sourceTree = "<group>"; };
+		9205DA412DEAF95B0098CE3B /* NgramButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramButton.swift; sourceTree = "<group>"; };
+		9205DA432DEAF9840098CE3B /* NgramPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerView.swift; sourceTree = "<group>"; };
+		9205DA452DEAF9F00098CE3B /* NgramSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramSection.swift; sourceTree = "<group>"; };
 		9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinator.swift; sourceTree = "<group>"; };
 		9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeUITest.swift; sourceTree = "<group>"; };
 		9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextScreen.swift; sourceTree = "<group>"; };
@@ -1337,6 +1343,8 @@
 				92D1533A2BD4E2340075233B /* FullLiner.swift */,
 				926DD64D2C6B5A4C00516674 /* MemorizeTimer.swift */,
 				926DD6402C6B583E00516674 /* MinSec.swift */,
+				9205DA412DEAF95B0098CE3B /* NgramButton.swift */,
+				9205DA432DEAF9840098CE3B /* NgramPickerView.swift */,
 				926DD6382C6B3E7800516674 /* RecitePlayButton.swift */,
 				926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */,
 				926DD6532C6D7EC200516674 /* ReciteViewButtonStyle.swift */,
@@ -1365,6 +1373,7 @@
 				92A5B6B12DC4D49300DEFA69 /* FillType.swift */,
 				9205DA332DEAF6000098CE3B /* FirstChar.swift */,
 				92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */,
+				9205DA452DEAF9F00098CE3B /* NgramSection.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
 				927E4BE6222E9DD100AF48F7 /* PoemSupplier.swift */,
@@ -1869,6 +1878,7 @@
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
+				9205DA422DEAF95B0098CE3B /* NgramButton.swift in Sources */,
 				9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
@@ -1938,12 +1948,14 @@
 				92467793292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
 				9250C8242BE4939100EFBD48 /* Torifuda.ViewModel.swift in Sources */,
 				92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */,
+				9205DA442DEAF9840098CE3B /* NgramPickerView.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
 				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				921FF439249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
 				92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9208DF1422FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
 				92E5C552267384AD009A46F5 /* DescriptionViewAnimation.swift in Sources */,
+				9205DA462DEAF9F00098CE3B /* NgramSection.swift in Sources */,
 				92EBACC62510F6A300F2B0B4 /* SHViewSizeGetterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
