@@ -33,13 +33,28 @@ extension NgramPickerView: View {
           }
         }
       }
-      .toolbar {
-        ToolbarItem(placement: .confirmationAction) {
-          BadgeView(number: viewModel.selectedNum)
+      //
+      // 本当は、以下のように toolbarを使って実装したい。
+      //
+//      .toolbar {
+//        ToolbarItem(placement: .confirmationAction) {
+//          BadgeView(number: viewModel.selectedNum)
+//        }
+//        ToolbarItem(placement: .principal) {
+//          Text("1字目で選ぶ")
+//        }
+//      }
+      //
+      // ただ、Shuffle100がまだUIKitからこのViewを呼び出しているので、
+      //  表示の整合性のために、次のように saveAreaInsetを使う
+      //
+      .safeAreaInset(edge: .top) {
+        HStack {
+          Spacer()
+          BadgeView(number: viewModel.output.state100.selectedNum)
+            .padding()
         }
-        ToolbarItem(placement: .principal) {
-          Text("1字目で選ぶ")
-        }
+        .frame(height: 30)
       }
     }
     .onChange(of: isPresented) {
