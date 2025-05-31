@@ -23,3 +23,13 @@ extension FillType {
   }
 }
 
+extension FillType {
+  var ngramImageName: String {
+    switch self {
+    case .empty:   "NgramEmpty"
+    case .partial: "NgramHalf"
+    case .full:    "NgramFull"
+    }
+  }
+}
+
