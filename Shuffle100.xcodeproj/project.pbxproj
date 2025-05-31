@@ -13,6 +13,11 @@
 		92014DB62D2560CA00B2BA85 /* SingerFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92014DB52D25608600B2BA85 /* SingerFetching.swift */; };
 		92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */; };
 		9205DA342DEAF6000098CE3B /* FirstChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA332DEAF6000098CE3B /* FirstChar.swift */; };
+		9205DA382DEAF6E60098CE3B /* NgramPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA372DEAF6E60098CE3B /* NgramPickerViewModel.swift */; };
+		9205DA3A2DEAF7260098CE3B /* FirstCharTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA392DEAF7260098CE3B /* FirstCharTests.swift */; };
+		9205DA3C2DEAF7440098CE3B /* NgramButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */; };
+		9205DA3E2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */; };
+		9205DA402DEAF7CA0098CE3B /* NgramButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */; };
 		9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */; };
 		9205E17A2456FD28003BAEDC /* BeginnerModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */; };
 		9205E17C24570E6F003BAEDC /* WhatsNextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */; };
@@ -392,6 +397,11 @@
 		92014DB52D25608600B2BA85 /* SingerFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerFetching.swift; sourceTree = "<group>"; };
 		92047518254EC68A006D5E57 /* TorifudaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaCoordinator.swift; sourceTree = "<group>"; };
 		9205DA332DEAF6000098CE3B /* FirstChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstChar.swift; sourceTree = "<group>"; };
+		9205DA372DEAF6E60098CE3B /* NgramPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerViewModel.swift; sourceTree = "<group>"; };
+		9205DA392DEAF7260098CE3B /* FirstCharTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCharTests.swift; sourceTree = "<group>"; };
+		9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramButtonViewModelTests.swift; sourceTree = "<group>"; };
+		9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerViewModelTests.swift; sourceTree = "<group>"; };
+		9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramButtonViewModel.swift; sourceTree = "<group>"; };
 		9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinator.swift; sourceTree = "<group>"; };
 		9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeUITest.swift; sourceTree = "<group>"; };
 		9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextScreen.swift; sourceTree = "<group>"; };
@@ -805,6 +815,8 @@
 			children = (
 				92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */,
 				92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */,
+				9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */,
+				9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
 				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
@@ -816,6 +828,8 @@
 			isa = PBXGroup;
 			children = (
 				922B8BC92D215B740065D50A /* protocols */,
+				9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */,
+				9205DA372DEAF6E60098CE3B /* NgramPickerViewModel.swift */,
 				922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */,
 				924275E22D583E2C001D5940 /* VolumeSettingViewModel.swift */,
 			);
@@ -1142,6 +1156,7 @@
 			isa = PBXGroup;
 			children = (
 				926DD6472C6B594100516674 /* CountDownTimerTests.swift */,
+				9205DA392DEAF7260098CE3B /* FirstCharTests.swift */,
 				927E4C04222E9EC700AF48F7 /* PoemsTests.swift */,
 				927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */,
 				92D57150220EC87700235717 /* GameConfigTest.swift */,
@@ -1878,6 +1893,7 @@
 				92719478284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				92D153392BD4E0510075233B /* TatamiBackground.swift in Sources */,
 				9298B70224C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
+				9205DA382DEAF6E60098CE3B /* NgramPickerViewModel.swift in Sources */,
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
 				926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */,
@@ -1911,6 +1927,7 @@
 				925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92B9E990246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */,
+				9205DA402DEAF7CA0098CE3B /* NgramButtonViewModel.swift in Sources */,
 				92A5B6BF2DC4D5F000DEFA69 /* FiveColors 2.swift in Sources */,
 				9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
@@ -1935,6 +1952,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9205DA3A2DEAF7260098CE3B /* FirstCharTests.swift in Sources */,
 				92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */,
 				926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */,
 				92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */,
@@ -1957,6 +1975,7 @@
 				92FFBF632465019B004D7F79 /* NgramPickerScreenTest.swift in Sources */,
 				9250C8272BE4967500EFBD48 /* Torifuda.ViewModelTests.swift in Sources */,
 				920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */,
+				9205DA3C2DEAF7440098CE3B /* NgramButtonViewModelTests.swift in Sources */,
 				924275E52D583E67001D5940 /* VolumeSettingViewModelFixture.swift in Sources */,
 				924275E72D583E7D001D5940 /* VolumeSettingViewModelTests.swift in Sources */,
 				920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */,
@@ -1977,6 +1996,7 @@
 				9207BAFC2298182000816DC8 /* Bool100Test.swift in Sources */,
 				9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */,
 				924275EE2D58432F001D5940 /* ReciteSettingAudioHandlerTests.swift in Sources */,
+				9205DA3E2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift in Sources */,
 				9215013127005A5E001E39FE /* NavigationBarTests.swift in Sources */,
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,

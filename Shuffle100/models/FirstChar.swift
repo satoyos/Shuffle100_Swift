@@ -1,6 +1,6 @@
 //
 //  FirstChar.swift
-//  TrialButtonAnimation
+//  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2025/05/09.
 //
