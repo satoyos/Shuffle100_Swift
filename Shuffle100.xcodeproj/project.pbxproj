@@ -233,7 +233,7 @@
 		92A5B6B82DC4D51500DEFA69 /* FiveColorButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */; };
 		92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */; };
 		92A5B6BD2DC4D5D400DEFA69 /* FillTypeHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */; };
-		92A5B6BF2DC4D5F000DEFA69 /* FiveColors 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */; };
+		92A5B6BF2DC4D5F000DEFA69 /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6BE2DC4D5F000DEFA69 /* FiveColors.swift */; };
 		92A5B6C32DC5A64300DEFA69 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6C22DC5A64300DEFA69 /* BadgeView.swift */; };
 		92A5B6C42DC5A64300DEFA69 /* FiveColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */; };
 		92A5B6C52DC5A64300DEFA69 /* FiveColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */; };
@@ -606,7 +606,7 @@
 		92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorButtonViewModel.swift; sourceTree = "<group>"; };
 		92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewModel.swift; sourceTree = "<group>"; };
 		92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillTypeHandlable.swift; sourceTree = "<group>"; };
-		92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiveColors 2.swift"; sourceTree = "<group>"; };
+		92A5B6BE2DC4D5F000DEFA69 /* FiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColors.swift; sourceTree = "<group>"; };
 		92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorButton.swift; sourceTree = "<group>"; };
 		92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsView.swift; sourceTree = "<group>"; };
 		92A5B6C22DC5A64300DEFA69 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
@@ -1372,7 +1372,7 @@
 				926DD6442C6B591200516674 /* CountDownTimer.swift */,
 				92A5B6B12DC4D49300DEFA69 /* FillType.swift */,
 				9205DA332DEAF6000098CE3B /* FirstChar.swift */,
-				92A5B6BE2DC4D5F000DEFA69 /* FiveColors 2.swift */,
+				92A5B6BE2DC4D5F000DEFA69 /* FiveColors.swift */,
 				9205DA452DEAF9F00098CE3B /* NgramSection.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
@@ -1938,7 +1938,7 @@
 				9206CEE122E1FEE500AC0457 /* PoemPickerScreenSearch.swift in Sources */,
 				92B9E990246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */,
 				9205DA402DEAF7CA0098CE3B /* NgramButtonViewModel.swift in Sources */,
-				92A5B6BF2DC4D5F000DEFA69 /* FiveColors 2.swift in Sources */,
+				92A5B6BF2DC4D5F000DEFA69 /* FiveColors.swift in Sources */,
 				9258D1EB22DCA1C8003A0EF8 /* RecitePoemScreenDelegate.swift in Sources */,
 				92FC394A2286EA8A00791053 /* PoemPickerScreenDataSource.swift in Sources */,
 				92EC121E2A139BF20071FA6C /* DigitsPickerScreen10Delegate.swift in Sources */,
