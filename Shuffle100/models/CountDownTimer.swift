@@ -13,12 +13,12 @@ class CountDownTimer: ObservableObject {
   @Published private(set) var remainTime: Double
   @Published private(set) var isRunning = false
   
-  private let intarval: Double
+  private let interval: Double
   private var timer: Timer?
   
-  init(startTime remainTime: Double, intarval: Double) {
+  init(startTime remainTime: Double, interval: Double) {
     self.remainTime = remainTime
-    self.intarval = intarval
+    self.interval = interval
   }
   
   deinit {
@@ -27,9 +27,9 @@ class CountDownTimer: ObservableObject {
   }
   
   func start() {
-    timer = Timer.scheduledTimer(withTimeInterval: intarval, repeats: true) { [weak self] _ in
+    timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
       guard let self = self else { return }
-      self.remainTime -= CGFloat(self.intarval)
+      self.remainTime -= self.interval
       if self.isRunning == false {
         self.isRunning = true
       }
@@ -37,13 +37,13 @@ class CountDownTimer: ObservableObject {
       if self.remainTime <= 0 {
         self.isRunning = false
         self.remainTime = 0.0
-        self.stopAneEraseTimer()
+        self.stopAndEraseTimer()
       }
     }
   }
   
   func stop() {
-    stopAneEraseTimer()
+    stopAndEraseTimer()
   }
   
   func reset(to newTime: Double) {
@@ -51,7 +51,7 @@ class CountDownTimer: ObservableObject {
     self.remainTime = newTime
   }
   
-  private func stopAneEraseTimer() {
+  private func stopAndEraseTimer() {
     self.timer?.invalidate()
     self.timer = nil
   }
