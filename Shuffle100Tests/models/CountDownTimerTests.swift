@@ -13,7 +13,7 @@ final class CountDownTimerTests: XCTestCase {
 
     func testInitCountDownTimer() {
         // given
-        let timer = CountDownTimer(startTime: 3.0, intarval: 1.0)
+        let timer = CountDownTimer(startTime: 3.0, interval: 1.0)
         // then
         XCTAssertEqual(timer.remainTime, 3.0)
         XCTAssertFalse(timer.isRunning)
@@ -21,7 +21,7 @@ final class CountDownTimerTests: XCTestCase {
 
     func testRunningCountDownTimer() {
         // given
-        let timer = CountDownTimer(startTime: 3.0, intarval: 1.0)
+        let timer = CountDownTimer(startTime: 3.0, interval: 1.0)
         var cancellables = Set<AnyCancellable>()
         let expectetion = XCTestExpectation(description: "Timer is reducing remain time correctly.")
         // when

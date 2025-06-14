@@ -20,7 +20,7 @@ extension MinSec {
     init(startTime: CGFloat, interval: CGFloat) {
       self.startTime = startTime
       self.interval = interval
-      self.timer = CountDownTimer(startTime: startTime, intarval: interval)
+      self.timer = CountDownTimer(startTime: startTime, interval: interval)
       self.timeTexts = timeTexts(of: startTime)
       buildDataFlow()
     }
