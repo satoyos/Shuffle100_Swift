@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class DigitsPickerScreen01Coordinator: Coordinator, HandleNavigator {
+final class DigitsPickerScreen01Coordinator: Coordinator, SaveSettings, HandleNavigator {
   var screen: UIViewController?
-  private var settings: Settings
-  private var store: StoreManager
+  var settings: Settings
+  var store: StoreManager
   var navigationController: UINavigationController
   var childCoordinator: Coordinator?
   
@@ -22,9 +22,20 @@ final class DigitsPickerScreen01Coordinator: Coordinator, HandleNavigator {
   }
   
   func start() {
-    let screen = DigitsPickerScreen01(settings: settings)
-    navigationController.pushViewController(screen, animated: true)
-    screen.navigationItem.prompt = navigationItemPrompt
-    self.screen = screen
+    let digitsPickerView = DigitsPicker<Digits01>(settings: settings)
+    let hostController = ActionAttachedHostingController(rootView: digitsPickerView)
+//      .environmentObject(ScreenSizeStore.shared)
+    hostController.navigationItem.prompt = navigationItemPrompt
+    hostController.navigationItem.title = Digits01.description
+    hostController.actionForViewWillDissappear = {
+      [digitsPickerView, weak self] in
+      digitsPickerView.tasksForLeavingThisView()
+      if let settings = self?.settings,
+         let store = self?.store {
+        self?.saveSettingsPermanently(settings, into: store)
+      }
+    }
+    navigationController.pushViewController(hostController, animated: true)
+    self.screen = hostController
   }
 }
