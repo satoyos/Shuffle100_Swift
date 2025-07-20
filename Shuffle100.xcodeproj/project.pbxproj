@@ -51,6 +51,13 @@
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
 		921791F6258E211C00A38249 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921791F5258E211C00A38249 /* Screen.swift */; };
+		921A99062E2C74F5002B0CA4 /* Digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99042E2C74F5002B0CA4 /* Digits.swift */; };
+		921A99072E2C74F5002B0CA4 /* PoemNumbersProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99052E2C74F5002B0CA4 /* PoemNumbersProvidable.swift */; };
+		921A990B2E2C7566002B0CA4 /* Digits10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99092E2C7566002B0CA4 /* Digits10.swift */; };
+		921A990C2E2C7566002B0CA4 /* Digits01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A990A2E2C7566002B0CA4 /* Digits01.swift */; };
+		921A990E2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A990D2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift */; };
+		921A99122E2C7AA9002B0CA4 /* Digits01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99102E2C7AA9002B0CA4 /* Digits01Tests.swift */; };
+		921A99132E2C7AA9002B0CA4 /* Digits10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99112E2C7AA9002B0CA4 /* Digits10Tests.swift */; };
 		921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */; };
 		921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
 		921FF435249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
@@ -432,6 +439,13 @@
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
 		921791F5258E211C00A38249 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		921A99042E2C74F5002B0CA4 /* Digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits.swift; sourceTree = "<group>"; };
+		921A99052E2C74F5002B0CA4 /* PoemNumbersProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemNumbersProvidable.swift; sourceTree = "<group>"; };
+		921A99092E2C7566002B0CA4 /* Digits10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits10.swift; sourceTree = "<group>"; };
+		921A990A2E2C7566002B0CA4 /* Digits01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits01.swift; sourceTree = "<group>"; };
+		921A990D2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButtonViewModel.swift; sourceTree = "<group>"; };
+		921A99102E2C7AA9002B0CA4 /* Digits01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits01Tests.swift; sourceTree = "<group>"; };
+		921A99112E2C7AA9002B0CA4 /* Digits10Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits10Tests.swift; sourceTree = "<group>"; };
 		921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenTest.swift; sourceTree = "<group>"; };
 		921FF430249E52C60083AC49 /* HelpListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreen.swift; sourceTree = "<group>"; };
 		921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenDataSource.swift; sourceTree = "<group>"; };
@@ -796,9 +810,22 @@
 			path = ../lib;
 			sourceTree = "<group>";
 		};
+		921A99082E2C7511002B0CA4 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				921A990A2E2C7566002B0CA4 /* Digits01.swift */,
+				921A99092E2C7566002B0CA4 /* Digits10.swift */,
+				92A5B6B12DC4D49300DEFA69 /* FillType.swift */,
+				9205DA332DEAF6000098CE3B /* FirstChar.swift */,
+				92A5B6BE2DC4D5F000DEFA69 /* FiveColors.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
 		922B8BC92D215B740065D50A /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				921A990D2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift */,
 				92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */,
 				92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */,
 				924275EA2D583F98001D5940 /* DurationSettingViewModel 2.swift */,
@@ -1153,6 +1180,8 @@
 			isa = PBXGroup;
 			children = (
 				926DD6472C6B594100516674 /* CountDownTimerTests.swift */,
+				921A99102E2C7AA9002B0CA4 /* Digits01Tests.swift */,
+				921A99112E2C7AA9002B0CA4 /* Digits10Tests.swift */,
 				9205DA392DEAF7260098CE3B /* FirstCharTests.swift */,
 				927E4C04222E9EC700AF48F7 /* PoemsTests.swift */,
 				927E4C02222E9EC600AF48F7 /* PoemSupplierTests.swift */,
@@ -1260,7 +1289,9 @@
 		92A5B6BB2DC4D59F00DEFA69 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				921A99042E2C74F5002B0CA4 /* Digits.swift */,
 				92A5B6BC2DC4D5D400DEFA69 /* FillTypeHandlable.swift */,
+				921A99052E2C74F5002B0CA4 /* PoemNumbersProvidable.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -1357,11 +1388,9 @@
 		92D5714D220EC78C00235717 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				921A99082E2C7511002B0CA4 /* enums */,
 				92A5B6BB2DC4D59F00DEFA69 /* protocols */,
 				926DD6442C6B591200516674 /* CountDownTimer.swift */,
-				92A5B6B12DC4D49300DEFA69 /* FillType.swift */,
-				9205DA332DEAF6000098CE3B /* FirstChar.swift */,
-				92A5B6BE2DC4D5F000DEFA69 /* FiveColors.swift */,
 				9205DA452DEAF9F00098CE3B /* NgramSection.swift */,
 				927E4BE8222E9DD200AF48F7 /* Poem.swift */,
 				92719477284F6F0A008DFB28 /* Poem100.swift */,
@@ -1782,6 +1811,7 @@
 				926DD64C2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift in Sources */,
 				9205DA342DEAF6000098CE3B /* FirstChar.swift in Sources */,
 				92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
+				921A990E2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift in Sources */,
 				92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
 				924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
 				92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
@@ -1832,6 +1862,8 @@
 				92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
+				921A990B2E2C7566002B0CA4 /* Digits10.swift in Sources */,
+				921A990C2E2C7566002B0CA4 /* Digits01.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */,
 				92FFBF1E245B938D004D7F79 /* WhatsNextScreenDelegate.swift in Sources */,
 				92A6EB8924191C4900B37A42 /* ReciteSettingsScreenDataSource.swift in Sources */,
@@ -1880,6 +1912,8 @@
 				9205E1762456FBE9003BAEDC /* BeginnerModeCoordinator.swift in Sources */,
 				927A70C62545A31000E7F274 /* SHDeviceTypeGetterProtocol.swift in Sources */,
 				92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */,
+				921A99062E2C74F5002B0CA4 /* Digits.swift in Sources */,
+				921A99072E2C74F5002B0CA4 /* PoemNumbersProvidable.swift in Sources */,
 				921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
 				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
@@ -1985,6 +2019,8 @@
 				92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */,
 				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
+				921A99122E2C7AA9002B0CA4 /* Digits01Tests.swift in Sources */,
+				921A99132E2C7AA9002B0CA4 /* Digits10Tests.swift in Sources */,
 				92EC11F42A01F3510071FA6C /* DigitsPickerScreen01Test.swift in Sources */,
 				927E4C07222E9EC700AF48F7 /* SelectedState100Tests.swift in Sources */,
 				92D57151220EC87700235717 /* GameConfigTest.swift in Sources */,
