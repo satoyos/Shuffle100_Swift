@@ -58,6 +58,13 @@
 		921A990E2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A990D2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift */; };
 		921A99122E2C7AA9002B0CA4 /* Digits01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99102E2C7AA9002B0CA4 /* Digits01Tests.swift */; };
 		921A99132E2C7AA9002B0CA4 /* Digits10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99112E2C7AA9002B0CA4 /* Digits10Tests.swift */; };
+		921A99162E2CDDC9002B0CA4 /* DigitsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99152E2CDDC9002B0CA4 /* DigitsPicker.swift */; };
+		921A99172E2CDDC9002B0CA4 /* DigitsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99142E2CDDC9002B0CA4 /* DigitsButton.swift */; };
+		921A99192E2CDDE4002B0CA4 /* DigitsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A99182E2CDDE4002B0CA4 /* DigitsPickerViewModel.swift */; };
+		921A991E2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A991C2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift */; };
+		921A991F2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A991B2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift */; };
+		921A99202E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A991D2E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift */; };
+		921A99212E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A991A2E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift */; };
 		921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */; };
 		921FF431249E52C60083AC49 /* HelpListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF430249E52C60083AC49 /* HelpListScreen.swift */; };
 		921FF435249F82580083AC49 /* HelpListScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */; };
@@ -446,6 +453,13 @@
 		921A990D2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButtonViewModel.swift; sourceTree = "<group>"; };
 		921A99102E2C7AA9002B0CA4 /* Digits01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits01Tests.swift; sourceTree = "<group>"; };
 		921A99112E2C7AA9002B0CA4 /* Digits10Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits10Tests.swift; sourceTree = "<group>"; };
+		921A99142E2CDDC9002B0CA4 /* DigitsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButton.swift; sourceTree = "<group>"; };
+		921A99152E2CDDC9002B0CA4 /* DigitsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPicker.swift; sourceTree = "<group>"; };
+		921A99182E2CDDE4002B0CA4 /* DigitsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerViewModel.swift; sourceTree = "<group>"; };
+		921A991A2E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits01ButtonViewModelTests.swift; sourceTree = "<group>"; };
+		921A991B2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits01PickerViewModelTests.swift; sourceTree = "<group>"; };
+		921A991C2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits10ButtonViewModelTests.swift; sourceTree = "<group>"; };
+		921A991D2E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits10PickerViewModelTests.swift; sourceTree = "<group>"; };
 		921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenTest.swift; sourceTree = "<group>"; };
 		921FF430249E52C60083AC49 /* HelpListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreen.swift; sourceTree = "<group>"; };
 		921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListScreenDataSource.swift; sourceTree = "<group>"; };
@@ -826,6 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				921A990D2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift */,
+				921A99182E2CDDE4002B0CA4 /* DigitsPickerViewModel.swift */,
 				92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */,
 				92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */,
 				924275EA2D583F98001D5940 /* DurationSettingViewModel 2.swift */,
@@ -838,6 +853,10 @@
 		922B8BD42D215C340065D50A /* viewModels_ToretaStyle */ = {
 			isa = PBXGroup;
 			children = (
+				921A991A2E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift */,
+				921A991B2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift */,
+				921A991C2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift */,
+				921A991D2E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift */,
 				92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */,
 				92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */,
 				9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */,
@@ -1353,6 +1372,8 @@
 			children = (
 				92D153352BD4DD430075233B /* supports */,
 				92A5B6C22DC5A64300DEFA69 /* BadgeView.swift */,
+				921A99142E2CDDC9002B0CA4 /* DigitsButton.swift */,
+				921A99152E2CDDC9002B0CA4 /* DigitsPicker.swift */,
 				925648D62D325EC500688D8B /* DurationSetting.swift */,
 				92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */,
 				92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */,
@@ -1845,6 +1866,8 @@
 				927E4C0A22329F2700AF48F7 /* PoemPickerScreen.swift in Sources */,
 				9250C8292BE4BA4200EFBD48 /* FullLiner.ViewModel.swift in Sources */,
 				92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */,
+				921A99162E2CDDC9002B0CA4 /* DigitsPicker.swift in Sources */,
+				921A99172E2CDDC9002B0CA4 /* DigitsButton.swift in Sources */,
 				92F8245725AF0C34008E031D /* SettingTableCell.swift in Sources */,
 				92EC11FE2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
 				92EC12022A0531400071FA6C /* DigitsPickerScreen01Delegate.swift in Sources */,
@@ -1925,6 +1948,7 @@
 				9205DA382DEAF6E60098CE3B /* NgramPickerViewModel.swift in Sources */,
 				929A615122F6EF7600435D2C /* CoordinatorProtocol.swift in Sources */,
 				9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */,
+				921A99192E2CDDE4002B0CA4 /* DigitsPickerViewModel.swift in Sources */,
 				926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */,
 				92A5B6B22DC4D49300DEFA69 /* FillType.swift in Sources */,
 				924275DE2D583DE1001D5940 /* KamiShimoDurationSetting.swift in Sources */,
@@ -2039,6 +2063,10 @@
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
 				924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */,
 				921FF42F249E4E980083AC49 /* HelpListScreenTest.swift in Sources */,
+				921A991E2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift in Sources */,
+				921A991F2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift in Sources */,
+				921A99202E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift in Sources */,
+				921A99212E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
 				9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */,
