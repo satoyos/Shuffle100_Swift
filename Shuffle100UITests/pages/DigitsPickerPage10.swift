@@ -32,12 +32,13 @@ final class DigitsPickerPage10: PageObjectable, WaitInUITest {
     
     @discardableResult
     func tapCell(number: Int) -> Self {
-        app.cells[number.description].firstMatch.tap()
+        app.buttons[number.description].firstMatch.tap()
         return self
     }
     
     func badge(of number: Int) -> XCUIElement {
-        app.navigationBars.staticTexts["\(number)首"]
+//        app.navigationBars.staticTexts["\(number)首"]
+      app.staticTexts["\(number)首"]
     }
     
 }
