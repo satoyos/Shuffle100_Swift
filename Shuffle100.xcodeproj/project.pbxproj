@@ -282,9 +282,6 @@
 		92B9E97024666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E97124666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
 		92B9E97224666083007C2E75 /* ngram.json in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E96F24666083007C2E75 /* ngram.json */; };
-		92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */; };
-		92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */; };
-		92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */; };
 		92B9E990246EDE05007C2E75 /* SelectByGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */; };
 		92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
@@ -653,9 +650,6 @@
 		92B87D56250CF9C5003BB51B /* 5colors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5colors; sourceTree = "<group>"; };
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92B9E96F24666083007C2E75 /* ngram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ngram.json; sourceTree = "<group>"; };
-		92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramNumbersTest.swift; sourceTree = "<group>"; };
-		92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramDataFactory.swift; sourceTree = "<group>"; };
-		92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgremPickerSectionTest.swift; sourceTree = "<group>"; };
 		92B9E98F246EDE05007C2E75 /* SelectByGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectByGroupCell.swift; sourceTree = "<group>"; };
 		92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetSavingUITest.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -1193,8 +1187,6 @@
 				92C87DDA22E88E6900569D15 /* SingerTests.swift */,
 				92ABF9BC23F6DF46000CA91C /* StoreManagerTest.swift */,
 				92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */,
-				92B9E97F2467B718007C2E75 /* NgramNumbersTest.swift */,
-				92B9E989246D7BA9007C2E75 /* NgremPickerSectionTest.swift */,
 				927E4C03222E9EC600AF48F7 /* SelectedState100Tests.swift */,
 				92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */,
 				926489182604480300CC4131 /* SettingsTest.swift */,
@@ -1405,7 +1397,6 @@
 				92737DD22380312F007B5FAD /* StandardColor.swift */,
 				92ABF9B823F6D739000CA91C /* StoreManager.swift */,
 				92AE7C7223FEAEDC003FA07F /* SHEnvironment.swift */,
-				92B9E98524682FF6007C2E75 /* NgramDataFactory.swift */,
 				92F66667252893ED0068E6A1 /* PoemsSelectesState.swift */,
 				92EC12052A0533E80071FA6C /* DigitsNumberFactory.swift */,
 			);
@@ -1875,7 +1866,6 @@
 				924275E32D583E2C001D5940 /* VolumeSettingViewModel.swift in Sources */,
 				9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
 				9207514D28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */,
-				92B9E98624682FF6007C2E75 /* NgramDataFactory.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
@@ -1982,7 +1972,6 @@
 				926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */,
 				92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */,
 				927E4C0E22329F8000AF48F7 /* PoemPickerScreenTest.swift in Sources */,
-				92B9E9802467B718007C2E75 /* NgramNumbersTest.swift in Sources */,
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
@@ -2011,7 +2000,6 @@
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
 				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */,
-				92B9E98A246D7BA9007C2E75 /* NgremPickerSectionTest.swift in Sources */,
 				920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */,
 				921A99122E2C7AA9002B0CA4 /* Digits01Tests.swift in Sources */,
 				921A99132E2C7AA9002B0CA4 /* Digits10Tests.swift in Sources */,
