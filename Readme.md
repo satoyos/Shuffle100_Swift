@@ -59,10 +59,28 @@ This software is released under the MIT License, see LICENSE.txt.
 
 **重要**: 本リポジトリには、著作権その他の権利により再配布が許可されていない音声ファイル（例：`resources/audio/inaba/`）は含まれていません。これらのファイルは開発者各自で入手し、ローカル環境の所定のディレクトリに配置してください。
 
-`/resources/audio/inaba`フォルダの音声データの取り扱いについては、次のような制限があります。
+## inaba音声ファイルの追加方法
 
-- このアプリの動作確認を目的として、本リポジトリを音声データごとダウンロード(あるいはclone、forkなど)をすることについては、著作権者の許諾済みですので、改めて著作権者の許諾を得る必要はありません。
-- 他の目的で`/resources/audio/inaba`の音声データを利用する場合には、著作権者の許諾を得てください。
+「いなばくん」の音声を使用するには、以下のファイルを入手して配置する必要があります：
+
+### 必要なファイル（201個）
+
+**配置先フォルダ**: `Shuffle100/resources/audio/inaba/`
+
+**ファイル構成**:
+- **上の句**: `001a.m4a` ～ `100a.m4a` （100個）
+- **下の句**: `001b.m4a` ～ `100b.m4a` （100個）  
+- **序歌**: `序歌.m4a` （1個）
+
+### 最低限必要なファイル
+アプリの動作確認のみを行う場合は、以下の3個のファイルがあれば起動できます：
+- `序歌.m4a`
+- `001a.m4a`
+- `001b.m4a`
+
+### ファイル形式
+- 形式: M4A（AAC）
+- その他のファイル仕様は既存のIAフォルダ内のファイルと同様
 
 
 - - -
@@ -127,8 +145,26 @@ This software is released under the MIT License, see LICENSE.txt.
 - - -
 **IMPORTANT**: This repository does not include audio files that are not permitted for redistribution due to copyright or other rights (e.g., `resources/audio/inaba/`). Developers must obtain these files separately and place them in the appropriate directories in their local environment.
 
-(#7) Human voice files in `/resources/audio/inaba` folder are derived from [Naniwazu Inaba-kun](http://naniwazu.la.coocan.jp).
- So, the author of the software has the copyright of these voice files.
+## How to Add Inaba Audio Files
 
- - For the purpose of checking how this app works, you can download (clone, fork) the voice files without confirming author's permisson, because the author has already confirmed it.
- - For other purposes, the author's permission is required.
+To use "Inaba-kun" voice reader, you need to obtain and place the following files:
+
+### Required Files (201 files)
+
+**Target directory**: `Shuffle100/resources/audio/inaba/`
+
+**File structure**:
+- **First half of poems**: `001a.m4a` ~ `100a.m4a` (100 files)
+- **Second half of poems**: `001b.m4a` ~ `100b.m4a` (100 files)  
+- **Opening poem**: `序歌.m4a` (1 file)
+
+### Minimum Required Files
+For basic app functionality testing, you only need these 3 files:
+- `序歌.m4a`
+- `001a.m4a`
+- `001b.m4a`
+
+### File Format
+- Format: M4A (AAC)
+- Other specifications should match the existing files in the IA folder
+
