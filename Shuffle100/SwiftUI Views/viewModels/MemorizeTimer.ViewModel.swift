@@ -77,18 +77,28 @@ extension MemorizeTimer {
     }
     
     private func announce2minutesLeft() {
+      guard let player2minites = player2minites else {
+        print("2分前アナウンス音声ファイルが見つかりません")
+        return
+      }
       player2minites.currentTime = 0.0
       player2minites.play()
     }
     
     private func announceMemorizeTimeIsOver() {
       self.isButtonDisabled = true
+      guard let playerStgartGame = playerStgartGame else {
+        print("試合開始アナウンス音声ファイルが見つかりません")
+        actionAfterGameStartAnnounse()
+        return
+      }
       playerStgartGame.currentTime = 0.0
       playerStgartGame.delegate = self
       playerStgartGame.play()
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+      guard let playerStgartGame = playerStgartGame else { return }
       guard player == playerStgartGame else { return }
       guard flag == true else { return }
       actionAfterGameStartAnnounse()

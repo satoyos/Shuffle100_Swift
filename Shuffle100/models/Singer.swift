@@ -40,3 +40,19 @@ struct Singers {
     all.first(where: {$0.id == id})
   }
 }
+
+extension Singer {
+  
+  func hasRequiredAudioFiles() -> Bool {
+    // 最低限必要なファイル（序歌と001a, 001b）の存在を確認
+    let requiredFiles = ["序歌", "001a", "001b"]
+    
+    for file in requiredFiles {
+      let resourcePath = Bundle.main.path(forResource: "\(path)/\(file)", ofType: "m4a")
+      if resourcePath == nil {
+        return false
+      }
+    }
+    return true
+  }
+}

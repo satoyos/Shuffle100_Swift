@@ -46,7 +46,7 @@ final class VolumeSettingViewModel: ViewModelObject {
     
     binding.$volume
       .sink { vol in
-        audioHandler.player1.volume = Float(vol)
+        audioHandler.player1?.volume = Float(vol)
       }
       .store(in: &cancellables)
     

@@ -8,8 +8,8 @@
 import AVFoundation
 
 final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
-  let player1: AVAudioPlayer
-  let player2: AVAudioPlayer
+  let player1: AVAudioPlayer?
+  let player2: AVAudioPlayer?
   let folderPath: String
   var player1FinishedAction: (() -> Void)?
   var player2FinishedAction: (() -> Void)?
@@ -29,39 +29,44 @@ final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
   }
   
   func startPlayer1() {
+    guard let player1 = player1 else {
+      print("Player1の音声ファイルが見つかりません")
+      return
+    }
     startPlaying(player1)
   }
   
   func startPlayer2() {
+    guard let player2 = player2 else {
+      print("Player2の音声ファイルが見つかりません")
+      return
+    }
     startPlaying(player2)
   }
   
   func stopAllPlayers() {
-    if player1.isPlaying {
+    if let player1 = player1, player1.isPlaying {
       player1.stop()
     }
-    if player2.isPlaying {
+    if let player2 = player2, player2.isPlaying {
       player2.stop()
     }
   }
   
   func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    switch player {
-    case player1:
+    if let player1 = player1, player == player1 {
       player1FinishedAction?()
-    case player2:
+    } else if let player2 = player2, player == player2 {
       player2FinishedAction?()
-    default:
-      break
     }
   }
   
-  private static func fetchPlayer(of halfPoem: HalfPoem, in folderPath: String) -> AVAudioPlayer {
+  private static func fetchPlayer(of halfPoem: HalfPoem, in folderPath: String) -> AVAudioPlayer? {
     let filename = String(halfPoem.rawValue.dropFirst())
     return AudioPlayerFactory.shared.preparePlayer(folder: folderPath, file: filename, title: filename)
   }
   
-  private static func fetchInabaPlayer(of halfPoem: HalfPoem) -> AVAudioPlayer {
+  private static func fetchInabaPlayer(of halfPoem: HalfPoem) -> AVAudioPlayer? {
     let filename = String(halfPoem.rawValue.dropFirst())
     return AudioPlayerFactory.shared.preparePlayer(folder: "audio/inaba", file: filename, title: filename)
   }

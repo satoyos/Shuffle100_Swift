@@ -29,6 +29,10 @@ extension RecitePoemScreen: AVAudioPlayerDelegate {
 extension RecitePoemScreen {
   func playNumberedPoem(number: Int, side: Side, count: Int) {
     currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
+    if currentPlayer == nil {
+      print("音声ファイルが見つかりません。歌番号[\(number)], フォルダ[\(singer.path)]")
+      return
+    }
     startPlayingCurrentPlayer(number: number, side: side, count: count)
   }
   
@@ -53,6 +57,10 @@ extension RecitePoemScreen {
   
   func playJoka(shorten: Bool = false) {
     currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
+    if currentPlayer == nil {
+      print("序歌の音声ファイルが見つかりません。フォルダ[\(singer.path)]")
+      return
+    }
     if shorten {
       currentPlayer?.currentTime = Double(singer.shortenJokaStartTime)
       recitePoemView.addShortJokaDescLabel()
