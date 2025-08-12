@@ -643,6 +643,7 @@
 		92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeModeUITest.swift; sourceTree = "<group>"; };
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
 		92AF24A822A15FC60085B754 /* SavedFudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSet.swift; sourceTree = "<group>"; };
+		92B329132E4B68C700942A64 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPickerUITest.swift; sourceTree = "<group>"; };
 		92B87D56250CF9C5003BB51B /* 5colors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5colors; sourceTree = "<group>"; };
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
@@ -917,6 +918,7 @@
 		923D59052143BB0A000F5E60 = {
 			isa = PBXGroup;
 			children = (
+				92B329132E4B68C700942A64 /* CLAUDE.md */,
 				92E102C02749117E00889521 /* Shuffle100.xctestplan */,
 				92E102C12749BBC400889521 /* Test on Cloud.xctestplan */,
 				92FC398C22917E6000791053 /* Readme.md */,
