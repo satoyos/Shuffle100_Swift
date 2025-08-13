@@ -22,6 +22,10 @@ final class Settings: Codable, ObservableObject {
     self.savedFudaSets = savedFudaSets
   }
   
+  convenience init(previewSamples: Bool) {
+    self.init(savedFudaSets: previewSamples ? SavedFudaSet.previewSamples : [])
+  }
+  
   var reciteMode: ReciteMode {
     get {
       return mode.reciteMode

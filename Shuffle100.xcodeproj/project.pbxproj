@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053FCCE607E649EAAD05E4558418ED8A /* FudaSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */; };
+		24E600BA590D40CE9BAD8F92FA2E0342 /* FudaSetsView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */; };
 		32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */; };
 		8FBC19A0C5FAC73FC692B4EF /* Pods_Shuffle100.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		92014DB42D23EBC800B2BA85 /* ActionAttachedHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */; };
@@ -274,6 +276,7 @@
 		92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */; };
 		92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */; };
 		92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF24A822A15FC60085B754 /* SavedFudaSet.swift */; };
+		92B329152E4C314700942A64 /* FudaSetsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */; };
 		92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */; };
 		92B87D57250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
 		92B87D58250CF9C5003BB51B /* 5colors in Resources */ = {isa = PBXBuildFile; fileRef = 92B87D56250CF9C5003BB51B /* 5colors */; };
@@ -387,9 +390,11 @@
 /* Begin PBXFileReference section */
 		09770476FEA00C752FDABFBB /* Pods-Shuffle100UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.release.xcconfig"; sourceTree = "<group>"; };
 		0C6BA826EB3F4176C0CC5094 /* Pods-Shuffle100Tests.hokkaido-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.hokkaido-debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.hokkaido-debug.xcconfig"; sourceTree = "<group>"; };
+		0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsView.ViewModel.swift; sourceTree = "<group>"; };
 		27FD6DA6CE5138B115160EE7 /* Pods-Shuffle100.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.release.xcconfig"; sourceTree = "<group>"; };
 		3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsView.swift; sourceTree = "<group>"; };
 		79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
 		92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAttachedHostingController.swift; sourceTree = "<group>"; };
@@ -644,6 +649,7 @@
 		92AF24A6229EB12A0085B754 /* SavedFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSetTest.swift; sourceTree = "<group>"; };
 		92AF24A822A15FC60085B754 /* SavedFudaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFudaSet.swift; sourceTree = "<group>"; };
 		92B329132E4B68C700942A64 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsViewModelTest.swift; sourceTree = "<group>"; };
 		92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPickerUITest.swift; sourceTree = "<group>"; };
 		92B87D56250CF9C5003BB51B /* 5colors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5colors; sourceTree = "<group>"; };
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
@@ -832,6 +838,7 @@
 				921A991D2E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift */,
 				92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */,
 				92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */,
+				92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */,
 				9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */,
 				9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
@@ -845,6 +852,7 @@
 			isa = PBXGroup;
 			children = (
 				922B8BC92D215B740065D50A /* protocols */,
+				0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */,
 				9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */,
 				9205DA372DEAF6E60098CE3B /* NgramPickerViewModel.swift */,
 				922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */,
@@ -1343,6 +1351,7 @@
 				925648D62D325EC500688D8B /* DurationSetting.swift */,
 				92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */,
 				92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */,
+				6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */,
 				924275DC2D583DE1001D5940 /* InterPoemDurationSetting.swift */,
 				924275DD2D583DE1001D5940 /* KamiShimoDurationSetting.swift */,
 				92D153332BD3CE670075233B /* TorifudaView.swift */,
@@ -1881,6 +1890,8 @@
 				92A5B6C32DC5A64300DEFA69 /* BadgeView.swift in Sources */,
 				92A5B6C42DC5A64300DEFA69 /* FiveColorsView.swift in Sources */,
 				92A5B6C52DC5A64300DEFA69 /* FiveColorButton.swift in Sources */,
+				053FCCE607E649EAAD05E4558418ED8A /* FudaSetsView.swift in Sources */,
+				24E600BA590D40CE9BAD8F92FA2E0342 /* FudaSetsView.ViewModel.swift in Sources */,
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
 				92A5B6BD2DC4D5D400DEFA69 /* FillTypeHandlable.swift in Sources */,
 				927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */,
@@ -2014,6 +2025,7 @@
 				921A991F2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift in Sources */,
 				921A99202E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift in Sources */,
 				921A99212E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift in Sources */,
+				92B329152E4C314700942A64 /* FudaSetsViewModelTest.swift in Sources */,
 				923D59272143BB0B000F5E60 /* HomeScreenTest.swift in Sources */,
 				9205E1842457128E003BAEDC /* WhatsNextScreenTest.swift in Sources */,
 				9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */,

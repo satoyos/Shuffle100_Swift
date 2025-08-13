@@ -7,148 +7,121 @@
 //
 
 import XCTest
+import Combine
 @testable import Shuffle100
 
 class FudaSetsViewModelTest: XCTestCase {
   
   var viewModel: FudaSetsView.ViewModel!
-  var settings: Settings!
-  var saveActionCalled: Bool!
+  var cancellables: Set<AnyCancellable> = []
   
   override func setUpWithError() throws {
-    settings = Settings()
-    saveActionCalled = false
-    viewModel = FudaSetsView.ViewModel(
-      settings: settings,
-      saveAction: { [weak self] in
-        self?.saveActionCalled = true
-      }
-    )
+    let testFudaSets = [
+      SavedFudaSet(name: "テストセット1", state100: createTestState(selectedCount: 25)),
+      SavedFudaSet(name: "テストセット2", state100: createTestState(selectedCount: 50))
+    ]
+    viewModel = FudaSetsView.ViewModel(savedFudaSets: testFudaSets)
   }
   
   override func tearDownWithError() throws {
     viewModel = nil
-    settings = nil
-    saveActionCalled = nil
+    cancellables.removeAll()
   }
   
-  // MARK: - Computed Property Tests
+  // MARK: - Initialization Tests
   
-  func test_savedFudaSets_emptyInitially() throws {
+  func test_initViewModel() throws {
     // then
-    XCTAssertEqual(viewModel.savedFudaSets.count, 0)
-    XCTAssertTrue(viewModel.savedFudaSets.isEmpty)
+    XCTAssertNotNil(viewModel)
+    XCTAssertEqual(viewModel.output.savedFudaSets.count, 2)
+    XCTAssertEqual(viewModel.output.savedFudaSets[0].name, "テストセット1")
+    XCTAssertEqual(viewModel.output.savedFudaSets[1].name, "テストセット2")
+    XCTAssertEqual(viewModel.output.savedFudaSets[0].state100.selectedNum, 25)
+    XCTAssertEqual(viewModel.output.savedFudaSets[1].state100.selectedNum, 50)
   }
   
-  func test_savedFudaSets_reflectsSettingsChanges() throws {
+  func test_emptyViewModel() throws {
     // given
-    let fudaSet1 = SavedFudaSet(name: "テストセット1", state100: createTestState(selectedCount: 25))
-    let fudaSet2 = SavedFudaSet(name: "テストセット2", state100: createTestState(selectedCount: 50))
+    let emptyViewModel = FudaSetsView.ViewModel(savedFudaSets: [])
     
-    // when
-    settings.savedFudaSets = [fudaSet1, fudaSet2]
-    
-    // then - computed propertyが即座に反映される
-    XCTAssertEqual(viewModel.savedFudaSets.count, 2)
-    XCTAssertEqual(viewModel.savedFudaSets[0].name, "テストセット1")
-    XCTAssertEqual(viewModel.savedFudaSets[1].name, "テストセット2")
-    XCTAssertEqual(viewModel.savedFudaSets[0].state100.selectedNum, 25)
-    XCTAssertEqual(viewModel.savedFudaSets[1].state100.selectedNum, 50)
-  }
-  
-  func test_savedFudaSets_dynamicUpdates() throws {
-    // given
-    let initialFudaSet = SavedFudaSet(name: "初期セット", state100: createTestState(selectedCount: 10))
-    settings.savedFudaSets = [initialFudaSet]
-    XCTAssertEqual(viewModel.savedFudaSets.count, 1)
-    
-    // when - Settingsに直接追加
-    let newFudaSet = SavedFudaSet(name: "新セット", state100: createTestState(selectedCount: 30))
-    settings.savedFudaSets.append(newFudaSet)
-    
-    // then - computed propertyが自動更新
-    XCTAssertEqual(viewModel.savedFudaSets.count, 2)
-    XCTAssertEqual(viewModel.savedFudaSets[1].name, "新セット")
-    XCTAssertEqual(viewModel.savedFudaSets[1].state100.selectedNum, 30)
+    // then
+    XCTAssertEqual(emptyViewModel.output.savedFudaSets.count, 0)
+    XCTAssertTrue(emptyViewModel.output.savedFudaSets.isEmpty)
   }
   
   // MARK: - Select FudaSet Tests
   
   func test_selectFudaSet_validIndex() throws {
     // given
-    let testState = createTestState(selectedCount: 40)
-    let fudaSet = SavedFudaSet(name: "40首セット", state100: testState)
-    settings.savedFudaSets = [fudaSet]
+    let initialState = viewModel.output.selectedState100
+    XCTAssertNil(viewModel.output.selectedIndex)
     
     // when
-    viewModel.selectFudaSet(at: 0)
+    viewModel.input.selectFudaSet.send(0)
     
     // then
-    XCTAssertEqual(settings.state100, testState)
-    XCTAssertTrue(saveActionCalled)
+    XCTAssertEqual(viewModel.output.selectedState100.selectedNum, 25)
+    XCTAssertNotEqual(viewModel.output.selectedState100, initialState)
+    XCTAssertEqual(viewModel.output.selectedIndex, 0)
   }
   
   func test_selectFudaSet_invalidIndex() throws {
     // given
-    let fudaSet = SavedFudaSet(name: "テストセット", state100: createTestState(selectedCount: 20))
-    settings.savedFudaSets = [fudaSet]
-    let originalState = settings.state100
+    let initialState = viewModel.output.selectedState100
+    let initialSelectedIndex = viewModel.output.selectedIndex
     
     // when
-    viewModel.selectFudaSet(at: 1) // Invalid index
+    viewModel.input.selectFudaSet.send(10) // Invalid index
     
     // then
-    XCTAssertEqual(settings.state100, originalState) // 変更されない
-    XCTAssertFalse(saveActionCalled)
+    XCTAssertEqual(viewModel.output.selectedState100, initialState) // 変更されない
+    XCTAssertEqual(viewModel.output.selectedIndex, initialSelectedIndex) // 変更されない
   }
   
   func test_selectFudaSet_emptyList() throws {
     // given
-    settings.savedFudaSets = []
-    let originalState = settings.state100
+    let emptyViewModel = FudaSetsView.ViewModel(savedFudaSets: [])
+    let initialState = emptyViewModel.output.selectedState100
+    let initialSelectedIndex = emptyViewModel.output.selectedIndex
     
     // when
-    viewModel.selectFudaSet(at: 0)
+    emptyViewModel.input.selectFudaSet.send(0)
     
     // then
-    XCTAssertEqual(settings.state100, originalState)
-    XCTAssertFalse(saveActionCalled)
+    XCTAssertEqual(emptyViewModel.output.selectedState100, initialState)
+    XCTAssertEqual(emptyViewModel.output.selectedIndex, initialSelectedIndex)
   }
   
   // MARK: - Delete FudaSet Tests
   
   func test_deleteFudaSet_singleItem() throws {
     // given
-    let fudaSet = SavedFudaSet(name: "削除対象", state100: createTestState(selectedCount: 15))
-    settings.savedFudaSets = [fudaSet]
-    XCTAssertEqual(viewModel.savedFudaSets.count, 1)
+    let singleItemViewModel = FudaSetsView.ViewModel(
+      savedFudaSets: [SavedFudaSet(name: "削除対象", state100: createTestState(selectedCount: 15))]
+    )
+    XCTAssertEqual(singleItemViewModel.output.savedFudaSets.count, 1)
     
     // when
     let indexSet = IndexSet(integer: 0)
-    viewModel.deleteFudaSet(at: indexSet)
+    singleItemViewModel.input.deleteFudaSet.send(indexSet)
     
     // then
-    XCTAssertEqual(viewModel.savedFudaSets.count, 0) // computed propertyが即座に反映
-    XCTAssertEqual(settings.savedFudaSets.count, 0)
-    XCTAssertTrue(saveActionCalled)
+    XCTAssertEqual(singleItemViewModel.output.savedFudaSets.count, 0)
   }
   
   func test_deleteFudaSet_multipleItems() throws {
     // given
-    let fudaSet1 = SavedFudaSet(name: "セット1", state100: createTestState(selectedCount: 10))
-    let fudaSet2 = SavedFudaSet(name: "セット2", state100: createTestState(selectedCount: 20))
-    let fudaSet3 = SavedFudaSet(name: "セット3", state100: createTestState(selectedCount: 30))
-    settings.savedFudaSets = [fudaSet1, fudaSet2, fudaSet3]
+    XCTAssertEqual(viewModel.output.savedFudaSets.count, 2)
+    XCTAssertEqual(viewModel.output.savedFudaSets[0].name, "テストセット1")
+    XCTAssertEqual(viewModel.output.savedFudaSets[1].name, "テストセット2")
     
-    // when - Delete middle item (index 1)
-    let indexSet = IndexSet(integer: 1)
-    viewModel.deleteFudaSet(at: indexSet)
+    // when - Delete first item (index 0)
+    let indexSet = IndexSet(integer: 0)
+    viewModel.input.deleteFudaSet.send(indexSet)
     
     // then
-    XCTAssertEqual(viewModel.savedFudaSets.count, 2)
-    XCTAssertEqual(viewModel.savedFudaSets[0].name, "セット1")
-    XCTAssertEqual(viewModel.savedFudaSets[1].name, "セット3") // セット2が削除され、セット3が繰り上がり
-    XCTAssertTrue(saveActionCalled)
+    XCTAssertEqual(viewModel.output.savedFudaSets.count, 1)
+    XCTAssertEqual(viewModel.output.savedFudaSets[0].name, "テストセット2") // テストセット1が削除され、テストセット2が残る
   }
   
   func test_deleteFudaSet_multipleIndexes() throws {
@@ -159,43 +132,91 @@ class FudaSetsViewModelTest: XCTestCase {
       SavedFudaSet(name: "セット3", state100: createTestState(selectedCount: 30)),
       SavedFudaSet(name: "セット4", state100: createTestState(selectedCount: 40))
     ]
-    settings.savedFudaSets = fudaSets
+    let multiItemViewModel = FudaSetsView.ViewModel(savedFudaSets: fudaSets)
     
     // when - Delete first and third items (indexes 0 and 2)
     var indexSet = IndexSet()
     indexSet.insert(0)
     indexSet.insert(2)
-    viewModel.deleteFudaSet(at: indexSet)
+    multiItemViewModel.input.deleteFudaSet.send(indexSet)
     
     // then
-    XCTAssertEqual(viewModel.savedFudaSets.count, 2)
-    XCTAssertEqual(viewModel.savedFudaSets[0].name, "セット2")
-    XCTAssertEqual(viewModel.savedFudaSets[1].name, "セット4")
-    XCTAssertTrue(saveActionCalled)
+    XCTAssertEqual(multiItemViewModel.output.savedFudaSets.count, 2)
+    XCTAssertEqual(multiItemViewModel.output.savedFudaSets[0].name, "セット2")
+    XCTAssertEqual(multiItemViewModel.output.savedFudaSets[1].name, "セット4")
   }
   
   // MARK: - Integration Tests
   
   func test_selectAndDelete_integration() throws {
     // given
-    let fudaSet1 = SavedFudaSet(name: "統合テスト1", state100: createTestState(selectedCount: 35))
-    let fudaSet2 = SavedFudaSet(name: "統合テスト2", state100: createTestState(selectedCount: 65))
-    settings.savedFudaSets = [fudaSet1, fudaSet2]
+    let integrationViewModel = FudaSetsView.ViewModel(savedFudaSets: [
+      SavedFudaSet(name: "統合テスト1", state100: createTestState(selectedCount: 35)),
+      SavedFudaSet(name: "統合テスト2", state100: createTestState(selectedCount: 65))
+    ])
     
     // when - Select first, then delete it
-    viewModel.selectFudaSet(at: 0)
-    XCTAssertEqual(settings.state100.selectedNum, 35)
-    XCTAssertTrue(saveActionCalled)
-    
-    saveActionCalled = false // Reset for next test
+    integrationViewModel.input.selectFudaSet.send(0)
+    XCTAssertEqual(integrationViewModel.output.selectedState100.selectedNum, 35)
     
     let indexSet = IndexSet(integer: 0)
-    viewModel.deleteFudaSet(at: indexSet)
+    integrationViewModel.input.deleteFudaSet.send(indexSet)
     
     // then
-    XCTAssertEqual(viewModel.savedFudaSets.count, 1)
-    XCTAssertEqual(viewModel.savedFudaSets[0].name, "統合テスト2")
-    XCTAssertTrue(saveActionCalled)
+    XCTAssertEqual(integrationViewModel.output.savedFudaSets.count, 1)
+    XCTAssertEqual(integrationViewModel.output.savedFudaSets[0].name, "統合テスト2")
+  }
+  
+  func test_combineOperations() throws {
+    // given
+    XCTAssertEqual(viewModel.output.savedFudaSets.count, 2)
+    
+    // when - Select second item, then delete first item
+    viewModel.input.selectFudaSet.send(1)
+    XCTAssertEqual(viewModel.output.selectedState100.selectedNum, 50)
+    XCTAssertEqual(viewModel.output.selectedIndex, 1)
+    
+    let indexSet = IndexSet(integer: 0)
+    viewModel.input.deleteFudaSet.send(indexSet)
+    
+    // then
+    XCTAssertEqual(viewModel.output.savedFudaSets.count, 1)
+    XCTAssertEqual(viewModel.output.savedFudaSets[0].name, "テストセット2")
+    // 選択状態は削除操作で変更されない（インデックスは調整される）
+    XCTAssertEqual(viewModel.output.selectedState100.selectedNum, 50)
+    XCTAssertEqual(viewModel.output.selectedIndex, 0) // インデックスが1から0に調整される
+  }
+  
+  // MARK: - Selection Index Tests
+  
+  func test_deleteSelectedItem() throws {
+    // given - Select first item
+    viewModel.input.selectFudaSet.send(0)
+    XCTAssertEqual(viewModel.output.selectedIndex, 0)
+    
+    // when - Delete selected item
+    let indexSet = IndexSet(integer: 0)
+    viewModel.input.deleteFudaSet.send(indexSet)
+    
+    // then - Selection should be cleared
+    XCTAssertNil(viewModel.output.selectedIndex)
+    XCTAssertEqual(viewModel.output.savedFudaSets.count, 1)
+  }
+  
+  func test_multipleSelection() throws {
+    // given
+    XCTAssertNil(viewModel.output.selectedIndex)
+    
+    // when - Select first item
+    viewModel.input.selectFudaSet.send(0)
+    XCTAssertEqual(viewModel.output.selectedIndex, 0)
+    
+    // when - Select second item (should override)
+    viewModel.input.selectFudaSet.send(1)
+    
+    // then
+    XCTAssertEqual(viewModel.output.selectedIndex, 1)
+    XCTAssertEqual(viewModel.output.selectedState100.selectedNum, 50)
   }
   
   // MARK: - Helper Methods

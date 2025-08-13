@@ -22,12 +22,19 @@ final class FudaSetsCoordinator: Coordinator, SaveSettings, HandleNavigator {
   }
   
   func start() {
-    let screen = FudaSetsScreen(settings: settings)
-    screen.saveSettingsAction = { [store, settings, weak self] in
-      self?.saveSettingsPermanently(settings, into: store)
+    let fudaSetsView = FudaSetsView(settings: settings)
+    let hostController = ActionAttachedHostingController(
+      rootView: fudaSetsView
+        .environmentObject(ScreenSizeStore()))
+    hostController.navigationItem.prompt = navigationItemPrompt
+    hostController.navigationItem.title = "作った札セットから選ぶ"
+    hostController.actionForViewWillDissappear = { [fudaSetsView, weak self] in
+      fudaSetsView.tasksForLeavingThisView()
+      if let settings = self?.settings, let store = self?.store {
+        self?.saveSettingsPermanently(settings, into: store)
+      }
     }
-    navigationController.pushViewController(screen, animated: true)
-    screen.navigationItem.prompt = navigationItemPrompt
-    self.screen = screen
+    navigationController.pushViewController(hostController, animated: true)
+    self.screen = hostController
   }
 }
