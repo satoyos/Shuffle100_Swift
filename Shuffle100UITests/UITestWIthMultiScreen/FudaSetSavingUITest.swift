@@ -12,7 +12,7 @@ class FudaSetSavingUITest: XCTestCase {
     internal let app = XCUIApplication()
     private lazy var homePage = HomePage(app: app)
     private let test97SetName = "97枚セット"
-    
+
     override func setUpWithError() throws {
         continueAfterFailure = false
         app.launchArguments.append("--uitesting")
@@ -28,7 +28,7 @@ class FudaSetSavingUITest: XCTestCase {
         let sheet = SaveFudaSetActionSheet(app: app)
         XCTAssert(sheet.exists, "札セット保存の選択肢が表示される")
     }
-    
+
     func test_saveNewFudaSet() {
         // given
         XCTAssert(homePage.numberOfSelecttedPoems(is: 100))
@@ -45,7 +45,7 @@ class FudaSetSavingUITest: XCTestCase {
         // when
         homePage.goToPoemPickerPage()
         let fudaSetPage = pickerPage.gotoFudaSetPage()
-        let test97Set = fudaSetPage.fudaSetCell(name: test97SetName)
+        let test97Set = fudaSetPage.fudaSet(with: test97SetName)
         XCTAssert(test97Set.exists, "作ったばかりの札セットが登録されている")
         // when
         fudaSetPage
@@ -58,7 +58,7 @@ class FudaSetSavingUITest: XCTestCase {
         // then
         XCTAssert(homePage.numberOfSelecttedPoems(is: 97))
     }
- 
+
     func test_savingEmptyFudaSetIsInhibited() {
         // given
         let pickerPage = homePage.goToPoemPickerPage()
@@ -73,7 +73,7 @@ class FudaSetSavingUITest: XCTestCase {
         // then
         XCTAssertFalse(alert.exists, "アラート画面が消えている")
     }
-    
+
     func test_emptyFudaSetNameIsInhibited() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -97,8 +97,8 @@ class FudaSetSavingUITest: XCTestCase {
         XCTAssertFalse(noNameAlert.exists, "警告アラートは消える")
         XCTAssert(alertToNameSet.exists, "再び命名用のダイアログが現れる")
     }
-    
-    
+
+
     //
     // このテストを実行するときには、SimulatorのI/O -> Keyboardの中の
     // "Connet Hardware Keyboard"のチェックを外しておくこと！
@@ -107,7 +107,7 @@ class FudaSetSavingUITest: XCTestCase {
     func test_fudaSetCellDeletable() {
         let set97name = "97枚セット"
         let set2maiFudaName = "2枚札セット"
-        
+
         // given
         let pickerPage = homePage.goToPoemPickerPage()
         // when
@@ -119,17 +119,20 @@ class FudaSetSavingUITest: XCTestCase {
         XCTAssert(fudaSetPage.exists)
         XCTContext.runActivity(named: "札セットのセルを左にスワイプして削除ボタンをタップすると、そのセルが消える") { _ in
             // when
-            fudaSetPage
-                .swipeCellLeft(name: set97name)
-                .delteButton.tap()
+            app.staticTexts["97枚セット"].swipeLeft()
+            let deleteButton97 = app.buttons["deleteFudaSet_97枚セット"]
+            XCTAssert(deleteButton97.waitForExistence(timeout: 3))
+            deleteButton97.tap()
+
             // then
-            XCTAssertFalse(fudaSetPage.fudaSetCell(name: set97name).exists)
+            XCTAssertFalse(fudaSetPage.fudaSet(with: set97name).exists)
             // when
-            fudaSetPage
-                .swipeCellLeft(name: set2maiFudaName)
-                .delteButton.tap()
+            app.staticTexts["2枚札セット"].swipeLeft()
+            let deleteButton2mai = app.buttons["deleteFudaSet_2枚札セット"]
+            XCTAssert(deleteButton2mai.waitForExistence(timeout: 3))
+            deleteButton2mai.tap()
             // then
-            XCTAssertFalse(fudaSetPage.fudaSetCell(name: set2maiFudaName).exists)
+            XCTAssertFalse(fudaSetPage.fudaSet(with: set2maiFudaName).exists)
             // when
             fudaSetPage.backButton.tap()
             // then
@@ -143,10 +146,10 @@ class FudaSetSavingUITest: XCTestCase {
                 .gotoFudaSetPage()
             // then
             XCTAssert(fudaSetPage.exists)
-            XCTAssert(fudaSetPage.fudaSetCell(name: name93).exists)
+            XCTAssert(fudaSetPage.fudaSet(with: name93).exists)
         }
     }
-    
+
     func test_overwriteExistingFudaSet() {
         let set2maiFudaName = "2枚札セット"
         let name1jiKimariSet = "一字決まり札セット"

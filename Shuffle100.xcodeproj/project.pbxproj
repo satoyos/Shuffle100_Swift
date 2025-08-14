@@ -1154,6 +1154,7 @@
 			isa = PBXGroup;
 			children = (
 				92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */,
+				92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */,
 				927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */,
 				921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */,
 				9258D1E822DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift */,
@@ -1164,7 +1165,6 @@
 				927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */,
 				9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */,
 				92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */,
-				92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */,
 				921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */,
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,

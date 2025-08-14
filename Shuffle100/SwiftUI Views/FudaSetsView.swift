@@ -31,9 +31,14 @@ extension FudaSetsView: View {
               viewModel.input.selectFudaSet.send(index)
             }
           )
-        }
-        .onDelete { indexSet in
-          viewModel.input.deleteFudaSet.send(indexSet)
+          // シンプリにForEachの.onDeleteアクションを採用すると、
+          // UIテストに失敗するため、↓このような複雑な実装を採用した。
+          .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button("削除", role: .destructive) {
+              viewModel.input.deleteFudaSet.send(IndexSet([index]))
+            }
+            .accessibilityIdentifier("deleteFudaSet_\(viewModel.output.savedFudaSets[index].name)")
+          }
         }
       }
       .listStyle(PlainListStyle())

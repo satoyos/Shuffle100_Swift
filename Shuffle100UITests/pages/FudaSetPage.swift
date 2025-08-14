@@ -17,15 +17,17 @@ final class FudaSetPage: PageObjectable {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars[A11y.title].firstMatch
+      app.navigationBars[A11y.title].firstMatch
     }
     
     var backButton: XCUIElement {
-        return app.buttons[A11y.back].firstMatch
+      app.buttons[A11y.back].firstMatch
     }
     
     var delteButton: XCUIElement {
-        return app.tables.buttons[A11y.delete].firstMatch
+//        return app.tables.buttons[A11y.delete].firstMatch
+//      app.tables.buttons[A11y.delete].firstMatch
+      app.staticTexts[A11y.delete].firstMatch
     }
 
     enum A11y {
@@ -34,13 +36,16 @@ final class FudaSetPage: PageObjectable {
         static let delete = "削除"
     }
     
-    func fudaSetCell(name: String) -> XCUIElement {
-        return app.tables.cells.staticTexts[name].firstMatch
+    func fudaSet(with text: String) -> XCUIElement {
+//        return app.tables.cells.staticTexts[name].firstMatch
+//      app.otherElements.containing(.staticText, identifier: name).firstMatch
+      // SwiftUI版では、これ↓が一番いいみたい。
+      app.staticTexts[text].firstMatch
     }
     
     func selectFudaSetCell(name: String) -> Self {
         // when
-        let cell = fudaSetCell(name: name)
+        let cell = fudaSet(with: name)
         // then
         XCTAssert(cell.exists)
         // and
@@ -51,7 +56,7 @@ final class FudaSetPage: PageObjectable {
     @discardableResult
     func swipeCellLeft(name: String) -> Self {
         // when
-        let cell = fudaSetCell(name: name)
+        let cell = fudaSet(with: name)
         // then
         XCTAssert(cell.exists)
         
@@ -60,13 +65,15 @@ final class FudaSetPage: PageObjectable {
     }
     
     func numberOfSet(name: String, is num: Int) -> Bool {
-        let cell = fudaSetCell(name: name)
-        guard cell.exists else {
-            XCTFail("札セット「\(name)」が見つからない")
-            return false
-        }
-//        return app.tables.cells[name].staticTexts["\(num)首"].exists
-        // 以下のコードでは、該当セルの表記を厳密に確認できている訳ではないが、なぜか↑のコードが機能しないため、当面はこれでよしとする。(2021/08/08)
-        return app.tables.cells.staticTexts["\(num)首"].exists
+      fudaSet(with: name).exists && fudaSet(with: "\(num)首").exists
+//        let cell = fudaSetCell(name: name)
+//        guard cell.exists else {
+//            XCTFail("札セット「\(name)」が見つからない")
+//            return false
+//        }
+//      return cell.staticTexts["\(num)首"].exists
+////        return app.tables.cells[name].staticTexts["\(num)首"].exists
+//        // 以下のコードでは、該当セルの表記を厳密に確認できている訳ではないが、なぜか↑のコードが機能しないため、当面はこれでよしとする。(2021/08/08)
+////        return app.tables.cells.staticTexts["\(num)首"].exists
     }
 }
