@@ -43,10 +43,6 @@
 		920D670328F3D74200952402 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670228F3D74200952402 /* BadgeSwift.swift */; };
 		920D670728F3D7A500952402 /* BadgeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D670628F3D7A500952402 /* BadgeSwiftTests.swift */; };
 		920F6A6B247944E600360C3B /* CreateFudaSetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */; };
-		920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */; };
-		920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */; };
-		920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */; };
-		920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */; };
 		9215013127005A5E001E39FE /* NavigationBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215013027005A5E001E39FE /* NavigationBarTests.swift */; };
 		92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
@@ -427,10 +423,6 @@
 		920D670228F3D74200952402 /* BadgeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwift.swift; sourceTree = "<group>"; };
 		920D670628F3D7A500952402 /* BadgeSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwiftTests.swift; sourceTree = "<group>"; };
 		920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFudaSetTest.swift; sourceTree = "<group>"; };
-		920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenTest.swift; sourceTree = "<group>"; };
-		920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreen.swift; sourceTree = "<group>"; };
-		920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenDelegate.swift; sourceTree = "<group>"; };
-		920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsScreenDataSource.swift; sourceTree = "<group>"; };
 		9215013027005A5E001E39FE /* NavigationBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTests.swift; sourceTree = "<group>"; };
 		92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButton.swift; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
@@ -1019,7 +1011,6 @@
 				92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */,
 				92A6EB8024167F9200B37A42 /* SettingsAttachedScreen.swift */,
 				9205E17B24570E6F003BAEDC /* WhatsNextScreen.swift */,
-				920F6A6E247C03D400360C3B /* FudaSetsScreen.swift */,
 				921FF430249E52C60083AC49 /* HelpListScreen.swift */,
 				921FF44C24A603760083AC49 /* HelpDetailScreen.swift */,
 				921791F5258E211C00A38249 /* Screen.swift */,
@@ -1211,7 +1202,6 @@
 				92E5F828240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift */,
 				9205E1832457128E003BAEDC /* WhatsNextScreenTest.swift */,
 				920F6A6A247944E600360C3B /* CreateFudaSetTest.swift */,
-				920F6A6C247C036F00360C3B /* FudaSetsScreenTest.swift */,
 				921FF42E249E4E980083AC49 /* HelpListScreenTest.swift */,
 				921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */,
 				9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */,
@@ -1333,7 +1323,6 @@
 				92A6EB8824191C4900B37A42 /* ReciteSettingsScreenDataSource.swift */,
 				92A6EB9024191ED400B37A42 /* SelectSingerScreenDataSource.swift */,
 				920C00152427A61600593803 /* HomeScreenDataSource.swift */,
-				920F6A76247C069C00360C3B /* FudaSetsScreenDataSource.swift */,
 				921FF434249F82580083AC49 /* HelpListScreenDataSource.swift */,
 				92F8247825B07A10008E031D /* TableDataSourceProtocol.swift */,
 				9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */,
@@ -1445,7 +1434,6 @@
 				92A6EB8C24191E6700B37A42 /* SelectSingerScreenDelegate.swift */,
 				92FFBF1D245B938D004D7F79 /* WhatsNextScreenDelegate.swift */,
 				92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */,
-				920F6A72247C065D00360C3B /* FudaSetsScreenDelegate.swift */,
 				921FF43C249FA2FA0083AC49 /* HelpListScreenDelegate.swift */,
 				9207514C28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift */,
 			);
@@ -1809,7 +1797,6 @@
 				92CE520B2168D4D200538E01 /* SettingsCellDataSource.swift in Sources */,
 				92ABF9AB23F42CFA000CA91C /* SelectSingerScreen.swift in Sources */,
 				9298B70624CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */,
-				920F6A6F247C03D400360C3B /* FudaSetsScreen.swift in Sources */,
 				926DD6542C6D7EC200516674 /* ReciteViewButtonStyle.swift in Sources */,
 				92FC39462286E94700791053 /* PoemPickerScreenDelegate.swift in Sources */,
 				92D153342BD3CE670075233B /* TorifudaView.swift in Sources */,
@@ -1902,9 +1889,7 @@
 				921A99072E2C74F5002B0CA4 /* PoemNumbersProvidable.swift in Sources */,
 				921FF44124A0D9B20083AC49 /* HelpListCoordinator.swift in Sources */,
 				92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */,
-				920F6A77247C069C00360C3B /* FudaSetsScreenDataSource.swift in Sources */,
 				926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */,
-				920F6A73247C065D00360C3B /* FudaSetsScreenDelegate.swift in Sources */,
 				92719478284F6F0A008DFB28 /* Poem100.swift in Sources */,
 				92D153392BD4E0510075233B /* TatamiBackground.swift in Sources */,
 				9298B70224C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */,
@@ -1988,7 +1973,6 @@
 				92AF24A7229EB12A0085B754 /* SavedFudaSetTest.swift in Sources */,
 				92F8245225AC4878008E031D /* SettingTableCellTest.swift in Sources */,
 				9250C8272BE4967500EFBD48 /* Torifuda.ViewModelTests.swift in Sources */,
-				920F6A6D247C036F00360C3B /* FudaSetsScreenTest.swift in Sources */,
 				9205DA3C2DEAF7440098CE3B /* NgramButtonViewModelTests.swift in Sources */,
 				924275E52D583E67001D5940 /* VolumeSettingViewModelFixture.swift in Sources */,
 				924275E72D583E7D001D5940 /* VolumeSettingViewModelTests.swift in Sources */,
