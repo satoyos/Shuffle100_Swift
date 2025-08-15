@@ -71,6 +71,9 @@ final class FudaSetPage: PageObjectable {
   }
   
   func numberOfSet(name: String, is num: Int) -> Bool {
-    fudaSet(with: name).exists && fudaSet(with: "\(num)首").exists
+    app.otherElements
+      .containing(.staticText, identifier: name)
+      .containing(.staticText, identifier: "\(num)首")
+      .firstMatch.exists
   }
 }
