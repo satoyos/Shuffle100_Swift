@@ -1,11 +1,10 @@
 # Uncomment the lines below you want to change by removing the # in the beginning
 
 # A list of devices you want to take the screenshots from
+# Updated for 2024 App Store required screenshot sizes
 devices([
-  # "iPhone 8 Plus",      # 5.5inch
-  "iPhone 13 Pro Max",  # 6.5inch
-  "iPad Pro (12.9-inch) (6th generation)",
-  # "iPad Pro (11-inch) (4th generation)",
+  "iPhone 16 Pro Max",        # 6.9inch - 2024 mandatory size
+  "iPad Pro 13-inch (M4)",    # 13inch - 2024 mandatory size
 ])
 
 #  テスト実行の時に使用する言語一覧
@@ -28,11 +27,18 @@ only_testing([
   "Shuffle100UITests/FastlaneSnapshot/test_MemorizeTimerScreenShot",
 ])
 
-# The name of the scheme which contains the UI Tests
+# The workspace and scheme which contains the UI Tests
+# なぜかだこの↓指定が機能しない。
+#     "../Shuffle100.workspace":  2つ上のフォルダが参照される
+#     "./Shuffle100.xcworkspace": このフォルダが参照される
+# workspace("../Shuffle100.xcworkspace")
 scheme("Shuffle100")
 
 # Remove the '#' to set the status bar to 9:41 AM, and show full battery and reception. See also override_status_bar_arguments for custom options.
 override_status_bar(true)
+
+# Note: HTML display names may show "iPad Pro (12.9-inch)" due to fastlane mapping
+# This is a known issue with new device names and doesn't affect actual screenshots
 
 # Arguments to pass to the app on launch. See https://docs.fastlane.tools/actions/snapshot/#launch-arguments
 # launch_arguments(["-favColor red"])
