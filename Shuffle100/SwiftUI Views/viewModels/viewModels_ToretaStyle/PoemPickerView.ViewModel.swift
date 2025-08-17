@@ -15,7 +15,6 @@ extension PoemPickerView {
     
     final class Input: InputObject {
       let selectPoem = PassthroughSubject<Int, Never>()
-      let searchText = PassthroughSubject<String, Never>()
       let selectAll = PassthroughSubject<Void, Never>()
       let cancelAll = PassthroughSubject<Void, Never>()
       let showDetail = PassthroughSubject<Int, Never>()
@@ -24,17 +23,17 @@ extension PoemPickerView {
     }
     
     final class Binding: BindingObject {
+      @Published var searchText: String = ""
     }
     
     final class Output: OutputObject {
       @Published var filteredPoems: [Poem] = []
       @Published var selectedCount: Int = 0
-      @Published var searchText: String = ""
       @Published var isSearching: Bool = false
     }
     
     let input: Input
-    @BindableObject private(set) var binding: Binding
+    @BindableObject var binding: Binding
     let output: Output
     var cancellables: Set<AnyCancellable> = []
     
@@ -61,10 +60,9 @@ extension PoemPickerView {
         .store(in: &cancellables)
       
       // 検索テキストの処理
-      input.searchText
+      binding.$searchText
         .removeDuplicates()
         .sink { searchText in
-          output.searchText = searchText
           output.isSearching = !searchText.isEmpty
           
           if searchText.isEmpty {

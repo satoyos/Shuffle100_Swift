@@ -17,7 +17,7 @@ class PoemPickerViewModelTests: XCTestCase {
   var cancellables: Set<AnyCancellable> = []
   
   override func setUpWithError() throws {
-    testSettings = Settings(previewSamples: true)
+    testSettings = Settings(bool100: Bool100.allUnselected, savedFudaSets: [])
     viewModel = PoemPickerView.ViewModel(settings: testSettings)
   }
   
@@ -38,13 +38,13 @@ class PoemPickerViewModelTests: XCTestCase {
     XCTAssertEqual(viewModel.output.filteredPoems.count, 100)
     XCTAssertEqual(viewModel.output.filteredPoems, PoemSupplier.originalPoems)
     XCTAssertEqual(viewModel.output.selectedCount, testSettings.state100.selectedNum)
-    XCTAssertEqual(viewModel.output.searchText, "")
+    XCTAssertEqual(viewModel.binding.searchText, "")
     XCTAssertFalse(viewModel.output.isSearching)
   }
   
   func test_initialSelectedCount() throws {
     // given - 初期状態で数首選択済みのSettings
-    var initialState = SelectedState100(bool100: Bool100.allUnselected)
+    var initialState = SelectedState100.allUnselected
     initialState = initialState.reverseInNumber(1)
     initialState = initialState.reverseInNumber(5)
     initialState = initialState.reverseInNumber(10)
@@ -109,10 +109,10 @@ class PoemPickerViewModelTests: XCTestCase {
   
   func test_searchText_emptySearch() throws {
     // when
-    viewModel.input.searchText.send("")
+    viewModel.binding.searchText = ""
     
     // then
-    XCTAssertEqual(viewModel.output.searchText, "")
+    XCTAssertEqual(viewModel.binding.searchText, "")
     XCTAssertFalse(viewModel.output.isSearching)
     XCTAssertEqual(viewModel.output.filteredPoems.count, 100)
     XCTAssertEqual(viewModel.output.filteredPoems, PoemSupplier.originalPoems)
@@ -120,26 +120,25 @@ class PoemPickerViewModelTests: XCTestCase {
   
   func test_searchText_validSearch() throws {
     // when - "春" で検索
-    viewModel.input.searchText.send("春")
+    viewModel.binding.searchText = "春"
     
     // then
-    XCTAssertEqual(viewModel.output.searchText, "春")
+    XCTAssertEqual(viewModel.binding.searchText, "春")
     XCTAssertTrue(viewModel.output.isSearching)
-    XCTAssertGreaterThan(viewModel.output.filteredPoems.count, 0)
-    XCTAssertLessThan(viewModel.output.filteredPoems.count, 100)
+    XCTAssertEqual(viewModel.output.filteredPoems.count, 6)
     
     // 検索結果の妥当性確認
     for poem in viewModel.output.filteredPoems {
-      XCTAssertTrue(poem.searchText.lowercased().contains("春".lowercased()))
+      XCTAssertTrue(poem.searchText.contains("春"))
     }
   }
   
   func test_searchText_caseInsensitive() throws {
     // when - 大文字小文字の違いでの検索
-    viewModel.input.searchText.send("HARU")
+    viewModel.binding.searchText = "HARU"
     let upperCaseResults = viewModel.output.filteredPoems
     
-    viewModel.input.searchText.send("haru")
+    viewModel.binding.searchText = "haru"
     let lowerCaseResults = viewModel.output.filteredPoems
     
     // then - 大文字小文字に関係なく同じ結果
@@ -149,25 +148,25 @@ class PoemPickerViewModelTests: XCTestCase {
   
   func test_searchText_noResults() throws {
     // when - 存在しない文字列で検索
-    viewModel.input.searchText.send("存在しない検索語")
+    viewModel.binding.searchText = "存在しない検索語"
     
     // then
-    XCTAssertEqual(viewModel.output.searchText, "存在しない検索語")
+    XCTAssertEqual(viewModel.binding.searchText, "存在しない検索語")
     XCTAssertTrue(viewModel.output.isSearching)
     XCTAssertEqual(viewModel.output.filteredPoems.count, 0)
   }
   
   func test_searchText_clearSearch() throws {
     // given - 予め検索しておく
-    viewModel.input.searchText.send("春")
+    viewModel.binding.searchText = "春"
     XCTAssertTrue(viewModel.output.isSearching)
-    XCTAssertLessThan(viewModel.output.filteredPoems.count, 100)
+    XCTAssertEqual(viewModel.output.filteredPoems.count, 6)
     
     // when - 検索をクリア
-    viewModel.input.searchText.send("")
+    viewModel.binding.searchText = ""
     
     // then
-    XCTAssertEqual(viewModel.output.searchText, "")
+    XCTAssertEqual(viewModel.binding.searchText, "")
     XCTAssertFalse(viewModel.output.isSearching)
     XCTAssertEqual(viewModel.output.filteredPoems.count, 100)
   }
@@ -248,9 +247,9 @@ class PoemPickerViewModelTests: XCTestCase {
   
   func test_searchAndSelect_integration() throws {
     // given - "春"で検索
-    viewModel.input.searchText.send("春")
+    viewModel.binding.searchText = "春"
     let searchResults = viewModel.output.filteredPoems
-    XCTAssertGreaterThan(searchResults.count, 0)
+    XCTAssertEqual(searchResults.count, 6)
     
     // when - 検索結果の最初の歌を選択
     let firstPoemNumber = searchResults[0].number
@@ -262,7 +261,7 @@ class PoemPickerViewModelTests: XCTestCase {
     XCTAssertEqual(viewModel.output.selectedCount, initialSelectedCount + 1)
     
     // when - 検索をクリア
-    viewModel.input.searchText.send("")
+    viewModel.binding.searchText = ""
     
     // then - 選択状態は維持される
     XCTAssertFalse(viewModel.output.isSearching)
@@ -275,14 +274,14 @@ class PoemPickerViewModelTests: XCTestCase {
     let initialCount = viewModel.output.selectedCount
     
     // when - 複数の操作を順次実行
-    viewModel.input.selectPoem.send(10)  // 1首選択
+    viewModel.input.selectPoem.send(2)  // 1首選択
     viewModel.input.selectPoem.send(20)  // 2首目選択
-    viewModel.input.searchText.send("春") // 検索
-    viewModel.input.selectPoem.send(10)  // 1首目選択解除
-    viewModel.input.searchText.send("")  // 検索クリア
+    viewModel.binding.searchText = "春" // 検索
+    viewModel.input.selectPoem.send(2)  // 1首目選択解除
+    viewModel.binding.searchText = ""  // 検索クリア
     
     // then
-    XCTAssertFalse(viewModel.isPoemSelected(10))  // 選択解除済み
+    XCTAssertFalse(viewModel.isPoemSelected(2))  // 選択解除済み
     XCTAssertTrue(viewModel.isPoemSelected(20))   // 選択維持
     XCTAssertFalse(viewModel.output.isSearching)  // 検索状態クリア
     XCTAssertEqual(viewModel.output.filteredPoems.count, 100)  // 全歌表示

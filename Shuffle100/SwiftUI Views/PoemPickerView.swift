@@ -12,7 +12,6 @@ struct PoemPickerView {
   let settings: Settings
   @ObservedObject private var viewModel: PoemPickerView.ViewModel
   @Environment(\.isPresented) private var isPresented
-  @State private var searchText: String = ""
   
   // アクション用のクロージャ
   var openNgramPickerAction: (() -> Void)?
@@ -48,10 +47,7 @@ extension PoemPickerView: View {
         }
       }
       .listStyle(PlainListStyle())
-      .searchable(text: $searchText, prompt: "歌を検索")
-      .onChange(of: searchText) { oldValue, newValue in
-        viewModel.input.searchText.send(newValue)
-      }
+      .searchable(text: $viewModel.binding.searchText, prompt: "歌を検索")
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           saveButton
