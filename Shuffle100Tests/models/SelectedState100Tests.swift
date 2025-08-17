@@ -82,4 +82,20 @@ class SelectedState100Tests: XCTestCase {
         // then
         XCTAssertEqual(numbers, [2, 3, 11])
     }
+  
+  func testAllUnselected() {
+    // given
+    let state100 = SelectedState100.allUnselected
+    // then
+    XCTAssertEqual(state100.selectedNum, 0)
+  }
+  
+  func testAllSelected() {
+    // given
+    let state100 = SelectedState100.allSelected
+    // then
+    XCTAssertEqual(state100.selectedNum, 100)
+  }
 }
+
+

@@ -73,11 +73,13 @@ extension SelectedState100 {
   }
   
   func cancelAll() -> Self {
-    Self.init(bool100: Bool100.allUnselected)
+//    Self.init(bool100: Bool100.allUnselected)
+    Self.allUnselected
   }
   
   func selectAll() -> Self{
-    Self.init(bool100: Bool100.allSelected)
+//    Self.init(bool100: Bool100.allSelected)
+    Self.allSelected
   }
   
   func selectOf(number: Int) -> Self {
@@ -127,5 +129,15 @@ extension SelectedState100 {
 extension SelectedState100 {
   func convertToDeck() -> [Poem] {
     PoemSupplier.Poem100.createFrom(state100: self)
+  }
+}
+
+extension SelectedState100 {
+  static var allUnselected: Self {
+    Self.init(bool100: Bool100.allUnselected)
+  }
+  
+  static var allSelected: Self {
+    Self.init(bool100: Bool100.allSelected)
   }
 }
