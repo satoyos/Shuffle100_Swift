@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Liner2Parts: Codable {
+struct Liner2Parts: Codable, Equatable {
   var kami: String
   var shimo: String
 }
 
-struct Poem: Codable {
+struct Poem: Codable, Equatable {
   let number: Int
   let poet: String
   let living_years: String
