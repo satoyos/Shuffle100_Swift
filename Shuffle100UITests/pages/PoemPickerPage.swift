@@ -61,7 +61,6 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
         static let selectAll = "全て選択"
         static let selectByGroup = "まとめて選ぶ"
         static let save = "保存"
-        static let detail = "詳細情報"
     }
     
     func badge(of number: Int) -> XCUIElement {
@@ -79,12 +78,13 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     
     @discardableResult
     func tapDetailButtonOf(number: Int) -> TorifudaPage {
-        tapDetailButton(of: cellOf(number: number))
+      app.buttons["detail_\(number)"].firstMatch.tap()
+      return TorifudaPage(app: app)
     }
     
     @discardableResult
     func tapDetailButton(of cell: XCUIElement) -> TorifudaPage {
-        cell.buttons[A11y.detail].tap()
+      cell.buttons.firstMatch.tap()
         return TorifudaPage(app: app)
     }
     
@@ -97,8 +97,9 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     }
     
     func cellOf(number: Int) -> XCUIElement {
-        let label = String(format: "%03d", number)
-        return app.tables.cells[label].firstMatch
+//        let label = String(format: "%03d", number)
+//        return app.tables.cells[label].firstMatch
+      app.otherElements.containing(.button, identifier: "detail_\(number)").firstMatch
     }
     
     func longPress(number: Int) {

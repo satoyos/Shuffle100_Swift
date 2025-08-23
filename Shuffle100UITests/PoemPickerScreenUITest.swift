@@ -10,94 +10,82 @@ import UIKit
 import XCTest
 
 class PoemPickerScreenUITest: XCTestCase {
-    let app = XCUIApplication()
-    lazy var homePage = HomePage(app: app)
-    
-    var deviceType: UIUserInterfaceIdiom {
-        UIDevice.current.userInterfaceIdiom
+  let app = XCUIApplication()
+  lazy var homePage = HomePage(app: app)
+  
+  var deviceType: UIUserInterfaceIdiom {
+    UIDevice.current.userInterfaceIdiom
+  }
+  
+  override func setUp() {
+    super.setUp()
+    continueAfterFailure = false
+    app.launchArguments.append("--uitesting")
+    app.launch()
+  }
+  
+  func test_cancelAllAndSelectAll() {
+    XCTContext.runActivity(named: "「全て取消」ボタンを押すと、選ばれている歌が0首になる") { activity in
+      // given
+      let pickerPage = homePage.goToPoemPickerPage()
+      XCTAssert(pickerPage.badge(of: 100).exists)
+      // when
+      pickerPage.cancelAllButton.tap()
+      // then
+      XCTAssert(pickerPage.badge(of: 0).exists)
+      // when
+      pickerPage.backToTopPage()
+      // then
+      XCTAssert(homePage.numberOfSelecttedPoems(is: 0))
     }
-    
-    override func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-        app.launchArguments.append("--uitesting")
-        app.launch()
+    XCTContext.runActivity(named: "そこから「全て選択」ボタンを押すと、選ばれている歌が100首になる") { activity in
+      // when
+      let pickerPage = homePage.goToPoemPickerPage()
+      pickerPage.selectAllButton.tap()
+      // then
+      XCTAssert(pickerPage.badge(of: 100).exists)
     }
+  }
+  
+  func test_tappingDetailButtonShowsTorifudaScreen() {
+    // when
+    let pickerPage = homePage.goToPoemPickerPage()
+    // then
+    XCTAssert(pickerPage.cellOf(number: 1).exists)
 
-    func test_cancelAllAndSelectAll() {
-        XCTContext.runActivity(named: "「全て取消」ボタンを押すと、選ばれている歌が0首になる") { activity in
-            // given
-            let pickerPage = homePage.goToPoemPickerPage()
-            XCTAssert(pickerPage.badge(of: 100).exists)
-            // when
-            pickerPage.cancelAllButton.tap()
-            // then
-            XCTAssert(pickerPage.badge(of: 0).exists)
-            // when
-            pickerPage.backToTopPage()
-            // then
-            XCTAssert(homePage.numberOfSelecttedPoems(is: 0))
-        }
-        XCTContext.runActivity(named: "そこから「全て選択」ボタンを押すと、選ばれている歌が100首になる") { activity in
-            // when
-            let pickerPage = homePage.goToPoemPickerPage()
-            pickerPage.selectAllButton.tap()
-            // then
-            XCTAssert(pickerPage.badge(of: 100).exists)
-        }
-    }
-    
-    func test_tappingDetailButtonShowsTorifudaScreen() {
-        // when
-        let pickerPage = homePage.goToPoemPickerPage()
-        let torifudaPage = pickerPage.tapDetailButtonOf(number: 1)
-        // then
-        XCTAssert(torifudaPage.exists)
-        XCTAssert(torifudaPage.hasChar("わ"))
-        XCTAssertFalse(torifudaPage.hasChar("き"))
-    }
-    
-    func test_longPressNetRespondAnyMore() {
-        // when
-        let pickerPage = homePage.goToPoemPickerPage()
-        pickerPage.longPress(number: 1)
-        // then
-        let torifudaPage = TorifudaPage(app: app)
-        XCTAssertFalse(torifudaPage.exists)
-    }
-    
-    func test_tapDetailButtonOnSearchResult() {
-        // when
-        let pickerPage = homePage.goToPoemPickerPage()
-        // then
-        let searchField = pickerPage.searchField
-        XCTAssert(searchField.exists)
-        // when
-        searchField.tap()
-        searchField.typeText("はる")
-        let firstCell = pickerPage.firstCellInList
-        let torifudaPage = pickerPage.tapDetailButton(of: firstCell)
-        // then
-        XCTAssert(torifudaPage.hasChar("ほ"))
-        XCTAssertFalse(torifudaPage.hasChar("わ"))
-        // when
-        torifudaPage.backToPickerButton.tap()
-        // then
-        XCTAssertFalse(pickerPage.cellOf(number: 1).exists, "検索中だった状態が保持されている")
-    }
-
-//
-//    TorifudaViewのSwiftUI移行に伴い、次のテストは削除する。
-//    
-    func test_torifudaShowsFullLinersOnPhoneTypeDevice() {
-//        // when
-//        let pickerPage = homePage.goToPoemPickerPage()
-//        let torifudaPage = pickerPage.tapDetailButtonOf(number: 1)
-//        // then
-//        if deviceType == .phone {
-//            XCTAssert(torifudaPage.fullLinersView.exists)
-//        } else {
-//            XCTAssertFalse(torifudaPage.fullLinersView.exists)
-//        }
-    }
+    let torifudaPage = pickerPage.tapDetailButtonOf(number: 1)
+    // then
+    XCTAssert(torifudaPage.exists)
+    XCTAssert(torifudaPage.hasChar("わ"))
+    XCTAssertFalse(torifudaPage.hasChar("き"))
+  }
+  
+  func test_longPressNotRespondAnyMore() {
+    // when
+    let pickerPage = homePage.goToPoemPickerPage()
+    pickerPage.longPress(number: 1)
+    // then
+    let torifudaPage = TorifudaPage(app: app)
+    XCTAssertFalse(torifudaPage.exists)
+  }
+  
+  func test_tapDetailButtonOnSearchResult() {
+    // when
+    let pickerPage = homePage.goToPoemPickerPage()
+    // then
+    let searchField = pickerPage.searchField
+    XCTAssert(searchField.exists)
+    // when
+    searchField.tap()
+    searchField.typeText("はる")
+    let firstCell = pickerPage.firstCellInList
+    let torifudaPage = pickerPage.tapDetailButton(of: firstCell)
+    // then
+    XCTAssert(torifudaPage.hasChar("ほ"))
+    XCTAssertFalse(torifudaPage.hasChar("わ"))
+    // when
+    torifudaPage.backToPickerButton.tap()
+    // then
+    XCTAssertFalse(pickerPage.cellOf(number: 1).exists, "検索中だった状態が保持されている")
+  }
 }

@@ -35,7 +35,10 @@ struct PoemRow: View {
           .foregroundColor(.accentColor)
       }
       .buttonStyle(PlainButtonStyle())
+      .accessibilityIdentifier("detail_\(poem.number)")
     }
+    .accessibilityElement(children: .contain)
+    .accessibilityIdentifier(String(format: "%03d", poem.number))
     .padding(.vertical, 8)
     .padding(.horizontal, 16)
     .background(isSelected ? selectedPoemBackColor : Color.clear)
