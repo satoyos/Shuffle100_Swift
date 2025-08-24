@@ -66,6 +66,9 @@ extension PoemPickerView: View {
         }
       }
     }
+    .onAppear {
+      viewModel.refreshFromSettings()
+    }
     .onChange(of: isPresented) { oldValue, newValue in
       guard !newValue else { return }
       tasksForLeavingThisView()

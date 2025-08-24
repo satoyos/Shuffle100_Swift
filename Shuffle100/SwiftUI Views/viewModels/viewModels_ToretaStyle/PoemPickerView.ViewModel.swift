@@ -106,5 +106,9 @@ extension PoemPickerView {
         return false
       }
     }
+    
+    func refreshFromSettings() {
+      output.selectedCount = settings.state100.selectedNum
+    }
   }
 }
