@@ -24,6 +24,7 @@ extension PoemPickerView {
     
     final class Binding: BindingObject {
       @Published var searchText: String = ""
+      @Published var showActionSheet: Bool = false
     }
     
     final class Output: OutputObject {
