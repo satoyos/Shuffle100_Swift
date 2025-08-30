@@ -38,12 +38,10 @@ extension PoemPickerPage {
         let button = sheet.overwriteExistingSetButton
         button.tap()
         // then
-        let overwriteDialog = OverwriteExistingSetDialog(app: app)
-        XCTAssert(overwriteDialog.exists)
-        // when
-        overwriteDialog
-            .selectOverwrittenSet(name: name)
-            .confirmButton.tap()
+        let overWriteSheet = OverwriteSetSelectionActionSheet(app: app)
+        XCTAssert(overWriteSheet.exists)
+        overWriteSheet
+          .selectFudaSet(name: name)
         // then
         let dialog = OverwriteSetCompletedDialog(app: app)
         XCTAssert(dialog.exists)

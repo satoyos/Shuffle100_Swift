@@ -387,4 +387,125 @@ class PoemPickerViewModelTests: XCTestCase {
     XCTAssertEqual(receivedSelectedCounts[2], receivedSelectedCounts[1] + 1)
     XCTAssertEqual(receivedSelectedCounts[3], receivedSelectedCounts[2] - 1)
   }
+  
+  // MARK: - Save Set Alert Tests
+  
+  func test_saveSet_showsEmptySetAlertWhenNoPoems() throws {
+    // given - 歌が選択されていない状態
+    viewModel.input.cancelAll.send()
+    XCTAssertEqual(viewModel.output.selectedCount, 0)
+    XCTAssertFalse(viewModel.binding.showEmptySetAlert)
+    
+    // when - 保存を試行
+    viewModel.input.saveSet.send()
+    
+    // then - 空札セットアラートが表示される準備ができている
+    XCTAssertTrue(viewModel.binding.showEmptySetAlert, "空札セット保存時にshowEmptySetAlertがtrueになるべき")
+    XCTAssertFalse(viewModel.binding.showSaveActionSheet, "空札セット時は保存アクションシートは表示されない")
+  }
+  
+  func test_saveSet_showsSaveActionSheetWhenPoemsSelected() throws {
+    // given - 歌が選択されている状態
+    viewModel.input.selectPoem.send(1)
+    viewModel.input.selectPoem.send(15)
+    viewModel.input.selectPoem.send(42)
+    XCTAssertEqual(viewModel.output.selectedCount, 3)
+    XCTAssertFalse(viewModel.binding.showSaveActionSheet)
+    XCTAssertFalse(viewModel.binding.showEmptySetAlert)
+    
+    // when - 保存を試行
+    viewModel.input.saveSet.send()
+    
+    // then - 保存アクションシートが表示される準備ができている
+    XCTAssertTrue(viewModel.binding.showSaveActionSheet, "歌選択済み時はshowSaveActionSheetがtrueになるべき")
+    XCTAssertFalse(viewModel.binding.showEmptySetAlert, "歌選択済み時は空札セットアラートは表示されない")
+  }
+  
+  // MARK: - New Fuda Set Name Tests
+  
+  func test_saveNewFudaSet_showsAlertWhenNameIsEmpty() throws {
+    // given - 歌を選択済み状態で、空の札セット名を設定
+    viewModel.input.selectPoem.send(1)
+    viewModel.input.selectPoem.send(25)
+    XCTAssertEqual(viewModel.output.selectedCount, 2)
+    
+    let initialFudaSetsCount = testSettings.savedFudaSets.count
+    XCTAssertFalse(viewModel.binding.showNoNameGivenAlert)
+    XCTAssertFalse(viewModel.binding.showSuccessAlert)
+    
+    // when - 空文字列で札セット名を保存試行
+    viewModel.binding.newSetName = ""
+    viewModel.saveNewFudaSet()
+    
+    // then - 専用の警告アラートが表示される準備ができている
+    XCTAssertTrue(viewModel.binding.showNoNameGivenAlert, "空の札セット名時はshowNoNameGivenAlertがtrueになるべき")
+    XCTAssertFalse(viewModel.binding.showSuccessAlert, "空の札セット名時は成功アラートは表示されない")
+    XCTAssertEqual(testSettings.savedFudaSets.count, initialFudaSetsCount, "札セットは追加されない")
+  }
+  
+  func test_saveNewFudaSet_showsAlertWhenNameIsWhitespaceOnly() throws {
+    // given - 歌を選択済み状態で、空白のみの札セット名を設定
+    viewModel.input.selectPoem.send(10)
+    XCTAssertEqual(viewModel.output.selectedCount, 1)
+    
+    let initialFudaSetsCount = testSettings.savedFudaSets.count
+    XCTAssertFalse(viewModel.binding.showNoNameGivenAlert)
+    XCTAssertFalse(viewModel.binding.showSuccessAlert)
+    
+    // when - 空白のみで札セット名を保存試行
+    viewModel.binding.newSetName = "   \t\n  "
+    viewModel.saveNewFudaSet()
+    
+    // then - 専用の警告アラートが表示される準備ができている
+    XCTAssertTrue(viewModel.binding.showNoNameGivenAlert, "空白のみの札セット名時はshowNoNameGivenAlertがtrueになるべき")
+    XCTAssertFalse(viewModel.binding.showSuccessAlert, "空白のみの札セット名時は成功アラートは表示されない")
+    XCTAssertEqual(testSettings.savedFudaSets.count, initialFudaSetsCount, "札セットは追加されない")
+  }
+  
+  func test_saveNewFudaSet_succedsWithValidName() throws {
+    // given - 歌を選択済み状態で、有効な札セット名を設定
+    viewModel.input.selectPoem.send(5)
+    viewModel.input.selectPoem.send(50)
+    viewModel.input.selectPoem.send(95)
+    XCTAssertEqual(viewModel.output.selectedCount, 3)
+    
+    let initialFudaSetsCount = testSettings.savedFudaSets.count
+    XCTAssertFalse(viewModel.binding.showNoNameGivenAlert)
+    XCTAssertFalse(viewModel.binding.showSuccessAlert)
+    
+    let validName = "テスト札セット"
+    
+    // when - 有効な名前で札セット名を保存
+    viewModel.binding.newSetName = validName
+    viewModel.saveNewFudaSet()
+    
+    // then - 成功処理が実行される
+    XCTAssertFalse(viewModel.binding.showNoNameGivenAlert, "有効な札セット名時は警告アラートは表示されない")
+    XCTAssertTrue(viewModel.binding.showSuccessAlert, "有効な札セット名時は成功アラートが表示される")
+    XCTAssertEqual(testSettings.savedFudaSets.count, initialFudaSetsCount + 1, "札セットが追加される")
+    XCTAssertEqual(testSettings.savedFudaSets.last?.name, validName, "札セット名が正しく設定される")
+    XCTAssertEqual(viewModel.binding.newSetName, "", "保存後、新しい札セット名はクリアされる")
+    XCTAssertEqual(viewModel.binding.successAlertTitle, "保存完了", "成功アラートのタイトルが設定される")
+    XCTAssertEqual(viewModel.output.successMessage, "新しい札セット「\(validName)」を保存しました。", "成功メッセージが設定される")
+  }
+  
+  func test_saveNewFudaSet_trimsWhitespaceFromValidName() throws {
+    // given - 歌を選択済み状態で、前後に空白がある有効な札セット名を設定
+    viewModel.input.selectPoem.send(33)
+    XCTAssertEqual(viewModel.output.selectedCount, 1)
+    
+    let initialFudaSetsCount = testSettings.savedFudaSets.count
+    let nameWithWhitespace = "  春の札セット  \n"
+    let expectedTrimmedName = "春の札セット"
+    
+    // when - 前後に空白がある名前で札セット名を保存
+    viewModel.binding.newSetName = nameWithWhitespace
+    viewModel.saveNewFudaSet()
+    
+    // then - 空白が削除された名前で保存される
+    XCTAssertTrue(viewModel.binding.showSuccessAlert, "空白を含む有効な札セット名時は成功アラートが表示される")
+    XCTAssertEqual(testSettings.savedFudaSets.count, initialFudaSetsCount + 1, "札セットが追加される")
+    XCTAssertEqual(testSettings.savedFudaSets.last?.name, expectedTrimmedName, "札セット名から空白が削除されて設定される")
+    XCTAssertEqual(viewModel.output.successMessage, "新しい札セット「\(expectedTrimmedName)」を保存しました。", "成功メッセージも削除された名前で表示される")
+  }
 }

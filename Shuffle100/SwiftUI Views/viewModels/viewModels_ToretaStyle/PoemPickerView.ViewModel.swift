@@ -25,12 +25,23 @@ extension PoemPickerView {
     final class Binding: BindingObject {
       @Published var searchText: String = ""
       @Published var showActionSheet: Bool = false
+      @Published var showSaveActionSheet: Bool = false
+      @Published var showNewSetNameAlert: Bool = false
+      @Published var showOverwritePickerAlert: Bool = false
+      @Published var showSuccessAlert: Bool = false
+      @Published var showEmptySetAlert: Bool = false
+      @Published var showNoNameGivenAlert: Bool = false
+      @Published var newSetName: String = ""
+      @Published var selectedOverwriteIndex: Int = 0
+      @Published var successAlertTitle: String = ""
     }
     
     final class Output: OutputObject {
       @Published var filteredPoems: [Poem] = []
       @Published var selectedCount: Int = 0
       @Published var isSearching: Bool = false
+      @Published var successMessage: String = ""
+      @Published var availableOverwriteSets: [SavedFudaSet] = []
     }
     
     let input: Input
@@ -94,6 +105,18 @@ extension PoemPickerView {
         }
         .store(in: &cancellables)
       
+      // 保存ボタンタップの処理
+      input.saveSet
+        .sink { _ in
+          if settings.state100.selectedNum > 0 {
+            binding.showSaveActionSheet = true
+            output.availableOverwriteSets = settings.savedFudaSets
+          } else {
+            binding.showEmptySetAlert = true
+          }
+        }
+        .store(in: &cancellables)
+      
       self.input = input
       self.binding = binding
       self.output = output
@@ -109,6 +132,45 @@ extension PoemPickerView {
     
     func refreshFromSettings() {
       output.selectedCount = settings.state100.selectedNum
+    }
+    
+    // MARK: - Save Set Logic
+    func saveNewFudaSet() {
+      let trimmedName = binding.newSetName.trimmingCharacters(in: .whitespacesAndNewlines)
+      
+      guard !trimmedName.isEmpty else {
+        // 名前が空の場合、専用の警告アラートを表示
+        binding.showNoNameGivenAlert = true
+        return
+      }
+      
+      let newFudaSet = SavedFudaSet(name: trimmedName, state100: settings.state100)
+      settings.savedFudaSets.append(newFudaSet)
+      
+      output.successMessage = "新しい札セット「\(trimmedName)」を保存しました。"
+      binding.successAlertTitle = "保存完了"
+      binding.showSuccessAlert = true
+      binding.newSetName = ""
+    }
+    
+    func overwriteExistingFudaSet() {
+      let selectedSet = output.availableOverwriteSets[binding.selectedOverwriteIndex]
+      let updatedSet = SavedFudaSet(name: selectedSet.name, state100: settings.state100)
+      settings.savedFudaSets[binding.selectedOverwriteIndex] = updatedSet
+      
+      output.successMessage = "前に作った札セット「\(selectedSet.name)」を上書き保存しました。"
+      binding.successAlertTitle = "上書き完了"
+      binding.showSuccessAlert = true
+    }
+    
+    func prepareNewSetCreation() {
+      binding.newSetName = ""
+      binding.showNewSetNameAlert = true
+    }
+    
+    func prepareOverwriteSelection() {
+      binding.selectedOverwriteIndex = 0
+      binding.showOverwritePickerAlert = true
     }
   }
 }

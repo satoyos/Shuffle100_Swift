@@ -239,6 +239,7 @@
 		92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */; };
 		92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */; };
 		92A2626E2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */; };
+		92A3A0B12E61CC5900E439F1 /* OverwriteSetSelectionActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A3A0B02E61CC5900E439F1 /* OverwriteSetSelectionActionSheet.swift */; };
 		92A5B6B22DC4D49300DEFA69 /* FillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B12DC4D49300DEFA69 /* FillType.swift */; };
 		92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */; };
 		92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */; };
@@ -611,6 +612,7 @@
 		92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTimerCoordinator.swift; sourceTree = "<group>"; };
 		92A2626B2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+Audio.swift"; sourceTree = "<group>"; };
 		92A2626D2865E0CA00425F19 /* RecitePoemScreenDelegate+ExitGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemScreenDelegate+ExitGame.swift"; sourceTree = "<group>"; };
+		92A3A0B02E61CC5900E439F1 /* OverwriteSetSelectionActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwriteSetSelectionActionSheet.swift; sourceTree = "<group>"; };
 		92A5B6B12DC4D49300DEFA69 /* FillType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillType.swift; sourceTree = "<group>"; };
 		92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorButtonViewModelTests.swift; sourceTree = "<group>"; };
 		92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsViewModel.swift; sourceTree = "<group>"; };
@@ -1161,12 +1163,12 @@
 				9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */,
 				92ABF9B423F583E7000CA91C /* SelectSingerUITest.swift */,
 				92AE7C7C2402C433003FA07F /* FakeModeUITest.swift */,
-				927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */,
 				9205E1792456FD28003BAEDC /* BeginnerModeUITest.swift */,
 				92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */,
 				921FF44424A0DBDE0083AC49 /* HelpListUITest.swift */,
 				921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */,
 				92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */,
+				927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */,
 				927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */,
 				92DCD6DE26DA62E30063AF7A /* SkipPoemUITest.swift */,
 				927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */,
@@ -1314,6 +1316,7 @@
 				924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */,
 				92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */,
 				92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */,
+				92A3A0B02E61CC5900E439F1 /* OverwriteSetSelectionActionSheet.swift */,
 				92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */,
 				92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */,
 				92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */,
@@ -2106,6 +2109,7 @@
 				92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */,
 				92AE7C7D2402C433003FA07F /* FakeModeUITest.swift in Sources */,
 				921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */,
+				92A3A0B12E61CC5900E439F1 /* OverwriteSetSelectionActionSheet.swift in Sources */,
 				923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

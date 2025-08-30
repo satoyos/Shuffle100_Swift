@@ -125,8 +125,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
   }
   
   private func showActionSheetForSaving() {
-    // UIKit版のPoemPickerScreenDelegate+FudaSetと同等の処理
-    // 実装は省略（元のUIKit版のロジックを参照）
-    // TODO: 札セット保存のアクションシート表示
+    // 札セット保存のトリガー（実際のUI表示はPoemPickerViewで実装済み）
+    saveSettingsPermanently(settings, into: store)
   }
 }
