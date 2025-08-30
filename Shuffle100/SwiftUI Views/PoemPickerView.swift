@@ -119,13 +119,7 @@ extension PoemPickerView: View {
   }
 
   private var badgeView: some View {
-    Text("\(viewModel.output.selectedCount)首")
-      .font(.caption)
-      .foregroundColor(.white)
-      .padding(.horizontal, 8)
-      .padding(.vertical, 4)
-      .background(Color.red)
-      .cornerRadius(12)
+    BadgeView(number: viewModel.output.selectedCount)
   }
 
   private var cancelAllButton: some View {
