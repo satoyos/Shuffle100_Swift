@@ -331,7 +331,6 @@
 		92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */; };
 		92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6552121CE753200005F85 /* HomeScreenDelegates.swift */; };
 		92E9705426BEAD2E00A6650C /* PoemPickerPageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705326BEAD2E00A6650C /* PoemPickerPageExtension.swift */; };
-		92E9705626BFCC7000A6650C /* OverwriteExistingSetDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */; };
 		92E9705826BFCFC200A6650C /* OverwriteSetCompletedDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */; };
 		92E9705A26C1418B00A6650C /* HelpListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705926C1418B00A6650C /* HelpListPage.swift */; };
 		92E9705C26C146B900A6650C /* EvaluateAppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */; };
@@ -700,7 +699,6 @@
 		92E5F82A240BCD4900C75FC6 /* ReciteSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsScreen.swift; sourceTree = "<group>"; };
 		92E6552121CE753200005F85 /* HomeScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDelegates.swift; sourceTree = "<group>"; };
 		92E9705326BEAD2E00A6650C /* PoemPickerPageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PoemPickerPageExtension.swift; path = Shuffle100UITests/pages/PoemPickerPageExtension.swift; sourceTree = SOURCE_ROOT; };
-		92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwriteExistingSetDialog.swift; sourceTree = "<group>"; };
 		92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwriteSetCompletedDialog.swift; sourceTree = "<group>"; };
 		92E9705926C1418B00A6650C /* HelpListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpListPage.swift; sourceTree = "<group>"; };
 		92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateAppDialog.swift; sourceTree = "<group>"; };
@@ -1317,7 +1315,6 @@
 				92E44EF326AD4B2A004A6A1A /* NoPoemToSaveAlert.swift */,
 				92E44EF526AD4F62004A6A1A /* NoNameGivenForFudaSetAlert.swift */,
 				92A3A0B02E61CC5900E439F1 /* OverwriteSetSelectionActionSheet.swift */,
-				92E9705526BFCC7000A6650C /* OverwriteExistingSetDialog.swift */,
 				92E9705726BFCFC200A6650C /* OverwriteSetCompletedDialog.swift */,
 				92E9705B26C146B900A6650C /* EvaluateAppDialog.swift */,
 				92EDBCE126C658E9009F4555 /* SelectedColorHandlingSheet.swift */,
@@ -2071,7 +2068,6 @@
 				923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */,
 				92CE0D5F263ACA8100372B24 /* AlertObjectable.swift in Sources */,
 				92E5C549266C74B1009A46F5 /* SkipToWhatsNextProtocol.swift in Sources */,
-				92E9705626BFCC7000A6650C /* OverwriteExistingSetDialog.swift in Sources */,
 				92E9705A26C1418B00A6650C /* HelpListPage.swift in Sources */,
 				9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */,
 				92AD8C552BAFFF75004D605D /* ReciteMode.swift in Sources */,
