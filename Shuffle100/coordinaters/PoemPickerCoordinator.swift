@@ -110,19 +110,9 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
   }
   
   private func handleSaveSet() {
-    guard settings.state100.selectedNum > 0 else {
-      showAlertInhibited(title: "歌を選びましょう", message: "空の札セットは保存できません。")
-      return
-    }
     showActionSheetForSaving()
   }
   
-  private func showAlertInhibited(title: String, message: String?) {
-    let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let backAction = UIAlertAction(title: "戻る", style: .cancel, handler: nil)
-    ac.addAction(backAction)
-    screen?.present(ac, animated: true)
-  }
   
   private func showActionSheetForSaving() {
     // 札セット保存のトリガー（実際のUI表示はPoemPickerViewで実装済み）
