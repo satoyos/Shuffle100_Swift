@@ -71,6 +71,8 @@
 		921FF44924A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */; };
 		921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
+		9229640B2E6AC28B0068D536 /* PoemPickerSaveComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */; };
+		9229640C2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */; };
 		922B8BCC2D215B850065D50A /* ViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BCB2D215B850065D50A /* ViewModelObject.swift */; };
 		922B8BCD2D215B850065D50A /* BindableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BCA2D215B850065D50A /* BindableObject.swift */; };
 		922B8BD22D215BC40065D50A /* Sec2FViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */; };
@@ -441,6 +443,8 @@
 		921FF44624A4D9EF0083AC49 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreenTest.swift; sourceTree = "<group>"; };
 		921FF44C24A603760083AC49 /* HelpDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreen.swift; sourceTree = "<group>"; };
+		922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSaveComponents.swift; sourceTree = "<group>"; };
+		9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerToolbarButtons.swift; sourceTree = "<group>"; };
 		922B8BCA2D215B850065D50A /* BindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableObject.swift; sourceTree = "<group>"; };
 		922B8BCB2D215B850065D50A /* ViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelObject.swift; sourceTree = "<group>"; };
 		922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sec2FViewModel.swift; sourceTree = "<group>"; };
@@ -1327,6 +1331,8 @@
 				926DD6402C6B583E00516674 /* MinSec.swift */,
 				9205DA412DEAF95B0098CE3B /* NgramButton.swift */,
 				9205DA432DEAF9840098CE3B /* NgramPickerView.swift */,
+				922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */,
+				9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */,
 				92CC44C42E5169440037D6BB /* PoemPickerView.swift */,
 				92CC44C52E5169440037D6BB /* PoemRow.swift */,
 				926DD6382C6B3E7800516674 /* RecitePlayButton.swift */,
@@ -1765,6 +1771,8 @@
 				92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */,
 				921A990E2E2C75F3002B0CA4 /* DigitsButtonViewModel.swift in Sources */,
 				92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
+				9229640B2E6AC28B0068D536 /* PoemPickerSaveComponents.swift in Sources */,
+				9229640C2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift in Sources */,
 				924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
 				92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,
