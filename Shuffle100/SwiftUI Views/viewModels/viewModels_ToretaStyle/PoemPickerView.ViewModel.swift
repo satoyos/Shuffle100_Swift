@@ -80,14 +80,13 @@ extension PoemPickerView {
       input.saveSet
         .sink { _ in
           let saveAction = PoemPickerView.ViewModel.SaveLogic.handleSaveRequest(
-            selectedCount: settings.state100.selectedNum,
-            availableOverwriteSets: settings.savedFudaSets
+            selectedCount: settings.state100.selectedNum
           )
 
           switch saveAction {
-          case .showActionSheet(let availableSets):
+          case .showActionSheet:
             binding.showSaveActionSheet = true
-            output.availableOverwriteSets = availableSets
+            output.availableOverwriteSets = settings.savedFudaSets
           case .showEmptySetAlert:
             binding.showEmptySetAlert = true
           }
