@@ -50,6 +50,8 @@ extension PoemPickerView {
     var cancellables: Set<AnyCancellable> = []
     
     private let settings: Settings
+    private let saveLogic: PoemPickerView.ViewModel.SaveLogic
+    private let selectionLogic: PoemPickerView.ViewModel.SelectionLogic
     
     init(settings: Settings) {
       let input = Input()
@@ -57,61 +59,36 @@ extension PoemPickerView {
       let output = Output()
       
       self.settings = settings
-      
+      self.saveLogic = PoemPickerView.ViewModel.SaveLogic(binding: binding)
+      self.selectionLogic = PoemPickerView.ViewModel.SelectionLogic()
+
       // 初期表示：全歌をフィルター済みリストにセット
       output.filteredPoems = PoemSupplier.originalPoems
       output.selectedCount = settings.state100.selectedNum
-      
-      // 歌選択の処理
-      input.selectPoem
-        .sink { poemNumber in
-          let newState100 = settings.state100.reverseInNumber(poemNumber)
-          settings.state100 = newState100
-          output.selectedCount = newState100.selectedNum
-        }
-        .store(in: &cancellables)
-      
-      // 検索テキストの処理
-      binding.$searchText
-        .removeDuplicates()
-        .sink { searchText in
-          output.isSearching = !searchText.isEmpty
-          
-          if searchText.isEmpty {
-            output.filteredPoems = PoemSupplier.originalPoems
-          } else {
-            output.filteredPoems = PoemSupplier.originalPoems.filter { poem in
-              poem.searchText.lowercased().contains(searchText.lowercased())
-            }
-          }
-        }
-        .store(in: &cancellables)
-      
-      // 全選択の処理
-      input.selectAll
-        .sink { _ in
-          let newState100 = settings.state100.selectAll()
-          settings.state100 = newState100
-          output.selectedCount = newState100.selectedNum
-        }
-        .store(in: &cancellables)
-      
-      // 全取消の処理
-      input.cancelAll
-        .sink { _ in
-          let newState100 = settings.state100.cancelAll()
-          settings.state100 = newState100
-          output.selectedCount = newState100.selectedNum
-        }
-        .store(in: &cancellables)
-      
+
+      // Selection Logic のCombine設定
+      PoemPickerView.ViewModel.SelectionCombineSetup.setupSelectionPublishers(
+        input: input,
+        binding: binding,
+        output: output,
+        settings: settings,
+        selectionLogic: selectionLogic,
+        cancellables: &cancellables
+      )
+
       // 保存ボタンタップの処理
       input.saveSet
         .sink { _ in
-          if settings.state100.selectedNum > 0 {
+          let saveAction = PoemPickerView.ViewModel.SaveLogic.handleSaveRequest(
+            selectedCount: settings.state100.selectedNum,
+            availableOverwriteSets: settings.savedFudaSets
+          )
+
+          switch saveAction {
+          case .showActionSheet(let availableSets):
             binding.showSaveActionSheet = true
-            output.availableOverwriteSets = settings.savedFudaSets
-          } else {
+            output.availableOverwriteSets = availableSets
+          case .showEmptySetAlert:
             binding.showEmptySetAlert = true
           }
         }
@@ -123,11 +100,7 @@ extension PoemPickerView {
     }
     
     func isPoemSelected(_ poemNumber: Int) -> Bool {
-      do {
-        return try settings.state100.ofNumber(poemNumber)
-      } catch {
-        return false
-      }
+      return selectionLogic.isPoemSelected(poemNumber, settings: settings)
     }
     
     func refreshFromSettings() {
@@ -136,41 +109,33 @@ extension PoemPickerView {
     
     // MARK: - Save Set Logic
     func saveNewFudaSet() {
-      let trimmedName = binding.newSetName.trimmingCharacters(in: .whitespacesAndNewlines)
-      
-      guard !trimmedName.isEmpty else {
-        // 名前が空の場合、専用の警告アラートを表示
-        binding.showNoNameGivenAlert = true
-        return
+      let result = saveLogic.saveNewFudaSet(name: binding.newSetName, settings: settings)
+
+      if !result.successMessage.isEmpty {
+        output.successMessage = result.successMessage
+        binding.successAlertTitle = result.alertTitle
+        binding.showSuccessAlert = true
       }
-      
-      let newFudaSet = SavedFudaSet(name: trimmedName, state100: settings.state100)
-      settings.savedFudaSets.append(newFudaSet)
-      
-      output.successMessage = "新しい札セット「\(trimmedName)」を保存しました。"
-      binding.successAlertTitle = "保存完了"
-      binding.showSuccessAlert = true
-      binding.newSetName = ""
     }
-    
+
     func overwriteExistingFudaSet() {
-      let selectedSet = output.availableOverwriteSets[binding.selectedOverwriteIndex]
-      let updatedSet = SavedFudaSet(name: selectedSet.name, state100: settings.state100)
-      settings.savedFudaSets[binding.selectedOverwriteIndex] = updatedSet
-      
-      output.successMessage = "前に作った札セット「\(selectedSet.name)」を上書き保存しました。"
-      binding.successAlertTitle = "上書き完了"
+      let result = saveLogic.overwriteExistingFudaSet(
+        at: binding.selectedOverwriteIndex,
+        availableOverwriteSets: output.availableOverwriteSets,
+        settings: settings
+      )
+
+      output.successMessage = result.successMessage
+      binding.successAlertTitle = result.alertTitle
       binding.showSuccessAlert = true
     }
-    
+
     func prepareNewSetCreation() {
-      binding.newSetName = ""
-      binding.showNewSetNameAlert = true
+      saveLogic.prepareNewSetCreation()
     }
-    
+
     func prepareOverwriteSelection() {
-      binding.selectedOverwriteIndex = 0
-      binding.showOverwritePickerAlert = true
+      saveLogic.prepareOverwriteSelection()
     }
   }
 }

@@ -215,6 +215,8 @@
 		9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */; };
 		9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
+		928BBC5F2E75415100E8F8F2 /* PoemPickerSaveLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */; };
+		928BBC602E75415100E8F8F2 /* PoemPickerSelectionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */; };
 		928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */; };
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */; };
@@ -577,6 +579,8 @@
 		9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeDataSource.swift; sourceTree = "<group>"; };
 		9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyListContentConfigProtocol.swift; sourceTree = "<group>"; };
 		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
+		928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSaveLogic.swift; sourceTree = "<group>"; };
+		928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSelectionLogic.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
 		9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01UITest.swift; sourceTree = "<group>"; };
@@ -836,6 +840,8 @@
 				92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */,
 				9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */,
 				9205DA372DEAF6E60098CE3B /* NgramPickerViewModel.swift */,
+				928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */,
+				928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */,
 				92CC44C22E51690C0037D6BB /* PoemPickerView.ViewModel.swift */,
 				922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */,
 				924275E22D583E2C001D5940 /* VolumeSettingViewModel.swift */,
@@ -1803,6 +1809,8 @@
 				921A99162E2CDDC9002B0CA4 /* DigitsPicker.swift in Sources */,
 				921A99172E2CDDC9002B0CA4 /* DigitsButton.swift in Sources */,
 				92F8245725AF0C34008E031D /* SettingTableCell.swift in Sources */,
+				928BBC5F2E75415100E8F8F2 /* PoemPickerSaveLogic.swift in Sources */,
+				928BBC602E75415100E8F8F2 /* PoemPickerSelectionLogic.swift in Sources */,
 				92EC11FE2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
 				92014DB62D2560CA00B2BA85 /* SingerFetching.swift in Sources */,
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,

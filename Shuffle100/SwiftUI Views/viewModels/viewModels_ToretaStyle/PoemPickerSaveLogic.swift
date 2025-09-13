@@ -11,7 +11,7 @@ import Combine
 
 // MARK: - Save Logic Protocol
 protocol PoemPickerSaveHandling {
-  func handleSaveRequest(selectedCount: Int, availableOverwriteSets: [SavedFudaSet]) -> PoemPickerSaveAction
+  static func handleSaveRequest(selectedCount: Int, availableOverwriteSets: [SavedFudaSet]) -> PoemPickerSaveAction
   func saveNewFudaSet(name: String, settings: Settings) -> PoemPickerSaveResult
   func overwriteExistingFudaSet(at index: Int, availableOverwriteSets: [SavedFudaSet], settings: Settings) -> PoemPickerSaveResult
   func prepareNewSetCreation() -> Void
@@ -39,7 +39,7 @@ extension PoemPickerView.ViewModel {
       self.binding = binding
     }
     
-    func handleSaveRequest(selectedCount: Int, availableOverwriteSets: [SavedFudaSet]) -> PoemPickerSaveAction {
+    static func handleSaveRequest(selectedCount: Int, availableOverwriteSets: [SavedFudaSet]) -> PoemPickerSaveAction {
       if selectedCount > 0 {
         return .showActionSheet(availableOverwriteSets)
       } else {
