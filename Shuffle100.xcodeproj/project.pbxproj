@@ -217,6 +217,8 @@
 		9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
 		928BBC5F2E75415100E8F8F2 /* PoemPickerSaveLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */; };
 		928BBC602E75415100E8F8F2 /* PoemPickerSelectionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */; };
+		928BBC632E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */; };
+		928BBC642E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */; };
 		928E73B422ABE7B400FB1B7B /* RecitePoemScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */; };
 		928E73B622ABE83C00FB1B7B /* RecitePoemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */; };
 		9295721C29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */; };
@@ -581,6 +583,8 @@
 		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
 		928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSaveLogic.swift; sourceTree = "<group>"; };
 		928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSelectionLogic.swift; sourceTree = "<group>"; };
+		928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerViewModelSaveTests.swift; sourceTree = "<group>"; };
+		928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerViewModelSearchTests.swift; sourceTree = "<group>"; };
 		928E73B322ABE7B400FB1B7B /* RecitePoemScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreenTest.swift; sourceTree = "<group>"; };
 		928E73B522ABE83C00FB1B7B /* RecitePoemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemScreen.swift; sourceTree = "<group>"; };
 		9295721B29FFF26600AAB997 /* DigitsPickerScreen01UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen01UITest.swift; sourceTree = "<group>"; };
@@ -821,6 +825,8 @@
 				9205DA3B2DEAF7440098CE3B /* NgramButtonViewModelTests.swift */,
 				9205DA3D2DEAF74B0098CE3B /* NgramPickerViewModelTests.swift */,
 				92CC44C82E5171B20037D6BB /* PoemPickerViewModelTests.swift */,
+				928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */,
+				928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
 				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
@@ -1951,6 +1957,8 @@
 				922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
 				926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */,
+				928BBC632E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift in Sources */,
+				928BBC642E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift in Sources */,
 				926DD64A2C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift in Sources */,
 				92C87DDB22E88E6900569D15 /* SingerTests.swift in Sources */,
 				92ABF9BD23F6DF46000CA91C /* StoreManagerTest.swift in Sources */,
