@@ -42,8 +42,8 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key></key>
-	<string></string>
+	<key>UIDesignRequiresCompatibility</key>
+  <true/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>
