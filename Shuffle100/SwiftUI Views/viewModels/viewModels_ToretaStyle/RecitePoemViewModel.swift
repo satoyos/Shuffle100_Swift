@@ -45,6 +45,9 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   private let settings: Settings
   private let singer: Singer
 
+  // Test support
+  private var isInTestMode: Bool = false
+
   // Actions
   var playerFinishedAction: (() -> Void)?
   var playButtonTappedAfterFinishedReciting: (() -> Void)?
@@ -326,7 +329,12 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   }
 
   private func handleRewindButtonTapped() {
-    guard let player = currentPlayer else { return }
+    guard let player = currentPlayer else {
+      if isInTestMode {
+        backToPreviousAction?()
+      }
+      return
+    }
     if player.currentTime > 0.0 {
       player.currentTime = 0.0
       pauseCurrentPlayer()
@@ -337,13 +345,25 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   }
 
   private func handleForwardButtonTapped() {
-    guard let player = currentPlayer else { return }
+    guard let player = currentPlayer else {
+      if isInTestMode {
+        skipToNextScreenAction?()
+      }
+      return
+    }
     player.stop()
     skipToNextScreenAction?()
   }
 
   private func handleAudioPlayerFinished() {
-    guard currentPlayer != nil else { return }
+    guard currentPlayer != nil else {
+      if isInTestMode {
+        binding.progressValue = 1.0
+        playFinished = true
+        playerFinishedAction?()
+      }
+      return
+    }
     binding.progressValue = 1.0
     playFinished = true
     playerFinishedAction?()
@@ -374,6 +394,10 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   }
 
   // MARK: - Test Support
+
+  func enableTestMode() {
+    isInTestMode = true
+  }
 
   var testCurrentPlayer: AVAudioPlayer? {
     return currentPlayer

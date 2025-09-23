@@ -19,6 +19,7 @@ final class RecitePoemViewModelTests: XCTestCase {
     testSettings = Settings()
     testSettings.singerID = "ia"
     viewModel = RecitePoemViewModel(settings: testSettings)
+    viewModel.enableTestMode()
     cancellables = Set<AnyCancellable>()
   }
 
