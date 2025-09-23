@@ -15,6 +15,7 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
+  var currentRecitePoemViewModel: RecitePoemViewModel?
   
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
     self.navigationController = navigationController
@@ -35,13 +36,31 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   }
   
   func addKamiScreenActionsForKamiEnding() {
-    guard let screen = self.screen as? RecitePoemScreen else { return }
-    screen.playButtonTappedAfterFinishedReciting = { [weak self] in
-      self?.stepIntoShimoInNormalMode()
+    if let viewModel = getCurrentRecitePoemViewModel() {
+      // SwiftUI版
+      viewModel.playButtonTappedAfterFinishedReciting = { [weak self] in
+        self?.stepIntoShimoInNormalMode()
+      }
+      viewModel.skipToNextScreenAction = { [weak self] in
+        self?.stepIntoShimoInNormalMode()
+      }
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.playButtonTappedAfterFinishedReciting = { [weak self] in
+        self?.stepIntoShimoInNormalMode()
+      }
+      screen.skipToNextScreenAction = { [weak self] in
+        self?.stepIntoShimoInNormalMode()
+      }
     }
-    screen.skipToNextScreenAction = { [weak self] in
-      self?.stepIntoShimoInNormalMode()
-    }
+  }
+
+  func getCurrentRecitePoemViewModel() -> RecitePoemViewModel? {
+    return currentRecitePoemViewModel
+  }
+
+  func setCurrentRecitePoemViewModel(_ viewModel: RecitePoemViewModel) {
+    self.currentRecitePoemViewModel = viewModel
   }
   
   private func stepIntoShimoInNormalMode() {

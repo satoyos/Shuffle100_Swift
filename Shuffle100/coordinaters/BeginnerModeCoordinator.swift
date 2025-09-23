@@ -15,6 +15,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
+  var currentRecitePoemViewModel: RecitePoemViewModel?
   
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
     self.navigationController = navigationController
@@ -32,10 +33,25 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   }
   
   func addKamiScreenActionsForKamiEnding() {
-    guard let screen = self.screen as? RecitePoemScreen else { return }
-    screen.skipToNextScreenAction = { [weak self] in
-      self?.stepIntoShimoInBeginnerMode()
+    if let viewModel = getCurrentRecitePoemViewModel() {
+      // SwiftUI版
+      viewModel.skipToNextScreenAction = { [weak self] in
+        self?.stepIntoShimoInBeginnerMode()
+      }
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.skipToNextScreenAction = { [weak self] in
+        self?.stepIntoShimoInBeginnerMode()
+      }
     }
+  }
+
+  func getCurrentRecitePoemViewModel() -> RecitePoemViewModel? {
+    return currentRecitePoemViewModel
+  }
+
+  func setCurrentRecitePoemViewModel(_ viewModel: RecitePoemViewModel) {
+    self.currentRecitePoemViewModel = viewModel
   }
   
   private func stepIntoShimoInBeginnerMode() {

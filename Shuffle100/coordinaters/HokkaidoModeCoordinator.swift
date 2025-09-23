@@ -16,6 +16,7 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
+  var currentRecitePoemViewModel: RecitePoemViewModel?
   
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
     self.navigationController = navigationController
@@ -82,6 +83,14 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
   
   func addKamiScreenActionsForKamiEnding() {
     assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
+  }
+
+  func getCurrentRecitePoemViewModel() -> RecitePoemViewModel? {
+    return currentRecitePoemViewModel
+  }
+
+  func setCurrentRecitePoemViewModel(_ viewModel: RecitePoemViewModel) {
+    self.currentRecitePoemViewModel = viewModel
   }
   
   internal func reciteShimoFinished(number: Int, counter: Int) {
