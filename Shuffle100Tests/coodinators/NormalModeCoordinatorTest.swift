@@ -34,21 +34,40 @@ class NormalModeCoordinatorTest: XCTestCase {
         settings.shortenJoka = true
         let coordinator = NormalModeCoordinator(navigationController: nc, settings: settings, store: StoreManager())
         coordinator.start()
-        guard let screen = coordinator.screen as? RecitePoemScreen else {
-            XCTFail("NormalModeCoordinatorのscreenプロパティの中の人が、RecitePoemScreenではない！")
+
+        // SwiftUI版では ActionAttachedHostingController が使われる
+        guard let hostController = coordinator.screen else {
+            XCTFail("NormalModeCoordinatorのscreenプロパティが見つからない！")
             return
         }
-        screen.loadViewIfNeeded()
-        screen.viewWillLayoutSubviews()
-        screen.playJoka(shorten: settings.shortenJoka)
-        screen.updateAudioProgressView()
+
+        // ViewModelを取得
+        guard let viewModel = coordinator.getCurrentRecitePoemViewModel() else {
+            XCTFail("RecitePoemViewModelが取得できない！")
+            return
+        }
+
+        // ビューの初期化
+        hostController.loadViewIfNeeded()
+        viewModel.initView(title: "序歌")
+        viewModel.playJoka(shorten: settings.shortenJoka)
+
+        // 少し待ってから確認（音声ファイルの読み込み完了を待つ）
+        let expectation = XCTestExpectation(description: "Audio loading")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+
         // then
-        XCTAssertEqual(screen.recitePoemView.jokaDescLabel?.text, "序歌を途中から読み上げています。")
-        guard let player = screen.currentPlayer else {
-            XCTFail("RecotePoemScreenからcurrentPlayerを取得できない！！")
+        XCTAssertTrue(viewModel.output.showShortJokaDesc, "短縮序歌の説明が表示されている")
+        XCTAssertFalse(viewModel.output.showNormalJokaDesc, "通常序歌の説明は表示されていない")
+
+        guard let player = viewModel.testCurrentPlayer else {
+            XCTFail("RecitePoemViewModelからcurrentPlayerを取得できない！！")
             return
         }
         XCTAssert(player.currentTime > 10.0, "序歌の途中から始まっている")
-        XCTAssertGreaterThan(screen.recitePoemView.progressView.progress, 0.5, "ProgressViewも半分以上は超えている")
+        XCTAssertGreaterThan(viewModel.binding.progressValue, 0.5, "ProgressViewも半分以上は超えている")
     }
 }

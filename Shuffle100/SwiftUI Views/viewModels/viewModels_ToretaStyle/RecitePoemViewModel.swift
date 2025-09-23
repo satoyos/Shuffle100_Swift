@@ -373,6 +373,12 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
     }
   }
 
+  // MARK: - Test Support
+
+  var testCurrentPlayer: AVAudioPlayer? {
+    return currentPlayer
+  }
+
   // MARK: - Cleanup
 
   deinit {
