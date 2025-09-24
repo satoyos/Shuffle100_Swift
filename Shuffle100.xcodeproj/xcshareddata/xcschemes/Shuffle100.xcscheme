@@ -56,6 +56,9 @@
          <TestPlanReference
             reference = "container:Test on Cloud.xctestplan">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Unit tests only.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference

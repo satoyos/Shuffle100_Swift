@@ -12,7 +12,13 @@
     "testTimeoutsEnabled" : true
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:Shuffle100.xcodeproj",
+        "identifier" : "923D59212143BB0B000F5E60",
+        "name" : "Shuffle100Tests"
+      }
+    }
   ],
   "version" : 1
 }
