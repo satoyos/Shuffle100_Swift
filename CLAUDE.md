@@ -30,13 +30,17 @@ pod install
 open Shuffle100.xcworkspace
 ```
 
+### デバイス設定
+- **テスト・ビルド用デバイス**: iPhone 17 を使用
+- シミュレータでの動作確認も iPhone 17 で実施
+
 ### テスト実行
 ```bash
 # 単体テスト（Shuffle100Testsターゲットのみ）
-xcodebuild test -workspace Shuffle100.xcworkspace -scheme Shuffle100 -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing Shuffle100Tests
+xcodebuild test -workspace Shuffle100.xcworkspace -scheme Shuffle100 -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing Shuffle100Tests
 
 # UIテスト
-xcodebuild test -workspace Shuffle100.xcworkspace -scheme Shuffle100UITests -destination 'platform=iOS Simulator,name=iPhone 16'
+xcodebuild test -workspace Shuffle100.xcworkspace -scheme Shuffle100UITests -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 
 ### Fastlane（将来の拡張用）
