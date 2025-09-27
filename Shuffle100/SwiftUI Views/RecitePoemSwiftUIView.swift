@@ -31,12 +31,16 @@ extension RecitePoemSwiftUIView: View {
         Color(.systemBackground)
           .ignoresSafeArea()
 
-        contentView(geometry: geometry)
-          .transition(currentTransition)
-          .animation(
-            .easeInOut(duration: animationDuration),
-            value: viewModel.output.title
-          )
+        if viewModel.output.animationInProgress {
+          AnyView(contentView(geometry: geometry, for: viewModel.output.title))
+            .transition(currentTransition)
+            .animation(
+              .easeInOut(duration: animationDuration),
+              value: viewModel.output.animationInProgress
+            )
+        } else {
+          contentView(geometry: geometry, for: viewModel.output.title)
+        }
       }
     }
     .navigationBarHidden(true)
@@ -46,11 +50,11 @@ extension RecitePoemSwiftUIView: View {
   }
 
   @ViewBuilder
-  private func contentView(geometry: GeometryProxy) -> some View {
+  private func contentView(geometry: GeometryProxy, for title: String) -> some View {
     VStack(spacing: 0) {
       // Header - Full width
       RecitePoemHeaderView(
-        title: viewModel.output.title,
+        title: title,
         gearAction: {
           viewModel.input.gearButtonTapped.send()
         },

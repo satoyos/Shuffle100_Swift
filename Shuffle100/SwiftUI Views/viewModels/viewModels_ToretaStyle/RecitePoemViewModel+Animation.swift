@@ -16,11 +16,8 @@ extension RecitePoemViewModel {
     let newTitle = "\(counter)首め:" + sideStr + "の句 (全\(total)首)"
 
     output.animationType = .flipFromLeft
+    output.title = newTitle
     output.animationInProgress = true
-
-    withAnimation(.easeInOut(duration: Double(settings.interval))) {
-      output.title = newTitle
-    }
 
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.interval)) {
       self.output.animationInProgress = false
@@ -36,11 +33,8 @@ extension RecitePoemViewModel {
     let newTitle = "\(counter)首め:下の句 (全\(total)首)"
 
     output.animationType = .slideInFromRight
+    output.title = newTitle
     output.animationInProgress = true
-
-    withAnimation(.easeInOut(duration: Double(settings.kamiShimoInterval))) {
-      output.title = newTitle
-    }
 
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.kamiShimoInterval)) {
       self.output.animationInProgress = false
@@ -52,11 +46,8 @@ extension RecitePoemViewModel {
     let newTitle = "\(counter)首め:上の句 (全\(total)首)"
 
     output.animationType = .slideInFromLeft
+    output.title = newTitle
     output.animationInProgress = true
-
-    withAnimation(.easeInOut(duration: Double(settings.kamiShimoInterval))) {
-      output.title = newTitle
-    }
 
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.kamiShimoInterval)) {
       self.output.animationInProgress = false
@@ -72,11 +63,8 @@ extension RecitePoemViewModel {
     let newTitle = "\(counter)首め:下の句 (全\(total)首)"
 
     output.animationType = .flipFromRight
+    output.title = newTitle
     output.animationInProgress = true
-
-    withAnimation(.easeInOut(duration: Double(settings.interval))) {
-      output.title = newTitle
-    }
 
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.interval)) {
       self.output.animationInProgress = false
@@ -90,11 +78,8 @@ extension RecitePoemViewModel {
 
   func stepIntoGameEnd() {
     output.animationType = .flipFromLeft
+    output.title = "試合終了"
     output.animationInProgress = true
-
-    withAnimation(.easeInOut(duration: Double(settings.interval))) {
-      output.title = "試合終了"
-    }
 
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.interval)) {
       self.output.animationInProgress = false
