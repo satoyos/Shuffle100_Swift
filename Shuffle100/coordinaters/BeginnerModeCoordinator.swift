@@ -55,16 +55,28 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   }
   
   private func stepIntoShimoInBeginnerMode() {
-    guard let screen = self.screen as? RecitePoemScreen else { return }
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
-    screen.playerFinishedAction = { [weak self] in
-      self?.openWhatsNextScreen()
+
+    if let viewModel = getCurrentRecitePoemViewModel() {
+      // SwiftUI版
+      viewModel.playerFinishedAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      viewModel.skipToNextScreenAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      viewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.playerFinishedAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      screen.skipToNextScreenAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
     }
-    screen.skipToNextScreenAction = { [weak self] in
-      self?.openWhatsNextScreen()
-    }
-    screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
   }
   
   internal func openWhatsNextScreen() {

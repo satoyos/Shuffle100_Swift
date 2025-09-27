@@ -59,13 +59,25 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
     assert(true, "ノンストップモードで下の句に突入！")
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
-    guard let screen = self.screen as? RecitePoemScreen else { return }
-    screen.playerFinishedAction = { [weak self, number, counter] in
-      self?.reciteShimoFinished(number: number, counter: counter)
+
+    if let viewModel = getCurrentRecitePoemViewModel() {
+      // SwiftUI版
+      viewModel.playerFinishedAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      viewModel.skipToNextScreenAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      viewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.playerFinishedAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      screen.skipToNextScreenAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
     }
-    screen.skipToNextScreenAction = { [weak self, number, counter] in
-      self?.reciteShimoFinished(number: number, counter: counter)
-    }
-    screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
   }
 }

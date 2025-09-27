@@ -29,10 +29,15 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   }
   
   internal func reciteKamiFinished(number: Int, counter: Int ) {
-    guard let screen = self.screen as? RecitePoemScreen else { return }
-    screen.waitUserActionAfterFineshdReciing()
-    //        addKamiScreenActions()
-    poemSupplier.stepIntoShimo()
+    if let viewModel = getCurrentRecitePoemViewModel() {
+      // SwiftUI版
+      viewModel.showAsWaitingForPlay()
+      poemSupplier.stepIntoShimo()
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.waitUserActionAfterFineshdReciing()
+      poemSupplier.stepIntoShimo()
+    }
   }
   
   func addKamiScreenActionsForKamiEnding() {
@@ -64,16 +69,29 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   }
   
   private func stepIntoShimoInNormalMode() {
-    guard let screen = self.screen as? RecitePoemScreen else { return }
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
-    screen.playerFinishedAction = { [weak self, number, counter] in
-      self?.reciteShimoFinished(number: number, counter: counter)
+
+    if let viewModel = getCurrentRecitePoemViewModel() {
+      // SwiftUI版
+      viewModel.playerFinishedAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      viewModel.skipToNextScreenAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      poemSupplier.stepIntoShimo()
+      viewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.playerFinishedAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      screen.skipToNextScreenAction = { [weak self, number, counter] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      poemSupplier.stepIntoShimo()
+      screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
     }
-    screen.skipToNextScreenAction = { [weak self, number, counter] in
-      self?.reciteShimoFinished(number: number, counter: counter)
-    }
-    poemSupplier.stepIntoShimo()
-    screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
   }
 }

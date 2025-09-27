@@ -287,6 +287,10 @@
 		92BC1F6A2E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */; };
 		92BC1F6B2E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */; };
 		92BC1F6C2E83EC1900187B88 /* RecitePoemViewModel+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F672E83EC1900187B88 /* RecitePoemViewModel+Animation.swift */; };
+		92BC1F752E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */; };
+		92BC1F762E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */; };
+		92BC1F772E87E1F600187B88 /* RecitePoemViewModelInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F712E87E1F600187B88 /* RecitePoemViewModelInputTests.swift */; };
+		92BC1F782E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F722E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift */; };
 		92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCDE79226C8E1E001853DC /* MainCoordinator.swift */; };
 		92C176D125E3D2DF00DDA46D /* BackToHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */; };
 		92C176D825E4F07F00DDA46D /* PostMortemUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */; };
@@ -658,6 +662,10 @@
 		92BC1F672E83EC1900187B88 /* RecitePoemViewModel+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+Animation.swift"; sourceTree = "<group>"; };
 		92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+AudioController.swift"; sourceTree = "<group>"; };
 		92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+EventHandler.swift"; sourceTree = "<group>"; };
+		92BC1F712E87E1F600187B88 /* RecitePoemViewModelInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelInputTests.swift; sourceTree = "<group>"; };
+		92BC1F722E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelJokaTests.swift; sourceTree = "<group>"; };
+		92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelNavigationTests.swift; sourceTree = "<group>"; };
+		92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelPlayButtonTests.swift; sourceTree = "<group>"; };
 		92BCDE79226C8E1E001853DC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToHomeProtocol.swift; sourceTree = "<group>"; };
 		92C176D725E4F07F00DDA46D /* PostMortemUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemUITest.swift; sourceTree = "<group>"; };
@@ -844,6 +852,10 @@
 				928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */,
 				928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */,
 				92B654F82E82482300F60B0C /* RecitePoemViewModelTests.swift */,
+				92BC1F712E87E1F600187B88 /* RecitePoemViewModelInputTests.swift */,
+				92BC1F722E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift */,
+				92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */,
+				92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
 				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
@@ -2021,6 +2033,10 @@
 				9215013127005A5E001E39FE /* NavigationBarTests.swift in Sources */,
 				927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */,
 				92E5F829240BCCD100C75FC6 /* ReciteSettingsScreenTest.swift in Sources */,
+				92BC1F752E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift in Sources */,
+				92BC1F762E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift in Sources */,
+				92BC1F772E87E1F600187B88 /* RecitePoemViewModelInputTests.swift in Sources */,
+				92BC1F782E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift in Sources */,
 				9250C82B2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift in Sources */,
 				925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
