@@ -37,7 +37,7 @@ final class RecitePoemViewModelTests: XCTestCase {
     XCTAssertFalse(viewModel.output.showNormalJokaDesc)
     XCTAssertFalse(viewModel.output.showShortJokaDesc)
     XCTAssertEqual(viewModel.binding.progressValue, 0.0)
-    XCTAssertEqual(viewModel.playButtonViewModel.type, .play)
+    XCTAssertEqual(viewModel.playButtonViewModel.output.type, .play)
   }
 
   // MARK: - View Initialization Tests
@@ -54,18 +54,18 @@ final class RecitePoemViewModelTests: XCTestCase {
 
   func test_showAsWaitingForPlay() throws {
     // Set initial state to pause by tapping the button (it starts as .play)
-    viewModel.playButtonViewModel.playButtonTapped()
+    viewModel.playButtonViewModel.input.showAsWaitingFor.send(.pause)
 
     viewModel.showAsWaitingForPlay()
 
-    XCTAssertEqual(viewModel.playButtonViewModel.type, .play)
+    XCTAssertEqual(viewModel.playButtonViewModel.output.type, .play)
   }
 
   func test_showAsWaitingForPause() throws {
     // Initial state is already .play, no need to change
     viewModel.showAsWaitingForPause()
 
-    XCTAssertEqual(viewModel.playButtonViewModel.type, .pause)
+    XCTAssertEqual(viewModel.playButtonViewModel.output.type, .pause)
   }
 
   // MARK: - Joka Description Tests

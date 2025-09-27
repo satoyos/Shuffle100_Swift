@@ -831,7 +831,6 @@
 		922B8BD42D215C340065D50A /* viewModels_ToretaStyle */ = {
 			isa = PBXGroup;
 			children = (
-				92B654F82E82482300F60B0C /* RecitePoemViewModelTests.swift */,
 				921A991A2E2CDE01002B0CA4 /* Digits01ButtonViewModelTests.swift */,
 				921A991B2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift */,
 				921A991C2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift */,
@@ -844,6 +843,7 @@
 				92CC44C82E5171B20037D6BB /* PoemPickerViewModelTests.swift */,
 				928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */,
 				928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */,
+				92B654F82E82482300F60B0C /* RecitePoemViewModelTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
 				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
@@ -866,6 +866,7 @@
 				928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */,
 				928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */,
 				92CC44C22E51690C0037D6BB /* PoemPickerView.ViewModel.swift */,
+				926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */,
 				92B654F42E8247E800F60B0C /* RecitePoemViewModel.swift */,
 				92BC1F672E83EC1900187B88 /* RecitePoemViewModel+Animation.swift */,
 				92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */,
@@ -1056,7 +1057,6 @@
 				9250C8282BE4BA4200EFBD48 /* FullLiner.ViewModel.swift */,
 				926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */,
 				926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */,
-				926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";

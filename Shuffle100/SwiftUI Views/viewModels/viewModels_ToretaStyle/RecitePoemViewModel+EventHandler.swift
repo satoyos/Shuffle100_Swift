@@ -55,9 +55,9 @@ extension RecitePoemViewModel {
       .store(in: &cancellables)
 
     // Play button tap handling
-    playButtonViewModel.objectWillChange
+    playButtonViewModel.output.playButtonTapped
       .sink { [weak self] in
-        self?.handlePlayButtonStateChange()
+        self?.handlePlayButtonTapped()
       }
       .store(in: &cancellables)
   }
@@ -129,7 +129,7 @@ extension RecitePoemViewModel {
     }
   }
 
-  internal func handlePlayButtonStateChange() {
+  internal func handlePlayButtonTapped() {
     if playFinished {
       playButtonTappedAfterFinishedReciting?()
     } else {

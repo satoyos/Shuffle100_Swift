@@ -51,7 +51,7 @@ extension RecitePoemViewModel {
       self.playNumberedPoem(number: number, side: .kami)
       // Auto-play after rewinding
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-        self.handlePlayButtonStateChange()
+        self.handlePlayButtonTapped()
       }
     }
   }
@@ -67,7 +67,7 @@ extension RecitePoemViewModel {
       self.playNumberedPoem(number: number, side: .shimo)
       // Auto-play after going back
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-        self.handlePlayButtonStateChange()
+        self.handlePlayButtonTapped()
       }
     }
   }
@@ -101,14 +101,14 @@ extension RecitePoemViewModel {
   // MARK: - Play Button State Management
 
   func showAsWaitingForPlay() {
-    if playButtonViewModel.type != .play {
-      playButtonViewModel.playButtonTapped()
+    if playButtonViewModel.output.type != .play {
+      playButtonViewModel.input.showAsWaitingFor.send(.play)
     }
   }
 
   func showAsWaitingForPause() {
-    if playButtonViewModel.type != .pause {
-      playButtonViewModel.playButtonTapped()
+    if playButtonViewModel.output.type != .pause {
+      playButtonViewModel.input.showAsWaitingFor.send(.pause)
     }
   }
 }

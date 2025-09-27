@@ -50,7 +50,7 @@ extension MemorizeTimer {
     }
     
     private func buildDataFlow() {
-      buttonViewModel.$type
+      buttonViewModel.output.$type
         .dropFirst()
         .sink { [weak self] value in
           if value == .pause {

@@ -18,7 +18,7 @@ final class MemorizeTimerViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(viewModel.timeViewModel.minText, "3")
         XCTAssertEqual(viewModel.timeViewModel.secText, "00")
-        XCTAssertEqual(viewModel.buttonViewModel.type, .play)
+        XCTAssertEqual(viewModel.buttonViewModel.output.type, .play)
     }
     
     func testWhenPlayButtonTappedTimerStartCountDown() {
@@ -27,7 +27,7 @@ final class MemorizeTimerViewModelTests: XCTestCase {
         let timerViewModel = viewModel.timeViewModel
         let buttonViewModel = viewModel.buttonViewModel
         let expectation1 = XCTestExpectation(description: "setText, minText, button type are all changing correctly")
-        buttonViewModel.playButtonTapped()
+      buttonViewModel.input.playButtonTapped.send()
         timerViewModel.$timeTexts
             .dropFirst()
             .filter { minTexts in minTexts == ("2", "59")}
@@ -35,7 +35,7 @@ final class MemorizeTimerViewModelTests: XCTestCase {
             .sink { value in
 //                XCTAssertEqual(value.sec, "59")
 //                XCTAssertEqual(value.min, "2")
-                XCTAssertEqual(buttonViewModel.type, .pause)
+                XCTAssertEqual(buttonViewModel.output.type, .pause)
                 expectation1.fulfill()
             }
             .store(in: &cancellables)

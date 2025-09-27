@@ -14,19 +14,19 @@ final class RecitePlayButtonViewModelTests: XCTestCase {
         // given
         let viewModel = RecitePlayButton.ViewModel(type: .play)
         // then
-        XCTAssertTrue(viewModel.isWaitingForPlay)
+        XCTAssertTrue(viewModel.output.isWaitingForPlay)
     }
 
     func testTappingButonChangesButtonType() {
-        // given
-        let viewModel = RecitePlayButton.ViewModel(type: .play)
-        // when
-        viewModel.playButtonTapped()
-        // then
-        XCTAssertEqual(viewModel.type, .pause)
-        // when
-        viewModel.playButtonTapped()
-        // then
-        XCTAssertEqual(viewModel.type, .play)
+      // given
+      let viewModel = RecitePlayButton.ViewModel(type: .play)
+      // when
+      viewModel.input.playButtonTapped.send()
+      // then
+      XCTAssertEqual(viewModel.output.type, .pause)
+      // when
+      viewModel.input.playButtonTapped.send()
+      // then
+      XCTAssertEqual(viewModel.output.type, .play)
     }
 }

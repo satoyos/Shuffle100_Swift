@@ -10,7 +10,7 @@ import SwiftUI
 struct RecitePlayButton {
   @ObservedObject var viewModel: ViewModel
   var diameteer: Double
-  
+
   init(diameter: Double = 300, viewModel: ViewModel) {
     self.diameteer = diameter
     self.viewModel = viewModel
@@ -19,8 +19,8 @@ struct RecitePlayButton {
 
 extension RecitePlayButton: View {
   var body: some View {
-    ReciteViewGeneralButton(type: viewModel.type, diameter: diameteer) {
-      viewModel.playButtonTapped()
+    ReciteViewGeneralButton(type: viewModel.output.type, diameter: diameteer) {
+      viewModel.output.playButtonTapped.send()
     }
   }
 }
