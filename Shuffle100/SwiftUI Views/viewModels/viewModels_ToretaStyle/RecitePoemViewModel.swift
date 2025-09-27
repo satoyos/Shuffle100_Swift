@@ -9,6 +9,14 @@ import Combine
 import AVFoundation
 import SwiftUI
 
+enum AnimationType {
+  case slideInFromRight
+  case slideInFromLeft
+  case flipFromLeft
+  case flipFromRight
+  case none
+}
+
 final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegate {
 
   final class Input: InputObject {
@@ -28,6 +36,8 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
     @Published var title: String = "To be Filled!"
     @Published var showNormalJokaDesc: Bool = false
     @Published var showShortJokaDesc: Bool = false
+    @Published var animationType: AnimationType = .none
+    @Published var animationInProgress: Bool = false
   }
 
   let input: Input
