@@ -819,6 +819,7 @@
 				921A991B2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift */,
 				921A991C2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift */,
 				921A991D2E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift */,
+				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */,
 				92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */,
 				92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */,
@@ -828,7 +829,6 @@
 				928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */,
 				928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
-				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
 			);
 			path = viewModels_ToretaStyle;

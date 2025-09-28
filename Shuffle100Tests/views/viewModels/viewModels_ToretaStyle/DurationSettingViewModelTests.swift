@@ -125,4 +125,32 @@ final class DurationSettingViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.output.secText, "1.00")
         
     }
+
+
+  func testIsTimerRunningDoesNotEmitFalseMultipleTimesAfterStartTrialCountDownRequest() {
+      // given
+      let viewModel = DurationSettingViewModel.fixture(startTime: 2.0)
+      var emissionCount = 0
+
+      // when
+      let expectation = XCTestExpectation(description: "isTimerRunning [false] should not emit multiple times")
+      expectation.isInverted = true // 期待しない動作をテスト
+
+      viewModel.output.$isTimerRunning
+          .dropFirst() // 初期値をスキップ
+          .filter{$0 == false}
+          .sink { _ in
+              emissionCount += 1
+              if emissionCount > 1 {
+                  expectation.fulfill() // 複数回発生したらテスト失敗
+              }
+          }
+          .store(in: &cancellables)
+
+      viewModel.input.startTrialCountDownRequest.send()
+
+      // then - 20秒待っても複数回発生しないことを確認
+      wait(for: [expectation], timeout: 20.0)
+      XCTAssertEqual(emissionCount, 1, "isTimerRunning should emit only once after startTrialCountDownRequest")
+  }
 }
