@@ -843,6 +843,7 @@
 				921A991B2E2CDE01002B0CA4 /* Digits01PickerViewModelTests.swift */,
 				921A991C2E2CDE01002B0CA4 /* Digits10ButtonViewModelTests.swift */,
 				921A991D2E2CDE01002B0CA4 /* Digits10PickerViewModelTests.swift */,
+				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				92A5B6B32DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift */,
 				92A5B6B52DC4D4D600DEFA69 /* FiveColorsViewModel.swift */,
 				92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */,
@@ -857,7 +858,6 @@
 				92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */,
 				92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */,
 				922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */,
-				922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */,
 				924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */,
 			);
 			path = viewModels_ToretaStyle;
@@ -2272,7 +2272,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = 4B4EJ2GHFC;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -2280,7 +2280,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.9.6;
+				MARKETING_VERSION = 7.9.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2295,7 +2295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = 4B4EJ2GHFC;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -2303,7 +2303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.9.6;
+				MARKETING_VERSION = 7.9.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2481,7 +2481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = 4B4EJ2GHFC;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -2489,7 +2489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.9.6;
+				MARKETING_VERSION = 7.9.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";

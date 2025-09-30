@@ -54,6 +54,8 @@ class CountDownTimer: ObservableObject {
   private func stopAndEraseTimer() {
     self.timer?.invalidate()
     self.timer = nil
-    self.isRunning = false
+    if isRunning {
+      self.isRunning = false
+    }
   }
 }
