@@ -9,14 +9,6 @@ import Combine
 import AVFoundation
 import SwiftUI
 
-enum AnimationType {
-  case slideInFromRight
-  case slideInFromLeft
-  case flipFromLeft
-  case flipFromRight
-  case none
-}
-
 final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegate {
 
   final class Input: InputObject {
@@ -36,8 +28,6 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
     @Published var title: String = "To be Filled!"
     @Published var showNormalJokaDesc: Bool = false
     @Published var showShortJokaDesc: Bool = false
-    @Published var animationType: AnimationType = .none
-    @Published var animationInProgress: Bool = false
   }
 
   let input: Input
@@ -111,6 +101,81 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
 
   var testCurrentPlayer: AVAudioPlayer? {
     return currentPlayer
+  }
+
+  // MARK: - Screen Transition Methods
+
+  func stepIntoNextPoem(number: Int, at counter: Int, total: Int, side: Side) {
+    let sideStr = side == .kami ? "上" : "下"
+    let newTitle = "\(counter)首め:" + sideStr + "の句 (全\(total)首)"
+    output.title = newTitle
+
+    if side == .kami {
+      playNumberedPoem(number: number, side: .kami)
+    } else {
+      playNumberedPoem(number: number, side: .shimo)
+    }
+  }
+
+  func slideIntoShimo(number: Int, at counter: Int, total: Int) {
+    let newTitle = "\(counter)首め:下の句 (全\(total)首)"
+    output.title = newTitle
+    playNumberedPoem(number: number, side: .shimo)
+  }
+
+  func slideBackToKami(number: Int, at counter: Int, total: Int) {
+    let newTitle = "\(counter)首め:上の句 (全\(total)首)"
+    output.title = newTitle
+    playNumberedPoem(number: number, side: .kami)
+    // Auto-play after rewinding
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      self.handlePlayButtonTapped()
+    }
+  }
+
+  func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
+    let newTitle = "\(counter)首め:下の句 (全\(total)首)"
+    output.title = newTitle
+    playNumberedPoem(number: number, side: .shimo)
+    // Auto-play after going back
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      self.handlePlayButtonTapped()
+    }
+  }
+
+  func stepIntoGameEnd() {
+    output.title = "試合終了"
+  }
+
+  // MARK: - Joka Description Management
+
+  func addNormalJokaDescLabel() {
+    output.showNormalJokaDesc = true
+    output.showShortJokaDesc = false
+  }
+
+  func addShortJokaDescLabel() {
+    output.showShortJokaDesc = true
+    output.showNormalJokaDesc = false
+  }
+
+  func hideJokaDescLabels() {
+    output.showNormalJokaDesc = false
+    output.showShortJokaDesc = false
+  }
+
+  // MARK: - Play Button State Management
+
+  func showAsWaitingForPlay() {
+    if playButtonViewModel.output.type != .play {
+      playButtonViewModel.input.showAsWaitingFor.send(.play)
+    }
+  }
+
+  func showAsWaitingForPause() {
+    if playButtonViewModel.output.type != .pause {
+      playButtonViewModel.input.showAsWaitingFor.send(.pause)
+    }
   }
 
   // MARK: - Cleanup

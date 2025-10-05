@@ -286,7 +286,6 @@
 		92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */; };
 		92BC1F6A2E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */; };
 		92BC1F6B2E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */; };
-		92BC1F6C2E83EC1900187B88 /* RecitePoemViewModel+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F672E83EC1900187B88 /* RecitePoemViewModel+Animation.swift */; };
 		92BC1F752E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */; };
 		92BC1F762E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */; };
 		92BC1F772E87E1F600187B88 /* RecitePoemViewModelInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F712E87E1F600187B88 /* RecitePoemViewModelInputTests.swift */; };
@@ -659,7 +658,6 @@
 		92B9E95F24656680007C2E75 /* NgramPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerCoordinator.swift; sourceTree = "<group>"; };
 		92B9E96F24666083007C2E75 /* ngram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ngram.json; sourceTree = "<group>"; };
 		92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetSavingUITest.swift; sourceTree = "<group>"; };
-		92BC1F672E83EC1900187B88 /* RecitePoemViewModel+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+Animation.swift"; sourceTree = "<group>"; };
 		92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+AudioController.swift"; sourceTree = "<group>"; };
 		92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+EventHandler.swift"; sourceTree = "<group>"; };
 		92BC1F712E87E1F600187B88 /* RecitePoemViewModelInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelInputTests.swift; sourceTree = "<group>"; };
@@ -880,7 +878,6 @@
 				92CC44C22E51690C0037D6BB /* PoemPickerView.ViewModel.swift */,
 				926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */,
 				92B654F42E8247E800F60B0C /* RecitePoemViewModel.swift */,
-				92BC1F672E83EC1900187B88 /* RecitePoemViewModel+Animation.swift */,
 				92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */,
 				92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */,
 				922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */,
@@ -1898,7 +1895,6 @@
 				92A2626C2865E01800425F19 /* RecitePoemScreenDelegate+Audio.swift in Sources */,
 				92BC1F6A2E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift in Sources */,
 				92BC1F6B2E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift in Sources */,
-				92BC1F6C2E83EC1900187B88 /* RecitePoemViewModel+Animation.swift in Sources */,
 				926DD6392C6B3E7800516674 /* RecitePlayButton.swift in Sources */,
 				92D153372BD4DD5A0075233B /* ScreenSizeStore.swift in Sources */,
 				923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,

@@ -31,16 +31,7 @@ extension RecitePoemSwiftUIView: View {
         Color(.systemBackground)
           .ignoresSafeArea()
 
-        if viewModel.output.animationInProgress {
-          AnyView(contentView(geometry: geometry, for: viewModel.output.title))
-            .transition(currentTransition)
-            .animation(
-              .easeInOut(duration: animationDuration),
-              value: viewModel.output.animationInProgress
-            )
-        } else {
-          contentView(geometry: geometry, for: viewModel.output.title)
-        }
+        contentView(geometry: geometry, for: viewModel.output.title)
       }
     }
     .navigationBarHidden(true)
@@ -109,44 +100,6 @@ extension RecitePoemSwiftUIView: View {
         Spacer()
       }
       .padding(.horizontal, 16)
-    }
-  }
-
-  private var currentTransition: AnyTransition {
-    switch viewModel.output.animationType {
-    case .slideInFromRight:
-      return .asymmetric(
-        insertion: .move(edge: .trailing),
-        removal: .move(edge: .leading)
-      )
-    case .slideInFromLeft:
-      return .asymmetric(
-        insertion: .move(edge: .leading),
-        removal: .move(edge: .trailing)
-      )
-    case .flipFromLeft:
-      return .asymmetric(
-        insertion: .scale.combined(with: .opacity),
-        removal: .scale.combined(with: .opacity)
-      )
-    case .flipFromRight:
-      return .asymmetric(
-        insertion: .scale.combined(with: .opacity),
-        removal: .scale.combined(with: .opacity)
-      )
-    case .none:
-      return .opacity
-    }
-  }
-
-  private var animationDuration: Double {
-    switch viewModel.output.animationType {
-    case .slideInFromRight, .slideInFromLeft:
-      return Double(viewModel.settings.kamiShimoInterval)
-    case .flipFromLeft, .flipFromRight:
-      return Double(viewModel.settings.interval)
-    case .none:
-      return 0.3
     }
   }
 
