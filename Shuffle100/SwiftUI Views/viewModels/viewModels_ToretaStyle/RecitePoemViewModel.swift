@@ -103,50 +103,6 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
     return currentPlayer
   }
 
-  // MARK: - Screen Transition Methods
-
-  func stepIntoNextPoem(number: Int, at counter: Int, total: Int, side: Side) {
-    let sideStr = side == .kami ? "上" : "下"
-    let newTitle = "\(counter)首め:" + sideStr + "の句 (全\(total)首)"
-    output.title = newTitle
-
-    if side == .kami {
-      playNumberedPoem(number: number, side: .kami)
-    } else {
-      playNumberedPoem(number: number, side: .shimo)
-    }
-  }
-
-  func slideIntoShimo(number: Int, at counter: Int, total: Int) {
-    let newTitle = "\(counter)首め:下の句 (全\(total)首)"
-    output.title = newTitle
-    playNumberedPoem(number: number, side: .shimo)
-  }
-
-  func slideBackToKami(number: Int, at counter: Int, total: Int) {
-    let newTitle = "\(counter)首め:上の句 (全\(total)首)"
-    output.title = newTitle
-    playNumberedPoem(number: number, side: .kami)
-    // Auto-play after rewinding
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      self.handlePlayButtonTapped()
-    }
-  }
-
-  func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
-    let newTitle = "\(counter)首め:下の句 (全\(total)首)"
-    output.title = newTitle
-    playNumberedPoem(number: number, side: .shimo)
-    // Auto-play after going back
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      self.handlePlayButtonTapped()
-    }
-  }
-
-  func stepIntoGameEnd() {
-    output.title = "試合終了"
-  }
-
   // MARK: - Joka Description Management
 
   func addNormalJokaDescLabel() {

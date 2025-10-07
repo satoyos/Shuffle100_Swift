@@ -21,9 +21,9 @@ protocol RecitePoemProtocol: BackToHome {
   func startPostMortem() -> Void
   func addKamiScreenActionsForKamiEnding()
 
-  // Helper methods for accessing the current RecitePoemViewModel
-  func getCurrentRecitePoemViewModel() -> RecitePoemViewModel?
-  func setCurrentRecitePoemViewModel(_ viewModel: RecitePoemViewModel)
+  // Helper methods for accessing the current RecitePoemBaseViewModel
+  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel?
+  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel)
 }
 
 extension RecitePoemProtocol where Self: Coordinator {
@@ -33,22 +33,22 @@ extension RecitePoemProtocol where Self: Coordinator {
   }
 
   private func startWithSwiftUI() {
-    let viewModel = RecitePoemViewModel(settings: settings)
-    setCurrentRecitePoemViewModel(viewModel)
+    let baseViewModel = RecitePoemBaseViewModel(settings: settings)
+    setCurrentRecitePoemBaseViewModel(baseViewModel)
 
-    viewModel.backToPreviousAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.backToPreviousAction = { [weak self] in
       self?.rewindToPrevious()
     }
-    viewModel.openSettingsAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.openSettingsAction = { [weak self] in
       self?.openReciteSettings()
     }
-    viewModel.backToHomeScreenAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.backToHomeScreenAction = { [weak self] in
       self?.backToHomeScreen()
     }
 
-    let recitePoemView = RecitePoemSwiftUIView(settings: settings, viewModel: viewModel)
+    let recitePoemBaseView = RecitePoemBaseView(settings: settings, viewModel: baseViewModel)
     let hostController = ActionAttachedHostingController(
-      rootView: recitePoemView
+      rootView: recitePoemBaseView
         .environmentObject(ScreenSizeStore.shared)
     )
 
@@ -58,15 +58,15 @@ extension RecitePoemProtocol where Self: Coordinator {
     navigationController.pushViewController(hostController, animated: true)
     let shorten = settings.shortenJoka
     CATransaction.setCompletionBlock {
-      viewModel.playerFinishedAction = { [weak self] in
+      baseViewModel.playerFinishedAction = { [weak self] in
         self?.jokaFinished()
       }
-      viewModel.skipToNextScreenAction = { [weak self] in
+      baseViewModel.skipToNextScreenAction = { [weak self] in
         self?.jokaFinished()
       }
       hostController.loadViewIfNeeded()
-      viewModel.initView(title: "序歌")
-      viewModel.playJoka(shorten: shorten)
+      baseViewModel.initView(title: "序歌")
+      baseViewModel.recitePoemViewModel.playJoka(shorten: shorten)
     }
     CATransaction.commit()
     self.screen = hostController
@@ -110,15 +110,15 @@ extension RecitePoemProtocol where Self: Coordinator {
     assert(true, "序歌の読み上げ終了!!")
     guard let firstPoem = poemSupplier.drawNextPoem() else { return }
 
-    if let viewModel = getCurrentRecitePoemViewModel() {
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       // SwiftUI版
       let number = firstPoem.number
-      viewModel.playerFinishedAction = { [weak self, number] in
+      baseViewModel.playerFinishedAction = { [weak self, number] in
         self?.reciteKamiFinished(number: number, counter: 1)  // 序歌を読み上げたばかりなので、counterは1首目確定
       }
       addKamiScreenActionsForKamiEnding()
       let side: Side = settings.reciteMode == .hokkaido ? .shimo : .kami
-      viewModel.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size, side: side)
+      baseViewModel.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size, side: side)
 
     } else if let screen = self.screen as? RecitePoemScreen {
       // Legacy UIKit版
@@ -134,20 +134,20 @@ extension RecitePoemProtocol where Self: Coordinator {
   func reciteShimoFinished(number: Int, counter: Int) {
     assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了。")
 
-    if let viewModel = getCurrentRecitePoemViewModel() {
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       // SwiftUI版
       if let poem = poemSupplier.drawNextPoem() {
         let number = poem.number
         let counter = poemSupplier.currentIndex
-        viewModel.playerFinishedAction = { [weak self, number, counter] in
+        baseViewModel.playerFinishedAction = { [weak self, number, counter] in
           self?.reciteKamiFinished(number: number, counter: counter)
         }
         addKamiScreenActionsForKamiEnding()
         let side: Side = settings.reciteMode == .hokkaido ? .shimo : .kami
-        viewModel.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size, side: side)
+        baseViewModel.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size, side: side)
       } else {
         assert(true, "歌は全て読み終えた！")
-        viewModel.stepIntoGameEnd()
+        baseViewModel.stepIntoGameEnd()
       }
 
     } else if let screen = self.screen as? RecitePoemScreen {
@@ -173,7 +173,7 @@ extension RecitePoemProtocol where Self: Coordinator {
       backToHomeScreen()
       return
     }
-    
+
     if side == .kami {
       backToPreviousPoem()
     } else {  // 下の句の冒頭でrewindが押された場合
@@ -182,10 +182,10 @@ extension RecitePoemProtocol where Self: Coordinator {
       let size = poemSupplier.size
       poemSupplier.backToKami()
 
-      if let viewModel = getCurrentRecitePoemViewModel() {
+      if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
         // SwiftUI版
-        viewModel.slideBackToKami(number: number, at: counter, total: size)
-        viewModel.playerFinishedAction = { [weak self, number, counter] in
+        baseViewModel.slideBackToKami(number: number, at: counter, total: size)
+        baseViewModel.playerFinishedAction = { [weak self, number, counter] in
           self?.reciteKamiFinished(number: number, counter: counter)
         }
       } else if let screen = self.screen as? RecitePoemScreen {
@@ -234,12 +234,12 @@ extension RecitePoemProtocol where Self: Coordinator {
       let number = prevPoem.number
       let counter = poemSupplier.currentIndex
 
-      if let viewModel = getCurrentRecitePoemViewModel() {
+      if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
         // SwiftUI版
-        viewModel.playerFinishedAction = { [weak self] in
+        baseViewModel.playerFinishedAction = { [weak self] in
           self?.reciteShimoFinished(number: number, counter: counter)
         }
-        viewModel.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
+        baseViewModel.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
 
       } else if let screen = self.screen as? RecitePoemScreen {
         // Legacy UIKit版

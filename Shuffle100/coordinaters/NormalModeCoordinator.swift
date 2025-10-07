@@ -15,8 +15,8 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
-  var currentRecitePoemViewModel: RecitePoemViewModel?
-  
+  var currentRecitePoemBaseViewModel: RecitePoemBaseViewModel?
+
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
     self.navigationController = navigationController
     self.settings = settings
@@ -29,9 +29,9 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   }
   
   internal func reciteKamiFinished(number: Int, counter: Int ) {
-    if let viewModel = getCurrentRecitePoemViewModel() {
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       // SwiftUI版
-      viewModel.showAsWaitingForPlay()
+      baseViewModel.recitePoemViewModel.showAsWaitingForPlay()
       poemSupplier.stepIntoShimo()
     } else if let screen = self.screen as? RecitePoemScreen {
       // Legacy UIKit版
@@ -39,14 +39,14 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
       poemSupplier.stepIntoShimo()
     }
   }
-  
+
   func addKamiScreenActionsForKamiEnding() {
-    if let viewModel = getCurrentRecitePoemViewModel() {
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       // SwiftUI版
-      viewModel.playButtonTappedAfterFinishedReciting = { [weak self] in
+      baseViewModel.playButtonTappedAfterFinishedReciting = { [weak self] in
         self?.stepIntoShimoInNormalMode()
       }
-      viewModel.skipToNextScreenAction = { [weak self] in
+      baseViewModel.skipToNextScreenAction = { [weak self] in
         self?.stepIntoShimoInNormalMode()
       }
     } else if let screen = self.screen as? RecitePoemScreen {
@@ -60,28 +60,28 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
     }
   }
 
-  func getCurrentRecitePoemViewModel() -> RecitePoemViewModel? {
-    return currentRecitePoemViewModel
+  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel? {
+    return currentRecitePoemBaseViewModel
   }
 
-  func setCurrentRecitePoemViewModel(_ viewModel: RecitePoemViewModel) {
-    self.currentRecitePoemViewModel = viewModel
+  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel) {
+    self.currentRecitePoemBaseViewModel = viewModel
   }
   
   private func stepIntoShimoInNormalMode() {
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
 
-    if let viewModel = getCurrentRecitePoemViewModel() {
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       // SwiftUI版
-      viewModel.playerFinishedAction = { [weak self, number, counter] in
+      baseViewModel.playerFinishedAction = { [weak self, number, counter] in
         self?.reciteShimoFinished(number: number, counter: counter)
       }
-      viewModel.skipToNextScreenAction = { [weak self, number, counter] in
+      baseViewModel.skipToNextScreenAction = { [weak self, number, counter] in
         self?.reciteShimoFinished(number: number, counter: counter)
       }
       poemSupplier.stepIntoShimo()
-      viewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+      baseViewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
     } else if let screen = self.screen as? RecitePoemScreen {
       // Legacy UIKit版
       screen.playerFinishedAction = { [weak self, number, counter] in
