@@ -42,10 +42,11 @@ class NormalModeCoordinatorTest: XCTestCase {
         }
 
         // ViewModelを取得
-        guard let viewModel = coordinator.getCurrentRecitePoemViewModel() else {
-            XCTFail("RecitePoemViewModelが取得できない！")
+        guard let baseViewModel = coordinator.getCurrentRecitePoemBaseViewModel() else {
+            XCTFail("RecitePoemBaseViewModelが取得できない！")
             return
         }
+        let viewModel = baseViewModel.recitePoemViewModel
 
         // ビューの初期化
         hostController.loadViewIfNeeded()

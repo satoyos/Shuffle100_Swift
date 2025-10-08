@@ -139,8 +139,8 @@ final class RecitePoemBaseViewModel: ViewModelObject {
       input.slideAnimation.send(screenWidth)
     }
 
-    // アニメーション開始後に音声を再生
-    DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.kamiShimoInterval) * 0.15) {
+    // アニメーション終了後に音声を再生
+    DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.kamiShimoInterval)) {
       self.recitePoemViewModel.playNumberedPoem(number: number, side: .shimo)
     }
   }
