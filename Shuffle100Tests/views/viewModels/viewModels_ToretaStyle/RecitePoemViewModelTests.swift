@@ -65,7 +65,7 @@ final class RecitePoemViewModelTests: XCTestCase {
     testSettings.volume = 0.7
     let viewModelWithVolume = RecitePoemViewModel(settings: testSettings)
 
-    // Should use the volume setting from settings
+    // Should initialize successfully with custom volume setting
     XCTAssertNotNil(viewModelWithVolume)
   }
 }
