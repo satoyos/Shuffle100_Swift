@@ -65,11 +65,13 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
   }
 
   func test_stepIntoNextPoem_triggersFlipAnimation() throws {
-    let expectation = XCTestExpectation(description: "Rotation angle should change")
+    let initialAngle = viewModel.output.rotationAngle
+    let expectation = XCTestExpectation(description: "Rotation angle should increase by 180")
 
     viewModel.output.$rotationAngle
       .dropFirst()
-      .sink { _ in
+      .sink { angle in
+        XCTAssertEqual(angle, initialAngle + 180)
         expectation.fulfill()
       }
       .store(in: &cancellables)
