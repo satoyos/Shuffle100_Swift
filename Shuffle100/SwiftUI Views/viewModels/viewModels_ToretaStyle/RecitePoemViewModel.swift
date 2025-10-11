@@ -44,6 +44,7 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   // Settings and dependencies
   internal let settings: Settings
   internal let singer: Singer
+  internal let audioPlayerFactory: AudioPlayerFactoryProtocol
 
   // Test support
   internal var isInTestMode: Bool = false
@@ -58,7 +59,7 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
 
   internal var cancellables: Set<AnyCancellable> = []
 
-  init(settings: Settings) {
+  init(settings: Settings, audioPlayerFactory: AudioPlayerFactoryProtocol = AudioPlayerFactory.shared) {
     let input = Input()
     let binding = Binding()
     let output = Output()
@@ -69,6 +70,7 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
       fatalError("[\(settings.singerID)]に対応する読手が見つかりません。")
     }
     self.singer = singer
+    self.audioPlayerFactory = audioPlayerFactory
 
     self.input = input
     self.binding = binding

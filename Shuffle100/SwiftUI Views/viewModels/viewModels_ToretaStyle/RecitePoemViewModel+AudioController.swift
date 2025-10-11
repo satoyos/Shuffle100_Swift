@@ -13,7 +13,7 @@ extension RecitePoemViewModel {
   // MARK: - Audio Methods
 
   func playJoka(shorten: Bool = false) {
-    currentPlayer = AudioPlayerFactory.shared.prepareOpeningPlayer(folder: singer.path)
+    currentPlayer = audioPlayerFactory.prepareOpeningPlayer(folder: singer.path)
     guard let player = currentPlayer else {
       print("序歌の音声ファイルが見つかりません。フォルダ[\(singer.path)]")
       return
@@ -30,7 +30,7 @@ extension RecitePoemViewModel {
   }
 
   func playNumberedPoem(number: Int, side: Side) {
-    currentPlayer = AudioPlayerFactory.shared.preparePlayer(number: number, side: side, folder: singer.path)
+    currentPlayer = audioPlayerFactory.preparePlayer(number: number, side: side, folder: singer.path)
     guard currentPlayer != nil else {
       print("音声ファイルが見つかりません。歌番号[\(number)], フォルダ[\(singer.path)]")
       return

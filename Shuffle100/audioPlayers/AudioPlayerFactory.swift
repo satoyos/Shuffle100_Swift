@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class AudioPlayerFactory {
+class AudioPlayerFactory: AudioPlayerFactoryProtocol {
   static let shared = AudioPlayerFactory()
   
   func setupAudioSession() {
