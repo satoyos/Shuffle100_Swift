@@ -23,9 +23,10 @@ extension ReciteViewButtonStyle: ButtonStyle {
       .foregroundColor(isEnabled ? forgroundColor(of: type) : .gray)
       .frame(width: diameter, height: diameter)
       .background(backGradient)
-      .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+      .clipShape(Circle())
       .background(Circle()
-        .fill(.background).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/))
+        .fill(.background)
+        .shadow(color: .black.opacity(0.8), radius: 8, x: 0, y: 3))
     // transaction below make Image switch WITHOUT animation!
       .transaction { transaction in
         transaction.animation = nil

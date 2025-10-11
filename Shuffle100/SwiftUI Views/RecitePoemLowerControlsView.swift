@@ -12,9 +12,10 @@ struct RecitePoemLowerControlsView: View {
   let rewindAction: () -> Void
   let forwardAction: () -> Void
   let controlSize: Double
+  let playButtonWidth: Double
 
   var body: some View {
-    HStack(spacing: 20) {
+    HStack(spacing: 0) {
       // Rewind Button
       ReciteViewGeneralButton(
         type: .rewind,
@@ -22,13 +23,15 @@ struct RecitePoemLowerControlsView: View {
       ) {
         rewindAction()
       }
+      .frame(width: controlSize, height: controlSize)
 
       Spacer()
 
       // Progress View
+      // UIKit版の計算式: playButtonSize().width - 2.0 * skipButtonSize().width * 1.2
       ProgressView(value: progressValue)
         .progressViewStyle(LinearProgressViewStyle(tint: .accentColor))
-        .frame(height: 4)
+        .frame(width: playButtonWidth - 2.0 * controlSize * 1.2, height: 5)
 
       Spacer()
 
@@ -39,8 +42,8 @@ struct RecitePoemLowerControlsView: View {
       ) {
         forwardAction()
       }
+      .frame(width: controlSize, height: controlSize)
     }
-    .padding(.horizontal, 20)
   }
 }
 
@@ -49,6 +52,7 @@ struct RecitePoemLowerControlsView: View {
     progressValue: 0.6,
     rewindAction: { print("Rewind tapped") },
     forwardAction: { print("Forward tapped") },
-    controlSize: 50.0
+    controlSize: 40.0,
+    playButtonWidth: 300.0
   )
 }
