@@ -124,15 +124,7 @@ extension RecitePoemSwiftUIView: View {
   }
 
   private func controlButtonSize(for geometry: GeometryProxy) -> Double {
-    // UIKit版と同じ固定値を使用
-    switch UIDevice.current.userInterfaceIdiom {
-    case .phone:
-      return 40.0
-    case .pad:
-      return 80.0
-    default:
-      return 40.0
-    }
+    min(geometry.size.width, geometry.size.height) * 0.12
   }
 }
 
