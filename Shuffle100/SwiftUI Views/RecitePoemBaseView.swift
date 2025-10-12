@@ -41,11 +41,6 @@ extension RecitePoemBaseView: View {
         }
 
         Color(.systemBackground)
-//          .ignoresSafeArea()
-//          .onAppear {
-//            // 画面サイズをViewModelに設定
-//            viewModel.screenWidth = geometry.size.width
-//          }
 
         // フリップアニメーション用の2面構造
         ZStack {
