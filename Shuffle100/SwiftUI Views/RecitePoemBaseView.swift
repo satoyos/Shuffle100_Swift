@@ -21,12 +21,31 @@ extension RecitePoemBaseView: View {
   var body: some View {
     GeometryReader { geometry in
       ZStack {
-        Color(.systemBackground)
+        // Safe Area外の背景色を上下で分ける
+        GeometryReader { geo in
+          VStack(spacing: 0) {
+            // 上側: Header色
+            Color(StandardColor.barTintColor)
+              .frame(height: geo.safeAreaInsets.top)
+
+            Spacer()
+
+            Color(.systemBackground)
+              .frame(height: geo.safeAreaInsets.bottom)
+          }
           .ignoresSafeArea()
           .onAppear {
             // 画面サイズをViewModelに設定
             viewModel.screenWidth = geometry.size.width
           }
+        }
+
+        Color(.systemBackground)
+//          .ignoresSafeArea()
+//          .onAppear {
+//            // 画面サイズをViewModelに設定
+//            viewModel.screenWidth = geometry.size.width
+//          }
 
         // フリップアニメーション用の2面構造
         ZStack {

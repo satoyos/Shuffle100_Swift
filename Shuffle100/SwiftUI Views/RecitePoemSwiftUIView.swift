@@ -104,7 +104,12 @@ extension RecitePoemSwiftUIView: View {
           }
           .frame(width: contentGeometry.size.width, height: contentGeometry.size.height, alignment: .top)
         }
+        .background(Color(.systemBackground))
       }
+      .background(
+        Color(StandardColor.barTintColor)
+          .ignoresSafeArea()
+      )
     }
     .navigationBarHidden(true)
     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
