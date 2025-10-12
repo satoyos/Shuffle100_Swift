@@ -48,7 +48,8 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
     wait(for: [expectation], timeout: 1.0)
   }
 
-  func test_stepIntoNextPoem_shimoSide_updatesTitle() throws {
+  // 北海道モード（下の句かるた）では、side: .shimoで呼び出される
+  func test_stepIntoNextPoem_shimoSideForHokkaidoMode_updatesTitle() throws {
     let expectation = XCTestExpectation(description: "Title should update with shimo")
 
     viewModel.recitePoemViewModel.output.$title
