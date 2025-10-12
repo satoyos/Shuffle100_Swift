@@ -59,34 +59,41 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
 
   // MARK: - Exit Button Handler Tests
 
-  func test_handleExitButtonTapped_withoutPostMortem() throws {
+  func test_handleExitButtonTapped_withoutPostMortem_showsExitAlert() throws {
     testSettings.postMortemEnabled = false
     let viewModelWithoutPostMortem = RecitePoemViewModel(settings: testSettings)
     viewModelWithoutPostMortem.enableTestMode()
 
-    var homeActionCalled = false
-    viewModelWithoutPostMortem.backToHomeScreenAction = {
-      homeActionCalled = true
-    }
+    XCTAssertFalse(viewModelWithoutPostMortem.output.showExitAlert)
 
     viewModelWithoutPostMortem.handleExitButtonTapped()
 
-    XCTAssertTrue(homeActionCalled)
+    XCTAssertTrue(viewModelWithoutPostMortem.output.showExitAlert)
+    XCTAssertFalse(viewModelWithoutPostMortem.output.showPostMortemSheet)
   }
 
-  func test_handleExitButtonTapped_withPostMortem() throws {
+  func test_handleExitButtonTapped_withPostMortem_showsPostMortemSheet() throws {
     testSettings.postMortemEnabled = true
     let viewModelWithPostMortem = RecitePoemViewModel(settings: testSettings)
     viewModelWithPostMortem.enableTestMode()
 
-    var homeActionCalled = false
-    viewModelWithPostMortem.backToHomeScreenAction = {
-      homeActionCalled = true
-    }
+    XCTAssertFalse(viewModelWithPostMortem.output.showPostMortemSheet)
 
     viewModelWithPostMortem.handleExitButtonTapped()
 
-    XCTAssertTrue(homeActionCalled)
+    XCTAssertTrue(viewModelWithPostMortem.output.showPostMortemSheet)
+    XCTAssertFalse(viewModelWithPostMortem.output.showExitAlert)
+  }
+
+  func test_handleExitButtonTapped_whenPlaying_pausesPlayer() throws {
+    testSettings.postMortemEnabled = false
+    let viewModelTest = RecitePoemViewModel(settings: testSettings)
+    viewModelTest.enableTestMode()
+    viewModelTest.playNumberedPoem(number: 1, side: .kami)
+
+    viewModelTest.handleExitButtonTapped()
+
+    XCTAssertTrue(viewModelTest.output.showExitAlert)
   }
 
   // MARK: - Rewind Button Handler Tests
@@ -180,20 +187,18 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
   func test_bindingsSetup_connectsAllInputs() throws {
     // Test that all bindings are properly set up
     var gearCalled = false
-    var exitCalled = false
     var rewindCalled = false
     var forwardCalled = false
     var playerFinishedCalled = false
 
     viewModel.openSettingsAction = { gearCalled = true }
-    viewModel.backToHomeScreenAction = { exitCalled = true }
     viewModel.backToPreviousAction = { rewindCalled = true }
     viewModel.skipToNextScreenAction = { forwardCalled = true }
     viewModel.playerFinishedAction = { playerFinishedCalled = true }
 
     // Trigger all inputs
     viewModel.input.gearButtonTapped.send()
-    viewModel.input.exitButtonTapped.send()
+    viewModel.input.exitButtonTapped.send()  // This now triggers alert/sheet state
     viewModel.input.rewindButtonTapped.send()
     viewModel.input.forwardButtonTapped.send()
     viewModel.input.audioPlayerFinished.send()
@@ -206,7 +211,7 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
     wait(for: [expectation], timeout: 0.5)
 
     XCTAssertTrue(gearCalled)
-    XCTAssertTrue(exitCalled)
+    XCTAssertTrue(viewModel.output.showExitAlert)  // Exit now shows alert instead of calling action
     XCTAssertTrue(rewindCalled)
     XCTAssertTrue(forwardCalled)
     XCTAssertTrue(playerFinishedCalled)

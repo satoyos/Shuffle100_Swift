@@ -72,12 +72,13 @@ extension RecitePoemViewModel {
   }
 
   internal func handleExitButtonTapped() {
+    if let player = currentPlayer, player.isPlaying {
+      pauseCurrentPlayer()
+    }
     if settings.postMortemEnabled {
-      // Handle post mortem selection
-      // This would typically show an alert, but we'll delegate to the action
-      backToHomeScreenAction?()
+      output.showPostMortemSheet = true
     } else {
-      backToHomeScreenAction?()
+      output.showExitAlert = true
     }
   }
 

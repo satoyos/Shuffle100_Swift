@@ -45,6 +45,9 @@ extension RecitePoemProtocol where Self: Coordinator {
     baseViewModel.recitePoemViewModel.backToHomeScreenAction = { [weak self] in
       self?.backToHomeScreen()
     }
+    baseViewModel.recitePoemViewModel.startPostMortemAction = { [weak self] in
+      self?.startPostMortem()
+    }
 
     let recitePoemBaseView = RecitePoemBaseView(settings: settings, viewModel: baseViewModel)
     let hostController = ActionAttachedHostingController(
@@ -166,7 +169,7 @@ extension RecitePoemProtocol where Self: Coordinator {
       }
     }
   }
-  
+
   internal func rewindToPrevious() {
     guard let side = poemSupplier.side else {
       assert(true, "序歌の冒頭でrewidが押された")

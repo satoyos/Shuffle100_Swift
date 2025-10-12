@@ -28,6 +28,8 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
     @Published var title: String = "To be Filled!"
     @Published var showNormalJokaDesc: Bool = false
     @Published var showShortJokaDesc: Bool = false
+    @Published var showExitAlert: Bool = false
+    @Published var showPostMortemSheet: Bool = false
   }
 
   let input: Input
@@ -56,6 +58,7 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   var skipToNextScreenAction: (() -> Void)?
   var openSettingsAction: (() -> Void)?
   var backToHomeScreenAction: (() -> Void)?
+  var startPostMortemAction: (() -> Void)?
 
   internal var cancellables: Set<AnyCancellable> = []
 
