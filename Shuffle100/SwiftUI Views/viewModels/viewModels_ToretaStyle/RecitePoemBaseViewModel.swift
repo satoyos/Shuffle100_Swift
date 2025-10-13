@@ -120,8 +120,8 @@ final class RecitePoemBaseViewModel: ViewModelObject {
     // フリップアニメーションをトリガー
     input.flipAnimation.send()
 
-    // アニメーション開始後に音声を再生
-    DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.interval) * 0.15) {
+    // アニメーション完了後に音声を再生
+    DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.interval)) {
       if side == .kami {
         self.recitePoemViewModel.playNumberedPoem(number: number, side: .kami)
       } else {
