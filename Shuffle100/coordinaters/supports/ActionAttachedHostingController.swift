@@ -11,11 +11,13 @@ import UIKit
 import SwiftUI
 
 class ActionAttachedHostingController<Content>: UIHostingController<Content> where Content: View {
-  
+
   var actionForViewWillDissappear: InjectedAction?
-  
+
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
+    // SwiftUIの.toolbar(.hidden)設定を上書きして、ナビゲーションバーを表示状態に戻す
+    navigationController?.setNavigationBarHidden(false, animated: animated)
     actionForViewWillDissappear?()
   }
 }
