@@ -229,6 +229,7 @@
 		92962D2E2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D2B2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift */; };
 		92962D2F2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D2C2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift */; };
 		92962D302E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D2D2E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift */; };
+		92962D322E9CFD7600920CE2 /* GameEndSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D312E9CFD7600920CE2 /* GameEndSwiftUIView.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
 		929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
@@ -616,6 +617,7 @@
 		92962D2B2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelActionTests.swift; sourceTree = "<group>"; };
 		92962D2C2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelAnimationTests.swift; sourceTree = "<group>"; };
 		92962D2D2E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelTransitionTests.swift; sourceTree = "<group>"; };
+		92962D312E9CFD7600920CE2 /* GameEndSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndSwiftUIView.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
@@ -1393,6 +1395,7 @@
 				92A5B6C02DC5A64300DEFA69 /* FiveColorButton.swift */,
 				92A5B6C12DC5A64300DEFA69 /* FiveColorsView.swift */,
 				6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */,
+				92962D312E9CFD7600920CE2 /* GameEndSwiftUIView.swift */,
 				924275DC2D583DE1001D5940 /* InterPoemDurationSetting.swift */,
 				924275DD2D583DE1001D5940 /* KamiShimoDurationSetting.swift */,
 				92D153332BD3CE670075233B /* TorifudaView.swift */,
@@ -1848,6 +1851,7 @@
 				92E5F82B240BCD4900C75FC6 /* ReciteSettingsScreen.swift in Sources */,
 				9229640B2E6AC28B0068D536 /* PoemPickerSaveComponents.swift in Sources */,
 				9229640C2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift in Sources */,
+				92962D322E9CFD7600920CE2 /* GameEndSwiftUIView.swift in Sources */,
 				924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */,
 				92A6EB7D241528E900B37A42 /* IntervalSettingCoordinator.swift in Sources */,
 				92047519254EC68A006D5E57 /* TorifudaCoordinator.swift in Sources */,

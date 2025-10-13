@@ -24,6 +24,7 @@ final class RecitePoemBaseViewModel: ViewModelObject {
     @Published var slideOffset: CGFloat = 0
     @Published var showingSlideCard: Bool = false
     @Published var currentViewIndex: Int = 0
+    @Published var showGameEndView: Bool = false
   }
 
   let input: Input
@@ -166,7 +167,14 @@ final class RecitePoemBaseViewModel: ViewModelObject {
   }
 
   func stepIntoGameEnd() {
+    // タイトルを即座に更新
     recitePoemViewModel.output.title = "試合終了"
+
+    // ゲーム終了画面フラグを即座にON（フリップアニメーション前に）
+    output.showGameEndView = true
+
+    // フリップアニメーションをトリガー
+    input.flipAnimation.send()
   }
 
   // MARK: - Computed Properties
@@ -177,6 +185,11 @@ final class RecitePoemBaseViewModel: ViewModelObject {
 
   var isFrontVisible: Bool {
     normalizedAngle < 180
+  }
+
+  var isNear90DegreesOrLess: Bool {
+    let angle = normalizedAngle
+    return angle < 90 || angle > 270
   }
 
   // MARK: - Cleanup

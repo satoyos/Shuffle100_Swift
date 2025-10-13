@@ -185,4 +185,54 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
 
     wait(for: [expectation], timeout: 1.0)
   }
+
+  func test_stepIntoGameEnd_triggersFlipAnimation() throws {
+    let initialAngle = viewModel.output.rotationAngle
+    let expectation = XCTestExpectation(description: "Rotation angle should increase by 180")
+
+    viewModel.output.$rotationAngle
+      .dropFirst()
+      .sink { angle in
+        XCTAssertEqual(angle, initialAngle + 180)
+        expectation.fulfill()
+      }
+      .store(in: &cancellables)
+
+    viewModel.stepIntoGameEnd()
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
+  func test_stepIntoGameEnd_showsGameEndViewImmediately() throws {
+    let expectation = XCTestExpectation(description: "showGameEndView should become true immediately")
+
+    viewModel.output.$showGameEndView
+      .dropFirst()
+      .sink { showGameEndView in
+        XCTAssertTrue(showGameEndView)
+        expectation.fulfill()
+      }
+      .store(in: &cancellables)
+
+    viewModel.stepIntoGameEnd()
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
+  func test_stepIntoGameEnd_updatesCurrentViewIndex() throws {
+    let initialIndex = viewModel.output.currentViewIndex
+    let expectation = XCTestExpectation(description: "currentViewIndex should increment")
+
+    viewModel.output.$currentViewIndex
+      .dropFirst()
+      .sink { index in
+        XCTAssertEqual(index, initialIndex + 1)
+        expectation.fulfill()
+      }
+      .store(in: &cancellables)
+
+    viewModel.stepIntoGameEnd()
+
+    wait(for: [expectation], timeout: 1.0)
+  }
 }
