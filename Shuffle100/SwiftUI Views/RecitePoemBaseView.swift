@@ -43,58 +43,17 @@ extension RecitePoemBaseView: View {
         Color(.systemBackground)
 
         // フリップアニメーション用の2面構造
+        // 最適化: 見えている面のみをレンダリング
         ZStack {
-          // 表面（0〜180度で表示）
-          if viewModel.output.showGameEndView && viewModel.isFrontVisible {
-            // ゲーム終了画面
-            gameEndView()
+          if viewModel.isFrontVisible {
+            // 表面のみレンダリング (0〜180度)
+            frontSideView()
               .frame(width: geometry.size.width, height: geometry.size.height)
-          } else if viewModel.output.showGameEndView && viewModel.isNear90DegreesOrLess {
-            // ゲーム終了への遷移中で90度未満の時のみRecitePoemViewを表示
-            RecitePoemSwiftUIView(
-              settings: settings,
-              viewModel: viewModel.recitePoemViewModel
-            )
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .opacity(viewModel.isFrontVisible ? 1 : 0)
-            .allowsHitTesting(viewModel.isFrontVisible)
-          } else if !viewModel.output.showGameEndView {
-            // ゲーム終了画面以外の通常遷移
-            RecitePoemSwiftUIView(
-              settings: settings,
-              viewModel: viewModel.recitePoemViewModel
-            )
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .opacity(viewModel.isFrontVisible ? 1 : 0)
-            .allowsHitTesting(viewModel.isFrontVisible)
-          }
-
-          // 裏面（180〜360度で表示）
-          if viewModel.output.showGameEndView && !viewModel.isFrontVisible {
-            // ゲーム終了画面
-            gameEndView()
+          } else {
+            // 裏面のみレンダリング (180〜360度)
+            backSideView()
               .frame(width: geometry.size.width, height: geometry.size.height)
               .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-          } else if viewModel.output.showGameEndView && viewModel.isNear90DegreesOrLess {
-            // ゲーム終了への遷移中で90度未満の時のみRecitePoemViewを表示
-            RecitePoemSwiftUIView(
-              settings: settings,
-              viewModel: viewModel.recitePoemViewModel
-            )
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-            .opacity(viewModel.isFrontVisible ? 0 : 1)
-            .allowsHitTesting(!viewModel.isFrontVisible)
-          } else if !viewModel.output.showGameEndView {
-            // ゲーム終了画面以外の通常遷移
-            RecitePoemSwiftUIView(
-              settings: settings,
-              viewModel: viewModel.recitePoemViewModel
-            )
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-            .opacity(viewModel.isFrontVisible ? 0 : 1)
-            .allowsHitTesting(!viewModel.isFrontVisible)
           }
         }
         .rotation3DEffect(
@@ -118,6 +77,40 @@ extension RecitePoemBaseView: View {
   }
 
   // MARK: - Helper Views
+
+  @ViewBuilder
+  private func frontSideView() -> some View {
+    if viewModel.output.showGameEndView && viewModel.isNear90DegreesOrLess {
+      // ゲーム終了への遷移中で90度未満の時のみRecitePoemViewを表示
+      RecitePoemSwiftUIView(
+        settings: settings,
+        viewModel: viewModel.recitePoemViewModel
+      )
+    } else if viewModel.output.showGameEndView {
+      // ゲーム終了画面
+      gameEndView()
+    } else {
+      // 通常のRecitePoemView
+      RecitePoemSwiftUIView(
+        settings: settings,
+        viewModel: viewModel.recitePoemViewModel
+      )
+    }
+  }
+
+  @ViewBuilder
+  private func backSideView() -> some View {
+    if viewModel.output.showGameEndView {
+      // ゲーム終了画面
+      gameEndView()
+    } else {
+      // 通常のRecitePoemView
+      RecitePoemSwiftUIView(
+        settings: settings,
+        viewModel: viewModel.recitePoemViewModel
+      )
+    }
+  }
 
   @ViewBuilder
   private func gameEndView() -> some View {
