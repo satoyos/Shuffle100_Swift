@@ -225,6 +225,7 @@
 		9295721E29FFF41C00AAB997 /* DigitsPickerPage01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
+		9298116B2EA3352400E50358 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298116A2EA3352400E50358 /* SceneDelegate.swift */; };
 		929824962222B60C007EEC76 /* HomeScreenDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */; };
 		9298B70224C9AD46000C5194 /* SaveSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */; };
 		9298B70624CAFB16000C5194 /* HandleNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */; };
@@ -591,6 +592,7 @@
 		9295721D29FFF41C00AAB997 /* DigitsPickerPage01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage01.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
+		9298116A2EA3352400E50358 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		929824952222B60C007EEC76 /* HomeScreenDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSourceFactory.swift; sourceTree = "<group>"; };
 		9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSettingsProtocol.swift; sourceTree = "<group>"; };
 		9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleNavigatorProtocol.swift; sourceTree = "<group>"; };
@@ -947,6 +949,7 @@
 		923D59102143BB0A000F5E60 /* Shuffle100 */ = {
 			isa = PBXGroup;
 			children = (
+				9298116A2EA3352400E50358 /* SceneDelegate.swift */,
 				929A614F22F6D84200435D2C /* audioPlayers */,
 				929A614E22F6D60C00435D2C /* coordinaters */,
 				921737F5214E979F0059EAA4 /* lib */,
@@ -1818,6 +1821,7 @@
 				928BBC5F2E75415100E8F8F2 /* PoemPickerSaveLogic.swift in Sources */,
 				928BBC602E75415100E8F8F2 /* PoemPickerSelectionLogic.swift in Sources */,
 				92EC11FE2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift in Sources */,
+				9298116B2EA3352400E50358 /* SceneDelegate.swift in Sources */,
 				92014DB62D2560CA00B2BA85 /* SingerFetching.swift in Sources */,
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
 				921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
