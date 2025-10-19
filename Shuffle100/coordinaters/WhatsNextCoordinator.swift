@@ -30,30 +30,42 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
   }
   
   func start() {
-    let screen = WhatsNextScreen(currentPoem: currentPoem)
-    self.anotherNavController = UINavigationController(rootViewController: screen)
+    let whatsNextView = WhatsNextView(currentPoem: currentPoem)
+    whatsNextView.setActions(
+      showTorifuda: { [weak self] in
+        self?.showTorifuda()
+      },
+      refrain: { [weak self] in
+        self?.anotherNavController.dismiss(animated: true)
+        self?.refrainShimo()
+      },
+      goNext: { [weak self] in
+        self?.anotherNavController.dismiss(animated: true)
+        self?.goNextPoem()
+      },
+      goSetting: { [weak self] in
+        self?.openSettingScreen()
+      },
+      backToHome: { [weak self] in
+        self?.anotherNavController.dismiss(animated: true)
+        self?.backToHomeScreen()
+      }
+    )
+
+    let hostController = ActionAttachedHostingController(
+      rootView: whatsNextView
+        .environmentObject(ScreenSizeStore())
+    )
+
+    self.anotherNavController = UINavigationController(rootViewController: hostController)
     setUpNavigationController()
-    screen.showTorifudaAction = { [weak self] in
-      self?.showTorifuda()
-    }
-    screen.refrainAction = { [weak self] in
-      self?.refrainShimo()
-    }
-    screen.goNextAction = { [weak self] in
-      self?.goNextPoem()
-    }
-    screen.backToHomeScreenAction = { [weak self, weak screen] in
-      screen?.dismiss(animated: true)
-      self?.backToHomeScreen()
-    }
-    screen.goSettingAction = { [weak self] in
-      self?.openSettingScreen()
-    }
-    screen.viewDidAppearAction = { [weak self] in
+
+    hostController.actionForViewWillDissappear = { [weak self] in
       self?.childCoordinator = nil
     }
+
     fromScreen.present(anotherNavController, animated: true)
-    self.screen = screen
+    self.screen = hostController
   }
   
   private func setUpNavigationController() {
