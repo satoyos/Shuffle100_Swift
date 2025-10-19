@@ -114,11 +114,11 @@ extension WhatsNextView: View {
       }
     }
     .alert("試合を終了しますか？", isPresented: viewModel.$binding.showExitConfirmation) {
-      Button("終了する", role: .cancel) {
+      Button("終了する", role: .destructive) {
         dismiss()
         viewModel.backToHomeScreenAction?()
       }
-      Button("続ける", role: .none) {}
+      Button("続ける", role: .cancel) {}
     }
     .onAppear {
       // 自動的にスリープに入るのを防ぐ
