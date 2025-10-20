@@ -67,7 +67,7 @@ extension FiveColorsView: View {
   
   private func fiveColorsActionSheet() -> ActionSheet {
     ActionSheet(
-      title: Text("\(selectedColor)色の20首をどうしますか？"),
+      title: Text("\(selectedColor.description)色の20首をどうしますか？"),
       message: nil,
       buttons: [
         .default(Text("この20首だけを選ぶ")) {
