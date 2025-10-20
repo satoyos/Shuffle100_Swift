@@ -60,7 +60,7 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
     self.anotherNavController = UINavigationController(rootViewController: hostController)
     setUpNavigationController()
 
-    hostController.actionForViewWillDissappear = { [weak self] in
+    hostController.actionForViewDidAppear = { [weak self] in
       self?.childCoordinator = nil
     }
 

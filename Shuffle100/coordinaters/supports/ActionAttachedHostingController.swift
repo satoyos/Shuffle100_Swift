@@ -13,6 +13,7 @@ import SwiftUI
 class ActionAttachedHostingController<Content>: UIHostingController<Content> where Content: View {
 
   var actionForViewWillDissappear: InjectedAction?
+  var actionForViewDidAppear: InjectedAction?
 
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
@@ -20,5 +21,11 @@ class ActionAttachedHostingController<Content>: UIHostingController<Content> whe
     navigationController?.setNavigationBarHidden(false, animated: animated)
     actionForViewWillDissappear?()
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    actionForViewDidAppear?()
+  }
+  
 }
 

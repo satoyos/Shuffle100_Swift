@@ -1318,7 +1318,6 @@
 				925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */,
 				925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */,
 				9205E1752456FBE9003BAEDC /* BeginnerModeCoordinator.swift */,
-				9205E17F24571016003BAEDC /* WhatsNextCoordinator.swift */,
 				929A94B3247FE7F10050661B /* FudaSetsCoordinator.swift */,
 				921FF44024A0D9B20083AC49 /* HelpListCoordinator.swift */,
 				92A146B124DEDFC50045D7DF /* MemorizeTimerCoordinator.swift */,
@@ -1326,6 +1325,7 @@
 				92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */,
 				92EC11FD2A0380310071FA6C /* DigitsPickerScreen01Coordinator.swift */,
 				9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */,
+				9205E17F24571016003BAEDC /* WhatsNextCoordinator.swift */,
 			);
 			path = coordinaters;
 			sourceTree = "<group>";
