@@ -8,6 +8,7 @@
 import Combine
 import AVFoundation
 import SwiftUI
+import MediaPlayer
 
 final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegate {
 

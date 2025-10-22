@@ -124,9 +124,9 @@ final class RecitePoemBaseViewModel: ViewModelObject {
     // アニメーション完了後に音声を再生
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.interval)) {
       if side == .kami {
-        self.recitePoemViewModel.playNumberedPoem(number: number, side: .kami)
+        self.recitePoemViewModel.playNumberedPoem(number: number, side: .kami, count: counter)
       } else {
-        self.recitePoemViewModel.playNumberedPoem(number: number, side: .shimo)
+        self.recitePoemViewModel.playNumberedPoem(number: number, side: .shimo, count: counter)
       }
     }
   }
@@ -142,14 +142,14 @@ final class RecitePoemBaseViewModel: ViewModelObject {
 
     // アニメーション終了後に音声を再生
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(settings.kamiShimoInterval)) {
-      self.recitePoemViewModel.playNumberedPoem(number: number, side: .shimo)
+      self.recitePoemViewModel.playNumberedPoem(number: number, side: .shimo, count: counter)
     }
   }
 
   func slideBackToKami(number: Int, at counter: Int, total: Int) {
     let newTitle = "\(counter)首め:上の句 (全\(total)首)"
     recitePoemViewModel.output.title = newTitle
-    recitePoemViewModel.playNumberedPoem(number: number, side: .kami)
+    recitePoemViewModel.playNumberedPoem(number: number, side: .kami, count: counter)
     // Auto-play after rewinding
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
       self.recitePoemViewModel.handlePlayButtonTapped()
@@ -159,7 +159,7 @@ final class RecitePoemBaseViewModel: ViewModelObject {
   func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
     let newTitle = "\(counter)首め:下の句 (全\(total)首)"
     recitePoemViewModel.output.title = newTitle
-    recitePoemViewModel.playNumberedPoem(number: number, side: .shimo)
+    recitePoemViewModel.playNumberedPoem(number: number, side: .shimo, count: counter)
     // Auto-play after going back
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
       self.recitePoemViewModel.handlePlayButtonTapped()

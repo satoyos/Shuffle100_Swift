@@ -26,10 +26,10 @@ extension RecitePoemViewModel {
       addNormalJokaDescLabel()
     }
 
-    startPlayingCurrentPlayer()
+    startPlayingCurrentPlayer(number: nil, side: nil, count: nil)
   }
 
-  func playNumberedPoem(number: Int, side: Side) {
+  func playNumberedPoem(number: Int, side: Side, count: Int? = nil) {
     currentPlayer = audioPlayerFactory.preparePlayer(number: number, side: side, folder: singer.path)
     guard currentPlayer != nil else {
       print("音声ファイルが見つかりません。歌番号[\(number)], フォルダ[\(singer.path)]")
@@ -37,15 +37,35 @@ extension RecitePoemViewModel {
     }
 
     hideJokaDescLabels()
-    startPlayingCurrentPlayer()
+    startPlayingCurrentPlayer(number: number, side: side, count: count)
   }
 
   // MARK: - Internal Audio Control
 
-  internal func startPlayingCurrentPlayer() {
+  internal func startPlayingCurrentPlayer(number: Int? = nil, side: Side? = nil, count: Int? = nil) {
+    updateNowPlayingInfoIfNeeded(count: count, side: side)
     prepareCurrentPlayer()
     playCurrentPlayer()
     setTimerForProgressView()
+  }
+
+  fileprivate func updateNowPlayingInfoIfNeeded(count: Int?, side: Side?) {
+    guard settings.reciteMode == .nonstop else { return }
+
+    var title: String!
+    if let count = count {
+      guard let side = side else { return }
+      var sideStr = ""
+      if side == .kami {
+        sideStr = "上"
+      } else {
+        sideStr = "下"
+      }
+      title = "\(count)首目 (\(sideStr)の句)"
+    } else {
+      title = "序歌"
+    }
+    updateNowPlayingInfo(title: title)
   }
 
   internal func prepareCurrentPlayer() {
