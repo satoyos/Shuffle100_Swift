@@ -80,14 +80,8 @@ extension RecitePoemBaseView: View {
 
   @ViewBuilder
   private func frontSideView() -> some View {
-    if viewModel.output.showGameEndView && viewModel.isNear90DegreesOrLess {
-      // ゲーム終了への遷移中で90度未満の時のみRecitePoemViewを表示
-      RecitePoemSwiftUIView(
-        settings: settings,
-        viewModel: viewModel.recitePoemViewModel
-      )
-    } else if viewModel.output.showGameEndView {
-      // ゲーム終了画面
+    if viewModel.output.showGameEndView {
+      // ゲーム終了画面 - フリップアニメーション中も常に表示
       gameEndView()
     } else {
       // 通常のRecitePoemView
