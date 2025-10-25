@@ -29,7 +29,9 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
     }
     
     var playButton: XCUIElement {
-        app.buttons[A11y.play].firstMatch
+        let playBtn = app.buttons[A11y.play]
+        let pauseBtn = app.buttons[A11y.pause]
+        return playBtn.exists ? playBtn.firstMatch : pauseBtn.firstMatch
     }
     
     var forwardButton: XCUIElement {
@@ -67,6 +69,7 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
         static let forward = "forward"
         static let rewind = "rewind"
         static let play = "play"
+        static let pause = "pause"
         static let gear = "gear"
         static let headerTitle = "screenTitle"
         static let normalJokaDesc = "試合開始の合図として読まれる歌です。"
