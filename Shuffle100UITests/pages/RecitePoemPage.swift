@@ -55,11 +55,13 @@ final class RecitePoemPage: PageObjectable, WaitInUITest {
     }
     
     var isWaitinfForPlay: Bool {
-        app.buttons[A11y.waitingForPlay].exists
+//        app.buttons[A11y.waitingForPlay].exists
+      app.buttons[A11y.play].exists
     }
     
     var isWaitingForPause: Bool {
-        app.buttons[A11y.waitingForPause].exists
+//        app.buttons[A11y.waitingForPause].exists
+      app.buttons[A11y.pause].exists
     }
        
     enum A11y {
