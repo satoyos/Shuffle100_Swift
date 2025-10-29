@@ -47,6 +47,7 @@ class SkipPoemUITest: XCTestCase {
         let recitePage = homePage.gotoRecitePoemPage()
         recitePage
             .tapForwardButton()
+            .andWait(sec: 1)
             .playButton.tap()
         // then
         XCTAssert(recitePage.isWaitinfForPlay)
@@ -68,6 +69,7 @@ class SkipPoemUITest: XCTestCase {
         let recitePage = homePage.gotoRecitePoemPage()
         recitePage
             .tapForwardButton()
+            .andWait(sec: 1)
             .playButton.tap()
         // then
         XCTAssert(recitePage.isWaitinfForPlay)

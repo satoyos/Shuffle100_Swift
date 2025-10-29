@@ -42,4 +42,11 @@ extension WaitInUITest {
     }
 }
 
+extension WaitInUITest where Self: PageObjectable {
+  func andWait(sec: Int) -> Self {
+    sleep(UInt32(sec))
+    return self
+  }
+}
+
 extension XCTestCase: WaitInUITest {}
