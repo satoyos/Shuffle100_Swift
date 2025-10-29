@@ -12,6 +12,7 @@ final class RecitePoemBaseViewModel: ViewModelObject {
 
   final class Input: InputObject {
     let flipAnimation = PassthroughSubject<Void, Never>()
+    let flipAnimationReverse = PassthroughSubject<Void, Never>()
     let slideAnimation = PassthroughSubject<CGFloat, Never>()
   }
 
@@ -81,6 +82,15 @@ final class RecitePoemBaseViewModel: ViewModelObject {
       .sink { [weak self] in
         guard let self = self else { return }
         self.output.rotationAngle += 180
+        self.output.currentViewIndex += 1
+      }
+      .store(in: &cancellables)
+
+    // 逆方向フリップアニメーション処理
+    input.flipAnimationReverse
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.output.rotationAngle -= 180
         self.output.currentViewIndex += 1
       }
       .store(in: &cancellables)
@@ -159,11 +169,11 @@ final class RecitePoemBaseViewModel: ViewModelObject {
   func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
     let newTitle = "\(counter)首め:下の句 (全\(total)首)"
     recitePoemViewModel.output.title = newTitle
-    recitePoemViewModel.playNumberedPoem(number: number, side: .shimo, count: counter)
-    // Auto-play after going back
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      self.recitePoemViewModel.handlePlayButtonTapped()
-    }
+
+    // 逆方向フリップアニメーションをトリガー
+    input.flipAnimationReverse.send()
+
+    // 音声の自動再生は行わず、ユーザーがPlayButtonを押すのを待つ
   }
 
   func stepIntoGameEnd() {

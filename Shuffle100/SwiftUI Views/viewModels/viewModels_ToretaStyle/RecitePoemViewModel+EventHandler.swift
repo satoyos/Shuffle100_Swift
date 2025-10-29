@@ -125,6 +125,7 @@ extension RecitePoemViewModel {
 
   internal func handleAppWillResignActive() {
     if settings.reciteMode != .nonstop {
+      progressTimer?.invalidate()
       pauseCurrentPlayer()
     } else {
       setupRemoteTransportControls()

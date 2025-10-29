@@ -170,6 +170,40 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
     wait(for: [expectation], timeout: 1.0)
   }
 
+  func test_goBackToPrevPoem_triggersReverseFlipAnimation() throws {
+    let initialAngle = viewModel.output.rotationAngle
+    let expectation = XCTestExpectation(description: "Rotation angle should decrease by 180")
+
+    viewModel.output.$rotationAngle
+      .dropFirst()
+      .sink { angle in
+        XCTAssertEqual(angle, initialAngle - 180)
+        expectation.fulfill()
+      }
+      .store(in: &cancellables)
+
+    viewModel.goBackToPrevPoem(number: 77, at: 1, total: 3)
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
+  func test_goBackToPrevPoem_updatesCurrentViewIndex() throws {
+    let initialIndex = viewModel.output.currentViewIndex
+    let expectation = XCTestExpectation(description: "currentViewIndex should increment")
+
+    viewModel.output.$currentViewIndex
+      .dropFirst()
+      .sink { index in
+        XCTAssertEqual(index, initialIndex + 1)
+        expectation.fulfill()
+      }
+      .store(in: &cancellables)
+
+    viewModel.goBackToPrevPoem(number: 77, at: 1, total: 3)
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
   func test_stepIntoGameEnd_updatesTitle() throws {
     let expectation = XCTestExpectation(description: "Title should update to game end")
 
