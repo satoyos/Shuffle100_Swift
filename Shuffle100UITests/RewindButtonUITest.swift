@@ -50,24 +50,38 @@ class RewindButtonUITest: XCTestCase {
         }
     }
     
-    func test_rewindInNumberedPoem_atShimo() {
-        let recitePage = homePage.gotoRecitePoemPage()
-        XCTContext.runActivity(named: "1首目の下の句まで進む") { _ in
-            // when
-            recitePage
-                .tapForwardButton()
-                .tapForwardButton()
-            // then
-            XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
-        }
-        XCTContext.runActivity(named: "下の句を読み始めた状態でrewindボタンを2回押すと、上の句に戻る") { _ in
-            // when
-            recitePage
-                .tapRewindButton()
-                .tapRewindButton()
-            // then
-            XCTAssert(recitePage.isReciting(number: 1, side: .kami))
-        }
+  func test_rewindInNumberedPoem_atShimo() {
+    let recitePage = homePage.gotoRecitePoemPage()
+    XCTContext.runActivity(named: "2首目の下の句まで進む") { _ in
+      // when
+      recitePage
+        .tapForwardButton()
+        .tapForwardButton()
+        .tapForwardButton()
+        .tapForwardButton()
+      // then
+      XCTAssert(recitePage.isReciting(number: 2, side: .shimo))
     }
+    XCTContext.runActivity(named: "下の句を読み始めた状態でrewindボタンを2回押すと、2首目の上の句に戻る") { _ in
+      // when
+      recitePage
+        .tapRewindButton()
+        .tapRewindButton()
+      // then
+      XCTAssert(recitePage.isReciting(number: 2, side: .kami))
+    }
+    XCTContext.runActivity(named: "そこからRewindボタンを押すと、1首目の下の句に戻る") { _ in
+      // when
+      recitePage.tapRewindButton()
+      // then
+      XCTAssert(recitePage.isReciting(number: 1, side: .shimo))
+    }
+    XCTContext.runActivity(named: "そこからRewindボタンを押すと、1首目の上の句に戻る") { _ in
+      // when
+      recitePage.tapRewindButton()
+      // then
+      XCTAssert(recitePage.isReciting(number: 1, side: .kami))
+    }
+  }
     
 }

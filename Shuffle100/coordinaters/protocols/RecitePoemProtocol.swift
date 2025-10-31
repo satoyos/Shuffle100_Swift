@@ -237,6 +237,9 @@ extension RecitePoemProtocol where Self: Coordinator {
       let number = prevPoem.number
       let counter = poemSupplier.currentIndex
 
+      // rollBackPrevPoem()は下の句に戻るので、sideを.shimoに更新
+      poemSupplier.stepIntoShimo()
+
       if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
         // SwiftUI版
         baseViewModel.playerFinishedAction = { [weak self] in
