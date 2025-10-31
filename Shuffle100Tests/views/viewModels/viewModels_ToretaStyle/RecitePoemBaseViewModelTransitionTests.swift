@@ -154,6 +154,67 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
     wait(for: [expectation], timeout: 1.0)
   }
 
+  func test_slideBackToKami_triggersSlideAnimation_whenScreenWidthSet() throws {
+    viewModel.screenWidth = 375.0
+    let expectation = XCTestExpectation(description: "showingSlideCard should become true")
+
+    viewModel.output.$showingSlideCard
+      .dropFirst()
+      .sink { showing in
+        XCTAssertTrue(showing)
+        expectation.fulfill()
+      }
+      .store(in: &cancellables)
+
+    viewModel.slideBackToKami(number: 33, at: 4, total: 8)
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
+  func test_slideBackToKami_triggersReverseSlideAnimation() throws {
+    viewModel.screenWidth = 375.0
+    let expectation = XCTestExpectation(description: "slideOffset should be negative initially")
+
+    var firstValue: CGFloat?
+    viewModel.output.$slideOffset
+      .dropFirst()
+      .sink { offset in
+        if firstValue == nil {
+          firstValue = offset
+          XCTAssertEqual(offset, -375.0, "Initial slideOffset should be negative (left side)")
+          expectation.fulfill()
+        }
+      }
+      .store(in: &cancellables)
+
+    viewModel.slideBackToKami(number: 33, at: 4, total: 8)
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
+  func test_slideBackToKami_doesNotTriggerSlideAnimation_whenScreenWidthZero() throws {
+    viewModel.screenWidth = 0
+    var slideCardChanged = false
+
+    viewModel.output.$showingSlideCard
+      .dropFirst()
+      .sink { _ in
+        slideCardChanged = true
+      }
+      .store(in: &cancellables)
+
+    viewModel.slideBackToKami(number: 33, at: 4, total: 8)
+
+    // Wait briefly to ensure no animation is triggered
+    let expectation = XCTestExpectation(description: "Wait for potential changes")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      expectation.fulfill()
+    }
+    wait(for: [expectation], timeout: 0.2)
+
+    XCTAssertFalse(slideCardChanged)
+  }
+
   func test_goBackToPrevPoem_updatesTitle() throws {
     let expectation = XCTestExpectation(description: "Title should update")
 

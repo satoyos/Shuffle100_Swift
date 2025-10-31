@@ -159,11 +159,13 @@ final class RecitePoemBaseViewModel: ViewModelObject {
   func slideBackToKami(number: Int, at counter: Int, total: Int) {
     let newTitle = "\(counter)首め:上の句 (全\(total)首)"
     recitePoemViewModel.output.title = newTitle
-    recitePoemViewModel.playNumberedPoem(number: number, side: .kami, count: counter)
-    // Auto-play after rewinding
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      self.recitePoemViewModel.handlePlayButtonTapped()
+
+    // スライドインアニメーションをトリガー（負の値で左から右へ）
+    if screenWidth > 0 {
+      input.slideAnimation.send(-screenWidth)
     }
+
+    // 音声の自動再生は行わず、ユーザーがPlayButtonを押すのを待つ
   }
 
   func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
