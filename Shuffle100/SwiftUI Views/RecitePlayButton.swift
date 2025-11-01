@@ -20,7 +20,7 @@ struct RecitePlayButton {
 extension RecitePlayButton: View {
   var body: some View {
     ReciteViewGeneralButton(type: viewModel.output.type, diameter: diameteer) {
-      viewModel.output.playButtonTapped.send()
+      viewModel.input.playButtonTapped.send()
     }
   }
 }
