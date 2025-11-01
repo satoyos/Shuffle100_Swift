@@ -41,8 +41,17 @@ struct SimpleGameEndSwiftUIView: View {
 
 struct PostMortemEnabledGameEndSwiftUIView: View {
   let title: String
-  let backToHomeAction: () -> Void
-  let gotoPostMortemAction: () -> Void
+  @StateObject private var viewModel: PostMortemEnabledGameEndViewModel
+
+  init(title: String,
+       backToHomeAction: @escaping () -> Void,
+       startPostMortemAction: @escaping () -> Void) {
+    self.title = title
+    self._viewModel = StateObject(wrappedValue: PostMortemEnabledGameEndViewModel(
+      backToHomeAction: backToHomeAction,
+      startPostMortemAction: startPostMortemAction
+    ))
+  }
 
   var body: some View {
     VStack(spacing: 0) {
@@ -60,17 +69,23 @@ struct PostMortemEnabledGameEndSwiftUIView: View {
         Color(.systemBackground)
 
         VStack(spacing: 60) {
-          Button(action: backToHomeAction) {
+          Button(action: viewModel.backToHomeAction) {
             Text("トップに戻る")
               .foregroundColor(Color(StandardColor.standardButtonColor))
           }
 
-          Button(action: gotoPostMortemAction) {
+          Button(action: viewModel.requestPostMortem) {
             Text("感想戦を始める")
               .foregroundColor(Color(StandardColor.standardButtonColor))
           }
         }
       }
+    }
+    .alert("感想戦を始めますか？", isPresented: $viewModel.showPostMortemConfirmation) {
+      Button("始める", action: viewModel.startPostMortemAction)
+      Button("キャンセル", role: .cancel) {}
+    } message: {
+      Text("今の試合と同じ歌を同じ順序で読み上げます")
     }
   }
 }
@@ -88,6 +103,6 @@ struct PostMortemEnabledGameEndSwiftUIView: View {
   PostMortemEnabledGameEndSwiftUIView(
     title: "試合終了",
     backToHomeAction: {},
-    gotoPostMortemAction: {}
+    startPostMortemAction: {}
   )
 }

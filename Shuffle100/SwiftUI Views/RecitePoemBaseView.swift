@@ -114,7 +114,7 @@ extension RecitePoemBaseView: View {
         backToHomeAction: {
           viewModel.recitePoemViewModel.backToHomeScreenAction?()
         },
-        gotoPostMortemAction: {
+        startPostMortemAction: {
           viewModel.recitePoemViewModel.startPostMortemAction?()
         }
       )

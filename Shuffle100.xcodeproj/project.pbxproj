@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		053FCCE607E649EAAD05E4558418ED8A /* FudaSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */; };
 		24E600BA590D40CE9BAD8F92FA2E0342 /* FudaSetsView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */; };
+		2AECE699E4B64A609601B465CCB51AB6 /* RecitePoemViewModel+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC30798D44E5BA3E415BE2215F3CF /* RecitePoemViewModel+NowPlayingInfo.swift */; };
 		32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */; };
 		8FBC19A0C5FAC73FC692B4EF /* Pods_Shuffle100.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		92014DB42D23EBC800B2BA85 /* ActionAttachedHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92014DB32D23EBB200B2BA85 /* ActionAttachedHostingController.swift */; };
@@ -196,6 +197,7 @@
 		927DDBEE2EA4A63F00645CDF /* WhatsNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DDBEB2EA4A63F00645CDF /* WhatsNextButton.swift */; };
 		927DDBF02EA4A67200645CDF /* WhatsNextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DDBEF2EA4A67200645CDF /* WhatsNextViewModel.swift */; };
 		927DDBF22EA4A7F300645CDF /* WhatsNextViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DDBF12EA4A7F300645CDF /* WhatsNextViewModelTests.swift */; };
+		927DDC2D2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DDC2C2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift */; };
 		927E4BE0222BCFF900AF48F7 /* SelectReciteModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */; };
 		927E4BE2222D4DD100AF48F7 /* HomeScreenDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */; };
 		927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */; };
@@ -298,7 +300,6 @@
 		92B9E99424752AF6007C2E75 /* FudaSetSavingUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */; };
 		92BC1F6A2E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */; };
 		92BC1F6B2E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */; };
-		2AECE699E4B64A609601B465CCB51AB6 /* RecitePoemViewModel+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC30798D44E5BA3E415BE2215F3CF /* RecitePoemViewModel+NowPlayingInfo.swift */; };
 		92BC1F752E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */; };
 		92BC1F762E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */; };
 		92BC1F782E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC1F722E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift */; };
@@ -416,6 +417,7 @@
 		27FD6DA6CE5138B115160EE7 /* Pods-Shuffle100.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.release.xcconfig"; sourceTree = "<group>"; };
 		3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		525DC30798D44E5BA3E415BE2215F3CF /* RecitePoemViewModel+NowPlayingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+NowPlayingInfo.swift"; sourceTree = "<group>"; };
 		6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsView.swift; sourceTree = "<group>"; };
 		79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 		927DDBEC2EA4A63F00645CDF /* WhatsNextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextView.swift; sourceTree = "<group>"; };
 		927DDBEF2EA4A67200645CDF /* WhatsNextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextViewModel.swift; sourceTree = "<group>"; };
 		927DDBF12EA4A7F300645CDF /* WhatsNextViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextViewModelTests.swift; sourceTree = "<group>"; };
+		927DDC2C2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemEnabledGameEndViewModel.swift; sourceTree = "<group>"; };
 		927E4BDF222BCFF900AF48F7 /* SelectReciteModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReciteModeUITest.swift; sourceTree = "<group>"; };
 		927E4BE1222D4DD100AF48F7 /* HomeScreenDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDefaultTest.swift; sourceTree = "<group>"; };
 		927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffled.swift"; sourceTree = "<group>"; };
@@ -689,7 +692,6 @@
 		92B9E99324752AF6007C2E75 /* FudaSetSavingUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetSavingUITest.swift; sourceTree = "<group>"; };
 		92BC1F682E83EC1900187B88 /* RecitePoemViewModel+AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+AudioController.swift"; sourceTree = "<group>"; };
 		92BC1F692E83EC1900187B88 /* RecitePoemViewModel+EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+EventHandler.swift"; sourceTree = "<group>"; };
-		525DC30798D44E5BA3E415BE2215F3CF /* RecitePoemViewModel+NowPlayingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+NowPlayingInfo.swift"; sourceTree = "<group>"; };
 		92BC1F722E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelJokaTests.swift; sourceTree = "<group>"; };
 		92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelNavigationTests.swift; sourceTree = "<group>"; };
 		92BC1F742E87E1F600187B88 /* RecitePoemViewModelPlayButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelPlayButtonTests.swift; sourceTree = "<group>"; };
@@ -1107,6 +1109,7 @@
 		9250C8222BE4936E00EFBD48 /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				927DDC2C2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift */,
 				922B8BDB2D215C570065D50A /* viewModels_ToretaStyle */,
 				9250C8232BE4939100EFBD48 /* Torifuda.ViewModel.swift */,
 				9250C8282BE4BA4200EFBD48 /* FullLiner.ViewModel.swift */,
@@ -1939,6 +1942,7 @@
 				9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
 				9207514D28D84EF500B35285 /* RecitePoemScreenDelegate+NowPlayingInfo.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
+				927DDC2D2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
 				92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */,
 				926DD64E2C6B5A4C00516674 /* MemorizeTimer.swift in Sources */,
