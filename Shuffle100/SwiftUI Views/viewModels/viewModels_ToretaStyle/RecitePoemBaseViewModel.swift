@@ -189,6 +189,11 @@ final class RecitePoemBaseViewModel: ViewModelObject {
     input.flipAnimation.send()
   }
 
+  func refrainShimo(number: Int, count: Int) {
+    // タイトルは既に設定済みなので、音声を再生するだけ
+    recitePoemViewModel.playNumberedPoem(number: number, side: .shimo, count: count)
+  }
+
   // MARK: - Computed Properties
 
   var normalizedAngle: Double {

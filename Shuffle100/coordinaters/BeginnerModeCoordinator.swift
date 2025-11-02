@@ -103,10 +103,16 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   
   internal func refrainShimo() {
     assert(true, "下の句を読み返す処理が、BeginnerModeのCoordinatorに戻ってきた！")
-    guard let screen = self.screen as? RecitePoemScreen else { return }
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
-    screen.refrainShimo(number: number, count: counter)
+
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
+      // SwiftUI版
+      baseViewModel.refrainShimo(number: number, count: counter)
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.refrainShimo(number: number, count: counter)
+    }
   }
   
   internal func exitGame() {

@@ -118,4 +118,31 @@ final class RecitePoemBaseViewModelTests: XCTestCase {
     // The interval is used in the animation duration
     XCTAssertEqual(customViewModel.settings.kamiShimoInterval, 2.0)
   }
+
+  // MARK: - Refrain Shimo Tests
+
+  func test_refrainShimo_playsNumberedPoem() throws {
+    // Given: 下の句の画面が表示されている状態
+    let number = 42
+    let count = 5
+
+    // When: refrainShimoが呼ばれる
+    viewModel.refrainShimo(number: number, count: count)
+
+    // Then: 音声が再生される
+    let player = viewModel.recitePoemViewModel.testCurrentPlayer
+    XCTAssertNotNil(player, "音声プレイヤーが作成されていること")
+  }
+
+  func test_refrainShimo_doesNotChangeTitle() throws {
+    // Given: タイトルが既に設定されている
+    let originalTitle = "5首め:下の句 (全10首)"
+    viewModel.recitePoemViewModel.output.title = originalTitle
+
+    // When: refrainShimoが呼ばれる
+    viewModel.refrainShimo(number: 42, count: 5)
+
+    // Then: タイトルは変更されない（既に正しいタイトルが設定されているため）
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, originalTitle)
+  }
 }
