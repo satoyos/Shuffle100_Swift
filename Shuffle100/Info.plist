@@ -62,7 +62,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UIDesignRequiresCompatibility</key>
-	<true/>
+	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>
