@@ -28,8 +28,11 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     app.searchFields[A11y.searchFieldPlaceHolder].firstMatch
   }
   
-  var cancelButton: XCUIElement {
-    app.buttons[A11y.cancel].firstMatch
+  var cancelSearchButton: XCUIElement {
+    let cancelBtn = app.buttons[A11y.cancel].firstMatch // Before Liquid Glass UI
+    let closeBtn = app.buttons[A11y.close].firstMatch   // Liquid Glass UI
+//    app.buttons[A11y.cancel].firstMatch
+    return closeBtn.exists ? closeBtn : cancelBtn
   }
   
   var cancelAllButton: XCUIElement {
@@ -37,11 +40,13 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
   }
   
   var selectAllButton: XCUIElement {
-    waitToHittable(for: app.toolbars.buttons[A11y.selectAll], timeout: timeOutSec)
+//    waitToHittable(for: app.toolbars.buttons[A11y.selectAll], timeout: timeOutSec)
+    waitToHittable(for: app.buttons[A11y.selectAll], timeout: timeOutSec)
   }
   
   var selectByGroupButton: XCUIElement {
-    waitToHittable(for: app.toolbars.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
+//    waitToHittable(for: app.toolbars.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
+    waitToHittable(for: app.buttons[A11y.selectByGroup].firstMatch, timeout: timeOutSec)
   }
   
   var saveButton: XCUIElement {
@@ -61,6 +66,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     static let selectAll = "全て選択"
     static let selectByGroup = "まとめて選ぶ"
     static let save = "保存"
+    static let close = "閉じる"
   }
   
   func badge(of number: Int) -> XCUIElement {

@@ -64,7 +64,7 @@ final class PoemPickerIntegrationUITest: XCTestCase {
       poemPickerPage
         .tapCellof(number: 1)
         .tapCellof(number: 5)
-        .cancelButton.tap()
+        .cancelSearchButton.tap()
       //   back to HomeScreen
       poemPickerPage.backToTopButton.tap()
       // then
@@ -97,5 +97,7 @@ final class PoemPickerIntegrationUITest: XCTestCase {
       XCTAssertFalse(homePage.gameStartCell.isSelected)
     }
   }
+  
 }
+
 
