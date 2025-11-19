@@ -3,8 +3,8 @@
 # A list of devices you want to take the screenshots from
 # Updated for 2024 App Store required screenshot sizes
 devices([
-  "iPhone 16 Pro Max",        # 6.9inch - 2024 mandatory size
-  "iPad Pro 13-inch (M4)",    # 13inch - 2024 mandatory size
+  "iPhone 17 Pro Max",        # 6.9inch - 2024 mandatory size
+  "iPad Pro 13-inch (M5)",    # 13inch - 2024 mandatory size
 ])
 
 #  テスト実行の時に使用する言語一覧
