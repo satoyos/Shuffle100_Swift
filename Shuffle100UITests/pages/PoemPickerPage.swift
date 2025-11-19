@@ -30,9 +30,9 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
   
   var cancelSearchButton: XCUIElement {
     let cancelBtn = app.buttons[A11y.cancel].firstMatch // Before Liquid Glass UI
-    let closeBtn = app.buttons[A11y.close].firstMatch   // Liquid Glass UI
+    let eralseBtn = app.buttons[A11y.erase].firstMatch   // Liquid Glass UI where Xcode >= 26.1.1 (iOS 26.1)
 //    app.buttons[A11y.cancel].firstMatch
-    return closeBtn.exists ? closeBtn : cancelBtn
+    return eralseBtn.exists ? eralseBtn : cancelBtn
   }
   
   var cancelAllButton: XCUIElement {
@@ -67,6 +67,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     static let selectByGroup = "まとめて選ぶ"
     static let save = "保存"
     static let close = "閉じる"
+    static let erase = "テキストを消去"
   }
   
   func badge(of number: Int) -> XCUIElement {
