@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
   
@@ -29,54 +30,79 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
     }
   }
   
-  // 強制的に序歌を短くするところが、他のモードと異なる。
+  // Note: start()とjokaFinished()は北海道モード固有の処理のためオーバーライド
+  // 序歌を強制的に短縮版で再生するため、start()もオーバーライドが必要
   func start() {
-    let screen = RecitePoemScreen(settings: settings)
-    screen.backToPreviousAction = { [weak self] in
+    let baseViewModel = RecitePoemBaseViewModel(settings: settings)
+    setCurrentRecitePoemBaseViewModel(baseViewModel)
+
+    baseViewModel.recitePoemViewModel.backToPreviousAction = { [weak self] in
       self?.rewindToPrevious()
     }
-    screen.openSettingsAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.openSettingsAction = { [weak self] in
       self?.openReciteSettings()
     }
-    screen.backToHomeScreenAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.backToHomeScreenAction = { [weak self] in
       self?.backToHomeScreen()
     }
-    screen.startPostMortemAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.startPostMortemAction = { [weak self] in
       self?.startPostMortem()
     }
+
+    let recitePoemBaseView = RecitePoemBaseView(settings: settings, viewModel: baseViewModel)
+    let hostController = ActionAttachedHostingController(
+      rootView: recitePoemBaseView
+        .environmentObject(ScreenSizeStore.shared)
+    )
+
     // 序歌の読み上げは画面遷移が完了したタイミングで開始したいので、
     // CATransanctionを使って、遷移アニメーション完了コールバックを使う。
     CATransaction.begin()
-    navigationController.pushViewController(screen, animated: true)
+    navigationController.pushViewController(hostController, animated: true)
     CATransaction.setCompletionBlock {
-      screen.playerFinishedAction = { [weak self] in
+      baseViewModel.playerFinishedAction = { [weak self] in
         self?.jokaFinished()
       }
-      screen.skipToNextScreenAction = { [weak self] in
+      baseViewModel.skipToNextScreenAction = { [weak self] in
         self?.jokaFinished()
       }
-      screen.loadViewIfNeeded()
-      screen.playJoka(shorten: true)
+      hostController.loadViewIfNeeded()
+      baseViewModel.initView(title: "序歌")
+      // 北海道モードでは強制的に序歌を短縮版で再生
+      baseViewModel.recitePoemViewModel.playJoka(shorten: true)
     }
     CATransaction.commit()
-    self.screen = screen
+    self.screen = hostController
   }
-  
-  // 下の句かるたでは、序歌終了後に他のモードにはない独特の遷移を行う
+
   func jokaFinished() {
     assert(true, "+++ 北海道モードでの序歌の読み上げ終了!!")
     guard let firstPoem = poemSupplier.drawNextPoem() else { return }
-    guard let screen = self.screen as? RecitePoemScreen else { return }
-    let number = firstPoem.number
-    screen.playerFinishedAction = { [weak self] in
-      self?.openWhatsNextScreen()
+
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
+      // SwiftUI版
+      let number = firstPoem.number
+      // 1首目の下の句終了時は「次はどうする?」画面を表示
+      baseViewModel.playerFinishedAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      baseViewModel.skipToNextScreenAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      baseViewModel.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size, side: .shimo)
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      let number = firstPoem.number
+      screen.playerFinishedAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      screen.skipToNextScreenAction = { [weak self] in
+        self?.openWhatsNextScreen()
+      }
+      screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
     }
-    screen.skipToNextScreenAction = { [weak self] in
-      self?.openWhatsNextScreen()
-    }
-    screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
   }
-  
+
   func reciteKamiFinished(number: Int, counter: Int) {
     assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
   }
@@ -95,21 +121,41 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
   
   internal func reciteShimoFinished(number: Int, counter: Int) {
     assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了(北海道モード)。")
-    guard let screen = self.screen as? RecitePoemScreen else { return }
-    if let poem = poemSupplier.drawNextPoem() {
-      let number = poem.number
-      let counter = poemSupplier.currentIndex
-      
-      screen.playerFinishedAction = { [weak self] in
-        self?.openWhatsNextScreen()
+
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
+      // SwiftUI版
+      if let poem = poemSupplier.drawNextPoem() {
+        let number = poem.number
+        let counter = poemSupplier.currentIndex
+
+        baseViewModel.playerFinishedAction = { [weak self] in
+          self?.openWhatsNextScreen()
+        }
+        baseViewModel.skipToNextScreenAction = { [weak self] in
+          self?.openWhatsNextScreen()
+        }
+        baseViewModel.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size, side: .shimo)
+      } else {
+        assert(true, "歌は全て読み終えた！")
+        baseViewModel.stepIntoGameEnd()
       }
-      screen.skipToNextScreenAction = { [weak self] in
-        self?.openWhatsNextScreen()
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      if let poem = poemSupplier.drawNextPoem() {
+        let number = poem.number
+        let counter = poemSupplier.currentIndex
+
+        screen.playerFinishedAction = { [weak self] in
+          self?.openWhatsNextScreen()
+        }
+        screen.skipToNextScreenAction = { [weak self] in
+          self?.openWhatsNextScreen()
+        }
+        screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
+      } else {
+        assert(true, "歌は全て読み終えた！")
+        screen.stepIntoGameEnd()
       }
-      screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
-    } else {
-      assert(true, "歌は全て読み終えた！")
-      screen.stepIntoGameEnd()
     }
   }
   
@@ -117,18 +163,34 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
     assert(true, "次の詩へ進むボタンが押されたことを、北海道モードのCoordinatorが知ったよ！")
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
-    guard let screen = self.screen as? RecitePoemScreen else { return }
     guard counter < poemSupplier.size  else {
       assert(true, "歌は全て読み終えた！")
-      screen.stepIntoGameEnd()
+      if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
+        // SwiftUI版
+        baseViewModel.stepIntoGameEnd()
+      } else if let screen = self.screen as? RecitePoemScreen {
+        // Legacy UIKit版
+        screen.stepIntoGameEnd()
+      }
       return
     }
     // 次の詩に進むことが決まった後は、読み終えた下の句をもう一度読み上げる
-    screen.playerFinishedAction = { [weak self] in
-      self?.reciteShimoFinished(number: number, counter: counter)
-    }
-    screen.skipToNextScreenAction = { [weak self] in
-      self?.reciteShimoFinished(number: number, counter: counter)
+    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
+      // SwiftUI版
+      baseViewModel.playerFinishedAction = { [weak self] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      baseViewModel.skipToNextScreenAction = { [weak self] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+    } else if let screen = self.screen as? RecitePoemScreen {
+      // Legacy UIKit版
+      screen.playerFinishedAction = { [weak self] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
+      screen.skipToNextScreenAction = { [weak self] in
+        self?.reciteShimoFinished(number: number, counter: counter)
+      }
     }
     refrainShimo()
   }
