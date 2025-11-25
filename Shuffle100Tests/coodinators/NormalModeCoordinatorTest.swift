@@ -81,6 +81,7 @@ class NormalModeCoordinatorTest: XCTestCase {
     let coordinator = NormalModeCoordinator(navigationController: nc, settings: Settings(), store: StoreManager())
     let supplier = coordinator.poemSupplier
 
+    coordinator.start()   // ccordinator内でbaseViewModelを設定させる
     supplier.drawNextPoem()  // 1首目を引く (numberOfPoemsDrawn = 1, side = .kami)
     supplier.stepIntoShimo() // 1首目の下の句へ (side = .shimo)
     supplier.drawNextPoem()  // 2首目を引く (numberOfPoemsDrawn = 2, side = .kami)
@@ -108,6 +109,7 @@ class NormalModeCoordinatorTest: XCTestCase {
     let coordinator = NormalModeCoordinator(navigationController: nc, settings: Settings(), store: StoreManager())
     let supplier = coordinator.poemSupplier
 
+    coordinator.start()   // ccordinator内でbaseViewModelを設定させる
     supplier.drawNextPoem()  // 1首目を引く
     supplier.stepIntoShimo() // 1首目の下の句へ
     supplier.drawNextPoem()  // 2首目を引く

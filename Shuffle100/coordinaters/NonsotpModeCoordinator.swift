@@ -35,15 +35,11 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
   
   func addKamiScreenActionsForKamiEnding() {
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.skipToNextScreenAction = { [weak self] in
         self?.stepIntoShimoInNonstopMode()
       }
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.skipToNextScreenAction = { [weak self] in
-        self?.stepIntoShimoInNonstopMode()
-      }
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
 
@@ -61,7 +57,6 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
     let counter = poemSupplier.currentIndex
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.playerFinishedAction = { [weak self, number, counter] in
         self?.reciteShimoFinished(number: number, counter: counter)
       }
@@ -69,15 +64,8 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
         self?.reciteShimoFinished(number: number, counter: counter)
       }
       baseViewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.playerFinishedAction = { [weak self, number, counter] in
-        self?.reciteShimoFinished(number: number, counter: counter)
-      }
-      screen.skipToNextScreenAction = { [weak self, number, counter] in
-        self?.reciteShimoFinished(number: number, counter: counter)
-      }
-      screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
 }

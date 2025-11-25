@@ -80,7 +80,6 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
     guard let firstPoem = poemSupplier.drawNextPoem() else { return }
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       let number = firstPoem.number
       // 1首目の下の句終了時は「次はどうする?」画面を表示
       baseViewModel.playerFinishedAction = { [weak self] in
@@ -90,16 +89,8 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         self?.openWhatsNextScreen()
       }
       baseViewModel.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size, side: .shimo)
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      let number = firstPoem.number
-      screen.playerFinishedAction = { [weak self] in
-        self?.openWhatsNextScreen()
-      }
-      screen.skipToNextScreenAction = { [weak self] in
-        self?.openWhatsNextScreen()
-      }
-      screen.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size)
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
 
@@ -123,7 +114,6 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
     assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了(北海道モード)。")
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       if let poem = poemSupplier.drawNextPoem() {
         let number = poem.number
         let counter = poemSupplier.currentIndex
@@ -139,23 +129,8 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
         assert(true, "歌は全て読み終えた！")
         baseViewModel.stepIntoGameEnd()
       }
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      if let poem = poemSupplier.drawNextPoem() {
-        let number = poem.number
-        let counter = poemSupplier.currentIndex
-
-        screen.playerFinishedAction = { [weak self] in
-          self?.openWhatsNextScreen()
-        }
-        screen.skipToNextScreenAction = { [weak self] in
-          self?.openWhatsNextScreen()
-        }
-        screen.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size)
-      } else {
-        assert(true, "歌は全て読み終えた！")
-        screen.stepIntoGameEnd()
-      }
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
   
@@ -166,31 +141,22 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
     guard counter < poemSupplier.size  else {
       assert(true, "歌は全て読み終えた！")
       if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-        // SwiftUI版
         baseViewModel.stepIntoGameEnd()
-      } else if let screen = self.screen as? RecitePoemScreen {
-        // Legacy UIKit版
-        screen.stepIntoGameEnd()
+      } else {
+        assertionFailure("Couldn't get baseViewModel")
       }
       return
     }
     // 次の詩に進むことが決まった後は、読み終えた下の句をもう一度読み上げる
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.playerFinishedAction = { [weak self] in
         self?.reciteShimoFinished(number: number, counter: counter)
       }
       baseViewModel.skipToNextScreenAction = { [weak self] in
         self?.reciteShimoFinished(number: number, counter: counter)
       }
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.playerFinishedAction = { [weak self] in
-        self?.reciteShimoFinished(number: number, counter: counter)
-      }
-      screen.skipToNextScreenAction = { [weak self] in
-        self?.reciteShimoFinished(number: number, counter: counter)
-      }
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
     refrainShimo()
   }
@@ -226,11 +192,9 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
     let counter = poemSupplier.currentIndex
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.refrainShimo(number: number, count: counter)
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.refrainShimo(number: number, count: counter)
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
   

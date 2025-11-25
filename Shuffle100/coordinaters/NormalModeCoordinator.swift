@@ -30,33 +30,23 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
   
   internal func reciteKamiFinished(number: Int, counter: Int ) {
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.recitePoemViewModel.showAsWaitingForPlay()
       poemSupplier.stepIntoShimo()
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.waitUserActionAfterFineshdReciing()
-      poemSupplier.stepIntoShimo()
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
 
   func addKamiScreenActionsForKamiEnding() {
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.playButtonTappedAfterFinishedReciting = { [weak self] in
         self?.stepIntoShimoInNormalMode()
       }
       baseViewModel.skipToNextScreenAction = { [weak self] in
         self?.stepIntoShimoInNormalMode()
       }
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.playButtonTappedAfterFinishedReciting = { [weak self] in
-        self?.stepIntoShimoInNormalMode()
-      }
-      screen.skipToNextScreenAction = { [weak self] in
-        self?.stepIntoShimoInNormalMode()
-      }
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
 
@@ -73,7 +63,6 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
     let counter = poemSupplier.currentIndex
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      // SwiftUI版
       baseViewModel.playerFinishedAction = { [weak self, number, counter] in
         self?.reciteShimoFinished(number: number, counter: counter)
       }
@@ -82,16 +71,8 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
       }
       poemSupplier.stepIntoShimo()
       baseViewModel.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
-    } else if let screen = self.screen as? RecitePoemScreen {
-      // Legacy UIKit版
-      screen.playerFinishedAction = { [weak self, number, counter] in
-        self?.reciteShimoFinished(number: number, counter: counter)
-      }
-      screen.skipToNextScreenAction = { [weak self, number, counter] in
-        self?.reciteShimoFinished(number: number, counter: counter)
-      }
-      poemSupplier.stepIntoShimo()
-      screen.slideIntoShimo(number: number, at: counter, total: poemSupplier.size)
+    } else {
+      assertionFailure("Couldn't get baseViewModel")
     }
   }
 }
