@@ -32,23 +32,23 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
   func start() {
     let whatsNextView = WhatsNextView(currentPoem: currentPoem)
     whatsNextView.setActions(
-      showTorifuda: { [weak self] in
-        self?.showTorifuda()
+      showTorifuda: { [unowned self] in
+        self.showTorifuda()
       },
-      refrain: { [weak self] in
-        self?.anotherNavController.dismiss(animated: true)
-        self?.refrainShimo()
+      refrain: { [unowned self] in
+        self.anotherNavController.dismiss(animated: true)
+        self.refrainShimo()
       },
-      goNext: { [weak self] in
-        self?.anotherNavController.dismiss(animated: true)
-        self?.goNextPoem()
+      goNext: { [unowned self] in
+        self.anotherNavController.dismiss(animated: true)
+        self.goNextPoem()
       },
-      goSetting: { [weak self] in
-        self?.openSettingScreen()
+      goSetting: { [unowned self] in
+        self.openSettingScreen()
       },
-      backToHome: { [weak self] in
-        self?.anotherNavController.dismiss(animated: true)
-        self?.backToHomeScreen()
+      backToHome: { [unowned self] in
+        self.anotherNavController.dismiss(animated: true)
+        self.backToHomeScreen()
       }
     )
 
@@ -75,9 +75,12 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
   }
   
   private func showTorifuda() {
+    // 既存のchildCoordinatorをクリアしてから新しいものを作成
+    childCoordinator = nil
+
     let coordinator = TorifudaCoordinator(
       navigationController: anotherNavController,
-      
+
       poem: currentPoem,
       showPrompt: false
     )
