@@ -60,10 +60,6 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
     self.anotherNavController = UINavigationController(rootViewController: hostController)
     setUpNavigationController()
 
-    hostController.actionForViewDidAppear = { [weak self] in
-      self?.childCoordinator = nil
-    }
-
     fromScreen.present(anotherNavController, animated: true)
     self.screen = hostController
   }
