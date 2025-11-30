@@ -35,8 +35,7 @@ extension WhatsNextButton: View {
   }
 
   private var buttonHeight: CGFloat {
-    let sizes = SizeFactory.createSizeByDevice()
-    return sizes.whatsNextButtonHeight
+    screenSizeStore.screenWidth * 0.1
   }
 
   private var buttonColor: Color {

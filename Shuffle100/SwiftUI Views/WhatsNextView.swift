@@ -131,8 +131,7 @@ extension WhatsNextView: View {
   }
 
   private var buttonHeight: CGFloat {
-    let sizes = SizeFactory.createSizeByDevice()
-    return sizes.whatsNextButtonHeight
+    screenSizeStore.screenHeight * 0.1
   }
 
   private var navBarButtonSize: CGFloat {
