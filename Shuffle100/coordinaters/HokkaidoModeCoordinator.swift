@@ -17,6 +17,7 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
+  var whatsNextCoordinator: WhatsNextCoordinator?
   var currentRecitePoemBaseViewModel: RecitePoemBaseViewModel?
   
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
@@ -184,9 +185,10 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol {
       self?.exitGame()
     }
     coordinator.start()
+    self.whatsNextCoordinator = coordinator
     self.childCoordinator = coordinator
   }
-  
+
   internal func refrainShimo() {
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex

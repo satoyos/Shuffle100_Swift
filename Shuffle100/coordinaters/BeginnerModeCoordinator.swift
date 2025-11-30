@@ -15,6 +15,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
+  var whatsNextCoordinator: WhatsNextCoordinator?
   var currentRecitePoemBaseViewModel: RecitePoemBaseViewModel?
   
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
@@ -86,9 +87,10 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
       self?.exitGame()
     }
     coordinator.start()
+    self.whatsNextCoordinator = coordinator
     self.childCoordinator = coordinator
   }
-  
+
   internal func refrainShimo() {
     assert(true, "下の句を読み返す処理が、BeginnerModeのCoordinatorに戻ってきた！")
     guard let number = poemSupplier.currentPoem?.number else { return }
