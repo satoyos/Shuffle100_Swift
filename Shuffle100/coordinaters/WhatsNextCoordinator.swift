@@ -32,23 +32,23 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
   func start() {
     let whatsNextView = WhatsNextView(currentPoem: currentPoem)
     whatsNextView.setActions(
-      showTorifuda: { [unowned self] in
-        self.showTorifuda()
+      showTorifuda: { [weak self] in
+        self?.showTorifuda()
       },
-      refrain: { [unowned self] in
-        self.anotherNavController.dismiss(animated: true)
-        self.refrainShimo()
+      refrain: { [weak self] in
+        self?.anotherNavController.dismiss(animated: true)
+        self?.refrainShimo()
       },
-      goNext: { [unowned self] in
-        self.anotherNavController.dismiss(animated: true)
-        self.goNextPoem()
+      goNext: { [weak self] in
+        self?.anotherNavController.dismiss(animated: true)
+        self?.goNextPoem()
       },
-      goSetting: { [unowned self] in
-        self.openSettingScreen()
+      goSetting: { [weak self] in
+        self?.openSettingScreen()
       },
-      backToHome: { [unowned self] in
-        self.anotherNavController.dismiss(animated: true)
-        self.backToHomeScreen()
+      backToHome: { [weak self] in
+        self?.anotherNavController.dismiss(animated: true)
+        self?.backToHomeScreen()
       }
     )
 
