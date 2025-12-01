@@ -15,9 +15,9 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   internal var poemSupplier: PoemSupplier
   internal var store: StoreManager
   var childCoordinator: Coordinator?
-  var whatsNextCoordinator: WhatsNextCoordinator?
+  var whatsNextCoordinator: WhatsNextCoordinator?  // なぜかWhatsNextCoordinatorが解放されてしまう対策として追加。どうなるか。。。？
   var currentRecitePoemBaseViewModel: RecitePoemBaseViewModel?
-  
+
   init(navigationController: UINavigationController, settings: Settings, store: StoreManager) {
     self.navigationController = navigationController
     self.settings = settings
@@ -28,11 +28,11 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
       poemSupplier.addFakePoems()
     }
   }
-  
+
   internal func reciteKamiFinished(number: Int, counter: Int) {
     stepIntoShimoInBeginnerMode()
   }
-  
+
   func addKamiScreenActionsForKamiEnding() {
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       baseViewModel.skipToNextScreenAction = { [weak self] in
@@ -50,7 +50,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
   func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel) {
     self.currentRecitePoemBaseViewModel = viewModel
   }
-  
+
   private func stepIntoShimoInBeginnerMode() {
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
@@ -67,7 +67,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
       assertionFailure("Couldn't get baseViewModel")
     }
   }
-  
+
   internal func openWhatsNextScreen() {
     guard let screen = screen else { return }
     guard let currentPoem = poemSupplier.currentPoem else { return }
@@ -102,7 +102,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
       assertionFailure("Couldn't get baseViewModel")
     }
   }
-  
+
   internal func exitGame() {
     assert(true, "初心者モードのCoordinatorからゲームを終了させるよ！")
     backToHomeScreen()
