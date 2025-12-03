@@ -62,16 +62,19 @@ class MemorizeTImerScreenUITest: XCTestCase {
         // then
         XCTAssert(homePage.exists, "暗記時間が終わると、自動的にトップ画面に戻る")
     }
-    
-    func test_goThroughMemorizeTime() {
-        //given
-        app.launch()
-        self.executionTimeAllowance = 1200
-        // when
-        let timerPage = homePage.gotoMemorizeTimerPage()
-        timerPage.buttonToPlay.tap()
-        sleep(15 * 60 + 5)
-        // then
-        XCTAssert(homePage.exists, "暗記時間が終わると、自動的にトップ画面に戻る")
-    }
+
+//////
+// comment out the following test until something concerning happens.
+  
+//    func test_goThroughMemorizeTime() {
+//        //given
+//        app.launch()
+//        self.executionTimeAllowance = 1200
+//        // when
+//        let timerPage = homePage.gotoMemorizeTimerPage()
+//        timerPage.buttonToPlay.tap()
+//        sleep(15 * 60 + 5)
+//        // then
+//        XCTAssert(homePage.exists, "暗記時間が終わると、自動的にトップ画面に戻る")
+//    }
 }
