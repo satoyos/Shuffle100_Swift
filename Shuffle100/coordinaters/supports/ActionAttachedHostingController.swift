@@ -14,7 +14,6 @@ class ActionAttachedHostingController<Content>: UIHostingController<Content> whe
 
   var actionForViewWillDissappear: InjectedAction?
   var actionForViewWillAppear: InjectedAction?
-  var actionForViewDidAppear: InjectedAction?
 
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
@@ -27,11 +26,5 @@ class ActionAttachedHostingController<Content>: UIHostingController<Content> whe
     super.viewWillAppear(animated)
     actionForViewWillAppear?()
   }
-
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    actionForViewDidAppear?()
-  }
-
 }
 
