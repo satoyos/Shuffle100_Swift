@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053FCCE607E649EAAD05E4558418ED8A /* FudaSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */; };
+		22E2DBA2D52341F09AFEF37B /* DigitsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60132650DF4E04A2D3E3A0 /* DigitsPickerViewModel.swift */; };
 		24E600BA590D40CE9BAD8F92FA2E0342 /* FudaSetsView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */; };
 		2AECE699E4B64A609601B465CCB51AB6 /* RecitePoemViewModel+NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC30798D44E5BA3E415BE2215F3CF /* RecitePoemViewModel+NowPlayingInfo.swift */; };
 		32AC1B1B2F028E9998F561A5 /* Pods_Shuffle100Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */; };
@@ -38,7 +39,6 @@
 		9208DF1422FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */; };
 		920C00162427A61600593803 /* HomeScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C00152427A61600593803 /* HomeScreenDataSource.swift */; };
 		9215013127005A5E001E39FE /* NavigationBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215013027005A5E001E39FE /* NavigationBarTests.swift */; };
-		92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */; };
 		9216F5CD214E1A2400A6C250 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */; };
 		921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921737F6214E97C00059EAA4 /* UIColorExtention.swift */; };
 		921746272280313700C3203A /* PoemPickerIntegrationUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */; };
@@ -71,8 +71,6 @@
 		9229640C2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */; };
 		922B8BCC2D215B850065D50A /* ViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BCB2D215B850065D50A /* ViewModelObject.swift */; };
 		922B8BCD2D215B850065D50A /* BindableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BCA2D215B850065D50A /* BindableObject.swift */; };
-		C166094985ED40249EC5D8EE /* DigitsButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */; };
-		22E2DBA2D52341F09AFEF37B /* DigitsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60132650DF4E04A2D3E3A0 /* DigitsPickerViewModel.swift */; };
 		922B8BD22D215BC40065D50A /* Sec2FViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */; };
 		922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */; };
 		922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */; };
@@ -84,7 +82,6 @@
 		922BDDEC2625D5CB0093B24A /* SelectModePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDEB2625D5CB0093B24A /* SelectModePage.swift */; };
 		922BDDF12629BEB60093B24A /* SelectSingerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922BDDF02629BEB60093B24A /* SelectSingerPage.swift */; };
 		922C638C269094880000D07D /* NgramPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C638B269094880000D07D /* NgramPickerPage.swift */; };
-		92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */; };
 		92328C2224591D64005E0FEE /* LargeImageAttachedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */; };
 		92328C2824591E25005E0FEE /* refrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2524591E25005E0FEE /* refrain.png */; };
 		92328C2924591E25005E0FEE /* refrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 92328C2524591E25005E0FEE /* refrain.png */; };
@@ -100,8 +97,6 @@
 		923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */; };
 		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
 		923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
-		923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595023ACF927002027B4 /* RecitePoemViewTests.swift */; };
-		923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B595223ACF9DE002027B4 /* GameEndViewTest.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
 		923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
@@ -122,7 +117,6 @@
 		924BF8EB2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */; };
 		924E892E2827F69B00DEB4C5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E892D2827F69B00DEB4C5 /* KeyWindow.swift */; };
 		924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */; };
-		924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */; };
 		9250C10D2A1CD120001076FA /* DigitsPickerPage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */; };
 		9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */; };
 		9250C8242BE4939100EFBD48 /* Torifuda.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C8232BE4939100EFBD48 /* Torifuda.ViewModel.swift */; };
@@ -132,13 +126,6 @@
 		925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */; };
 		925648D92D325EC500688D8B /* DurationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648D62D325EC500688D8B /* DurationSetting.swift */; };
 		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
-		9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A222D9D624003A0EF8 /* ViewSize.swift */; };
-		9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */; };
-		9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */; };
-		9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */; };
-		9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */; };
-		9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */; };
-		9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */; };
 		9258D1BF22DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
@@ -379,6 +366,7 @@
 		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF5D24625D86004D7F79 /* ExitGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */; };
 		92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */; };
+		C166094985ED40249EC5D8EE /* DigitsButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */; };
 		C798CA8281277B4A2482250B /* Pods_Shuffle100UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -407,6 +395,7 @@
 		3FA9011D822AA3FAB9728BC6 /* Pods_Shuffle100.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B43413E42344FA5C35633 /* Pods_Shuffle100Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525DC30798D44E5BA3E415BE2215F3CF /* RecitePoemViewModel+NowPlayingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemViewModel+NowPlayingInfo.swift"; sourceTree = "<group>"; };
+		5E60132650DF4E04A2D3E3A0 /* DigitsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerViewModel.swift; sourceTree = "<group>"; };
 		6693C13F58D24B6682AEAFCAAD6B8D91 /* FudaSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsView.swift; sourceTree = "<group>"; };
 		79014DC54760A8C1E8326A52 /* Pods_Shuffle100UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuffle100UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D34C7337C6CD8391DD59CE8 /* Pods-Shuffle100.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.debug.xcconfig"; sourceTree = "<group>"; };
@@ -434,7 +423,6 @@
 		9208DF1322FAFD2300A3F22C /* NormalModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinator.swift; sourceTree = "<group>"; };
 		920C00152427A61600593803 /* HomeScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenDataSource.swift; sourceTree = "<group>"; };
 		9215013027005A5E001E39FE /* NavigationBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTests.swift; sourceTree = "<group>"; };
-		92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButton.swift; sourceTree = "<group>"; };
 		9216F5CC214E1A2400A6C250 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		921737F6214E97C00059EAA4 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		921746262280313700C3203A /* PoemPickerIntegrationUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerIntegrationUITest.swift; sourceTree = "<group>"; };
@@ -465,8 +453,6 @@
 		9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerToolbarButtons.swift; sourceTree = "<group>"; };
 		922B8BCA2D215B850065D50A /* BindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableObject.swift; sourceTree = "<group>"; };
 		922B8BCB2D215B850065D50A /* ViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelObject.swift; sourceTree = "<group>"; };
-		B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButtonViewModel.swift; sourceTree = "<group>"; };
-		5E60132650DF4E04A2D3E3A0 /* DigitsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerViewModel.swift; sourceTree = "<group>"; };
 		922B8BD02D215BC40065D50A /* Sec2FViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sec2FViewModel.swift; sourceTree = "<group>"; };
 		922B8BD52D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sec2FViewModelTests_toreta.swift; sourceTree = "<group>"; };
 		922B8BD62D215C3E0065D50A /* DurationSettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSettingViewModelTests.swift; sourceTree = "<group>"; };
@@ -478,7 +464,6 @@
 		922BDDEB2625D5CB0093B24A /* SelectModePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModePage.swift; sourceTree = "<group>"; };
 		922BDDF02629BEB60093B24A /* SelectSingerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerPage.swift; sourceTree = "<group>"; };
 		922C638B269094880000D07D /* NgramPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerPage.swift; sourceTree = "<group>"; };
-		92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextButtonTest.swift; sourceTree = "<group>"; };
 		92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeImageAttachedButton.swift; sourceTree = "<group>"; };
 		92328C2524591E25005E0FEE /* refrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refrain.png; sourceTree = "<group>"; };
 		92328C2624591E25005E0FEE /* torifuda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torifuda.png; sourceTree = "<group>"; };
@@ -488,8 +473,6 @@
 		923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+GentleSwipe.swift"; sourceTree = "<group>"; };
 		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
 		923B594B23ACF606002027B4 /* SimpleGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameEndView.swift; sourceTree = "<group>"; };
-		923B595023ACF927002027B4 /* RecitePoemViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemViewTests.swift; sourceTree = "<group>"; };
-		923B595223ACF9DE002027B4 /* GameEndViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViewTest.swift; sourceTree = "<group>"; };
 		923D590E2143BB0A000F5E60 /* Shuffle100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuffle100.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59112143BB0A000F5E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923D59132143BB0A000F5E60 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -500,7 +483,7 @@
 		923D59282143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923D592D2143BB0B000F5E60 /* Shuffle100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shuffle100UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59332143BB0B000F5E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		924275DA2D583D4D001D5940 /* ReciteSettingAudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReciteSettingAudioHandler.swift"; sourceTree = "<group>"; };
+		924275DA2D583D4D001D5940 /* ReciteSettingAudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingAudioHandler.swift; sourceTree = "<group>"; };
 		924275DC2D583DE1001D5940 /* InterPoemDurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterPoemDurationSetting.swift; sourceTree = "<group>"; };
 		924275DD2D583DE1001D5940 /* KamiShimoDurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoDurationSetting.swift; sourceTree = "<group>"; };
 		924275E02D583E16001D5940 /* VolumeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSetting.swift; sourceTree = "<group>"; };
@@ -508,7 +491,7 @@
 		924275E42D583E67001D5940 /* VolumeSettingViewModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingViewModelFixture.swift; sourceTree = "<group>"; };
 		924275E62D583E7D001D5940 /* VolumeSettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingViewModelTests.swift; sourceTree = "<group>"; };
 		924275E82D583F22001D5940 /* DurationSettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSettingType.swift; sourceTree = "<group>"; };
-		924275EA2D583F98001D5940 /* DurationSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DurationSettingViewModel.swift"; sourceTree = "<group>"; };
+		924275EA2D583F98001D5940 /* DurationSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSettingViewModel.swift; sourceTree = "<group>"; };
 		924275ED2D58432F001D5940 /* ReciteSettingAudioHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingAudioHandlerTests.swift; sourceTree = "<group>"; };
 		92467792292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeCoordinator.swift; sourceTree = "<group>"; };
 		924BF8E62695AEC000FCEDA5 /* SaveFudaSetActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFudaSetActionSheet.swift; sourceTree = "<group>"; };
@@ -516,7 +499,6 @@
 		924BF8EA2699D18200FCEDA5 /* SaveNewSetCompletedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewSetCompletedAlert.swift; sourceTree = "<group>"; };
 		924E892D2827F69B00DEB4C5 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
 		924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindowProtocolTest.swift; sourceTree = "<group>"; };
-		924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewPlayButtonTest.swift; sourceTree = "<group>"; };
 		9250C10C2A1CD120001076FA /* DigitsPickerPage10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerPage10.swift; sourceTree = "<group>"; };
 		9250C10E2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsPickerScreen10Coordinatorswift.swift; sourceTree = "<group>"; };
 		9250C8232BE4939100EFBD48 /* Torifuda.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Torifuda.ViewModel.swift; sourceTree = "<group>"; };
@@ -526,13 +508,6 @@
 		925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DurationSettingViewModel+Fixtures.swift"; sourceTree = "<group>"; };
 		925648D62D325EC500688D8B /* DurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSetting.swift; sourceTree = "<group>"; };
 		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		9258D1A222D9D624003A0EF8 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
-		9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewButton.swift; sourceTree = "<group>"; };
-		9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteViewHeaderButton.swift; sourceTree = "<group>"; };
-		9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemView.swift; sourceTree = "<group>"; };
-		9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemView-HeaderPart.swift"; sourceTree = "<group>"; };
-		9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemView-LowerPart.swift"; sourceTree = "<group>"; };
-		9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecitePoemView-PlayButtonPart.swift"; sourceTree = "<group>"; };
 		9258D1BE22DA0258003A0EF8 /* exit_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit_square.png; sourceTree = "<group>"; };
 		9258D1E822DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoRecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
@@ -756,6 +731,7 @@
 		92FFBF5C24625D86004D7F79 /* ExitGameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameProtocol.swift; sourceTree = "<group>"; };
 		92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerUITest.swift; sourceTree = "<group>"; };
 		AA2DBD7AFAE52C7C37ED7F93 /* Pods-Shuffle100Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100Tests/Pods-Shuffle100Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButtonViewModel.swift; sourceTree = "<group>"; };
 		B3C6A02FE67778E33BB5735D /* Pods-Shuffle100.hokkaido-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100.hokkaido-debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100/Pods-Shuffle100.hokkaido-debug.xcconfig"; sourceTree = "<group>"; };
 		C56485B4AC3096EC037F94E3 /* Pods-Shuffle100UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9567F5DF9AF03312903B5F1 /* Pods-Shuffle100UITests.hokkaido-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuffle100UITests.hokkaido-debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests.hokkaido-debug.xcconfig"; sourceTree = "<group>"; };
@@ -960,13 +936,9 @@
 			isa = PBXGroup;
 			children = (
 				9250C8252BE4964D00EFBD48 /* viewModels */,
-				923B595023ACF927002027B4 /* RecitePoemViewTests.swift */,
-				923B595223ACF9DE002027B4 /* GameEndViewTest.swift */,
-				92328C1F24591CFF005E0FEE /* WhatsNextButtonTest.swift */,
 				92F8245125AC4878008E031D /* SettingTableCellTest.swift */,
 				9215013027005A5E001E39FE /* NavigationBarTests.swift */,
 				924E89312827F83C00DEB4C5 /* KeyWindowProtocolTest.swift */,
-				924E89332828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1154,11 +1126,6 @@
 				92EC12102A076CB70071FA6C /* buttons */,
 				92E5C5552674D463009A46F5 /* protocols */,
 				92EC120F2A076C340071FA6C /* tableCells */,
-				9258D1A222D9D624003A0EF8 /* ViewSize.swift */,
-				9258D1AE22D9DB0C003A0EF8 /* RecitePoemView.swift */,
-				9258D1B222D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift */,
-				9258D1B622D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift */,
-				9258D1BA22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift */,
 				923B594B23ACF606002027B4 /* SimpleGameEndView.swift */,
 				925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */,
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
@@ -1511,9 +1478,6 @@
 			isa = PBXGroup;
 			children = (
 				92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */,
-				9258D1A622D9D6E3003A0EF8 /* ReciteViewButton.swift */,
-				9258D1AA22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift */,
-				92158F78232518CD003C1D86 /* ReciteViewPlayButton.swift */,
 				92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */,
 			);
 			path = buttons;
@@ -1882,15 +1846,12 @@
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
 				921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
 				92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */,
-				9258D1AB22D9D85C003A0EF8 /* ReciteViewHeaderButton.swift in Sources */,
-				9258D1AF22D9DB0C003A0EF8 /* RecitePoemView.swift in Sources */,
 				9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */,
 				927DDBED2EA4A63F00645CDF /* WhatsNextView.swift in Sources */,
 				927DDBEE2EA4A63F00645CDF /* WhatsNextButton.swift in Sources */,
 				92E5C54E26723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
 				925648D92D325EC500688D8B /* DurationSetting.swift in Sources */,
 				925B075E25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
-				92158F79232518CD003C1D86 /* ReciteViewPlayButton.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				921A990B2E2C7566002B0CA4 /* Digits10.swift in Sources */,
@@ -1925,7 +1886,6 @@
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
 				9205DA422DEAF95B0098CE3B /* NgramButton.swift in Sources */,
-				9258D1B322D9DB58003A0EF8 /* RecitePoemView-HeaderPart.swift in Sources */,
 				92CC44C32E51690C0037D6BB /* PoemPickerView.ViewModel.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
@@ -1963,8 +1923,7 @@
 				92A6EB8524191B7C00B37A42 /* ReciteSettingsScreenDelegate.swift in Sources */,
 				92EC120B2A05F9990071FA6C /* TableViewHandlerProtocol.swift in Sources */,
 				927E4BEA222E9DD200AF48F7 /* Array+Shuffled.swift in Sources */,
-				924275DB2D583D4D001D5940 /* ReciteSettingAudioHandler 2.swift in Sources */,
-				9258D1BB22D9DC19003A0EF8 /* RecitePoemView-PlayButtonPart.swift in Sources */,
+				924275DB2D583D4D001D5940 /* ReciteSettingAudioHandler.swift in Sources */,
 				92F471292E9264960086B1BE /* RecitePoemBaseView.swift in Sources */,
 				92014DB42D23EBC800B2BA85 /* ActionAttachedHostingController.swift in Sources */,
 				929A94B4247FE7F10050661B /* FudaSetsCoordinator.swift in Sources */,
@@ -1976,9 +1935,7 @@
 				927E4BFC222E9DD200AF48F7 /* Array+Diff.swift in Sources */,
 				92AE7C7323FEAEDC003FA07F /* SHEnvironment.swift in Sources */,
 				922B8BE12D2215AA0065D50A /* Sec2F.swift in Sources */,
-				9258D1A322D9D624003A0EF8 /* ViewSize.swift in Sources */,
 				922B8BD22D215BC40065D50A /* Sec2FViewModel.swift in Sources */,
-				9258D1A722D9D6E3003A0EF8 /* ReciteViewButton.swift in Sources */,
 				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
 				925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				92B654FB2E825BF300F60B0C /* RecitePoemSwiftUIView.swift in Sources */,
@@ -1993,7 +1950,6 @@
 				92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */,
 				9205DA442DEAF9840098CE3B /* NgramPickerView.swift in Sources */,
 				9258FAF521FEB00500E4E0B7 /* UIImageExtension.swift in Sources */,
-				9258D1B722D9DBAB003A0EF8 /* RecitePoemView-LowerPart.swift in Sources */,
 				921FF439249F896C0083AC49 /* HelpListTableViewCell.swift in Sources */,
 				92A146B224DEDFC50045D7DF /* MemorizeTimerCoordinator.swift in Sources */,
 				9208DF1422FAFD2300A3F22C /* NormalModeCoordinator.swift in Sources */,
@@ -2013,7 +1969,6 @@
 				926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */,
 				92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */,
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
-				923B595123ACF927002027B4 /* RecitePoemViewTests.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */,
 				922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */,
@@ -2037,11 +1992,9 @@
 				92D57159220F063100235717 /* SelectModeScreenTest.swift in Sources */,
 				92962D252E97D47200920CE2 /* MockAudioPlayerFactory.swift in Sources */,
 				92CC44C92E5171B20037D6BB /* PoemPickerViewModelTests.swift in Sources */,
-				924E89342828E95D00DEB4C5 /* ReciteViewPlayButtonTest.swift in Sources */,
 				9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */,
 				926DD6482C6B594100516674 /* CountDownTimerTests.swift in Sources */,
 				9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */,
-				923B595323ACF9DE002027B4 /* GameEndViewTest.swift in Sources */,
 				92A5B6B62DC4D4D600DEFA69 /* FiveColorsViewModel.swift in Sources */,
 				921A99122E2C7AA9002B0CA4 /* Digits01Tests.swift in Sources */,
 				921A99132E2C7AA9002B0CA4 /* Digits10Tests.swift in Sources */,
@@ -2077,7 +2030,6 @@
 				92F471312E9664760086B1BE /* RecitePoemViewModelEventHandlerTests.swift in Sources */,
 				92B654F92E82482300F60B0C /* RecitePoemViewModelTests.swift in Sources */,
 				9207BB3622996CF200816DC8 /* RecitingConfigTest.swift in Sources */,
-				92328C2024591CFF005E0FEE /* WhatsNextButtonTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
