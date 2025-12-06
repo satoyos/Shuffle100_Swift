@@ -123,7 +123,6 @@
 		9250C82B2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250C82A2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift */; };
 		925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */; };
 		925648D92D325EC500688D8B /* DurationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648D62D325EC500688D8B /* DurationSetting.swift */; };
-		9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */; };
 		9258D1BF22DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1C022DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
 		9258D1C122DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
@@ -137,7 +136,6 @@
 		925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
 		925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
 		925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */; };
-		925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
 		9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
 		9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */; };
 		926489192604480300CC4131 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926489182604480300CC4131 /* SettingsTest.swift */; };
@@ -494,7 +492,6 @@
 		9250C82A2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLiner.ViewModelTests.swift; sourceTree = "<group>"; };
 		925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DurationSettingViewModel+Fixtures.swift"; sourceTree = "<group>"; };
 		925648D62D325EC500688D8B /* DurationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSetting.swift; sourceTree = "<group>"; };
-		9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		9258D1BE22DA0258003A0EF8 /* exit_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit_square.png; sourceTree = "<group>"; };
 		9258D1E822DAFDA6003A0EF8 /* GotoRecitePoemScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoRecitePoemScreenUITest.swift; sourceTree = "<group>"; };
 		9258FAEB21FDBF7B00E4E0B7 /* GameStartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartCell.swift; sourceTree = "<group>"; };
@@ -504,7 +501,6 @@
 		925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingCoordinator.swift; sourceTree = "<group>"; };
 		925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingCoordinator.swift; sourceTree = "<group>"; };
 		925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenUITest.swift; sourceTree = "<group>"; };
-		925F5D9E29D950CE006744FB /* DSFloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFloatingButton.swift; sourceTree = "<group>"; };
 		9260CCA525C67AE000B709B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
@@ -768,10 +764,8 @@
 		921737F5214E979F0059EAA4 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				925F5D9E29D950CE006744FB /* DSFloatingButton.swift */,
 				921737F6214E97C00059EAA4 /* UIColorExtention.swift */,
 				9258FAF421FEB00500E4E0B7 /* UIImageExtension.swift */,
-				9258D19E22D9D42D003A0EF8 /* UIButtonExtension.swift */,
 				927E4BE9222E9DD200AF48F7 /* Array+Diff.swift */,
 				927E4BE3222E9DD100AF48F7 /* Array+Shuffled.swift */,
 				92FFBF3C245FB2FF004D7F79 /* String-extension.swift */,
@@ -1772,7 +1766,6 @@
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
 				92E6552221CE753200005F85 /* HomeScreenDelegates.swift in Sources */,
-				9258D19F22D9D42D003A0EF8 /* UIButtonExtension.swift in Sources */,
 				924275E92D583F22001D5940 /* DurationSettingType.swift in Sources */,
 				92ED1A0623E1AA6B00A431B6 /* NonsotpModeCoordinator.swift in Sources */,
 				92D1533B2BD4E2340075233B /* FullLiner.swift in Sources */,
@@ -1878,7 +1871,6 @@
 				922B8BE12D2215AA0065D50A /* Sec2F.swift in Sources */,
 				922B8BD22D215BC40065D50A /* Sec2FViewModel.swift in Sources */,
 				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
-				925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */,
 				92B654FB2E825BF300F60B0C /* RecitePoemSwiftUIView.swift in Sources */,
 				9205DA402DEAF7CA0098CE3B /* NgramButtonViewModel.swift in Sources */,
 				92A5B6BF2DC4D5F000DEFA69 /* FiveColors.swift in Sources */,
