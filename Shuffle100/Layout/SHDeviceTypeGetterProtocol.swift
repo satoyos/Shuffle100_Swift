@@ -1,19 +1,19 @@
+////
+////  SHDeviceTypeGetterProtocol.swift
+////  WhatsNextScreen
+////
+////  Created by Yoshifumi Sato on 2020/10/24.
+////  Copyright © 2020 Yoshifumi Sato. All rights reserved.
+////
 //
-//  SHDeviceTypeGetterProtocol.swift
-//  WhatsNextScreen
+//import UIKit
 //
-//  Created by Yoshifumi Sato on 2020/10/24.
-//  Copyright © 2020 Yoshifumi Sato. All rights reserved.
+//protocol SHDeviceTypeGetter {
+//  var deviceType: UIUserInterfaceIdiom { get }
+//}
 //
-
-import UIKit
-
-protocol SHDeviceTypeGetter {
-  var deviceType: UIUserInterfaceIdiom { get }
-}
-
-extension SHDeviceTypeGetter {
-  var deviceType: UIUserInterfaceIdiom {
-    UIDevice.current.userInterfaceIdiom
-  }
-}
+//extension SHDeviceTypeGetter {
+//  var deviceType: UIUserInterfaceIdiom {
+//    UIDevice.current.userInterfaceIdiom
+//  }
+//}

@@ -96,7 +96,6 @@
 		92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92370712290571330013C5AB /* FastlaneSnapshot.swift */; };
 		923707152906B96E0013C5AB /* XCUIElement+GentleSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */; };
 		923B594623A51C04002027B4 /* PoemPickerScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */; };
-		923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B594B23ACF606002027B4 /* SimpleGameEndView.swift */; };
 		923D59122143BB0A000F5E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59112143BB0A000F5E60 /* AppDelegate.swift */; };
 		923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D59132143BB0A000F5E60 /* HomeScreen.swift */; };
 		923D59192143BB0B000F5E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D59182143BB0B000F5E60 /* Assets.xcassets */; };
@@ -139,7 +138,6 @@
 		925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */; };
 		925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */; };
 		925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */; };
-		925B075E25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */; };
 		925F1E8D29C699FF00458F8D /* TimeSettingScreenUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */; };
 		925F5D9F29D950CE006744FB /* DSFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F5D9E29D950CE006744FB /* DSFloatingButton.swift */; };
 		9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260CCA525C67AE000B709B6 /* UIFontExtension.swift */; };
@@ -354,7 +352,6 @@
 		92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */; };
 		92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB604E269337E1000C3F99 /* FudaSetPage.swift */; };
 		92FB605126933B18000C3F99 /* SelectByGroupActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */; };
-		92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */; };
 		92FC398D22917E6000791053 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 92FC398C22917E6000791053 /* Readme.md */; };
 		92FCCEDD22A51E3C002B589E /* 100.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCCEDC22A51E3C002B589E /* 100.json */; };
 		92FFBF3D245FB2FF004D7F79 /* String-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF3C245FB2FF004D7F79 /* String-extension.swift */; };
@@ -472,7 +469,6 @@
 		92370712290571330013C5AB /* FastlaneSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneSnapshot.swift; sourceTree = "<group>"; };
 		923707142906B96E0013C5AB /* XCUIElement+GentleSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+GentleSwipe.swift"; sourceTree = "<group>"; };
 		923B594523A51C04002027B4 /* PoemPickerScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerScreenUITest.swift; sourceTree = "<group>"; };
-		923B594B23ACF606002027B4 /* SimpleGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameEndView.swift; sourceTree = "<group>"; };
 		923D590E2143BB0A000F5E60 /* Shuffle100.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuffle100.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923D59112143BB0A000F5E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923D59132143BB0A000F5E60 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -517,7 +513,6 @@
 		925994F02449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoIntervalSettingCoordinator.swift; sourceTree = "<group>"; };
 		925994FE244C6A6F00044253 /* VolumeSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSettingCoordinator.swift; sourceTree = "<group>"; };
 		925B075625EE749200104C08 /* AllPoemsRecitedViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPoemsRecitedViewProtocol.swift; sourceTree = "<group>"; };
-		925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMortemEnabledGameEndView.swift; sourceTree = "<group>"; };
 		925F1E8C29C699FF00458F8D /* TimeSettingScreenUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingScreenUITest.swift; sourceTree = "<group>"; };
 		925F5D9E29D950CE006744FB /* DSFloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFloatingButton.swift; sourceTree = "<group>"; };
 		9260CCA525C67AE000B709B6 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
@@ -722,7 +717,6 @@
 		92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedState100ModifyTests.swift; sourceTree = "<group>"; };
 		92FB604E269337E1000C3F99 /* FudaSetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetPage.swift; sourceTree = "<group>"; };
 		92FB605026933B18000C3F99 /* SelectByGroupActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectByGroupActionSheet.swift; sourceTree = "<group>"; };
-		92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+NormalColor.swift"; sourceTree = "<group>"; };
 		92FC398C22917E6000791053 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		92FCCEDC22A51E3C002B589E /* 100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 100.json; sourceTree = "<group>"; };
 		92FFBF3C245FB2FF004D7F79 /* String-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-extension.swift"; sourceTree = "<group>"; };
@@ -863,12 +857,12 @@
 			children = (
 				92F4712A2E9264D70086B1BE /* RecitePoemBaseViewModel.swift */,
 				922B8BC92D215B740065D50A /* protocols */,
-				0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */,
 				B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */,
 				5E60132650DF4E04A2D3E3A0 /* DigitsPickerViewModel.swift */,
 				924275EA2D583F98001D5940 /* DurationSettingViewModel.swift */,
 				92A5B6B72DC4D51500DEFA69 /* FiveColorButtonViewModel.swift */,
 				92A5B6B92DC4D52400DEFA69 /* FiveColorsViewModel.swift */,
+				0D28D8D7CAA043F4B81EDC8C7EFB4227 /* FudaSetsView.ViewModel.swift */,
 				9205DA3F2DEAF7CA0098CE3B /* NgramButtonViewModel.swift */,
 				9205DA372DEAF6E60098CE3B /* NgramPickerViewModel.swift */,
 				928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */,
@@ -1126,8 +1120,6 @@
 				92EC12102A076CB70071FA6C /* buttons */,
 				92E5C5552674D463009A46F5 /* protocols */,
 				92EC120F2A076C340071FA6C /* tableCells */,
-				923B594B23ACF606002027B4 /* SimpleGameEndView.swift */,
-				925B075D25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift */,
 				92E5C54D26723C89009A46F5 /* NormalJokaDescLabel.swift */,
 				92E5C5562674D5BB009A46F5 /* ShortJokaDescLabel.swift */,
 			);
@@ -1478,7 +1470,6 @@
 			isa = PBXGroup;
 			children = (
 				92328C2124591D64005E0FEE /* LargeImageAttachedButton.swift */,
-				92FC39412286D5DF00791053 /* UIButton+NormalColor.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -1851,7 +1842,6 @@
 				927DDBEE2EA4A63F00645CDF /* WhatsNextButton.swift in Sources */,
 				92E5C54E26723C89009A46F5 /* NormalJokaDescLabel.swift in Sources */,
 				925648D92D325EC500688D8B /* DurationSetting.swift in Sources */,
-				925B075E25EE77DA00104C08 /* PostMortemEnabledGameEndView.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				921A990B2E2C7566002B0CA4 /* Digits10.swift in Sources */,
@@ -1881,7 +1871,6 @@
 				2AECE699E4B64A609601B465CCB51AB6 /* RecitePoemViewModel+NowPlayingInfo.swift in Sources */,
 				926DD6392C6B3E7800516674 /* RecitePlayButton.swift in Sources */,
 				92D153372BD4DD5A0075233B /* ScreenSizeStore.swift in Sources */,
-				923B594C23ACF606002027B4 /* SimpleGameEndView.swift in Sources */,
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				92A6EB8D24191E6700B37A42 /* SelectSingerScreenDelegate.swift in Sources */,
 				925B075725EE749200104C08 /* AllPoemsRecitedViewProtocol.swift in Sources */,
@@ -1889,7 +1878,6 @@
 				92CC44C32E51690C0037D6BB /* PoemPickerView.ViewModel.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
-				92FC39422286D5DF00791053 /* UIButton+NormalColor.swift in Sources */,
 				921737F7214E97C00059EAA4 /* UIColorExtention.swift in Sources */,
 				92A5B6C32DC5A64300DEFA69 /* BadgeView.swift in Sources */,
 				92A5B6C42DC5A64300DEFA69 /* FiveColorsView.swift in Sources */,
