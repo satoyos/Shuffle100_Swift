@@ -67,6 +67,7 @@
 		921FF44924A4D9EF0083AC49 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 921FF44624A4D9EF0083AC49 /* html */; };
 		921FF44B24A602F90083AC49 /* HelpDetailScreenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */; };
 		921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
+		9221BB6E2EE520A7004362E8 /* WhatsNextSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221BB6D2EE520A7004362E8 /* WhatsNextSupport.swift */; };
 		9229640B2E6AC28B0068D536 /* PoemPickerSaveComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */; };
 		9229640C2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */; };
 		922B8BCC2D215B850065D50A /* ViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BCB2D215B850065D50A /* ViewModelObject.swift */; };
@@ -436,6 +437,7 @@
 		921FF44624A4D9EF0083AC49 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		921FF44A24A602F90083AC49 /* HelpDetailScreenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreenTest.swift; sourceTree = "<group>"; };
 		921FF44C24A603760083AC49 /* HelpDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreen.swift; sourceTree = "<group>"; };
+		9221BB6D2EE520A7004362E8 /* WhatsNextSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextSupport.swift; sourceTree = "<group>"; };
 		922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSaveComponents.swift; sourceTree = "<group>"; };
 		9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerToolbarButtons.swift; sourceTree = "<group>"; };
 		922B8BCA2D215B850065D50A /* BindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableObject.swift; sourceTree = "<group>"; };
@@ -1183,6 +1185,7 @@
 		9282CF692D6880F500516FDE /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9221BB6D2EE520A7004362E8 /* WhatsNextSupport.swift */,
 				929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */,
 				92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */,
 				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
@@ -1793,6 +1796,7 @@
 				925648D92D325EC500688D8B /* DurationSetting.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
 				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
+				9221BB6E2EE520A7004362E8 /* WhatsNextSupport.swift in Sources */,
 				921A990B2E2C7566002B0CA4 /* Digits10.swift in Sources */,
 				921A990C2E2C7566002B0CA4 /* Digits01.swift in Sources */,
 				923D59142143BB0A000F5E60 /* HomeScreen.swift in Sources */,

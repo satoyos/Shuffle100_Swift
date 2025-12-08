@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
+final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol, WhatsNextSupport {
   var screen: UIViewController?
   var navigationController: UINavigationController
   internal var settings: Settings
@@ -68,43 +68,5 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol {
     }
   }
 
-  internal func openWhatsNextScreen() {
-    guard let screen = screen else { return }
-    guard let currentPoem = poemSupplier.currentPoem else { return }
-    let coordinator = WhatsNextCoordinator(
-      fromScreen: screen,
-      currentPoem: currentPoem,
-      settings: settings,
-      store: store,
-      navigationController: navigationController)
-    coordinator.refrainEscalatingAction = { [weak self] in
-      self?.refrainShimo()
-    }
-    coordinator.goNextPoemEscalatingAction = { [weak self] in
-      self?.goNextPoem()
-    }
-    coordinator.exitGameEscalationgAction = { [weak self] in
-      self?.exitGame()
-    }
-    coordinator.start()
-    self.whatsNextCoordinator = coordinator
-    self.childCoordinator = coordinator
-  }
-
-  internal func refrainShimo() {
-    assert(true, "下の句を読み返す処理が、BeginnerModeのCoordinatorに戻ってきた！")
-    guard let number = poemSupplier.currentPoem?.number else { return }
-    let counter = poemSupplier.currentIndex
-
-    if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-      baseViewModel.refrainShimo(number: number, count: counter)
-    } else {
-      assertionFailure("Couldn't get baseViewModel")
-    }
-  }
-
-  internal func exitGame() {
-    assert(true, "初心者モードのCoordinatorからゲームを終了させるよ！")
-    backToHomeScreen()
-  }
+  // openWhatsNextScreen(), refrainShimo(), exitGame() は WhatsNextSupport プロトコル拡張で提供
 }
