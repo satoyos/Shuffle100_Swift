@@ -9,7 +9,7 @@
 import UIKit
 
 /// 「次はどうする?」画面を使用するモード（初心者モード、北海道モード）用のプロトコル
-protocol WhatsNextSupport: AnyObject {
+protocol WhatsNextSupport: RecitePoemViewModelHolder {
   var screen: UIViewController? { get set }
   var navigationController: UINavigationController { get }
   var settings: Settings { get set }
@@ -18,7 +18,6 @@ protocol WhatsNextSupport: AnyObject {
   var whatsNextCoordinator: WhatsNextCoordinator? { get set }
   var childCoordinator: Coordinator? { get set }
 
-  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel?
   func backToHomeScreen()
 
   /// 「次はどうする?」画面を表示

@@ -43,13 +43,7 @@ final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol, WhatsNextS
     }
   }
 
-  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel? {
-    return currentRecitePoemBaseViewModel
-  }
-
-  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel) {
-    self.currentRecitePoemBaseViewModel = viewModel
-  }
+  // getCurrentRecitePoemBaseViewModel(), setCurrentRecitePoemBaseViewModel() は RecitePoemViewModelHolder プロトコル拡張で提供
 
   private func stepIntoShimoInBeginnerMode() {
     guard let number = poemSupplier.currentPoem?.number else { return }

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-protocol RecitePoemProtocol: BackToHome {
+protocol RecitePoemProtocol: BackToHome, RecitePoemViewModelHolder {
   var settings: Settings { get set }
   var store: StoreManager { get set }
   var poemSupplier: PoemSupplier { get set }
@@ -20,10 +20,6 @@ protocol RecitePoemProtocol: BackToHome {
   func goNextPoem() -> Void
   func startPostMortem() -> Void
   func addKamiScreenActionsForKamiEnding()
-
-  // Helper methods for accessing the current RecitePoemBaseViewModel
-  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel?
-  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel)
 }
 
 extension RecitePoemProtocol where Self: Coordinator {

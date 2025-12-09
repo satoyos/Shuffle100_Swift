@@ -103,13 +103,7 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol, WhatsNextS
     assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
   }
 
-  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel? {
-    return currentRecitePoemBaseViewModel
-  }
-
-  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel) {
-    self.currentRecitePoemBaseViewModel = viewModel
-  }
+  // getCurrentRecitePoemBaseViewModel(), setCurrentRecitePoemBaseViewModel() は RecitePoemViewModelHolder プロトコル拡張で提供
   
   internal func reciteShimoFinished(number: Int, counter: Int) {
     assert(true, "\(counter)番めの歌(歌番号: \(number))の下の句の読み上げ終了(北海道モード)。")

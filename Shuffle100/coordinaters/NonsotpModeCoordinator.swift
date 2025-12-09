@@ -43,13 +43,7 @@ final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
     }
   }
 
-  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel? {
-    return currentRecitePoemBaseViewModel
-  }
-
-  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel) {
-    self.currentRecitePoemBaseViewModel = viewModel
-  }
+  // getCurrentRecitePoemBaseViewModel(), setCurrentRecitePoemBaseViewModel() は RecitePoemViewModelHolder プロトコル拡張で提供
   
   private func stepIntoShimoInNonstopMode() {
     assert(true, "ノンストップモードで下の句に突入！")

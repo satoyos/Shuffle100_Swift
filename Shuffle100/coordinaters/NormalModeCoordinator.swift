@@ -50,14 +50,8 @@ final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
     }
   }
 
-  func getCurrentRecitePoemBaseViewModel() -> RecitePoemBaseViewModel? {
-    return currentRecitePoemBaseViewModel
-  }
+  // getCurrentRecitePoemBaseViewModel(), setCurrentRecitePoemBaseViewModel() は RecitePoemViewModelHolder プロトコル拡張で提供
 
-  func setCurrentRecitePoemBaseViewModel(_ viewModel: RecitePoemBaseViewModel) {
-    self.currentRecitePoemBaseViewModel = viewModel
-  }
-  
   private func stepIntoShimoInNormalMode() {
     guard let number = poemSupplier.currentPoem?.number else { return }
     let counter = poemSupplier.currentIndex
