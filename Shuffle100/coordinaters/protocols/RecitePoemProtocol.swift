@@ -9,16 +9,11 @@
 import UIKit
 import SwiftUI
 
-protocol RecitePoemProtocol: BackToHome, RecitePoemViewModelHolder {
-  var settings: Settings { get set }
-  var store: StoreManager { get set }
-  var poemSupplier: PoemSupplier { get set }
-
+protocol RecitePoemProtocol: RecitePoemCore {
   func jokaFinished() -> Void
   func reciteKamiFinished(number: Int, counter: Int ) -> Void
   func reciteShimoFinished(number: Int, counter: Int) -> Void
   func goNextPoem() -> Void
-  func startPostMortem() -> Void
   func addKamiScreenActionsForKamiEnding()
 }
 
@@ -159,27 +154,7 @@ extension RecitePoemProtocol where Self: Coordinator {
     reciteShimoFinished(number: number, counter: counter)
   }
 
-  internal func startPostMortem() {
-    print("!! Coordinatorから感想戦を始めますよ！!")
-    poemSupplier.resetCurrentIndex()
-    self.start()
-  }
-
-  // 歯車ボタンが押されたときの画面遷移をここでやる！
-  internal func openReciteSettings() {
-    let newNavController = UINavigationController()
-
-    if let hostController = self.screen {
-      // Both SwiftUI and UIKit use the same coordinator
-      let coordinator = ReciteSettingsCoordinator(
-        settings: settings,
-        fromScreen: hostController,
-        store: store,
-        navigationController: newNavController)
-      coordinator.start()
-      self.childCoordinator = coordinator
-    }
-  }
+  // startPostMortem(), openReciteSettings() は RecitePoemCore プロトコル拡張で提供
 
   private func backToPreviousPoem() {
     if let prevPoem = poemSupplier.rollBackPrevPoem() {

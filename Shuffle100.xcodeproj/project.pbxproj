@@ -69,6 +69,7 @@
 		921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF44C24A603760083AC49 /* HelpDetailScreen.swift */; };
 		9221BB6E2EE520A7004362E8 /* WhatsNextSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221BB6D2EE520A7004362E8 /* WhatsNextSupport.swift */; };
 		9221BB702EE6EFF3004362E8 /* RecitePoemViewModelHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221BB6F2EE6EFF3004362E8 /* RecitePoemViewModelHolder.swift */; };
+		9221BB722EE82C42004362E8 /* RecitePoemCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221BB712EE82C42004362E8 /* RecitePoemCore.swift */; };
 		9229640B2E6AC28B0068D536 /* PoemPickerSaveComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */; };
 		9229640C2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */; };
 		922B8BCC2D215B850065D50A /* ViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B8BCB2D215B850065D50A /* ViewModelObject.swift */; };
@@ -440,6 +441,7 @@
 		921FF44C24A603760083AC49 /* HelpDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailScreen.swift; sourceTree = "<group>"; };
 		9221BB6D2EE520A7004362E8 /* WhatsNextSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextSupport.swift; sourceTree = "<group>"; };
 		9221BB6F2EE6EFF3004362E8 /* RecitePoemViewModelHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelHolder.swift; sourceTree = "<group>"; };
+		9221BB712EE82C42004362E8 /* RecitePoemCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemCore.swift; sourceTree = "<group>"; };
 		922964092E6AC28B0068D536 /* PoemPickerSaveComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSaveComponents.swift; sourceTree = "<group>"; };
 		9229640A2E6AC28B0068D536 /* PoemPickerToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerToolbarButtons.swift; sourceTree = "<group>"; };
 		922B8BCA2D215B850065D50A /* BindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableObject.swift; sourceTree = "<group>"; };
@@ -1190,6 +1192,7 @@
 				929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */,
 				92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */,
 				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
+				9221BB712EE82C42004362E8 /* RecitePoemCore.swift */,
 				927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */,
 				9221BB6F2EE6EFF3004362E8 /* RecitePoemViewModelHolder.swift */,
 				9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */,
@@ -1792,6 +1795,7 @@
 				92014DB62D2560CA00B2BA85 /* SingerFetching.swift in Sources */,
 				92A6EB8124167F9200B37A42 /* SettingsAttachedScreen.swift in Sources */,
 				921FF44D24A603760083AC49 /* HelpDetailScreen.swift in Sources */,
+				9221BB722EE82C42004362E8 /* RecitePoemCore.swift in Sources */,
 				92BCDE7A226C8E1E001853DC /* MainCoordinator.swift in Sources */,
 				9260CCA625C67AE000B709B6 /* UIFontExtension.swift in Sources */,
 				927DDBED2EA4A63F00645CDF /* WhatsNextView.swift in Sources */,
