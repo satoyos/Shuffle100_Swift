@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NormalModeCoordinator: Coordinator, RecitePoemProtocol {
+final class NormalModeCoordinator: Coordinator, KamiShimoRecitation {
   var screen: UIViewController?
   var navigationController: UINavigationController
   internal var settings: Settings

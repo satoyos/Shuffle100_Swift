@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol, WhatsNextSupport {
+final class HokkaidoModeCoordinator: Coordinator, PoemRecitation, WhatsNextSupport {
   
   var screen: UIViewController?
   var navigationController: UINavigationController
@@ -95,13 +95,8 @@ final class HokkaidoModeCoordinator: Coordinator, RecitePoemProtocol, WhatsNextS
     }
   }
 
-  func reciteKamiFinished(number: Int, counter: Int) {
-    assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
-  }
-  
-  func addKamiScreenActionsForKamiEnding() {
-    assertionFailure(" xxxx 下の句かるたでは、このメソッドは呼ばれてはならない。")
-  }
+  // PoemRecitationプロトコルでは、上の句関連メソッド(reciteKamiFinished, addKamiScreenActionsForKamiEnding)は不要
+  // 北海道モードは下の句のみを扱うため、これらのメソッドは実装しない
 
   // getCurrentRecitePoemBaseViewModel(), setCurrentRecitePoemBaseViewModel() は RecitePoemViewModelHolder プロトコル拡張で提供
   

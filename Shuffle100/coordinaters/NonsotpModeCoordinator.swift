@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NonsotpModeCoordinator: Coordinator, RecitePoemProtocol {
+final class NonsotpModeCoordinator: Coordinator, KamiShimoRecitation {
   var screen: UIViewController?
   var navigationController: UINavigationController
   internal var settings: Settings

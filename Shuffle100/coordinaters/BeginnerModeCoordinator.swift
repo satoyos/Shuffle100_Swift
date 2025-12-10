@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BeginnerModeCoordinator: Coordinator, RecitePoemProtocol, WhatsNextSupport {
+final class BeginnerModeCoordinator: Coordinator, KamiShimoRecitation, WhatsNextSupport {
   var screen: UIViewController?
   var navigationController: UINavigationController
   internal var settings: Settings

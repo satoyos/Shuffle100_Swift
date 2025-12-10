@@ -1,23 +1,22 @@
 //
-//  RecitePoemProtocol.swift
+//  KamiShimoRecitation.swift
 //  Shuffle100
 //
-//  Created by Yoshifumi Sato on 2020/01/28.
-//  Copyright © 2020 里 佳史. All rights reserved.
+//  Created by Yoshifumi Sato on 2025/12/10.
+//  Copyright © 2025 里 佳史. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
 
-protocol RecitePoemProtocol: RecitePoemCore {
-  func jokaFinished() -> Void
-  func reciteKamiFinished(number: Int, counter: Int ) -> Void
-  func reciteShimoFinished(number: Int, counter: Int) -> Void
-  func goNextPoem() -> Void
-  func addKamiScreenActionsForKamiEnding()
+/// 上の句と下の句の両方を読み上げるモード用のプロトコル
+/// （通常モード、初心者モード、ノンストップモード）
+protocol KamiShimoRecitation: PoemRecitation {
+  func reciteKamiFinished(number: Int, counter: Int) -> Void
+  func addKamiScreenActionsForKamiEnding() -> Void
 }
 
-extension RecitePoemProtocol where Self: Coordinator {
+extension KamiShimoRecitation where Self: Coordinator {
 
   func start() {
     startWithSwiftUI()
@@ -72,20 +71,11 @@ extension RecitePoemProtocol where Self: Coordinator {
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       let number = firstPoem.number
-      // 北海道モード（下の句かるた）では下の句を再生するため、終了時は下の句終了処理を呼ぶ
-      if settings.reciteMode == .hokkaido {
-        baseViewModel.playerFinishedAction = { [weak self, number] in
-          self?.reciteShimoFinished(number: number, counter: 1)
-        }
-      } else {
-        baseViewModel.playerFinishedAction = { [weak self, number] in
-          self?.reciteKamiFinished(number: number, counter: 1)  // 序歌を読み上げたばかりなので、counterは1首目確定
-        }
-        addKamiScreenActionsForKamiEnding()
+      baseViewModel.playerFinishedAction = { [weak self, number] in
+        self?.reciteKamiFinished(number: number, counter: 1)  // 序歌を読み上げたばかりなので、counterは1首目確定
       }
-      let side: Side = settings.reciteMode == .hokkaido ? .shimo : .kami
-      baseViewModel.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size, side: side)
-
+      addKamiScreenActionsForKamiEnding()
+      baseViewModel.stepIntoNextPoem(number: number, at: 1, total: poemSupplier.size, side: .kami)
     } else {
       assertionFailure("Couldn't get baseViewModel")
     }
@@ -98,19 +88,11 @@ extension RecitePoemProtocol where Self: Coordinator {
       if let poem = poemSupplier.drawNextPoem() {
         let number = poem.number
         let counter = poemSupplier.currentIndex
-        // 北海道モード（下の句かるた）では次も下の句を再生するため、終了時は下の句終了処理を呼ぶ
-        if settings.reciteMode == .hokkaido {
-          baseViewModel.playerFinishedAction = { [weak self, number, counter] in
-            self?.reciteShimoFinished(number: number, counter: counter)
-          }
-        } else {
-          baseViewModel.playerFinishedAction = { [weak self, number, counter] in
-            self?.reciteKamiFinished(number: number, counter: counter)
-          }
-          addKamiScreenActionsForKamiEnding()
+        baseViewModel.playerFinishedAction = { [weak self, number, counter] in
+          self?.reciteKamiFinished(number: number, counter: counter)
         }
-        let side: Side = settings.reciteMode == .hokkaido ? .shimo : .kami
-        baseViewModel.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size, side: side)
+        addKamiScreenActionsForKamiEnding()
+        baseViewModel.stepIntoNextPoem(number: number, at: counter, total: poemSupplier.size, side: .kami)
       } else {
         assert(true, "歌は全て読み終えた！")
         baseViewModel.stepIntoGameEnd()
@@ -153,8 +135,6 @@ extension RecitePoemProtocol where Self: Coordinator {
     // 次の詩に進むことが決まった後は、Normalモードと同じで、デフォルトの動作をする
     reciteShimoFinished(number: number, counter: counter)
   }
-
-  // startPostMortem(), openReciteSettings() は RecitePoemCore プロトコル拡張で提供
 
   private func backToPreviousPoem() {
     if let prevPoem = poemSupplier.rollBackPrevPoem() {

@@ -143,6 +143,8 @@
 		9262999E236586D0000EC4F7 /* UIColorExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */; };
 		926489192604480300CC4131 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926489182604480300CC4131 /* SettingsTest.swift */; };
 		9265517C2685F8F400C746D0 /* TorifudaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265517B2685F8F400C746D0 /* TorifudaPage.swift */; };
+		926CA27C2EE916A2006946CB /* KamiShimoRecitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CA27A2EE916A2006946CB /* KamiShimoRecitation.swift */; };
+		926CA27D2EE916A2006946CB /* PoemRecitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CA27B2EE916A2006946CB /* PoemRecitation.swift */; };
 		926DD6342C6B36F800516674 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926DD6332C6B36F800516674 /* Colors.xcassets */; };
 		926DD6372C6B381000516674 /* ReciteViewGeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */; };
 		926DD6392C6B3E7800516674 /* RecitePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6382C6B3E7800516674 /* RecitePlayButton.swift */; };
@@ -166,7 +168,6 @@
 		92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */; };
 		92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */; };
 		9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */; };
-		927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */; };
 		927AEC3E292B635E006970CF /* HokkaidoModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */; };
 		927CB8F9240D0F3D0044B507 /* ReciteSettingsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */; };
 		927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
@@ -511,6 +512,8 @@
 		9262999D236586D0000EC4F7 /* UIColorExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTest.swift; sourceTree = "<group>"; };
 		926489182604480300CC4131 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
 		9265517B2685F8F400C746D0 /* TorifudaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorifudaPage.swift; sourceTree = "<group>"; };
+		926CA27A2EE916A2006946CB /* KamiShimoRecitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamiShimoRecitation.swift; sourceTree = "<group>"; };
+		926CA27B2EE916A2006946CB /* PoemRecitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemRecitation.swift; sourceTree = "<group>"; };
 		926DD6332C6B36F800516674 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReciteViewGeneralButton.swift; sourceTree = "<group>"; };
 		926DD6382C6B3E7800516674 /* RecitePlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButton.swift; sourceTree = "<group>"; };
@@ -534,7 +537,6 @@
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoThrough100PoemsUITest.swift; sourceTree = "<group>"; };
 		9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeomRecitedUITest.swift; sourceTree = "<group>"; };
-		927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemProtocol.swift; sourceTree = "<group>"; };
 		927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeUITest.swift; sourceTree = "<group>"; };
 		927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsUITest.swift; sourceTree = "<group>"; };
 		927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsCoordinator.swift; sourceTree = "<group>"; };
@@ -1192,8 +1194,9 @@
 				929A615022F6EF7600435D2C /* CoordinatorProtocol.swift */,
 				92C176D025E3D2DF00DDA46D /* BackToHomeProtocol.swift */,
 				9298B70524CAFB16000C5194 /* HandleNavigatorProtocol.swift */,
+				926CA27A2EE916A2006946CB /* KamiShimoRecitation.swift */,
+				926CA27B2EE916A2006946CB /* PoemRecitation.swift */,
 				9221BB712EE82C42004362E8 /* RecitePoemCore.swift */,
-				927A197E23E06C8A00443322 /* RecitePoemProtocol.swift */,
 				9221BB6F2EE6EFF3004362E8 /* RecitePoemViewModelHolder.swift */,
 				9298B70124C9AD46000C5194 /* SaveSettingsProtocol.swift */,
 				9221BB6D2EE520A7004362E8 /* WhatsNextSupport.swift */,
@@ -1802,7 +1805,6 @@
 				927DDBEE2EA4A63F00645CDF /* WhatsNextButton.swift in Sources */,
 				925648D92D325EC500688D8B /* DurationSetting.swift in Sources */,
 				92F8247925B07A10008E031D /* TableDataSourceProtocol.swift in Sources */,
-				927A197F23E06C8A00443322 /* RecitePoemProtocol.swift in Sources */,
 				9221BB6E2EE520A7004362E8 /* WhatsNextSupport.swift in Sources */,
 				921A990B2E2C7566002B0CA4 /* Digits10.swift in Sources */,
 				921A990C2E2C7566002B0CA4 /* Digits01.swift in Sources */,
@@ -1841,6 +1843,8 @@
 				92A5B6C42DC5A64300DEFA69 /* FiveColorsView.swift in Sources */,
 				92A5B6C52DC5A64300DEFA69 /* FiveColorButton.swift in Sources */,
 				053FCCE607E649EAAD05E4558418ED8A /* FudaSetsView.swift in Sources */,
+				926CA27C2EE916A2006946CB /* KamiShimoRecitation.swift in Sources */,
+				926CA27D2EE916A2006946CB /* PoemRecitation.swift in Sources */,
 				92B654F52E8247E800F60B0C /* RecitePoemViewModel.swift in Sources */,
 				24E600BA590D40CE9BAD8F92FA2E0342 /* FudaSetsView.ViewModel.swift in Sources */,
 				92C87DDD22E88F8600569D15 /* Singer.swift in Sources */,
