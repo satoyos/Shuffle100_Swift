@@ -29,7 +29,7 @@ target 'Shuffle100' do
     pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
     pod 'Then'
 #    pod 'DSFloatingButton'
-    pod 'FontAwesome.swift'
+#    pod 'FontAwesome.swift'
   end
 
 end
