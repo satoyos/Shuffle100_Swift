@@ -14,7 +14,7 @@ target 'Shuffle100' do
   pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
   pod 'Then'
 #  pod 'DSFloatingButton'
-  pod 'FontAwesome.swift', :inhibit_warnings => true
+  # pod 'FontAwesome.swift', :inhibit_warnings => true
 
   target 'Shuffle100Tests' do
     inherit! :search_paths
