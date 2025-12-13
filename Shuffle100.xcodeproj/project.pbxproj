@@ -249,7 +249,6 @@
 		92AD8C552BAFFF75004D605D /* ReciteMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C542BAFFF75004D605D /* ReciteMode.swift */; };
 		92AD8C582BB000D1004D605D /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C572BB000D1004D605D /* Side.swift */; };
 		92AD8C5A2BB00134004D605D /* FiveColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C592BB00134004D605D /* FiveColors.swift */; };
-		92AD8C5C2BB001A8004D605D /* SOHGlyphIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD8C5B2BB001A8004D605D /* SOHGlyphIconType.swift */; };
 		92AE7C6723FD6D88003FA07F /* SelectSingerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */; };
 		92AE7C7123FEAE6A003FA07F /* EnvironmentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */; };
 		92AE7C7323FEAEDC003FA07F /* SHEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE7C7223FEAEDC003FA07F /* SHEnvironment.swift */; };
@@ -612,7 +611,6 @@
 		92AD8C542BAFFF75004D605D /* ReciteMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteMode.swift; sourceTree = "<group>"; };
 		92AD8C572BB000D1004D605D /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		92AD8C592BB00134004D605D /* FiveColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColors.swift; sourceTree = "<group>"; };
-		92AD8C5B2BB001A8004D605D /* SOHGlyphIconType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOHGlyphIconType.swift; sourceTree = "<group>"; };
 		92AE7C6623FD6D88003FA07F /* SelectSingerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSingerCoordinator.swift; sourceTree = "<group>"; };
 		92AE7C7023FEAE6A003FA07F /* EnvironmentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTest.swift; sourceTree = "<group>"; };
 		92AE7C7223FEAEDC003FA07F /* SHEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHEnvironment.swift; sourceTree = "<group>"; };
@@ -1270,7 +1268,6 @@
 				92AD8C542BAFFF75004D605D /* ReciteMode.swift */,
 				92AD8C572BB000D1004D605D /* Side.swift */,
 				92AD8C592BB00134004D605D /* FiveColors.swift */,
-				92AD8C5B2BB001A8004D605D /* SOHGlyphIconType.swift */,
 			);
 			path = enums;
 			sourceTree = "<group>";
@@ -1999,7 +1996,6 @@
 				92E5C54126666A0D009A46F5 /* AdjustSliderProtocol.swift in Sources */,
 				92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */,
 				92370713290571340013C5AB /* FastlaneSnapshot.swift in Sources */,
-				92AD8C5C2BB001A8004D605D /* SOHGlyphIconType.swift in Sources */,
 				92A146B024DED8540045D7DF /* MemorizeTImerScreenUITest.swift in Sources */,
 				92AD8C582BB000D1004D605D /* Side.swift in Sources */,
 				9250C10D2A1CD120001076FA /* DigitsPickerPage10.swift in Sources */,
