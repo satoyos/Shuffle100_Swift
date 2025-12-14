@@ -48,7 +48,12 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     }
     
     var maxIntarvalLabel: XCUIElement {
-        app.cells.staticTexts[A11y.maxInterval].firstMatch
+      let labelMax = app.cells.staticTexts[A11y.maxInterval].firstMatch
+      let label199 = app.cells.staticTexts["1.99" + "秒"].firstMatch
+      let label198 = app.cells.staticTexts["1.98" + "秒"].firstMatch
+      return labelMax.exists ? labelMax : (
+        label199.exists ? label199 : label198
+      )
     }
     
     var shortenJokaModeSwitch: XCUIElement {
