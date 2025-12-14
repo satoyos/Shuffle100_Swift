@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Then
 
 protocol ConfigureSettingTableCell {
   func configure(dataSource: SettingsCellDataSource)

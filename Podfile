@@ -12,7 +12,7 @@ target 'Shuffle100' do
     # Pods for Shuffle100
 #  pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
-  pod 'Then'
+#  pod 'Then'
 #  pod 'DSFloatingButton'
   # pod 'FontAwesome.swift', :inhibit_warnings => true
 
@@ -27,7 +27,7 @@ target 'Shuffle100' do
     # so that UItest can be executed on Real Device
 #    pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
-    pod 'Then'
+#    pod 'Then'
 #    pod 'DSFloatingButton'
 #    pod 'FontAwesome.swift'
   end

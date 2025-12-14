@@ -32,12 +32,11 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
       shimoStr: poem.in_hiragana.shimo,
       fullLiner: poem.liner
     ).environmentObject(ScreenSizeStore())
-    let hostintController = UIHostingController(rootView: trialTorifudaView).then {
-      if showPrompt {
-        $0.navigationItem.prompt = navigationItemPrompt
-      }
-      $0.title = title
+    let hostintController = UIHostingController(rootView: trialTorifudaView)
+    if showPrompt {
+      hostintController.navigationItem.prompt = navigationItemPrompt
     }
+    hostintController.title = title
     navigationController.pushViewController(hostintController, animated: true)
     
   }
