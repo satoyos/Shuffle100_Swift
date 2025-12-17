@@ -171,6 +171,9 @@
 		92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */; };
 		92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */; };
 		9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */; };
+		927927F52EF15F6000831EC8 /* SelectSingerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927927F42EF15F6000831EC8 /* SelectSingerView.swift */; };
+		927927F72EF15FB800831EC8 /* SelectSingerView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */; };
+		927927F92EF166E600831EC8 /* SelectSingerView.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927927F82EF166E600831EC8 /* SelectSingerView.ViewModelTests.swift */; };
 		927AEC3E292B635E006970CF /* HokkaidoModeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */; };
 		927CB8F9240D0F3D0044B507 /* ReciteSettingsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */; };
 		927CB8FB240D13DB0044B507 /* ReciteSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */; };
@@ -542,6 +545,9 @@
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoThrough100PoemsUITest.swift; sourceTree = "<group>"; };
 		9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeomRecitedUITest.swift; sourceTree = "<group>"; };
+		927927F42EF15F6000831EC8 /* SelectSingerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerView.swift; sourceTree = "<group>"; };
+		927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerView.ViewModel.swift; sourceTree = "<group>"; };
+		927927F82EF166E600831EC8 /* SelectSingerView.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerView.ViewModelTests.swift; sourceTree = "<group>"; };
 		927AEC3D292B635E006970CF /* HokkaidoModeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeUITest.swift; sourceTree = "<group>"; };
 		927CB8F8240D0F3D0044B507 /* ReciteSettingsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsUITest.swift; sourceTree = "<group>"; };
 		927CB8FA240D13DB0044B507 /* ReciteSettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsCoordinator.swift; sourceTree = "<group>"; };
@@ -1039,13 +1045,14 @@
 		9250C8222BE4936E00EFBD48 /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9254539B2EEE9C8E00690ECD /* SelectModeView.ViewModel.swift */,
-				927DDC2C2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift */,
 				922B8BDB2D215C570065D50A /* viewModels_ToretaStyle */,
-				9250C8232BE4939100EFBD48 /* Torifuda.ViewModel.swift */,
 				9250C8282BE4BA4200EFBD48 /* FullLiner.ViewModel.swift */,
 				926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */,
 				926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */,
+				927DDC2C2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift */,
+				9254539B2EEE9C8E00690ECD /* SelectModeView.ViewModel.swift */,
+				927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */,
+				9250C8232BE4939100EFBD48 /* Torifuda.ViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -1053,6 +1060,7 @@
 		9250C8252BE4964D00EFBD48 /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				927927F82EF166E600831EC8 /* SelectSingerView.ViewModelTests.swift */,
 				922B8BD42D215C340065D50A /* viewModels_ToretaStyle */,
 				9250C82A2BE4BADC00EFBD48 /* FullLiner.ViewModelTests.swift */,
 				926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */,
@@ -1350,6 +1358,7 @@
 				926DD6532C6D7EC200516674 /* ReciteViewButtonStyle.swift */,
 				922B8BE02D2215AA0065D50A /* Sec2F.swift */,
 				925453992EEE9C5E00690ECD /* SelectModeView.swift */,
+				927927F42EF15F6000831EC8 /* SelectSingerView.swift */,
 				92D1533C2BD4E4780075233B /* Torifuda.swift */,
 				924275E02D583E16001D5940 /* VolumeSetting.swift */,
 				927DDBEB2EA4A63F00645CDF /* WhatsNextButton.swift */,
@@ -1820,6 +1829,7 @@
 				929A615522F6F23000435D2C /* PoemPickerCoordinator.swift in Sources */,
 				924275E32D583E2C001D5940 /* VolumeSettingViewModel.swift in Sources */,
 				9250C10F2A1CD2BE001076FA /* DigitsPickerScreen10Coordinatorswift.swift in Sources */,
+				927927F72EF15FB800831EC8 /* SelectSingerView.ViewModel.swift in Sources */,
 				927E4BF3222E9DD200AF48F7 /* PoemSupplier.swift in Sources */,
 				927DDC2D2EB6227D00645CDF /* PostMortemEnabledGameEndViewModel.swift in Sources */,
 				925994F12449E14900044253 /* KamiShimoIntervalSettingCoordinator.swift in Sources */,
@@ -1897,6 +1907,7 @@
 				925994FF244C6A6F00044253 /* VolumeSettingCoordinator.swift in Sources */,
 				92A6EB9124191ED400B37A42 /* SelectSingerScreenDataSource.swift in Sources */,
 				92467793292CAB5C0078ACBF /* HokkaidoModeCoordinator.swift in Sources */,
+				927927F52EF15F6000831EC8 /* SelectSingerView.swift in Sources */,
 				927DDBF02EA4A67200645CDF /* WhatsNextViewModel.swift in Sources */,
 				9250C8242BE4939100EFBD48 /* Torifuda.ViewModel.swift in Sources */,
 				92A5B6BA2DC4D52400DEFA69 /* FiveColorsViewModel.swift in Sources */,
@@ -1968,6 +1979,7 @@
 				925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */,
 				92ABF9A923F42C74000CA91C /* SelectSingerScreenTest.swift in Sources */,
 				9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */,
+				927927F92EF166E600831EC8 /* SelectSingerView.ViewModelTests.swift in Sources */,
 				92F4712D2E9662870086B1BE /* RecitePoemBaseViewModelTests.swift in Sources */,
 				927E4C06222E9EC700AF48F7 /* PoemSupplierTests.swift in Sources */,
 				924E89322827F83C00DEB4C5 /* KeyWindowProtocolTest.swift in Sources */,
