@@ -11,7 +11,6 @@ target 'Shuffle100' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     # Pods for Shuffle100
 #  pod 'Reveal-SDK', :configurations => ['Debug']
-  pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
 #  pod 'Then'
 #  pod 'DSFloatingButton'
   # pod 'FontAwesome.swift', :inhibit_warnings => true
@@ -26,7 +25,6 @@ target 'Shuffle100' do
     # belows are introduced to avoid bug of Cocoapods,
     # so that UItest can be executed on Real Device
 #    pod 'Reveal-SDK', :configurations => ['Debug']
-    pod 'SnapKit', '~> 5.6.0', :inhibit_warnings => true
 #    pod 'Then'
 #    pod 'DSFloatingButton'
 #    pod 'FontAwesome.swift'

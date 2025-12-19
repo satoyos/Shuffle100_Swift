@@ -1467,7 +1467,6 @@
 				923D590A2143BB0A000F5E60 /* Sources */,
 				923D590B2143BB0A000F5E60 /* Frameworks */,
 				923D590C2143BB0A000F5E60 /* Resources */,
-				4999C89CA781E41D1B994C02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1505,7 +1504,6 @@
 				923D59292143BB0B000F5E60 /* Sources */,
 				923D592A2143BB0B000F5E60 /* Frameworks */,
 				923D592B2143BB0B000F5E60 /* Resources */,
-				031AC0CB018034914CECDE0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1643,25 +1641,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		031AC0CB018034914CECDE0B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shuffle100UITests/Pods-Shuffle100UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		22EAC5839B794BD057C033D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1696,25 +1675,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4999C89CA781E41D1B994C02 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shuffle100/Pods-Shuffle100-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D69B3E7E0C73291AE408A539 /* [CP] Check Pods Manifest.lock */ = {
