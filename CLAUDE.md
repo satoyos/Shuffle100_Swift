@@ -19,15 +19,11 @@ Shuffle100は、百人一首かるたの読み上げを行うiOSアプリです�
 - Xcode 15.0以上
 - iOS 16.0以上対応
 - Swift 5.0以上
-- CocoaPods
 
 ### ビルドコマンド
 ```bash
-# 依存関係のインストール
-pod install
-
-# Xcodeでプロジェクトを開く（必須：.xcworkspaceを使用）
-open Shuffle100.xcworkspace
+# Xcodeでプロジェクトを開く
+open Shuffle100.xcodeproj
 ```
 
 ### デバイス設定
@@ -37,10 +33,10 @@ open Shuffle100.xcworkspace
 ### テスト実行
 ```bash
 # 単体テスト（Shuffle100Testsターゲットのみ）
-xcodebuild test -workspace Shuffle100.xcworkspace -scheme Shuffle100 -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing Shuffle100Tests
+xcodebuild test -project Shuffle100.xcodeproj -scheme Shuffle100 -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing Shuffle100Tests
 
 # UIテスト
-xcodebuild test -workspace Shuffle100.xcworkspace -scheme Shuffle100UITests -destination 'platform=iOS Simulator,name=iPhone 17'
+xcodebuild test -project Shuffle100.xcodeproj -scheme Shuffle100UITests -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 
 ### Fastlane（将来の拡張用）
@@ -138,9 +134,6 @@ App
 ## よく使用するコマンド
 
 ```bash
-# Podsの更新
-pod update
-
 # キャッシュクリア
 rm -rf ~/Library/Developer/Xcode/DerivedData/Shuffle100-*
 
