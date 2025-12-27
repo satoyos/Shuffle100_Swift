@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecitePoemSwiftUIView {
+struct RecitePoemView {
   let settings: Settings
   @ObservedObject private var viewModel: RecitePoemViewModel
   @Environment(\.isPresented) private var isPresented
@@ -24,7 +24,7 @@ struct RecitePoemSwiftUIView {
   }
 }
 
-extension RecitePoemSwiftUIView: View {
+extension RecitePoemView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack(spacing: 0) {
@@ -158,5 +158,5 @@ extension RecitePoemSwiftUIView: View {
 
 
 #Preview {
-  RecitePoemSwiftUIView(settings: Settings())
+  RecitePoemView(settings: Settings())
 }
