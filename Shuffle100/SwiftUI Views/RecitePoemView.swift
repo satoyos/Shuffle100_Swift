@@ -1,5 +1,5 @@
 //
-//  RecitePoemSwiftUIView.swift
+//  RecitePoemView.swift
 //  Shuffle100
 //
 //  Created by Yoshifumi Sato on 2025/09/23.

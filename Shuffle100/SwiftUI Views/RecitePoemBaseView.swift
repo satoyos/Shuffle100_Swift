@@ -64,7 +64,7 @@ extension RecitePoemBaseView: View {
 
         // スライドインするビュー
         if viewModel.output.showingSlideCard {
-          RecitePoemSwiftUIView(
+          RecitePoemView(
             settings: settings,
             viewModel: viewModel.recitePoemViewModel
           )
@@ -85,7 +85,7 @@ extension RecitePoemBaseView: View {
       gameEndView()
     } else {
       // 通常のRecitePoemView
-      RecitePoemSwiftUIView(
+      RecitePoemView(
         settings: settings,
         viewModel: viewModel.recitePoemViewModel
       )
@@ -99,7 +99,7 @@ extension RecitePoemBaseView: View {
       gameEndView()
     } else {
       // 通常のRecitePoemView
-      RecitePoemSwiftUIView(
+      RecitePoemView(
         settings: settings,
         viewModel: viewModel.recitePoemViewModel
       )

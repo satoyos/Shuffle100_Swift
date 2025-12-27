@@ -260,7 +260,7 @@
 		92B329152E4C314700942A64 /* FudaSetsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */; };
 		92B654F52E8247E800F60B0C /* RecitePoemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B654F42E8247E800F60B0C /* RecitePoemViewModel.swift */; };
 		92B654F92E82482300F60B0C /* RecitePoemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B654F82E82482300F60B0C /* RecitePoemViewModelTests.swift */; };
-		92B654FB2E825BF300F60B0C /* RecitePoemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B654FA2E825BF300F60B0C /* RecitePoemSwiftUIView.swift */; };
+		92B654FB2E825BF300F60B0C /* RecitePoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B654FA2E825BF300F60B0C /* RecitePoemView.swift */; };
 		92B654FE2E8261F600F60B0C /* RecitePoemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B654FC2E8261F600F60B0C /* RecitePoemHeaderView.swift */; };
 		92B654FF2E8261F600F60B0C /* RecitePoemLowerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B654FD2E8261F600F60B0C /* RecitePoemLowerControlsView.swift */; };
 		92B87D452509099E003BB51B /* FiveColorsPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */; };
@@ -616,7 +616,7 @@
 		92B329142E4C314700942A64 /* FudaSetsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetsViewModelTest.swift; sourceTree = "<group>"; };
 		92B654F42E8247E800F60B0C /* RecitePoemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModel.swift; sourceTree = "<group>"; };
 		92B654F82E82482300F60B0C /* RecitePoemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelTests.swift; sourceTree = "<group>"; };
-		92B654FA2E825BF300F60B0C /* RecitePoemSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemSwiftUIView.swift; sourceTree = "<group>"; };
+		92B654FA2E825BF300F60B0C /* RecitePoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemView.swift; sourceTree = "<group>"; };
 		92B654FC2E8261F600F60B0C /* RecitePoemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemHeaderView.swift; sourceTree = "<group>"; };
 		92B654FD2E8261F600F60B0C /* RecitePoemLowerControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemLowerControlsView.swift; sourceTree = "<group>"; };
 		92B87D442509099E003BB51B /* FiveColorsPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveColorsPickerUITest.swift; sourceTree = "<group>"; };
@@ -1315,7 +1315,7 @@
 				92F471282E9264960086B1BE /* RecitePoemBaseView.swift */,
 				92B654FC2E8261F600F60B0C /* RecitePoemHeaderView.swift */,
 				92B654FD2E8261F600F60B0C /* RecitePoemLowerControlsView.swift */,
-				92B654FA2E825BF300F60B0C /* RecitePoemSwiftUIView.swift */,
+				92B654FA2E825BF300F60B0C /* RecitePoemView.swift */,
 				926DD6362C6B381000516674 /* ReciteViewGeneralButton.swift */,
 				926DD6532C6D7EC200516674 /* ReciteViewButtonStyle.swift */,
 				922B8BE02D2215AA0065D50A /* Sec2F.swift */,
@@ -1742,7 +1742,7 @@
 				922B8BE12D2215AA0065D50A /* Sec2F.swift in Sources */,
 				922B8BD22D215BC40065D50A /* Sec2FViewModel.swift in Sources */,
 				92AE7C7924012872003FA07F /* MainCoordinatorSetUpSettings.swift in Sources */,
-				92B654FB2E825BF300F60B0C /* RecitePoemSwiftUIView.swift in Sources */,
+				92B654FB2E825BF300F60B0C /* RecitePoemView.swift in Sources */,
 				9205DA402DEAF7CA0098CE3B /* NgramButtonViewModel.swift in Sources */,
 				92A5B6BF2DC4D5F000DEFA69 /* FiveColors.swift in Sources */,
 				921FF43D249FA2FA0083AC49 /* HelpListScreenDelegate.swift in Sources */,
