@@ -19,7 +19,7 @@ struct RecitePoemHeaderView: View {
           .renderingMode(.template)
           .resizable()
           .frame(width: 32, height: 32)
-          .foregroundColor(.indigo)
+          .foregroundColor(iconColor)
       }
       .accessibilityLabel("gear")
 
@@ -37,13 +37,23 @@ struct RecitePoemHeaderView: View {
           .renderingMode(.template)
           .resizable()
           .frame(width: 32, height: 32)
-          .foregroundColor(.indigo)
+          .foregroundColor(iconColor)
       }
       .accessibilityLabel("exit")
     }
     .padding(.horizontal, 10)
     .padding(.vertical, 10)
     .background(Color(StandardColor.barTintColor))
+  }
+
+  // MARK: - Helper Properties
+
+  private var iconColor: Color {
+    if #available(iOS 26, *) {
+      return .primary
+    } else {
+      return .indigo
+    }
   }
 }
 
