@@ -200,6 +200,9 @@
 		92800398249BAFEE004D03C2 /* full_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92800390249BAFEE004D03C2 /* full_circle.png */; };
 		92800399249BAFEE004D03C2 /* full_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92800390249BAFEE004D03C2 /* full_circle.png */; };
 		928450D522E06B5D00D12CA7 /* WaitInUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928450D422E06B5D00D12CA7 /* WaitInUITest.swift */; };
+		9287B5932F026D7C00779CDB /* RecitePoemModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B5922F026D7C00779CDB /* RecitePoemModifiers.swift */; };
+		9287B5942F026D7C00779CDB /* RecitePoemContentComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B5902F026D7C00779CDB /* RecitePoemContentComponents.swift */; };
+		9287B5952F026D7C00779CDB /* RecitePoemLayoutComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B5912F026D7C00779CDB /* RecitePoemLayoutComponents.swift */; };
 		9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */; };
 		9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
@@ -555,6 +558,9 @@
 		9280038F249BAFED004D03C2 /* half_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = half_circle.png; sourceTree = "<group>"; };
 		92800390249BAFEE004D03C2 /* full_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = full_circle.png; sourceTree = "<group>"; };
 		928450D422E06B5D00D12CA7 /* WaitInUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitInUITest.swift; sourceTree = "<group>"; };
+		9287B5902F026D7C00779CDB /* RecitePoemContentComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemContentComponents.swift; sourceTree = "<group>"; };
+		9287B5912F026D7C00779CDB /* RecitePoemLayoutComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemLayoutComponents.swift; sourceTree = "<group>"; };
+		9287B5922F026D7C00779CDB /* RecitePoemModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemModifiers.swift; sourceTree = "<group>"; };
 		9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeDataSource.swift; sourceTree = "<group>"; };
 		9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyListContentConfigProtocol.swift; sourceTree = "<group>"; };
 		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
@@ -1313,6 +1319,9 @@
 				92CC44C52E5169440037D6BB /* PoemRow.swift */,
 				926DD6382C6B3E7800516674 /* RecitePlayButton.swift */,
 				92F471282E9264960086B1BE /* RecitePoemBaseView.swift */,
+				9287B5902F026D7C00779CDB /* RecitePoemContentComponents.swift */,
+				9287B5912F026D7C00779CDB /* RecitePoemLayoutComponents.swift */,
+				9287B5922F026D7C00779CDB /* RecitePoemModifiers.swift */,
 				92B654FC2E8261F600F60B0C /* RecitePoemHeaderView.swift */,
 				92B654FD2E8261F600F60B0C /* RecitePoemLowerControlsView.swift */,
 				92B654FA2E825BF300F60B0C /* RecitePoemView.swift */,
@@ -1691,6 +1700,9 @@
 				9258FAEC21FDBF7B00E4E0B7 /* GameStartCell.swift in Sources */,
 				9205DA422DEAF95B0098CE3B /* NgramButton.swift in Sources */,
 				9254539A2EEE9C5E00690ECD /* SelectModeView.swift in Sources */,
+				9287B5932F026D7C00779CDB /* RecitePoemModifiers.swift in Sources */,
+				9287B5942F026D7C00779CDB /* RecitePoemContentComponents.swift in Sources */,
+				9287B5952F026D7C00779CDB /* RecitePoemLayoutComponents.swift in Sources */,
 				92CC44C32E51690C0037D6BB /* PoemPickerView.ViewModel.swift in Sources */,
 				927E4BF9222E9DD200AF48F7 /* Poem.swift in Sources */,
 				9205E18024571016003BAEDC /* WhatsNextCoordinator.swift in Sources */,
