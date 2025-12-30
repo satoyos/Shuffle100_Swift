@@ -10,6 +10,7 @@ vendor/
 fastlane/test_output/
 screenshots/
 buildServer.json
+build.log
 
 # Copyright-restricted audio files (do not commit to repository)
 Shuffle100/resources/audio/inaba/
