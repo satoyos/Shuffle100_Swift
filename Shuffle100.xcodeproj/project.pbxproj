@@ -944,8 +944,8 @@
 				92CE52052168D45D00538E01 /* dataSources */,
 				92E6552021CE74E200005F85 /* delegates */,
 				923D593F2143BD50000F5E60 /* screens */,
-				925CEB51218ED4FF00876E7A /* views */,
 				92D153322BD3CE0E0075233B /* SwiftUI Views */,
+				925CEB51218ED4FF00876E7A /* UIKit views */,
 				9258FAF321FEAB6C00E4E0B7 /* resources */,
 				926DD6322C6B364200516674 /* assets */,
 				923D59112143BB0A000F5E60 /* AppDelegate.swift */,
@@ -1074,13 +1074,13 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
-		925CEB51218ED4FF00876E7A /* views */ = {
+		925CEB51218ED4FF00876E7A /* UIKit views */ = {
 			isa = PBXGroup;
 			children = (
 				92E5C5552674D463009A46F5 /* protocols */,
 				92EC120F2A076C340071FA6C /* tableCells */,
 			);
-			path = views;
+			path = "UIKit views";
 			sourceTree = "<group>";
 		};
 		9262999C236586A3000EC4F7 /* lib */ = {
