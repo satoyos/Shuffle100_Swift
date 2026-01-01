@@ -85,7 +85,6 @@ extension RecitePoemView {
       let skipButtonSize = controlButtonSize(for: geometry)
       // UIKit版の制約と同じロジック: 3つのスペースが残りの高さを均等に分割
       let spaceHeight = (contentGeometry.size.height - playButtonDiam - skipButtonSize) / 3
-      let lowerControlWidth = playButtonDiam
 
       VStack(spacing: 0) {
         // Space 1: Header to Play Button (1/3)
