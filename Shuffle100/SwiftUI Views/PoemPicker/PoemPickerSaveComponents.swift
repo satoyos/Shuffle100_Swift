@@ -2,7 +2,6 @@
 //  PoemPickerSaveComponents.swift
 //  Shuffle100
 //
-//  Created by Claude Code on 2025/09/05.
 //  Copyright © 2025 里 佳史. All rights reserved.
 //
 
@@ -10,7 +9,7 @@ import SwiftUI
 
 // MARK: - Save Components
 extension PoemPickerView {
-  
+
   var saveButton: some View {
     Button("保存") {
       viewModel.input.saveSet.send()

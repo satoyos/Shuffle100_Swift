@@ -2,7 +2,6 @@
 //  PoemPickerToolbarButtons.swift
 //  Shuffle100
 //
-//  Created by Claude Code on 2025/09/05.
 //  Copyright © 2025 里 佳史. All rights reserved.
 //
 
@@ -10,7 +9,7 @@ import SwiftUI
 
 // MARK: - Toolbar Buttons
 extension PoemPickerView {
-  
+
   var cancelAllButton: some View {
     Button("全て取消") {
       viewModel.input.cancelAll.send()
