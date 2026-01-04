@@ -29,7 +29,7 @@ extension KamiShimoRecitation where Self: Coordinator {
     baseViewModel.recitePoemViewModel.backToPreviousAction = { [weak self] in
       self?.rewindToPrevious()
     }
-    baseViewModel.recitePoemViewModel.openSettingsAction = { [weak self] in
+    baseViewModel.recitePoemViewModel.openSettingsAction = { @MainActor [weak self] in
       self?.openReciteSettings()
     }
     baseViewModel.recitePoemViewModel.backToHomeScreenAction = { [weak self] in

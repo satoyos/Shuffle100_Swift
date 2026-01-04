@@ -26,54 +26,47 @@ final class ReciteSettingsCoordinator: Coordinator, SaveSettings {
     self.navigationController = navigationController
   }
   
+  @MainActor
   func start() {
-    let screen = ReciteSettingsScreen(settings: settings)
-    self.navigationController = UINavigationController(rootViewController: screen)
+    // ViewModelの初期化
+    let viewModel = ReciteSettings.ViewModel(settings: settings, store: store)
+
+    // SwiftUIビューの生成
+    let reciteSettingsView = ReciteSettingsView(viewModel: viewModel)
+
+    // ActionAttachedHostingControllerでラップ
+    let hostController = ActionAttachedHostingController(rootView: reciteSettingsView)
+
+    // ナビゲーション設定
+    hostController.navigationItem.title = "いろいろな設定"
+
+    // 閉じるボタン設定
+    hostController.navigationItem.rightBarButtonItem = UIBarButtonItem(
+      title: "設定終了",
+      style: .plain,
+      target: self,
+      action: #selector(dismissButtonTapped)
+    )
+
+    // モーダル表示用のUINavigationController
+    self.navigationController = UINavigationController(rootViewController: hostController)
     setUpNavigationController()
-    screen.intervalSettingAction = { [weak self] in
-      self?.openIntervalSettingScreen()
-    }
-    screen.kamiShimoIntervalSettingAction = { [weak self] in
-      self?.openKamiShimoIntervalSettingScreen()
-    }
-    screen.volumeSettingAction = { [weak self] in
-      self?.openVolumeSettingScreen()
-    }
-    screen.saveSettingsAction = { [store, settings, weak self] in
-      self?.saveSettingsPermanently(settings, into: store)
-    }
+
     fromScreen.present(navigationController, animated: true)
-    self.screen = screen
+    self.screen = hostController
+  }
+
+  @objc private func dismissButtonTapped() {
+    // Settingsは既にViewModelで保存済みなので、dismissだけ
+    navigationController.dismiss(animated: true)
   }
   
   private func setUpNavigationController() {
     navigationController.interactivePopGestureRecognizer?.isEnabled = false
     navigationController.navigationBar.barTintColor = StandardColor.barTintColor
-    
+
     // modalPresentationStyleは、UIKit時代は.fullScreenにせざるを得なかったが、
     // Swift UI化してから、その制約がなくなった。
-//    navigationController.modalPresentationStyle = .fullScreen
     navigationController.modalPresentationStyle = .automatic
-  }
-  
-  private func openIntervalSettingScreen() {
-    assert(true, "これから、歌の間隔を調整する画面を開きます")
-    let coordinator = IntervalSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
-    coordinator.start()
-    self.childCoordinator = coordinator
-  }
-  
-  private func openKamiShimoIntervalSettingScreen() {
-    assert(true, "これから、上の句と下の句の間隔を調整する画面を開きます")
-    let coordinator = KamiShimoIntervalSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
-    coordinator.start()
-    self.childCoordinator = coordinator
-  }
-  
-  private func openVolumeSettingScreen() {
-    assert(true, "これから、音量をちょうせうする画面を開きます")
-    let coordinator = VolumeSettingCoordinator(navigationController: navigationController, settings: settings, store: store)
-    coordinator.start()
-    self.childCoordinator = coordinator
   }
 }

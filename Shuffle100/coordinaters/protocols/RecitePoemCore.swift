@@ -30,6 +30,7 @@ extension RecitePoemCore {
   }
 
   // 歯車ボタンが押されたときの画面遷移をここでやる！
+  @MainActor
   internal func openReciteSettings() {
     let newNavController = UINavigationController()
 

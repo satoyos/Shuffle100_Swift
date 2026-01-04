@@ -96,6 +96,7 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
     exitGameEscalationgAction?()
   }
   
+  @MainActor
   internal func openSettingScreen() {
     guard let screen = self.screen else { return }
     let newNavController = UINavigationController()

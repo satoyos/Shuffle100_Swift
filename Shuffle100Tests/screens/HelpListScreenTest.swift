@@ -9,33 +9,48 @@
 import XCTest
 @testable import Shuffle100
 
-class HelpListScreenTest: XCTestCase, ApplyListContentConfiguration {
+@MainActor
+class HelpListScreenTest: XCTestCase {
 
-    func test_initialScreen() throws {
-        // given
-        let coordinator = HelpListCoordinator(navigationController: UINavigationController())
-        // given, when
-        coordinator.start()
-        guard let screen = coordinator.screen as? HelpListScreen else {
-            XCTAssert(false, "Failed to fetch HelpListScreen")
-            return
-        }
-        // then
-        XCTAssertNotNil(screen)
-        // when
-        screen.loadViewIfNeeded()
-        // then
-        XCTAssertEqual(screen.title, "ヘルプ")
-        // then
-        let tableView = screen.tableView
-        XCTAssertNotNil(tableView)
-        XCTAssertEqual(tableView?.numberOfSections, 2)
-        XCTAssertEqual(screen.tableView(tableView!, titleForHeaderInSection: 0), "使い方")
-        let firstCell = screen.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
-        let config = listContentConfig(of: firstCell)
-        XCTAssertEqual(config.text, "設定できること")
-        XCTAssertEqual(firstCell.accessoryType, .disclosureIndicator)
+  func test_coordinatorStart_createsActionAttachedHostingController() throws {
+    // given
+    let coordinator = HelpListCoordinator(navigationController: UINavigationController())
 
+    // when
+    coordinator.start()
+
+    // then
+    XCTAssertNotNil(coordinator.screen, "Coordinatorのscreenプロパティが設定されている")
+    guard let hostController = coordinator.screen as? ActionAttachedHostingController<HelpListView> else {
+      XCTFail("screenはActionAttachedHostingController<HelpListView>である必要がある")
+      return
     }
 
+    // ナビゲーション設定の確認
+    // タイトルはSwiftUI側で.navigationTitle()で設定されるため、hostController.navigationItem.titleは設定されない
+    XCTAssertNotNil(hostController.navigationItem.prompt)
+  }
+
+  func test_viewModelInitialization_hasTwoSections() {
+    // given
+    let viewModel = HelpList.ViewModel()
+
+    // then
+    XCTAssertEqual(viewModel.sections.count, 2)
+    XCTAssertEqual(viewModel.sections[0].name, "使い方")
+    XCTAssertEqual(viewModel.sections[1].name, "その他")
+  }
+
+  func test_viewModelFirstSection_hasCorrectFirstItem() {
+    // given
+    let viewModel = HelpList.ViewModel()
+
+    // when
+    let firstDataSource = viewModel.sections[0].dataSources[0]
+
+    // then
+    XCTAssertEqual(firstDataSource.name, "設定できること")
+    XCTAssertEqual(firstDataSource.type, .html)
+    XCTAssertEqual(firstDataSource.fileName, "html/options")
+  }
 }
