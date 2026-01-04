@@ -33,7 +33,10 @@ class ReciteSettingsUITest: XCTestCase {
         // then
         XCTAssert(intervalSettingPage.exists, "「歌と歌の間隔」設定画面に到達")
         XCTAssert(intervalSettingPage.slider.exists)
-        XCTAssertFalse(homePage.exists)
+      // 「いろいろな設定」のModal表示を.fullScreenから.automaticに変更する。
+      //   (SwiftUI化により、.fullScreen縛りの制約がなくなった。
+      // それに伴い、以下のテストは失敗するのでコメントアウト。
+//        XCTAssertFalse(homePage.exists)
         // when
         intervalSettingPage.adjustSliderToLeftLimit()
         // then
@@ -59,7 +62,7 @@ class ReciteSettingsUITest: XCTestCase {
         let kamiShimoIntervalPage = settingsPage.gotoKamiShimoIntervalPage()
         // then
         XCTAssert(kamiShimoIntervalPage.exists, "上の句と下の句の間隔調整ページに到達")
-        XCTAssertFalse(homePage.exists)
+//        XCTAssertFalse(homePage.exists)
         // when
         kamiShimoIntervalPage.adjustSliderToLeftLimit()
         // then

@@ -49,20 +49,11 @@ final class ReciteSettingsCoordinator: Coordinator, SaveSettings {
   private func setUpNavigationController() {
     navigationController.interactivePopGestureRecognizer?.isEnabled = false
     navigationController.navigationBar.barTintColor = StandardColor.barTintColor
-    //
-    // 次の modalPresentationStyle の値は、本来はデフォルト値のまま .automaticにしたい
-    // デフォルトでは、アプリ画面のスクリーンよりも小さなViewControllerがPopする
-    // しかし、2020/03/14の時点では、 ReciteSettingsScreenから呼び出す
-    // IntervalSettingScreenのViewレイアウトを設定する際に、
-    // そのViewControllerのviewの幅をプログラムから取得した時点でお問題が起きる。
-    // `view.frame.size.width`によって取得してみると、実際のサイズ (700台)ではなく
-    // HomeScrennの幅(1024)が取得できてしまう。(iPad Pro 3rd genの場合)
-    // これでは、Subviewに適切なサイズを割り当てることができない。
-    // そのため、モダンなmodal表示を諦め、フルスクリーンのmodal表示を採用する。
-    // 「なぜか`view.frame.size.width`が違う幅の値になってしまう」問題が
-    // 解決したら、ぜひモダンなデフォルト表示にしたい。
-    //
-    navigationController.modalPresentationStyle = .fullScreen
+    
+    // modalPresentationStyleは、UIKit時代は.fullScreenにせざるを得なかったが、
+    // Swift UI化してから、その制約がなくなった。
+//    navigationController.modalPresentationStyle = .fullScreen
+    navigationController.modalPresentationStyle = .automatic
   }
   
   private func openIntervalSettingScreen() {
