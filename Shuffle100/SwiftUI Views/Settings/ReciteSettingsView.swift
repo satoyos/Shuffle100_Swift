@@ -14,7 +14,13 @@ struct ReciteSettingsView: View {
 
   init(viewModel: ReciteSettings.ViewModel) {
     self.viewModel = viewModel
-    _router = StateObject(wrappedValue: ReciteSettingsRouter(settings: viewModel.settings))
+    _router = StateObject(wrappedValue: ReciteSettingsRouter(
+      settings: viewModel.settings,
+      store: viewModel.store,
+      onSettingsChanged: { [weak viewModel] in
+        viewModel?.refreshSections()
+      }
+    ))
   }
 
   var body: some View {
@@ -30,6 +36,17 @@ struct ReciteSettingsView: View {
         modeSection()
       }
       .listStyle(.insetGrouped)
+      .navigationTitle("いろいろな設定")
+      .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button("設定終了") {
+            viewModel.dismissAction?()
+          }
+        }
+      }
+      .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
+      .toolbarBackground(.visible, for: .navigationBar)
       .navigationDestination(for: ReciteSettingsRoute.self) { route in
         router.destination(for: route)
       }

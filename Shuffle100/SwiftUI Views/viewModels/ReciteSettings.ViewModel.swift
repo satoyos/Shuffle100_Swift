@@ -20,6 +20,8 @@ extension ReciteSettings {
     @Published var postMortemEnabled: Bool
     @Published var sections: [ReciteSettingsSection]
 
+    var dismissAction: (() -> Void)?
+
     init(settings: Settings, store: StoreManager) {
       self.settings = settings
       self.store = store

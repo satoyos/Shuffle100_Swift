@@ -107,12 +107,10 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
   }
   
   private func openReciteSettings(from screen: UIViewController, settins: Settings, store: StoreManager) {
-    let newNavController = UINavigationController()
     let coordinator = ReciteSettingsCoordinator(
       settings: settins,
       fromScreen: screen,
-      store: store,
-      navigationController: newNavController)
+      store: store)
     coordinator.start()
     AudioPlayerFactory.shared.setupAudioSession()
     self.childCoordinator = coordinator

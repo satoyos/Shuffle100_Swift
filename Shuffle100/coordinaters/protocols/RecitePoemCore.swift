@@ -32,15 +32,12 @@ extension RecitePoemCore {
   // 歯車ボタンが押されたときの画面遷移をここでやる！
   @MainActor
   internal func openReciteSettings() {
-    let newNavController = UINavigationController()
-
     if let hostController = self.screen {
       // Both SwiftUI and UIKit use the same coordinator
       let coordinator = ReciteSettingsCoordinator(
         settings: settings,
         fromScreen: hostController,
-        store: store,
-        navigationController: newNavController)
+        store: store)
       coordinator.start()
       self.childCoordinator = coordinator
     }

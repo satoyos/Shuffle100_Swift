@@ -25,11 +25,13 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     }
     
     var kamiShimoIntervalCell: XCUIElement {
-        app.cells[A11y.kamiShimoInterval].firstMatch
+//        app.cells[A11y.kamiShimoInterval].firstMatch
+      app.staticTexts[A11y.kamiShimoInterval].firstMatch
     }
     
     var volumeCell: XCUIElement {
-        app.cells[A11y.volume].firstMatch
+//        app.cells[A11y.volume].firstMatch
+      app.staticTexts[A11y.volume].firstMatch
     }
     
     var exitSettingsButton: XCUIElement {
@@ -79,7 +81,8 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     }
     
     func gotoIntervalSettingPage() -> IntervalSettingPage {
-        let cell = waitToHittable(for: intervalCell, timeout: timeOutSec)
+//        let cell = waitToHittable(for: intervalCell, timeout: timeOutSec)
+      let cell = app.staticTexts[A11y.interval].firstMatch
         cell.tap()
         return IntervalSettingPage(app: app)
     }
