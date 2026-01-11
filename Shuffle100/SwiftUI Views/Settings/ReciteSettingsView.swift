@@ -94,6 +94,7 @@ struct ReciteSettingsView: View {
     Section(header: Text("試合のモードあれこれ")) {
       VStack(alignment: .leading, spacing: 4) {
         Toggle("序歌の読み上げ時間を短縮", isOn: viewModel.shortenJokaBinding)
+          .accessibilityIdentifier("shortenJokaModeSwitch")
         Text("序歌は、下の句を1回だけ読み上げます。")
           .font(.caption)
           .foregroundColor(.secondary)
@@ -101,6 +102,7 @@ struct ReciteSettingsView: View {
 
       VStack(alignment: .leading, spacing: 4) {
         Toggle("試合後に感想戦を選択できる", isOn: viewModel.postMortemEnabledBinding)
+          .accessibilityIdentifier("postMortemModeSwitch")
         Text("感想戦では、同じ歌を同じ順序で読み上げます。")
           .font(.caption)
           .foregroundColor(.secondary)

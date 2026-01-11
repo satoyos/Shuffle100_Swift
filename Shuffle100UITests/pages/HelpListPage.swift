@@ -20,7 +20,8 @@ final class HelpListPage: PageObjectable, WaitInUITest {
     }
     
     var evaluateAppCell: XCUIElement {
-        return app.tables.cells.staticTexts[A11y.evaluateApp].firstMatch
+//        return app.tables.cells.staticTexts[A11y.evaluateApp].firstMatch
+      app.staticTexts[A11y.evaluateApp].firstMatch
     }
     
     enum A11y {
@@ -31,7 +32,8 @@ final class HelpListPage: PageObjectable, WaitInUITest {
     @discardableResult
     func canGotoDetailHelp(title: String) -> Self {
         // when
-        app.tables.staticTexts[title].tap()
+//        app.tables.staticTexts[title].tap()
+      app.staticTexts[title].firstMatch.tap()
         // then
         XCTAssert(app.navigationBars[title].exists)
         // when
@@ -43,4 +45,10 @@ final class HelpListPage: PageObjectable, WaitInUITest {
         // and
         return self
     }
+  
+  @discardableResult
+  func scrollUp() -> Self {
+    app.swipeUp()
+    return self
+  }
 }

@@ -15,6 +15,8 @@ extension HelpList {
   class ViewModel: ObservableObject {
     @Published var sections: [HelpListSection]
 
+    var dismissAction: (() -> Void)?
+
     init() {
       self.sections = [
         HelpListSection(name: "使い方", dataSources: [
@@ -26,7 +28,7 @@ extension HelpList {
           HelpListDataSource(name: "「下の句かるたモード」とは？", type: .html, fileName: "html/what_is_hokkaido_mode"),
           HelpListDataSource(name: "「札セット」とその使い方", type: .html, fileName: "html/fuda_set"),
           HelpListDataSource(name: "五色百人一首", type: .html, fileName: "html/five_colors"),
-          HelpListDataSource(name: "暗記時間タイマー", type: .html, fileName: "html/memorize_timer"),
+          HelpListDataSource(name: "「暗記時間タイマー」の使い方", type: .html, fileName: "html/memorize_timer"),
           HelpListDataSource(name: "「感想戦」のサポート", type: .html, fileName: "html/postmortem")
         ]),
         HelpListSection(name: "その他", dataSources: [

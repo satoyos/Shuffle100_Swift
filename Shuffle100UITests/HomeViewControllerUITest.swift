@@ -15,6 +15,7 @@ class HomeScreenUITest: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        app.launchArguments.append("--uitesting")
         app.launchEnvironment = ["IS_TESTING" : "1"]
         app.launch()
     }

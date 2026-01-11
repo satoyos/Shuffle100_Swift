@@ -14,45 +14,36 @@ class GotoRecitePoemScreenUITest: XCTestCase {
 
     override func setUp() {
         continueAfterFailure = false
+        app.launchArguments.append("--uitesting")
         app.launch()
     }
 
-    func test_RecitePoemScreenAppearWhenGameStartCellTapped() {
-        // when
-        let recitePage = homePage.gotoRecitePoemPage()
-        // then
-        XCTAssert(recitePage.exists)
-        if #available(iOS 16.0, *) {
-            // iOS16以降でなぜか失敗するようになったテストを泣く泣くスキップ。
-            // 一日でも早くテストできるようにしたい。
-        } else {
-            XCTAssert(recitePage.normalJokaDescLabel.exists)
-        }
-    }
+  func test_RecitePoemScreenAppearWhenGameStartCellTapped() {
+    // when
+    let recitePage = homePage.gotoRecitePoemPage()
+    // then
+    XCTAssert(recitePage.exists)
+    XCTAssert(recitePage.normalJokaDescLabel.exists)
+  }
     
-    func test_shortenJokaMode() {
-        // when
-        let settingsPage = homePage.gotoReciteSettingPage()
-        // then
-        XCTAssert(settingsPage.exists, "「いろいろな設定」ページに到達")
-        let sjSwitch = waitToHittable(for: settingsPage.shortenJokaModeSwitch, timeout: timeOutSec)
-        // when
-        sjSwitch.tap()
-        settingsPage.exitSettingsButton.tap()
-        // then
-        XCTAssert(homePage.exists)
-        // when
-        let recitePage = homePage.gotoRecitePoemPage()
-        // then
-        XCTAssert(recitePage.exists)
-        if #available(iOS 16.0, *) {
-            // iOS16以降でなぜか失敗するようになったテストを泣く泣くスキップ。
-            // 一日でも早くテストできるようにしたい。
-        } else {
-            XCTAssert(recitePage.shortJokaDescLabel.exists)
-        }
-    }
-    
+  func test_shortenJokaMode() {
+    // when
+    let settingsPage = homePage.gotoReciteSettingPage()
+    // then
+    XCTAssert(settingsPage.exists, "「いろいろな設定」ページに到達")
+    let sjSwitch = waitToHittable(for: settingsPage.shortenJokaModeSwitch, timeout: timeOutSec)
+    // when
+    sjSwitch.tap()
+    settingsPage.exitSettingsButton.tap()
+    // then
+    XCTAssert(homePage.exists)
+    // when
+    let recitePage = homePage.gotoRecitePoemPage()
+    // then
+    XCTAssert(recitePage.exists)
+    XCTAssert(recitePage.shortJokaDescLabel.exists)
+  }
+  
     func test_backToHomeScreenUsingExitButton() {
 
         // given

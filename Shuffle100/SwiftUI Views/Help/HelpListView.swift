@@ -24,8 +24,20 @@ struct HelpListView: View {
         }
       }
       .listStyle(.insetGrouped)
-//      .navigationTitle("ヘルプ")
-//      .navigationBarTitleDisplayMode(.inline)
+      .navigationTitle("ヘルプ")
+      .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button {
+            viewModel.dismissAction?()
+          } label: {
+            Image(systemName: "xmark")
+          }
+          .accessibilityLabel("閉じる")
+        }
+      }
+      .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
+      .toolbarBackground(.visible, for: .navigationBar)
       .navigationDestination(for: HelpRoute.self) { route in
         router.destination(for: route)  // Routerに委譲
       }

@@ -51,7 +51,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
       self?.openReciteSettings(from: homeScreen, settins: settings, store: store)
     }
     homeScreen.helpActioh = { [weak self] in
-      self?.openHelpList()
+      self?.openHelpList(from: homeScreen)
     }
     homeScreen.memorizeTimerAction = { [weak self] in
       self?.openMemorizeTimer()
@@ -116,8 +116,8 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
     self.childCoordinator = coordinator
   }
   
-  private func openHelpList() {
-    let coordinator = HelpListCoordinator(navigationController: navigationController)
+  private func openHelpList(from screen: UIViewController) {
+    let coordinator = HelpListCoordinator(fromScreen: screen)
     coordinator.start()
     self.childCoordinator = coordinator
   }

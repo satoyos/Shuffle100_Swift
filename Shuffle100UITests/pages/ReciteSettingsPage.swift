@@ -21,7 +21,8 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     }
     
     var intervalCell: XCUIElement {
-        return app.cells[A11y.interval].firstMatch
+//        return app.cells[A11y.interval].firstMatch
+      app.staticTexts[A11y.interval].firstMatch
     }
     
     var kamiShimoIntervalCell: XCUIElement {
@@ -59,11 +60,13 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     }
     
     var shortenJokaModeSwitch: XCUIElement {
-        app.cells.switches[A11y.shortenJokaSwitch].firstMatch
+//        app.cells.switches[A11y.shortenJokaSwitch].firstMatch
+      app.switches[A11y.shortenJokaSwitch].switches.firstMatch
     }
     
     var posrMortemSwitch: XCUIElement {
-        app.cells.switches[A11y.portMortemSwitch].firstMatch
+//        app.cells.switches[A11y.portMortemSwitch].firstMatch
+      app.switches[A11y.portMortemSwitch].switches.firstMatch
     }
     
     enum A11y {
