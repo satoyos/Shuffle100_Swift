@@ -78,7 +78,8 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         static let zeroVolume = "0%"
       static let oneVolume = "1%"
         static let maxInterval = "2.00" + "秒"
-        static let exitSetting = "設定終了"
+//        static let exitSetting = "設定終了"
+      static let exitSetting = "閉じる"
         static let shortenJokaSwitch = "shortenJokaModeSwitch"
         static let portMortemSwitch = "postMortemModeSwitch"
     }

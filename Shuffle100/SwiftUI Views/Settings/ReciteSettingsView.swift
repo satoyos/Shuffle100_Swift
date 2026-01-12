@@ -40,9 +40,12 @@ struct ReciteSettingsView: View {
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
-          Button("設定終了") {
+          Button {
             viewModel.dismissAction?()
+          } label: {
+            Image(systemName: "xmark")
           }
+          .accessibilityLabel("閉じる")
         }
       }
       .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
