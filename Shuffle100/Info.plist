@@ -59,6 +59,8 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UIDesignRequiresCompatibility</key>
 	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
