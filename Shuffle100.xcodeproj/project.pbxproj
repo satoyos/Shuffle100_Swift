@@ -231,6 +231,7 @@
 		9287B6012F0A775600779CDB /* ReciteSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B5FD2F0A775600779CDB /* ReciteSettingsRouter.swift */; };
 		9287B6032F0A777F00779CDB /* ReciteSettings.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B6022F0A777F00779CDB /* ReciteSettings.ViewModel.swift */; };
 		9287B6052F0A779F00779CDB /* ReciteSettings.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B6042F0A779F00779CDB /* ReciteSettings.ViewModelTests.swift */; };
+		9287B64A2F1CDB9600779CDB /* AspectRatioContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B6492F1CDB9600779CDB /* AspectRatioContainerViewController.swift */; };
 		9287D67725B3003D003FA476 /* ButtonTypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */; };
 		9287D68425B6FE11003FA476 /* ApplyListContentConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */; };
 		9287D68C25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */; };
@@ -604,6 +605,7 @@
 		9287B5FE2F0A775600779CDB /* ReciteSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsView.swift; sourceTree = "<group>"; };
 		9287B6022F0A777F00779CDB /* ReciteSettings.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettings.ViewModel.swift; sourceTree = "<group>"; };
 		9287B6042F0A779F00779CDB /* ReciteSettings.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettings.ViewModelTests.swift; sourceTree = "<group>"; };
+		9287B6492F1CDB9600779CDB /* AspectRatioContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioContainerViewController.swift; sourceTree = "<group>"; };
 		9287D67625B3003D003FA476 /* ButtonTypeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeDataSource.swift; sourceTree = "<group>"; };
 		9287D68325B6FE11003FA476 /* ApplyListContentConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyListContentConfigProtocol.swift; sourceTree = "<group>"; };
 		9287D68B25BC2387003FA476 /* ConfigureButtonTypeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonTypeCellProtocol.swift; sourceTree = "<group>"; };
@@ -1112,6 +1114,7 @@
 		925CEB51218ED4FF00876E7A /* UIKit views */ = {
 			isa = PBXGroup;
 			children = (
+				9287B6492F1CDB9600779CDB /* AspectRatioContainerViewController.swift */,
 				92E5C5552674D463009A46F5 /* protocols */,
 				92EC120F2A076C340071FA6C /* tableCells */,
 			);
@@ -1793,6 +1796,7 @@
 				9287B5C82F04A83F00779CDB /* KamiShimoDurationSetting.swift in Sources */,
 				9287B5C92F04A83F00779CDB /* TatamiBackground.swift in Sources */,
 				9287B5CA2F04A83F00779CDB /* RecitePoemModifiers.swift in Sources */,
+				9287B64A2F1CDB9600779CDB /* AspectRatioContainerViewController.swift in Sources */,
 				9287B5CB2F04A83F00779CDB /* DigitsButton.swift in Sources */,
 				9287B5CC2F04A83F00779CDB /* FiveColorsView.swift in Sources */,
 				9287B5CD2F04A83F00779CDB /* FudaSetsView.swift in Sources */,

@@ -48,6 +48,11 @@ final class HomeScreen: SettingsAttachedScreen {
     tableView.reloadData()
     super.viewWillAppear(animated)
   }
+
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    tableView.frame = view.bounds
+  }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

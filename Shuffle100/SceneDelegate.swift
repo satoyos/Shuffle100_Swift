@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AppWindow {
     coordinator?.start()
 
     self.window = UIWindow(windowScene: windowScene)
-    window?.rootViewController = navController
+    let container = AspectRatioContainerViewController(child: navController)
+    window?.rootViewController = container
     window?.makeKeyAndVisible()
 
     if CommandLine.arguments.contains("--uitesting") {
