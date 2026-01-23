@@ -59,4 +59,5 @@ class BeginnerModeUITest: XCTestCase, OnWhatsNextScreenTest {
         // then
         XCTAssert(homePage.exists, "トップ画面に戻る")
     }
+  
 }

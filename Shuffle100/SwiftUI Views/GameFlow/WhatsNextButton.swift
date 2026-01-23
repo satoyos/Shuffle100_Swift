@@ -7,35 +7,28 @@
 
 import SwiftUI
 
-struct WhatsNextButton {
+struct WhatsNextButton: View {
   let imageName: String
   let title: String
+  let buttonHeight: CGFloat
   let action: () -> Void
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
-}
 
-extension WhatsNextButton: View {
   var body: some View {
     Button(action: action) {
       HStack(spacing: buttonHeight * 0.5) {
         Image(imageName)
           .resizable()
-          .frame(width: buttonHeight, height: buttonHeight)
+          .aspectRatio(contentMode: .fit)
+          .frame(height: buttonHeight)
         Text(title)
           .font(.title2)
           .foregroundColor(buttonColor)
           .frame(maxWidth: .infinity, alignment: .leading)
       }
-      .frame(width: buttonWidth, height: buttonHeight)
+      .frame(maxWidth: .infinity)
+      .frame(height: buttonHeight)
     }
-  }
-
-  private var buttonWidth: CGFloat {
-    screenSizeStore.screenWidth * 0.8
-  }
-
-  private var buttonHeight: CGFloat {
-    screenSizeStore.screenWidth * 0.1
+    .padding(.horizontal)
   }
 
   private var buttonColor: Color {
@@ -46,9 +39,9 @@ extension WhatsNextButton: View {
 #Preview {
   WhatsNextButton(
     imageName: "torifuda",
-    title: "取り札を見る"
+    title: "取り札を見る",
+    buttonHeight: 60
   ) {
     print("押されたよん")
   }
-  .environmentObject(ScreenSizeStore())
 }

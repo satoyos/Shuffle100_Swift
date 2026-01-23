@@ -46,8 +46,13 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
     var zeroVolumeLabel: XCUIElement {
       let zero = app.cells.staticTexts[A11y.zeroVolume].firstMatch
       // テスト実行時のバージョン等の理由により、"1%"になることも許容する。
-      let one = app.cells.staticTexts[A11y.oneVolume].firstMatch
-      return zero.exists ? zero : one
+      let one = app.cells.staticTexts[A11y.volume1].firstMatch
+      let two = app.cells.staticTexts[A11y.volume2].firstMatch
+      let three = app.cells.staticTexts[A11y.volume3].firstMatch
+      if zero.exists { return zero }
+      if one.exists { return one }
+      if two.exists { return two }
+      return three
     }
     
     var maxIntarvalLabel: XCUIElement {
@@ -76,7 +81,9 @@ final class ReciteSettingsPage: PageObjectable, WaitInUITest, DigitText {
         static let volume = "音量調整"
         static let fullVolume = "100%"
         static let zeroVolume = "0%"
-      static let oneVolume = "1%"
+      static let volume1 = "1%"
+      static let volume2 = "2%"
+      static let volume3 = "3%"
         static let maxInterval = "2.00" + "秒"
 //        static let exitSetting = "設定終了"
       static let exitSetting = "閉じる"

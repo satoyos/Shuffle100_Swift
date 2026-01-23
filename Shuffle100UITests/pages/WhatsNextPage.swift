@@ -21,11 +21,14 @@ final class WhatsNextpage: PageObjectable {
     }
     
     var gearButton: XCUIElement {
-        return app.buttons[A11y.gear].firstMatch
+      // モーダル表示方式を.fullScreenから .automaticに変更した影響で、条件を厳しくする。
+//        return app.buttons[A11y.gear].firstMatch
+      app.navigationBars.buttons[A11y.gear].firstMatch
     }
     
     var exitButton: XCUIElement {
-        return app.buttons[A11y.exit].firstMatch
+      // モーダル表示方式を.fullScreenから .automaticに変更した影響で、条件を厳しくする。
+      app.navigationBars.buttons[A11y.exit].firstMatch
     }
     
     var nextPoemButton: XCUIElement {

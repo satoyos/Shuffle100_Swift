@@ -54,7 +54,6 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
 
     let hostController = ActionAttachedHostingController(
       rootView: whatsNextView
-        .environmentObject(ScreenSizeStore())
     )
 
     self.anotherNavController = UINavigationController(rootViewController: hostController)
@@ -67,7 +66,8 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
   private func setUpNavigationController() {
     anotherNavController.interactivePopGestureRecognizer?.isEnabled = false
     anotherNavController.navigationBar.barTintColor = StandardColor.barTintColor
-    anotherNavController.modalPresentationStyle = .fullScreen
+//    anotherNavController.modalPresentationStyle = .fullScreen
+    anotherNavController.modalPresentationStyle = .automatic
   }
   
   private func showTorifuda() {

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WhatsNextView {
   @ObservedObject private var viewModel: WhatsNextViewModel
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
   @Environment(\.isPresented) private var isPresented
   @Environment(\.dismiss) private var dismiss
 
@@ -36,51 +35,50 @@ struct WhatsNextView {
 extension WhatsNextView: View {
   var body: some View {
     GeometryReader { geometry in
+      let buttonHeight = calculateButtonHeight(geometry: geometry)
+      let buttonSpacing = geometry.size.height * 0.12
+
       ZStack {
         Color(uiColor: StandardColor.backgroundColor)
           .ignoresSafeArea()
 
-        VStack(spacing: 0) {
-          // 取り札を見るボタン (20%の位置)
+        VStack {
           Spacer()
-            .frame(height: geometry.size.height * 0.2 - buttonHeight / 2)
 
-          WhatsNextButton(
-            imageName: "torifuda",
-            title: "取り札を見る",
-            action: {
-              viewModel.input.torifudaButtonTapped.send()
-            }
-          )
-          .accessibilityLabel("torifuda")
+          LazyVGrid(columns: [GridItem(.flexible())], spacing: buttonSpacing) {
+            WhatsNextButton(
+              imageName: "torifuda",
+              title: "取り札を見る",
+              buttonHeight: buttonHeight,
+              action: {
+                viewModel.input.torifudaButtonTapped.send()
+              }
+            )
+            .accessibilityLabel("torifuda")
 
-          // 下の句をもう一度読むボタン (40%の位置)
-          Spacer()
-            .frame(height: geometry.size.height * 0.2)
+            WhatsNextButton(
+              imageName: "refrain",
+              title: "下の句をもう一度読む",
+              buttonHeight: buttonHeight,
+              action: {
+                viewModel.input.refrainButtonTapped.send()
+                dismiss()
+              }
+            )
+            .accessibilityLabel("refrain")
 
-          WhatsNextButton(
-            imageName: "refrain",
-            title: "下の句をもう一度読む",
-            action: {
-              viewModel.input.refrainButtonTapped.send()
-              dismiss()
-            }
-          )
-          .accessibilityLabel("refrain")
-
-          // 次の歌へボタン (60%の位置)
-          Spacer()
-            .frame(height: geometry.size.height * 0.2)
-
-          WhatsNextButton(
-            imageName: "go_next",
-            title: "次の歌へ！",
-            action: {
-              viewModel.input.goNextButtonTapped.send()
-              dismiss()
-            }
-          )
-          .accessibilityLabel("goNext")
+            WhatsNextButton(
+              imageName: "go_next",
+              title: "次の歌へ！",
+              buttonHeight: buttonHeight,
+              action: {
+                viewModel.input.goNextButtonTapped.send()
+                dismiss()
+              }
+            )
+            .accessibilityLabel("goNext")
+          }
+          .padding(.horizontal)
 
           Spacer()
         }
@@ -130,8 +128,8 @@ extension WhatsNextView: View {
     }
   }
 
-  private var buttonHeight: CGFloat {
-    screenSizeStore.screenHeight * 0.1
+  private func calculateButtonHeight(geometry: GeometryProxy) -> CGFloat {
+    min(geometry.size.height * 0.15, geometry.size.width * 0.12)
   }
 
   private var navBarButtonSize: CGFloat {
@@ -142,6 +140,5 @@ extension WhatsNextView: View {
 #Preview {
   NavigationStack {
     WhatsNextView(currentPoem: PoemSupplier.originalPoems[0])
-    .environmentObject(ScreenSizeStore())
   }
 }
