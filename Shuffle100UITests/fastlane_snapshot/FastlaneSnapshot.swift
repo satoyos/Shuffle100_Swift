@@ -8,17 +8,20 @@
 
 import XCTest
 
+@MainActor
 final class FastlaneSnapshot: XCTestCase {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
 
-    @MainActor
     override func setUpWithError() throws {
         super.setUp()
         continueAfterFailure = false
         app.launchArguments.append("--uitesting")
         setupSnapshot(app)
         app.launch()
+
+        // 全テストをlandscapeで実行
+        XCUIDevice.shared.orientation = .landscapeLeft
     }
 
 
@@ -28,7 +31,6 @@ final class FastlaneSnapshot: XCTestCase {
 //        XCTAssert(PoemPickerPage(app: app).exists)
 //        snapshot("0_trial_screenshot")
 //    }
-    @MainActor
     func test_RecitePoemScreenShot() {
         // given
         let recitePage = homePage.gotoRecitePoemPage()
@@ -45,7 +47,6 @@ final class FastlaneSnapshot: XCTestCase {
         snapshot("1_RecitePoemScreen")
     }
 
-    @MainActor
     func test_IntervalScreenShot() {
         // when
         let settingsPage = homePage.gotoReciteSettingPage()
@@ -77,7 +78,6 @@ final class FastlaneSnapshot: XCTestCase {
         snapshot("3_SearchBar")
     }
 
-    @MainActor
     func test_PoemPickerScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -99,7 +99,6 @@ final class FastlaneSnapshot: XCTestCase {
         snapshot("2_PickerScreen")
     }
 
-    @MainActor
     func test_5colorsScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -112,8 +111,32 @@ final class FastlaneSnapshot: XCTestCase {
         // take screenshot
         snapshot("7_FiveColorsScreen")
     }
+  
+  func test_digitsPickerScreenShot() {
+    // when
+    let pickerPage = homePage.goToPoemPickerPage()
+    // then
+    XCTAssert(pickerPage.exists)
+    // when
+    let digitsPage01 = pickerPage.gotoDigitsPickerPage01()
+    // then
+    XCTAssert(digitsPage01.exists)
+    // take screenshot
+    snapshot("8_DigitsPicker01")
+    // when
+    digitsPage01.backToPickerButton.tap()
+    // then
+    XCTAssert(pickerPage.exists)
+    // when
+    let digitsPage10 = pickerPage.gotoDigitsPickerPage10()
+    // then
+    XCTAssert(digitsPage10.exists)
+    // take screenshot
+    snapshot("9_DigitsPicker10")
+    
+  }
+  
 
-    @MainActor
     func test_TorifudaScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -128,7 +151,6 @@ final class FastlaneSnapshot: XCTestCase {
         snapshot("4_TorifudaScreen")
     }
 
-    @MainActor
     func test_MemorizeTimerScreenShot() {
         // when
         let timerPage = homePage.gotoMemorizeTimerPage()

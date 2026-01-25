@@ -25,6 +25,7 @@ only_testing([
   "Shuffle100UITests/FastlaneSnapshot/test_5colorsScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_TorifudaScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_MemorizeTimerScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_digitsPickerScreenShot",
 ])
 
 # The workspace and scheme which contains the UI Tests
