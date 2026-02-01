@@ -26,6 +26,12 @@ only_testing([
   "Shuffle100UITests/FastlaneSnapshot/test_TorifudaScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_MemorizeTimerScreenShot",
   "Shuffle100UITests/FastlaneSnapshot/test_digitsPickerScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_WhatsNextScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_VolumeSettingScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_fudaSetsScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_NgramPickerScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_SelectModeScreenShot",
+  "Shuffle100UITests/FastlaneSnapshot/test_SelectSingerScreenShot",
 ])
 
 # The workspace and scheme which contains the UI Tests

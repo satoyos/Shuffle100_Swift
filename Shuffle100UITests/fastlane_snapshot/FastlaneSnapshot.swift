@@ -12,6 +12,25 @@ import XCTest
 final class FastlaneSnapshot: XCTestCase {
     let app = XCUIApplication()
     lazy var homePage = HomePage(app: app)
+  
+  enum FN { // stands for FileName
+    static let recitePoemScreen =      "01_RecitePoemScreen"
+    static let pickerScreen =          "02_PickerScreen"
+    static let searchBar =             "03_SearchBar"
+    static let torifudaScreen =        "04_TorifudaScreen"
+    static let intervalSettingScreen = "05_IntervalSettingScreen"
+    static let memorizeTimerScreen =   "06_MemorizeTimerScreen"
+    static let fiveColorsScreen =      "07_FiveColorsScreen"
+    static let digitsPicker01 =        "08_DigitsPicker01"
+    static let digitsPicker10 =        "09_DigitsPicker10"
+    static let whatsNextScreen =       "10_WhatsNextScreen"
+    static let reciteSettingsScreen =  "11_ReciteSettingsScreen"
+    static let volumeSettingScreen =   "12_VolumeSettingScreen"
+    static let fudaSetsScreen =        "13_fudaSetsScreen"
+    static let ngramPickerScreen =     "14_NgramPickerScreen"
+    static let selectModeScreen =      "15_SelectModeScreen"
+    static let selectSingerScreen =    "17_SelectSingerScreen"
+  }
 
     override func setUpWithError() throws {
         super.setUp()
@@ -24,13 +43,6 @@ final class FastlaneSnapshot: XCTestCase {
         XCUIDevice.shared.orientation = .landscapeLeft
     }
 
-
-//    func test_ScreenShotExample() throws {
-//        // 「歌を選ぶ」画面に遷移した状態のスクリーンショットを撮ってみる
-//        homePage.goToPoemPickerPage()
-//        XCTAssert(PoemPickerPage(app: app).exists)
-//        snapshot("0_trial_screenshot")
-//    }
     func test_RecitePoemScreenShot() {
         // given
         let recitePage = homePage.gotoRecitePoemPage()
@@ -44,7 +56,7 @@ final class FastlaneSnapshot: XCTestCase {
         // then
         XCTAssert(recitePage.isWaitinfForPlay)
         // take screenshot
-        snapshot("1_RecitePoemScreen")
+        snapshot(FN.recitePoemScreen)
     }
 
     func test_IntervalScreenShot() {
@@ -52,16 +64,17 @@ final class FastlaneSnapshot: XCTestCase {
         let settingsPage = homePage.gotoReciteSettingPage()
         // then
         XCTAssert(settingsPage.exists)
+      // take screenshot
+      snapshot("11_ReciteSettingsScreen")
         // when
         settingsPage.intervalCell.tap()
         // then
         let intervalPage = IntervalSettingPage(app: app)
         XCTAssert(intervalPage.exists)
         // take screenshot
-        snapshot("5_IntervalSettingScreen")
+        snapshot(FN.intervalSettingScreen)
     }
 
-    @MainActor
     func test_SearchScreenShot() {
         // when
         let pickerPage = homePage.goToPoemPickerPage()
@@ -75,7 +88,7 @@ final class FastlaneSnapshot: XCTestCase {
         XCTAssert(pickerPage.cellOf(number: 2).exists)
         XCTAssertFalse(pickerPage.cellOf(number: 1).exists)
         // take screenshot
-        snapshot("3_SearchBar")
+        snapshot(FN.searchBar)
     }
 
     func test_PoemPickerScreenShot() {
@@ -96,7 +109,7 @@ final class FastlaneSnapshot: XCTestCase {
         // then
         XCTAssert(pickerPage.badge(of: 5).exists)
         // take screenshot
-        snapshot("2_PickerScreen")
+        snapshot(FN.pickerScreen)
     }
 
     func test_5colorsScreenShot() {
@@ -109,7 +122,7 @@ final class FastlaneSnapshot: XCTestCase {
         // then
         XCTAssert(fiveColorsPage.exists)
         // take screenshot
-        snapshot("7_FiveColorsScreen")
+        snapshot(FN.fiveColorsScreen)
     }
   
   func test_digitsPickerScreenShot() {
@@ -122,7 +135,7 @@ final class FastlaneSnapshot: XCTestCase {
     // then
     XCTAssert(digitsPage01.exists)
     // take screenshot
-    snapshot("8_DigitsPicker01")
+    snapshot(FN.digitsPicker01)
     // when
     digitsPage01.backToPickerButton.tap()
     // then
@@ -132,7 +145,7 @@ final class FastlaneSnapshot: XCTestCase {
     // then
     XCTAssert(digitsPage10.exists)
     // take screenshot
-    snapshot("9_DigitsPicker10")
+    snapshot(FN.digitsPicker10)
     
   }
   
@@ -148,7 +161,7 @@ final class FastlaneSnapshot: XCTestCase {
         // then
         XCTAssert(TorifudaPage(app: app).exists)
         // take_screenshot
-        snapshot("4_TorifudaScreen")
+        snapshot("04_TorifudaScreen")
     }
 
     func test_MemorizeTimerScreenShot() {
@@ -157,6 +170,75 @@ final class FastlaneSnapshot: XCTestCase {
         // then
         XCTAssert(timerPage.exists)
         // take screenshot
-        snapshot("6_MemorizeTimerScreen")
+        snapshot(FN.memorizeTimerScreen)
     }
+  
+  func test_WhatsNextScreenShot() {
+    // when
+    let whatsNextPage = homePage.skipToWhatsNextPage(mode: .hokkaido)
+    // then
+    XCTAssert(whatsNextPage.exists)
+    // take screenshot
+    snapshot(FN.whatsNextScreen)
+  }
+
+  func test_VolumeSettingScreenShot() {
+    // given, when
+    let settingsPage = homePage.gotoReciteSettingPage()
+    // then
+    XCTAssert(settingsPage.fullVolumeLabel.exists)
+    // when
+    let volumePage = settingsPage.gotoVolumePage()
+    // then
+    XCTAssert(volumePage.exists, "音量調整のページに到達")
+    // take screenshot
+    snapshot(FN.volumeSettingScreen)
+  }
+  
+  func test_fudaSetsScreenShot() {
+    let set93name = "一字決まり以外"
+    let set2maiFudaName = "2枚札セット"
+        
+    // when
+    let pickerPage = homePage.goToPoemPickerPage()
+    pickerPage
+      .add93FudaSetAsNewOne(setName: set93name)
+      .add2maiFudaSetAsNewOne(setName: set2maiFudaName)
+    let fudaSetPage = pickerPage.gotoFudaSetPage()
+    // then
+    XCTAssert(fudaSetPage.exists)
+    // take screenshots
+    snapshot(FN.fudaSetsScreen)
+  }
+  
+  func test_NgramPickerScreenShot() {
+    // when
+    let pickerPage = homePage.goToPoemPickerPage()
+    // then
+    XCTAssert(pickerPage.exists)
+    // when
+    let ngramPickerPage = pickerPage.gotoNgramPickerPage()
+    // then
+    XCTAssert(ngramPickerPage.exists)
+    // take screenshot
+    snapshot(FN.ngramPickerScreen)
+  }
+  
+  func test_SelectModeScreenShot() {
+    // when
+    let selectModePage = homePage.gotoSelectModePage()
+    // then
+    XCTAssert(selectModePage.exists)
+    // take screen shot
+    snapshot(FN.selectModeScreen)
+  }
+  
+  func test_SelectSingerScreenShot() {
+    // when
+    let selectSingerPage = homePage.gotoSelectSingerPage()
+    // then
+    XCTAssert(selectSingerPage.exists)
+    // take screenshot
+    snapshot(FN.selectSingerScreen)
+  }
 }
