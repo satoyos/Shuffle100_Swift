@@ -14,9 +14,7 @@ struct MinSec {
   let digitSize: CGFloat
   let unitSize: CGFloat
   @ObservedObject private var viewModel: ViewModel
-  
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
-  
+
   init(digitSize: CGFloat, viewModel: ViewModel = .init(startTime: 60, interval: 1)) {
     self.digitSize = digitSize
     self.unitSize = digitSize / 4
@@ -47,5 +45,4 @@ extension MinSec: View {
 
 #Preview {
   MinSec(digitSize: 130)
-    .environmentObject(ScreenSizeStore())
 }

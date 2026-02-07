@@ -9,8 +9,7 @@ import SwiftUI
 
 struct MemorizeTimer {
   @ObservedObject private var viewModel: ViewModel
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
-  
+
   init(viewModel: ViewModel) {
     self.viewModel = viewModel
   }
@@ -18,12 +17,15 @@ struct MemorizeTimer {
 
 extension MemorizeTimer: View {
   var body: some View {
-    VStack {
-      MinSec(digitSize: digitSize, viewModel: viewModel.timeViewModel)
-      RecitePlayButton(
-        diameter: buttonDiameter,
-        viewModel: viewModel.buttonViewModel)
-      .disabled(viewModel.isButtonDisabled)
+    GeometryReader { geometry in
+      VStack {
+        MinSec(digitSize: digitSize(for: geometry), viewModel: viewModel.timeViewModel)
+        RecitePlayButton(
+          diameter: buttonDiameter(for: geometry),
+          viewModel: viewModel.buttonViewModel)
+        .disabled(viewModel.isButtonDisabled)
+      }
+      .frame(width: geometry.size.width, height: geometry.size.height)
     }
     .onAppear{
       UIApplication.shared.isIdleTimerDisabled = true
@@ -32,13 +34,13 @@ extension MemorizeTimer: View {
       UIApplication.shared.isIdleTimerDisabled = false
     }
   }
-  
-  private var buttonDiameter: Double {
-    screenSizeStore.screenWidth * 120.0 / 400.0
+
+  private func buttonDiameter(for geometry: GeometryProxy) -> Double {
+    geometry.size.width * 120.0 / 400.0
   }
-  
-  private var digitSize: CGFloat {
-    screenSizeStore.screenWidth * 100.0 / 500.0
+
+  private func digitSize(for geometry: GeometryProxy) -> CGFloat {
+    geometry.size.width * 100.0 / 500.0
   }
 }
 
@@ -46,5 +48,4 @@ extension MemorizeTimer: View {
   MemorizeTimer(
     viewModel: .init(totalSec: 15 * 60,
                      completion: {print("** All finished **")}))
-  .environmentObject(ScreenSizeStore())
 }

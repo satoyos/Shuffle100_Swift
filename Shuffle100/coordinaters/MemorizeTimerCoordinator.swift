@@ -25,7 +25,6 @@ final class MemorizeTimerCoordinator: Coordinator, HandleNavigator {
       completion: { [weak self] in
         self?.navigationController.popViewController(animated: true)
       }))
-      .environmentObject(ScreenSizeStore())
     let hostController = UIHostingController(rootView: memorizeTimerView)
     hostController.navigationItem.prompt = navigationItemPrompt
     hostController.title = "暗記時間タイマー"
