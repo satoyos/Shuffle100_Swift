@@ -9,9 +9,7 @@ import SwiftUI
 
 struct NgramButton {
   @ObservedObject var viewModel: NgramButtonViewModel
-  
   let action: () -> Void
-  @EnvironmentObject var screensizeStore: ScreenSizeStore
 }
 
 extension NgramButton: View {
@@ -36,5 +34,4 @@ extension NgramButton: View {
   NgramButton(viewModel: .init(firstChar: .u)) {
     print("押されました！")
   }
-    .environmentObject(ScreenSizeStore())
 }

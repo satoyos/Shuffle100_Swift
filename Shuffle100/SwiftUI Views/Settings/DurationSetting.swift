@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DurationSetting {
   @ObservedObject private var viewModel: DurationSettingViewModel
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
-  
+
   init(viewModel: DurationSettingViewModel) {
     self.viewModel = viewModel
   }
@@ -18,26 +17,28 @@ struct DurationSetting {
 
 extension DurationSetting: View {
   var body: some View {
-    VStack(spacing: digitSize / 4) {
-      Sec2F(digitSize: 100, viewModel: viewModel.timeViewModel)
-      Slider(value: viewModel.$binding.startTime, in: 0.5 ... 2.0, step: 0.02 )
-        .accessibilityIdentifier("slider")
-        .padding(.horizontal)
+    GeometryReader { geometry in
+      VStack(spacing: digitSize(for: geometry) / 4) {
+        Sec2F(digitSize: 100, viewModel: viewModel.timeViewModel)
+        Slider(value: viewModel.$binding.startTime, in: 0.5 ... 2.0, step: 0.02 )
+          .accessibilityIdentifier("slider")
+          .padding(.horizontal)
+          .disabled(viewModel.output.isUserActionDisabled)
+        Button("試しに聞いてみる") {
+          viewModel.input.startTrialCountDownRequest.send()
+        }
+        .buttonStyle(.borderedProminent)
+        .foregroundStyle(Color.white)
+        .padding(.top)
         .disabled(viewModel.output.isUserActionDisabled)
-      Button("試しに聞いてみる") {
-        viewModel.input.startTrialCountDownRequest.send()
       }
-      .buttonStyle(.borderedProminent)
-      .foregroundStyle(Color.white)
-      .padding(.top)
-      .disabled(viewModel.output.isUserActionDisabled)
+      .frame(width: geometry.size.width, height: geometry.size.height)
     }
   }
-  
-  private var digitSize: Double {
-    screenSizeStore.screenWidth / 5.0
+
+  private func digitSize(for geometry: GeometryProxy) -> Double {
+    geometry.size.width / 5.0
   }
-  
 }
 
 #Preview {
@@ -45,5 +46,4 @@ extension DurationSetting: View {
     durationType: .twoPoems,
     startTime: 1.1,
     singer: Singers.defaultSinger))
-  .environmentObject(ScreenSizeStore())
 }

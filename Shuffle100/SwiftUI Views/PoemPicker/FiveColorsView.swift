@@ -12,9 +12,8 @@ struct FiveColorsView {
   @State private var showActionSheet = false
   @State private var selectedColor: FiveColors = .blue
   @ObservedObject private var viewModel: FiveColorsViewModel
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
   @Environment(\.isPresented) private var isPresented
-  
+
   init(settings: Settings) {
     self.settings = settings
     self.viewModel = .init(state100: settings.state100)
@@ -23,18 +22,21 @@ struct FiveColorsView {
 
 extension FiveColorsView: View {
   var body: some View {
-    NavigationStack {
-      Spacer()
-      List {
-        ForEach(FiveColors.all) { color in
-          FiveColorButton(viewModel: color.buttonViewModel) {
-            showActionSheet = true
-            selectedColor = color
+    GeometryReader { geometry in
+      NavigationStack {
+        Spacer()
+        List {
+          ForEach(FiveColors.all) { color in
+            FiveColorButton(
+              viewModel: color.buttonViewModel,
+              containerHeight: geometry.size.height) {
+              showActionSheet = true
+              selectedColor = color
+            }
+            .actionSheet(isPresented: $showActionSheet,
+                         content: fiveColorsActionSheet)
           }
-          .actionSheet(isPresented: $showActionSheet,
-                       content: fiveColorsActionSheet)
         }
-      }
       //
       // 本当は、以下のように toolbarを使って実装したい。
       //
@@ -50,13 +52,14 @@ extension FiveColorsView: View {
       // ただ、Shuffle100がまだUIKitからこのViewを呼び出しているので、
       //  表示の整合性のために、次のように saveAreaInsetを使う
       //
-      .safeAreaInset(edge: .top) {
-        HStack {
-          Spacer()
-          BadgeView(number: viewModel.output.state100.selectedNum)
-            .padding()
+        .safeAreaInset(edge: .top) {
+          HStack {
+            Spacer()
+            BadgeView(number: viewModel.output.state100.selectedNum)
+              .padding()
+          }
+          .frame(height: 30)
         }
-        .frame(height: 30)
       }
     }
     .onChange(of: isPresented) {
@@ -89,5 +92,4 @@ extension FiveColorsView: View {
 
 #Preview {
   FiveColorsView(settings: Settings())
-    .environmentObject(ScreenSizeStore())
 }

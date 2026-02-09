@@ -23,9 +23,8 @@ private let fudaFontSizeBase: CGFloat = 11
 
 struct Torifuda: View {
   let viewModel: ViewModel
-  
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
-  
+  let containerSize: CGSize
+
   var body: some View {
     let height = fudaHeight
     let ratioOnScreen = height / fudaHeightMeasured
@@ -36,7 +35,7 @@ struct Torifuda: View {
     let font = Font.custom("HiraMinProN-W6", fixedSize: fudaFontSizeBase * ratioOnScreen)
     let charWidth = widthInsideOfGreenFrame / 3
     let charHeight = heightInsideOfGreenFrame / 5
-    
+
     ZStack {
       Image(decorative: "washi_darkgreen")
         .resizable()
@@ -59,26 +58,25 @@ struct Torifuda: View {
             }
           }
         }
-      }      
+      }
     }.accessibilityIdentifier("fudaView")
   }
-  
+
   private var fudaHeight: CGFloat {
-    [heightByScreenWidth, heightByScreenHeight].min() ?? 300
+    [heightByContainerWidth, heightByContainerHeight].min() ?? 300
   }
-  
-  private var heightByScreenHeight: CGFloat {
-    screenSizeStore.screenHeight * occupyRatio
+
+  private var heightByContainerHeight: CGFloat {
+    containerSize.height * occupyRatio
   }
-  
-  private var heightByScreenWidth: CGFloat {
-    screenSizeStore.screenWidth
-    / fudaAspectRatio
-    * occupyRatio
+
+  private var heightByContainerWidth: CGFloat {
+    containerSize.width / fudaAspectRatio * occupyRatio
   }
 }
 
 #Preview {
-  Torifuda(viewModel: .init(shimo: "かたふくまてのつきをみしかな"))
-    .environmentObject(ScreenSizeStore())
+  Torifuda(
+    viewModel: .init(shimo: "かたふくまてのつきをみしかな"),
+    containerSize: UIScreen.main.bounds.size)
 }

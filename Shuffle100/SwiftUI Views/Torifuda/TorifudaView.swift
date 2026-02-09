@@ -11,31 +11,24 @@ import SwiftUI
 struct TorifudaView {
   let shimoStr: String
   let fullLiner: [String]
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
 }
- 
+
 extension TorifudaView: View {
   var body: some View {
-    GeometryReader { rootViewGeometry in
+    GeometryReader { geometry in
       ZStack {
         TatamiBackground()
         VStack {
           Spacer()
-          Torifuda(viewModel: .init(shimo: shimoStr))
+          Torifuda(
+            viewModel: .init(shimo: shimoStr),
+            containerSize: geometry.size)
           Spacer()
-          FullLiner(viewModel: .init(fullLiner: fullLiner))
+          FullLiner(
+            viewModel: .init(fullLiner: fullLiner),
+            containerHeight: geometry.size.height)
           Spacer()
         }
-      }
-      .onAppear{
-        screenSizeStore.update(
-          width: rootViewGeometry.size.width,
-          height: rootViewGeometry.size.height)
-      }
-      .onChange(of: rootViewGeometry.size) {
-        screenSizeStore.update(
-          width: rootViewGeometry.size.width,
-          height: rootViewGeometry.size.height)
       }
     }
   }
@@ -45,7 +38,5 @@ extension TorifudaView: View {
 #Preview {
   TorifudaView(
     shimoStr: "かたふくまてのつきをみしかな",
-    fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]
-  )
-  .environmentObject(ScreenSizeStore())
+    fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"])
 }

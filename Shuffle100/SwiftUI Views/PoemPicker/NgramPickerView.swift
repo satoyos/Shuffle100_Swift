@@ -10,9 +10,8 @@ import SwiftUI
 struct NgramPickerView {
   let settings: Settings
   @ObservedObject private var viewModel: NgramPickerViewModel
-  @EnvironmentObject var screenSizeStore: ScreenSizeStore
   @Environment(\.isPresented) private var isPresented
-  
+
   init(settings: Settings) {
     self.settings = settings
     self.viewModel = .init(state100: settings.state100)
@@ -70,5 +69,4 @@ extension NgramPickerView: View {
 
 #Preview {
   NgramPickerView(settings: Settings())
-    .environmentObject(ScreenSizeStore())
 }

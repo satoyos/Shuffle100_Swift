@@ -14,15 +14,15 @@ fileprivate let fontName = "HiraMinProN-W6"
 
 struct FullLiner {
   let viewModel: ViewModel
-  @EnvironmentObject private var screenSizeStore: ScreenSizeStore
+  let containerHeight: CGFloat
 }
 
 extension FullLiner: View {
   var body: some View {
-    let power = screenSizeStore.screenHeight / minimumScreenHeight
+    let power = containerHeight / minimumScreenHeight
     let fontSize = fontSizeBase * power
     let font = Font.custom(fontName, fixedSize: fontSize)
-    
+
     VStack {
       Text(viewModel.text)
         .font(font)
@@ -35,6 +35,7 @@ extension FullLiner: View {
 }
 
 #Preview {
-  FullLiner(viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]))
-    .environmentObject(ScreenSizeStore())
+  FullLiner(
+    viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]),
+    containerHeight: UIScreen.main.bounds.height)
 }
