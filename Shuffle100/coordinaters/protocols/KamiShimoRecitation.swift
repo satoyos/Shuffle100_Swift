@@ -146,8 +146,16 @@ extension KamiShimoRecitation where Self: Coordinator {
       poemSupplier.stepIntoShimo()
 
       if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
-        baseViewModel.playerFinishedAction = { [weak self] in
-          self?.reciteShimoFinished(number: number, counter: counter)
+        if let whatsNextSupport = self as? any WhatsNextSupport {
+          // 初心者モード・北海道モード: 下の句再生後に「次はどうする？」画面を表示
+          baseViewModel.playerFinishedAction = { [weak whatsNextSupport] in
+            whatsNextSupport?.openWhatsNextScreen()
+          }
+        } else {
+          // 通常モード: 下の句再生後に次の歌へ直接進む
+          baseViewModel.playerFinishedAction = { [weak self] in
+            self?.reciteShimoFinished(number: number, counter: counter)
+          }
         }
         baseViewModel.goBackToPrevPoem(number: number, at: counter, total: poemSupplier.size)
       } else {

@@ -149,6 +149,7 @@
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */; };
 		C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */; };
+		C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */; };
 		92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */; };
 		9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */; };
 		927927F72EF15FB800831EC8 /* SelectSingerView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */; };
@@ -531,6 +532,7 @@
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeCoordinatorTest.swift; sourceTree = "<group>"; };
+		C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoThrough100PoemsUITest.swift; sourceTree = "<group>"; };
 		9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeomRecitedUITest.swift; sourceTree = "<group>"; };
 		927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerView.ViewModel.swift; sourceTree = "<group>"; };
@@ -1143,6 +1145,7 @@
 		92737DD623856754007B5FAD /* coodinators */ = {
 			isa = PBXGroup;
 			children = (
+				C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */,
 				C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */,
 				92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */,
 			);
@@ -1916,6 +1919,7 @@
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */,
+				C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */,
 				922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */,
 				922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,

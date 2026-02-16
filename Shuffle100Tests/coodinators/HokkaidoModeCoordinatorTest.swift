@@ -94,6 +94,51 @@ class HokkaidoModeCoordinatorTest: XCTestCase {
     )
   }
 
+  // MARK: - rewind後の「次はどうする？」画面表示テスト
+
+  /// rewindで前の歌に戻った後、下の句の再生完了時に
+  /// 「次はどうする？」画面が表示される（次の歌に直接進まない）ことを確認
+  func test_rewindToPreviousShimo_playerFinishedAction_doesNotAdvanceToNextPoem() {
+    // given: 2首目まで進む
+    let coordinator = makeCoordinator()
+    let supplier = coordinator.poemSupplier
+    coordinator.start()
+
+    // 序歌 → 1首目
+    coordinator.jokaFinished()
+    let firstNumber = supplier.currentPoem!.number
+
+    // 1首目 → 2首目
+    coordinator.reciteShimoFinished(number: firstNumber, counter: 1)
+
+    XCTAssertEqual(supplier.currentIndex, 2, "2首目まで進んでいる")
+    XCTAssertEqual(supplier.side, .shimo, "北海道モードなので.shimo")
+
+    // when: rewindボタン → 1首目に戻る
+    coordinator.rewindToPrevious()
+
+    XCTAssertEqual(supplier.currentIndex, 1, "1首目に戻っている")
+    XCTAssertEqual(supplier.side, .shimo, "下の句に戻っている")
+
+    // rewind後、音声再生完了時のplayerFinishedActionを検証
+    guard let baseViewModel = coordinator.getCurrentRecitePoemBaseViewModel() else {
+      XCTFail("RecitePoemBaseViewModelが取得できない")
+      return
+    }
+
+    let indexBeforeAction = supplier.currentIndex
+
+    // playerFinishedActionを手動でトリガー（音声再生完了をシミュレート）
+    baseViewModel.playerFinishedAction?()
+
+    // then: openWhatsNextScreen()が呼ばれた場合、currentIndexは変わらない
+    //       reciteShimoFinished()が呼ばれた場合、drawNextPoem()でcurrentIndexが増える
+    XCTAssertEqual(
+      supplier.currentIndex, indexBeforeAction,
+      "rewind後の下の句再生完了時、北海道モードではcurrentIndexが変わらないべき（openWhatsNextScreenが呼ばれるべき）。currentIndexが増えた場合、reciteShimoFinished()が誤って呼ばれている。"
+    )
+  }
+
   /// 北海道モードで1首目の状態でrewindしたらホーム画面に戻る
   /// （これ以上戻る歌がないため）
   func test_rewindOnFirstPoem_goesBackHome() {
