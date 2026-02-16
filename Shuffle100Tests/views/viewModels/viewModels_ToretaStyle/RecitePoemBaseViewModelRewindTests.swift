@@ -2,7 +2,7 @@
 //  RecitePoemBaseViewModelRewindTests.swift
 //  Shuffle100Tests
 //
-//  Created by Claude on 2026/02/16.
+//  Created by Yoshifumi Sato on 2026/02/16.
 //
 //  巻き戻し（rewind）時に正しい音声ファイルがロードされることを検証するテスト。
 //  現状のバグ: slideBackToKami / goBackToPrevPoem 呼び出し後、
