@@ -48,11 +48,11 @@ final class RecitePoemBaseViewModel: ViewModelObject {
 
   internal var cancellables: Set<AnyCancellable> = []
 
-  init(settings: Settings) {
+  init(settings: Settings, audioPlayerFactory: AudioPlayerFactoryProtocol = AudioPlayerFactory.shared) {
     let input = Input()
     let binding = Binding()
     let output = Output()
-    let recitePoemViewModel = RecitePoemViewModel(settings: settings)
+    let recitePoemViewModel: RecitePoemViewModel = RecitePoemViewModel(settings: settings, audioPlayerFactory: audioPlayerFactory)
 
     self.settings = settings
     self.input = input
@@ -165,7 +165,8 @@ final class RecitePoemBaseViewModel: ViewModelObject {
       input.slideAnimation.send(-screenWidth)
     }
 
-    // 音声の自動再生は行わず、ユーザーがPlayButtonを押すのを待つ
+    // 正しい上の句の音声をロード（自動再生はせず、ユーザーがPlayButtonを押すのを待つ）
+    recitePoemViewModel.prepareNumberedPoem(number: number, side: .kami, count: counter)
   }
 
   func goBackToPrevPoem(number: Int, at counter: Int, total: Int) {
@@ -175,7 +176,8 @@ final class RecitePoemBaseViewModel: ViewModelObject {
     // 逆方向フリップアニメーションをトリガー
     input.flipAnimationReverse.send()
 
-    // 音声の自動再生は行わず、ユーザーがPlayButtonを押すのを待つ
+    // 正しい下の句の音声をロード（自動再生はせず、ユーザーがPlayButtonを押すのを待つ）
+    recitePoemViewModel.prepareNumberedPoem(number: number, side: .shimo, count: counter)
   }
 
   func stepIntoGameEnd() {

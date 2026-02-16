@@ -40,6 +40,20 @@ extension RecitePoemViewModel {
     startPlayingCurrentPlayer(number: number, side: side, count: count)
   }
 
+  /// 音声ファイルをロードしてcurrentPlayerにセットするが、再生は開始しない。
+  /// rewind時に正しい音声を準備するために使用する。
+  func prepareNumberedPoem(number: Int, side: Side, count: Int? = nil) {
+    currentPlayer = audioPlayerFactory.preparePlayer(number: number, side: side, folder: singer.path)
+    guard currentPlayer != nil else {
+      print("音声ファイルが見つかりません。歌番号[\(number)], フォルダ[\(singer.path)]")
+      return
+    }
+
+    hideJokaDescLabels()
+    prepareCurrentPlayer()
+    showAsWaitingForPlay()
+  }
+
   // MARK: - Internal Audio Control
 
   internal func startPlayingCurrentPlayer(number: Int? = nil, side: Side? = nil, count: Int? = nil) {
