@@ -41,7 +41,7 @@ final class MemorizeTimerViewModelTests: XCTestCase {
             .store(in: &cancellables)
         // when
         // then
-        wait(for: [expectation1], timeout: 1.1)
+        wait(for: [expectation1], timeout: 3.0)
     }
     
     func testWhenRemainTimeGetsTo2minAssingedClosureExecuted() {

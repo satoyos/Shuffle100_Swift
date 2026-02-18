@@ -2,7 +2,7 @@
 //  BeginnerModeCoordinatorTest.swift
 //  Shuffle100Tests
 //
-//  Created by Claude on 2026/02/16.
+//  Created by Yoshifumi Sato on 2026/02/16.
 //
 //  初心者モードでrewind（巻き戻し）後に下の句が読み上げられた際、
 //  「次はどうする？」画面が表示されるべきことを検証するテスト。

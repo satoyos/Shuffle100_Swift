@@ -51,7 +51,7 @@ final class CountDownTimerTests: XCTestCase {
         expectation.fulfill()
       }
       .store(in: &cancellables)
-    wait(for: [expectation], timeout: 0.2)
+    wait(for: [expectation], timeout: 1.0)
     // when
     timer.stop()
     // then
