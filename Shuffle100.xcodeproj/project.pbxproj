@@ -148,8 +148,6 @@
 		9271947C284F6FBE008DFB28 /* Poem100Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271947B284F6FBE008DFB28 /* Poem100Test.swift */; };
 		92737DD32380312F007B5FAD /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD22380312F007B5FAD /* StandardColor.swift */; };
 		92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */; };
-		C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */; };
-		C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */; };
 		92737E44238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */; };
 		9278808523C0D89F00E86884 /* AllPeomRecitedUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */; };
 		927927F72EF15FB800831EC8 /* SelectSingerView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */; };
@@ -376,6 +374,8 @@
 		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */; };
 		92LS00032143BB0B000F5E60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92LS00012143BB0A000F5E60 /* LaunchScreen.storyboard */; };
+		C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */; };
+		C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */; };
 		C166094985ED40249EC5D8EE /* DigitsButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -531,8 +531,6 @@
 		9271947B284F6FBE008DFB28 /* Poem100Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem100Test.swift; sourceTree = "<group>"; };
 		92737DD22380312F007B5FAD /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeCoordinatorTest.swift; sourceTree = "<group>"; };
-		C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeCoordinatorTest.swift; sourceTree = "<group>"; };
-		C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinatorTest.swift; sourceTree = "<group>"; };
 		92737E43238E9EDA007B5FAD /* GoThrough100PoemsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoThrough100PoemsUITest.swift; sourceTree = "<group>"; };
 		9278808423C0D89F00E86884 /* AllPeomRecitedUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeomRecitedUITest.swift; sourceTree = "<group>"; };
 		927927F62EF15FB800831EC8 /* SelectSingerView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingerView.ViewModel.swift; sourceTree = "<group>"; };
@@ -744,6 +742,8 @@
 		92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerUITest.swift; sourceTree = "<group>"; };
 		92LS00012143BB0A000F5E60 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButtonViewModel.swift; sourceTree = "<group>"; };
+		C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeCoordinatorTest.swift; sourceTree = "<group>"; };
+		C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2205,14 +2205,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 92;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.6;
+				MARKETING_VERSION = 8.0.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2226,14 +2226,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 92;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.6;
+				MARKETING_VERSION = 8.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2401,14 +2401,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 92;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.6;
+				MARKETING_VERSION = 8.0.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
