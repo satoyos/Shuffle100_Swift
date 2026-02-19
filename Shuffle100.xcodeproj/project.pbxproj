@@ -247,6 +247,7 @@
 		92962D2E2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D2B2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift */; };
 		92962D2F2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D2C2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift */; };
 		92962D302E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D2D2E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift */; };
+		92962D322E99F34500920CE2 /* RecitePoemBaseViewModelRewindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92962D312E99F34500920CE2 /* RecitePoemBaseViewModelRewindTests.swift */; };
 		9297F62522EC7A76001E2BEB /* AudioPlayerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */; };
 		9297F62722EC7AFA001E2BEB /* AudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */; };
 		9298116B2EA3352400E50358 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298116A2EA3352400E50358 /* SceneDelegate.swift */; };
@@ -374,6 +375,8 @@
 		92FFBF53245FB53A004D7F79 /* washi_darkgreen 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92FFBF4D245FB53A004D7F79 /* washi_darkgreen 001.jpg */; };
 		92FFBF612462F521004D7F79 /* NgramPickerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */; };
 		92LS00032143BB0B000F5E60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92LS00012143BB0A000F5E60 /* LaunchScreen.storyboard */; };
+		C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */; };
+		C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */; };
 		C166094985ED40249EC5D8EE /* DigitsButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -621,6 +624,7 @@
 		92962D2B2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelActionTests.swift; sourceTree = "<group>"; };
 		92962D2C2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelAnimationTests.swift; sourceTree = "<group>"; };
 		92962D2D2E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelTransitionTests.swift; sourceTree = "<group>"; };
+		92962D312E99F34500920CE2 /* RecitePoemBaseViewModelRewindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelRewindTests.swift; sourceTree = "<group>"; };
 		9297F62422EC7A76001E2BEB /* AudioPlayerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactoryTests.swift; sourceTree = "<group>"; };
 		9297F62622EC7AFA001E2BEB /* AudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFactory.swift; sourceTree = "<group>"; };
 		9298116A2EA3352400E50358 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -740,6 +744,8 @@
 		92FFBF602462F521004D7F79 /* NgramPickerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NgramPickerUITest.swift; sourceTree = "<group>"; };
 		92LS00012143BB0A000F5E60 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B05120B54B784CE78CA24482 /* DigitsButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitsButtonViewModel.swift; sourceTree = "<group>"; };
+		C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoModeCoordinatorTest.swift; sourceTree = "<group>"; };
+		C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerModeCoordinatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -842,6 +848,7 @@
 				92F4712F2E9664760086B1BE /* RecitePoemViewModelEventHandlerTests.swift */,
 				92F4712C2E9662870086B1BE /* RecitePoemBaseViewModelTests.swift */,
 				92962D2D2E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift */,
+				92962D312E99F34500920CE2 /* RecitePoemBaseViewModelRewindTests.swift */,
 				92B654F82E82482300F60B0C /* RecitePoemViewModelTests.swift */,
 				92BC1F722E87E1F600187B88 /* RecitePoemViewModelJokaTests.swift */,
 				92BC1F732E87E1F600187B88 /* RecitePoemViewModelNavigationTests.swift */,
@@ -1141,6 +1148,8 @@
 		92737DD623856754007B5FAD /* coodinators */ = {
 			isa = PBXGroup;
 			children = (
+				C0B1B00026F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift */,
+				C0A1B00026F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift */,
 				92737DD72385677F007B5FAD /* NormalModeCoordinatorTest.swift */,
 			);
 			path = coodinators;
@@ -1913,6 +1922,8 @@
 				92A5B6B42DC4D4CF00DEFA69 /* FiveColorButtonViewModelTests.swift in Sources */,
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
+				C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */,
+				C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */,
 				922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */,
 				922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
@@ -1920,6 +1931,7 @@
 				92962D2E2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift in Sources */,
 				92962D2F2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift in Sources */,
 				92962D302E99F34500920CE2 /* RecitePoemBaseViewModelTransitionTests.swift in Sources */,
+				92962D322E99F34500920CE2 /* RecitePoemBaseViewModelRewindTests.swift in Sources */,
 				928BBC632E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift in Sources */,
 				928BBC642E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift in Sources */,
 				926DD64A2C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift in Sources */,
@@ -2197,14 +2209,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.6;
+				MARKETING_VERSION = 8.0.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2218,14 +2230,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.6;
+				MARKETING_VERSION = 8.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2393,14 +2405,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.6;
+				MARKETING_VERSION = 8.0.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";

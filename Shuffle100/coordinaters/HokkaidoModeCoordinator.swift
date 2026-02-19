@@ -79,6 +79,7 @@ final class HokkaidoModeCoordinator: Coordinator, PoemRecitation, WhatsNextSuppo
   func jokaFinished() {
     assert(true, "+++ 北海道モードでの序歌の読み上げ終了!!")
     guard let firstPoem = poemSupplier.drawNextPoem() else { return }
+    poemSupplier.stepIntoShimo()
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       let number = firstPoem.number
@@ -105,6 +106,7 @@ final class HokkaidoModeCoordinator: Coordinator, PoemRecitation, WhatsNextSuppo
 
     if let baseViewModel = getCurrentRecitePoemBaseViewModel() {
       if let poem = poemSupplier.drawNextPoem() {
+        poemSupplier.stepIntoShimo()
         let number = poem.number
         let counter = poemSupplier.currentIndex
 
