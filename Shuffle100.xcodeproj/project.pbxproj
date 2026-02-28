@@ -1607,7 +1607,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2630;
 				ORGANIZATIONNAME = "里 佳史";
 				TargetAttributes = {
 					923D590D2143BB0A000F5E60 = {
