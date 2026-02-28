@@ -48,5 +48,4 @@ extension KamiShimoDurationSetting: View {
 
 #Preview {
   KamiShimoDurationSetting(startTime: 1.0, settings: Settings())
-    .environmentObject(ScreenSizeStore())
 }

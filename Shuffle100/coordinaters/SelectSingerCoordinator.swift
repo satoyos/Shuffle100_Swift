@@ -29,9 +29,7 @@ final class SelectSingerCoordinator: Coordinator, SaveSettings, HandleNavigator 
     )
     let view = SelectSingerView(viewModel: viewModel)
 
-    let hostController = ActionAttachedHostingController(
-      rootView: view.environmentObject(ScreenSizeStore.shared)
-    )
+    let hostController = ActionAttachedHostingController(rootView: view)
 
     // viewWillDisappearで設定を保存
     hostController.actionForViewWillDissappear = { [weak self] in

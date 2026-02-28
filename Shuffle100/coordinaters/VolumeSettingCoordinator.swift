@@ -23,8 +23,7 @@ final class VolumeSettingCoordinator: Coordinator, SaveSettings {
   
   func start() {
     let volumeSettingView = VolumeSetting(settings: settings)
-    let hostController = ActionAttachedHostingController(rootView: volumeSettingView
-      .environmentObject(ScreenSizeStore()))
+    let hostController = ActionAttachedHostingController(rootView: volumeSettingView)
     hostController.actionForViewWillDissappear = {
       [volumeSettingView,weak self] in
       volumeSettingView.tasksForLeavingThisView()

@@ -23,9 +23,7 @@ final class NgramPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
   
   func start() {   
     let ngramPickerView = NgramPickerView(settings: settings)
-    let hostController = ActionAttachedHostingController(
-      rootView: ngramPickerView
-        .environmentObject(ScreenSizeStore.shared))
+    let hostController = ActionAttachedHostingController(rootView: ngramPickerView)
     hostController.navigationItem.prompt = navigationItemPrompt
     hostController.navigationItem.title = "1字目で選ぶ"
     hostController.actionForViewWillDissappear = { [ngramPickerView, weak self] in

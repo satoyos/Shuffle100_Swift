@@ -27,11 +27,10 @@ final class TorifudaCoordinator: Coordinator, HandleNavigator {
     for partStr in poem.liner {
       title += " \(partStr)"
     }
-    let trialTorifudaView =
-    TorifudaView(
+    let trialTorifudaView = TorifudaView(
       shimoStr: poem.in_hiragana.shimo,
       fullLiner: poem.liner
-    ).environmentObject(ScreenSizeStore())
+    )
     let hostintController = UIHostingController(rootView: trialTorifudaView)
     if showPrompt {
       hostintController.navigationItem.prompt = navigationItemPrompt

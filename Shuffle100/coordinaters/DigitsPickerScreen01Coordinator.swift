@@ -24,7 +24,6 @@ final class DigitsPickerScreen01Coordinator: Coordinator, SaveSettings, HandleNa
   func start() {
     let digitsPickerView = DigitsPicker<Digits01>(settings: settings)
     let hostController = ActionAttachedHostingController(rootView: digitsPickerView)
-//      .environmentObject(ScreenSizeStore.shared)
     hostController.navigationItem.prompt = navigationItemPrompt
     hostController.navigationItem.title = Digits01.description
     hostController.actionForViewWillDissappear = {

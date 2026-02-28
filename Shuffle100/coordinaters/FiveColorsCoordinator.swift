@@ -24,9 +24,7 @@ final class FiveColorsCoordinator: Coordinator, SaveSettings, HandleNavigator {
   
   func start() {
     let fiveColorsView = FiveColorsView(settings: settings)
-    let hostController = ActionAttachedHostingController(
-      rootView: fiveColorsView
-        .environmentObject(ScreenSizeStore()))
+    let hostController = ActionAttachedHostingController(rootView: fiveColorsView)
     hostController.navigationItem.prompt = navigationItemPrompt
     hostController.navigationItem.title = "五色百人一首"
     hostController.actionForViewWillDissappear = { [fiveColorsView, weak self] in

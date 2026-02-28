@@ -27,7 +27,6 @@ class ReciteSettingsRouter: ObservableObject {
     case .intervalSetting:
       let view = InterPoemDurationSetting(settings: settings)
       view
-        .environmentObject(ScreenSizeStore())
         .navigationTitle("歌の間隔の調整")
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear { [weak self] in
@@ -38,7 +37,6 @@ class ReciteSettingsRouter: ObservableObject {
     case .kamiShimoIntervalSetting:
       let view = KamiShimoDurationSetting(settings: settings)
       view
-        .environmentObject(ScreenSizeStore())
         .navigationTitle("上の句と下の句の間隔")
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear { [weak self] in

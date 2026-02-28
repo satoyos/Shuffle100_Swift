@@ -47,5 +47,4 @@ extension InterPoemDurationSetting: View {
 #Preview {
   InterPoemDurationSetting(startTime: 1.2,
                            settings: Settings())
-  .environmentObject(ScreenSizeStore())
 }

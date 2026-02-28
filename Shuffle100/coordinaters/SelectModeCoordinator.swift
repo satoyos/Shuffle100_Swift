@@ -40,9 +40,7 @@ final class SelectModeCoordinator: Coordinator, SaveSettings, HandleNavigator {
     )
     let view = SelectModeView(viewModel: viewModel)
 
-    let hostController = ActionAttachedHostingController(
-      rootView: view.environmentObject(ScreenSizeStore.shared)
-    )
+    let hostController = ActionAttachedHostingController(rootView: view)
 
     // viewWillDisappearで設定を保存
     hostController.actionForViewWillDissappear = { [weak self] in

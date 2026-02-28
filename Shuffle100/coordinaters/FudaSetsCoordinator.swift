@@ -23,9 +23,7 @@ final class FudaSetsCoordinator: Coordinator, SaveSettings, HandleNavigator {
   
   func start() {
     let fudaSetsView = FudaSetsView(settings: settings)
-    let hostController = ActionAttachedHostingController(
-      rootView: fudaSetsView
-        .environmentObject(ScreenSizeStore()))
+    let hostController = ActionAttachedHostingController(rootView: fudaSetsView)
     hostController.navigationItem.prompt = navigationItemPrompt
     hostController.navigationItem.title = "作った札セットから選ぶ"
     hostController.actionForViewWillDissappear = { [fudaSetsView, weak self] in

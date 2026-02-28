@@ -47,9 +47,7 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
       self?.handleSaveSet()
     }
     
-    let hostController = ActionAttachedHostingController(
-      rootView: poemPickerView
-        .environmentObject(ScreenSizeStore()))
+    let hostController = ActionAttachedHostingController(rootView: poemPickerView)
     hostController.navigationItem.prompt = navigationItemPrompt
     hostController.navigationItem.title = "歌を選ぶ"
     hostController.actionForViewWillDissappear = { [poemPickerView, weak self] in

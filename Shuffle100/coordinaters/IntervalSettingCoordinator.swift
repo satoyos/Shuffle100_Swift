@@ -25,8 +25,7 @@ final class IntervalSettingCoordinator: Coordinator, SaveSettings {
   
   func start() {
     let durationSettingView = InterPoemDurationSetting(settings: settings)
-    let hostController = ActionAttachedHostingController(rootView: durationSettingView
-      .environmentObject(ScreenSizeStore()))
+    let hostController = ActionAttachedHostingController(rootView: durationSettingView)
     hostController.actionForViewWillDissappear = { [durationSettingView] in
       durationSettingView.tasksForLeavingThisView()
     }
