@@ -76,7 +76,11 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
   
   @discardableResult
   func tapCellof(number: Int) -> Self {
-    cellOf(number: number).tap()
+    let cell = cellOf(number: number)
+    if !cell.isHittable {
+      app.swipeUp()
+    }
+    cell.tap()
     return self
   }
   

@@ -32,7 +32,11 @@ final class DigitsPickerPage10: PageObjectable, WaitInUITest {
     
     @discardableResult
     func tapCell(number: Int) -> Self {
-        app.buttons[number.description].firstMatch.tap()
+        let button = app.buttons[number.description].firstMatch
+        if !button.isHittable {
+            app.swipeUp()
+        }
+        button.tap()
         return self
     }
     
