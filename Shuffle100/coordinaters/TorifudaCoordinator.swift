@@ -11,32 +11,43 @@ import SwiftUI
 
 final class TorifudaCoordinator: Coordinator, HandleNavigator {
   var screen: UIViewController?
-  var navigationController: UINavigationController
+  var navigationController: UINavigationController  // ダミー（プロトコル準拠用）
+  private var fromScreen: UIViewController
   private var poem: Poem
   var childCoordinator: Coordinator?
   let showPrompt: Bool
-  
-  init(navigationController: UINavigationController, poem: Poem, showPrompt: Bool = true) {
-    self.navigationController = navigationController
+
+  init(fromScreen: UIViewController, poem: Poem, showPrompt: Bool = true) {
+    self.fromScreen = fromScreen
     self.poem = poem
     self.showPrompt = showPrompt
+    self.navigationController = UINavigationController()  // ダミー
   }
-  
+
   func start() {
     var title = "\(poem.number)."
     for partStr in poem.liner {
       title += " \(partStr)"
     }
-    let trialTorifudaView = TorifudaView(
+    let torifudaView = TorifudaView(
       shimoStr: poem.in_hiragana.shimo,
       fullLiner: poem.liner
     )
-    let hostintController = UIHostingController(rootView: trialTorifudaView)
+    let hostController = UIHostingController(rootView: torifudaView)
+    hostController.title = title
     if showPrompt {
-      hostintController.navigationItem.prompt = navigationItemPrompt
+      hostController.navigationItem.prompt = navigationItemPrompt
     }
-    hostintController.title = title
-    navigationController.pushViewController(hostintController, animated: true)
-    
+    hostController.navigationItem.rightBarButtonItem = UIBarButtonItem(
+      systemItem: .close,
+      primaryAction: UIAction { [weak self] _ in
+        self?.screen?.dismiss(animated: true)
+      }
+    )
+
+    let navController = UINavigationController(rootViewController: hostController)
+    navController.modalPresentationStyle = .automatic
+    fromScreen.present(navController, animated: true)
+    self.screen = navController
   }
 }

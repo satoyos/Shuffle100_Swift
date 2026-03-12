@@ -21,21 +21,20 @@ final class TorifudaPage: PageObjectable {
     }
    
     var backToWhatsNextButton: XCUIElement {
-        app.navigationBars.buttons[A11y.whatsNext].firstMatch
+        app.navigationBars.buttons[A11y.close].firstMatch
     }
-    
+
     var backToPickerButton: XCUIElement {
-        app.navigationBars.buttons[A11y.picker].firstMatch
+        app.navigationBars.buttons[A11y.close].firstMatch
     }
-    
+
     var fullLinersView: XCUIElement {
         app.textViews[A11y.fullLiner].firstMatch
     }
-    
+
     enum A11y {
         static let fudaView = "fudaView"
-        static let whatsNext = "次はどうする？"
-        static let picker = "歌を選ぶ"
+        static let close = "閉じる"
         static let fullLiner = "fullLinersView"
     }
     

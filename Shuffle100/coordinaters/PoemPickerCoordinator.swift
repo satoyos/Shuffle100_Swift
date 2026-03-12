@@ -96,8 +96,9 @@ final class PoemPickerCoordinator: Coordinator, SaveSettings, HandleNavigator {
   }
   
   internal func showTorifudaScreenFor(number: Int) {
+    guard let fromScreen = screen else { return }
     let poem = PoemSupplier.originalPoems[number-1]
-    let coordinator = TorifudaCoordinator(navigationController: navigationController, poem: poem)
+    let coordinator = TorifudaCoordinator(fromScreen: fromScreen, poem: poem)
     coordinator.start()
     self.childCoordinator = coordinator
   }

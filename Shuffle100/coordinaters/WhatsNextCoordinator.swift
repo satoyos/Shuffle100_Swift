@@ -73,10 +73,10 @@ final class WhatsNextCoordinator: Coordinator, BackToHome {
   private func showTorifuda() {
     // 既存のchildCoordinatorをクリアしてから新しいものを作成
     childCoordinator = nil
+    guard let fromScreen = screen else { return }
 
     let coordinator = TorifudaCoordinator(
-      navigationController: anotherNavController,
-
+      fromScreen: fromScreen,
       poem: currentPoem,
       showPrompt: false
     )
