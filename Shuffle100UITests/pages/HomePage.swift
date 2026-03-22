@@ -22,27 +22,27 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     }
     
     var poemsCell: XCUIElement {
-        app.cells[A11y.poems].firstMatch
+        app.buttons[A11y.poems].firstMatch
     }
-    
+
     var reciteModeCell: XCUIElement {
-        app.cells[A11y.reciteMode].firstMatch
+        app.buttons[A11y.reciteMode].firstMatch
     }
-    
+
     var fakeModeCell: XCUIElement {
-        app.cells[A11y.fakeMode].firstMatch
+        app.switches[A11y.fakeMode].firstMatch
     }
-    
+
     var singerCell: XCUIElement {
-        app.cells[A11y.singer].firstMatch
+        app.buttons[A11y.singer].firstMatch
     }
-    
+
     var timerCell: XCUIElement {
-        app.cells[A11y.timer].firstMatch
+        app.buttons[A11y.timer].firstMatch
     }
-    
+
     var gameStartCell: XCUIElement {
-        app.cells[A11y.gameStart].firstMatch
+        app.buttons[A11y.gameStart].firstMatch
     }
     
     var noPoemSelectedAlert: XCUIElement {
@@ -58,7 +58,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     }
     
     var fakeModeSwitch: XCUIElement {
-        fakeModeCell.switches.firstMatch
+        fakeModeCell
     }
     
     enum A11y {
@@ -147,7 +147,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         case .inaba:
             singerLabel = A11y.singerInabaLabel
         }
-        return app.cells.staticTexts[singerLabel].firstMatch.exists
+        return app.staticTexts[singerLabel].firstMatch.exists
     }
     
     private func labelForReciteMode(_ mode: ReciteMode) -> String {
