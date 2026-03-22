@@ -59,7 +59,7 @@ class AppRouter: ObservableObject {
 
 ## Phase 0: 準備（新規ファイル追加のみ）
 
-**ステータス**: 未着手
+**ステータス**: 完了
 
 **目標**: 既存コードを壊さず、新しいルーティング基盤のファイルだけを追加。
 
@@ -77,7 +77,7 @@ class AppRouter: ObservableObject {
 
 ## Phase 1: HomeScreenのSwiftUI化とルート切り替え
 
-**ステータス**: 未着手
+**ステータス**: 完了
 
 **目標**: SceneDelegateのルートをUINavigationController+MainCoordinatorからNavigationStack+AppRouterへ切り替え。HomeScreenをSwiftUI化。
 
@@ -104,7 +104,7 @@ class AppRouter: ObservableObject {
 
 ## Phase 2: 設定系画面の移行
 
-**ステータス**: 未着手
+**ステータス**: 完了
 
 **目標**: シンプルな設定系のpush画面をNavigationPathに移行。Coordinatorが薄く、リスクが最も低い。
 
