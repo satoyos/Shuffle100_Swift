@@ -11,9 +11,10 @@ import SwiftUI
 struct PoemPickerView {
   let settings: Settings
   @ObservedObject var viewModel: PoemPickerView.ViewModel
+  @EnvironmentObject var router: AppRouter
   @Environment(\.isPresented) private var isPresented
 
-  // アクション用のクロージャ
+  // アクション用のクロージャ（Phase 3の各ステップで順次router.pushに置き換え）
   var openNgramPickerAction: (() -> Void)?
   var openFudaSetsScreenAction: (() -> Void)?
   var openFiveColorsScreenAction: (() -> Void)?
@@ -30,40 +31,38 @@ struct PoemPickerView {
 
 extension PoemPickerView: View {
   var body: some View {
-    NavigationStack {
-      List {
-        ForEach(viewModel.output.filteredPoems, id: \.number) { poem in
-          PoemRow(
-            poem: poem,
-            isSelected: viewModel.isPoemSelected(poem.number),
-            onTap: {
-              viewModel.input.selectPoem.send(poem.number)
-            },
-            onDetailTap: {
-              showTorifudaAction?(poem.number)
-            }
-          )
-          .listRowInsets(EdgeInsets())
-        }
+    List {
+      ForEach(viewModel.output.filteredPoems, id: \.number) { poem in
+        PoemRow(
+          poem: poem,
+          isSelected: viewModel.isPoemSelected(poem.number),
+          onTap: {
+            viewModel.input.selectPoem.send(poem.number)
+          },
+          onDetailTap: {
+            showTorifudaAction?(poem.number)
+          }
+        )
+        .listRowInsets(EdgeInsets())
       }
-      .listStyle(PlainListStyle())
-      .searchable(text: $viewModel.binding.searchText, prompt: "歌を検索")
-      .toolbar {
-        ToolbarItem(placement: .topBarTrailing) {
-          saveButton
-        }
+    }
+    .listStyle(PlainListStyle())
+    .searchable(text: $viewModel.binding.searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "歌を検索")
+    .toolbar {
+      ToolbarItem(placement: .topBarTrailing) {
+        saveButton
+      }
 
-        ToolbarItem(placement: .topBarTrailing) {
-          badgeView
-        }
+      ToolbarItem(placement: .topBarTrailing) {
+        badgeView
+      }
 
-        ToolbarItemGroup(placement: .bottomBar) {
-          cancelAllButton
-          Spacer()
-          selectAllButton
-          Spacer()
-          selectByGroupButton
-        }
+      ToolbarItemGroup(placement: .bottomBar) {
+        cancelAllButton
+        Spacer()
+        selectAllButton
+        Spacer()
+        selectByGroupButton
       }
     }
     .onAppear {

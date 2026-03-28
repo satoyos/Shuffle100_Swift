@@ -9,6 +9,7 @@ enum AppRoute: Hashable {
   case selectMode
   case selectSinger
   case poemPicker
+  case ngramPicker
   case memorizeTimer
   case normalMode
   case beginnerMode

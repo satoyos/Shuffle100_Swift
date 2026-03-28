@@ -57,8 +57,20 @@ struct AppRootView: View {
       .navigationTitle("暗記時間タイマー")
       .standardToolbarBackground()
 
+    case .poemPicker:
+      PoemPickerView(settings: router.settings)
+        .navigationTitle("歌を選ぶ")
+        .onDisappear { router.saveSettings() }
+        .standardToolbarBackground()
+
+    case .ngramPicker:
+      NgramPickerView(settings: router.settings)
+        .navigationTitle("1字目で選ぶ")
+        .onDisappear { router.saveSettings() }
+        .standardToolbarBackground()
+
     default:
-      // Phase 3〜4で実装を追加していく
+      // Phase 4で実装を追加していく
       Text("未実装: \(String(describing: route))")
         .navigationTitle(String(describing: route))
         .standardToolbarBackground()

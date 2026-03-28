@@ -48,7 +48,7 @@ extension PoemPickerView {
 
     buttons.append(
       .default(Text("1字目で選ぶ")) {
-        openNgramPickerAction?()
+        router.push(.ngramPicker)
       }
     )
 
