@@ -41,7 +41,7 @@ extension PoemPickerView {
     if !settings.savedFudaSets.isEmpty {
       buttons.append(
         .default(Text("作った札セットから選ぶ")) {
-          openFudaSetsScreenAction?()
+          router.push(.fudaSets)
         }
       )
     }
@@ -54,7 +54,7 @@ extension PoemPickerView {
 
     buttons.append(
       .default(Text("五色百人一首の色で選ぶ")) {
-        openFiveColorsScreenAction?()
+        router.push(.fiveColors)
       }
     )
 

@@ -23,42 +23,21 @@ struct FiveColorsView {
 extension FiveColorsView: View {
   var body: some View {
     GeometryReader { geometry in
-      NavigationStack {
-        Spacer()
-        List {
-          ForEach(FiveColors.all) { color in
-            FiveColorButton(
-              viewModel: color.buttonViewModel,
-              containerHeight: geometry.size.height) {
-              showActionSheet = true
-              selectedColor = color
-            }
-            .actionSheet(isPresented: $showActionSheet,
-                         content: fiveColorsActionSheet)
+      List {
+        ForEach(FiveColors.all) { color in
+          FiveColorButton(
+            viewModel: color.buttonViewModel,
+            containerHeight: geometry.size.height) {
+            showActionSheet = true
+            selectedColor = color
           }
+          .actionSheet(isPresented: $showActionSheet,
+                       content: fiveColorsActionSheet)
         }
-      //
-      // 本当は、以下のように toolbarを使って実装したい。
-      //
-//      .toolbar {
-//        ToolbarItem(placement: .confirmationAction) {
-//          BadgeView(number: viewModel.output.state100.selectedNum)
-//        }
-//        ToolbarItem(placement: .principal) {
-//          Text("五色百人一首")
-//        }
-//      }
-      //
-      // ただ、Shuffle100がまだUIKitからこのViewを呼び出しているので、
-      //  表示の整合性のために、次のように saveAreaInsetを使う
-      //
-        .safeAreaInset(edge: .top) {
-          HStack {
-            Spacer()
-            BadgeView(number: viewModel.output.state100.selectedNum)
-              .padding()
-          }
-          .frame(height: 30)
+      }
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          BadgeView(number: viewModel.output.state100.selectedNum)
         }
       }
     }

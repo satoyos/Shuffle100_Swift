@@ -69,6 +69,18 @@ struct AppRootView: View {
         .onDisappear { router.saveSettings() }
         .standardToolbarBackground()
 
+    case .fudaSets:
+      FudaSetsView(settings: router.settings)
+        .navigationTitle("作った札セットから選ぶ")
+        .onDisappear { router.saveSettings() }
+        .standardToolbarBackground()
+
+    case .fiveColors:
+      FiveColorsView(settings: router.settings)
+        .navigationTitle("五色百人一首")
+        .onDisappear { router.saveSettings() }
+        .standardToolbarBackground()
+
     default:
       // Phase 4で実装を追加していく
       Text("未実装: \(String(describing: route))")

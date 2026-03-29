@@ -21,35 +21,30 @@ struct FudaSetsView {
 
 extension FudaSetsView: View {
   var body: some View {
-    NavigationStack {
-      List {
-        ForEach(viewModel.output.savedFudaSets.indices, id: \.self) { index in
-          FudaSetRow(
-            fudaSet: viewModel.output.savedFudaSets[index],
-            isSelected: viewModel.output.selectedIndex == index,
-            onTap: {
-              viewModel.input.selectFudaSet.send(index)
-            }
-          )
-          // シンプリにForEachの.onDeleteアクションを採用すると、
-          // UIテストに失敗するため、↓このような複雑な実装を採用した。
-          .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button("削除", role: .destructive) {
-              viewModel.input.deleteFudaSet.send(IndexSet([index]))
-            }
-            .accessibilityIdentifier("deleteFudaSet_\(viewModel.output.savedFudaSets[index].name)")
+    List {
+      ForEach(viewModel.output.savedFudaSets.indices, id: \.self) { index in
+        FudaSetRow(
+          fudaSet: viewModel.output.savedFudaSets[index],
+          isSelected: viewModel.output.selectedIndex == index,
+          onTap: {
+            viewModel.input.selectFudaSet.send(index)
           }
+        )
+        // シンプリにForEachの.onDeleteアクションを採用すると、
+        // UIテストに失敗するため、↓このような複雑な実装を採用した。
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+          Button("削除", role: .destructive) {
+            viewModel.input.deleteFudaSet.send(IndexSet([index]))
+          }
+          .accessibilityIdentifier("deleteFudaSet_\(viewModel.output.savedFudaSets[index].name)")
         }
       }
-      .listStyle(PlainListStyle())
-      .safeAreaInset(edge: .top) {
-        HStack {
-          Spacer()
-          Text("札セット数: \(viewModel.output.savedFudaSets.count)")
-            .padding()
-            .foregroundColor(.secondary)
-        }
-        .frame(height: 30)
+    }
+    .listStyle(PlainListStyle())
+    .toolbar {
+      ToolbarItem(placement: .topBarTrailing) {
+        Text("札セット数: \(viewModel.output.savedFudaSets.count)")
+          .foregroundColor(.secondary)
       }
     }
     .onChange(of: isPresented) {
