@@ -81,6 +81,18 @@ struct AppRootView: View {
         .onDisappear { router.saveSettings() }
         .standardToolbarBackground()
 
+    case .digitsPicker01:
+      DigitsPicker<Digits01>(settings: router.settings)
+        .navigationTitle(Digits01.description)
+        .onDisappear { router.saveSettings() }
+        .standardToolbarBackground()
+
+    case .digitsPicker10:
+      DigitsPicker<Digits10>(settings: router.settings)
+        .navigationTitle(Digits10.description)
+        .onDisappear { router.saveSettings() }
+        .standardToolbarBackground()
+
     default:
       // Phase 4で実装を追加していく
       Text("未実装: \(String(describing: route))")

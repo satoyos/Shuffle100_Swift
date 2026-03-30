@@ -12,6 +12,8 @@ enum AppRoute: Hashable {
   case ngramPicker
   case fudaSets
   case fiveColors
+  case digitsPicker01
+  case digitsPicker10
   case memorizeTimer
   case normalMode
   case beginnerMode

@@ -60,13 +60,13 @@ extension PoemPickerView {
 
     buttons.append(
       .default(Text("1の位の数で選ぶ")) {
-        openDigitsPicker01Action?()
+        router.push(.digitsPicker01)
       }
     )
 
     buttons.append(
       .default(Text("10の位の数で選ぶ")) {
-        openDigitsPicker10Action?()
+        router.push(.digitsPicker10)
       }
     )
 
