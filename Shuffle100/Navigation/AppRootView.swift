@@ -121,8 +121,7 @@ struct AppRootView: View {
         store: router.store
       )
     case .torifuda(let poem):
-      // Phase 3で実装
-      Text("取り札未実装: \(poem.number)")
+      TorifudaSheetWrapper(poem: poem)
     case .whatsNext(let poem):
       // Phase 4で実装
       Text("次はどうする未実装: \(poem.number)")
@@ -152,6 +151,39 @@ private extension View {
     self
       .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
       .toolbarBackground(.visible, for: .navigationBar)
+  }
+}
+
+/// TorifudaViewをシートとして表示するためのラッパー
+private struct TorifudaSheetWrapper: View {
+  @Environment(\.dismiss) private var dismiss
+  let poem: Poem
+
+  private var title: String {
+    "\(poem.number). " + poem.liner.joined(separator: " ")
+  }
+
+  var body: some View {
+    NavigationStack {
+      TorifudaView(
+        shimoStr: poem.in_hiragana.shimo,
+        fullLiner: poem.liner
+      )
+      .navigationTitle(title)
+      .navigationBarTitleDisplayMode(.inline)
+      .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
+      .toolbarBackground(.visible, for: .navigationBar)
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button {
+            dismiss()
+          } label: {
+            Image(systemName: "xmark")
+          }
+          .accessibilityLabel("閉じる")
+        }
+      }
+    }
   }
 }
 

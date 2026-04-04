@@ -40,7 +40,8 @@ extension PoemPickerView: View {
             viewModel.input.selectPoem.send(poem.number)
           },
           onDetailTap: {
-            showTorifudaAction?(poem.number)
+            let poemData = PoemSupplier.originalPoems[poem.number - 1]
+            router.presentSheet(.torifuda(poemData))
           }
         )
         .listRowInsets(EdgeInsets())
