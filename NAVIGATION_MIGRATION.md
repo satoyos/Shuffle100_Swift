@@ -11,8 +11,11 @@
 - **Present (モーダル)**: ReciteSettings, HelpList, Torifuda, WhatsNext
 - **NavigationPath（既存）**: HelpListView内（HelpRouter）、ReciteSettingsView内（ReciteSettingsRouter）
 
-### Coordinator一覧（22個）
-MainCoordinator, PoemPickerCoordinator, NgramPickerCoordinator, FudaSetsCoordinator, FiveColorsCoordinator, DigitsPickerScreen01Coordinator, DigitsPickerScreen10Coordinator, SelectModeCoordinator, SelectSingerCoordinator, NormalModeCoordinator, BeginnerModeCoordinator, NonsotpModeCoordinator, HokkaidoModeCoordinator, ReciteSettingsCoordinator, IntervalSettingCoordinator, KamiShimoIntervalSettingCoordinator, VolumeSettingCoordinator, HelpListCoordinator, TorifudaCoordinator, WhatsNextCoordinator, MemorizeTimerCoordinator
+### Coordinator一覧（当初22個）
+- **削除済み（Phase 2）**: SelectModeCoordinator, SelectSingerCoordinator, MemorizeTimerCoordinator
+- **削除済み（Phase 3）**: PoemPickerCoordinator, NgramPickerCoordinator, FudaSetsCoordinator, FiveColorsCoordinator, DigitsPickerScreen01Coordinator, DigitsPickerScreen10Coordinator
+- **未使用だが残存**: MainCoordinator（Phase 1で無効化済み、Phase 5で削除予定）
+- **Phase 4で対処**: NormalModeCoordinator, BeginnerModeCoordinator, NonsotpModeCoordinator, HokkaidoModeCoordinator, ReciteSettingsCoordinator, IntervalSettingCoordinator, KamiShimoIntervalSettingCoordinator, VolumeSettingCoordinator, HelpListCoordinator, TorifudaCoordinator, WhatsNextCoordinator
 
 ---
 
@@ -24,6 +27,11 @@ enum AppRoute: Hashable {
   case selectMode
   case selectSinger
   case poemPicker
+  case ngramPicker
+  case fudaSets
+  case fiveColors
+  case digitsPicker01
+  case digitsPicker10
   case memorizeTimer
   case normalMode
   case beginnerMode
@@ -130,28 +138,53 @@ class AppRouter: ObservableObject {
 
 ## Phase 3: PoemPicker系の移行
 
-**ステータス**: 未着手
+**ステータス**: 完了
 
 **目標**: PoemPickerとその子画面（NgramPicker, FudaSets, FiveColors, DigitsPicker）を移行。
 
-**技術的課題**:
-- `PoemPickerView`は現在内部に`NavigationStack`を持っているため、外す必要がある
-- 子画面へのボタンアクションをCoordinatorのクロージャから`AppRouter.push()`に変更
+**実施方針**: 変更量が多いため、以下の6サブステップに分割して段階的に実施した。
 
-**変更内容**:
-1. `AppRoute.swift`に`.poemPicker`, `.ngramPicker`, `.fudaSets`, `.fiveColors`, `.digitsPicker01`, `.digitsPicker10`を追加
-2. `PoemPickerView.swift`から内部の`NavigationStack {}`を除去
-3. 各子画面への遷移を`router.push(...)`で実装
-4. `TorifudaCoordinator`の代わりに`router.presentSheet(.torifuda(poem))`で表示
-5. `AppRootView.swift`の`navigationDestination`と`.sheet`に追加
+### Step 3a: PoemPickerViewをAppRootViewに接続（子画面遷移なし）
+- `PoemPickerView.swift`から内部`NavigationStack`を除去
+- `AppRootView.swift`の`.poemPicker` destinationに`PoemPickerView`を接続
+- `.searchable`のplacementを`.navigationBarDrawer(displayMode: .always)`に変更（NavigationStack除去で検索バーが消える問題を修正）
 
-**廃止するCoordinator**: PoemPickerCoordinator, NgramPickerCoordinator, FudaSetsCoordinator, FiveColorsCoordinator, DigitsPickerScreen01Coordinator, DigitsPickerScreen10Coordinator, TorifudaCoordinator
+### Step 3b: NgramPickerの移行
+- `AppRoute`に`.ngramPicker`を追加
+- `NgramPickerView.swift`から内部`NavigationStack`を除去、`safeAreaInset`→`toolbar`に切り替え
+- `PoemPickerView`に`@EnvironmentObject var router: AppRouter`を追加
+- `PoemPickerToolbarButtons`の「1字目で選ぶ」を`router.push(.ngramPicker)`に変更
 
-**テスト確認**:
-- 歌を選ぶ画面に遷移できる
-- 各絞り込み画面に遷移し、戻れる
-- 取り札表示がシートで出る
-- UIテスト: NgramPicker, DigitsPickerのテストが通ること
+### Step 3c: FudaSets + FiveColorsの移行
+- `AppRoute`に`.fudaSets`, `.fiveColors`を追加
+- 両Viewから内部`NavigationStack`を除去、`safeAreaInset`→`toolbar`に切り替え
+- `PoemPickerToolbarButtons`の該当クロージャを`router.push()`に変更
+
+### Step 3d: DigitsPicker01 + DigitsPicker10の移行
+- `AppRoute`に`.digitsPicker01`, `.digitsPicker10`を追加
+- `DigitsPicker.swift`から内部`NavigationStack`を除去、`safeAreaInset`→`toolbar`に切り替え
+- `PoemPickerToolbarButtons`の該当クロージャを`router.push()`に変更
+
+### Step 3e: Torifuda（取り札）のシート表示移行
+- `AppRootView`に`TorifudaSheetWrapper`を追加（NavigationStack + タイトル + 閉じるボタン）
+- `PoemPickerView`の`showTorifudaAction`を`router.presentSheet(.torifuda(poem))`に変更
+
+### Step 3f: 旧Coordinator削除とクリーンアップ
+- `PoemPickerView`から不要なクロージャプロパティをすべて削除
+- `saveSetAction`を`router.saveSettings()`に置換
+- 以下のCoordinatorファイルを削除（6個）:
+  - `PoemPickerCoordinator.swift`
+  - `NgramPickerCoordinator.swift`
+  - `FudaSetsCoordinator.swift`
+  - `FiveColorsCoordinator.swift`
+  - `DigitsPickerScreen01Coordinator.swift`
+  - `DigitsPickerScreen10Coordinatorswift.swift`
+- `MainCoordinator.swift`の`selectPoem`メソッドからPoemPickerCoordinator参照を除去
+- `NavigationBarTests`を更新（UINavigationBarのglobal appearance設定はSwiftUI移行で不要になったため）
+
+**注記**: `TorifudaCoordinator`は`WhatsNextCoordinator`から参照されているためPhase 4で対処する。
+
+**テスト確認**: 全304ユニットテスト通過
 
 ---
 
