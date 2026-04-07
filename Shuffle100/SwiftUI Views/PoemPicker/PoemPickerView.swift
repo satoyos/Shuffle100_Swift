@@ -14,14 +14,6 @@ struct PoemPickerView {
   @EnvironmentObject var router: AppRouter
   @Environment(\.isPresented) private var isPresented
 
-  // アクション用のクロージャ（Phase 3の各ステップで順次router.pushに置き換え）
-  var openNgramPickerAction: (() -> Void)?
-  var openFudaSetsScreenAction: (() -> Void)?
-  var openFiveColorsScreenAction: (() -> Void)?
-  var openDigitsPicker01Action: (() -> Void)?
-  var openDigitsPicker10Action: (() -> Void)?
-  var showTorifudaAction: ((Int) -> Void)?
-  var saveSetAction: (() -> Void)?
 
   init(settings: Settings) {
     self.settings = settings

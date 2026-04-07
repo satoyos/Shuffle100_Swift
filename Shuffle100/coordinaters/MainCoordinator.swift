@@ -63,9 +63,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
   }
   
   private func selectPoem(settings: Settings, store: StoreManager) {
-    let coordinator = PoemPickerCoordinator(navigationController: navigationController, settings: settings, store: store)
-    coordinator.start()
-    self.childCoordinator = coordinator
+    // Phase 3でAppRouter経由に移行済み（PoemPickerCoordinator削除済み）
   }
   
   private func selectMode(settings: Settings, store: StoreManager) {

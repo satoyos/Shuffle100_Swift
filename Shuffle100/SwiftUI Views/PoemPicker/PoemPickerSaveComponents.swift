@@ -45,7 +45,7 @@ extension PoemPickerView {
         Button("\(fudaSet.name) (\(fudaSet.state100.selectedNum)首)") {
           viewModel.binding.selectedOverwriteIndex = index
           viewModel.overwriteExistingFudaSet()
-          saveSetAction?()
+          router.saveSettings()
         }
       }
 
@@ -89,7 +89,7 @@ extension PoemPickerView {
 
         Button("決定") {
           viewModel.saveNewFudaSet()
-          saveSetAction?()
+          router.saveSettings()
         }
       }
     }
