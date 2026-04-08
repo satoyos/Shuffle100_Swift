@@ -10,14 +10,14 @@ import SwiftUI
 
 struct PoemPickerView {
   let settings: Settings
-  @ObservedObject var viewModel: PoemPickerView.ViewModel
+  @StateObject var viewModel: PoemPickerView.ViewModel
   @EnvironmentObject var router: AppRouter
   @Environment(\.isPresented) private var isPresented
 
 
   init(settings: Settings) {
     self.settings = settings
-    self.viewModel = PoemPickerView.ViewModel(settings: settings)
+    self._viewModel = StateObject(wrappedValue: PoemPickerView.ViewModel(settings: settings))
   }
 }
 
