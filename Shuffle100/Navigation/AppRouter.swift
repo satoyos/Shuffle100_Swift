@@ -13,6 +13,11 @@ class AppRouter: ObservableObject {
   let settings: Settings
   let store: StoreManager
 
+  /// 現在ゲーム中の GameStateManager。GamePlayView が onAppear で設定する。
+  /// WhatsNextSheetWrapper などゲーム画面配下のシートから参照するために持つ。
+  /// (Phase 5 で MainCoordinator を削除後、より綺麗な形に整理予定)
+  var gameStateManager: GameStateManager?
+
   init(settings: Settings, store: StoreManager) {
     self.settings = settings
     self.store = store

@@ -123,8 +123,11 @@ struct AppRootView: View {
     case .torifuda(let poem):
       TorifudaSheetWrapper(poem: poem)
     case .whatsNext(let poem):
-      // Phase 4で実装
-      Text("次はどうする未実装: \(poem.number)")
+      WhatsNextSheetWrapper(
+        poem: poem,
+        settings: router.settings,
+        store: router.store
+      )
     }
   }
 }
@@ -183,6 +186,63 @@ private struct TorifudaSheetWrapper: View {
           .accessibilityLabel("閉じる")
         }
       }
+    }
+  }
+}
+
+/// WhatsNextView (「次はどうする?」画面) をシートとして表示するためのラッパー。
+///
+/// - 下の句をもう一度 / 次の歌へ / 終了 は GameStateManager 経由で処理。
+///   WhatsNextView 内で .dismiss() されるため、シート自体は自動で閉じる。
+/// - 取り札を見る / 歯車 (読み上げ設定) は WhatsNext シートの上に
+///   ネストしたシートとして表示する (WhatsNext は閉じない)。
+private struct WhatsNextSheetWrapper: View {
+  @EnvironmentObject private var router: AppRouter
+  @Environment(\.dismiss) private var dismiss
+
+  let poem: Poem
+  @StateObject private var viewModel: WhatsNextViewModel
+  private let reciteSettings: Settings
+  private let store: StoreManager
+
+  @State private var showingTorifuda = false
+  @State private var showingReciteSettings = false
+
+  init(poem: Poem, settings: Settings, store: StoreManager) {
+    self.poem = poem
+    self.reciteSettings = settings
+    self.store = store
+    _viewModel = StateObject(wrappedValue: WhatsNextViewModel(currentPoem: poem))
+  }
+
+  var body: some View {
+    NavigationStack {
+      WhatsNextView(viewModel: viewModel)
+    }
+    .onAppear {
+      viewModel.showTorifudaAction = {
+        showingTorifuda = true
+      }
+      viewModel.refrainAction = { [weak router] in
+        router?.gameStateManager?.handleRefrainShimo()
+      }
+      viewModel.goNextAction = { [weak router] in
+        router?.gameStateManager?.handleGoNext()
+      }
+      viewModel.goSettingAction = {
+        showingReciteSettings = true
+      }
+      viewModel.backToHomeScreenAction = { [weak router] in
+        router?.gameStateManager?.handleExitGame()
+      }
+    }
+    // 取り札を見る (ネストしたシート)
+    .sheet(isPresented: $showingTorifuda) {
+      TorifudaSheetWrapper(poem: poem)
+    }
+    // 歯車 → 読み上げ設定 (ネストしたシート)
+    .sheet(isPresented: $showingReciteSettings) {
+      ReciteSettingsSheetWrapper(settings: reciteSettings, store: store)
     }
   }
 }

@@ -16,6 +16,13 @@ struct WhatsNextView {
     self.viewModel = WhatsNextViewModel(currentPoem: currentPoem)
   }
 
+  /// 外部で作成した ViewModel を注入するための init。
+  /// SwiftUI-native な sheet からのラップ時に、親側で @StateObject として
+  /// ViewModel を保持できるようにするために追加した。
+  init(viewModel: WhatsNextViewModel) {
+    self.viewModel = viewModel
+  }
+
   // ViewModelのアクションを外部から設定できるようにする
   func setActions(
     showTorifuda: @escaping () -> Void,
