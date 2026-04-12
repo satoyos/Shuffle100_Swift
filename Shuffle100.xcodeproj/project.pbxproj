@@ -121,6 +121,7 @@
 		92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000005 /* NonstopGameStrategy.swift */; };
 		92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */; };
 		92F4F4020000000000000008 /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000008 /* GameStateManager.swift */; };
+		92F4F4020000000000000009 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000009 /* GamePlayView.swift */; };
 		92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000101 /* GameStrategyTests.swift */; };
 		92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000102 /* GameStateManagerTests.swift */; };
 		925475272F6ECAD000AF30EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925475252F6ECAD000AF30EC /* HomeView.swift */; };
@@ -515,6 +516,7 @@
 		92F4F4010000000000000005 /* NonstopGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000008 /* GameStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000009 /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayView.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000101 /* GameStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategyTests.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000102 /* GameStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManagerTests.swift; sourceTree = "<group>"; };
 		925475252F6ECAD000AF30EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -1313,6 +1315,7 @@
 				9287B5992F04A83F00779CDB /* MemorizeTimer.swift */,
 				9287B59A2F04A83F00779CDB /* WhatsNextButton.swift */,
 				9287B59B2F04A83F00779CDB /* WhatsNextView.swift */,
+				92F4F4010000000000000009 /* GamePlayView.swift */,
 			);
 			path = GameFlow;
 			sourceTree = "<group>";
@@ -1812,6 +1815,7 @@
 				92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */,
 				92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */,
 				92F4F4020000000000000008 /* GameStateManager.swift in Sources */,
+				92F4F4020000000000000009 /* GamePlayView.swift in Sources */,
 				92A5B6B82DC4D51500DEFA69 /* FiveColorButtonViewModel.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,

@@ -93,12 +93,31 @@ struct AppRootView: View {
         .onDisappear { router.saveSettings() }
         .standardToolbarBackground()
 
-    default:
-      // Phase 4で実装を追加していく
-      Text("未実装: \(String(describing: route))")
-        .navigationTitle(String(describing: route))
-        .standardToolbarBackground()
+    case .normalMode:
+      gamePlayView(strategy: NormalGameStrategy())
+
+    case .beginnerMode:
+      gamePlayView(strategy: BeginnerGameStrategy())
+
+    case .nonstopMode:
+      gamePlayView(strategy: NonstopGameStrategy())
+
+    case .hokkaidoMode:
+      gamePlayView(strategy: HokkaidoGameStrategy())
     }
+  }
+
+  /// 各ゲームモード用の GamePlayView を生成するヘルパー。
+  /// @StateObject で GameStateManager を保持させるため、
+  /// StateObject(wrappedValue:) で初期値を渡す。
+  private func gamePlayView(strategy: GameStrategy) -> some View {
+    GamePlayView(
+      gameStateManager: GameStateManager(
+        settings: router.settings,
+        store: router.store,
+        strategy: strategy
+      )
+    )
   }
 
   private static let reciteModes: [ReciteModeHolder] = [
