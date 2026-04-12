@@ -120,7 +120,9 @@
 		92F4F4020000000000000004 /* BeginnerGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000004 /* BeginnerGameStrategy.swift */; };
 		92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000005 /* NonstopGameStrategy.swift */; };
 		92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */; };
+		92F4F4020000000000000008 /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000008 /* GameStateManager.swift */; };
 		92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000101 /* GameStrategyTests.swift */; };
+		92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000102 /* GameStateManagerTests.swift */; };
 		925475272F6ECAD000AF30EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925475252F6ECAD000AF30EC /* HomeView.swift */; };
 		925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */; };
 		9258D1BF22DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
@@ -512,7 +514,9 @@
 		92F4F4010000000000000004 /* BeginnerGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000005 /* NonstopGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoGameStrategy.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000008 /* GameStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000101 /* GameStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategyTests.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000102 /* GameStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManagerTests.swift; sourceTree = "<group>"; };
 		925475252F6ECAD000AF30EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DurationSettingViewModel+Fixtures.swift"; sourceTree = "<group>"; };
 		9258D1BE22DA0258003A0EF8 /* exit_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit_square.png; sourceTree = "<group>"; };
@@ -1104,6 +1108,7 @@
 				9254751F2F6E9E8700AF30EC /* SheetRoute.swift */,
 				92F4F4010000000000000001 /* GamePhase.swift */,
 				92F4F4010000000000000002 /* GameStrategy.swift */,
+				92F4F4010000000000000008 /* GameStateManager.swift */,
 				92F4F4010000000000000007 /* GameStrategies */,
 			);
 			path = Navigation;
@@ -1201,6 +1206,7 @@
 			isa = PBXGroup;
 			children = (
 				92F4F4010000000000000101 /* GameStrategyTests.swift */,
+				92F4F4010000000000000102 /* GameStateManagerTests.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -1805,6 +1811,7 @@
 				92F4F4020000000000000004 /* BeginnerGameStrategy.swift in Sources */,
 				92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */,
 				92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */,
+				92F4F4020000000000000008 /* GameStateManager.swift in Sources */,
 				92A5B6B82DC4D51500DEFA69 /* FiveColorButtonViewModel.swift in Sources */,
 				92AF24A922A15FC60085B754 /* SavedFudaSet.swift in Sources */,
 				92737DD32380312F007B5FAD /* StandardColor.swift in Sources */,
@@ -1971,6 +1978,7 @@
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				92737DD82385677F007B5FAD /* NormalModeCoordinatorTest.swift in Sources */,
 				92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */,
+				92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */,
 				C0A1B00126F16B0100AABBCC /* HokkaidoModeCoordinatorTest.swift in Sources */,
 				C0B1B00126F16B0100AABBCC /* BeginnerModeCoordinatorTest.swift in Sources */,
 				922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */,
