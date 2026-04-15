@@ -180,14 +180,20 @@ final class GameStateManager: ObservableObject {
 
     case .waitingForShimo(let number, let counter),
          .shimo(let number, let counter):
-      // 下の句側で rewind → 現在の歌の上の句に戻す
-      phase = .kami(number: number, counter: counter)
-      poemSupplier.backToKami()
-      baseViewModel.slideBackToKami(
-        number: number,
-        at: counter,
-        total: poemSupplier.size
-      )
+      if strategy.hasKami {
+        // 下の句側で rewind → 現在の歌の上の句に戻す
+        phase = .kami(number: number, counter: counter)
+        poemSupplier.backToKami()
+        baseViewModel.slideBackToKami(
+          number: number,
+          at: counter,
+          total: poemSupplier.size
+        )
+      } else {
+        // 北海道モード: 上の句がないので、一つ前の歌の下の句に戻す
+        _ = number; _ = counter
+        goBackToPreviousPoem()
+      }
 
     case .shimoRefrainBeforeAdvance, .whatsNext, .gameEnd:
       // これらのフェーズからの rewind は現仕様では未サポート

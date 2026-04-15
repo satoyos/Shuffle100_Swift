@@ -339,6 +339,77 @@ final class GameStateManagerTests: XCTestCase {
     XCTAssertTrue(backCalled)
   }
 
+  func test_normal_rewindOnKami_goesBackToPreviousPoemShimo() {
+    let manager = makeManager(mode: .normal, strategy: NormalGameStrategy())
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .waitingForShimo(1)
+    manager.baseViewModel.playButtonTappedAfterFinishedReciting?()  // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(2)
+
+    // .kami(2) で rewind → 1首目の下の句に戻る
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+
+    guard case .shimo(_, let counter) = manager.phase else {
+      XCTFail("Expected .shimo after rewind from kami, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 1)
+    XCTAssertEqual(manager.poemSupplier.currentIndex, 1)
+    XCTAssertEqual(manager.poemSupplier.side, .shimo)
+  }
+
+  func test_normal_rewindOnFirstKami_callsBackToHome() {
+    let manager = makeManager(mode: .normal, strategy: NormalGameStrategy())
+    var backCalled = false
+    manager.onBackToHome = { backCalled = true }
+
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(1)
+
+    // 1首目の上の句冒頭で rewind → ホームへ
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+
+    XCTAssertTrue(backCalled)
+  }
+
+  func test_hokkaido_rewindDuringShimo_goesBackToPreviousShimo() {
+    let manager = makeManager(mode: .hokkaido, strategy: HokkaidoGameStrategy())
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .whatsNext(1)
+    manager.handleGoNext()                            // → .shimoRefrainBeforeAdvance(1)
+    manager.baseViewModel.playerFinishedAction?()     // refrain 終了 → .shimo(2)
+
+    // .shimo(2) で rewind → 1首目の下の句に戻る
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+
+    guard case .shimo(_, let counter) = manager.phase else {
+      XCTFail("Expected .shimo after rewind, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 1)
+    XCTAssertEqual(manager.poemSupplier.currentIndex, 1)
+  }
+
+  // MARK: - PostMortem (感想戦)
+
+  func test_postMortem_resetsSupplierAndRestartsFromJoka() {
+    let manager = makeManager(mode: .normal, strategy: NormalGameStrategy(), poemCount: 1)
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .waitingForShimo(1)
+    manager.baseViewModel.playButtonTappedAfterFinishedReciting?()  // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .gameEnd
+    XCTAssertEqual(manager.phase, .gameEnd)
+
+    // 感想戦開始 (startPostMortemAction 経由)
+    manager.baseViewModel.recitePoemViewModel.startPostMortemAction?()
+
+    XCTAssertEqual(manager.phase, .joka)
+    XCTAssertEqual(manager.poemSupplier.currentIndex, 0)
+  }
+
   func test_normal_rewindDuringShimo_goesBackToKami() {
     let manager = makeManager(mode: .normal, strategy: NormalGameStrategy())
     manager.startGame()
