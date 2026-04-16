@@ -59,4 +59,29 @@ final class NgramPickerViewModelTests: XCTestCase {
     XCTAssertEqual(FirstChar.shi.buttonViewModel.output.fillType, .empty)
     XCTAssertEqual(viewModel.selectedNum, 98)
   }
+
+  // MARK: - 回帰テスト: settings への即時書き戻し
+  // Bug: NgramPicker 画面から PoemPicker に戻った際、Badge が 0首 のままになる。
+  // 原因: 旧実装では画面離脱時 (tasksForLeavingThisView) にまとめて settings へ
+  //       書き戻していたため、NavigationStack pop 時に PoemPicker の onAppear が
+  //       先に走って古い値を読んでしまっていた。
+  // 期待: タップのたびに settings.state100 が即時更新される。
+
+  func test_settingsInit_tapPropagatesToSettingsImmediately() {
+    // given: 0首状態
+    let settings = Settings()
+    settings.state100 = SelectedState100().cancelAll()
+    XCTAssertEqual(settings.state100.selectedNum, 0)
+
+    // when: 一字決まりボタンをタップ
+    let viewModel = NgramPickerViewModel(settings: settings)
+    viewModel.input.chrButotnTapped.send(.justOne)
+
+    // then: settings もタップ直後に更新されている
+    XCTAssertEqual(settings.state100.selectedNum,
+                   FirstChar.justOne.poemNumbers.count,
+                   "タップ直後に settings.state100 が反映される必要がある")
+    XCTAssertEqual(viewModel.output.state100.selectedNum,
+                   settings.state100.selectedNum)
+  }
 }

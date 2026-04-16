@@ -78,6 +78,17 @@ final class FiveColorsViewModel: ViewModelObject, FillTypeHandlable {
 }
 
 extension FiveColorsViewModel {
+  /// settings を受け取り、output.state100 の変化を settings.state100 へ即時反映する。
+  convenience init(settings: Settings) {
+    self.init(state100: settings.state100)
+    output.$state100
+      .dropFirst()
+      .sink { [weak settings] newState in
+        settings?.state100 = newState
+      }
+      .store(in: &cancellables)
+  }
+
   static func fillType(of color: FiveColors, for state100: SelectedState100) -> FillType {
     fillType(of: state100.allSelectedNumbers,
              in: color.poemNumbers)

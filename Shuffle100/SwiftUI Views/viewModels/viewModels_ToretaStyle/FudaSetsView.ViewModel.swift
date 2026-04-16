@@ -66,5 +66,22 @@ extension FudaSetsView {
       self.binding = binding
       self.output = output
     }
+
+    /// settings を受け取り、output の変化を settings へ即時反映する。
+    convenience init(settings: Settings) {
+      self.init(savedFudaSets: settings.savedFudaSets)
+      output.$selectedState100
+        .dropFirst()
+        .sink { [weak settings] newState in
+          settings?.state100 = newState
+        }
+        .store(in: &cancellables)
+      output.$savedFudaSets
+        .dropFirst()
+        .sink { [weak settings] newSets in
+          settings?.savedFudaSets = newSets
+        }
+        .store(in: &cancellables)
+    }
   }
 }

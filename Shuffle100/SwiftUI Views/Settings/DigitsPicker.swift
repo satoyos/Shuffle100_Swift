@@ -10,11 +10,10 @@ import SwiftUI
 struct DigitsPicker<D: Digits> {
   let settings: Settings
   @ObservedObject private var viewModel: DigitsPickerViewModel<D>
-  @Environment(\.isPresented) var isPresented
-  
+
   init(settings: Settings) {
     self.settings = settings
-    self.viewModel = .init(state100: settings.state100)
+    self.viewModel = .init(settings: settings)
   }
 }
 
@@ -33,14 +32,6 @@ extension DigitsPicker: View where D.AllCases: RandomAccessCollection {
         BadgeView(number: viewModel.output.state100.selectedNum)
       }
     }
-    .onChange(of: isPresented) {
-      guard !isPresented else { return }
-      tasksForLeavingThisView()
-    }
-  }
-  
-  func tasksForLeavingThisView() {
-    settings.state100 = viewModel.output.state100
   }
 }
 

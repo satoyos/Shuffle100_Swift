@@ -23,7 +23,7 @@ final class NgramPickerViewModel: ViewModelObject, FillTypeHandlable {
   let input: Input
   @BindableObject private(set) var binding:  Binding
   let output: Output
-  private var cancellables: Set<AnyCancellable> = []
+  var cancellables: Set<AnyCancellable> = []
 
   init(state100: SelectedState100) {
     let input = Input()
@@ -61,6 +61,19 @@ final class NgramPickerViewModel: ViewModelObject, FillTypeHandlable {
 extension NgramPickerViewModel {
   var selectedNum: Int {
     output.state100.selectedNum
+  }
+
+  /// settings を受け取り、output.state100 の変化を settings.state100 へ即時反映する。
+  /// 旧実装では画面離脱時 (tasksForLeavingThisView) にまとめて書き戻していたため、
+  /// NavigationStack pop 直後のバッジ表示が古いままになるバグがあった。
+  convenience init(settings: Settings) {
+    self.init(state100: settings.state100)
+    output.$state100
+      .dropFirst()
+      .sink { [weak settings] newState in
+        settings?.state100 = newState
+      }
+      .store(in: &cancellables)
   }
 }
 

@@ -62,4 +62,21 @@ final class FiveColorsViewModelTests: XCTestCase {
     // 選ばれている歌の数は21になる
     XCTAssertEqual(viewModel.output.state100.selectedNum, 21)
   }
+
+  // MARK: - 回帰テスト: settings への即時書き戻し
+
+  func test_settingsInit_tapPropagatesToSettingsImmediately() {
+    // given
+    let settings = Settings()
+    settings.state100 = SelectedState100().cancelAll()
+    XCTAssertEqual(settings.state100.selectedNum, 0)
+
+    // when
+    let viewModel = FiveColorsViewModel(settings: settings)
+    viewModel.input.selectJust20OfColor.send(.blue)
+
+    // then
+    XCTAssertEqual(settings.state100.selectedNum, 20,
+                   "タップ直後に settings.state100 が反映される必要がある")
+  }
 }

@@ -219,8 +219,45 @@ class FudaSetsViewModelTest: XCTestCase {
     XCTAssertEqual(viewModel.output.selectedState100.selectedNum, 50)
   }
   
+  // MARK: - 回帰テスト: settings への即時書き戻し
+
+  func test_settingsInit_selectFudaSetPropagatesToSettingsImmediately() {
+    // given
+    let settings = Settings()
+    settings.savedFudaSets = [
+      SavedFudaSet(name: "セットA", state100: createTestState(selectedCount: 30))
+    ]
+    settings.state100 = SelectedState100().cancelAll()
+    XCTAssertEqual(settings.state100.selectedNum, 0)
+
+    // when
+    let vm = FudaSetsView.ViewModel(settings: settings)
+    vm.input.selectFudaSet.send(0)
+
+    // then: settings.state100 もタップ直後に更新されている
+    XCTAssertEqual(settings.state100.selectedNum, 30,
+                   "セット選択直後に settings.state100 が反映される必要がある")
+  }
+
+  func test_settingsInit_deletePropagatesToSettingsImmediately() {
+    // given
+    let settings = Settings()
+    settings.savedFudaSets = [
+      SavedFudaSet(name: "セットA", state100: createTestState(selectedCount: 10)),
+      SavedFudaSet(name: "セットB", state100: createTestState(selectedCount: 20))
+    ]
+
+    // when
+    let vm = FudaSetsView.ViewModel(settings: settings)
+    vm.input.deleteFudaSet.send(IndexSet(integer: 0))
+
+    // then: settings.savedFudaSets も即時更新
+    XCTAssertEqual(settings.savedFudaSets.count, 1)
+    XCTAssertEqual(settings.savedFudaSets[0].name, "セットB")
+  }
+
   // MARK: - Helper Methods
-  
+
   private func createTestState(selectedCount: Int) -> SelectedState100 {
     var boolArray = Bool100.allUnselected
     for i in 0..<min(selectedCount, 100) {

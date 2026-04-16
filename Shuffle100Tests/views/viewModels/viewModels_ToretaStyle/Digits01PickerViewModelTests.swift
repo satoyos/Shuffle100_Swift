@@ -56,4 +56,22 @@ final class Digits01PickerViewModelTests: XCTestCase {
     XCTAssertEqual(digit                 .buttonViewModel.output.fillType, .empty)
     XCTAssertEqual(viewModel.selectedNum, 90)
     }
+
+  // MARK: - 回帰テスト: settings への即時書き戻し
+
+  func test_settingsInit_tapPropagatesToSettingsImmediately() {
+    // given: 0首
+    let settings = Settings()
+    settings.state100 = SelectedState100().cancelAll()
+    XCTAssertEqual(settings.state100.selectedNum, 0)
+
+    // when: 1の位 = 3 をタップ (fillType.empty → .full)
+    let viewModel = DigitsPickerViewModel<Digits01>(settings: settings)
+    let digit: Digits01 = .three
+    viewModel.input.digitButtonTapped.send(digit)
+
+    // then: settings もタップ直後に更新されている
+    XCTAssertEqual(settings.state100.selectedNum, digit.poemNumbers.count,
+                   "タップ直後に settings.state100 が反映される必要がある")
+  }
 }

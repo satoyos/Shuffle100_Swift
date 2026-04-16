@@ -12,11 +12,10 @@ struct FiveColorsView {
   @State private var showActionSheet = false
   @State private var selectedColor: FiveColors = .blue
   @ObservedObject private var viewModel: FiveColorsViewModel
-  @Environment(\.isPresented) private var isPresented
 
   init(settings: Settings) {
     self.settings = settings
-    self.viewModel = .init(state100: settings.state100)
+    self.viewModel = .init(settings: settings)
   }
 }
 
@@ -41,12 +40,8 @@ extension FiveColorsView: View {
         }
       }
     }
-    .onChange(of: isPresented) {
-      guard !isPresented else { return }
-      tasksForLeavingThisVIew()
-    }
   }
-  
+
   private func fiveColorsActionSheet() -> ActionSheet {
     ActionSheet(
       title: Text("\(selectedColor.description)色の20首をどうしますか？"),
@@ -62,11 +57,6 @@ extension FiveColorsView: View {
       ]
     )
   }
-  
-  func tasksForLeavingThisVIew() {
-    settings.state100 = viewModel.output.state100
-  }
-  
 }
 
 #Preview {

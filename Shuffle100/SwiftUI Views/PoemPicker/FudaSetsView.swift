@@ -11,11 +11,10 @@ import SwiftUI
 struct FudaSetsView {
   let settings: Settings
   @ObservedObject private var viewModel: FudaSetsView.ViewModel
-  @Environment(\.isPresented) private var isPresented
-  
+
   init(settings: Settings) {
     self.settings = settings
-    self.viewModel = FudaSetsView.ViewModel(savedFudaSets: settings.savedFudaSets)
+    self.viewModel = FudaSetsView.ViewModel(settings: settings)
   }
 }
 
@@ -47,15 +46,6 @@ extension FudaSetsView: View {
           .foregroundColor(.secondary)
       }
     }
-    .onChange(of: isPresented) {
-      guard !isPresented else { return }
-      tasksForLeavingThisView()
-    }
-  }
-  
-  func tasksForLeavingThisView() {
-    settings.savedFudaSets = viewModel.output.savedFudaSets
-    settings.state100 = viewModel.output.selectedState100
   }
 }
 

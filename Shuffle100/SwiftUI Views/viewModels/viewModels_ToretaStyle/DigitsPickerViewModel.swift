@@ -20,7 +20,7 @@ final class DigitsPickerViewModel<D: Digits>: ViewModelObject, FillTypeHandlable
   let input   = Input()
   @BindableObject private(set) var binding = Binding()
   let output  = Output()
-  private var cancellables = Set<AnyCancellable>()
+  var cancellables = Set<AnyCancellable>()
   
   init(state100: SelectedState100) {
     output.state100 = state100
@@ -51,6 +51,17 @@ final class DigitsPickerViewModel<D: Digits>: ViewModelObject, FillTypeHandlable
 extension DigitsPickerViewModel {
   var selectedNum: Int {
     output.state100.selectedNum
+  }
+
+  /// settings を受け取り、output.state100 の変化を settings.state100 へ即時反映する。
+  convenience init(settings: Settings) {
+    self.init(state100: settings.state100)
+    output.$state100
+      .dropFirst()
+      .sink { [weak settings] newState in
+        settings?.state100 = newState
+      }
+      .store(in: &cancellables)
   }
 }
 
