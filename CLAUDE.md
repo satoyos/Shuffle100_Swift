@@ -46,23 +46,23 @@ xcodebuild test -project Shuffle100.xcodeproj -scheme Shuffle100UITests -destina
 ## アーキテクチャ
 
 ### 全体構成
-プロジェクトはCoordinatorパターンを採用したUIKit+SwiftUIハイブリッドアーキテクチャです。
+プロジェクトはSwiftUI NavigationStack + AppRouterパターンを採用しています。
 
 ```
 App
+├── Navigation/ - AppRouter, AppRoute, GameStateManager等
 ├── Models/ - データモデルとビジネスロジック
-├── Coordinators/ - 画面遷移とナビゲーション制御  
-├── Screens/ - UIKitベースの画面
 ├── SwiftUI Views/ - SwiftUIベースのビューとViewModel
-├── Views/ - 共通UIコンポーネント
+├── UIKit views/ - AspectRatioContainerViewController, KeyWindow
 ├── AudioPlayers/ - 音声再生システム
 └── Resources/ - 音声ファイルとJSONデータ
 ```
 
-### Coordinatorパターン
-- `MainCoordinator`: アプリ全体の遷移を管理
-- 各画面専用のCoordinator（`PoemPickerCoordinator`, `ReciteSettingsCoordinator`など）
-- プロトコル `CoordinatorProtocol` で統一されたインターフェース
+### ナビゲーション
+- `AppRouter`: NavigationPath + SheetRouteでアプリ全体の遷移を管理
+- `AppRootView`: NavigationStackのルート。全destinationを定義
+- `GameStateManager`: ゲームモードの状態遷移（GamePhase + GameStrategy）
+- `SceneDelegate`: エントリポイント（AspectRatioContainerViewController経由でUIHostingControllerをラップ）
 
 ### 主要コンポーネント
 
@@ -78,8 +78,8 @@ App
 - AVAudioPlayerを使用したバックグラウンド再生対応
 
 #### SwiftUI統合
-- UIKitをベースとしつつ、一部画面でSwiftUIを採用
-- `ActionAttachedHostingController` でUIKitとSwiftUIを連携
+- 全画面がSwiftUIで実装済み（NavigationStack + AppRouter）
+- SceneDelegateのみUIKit（UIHostingController + AspectRatioContainerViewController）
 - ViewModelパターンで状態管理（`Torifuda.ViewModel`, `FullLiner.ViewModel`など）
 
 ## 開発時の注意点

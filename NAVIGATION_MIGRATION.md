@@ -251,59 +251,45 @@ class AppRouter: ObservableObject {
 
 ## Phase 5: クリーンアップ
 
-**ステータス**: 未着手
+**ステータス**: 完了
 
-**目標**: 残存するCoordinatorとUIKit依存を完全削除。AspectRatioContainerViewControllerのSwiftUI化。
+**目標**: 残存するCoordinatorとUIKit依存を完全削除。
 
-**AspectRatioContainerViewControllerのSwiftUI化**:
-```swift
-struct AspectRatioContainer<Content: View>: View {
-  let content: Content
-  var body: some View {
-    GeometryReader { geo in
-      let isLandscape = geo.size.width > geo.size.height
-      let maxWidth = isLandscape ? geo.size.height * (3.0 / 4.0) : geo.size.width
-      let xOffset = isLandscape ? (geo.size.width - maxWidth) / 2 : 0
-      content
-        .frame(width: maxWidth, height: geo.size.height)
-        .offset(x: xOffset)
-        .frame(width: geo.size.width, height: geo.size.height)
-    }
-  }
-}
-```
+### 実施内容
 
-**削除ファイル**（Phase 4完了後の残存分）:
-- `coordinaters/MainCoordinator.swift`
-- `coordinaters/MainCoordinatorSetUpSettings.swift`
-- `coordinaters/SelectModeCoordinator.swift`
-- `coordinaters/SelectSingerCoordinator.swift`
-- `coordinaters/MemorizeTimerCoordinator.swift`
-- `coordinaters/protocols/CoordinatorProtocol.swift`
-- `coordinaters/protocols/HandleNavigatorProtocol.swift`
-- `coordinaters/protocols/SaveSettingsProtocol.swift`
-- `coordinaters/supports/ActionAttachedHostingController.swift`
-- `Screens/HomeScreen.swift`と関連ファイル
-- `UIKit views/AspectRatioContainerViewController.swift`
+**Step 5a: Coordinator関連ファイルの削除（9ファイル）**
+- `coordinaters/` ディレクトリ全体を削除（MainCoordinator, SelectModeCoordinator, SelectSingerCoordinator, MemorizeTimerCoordinator, 3プロトコル, ActionAttachedHostingController）
 
-**テスト確認**:
-- 全UIテストが通ること
-- iPad横向き時にアスペクト比4:3が保たれること
+**Step 5b: Screens, DataSources, Delegates, UIKitビュー, テストの削除（31ファイル）**
+- `screens/` ディレクトリ全体を削除（HomeScreen, Screen, SettingsAttachedScreen, HelpDetailScreen, コメントアウト済みファイル3つ, TableViewHandlerProtocol）
+- `dataSources/` ディレクトリ全体を削除（8ファイル）
+- `delegates/` ディレクトリ全体を削除（3ファイル）
+- `UIKit views/tableCells/` を削除、不要なprotocol・拡張を削除（7ファイル）
+- 対応するテストファイル削除（6ファイル）
+
+**維持したファイル:**
+- `UIKit views/AspectRatioContainerViewController.swift` — SceneDelegateで使用中。SwiftUI版はステータスバー委譲等のパリティ確保が複雑なため、別タスクとして分離。
+- `UIKit views/protocols/KeyWindow.swift` — SceneDelegateの`--uitesting`モードで使用中
+- `Shuffle100Tests/screens/HelpListScreenTest.swift` — HelpList.ViewModelのテスト（UIKit非依存）
+- `Shuffle100Tests/views/KeyWindowProtocolTest.swift` — AppWindowプロトコルのテスト
+
+**テスト確認**: 全330ユニットテスト通過
 
 ---
 
-## 重要ファイル一覧
+## 現在のアーキテクチャ（移行完了後）
 
-| 優先度 | ファイル | 理由 |
-|--------|---------|------|
-| 最重要 | `Shuffle100/coordinaters/MainCoordinator.swift` | Phase 1で廃止する全体像 |
-| 最重要 | `Shuffle100/SceneDelegate.swift` | Phase 1でエントリポイント切り替え |
-| 最重要 | `Shuffle100/coordinaters/protocols/KamiShimoRecitation.swift` | GameStateManagerへの置き換えの起点 |
-| 重要 | `Shuffle100/SwiftUI Views/viewModels/viewModels_ToretaStyle/RecitePoemBaseViewModel.swift` | playerFinishedActionのクロージャパターン |
-| 重要 | `Shuffle100/coordinaters/WhatsNextCoordinator.swift` | 別UINavigationControllerパターン |
-| 重要 | `Shuffle100/SwiftUI Views/PoemPicker/PoemPickerView.swift` | 内部NavigationStack除去対象 |
-| 参照 | `Shuffle100/SwiftUI Views/Help/HelpRouter.swift` | NavigationPath実装の参考パターン |
-| 参照 | `Shuffle100/SwiftUI Views/Settings/ReciteSettingsRouter.swift` | NavigationPath実装の参考パターン |
+| ファイル | 役割 |
+|---------|------|
+| `Shuffle100/Navigation/AppRouter.swift` | ナビゲーション状態管理（NavigationPath + SheetRoute） |
+| `Shuffle100/Navigation/AppRootView.swift` | NavigationStack + 全destinationの定義 |
+| `Shuffle100/Navigation/AppRoute.swift` | Push遷移先の列挙型 |
+| `Shuffle100/Navigation/SheetRoute.swift` | Sheet表示先の列挙型 |
+| `Shuffle100/Navigation/GameStateManager.swift` | ゲームモードの状態遷移管理 |
+| `Shuffle100/Navigation/GamePhase.swift` | ゲーム状態の列挙型 |
+| `Shuffle100/Navigation/GameStrategy.swift` | ゲームモード別の振る舞いプロトコル |
+| `Shuffle100/SwiftUI Views/Home/HomeView.swift` | トップ画面（旧HomeScreenのSwiftUI版） |
+| `Shuffle100/SceneDelegate.swift` | エントリポイント（AspectRatioContainerViewController経由） |
 
 ---
 

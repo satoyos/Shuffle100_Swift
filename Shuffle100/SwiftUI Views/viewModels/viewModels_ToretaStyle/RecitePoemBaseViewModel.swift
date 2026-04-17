@@ -118,6 +118,7 @@ final class RecitePoemBaseViewModel: ViewModelObject {
   // MARK: - Public Methods
 
   func initView(title: String) {
+    output.showGameEndView = false
     recitePoemViewModel.initView(title: title)
   }
 

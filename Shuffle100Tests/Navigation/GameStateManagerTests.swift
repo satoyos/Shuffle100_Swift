@@ -410,6 +410,24 @@ final class GameStateManagerTests: XCTestCase {
     XCTAssertEqual(manager.poemSupplier.currentIndex, 0)
   }
 
+  func test_postMortem_showGameEndViewResetToFalse() {
+    let manager = makeManager(mode: .normal, strategy: NormalGameStrategy(), poemCount: 1)
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .waitingForShimo(1)
+    manager.baseViewModel.playButtonTappedAfterFinishedReciting?()  // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .gameEnd
+    XCTAssertTrue(manager.baseViewModel.output.showGameEndView,
+                  "ゲーム終了時に showGameEndView が true になっていること")
+
+    // 感想戦開始
+    manager.baseViewModel.recitePoemViewModel.startPostMortemAction?()
+
+    XCTAssertEqual(manager.phase, .joka)
+    XCTAssertFalse(manager.baseViewModel.output.showGameEndView,
+                   "感想戦開始後に showGameEndView が false にリセットされること")
+  }
+
   func test_normal_rewindDuringShimo_goesBackToKami() {
     let manager = makeManager(mode: .normal, strategy: NormalGameStrategy())
     manager.startGame()

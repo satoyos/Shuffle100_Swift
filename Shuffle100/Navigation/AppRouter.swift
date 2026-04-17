@@ -15,7 +15,6 @@ class AppRouter: ObservableObject {
 
   /// 現在ゲーム中の GameStateManager。GamePlayView が onAppear で設定する。
   /// WhatsNextSheetWrapper などゲーム画面配下のシートから参照するために持つ。
-  /// (Phase 5 で MainCoordinator を削除後、より綺麗な形に整理予定)
   var gameStateManager: GameStateManager?
 
   init(settings: Settings, store: StoreManager) {
@@ -28,7 +27,7 @@ class AppRouter: ObservableObject {
     self.init(settings: Self.loadSettings(store: store), store: store)
   }
 
-  // MARK: - Settings loading (MainCoordinatorSetUpSettings と同等のロジック)
+  // MARK: - Settings loading
 
   static func loadSettings(store: StoreManager) -> Settings {
     let env = SHEnvironment()
