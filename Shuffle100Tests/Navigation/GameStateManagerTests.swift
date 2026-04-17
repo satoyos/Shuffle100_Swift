@@ -426,4 +426,114 @@ final class GameStateManagerTests: XCTestCase {
     XCTAssertEqual(counter, 1)
     XCTAssertEqual(manager.poemSupplier.side, .kami)
   }
+
+  // MARK: - Rewind Regression (旧 Coordinator テストからの移行)
+
+  func test_normal_consecutiveRewinds_fromSecondPoemKami_doNotGoBackToHome() {
+    let manager = makeManager(mode: .normal, strategy: NormalGameStrategy())
+    var backCalled = false
+    manager.onBackToHome = { backCalled = true }
+
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .waitingForShimo(1)
+    manager.baseViewModel.playButtonTappedAfterFinishedReciting?()  // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(2)
+
+    // 1回目の rewind: .kami(2) → .shimo(1)
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+    guard case .shimo(_, let c1) = manager.phase else {
+      XCTFail("Expected .shimo after first rewind, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(c1, 1)
+
+    // 2回目の rewind: .shimo(1) → .kami(1)
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+    guard case .kami(_, let c2) = manager.phase else {
+      XCTFail("Expected .kami after second rewind, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(c2, 1)
+
+    XCTAssertFalse(backCalled, "連続 rewind でホームに戻ってはいけない")
+  }
+
+  func test_beginner_rewindThenShimoFinished_reopensWhatsNext() {
+    let manager = makeManager(mode: .beginner, strategy: BeginnerGameStrategy())
+    var presentedCount = 0
+    manager.onPresentWhatsNext = { _ in presentedCount += 1 }
+
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .kami(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .whatsNext(1)
+    XCTAssertEqual(presentedCount, 1)
+
+    manager.handleGoNext()                            // → .kami(2)
+    // .kami(2) で rewind → 1首目の下の句に戻る
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+    guard case .shimo(_, let counter) = manager.phase else {
+      XCTFail("Expected .shimo after rewind, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 1)
+
+    // 戻った下の句の再生完了 → WhatsNext が再度表示される
+    manager.baseViewModel.playerFinishedAction?()
+    guard case .whatsNext(_, let wc) = manager.phase else {
+      XCTFail("Expected .whatsNext after rewind shimo finished, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(wc, 1)
+    XCTAssertEqual(presentedCount, 2,
+                   "rewind 後の下の句完了で WhatsNext が再表示される必要がある")
+  }
+
+  func test_hokkaido_rewindThenShimoFinished_reopensWhatsNext() {
+    let manager = makeManager(mode: .hokkaido, strategy: HokkaidoGameStrategy())
+    var presentedCount = 0
+    manager.onPresentWhatsNext = { _ in presentedCount += 1 }
+
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .whatsNext(1)
+    XCTAssertEqual(presentedCount, 1)
+
+    manager.handleGoNext()                            // → .shimoRefrainBeforeAdvance(1)
+    manager.baseViewModel.playerFinishedAction?()     // refrain 終了 → .shimo(2)
+
+    // .shimo(2) で rewind → 1首目の下の句に戻る
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+    guard case .shimo(_, let counter) = manager.phase else {
+      XCTFail("Expected .shimo after rewind, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 1)
+
+    // 戻った下の句の再生完了 → WhatsNext が再度表示される
+    manager.baseViewModel.playerFinishedAction?()
+    guard case .whatsNext(_, let wc) = manager.phase else {
+      XCTFail("Expected .whatsNext after rewind shimo finished, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(wc, 1)
+    XCTAssertEqual(presentedCount, 2,
+                   "rewind 後の下の句完了で WhatsNext が再表示される必要がある")
+  }
+
+  func test_hokkaido_rewindOnFirstPoem_callsBackToHome() {
+    let manager = makeManager(mode: .hokkaido, strategy: HokkaidoGameStrategy())
+    var backCalled = false
+    manager.onBackToHome = { backCalled = true }
+
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+
+    // 1首目の下の句で rewind → ホームに戻る
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+
+    XCTAssertTrue(backCalled,
+                  "北海道モード1首目の rewind でホームに戻る必要がある")
+  }
 }
