@@ -12,25 +12,6 @@ import XCTest
 @MainActor
 class HelpListScreenTest: XCTestCase {
 
-  func test_coordinatorStart_createsActionAttachedHostingController() throws {
-    // given
-    let fromScreen = UIViewController()
-    let coordinator = HelpListCoordinator(fromScreen: fromScreen)
-
-    // when
-    coordinator.start()
-
-    // then
-    XCTAssertNotNil(coordinator.screen, "Coordinatorのscreenプロパティが設定されている")
-    guard let hostController = coordinator.screen as? ActionAttachedHostingController<HelpListView> else {
-      XCTFail("screenはActionAttachedHostingController<HelpListView>である必要がある")
-      return
-    }
-
-    // hostControllerが正しく作成されていることを確認
-    XCTAssertNotNil(hostController)
-  }
-
   func test_viewModelInitialization_hasTwoSections() {
     // given
     let viewModel = HelpList.ViewModel()

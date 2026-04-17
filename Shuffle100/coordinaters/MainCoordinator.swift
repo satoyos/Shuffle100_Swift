@@ -79,22 +79,7 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
   }
   
   private func startGame(settings: Settings, store: StoreManager) {
-    var gameDriveCoordinator: Coordinator
-    
-    AudioPlayerFactory.shared.setupAudioSession()
-    switch settings.reciteMode {
-    case .normal:
-      gameDriveCoordinator = NormalModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-    case .nonstop:
-      gameDriveCoordinator = NonsotpModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-    case .beginner:
-      gameDriveCoordinator = BeginnerModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-    case .hokkaido:
-      gameDriveCoordinator =
-      HokkaidoModeCoordinator(navigationController: navigationController, settings: settings, store: store)
-    }
-    gameDriveCoordinator.start()
-    self.childCoordinator = gameDriveCoordinator
+    // Phase 4 で AppRouter + GameStateManager 経由に移行済み
   }
   
   
@@ -105,19 +90,11 @@ final class MainCoordinator: NSObject, Coordinator, SaveSettings, HandleNavigato
   }
   
   private func openReciteSettings(from screen: UIViewController, settins: Settings, store: StoreManager) {
-    let coordinator = ReciteSettingsCoordinator(
-      settings: settins,
-      fromScreen: screen,
-      store: store)
-    coordinator.start()
-    AudioPlayerFactory.shared.setupAudioSession()
-    self.childCoordinator = coordinator
+    // Phase 4 で AppRouter 経由に移行済み
   }
-  
+
   private func openHelpList(from screen: UIViewController) {
-    let coordinator = HelpListCoordinator(fromScreen: screen)
-    coordinator.start()
-    self.childCoordinator = coordinator
+    // Phase 4 で AppRouter 経由に移行済み
   }
   
   private func openMemorizeTimer() {
