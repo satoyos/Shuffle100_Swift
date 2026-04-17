@@ -14,8 +14,8 @@
 ### Coordinator一覧（当初22個）
 - **削除済み（Phase 2）**: SelectModeCoordinator, SelectSingerCoordinator, MemorizeTimerCoordinator
 - **削除済み（Phase 3）**: PoemPickerCoordinator, NgramPickerCoordinator, FudaSetsCoordinator, FiveColorsCoordinator, DigitsPickerScreen01Coordinator, DigitsPickerScreen10Coordinator
-- **未使用だが残存**: MainCoordinator（Phase 1で無効化済み、Phase 5で削除予定）
-- **Phase 4で対処**: NormalModeCoordinator, BeginnerModeCoordinator, NonsotpModeCoordinator, HokkaidoModeCoordinator, ReciteSettingsCoordinator, IntervalSettingCoordinator, KamiShimoIntervalSettingCoordinator, VolumeSettingCoordinator, HelpListCoordinator, TorifudaCoordinator, WhatsNextCoordinator
+- **削除済み（Phase 4）**: NormalModeCoordinator, BeginnerModeCoordinator, NonsotpModeCoordinator, HokkaidoModeCoordinator, WhatsNextCoordinator, ReciteSettingsCoordinator, TorifudaCoordinator, HelpListCoordinator, IntervalSettingCoordinator, KamiShimoIntervalSettingCoordinator, VolumeSettingCoordinator + プロトコル6つ
+- **残存（Phase 5で削除予定）**: MainCoordinator, MainCoordinatorSetUpSettings, SelectModeCoordinator, SelectSingerCoordinator, MemorizeTimerCoordinator + 基盤プロトコル3つ + ActionAttachedHostingController
 
 ---
 
@@ -190,60 +190,62 @@ class AppRouter: ObservableObject {
 
 ## Phase 4: ゲームモード画面の移行（最難関）
 
-**ステータス**: 未着手
+**ステータス**: 完了
 
 **目標**: RecitePoemBaseView + 4つのゲームモード、WhatsNextViewを移行。
 
-**技術的課題**:
-現在のCoordinatorはクロージャ（`playerFinishedAction`, `skipToNextScreenAction`）を動的に書き換えることで状態機械を実現している。これをSwiftUIの`ObservableObject`に移行する。
+**アーキテクチャ**:
+旧 Coordinator のクロージャ動的入れ替え方式を、明示的な `GamePhase` enum + Strategy パターンの `GameStateManager` に置き換えた。
 
-**GamePhase enumで状態を明示化**:
-```swift
-enum GamePhase {
-  case joka
-  case kami(poemNumber: Int, counter: Int)
-  case waitingForPlay(poemNumber: Int, counter: Int)  // Normal mode: ユーザーのタップ待ち
-  case shimo(poemNumber: Int, counter: Int)
-  case whatsNext(poem: Poem, counter: Int)
-  case gameEnd
-}
-```
+### Step 4a: 基盤型の定義
+**新規ファイル (6)**:
+- `Shuffle100/Navigation/GamePhase.swift` — `.joka`, `.kami`, `.waitingForShimo`, `.shimo`, `.shimoRefrainBeforeAdvance`, `.whatsNext`, `.gameEnd`
+- `Shuffle100/Navigation/GameStrategy.swift` — `hasKami`, `autoAdvanceFromKami`, `showsWhatsNext`, `forcesShortenedJoka` 等のプロトコル
+- `Shuffle100/Navigation/GameStrategies/NormalGameStrategy.swift`
+- `Shuffle100/Navigation/GameStrategies/BeginnerGameStrategy.swift`
+- `Shuffle100/Navigation/GameStrategies/NonstopGameStrategy.swift`
+- `Shuffle100/Navigation/GameStrategies/HokkaidoGameStrategy.swift`
 
-**GameStateManagerでCoordinatorの状態機械を代替**:
-- `KamiShimoRecitation`プロトコルの責務を`GameStateManager`に内包
-- モード別の差異はStrategyパターン（`GameStrategy`プロトコル）で吸収
-- `router.popToRoot()`や`router.presentSheet(.whatsNext(poem))`でナビゲーションを制御
+### Step 4b: GameStateManager の実装
+**新規ファイル**: `Shuffle100/Navigation/GameStateManager.swift`
+- BaseViewModel のクロージャを init 時に1回だけ固定し、`handlePlayerFinished()` 等で `switch phase` により状態遷移
+- コールバック: `onPresentWhatsNext`, `onBackToHome`, `onOpenSettings`
+- WhatsNext 操作: `handleGoNext()`, `handleRefrainShimo()`, `handleExitGame()`, `startPostMortem()`
 
-**CATransactionの問題**: 現在「push完了後に序歌再生」をCATransactionで実現。NavigationStack移行後は`.onAppear`内の`Task.sleep`で代替:
-```swift
-.onAppear {
-  Task {
-    try? await Task.sleep(for: .milliseconds(400))
-    gameStateManager.startJoka()
-  }
-}
-```
+**新規テスト**: `Shuffle100Tests/Navigation/GameStateManagerTests.swift` (28件)
 
-**WhatsNextView**: 移行後は`router.presentSheet(.whatsNext(poem))`で`.sheet`として表示。
+### Step 4c: WhatsNextSheetWrapper の実装
+- `AppRootView.swift` に `WhatsNextSheetWrapper` 追加
+- `AppRouter.swift` に `var gameStateManager: GameStateManager?` 追加
 
-**ReciteSettings（ゲーム中）**: 既にReciteSettingsRouterがNavigationPathを使用しているため、`router.presentSheet(.reciteSettings)`を呼ぶだけ。
+### Step 4d: GamePlayView の実装と切り替え
+**新規ファイル**: `Shuffle100/SwiftUI Views/GameFlow/GamePlayView.swift`
+- `AppRootView.swift` の `.normalMode`, `.beginnerMode`, `.nonstopMode`, `.hokkaidoMode` destination を実装
 
-**廃止するCoordinator**: NormalModeCoordinator, BeginnerModeCoordinator, NonsotpModeCoordinator, HokkaidoModeCoordinator, WhatsNextCoordinator, ReciteSettingsCoordinator, IntervalSettingCoordinator, KamiShimoIntervalSettingCoordinator, VolumeSettingCoordinator, HelpListCoordinator
+### Step 4e: 統合テスト・バグ修正
+- 感想戦・rewind・北海道読み返し・isIdleTimerDisabled を検証
+- **北海道モード rewind バグ修正**: `handleRewind()` で `strategy.hasKami` 分岐を追加
+- **バッジ表示バグ修正**: PoemPicker 配下の「まとめて選ぶ」4画面で、戻った時にバッジが古い値を表示する問題を修正。各 ViewModel に `convenience init(settings:)` を追加し、`output.$state100.dropFirst().sink` で settings への即時書き戻しを実装
+  - 修正: `NgramPickerViewModel`, `FiveColorsViewModel`, `FudaSetsView.ViewModel`, `DigitsPickerViewModel` + 対応する View 4つ
+  - 回帰テスト 5件追加
 
-**Phase 4開始前の確認事項**:
-1. `KamiShimoRecitation.swift`での`playerFinishedAction`書き換えの全パターン
-2. `PoemSupplier`のライフサイクル（NavigationStack popでdeinitされるかどうか）
-3. `Settings`オブジェクトの`@EnvironmentObject`注入でのライフサイクル整合性
-4. `UIApplication.shared.isIdleTimerDisabled = true`の設定箇所と管理方法
+### Step 4f: テスト移行
+旧 Coordinator テスト3ファイルを調査し、未カバーの4シナリオを `GameStateManagerTests.swift` に追記:
+1. Normal: 連続 rewind でホームに戻らない
+2. Beginner: rewind 後の下の句完了で WhatsNext 再表示
+3. Hokkaido: rewind 後の下の句完了で WhatsNext 再表示
+4. Hokkaido: 1首目 rewind → ホームに戻る
 
-**テスト確認**:
-- 各ゲームモードで試合開始できる
-- 序歌が再生される
-- 上の句→下の句→次の歌の自動遷移が動く
-- 初心者モード/北海道モードで「次はどうする?」シートが出る
-- ゲーム終了画面が出る
-- 感想戦が動く
-- UIテスト: AllPoemRecitedPageのテストが通ること
+### Step 4g: 旧 Coordinator 削除
+**削除ファイル (20)**:
+- ゲームモード Coordinator 5: `NormalModeCoordinator`, `BeginnerModeCoordinator`, `NonsotpModeCoordinator`, `HokkaidoModeCoordinator`, `WhatsNextCoordinator`
+- 設定系 Coordinator 6: `ReciteSettingsCoordinator`, `TorifudaCoordinator`, `HelpListCoordinator`, `IntervalSettingCoordinator`, `KamiShimoIntervalSettingCoordinator`, `VolumeSettingCoordinator`
+- プロトコル 6: `RecitePoemCore`, `PoemRecitation`, `KamiShimoRecitation`, `WhatsNextSupport`, `RecitePoemViewModelHolder`, `BackToHomeProtocol`
+- テスト 3: `NormalModeCoordinatorTest`, `BeginnerModeCoordinatorTest`, `HokkaidoModeCoordinatorTest`
+- `MainCoordinator.swift` の `startGame()`, `openReciteSettings()`, `openHelpList()` の中身を除去
+- `HelpListScreenTest.swift` の `HelpListCoordinator` 依存テスト除去
+
+**テスト確認**: 全344ユニットテスト通過
 
 ---
 
@@ -271,9 +273,15 @@ struct AspectRatioContainer<Content: View>: View {
 }
 ```
 
-**削除ファイル**:
-- `coordinaters/`内の全Coordinatorファイル
-- `coordinaters/protocols/`内の全プロトコルファイル
+**削除ファイル**（Phase 4完了後の残存分）:
+- `coordinaters/MainCoordinator.swift`
+- `coordinaters/MainCoordinatorSetUpSettings.swift`
+- `coordinaters/SelectModeCoordinator.swift`
+- `coordinaters/SelectSingerCoordinator.swift`
+- `coordinaters/MemorizeTimerCoordinator.swift`
+- `coordinaters/protocols/CoordinatorProtocol.swift`
+- `coordinaters/protocols/HandleNavigatorProtocol.swift`
+- `coordinaters/protocols/SaveSettingsProtocol.swift`
 - `coordinaters/supports/ActionAttachedHostingController.swift`
 - `Screens/HomeScreen.swift`と関連ファイル
 - `UIKit views/AspectRatioContainerViewController.swift`
