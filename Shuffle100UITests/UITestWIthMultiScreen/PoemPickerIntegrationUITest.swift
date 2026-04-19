@@ -65,6 +65,8 @@ final class PoemPickerIntegrationUITest: XCTestCase {
         .tapCellof(number: 1)
         .tapCellof(number: 5)
         .cancelSearchButton.tap()
+      // iPhoneのLiquid Glass UI では「テキストを消去」後も検索モードが残るため明示的に終了
+      poemPickerPage.dismissSearchMode()
       //   back to HomeScreen
       poemPickerPage.backToTopButton.tap()
       // then

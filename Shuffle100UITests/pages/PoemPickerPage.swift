@@ -23,16 +23,38 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
   var backToTopButton: XCUIElement {
     app.navigationBars.buttons[A11y.backToTop].firstMatch
   }
-  
+
   var searchField: XCUIElement {
     app.searchFields[A11y.searchFieldPlaceHolder].firstMatch
   }
-  
+
   var cancelSearchButton: XCUIElement {
     let cancelBtn = app.buttons[A11y.cancel].firstMatch // Before Liquid Glass UI
     let eralseBtn = app.buttons[A11y.erase].firstMatch   // Liquid Glass UI where Xcode >= 26.1.1 (iOS 26.1)
 //    app.buttons[A11y.cancel].firstMatch
     return eralseBtn.exists ? eralseBtn : cancelBtn
+  }
+
+  // Liquid Glass UI (iOS 26.1+) では「テキストを消去」は文字列のみ消去し、
+  // 検索モードは残ったまま (キーボード+検索バーが画面に残る)。
+  // 検索モードを完全に終了させてナビゲーションバーの戻るボタンを操作可能にするためのヘルパー。
+  @discardableResult
+  func dismissSearchMode() -> Self {
+    // iPhone Liquid Glass UI: navigationBars 配下の「閉じる」
+    let inNavBar = app.navigationBars.buttons[A11y.close].firstMatch
+    if inNavBar.exists {
+      inNavBar.tap()
+      return self
+    }
+    // iPad: navigationBars に無い場合、アプリ全体から「閉じる」を探す
+    let inApp = app.buttons[A11y.close].firstMatch
+    if inApp.exists {
+      inApp.tap()
+      return self
+    }
+    // 最終手段: スワイプダウンでキーボードを閉じる
+    app.swipeDown()
+    return self
   }
   
   var cancelAllButton: XCUIElement {
@@ -59,7 +81,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
   
   enum A11y {
     static let title = "歌を選ぶ"
-    static let backToTop = "トップ"
+    static let backToTop = "BackButton"
     static let searchFieldPlaceHolder = "歌を検索"
     static let cancel = "キャンセル"
     static let cancelAll = "全て取消"
