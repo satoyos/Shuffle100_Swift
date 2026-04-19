@@ -554,4 +554,49 @@ final class GameStateManagerTests: XCTestCase {
     XCTAssertTrue(backCalled,
                   "北海道モード1首目の rewind でホームに戻る必要がある")
   }
+
+  // MARK: - Fake Mode Wiring (自動生成 Supplier)
+
+  /// fakeMode = true のとき、GameStateManager が内部生成する PoemSupplier に
+  /// addFakePoems() が適用され deck サイズが倍増することを検証する。
+  func test_init_whenFakeModeTrue_autoSupplierHasFakePoemsAdded() {
+    let settings = Settings()
+    settings.reciteMode = .normal
+    settings.state100 = SelectedState100.createOf(bool: false)
+      .selectOf(number: 2)
+      .selectOf(number: 5)
+    settings.fakeMode = true
+
+    // 意図的に poemSupplier を渡さず、init 内の自動生成パスを通す
+    let manager = GameStateManager(
+      settings: settings,
+      store: StoreManager(),
+      strategy: NormalGameStrategy(),
+      audioPlayerFactory: MockAudioPlayerFactory()
+    )
+
+    XCTAssertEqual(manager.poemSupplier.size, 4,
+                   "fakeMode 有効時は選択札 (2) + 偽札 (2) = 4 首になる")
+  }
+
+  /// fakeMode = false のときは addFakePoems() が呼ばれず、
+  /// deck サイズは選択したとおりのままであることを検証する (回帰防止)。
+  func test_init_whenFakeModeFalse_autoSupplierKeepsOriginalSize() {
+    let settings = Settings()
+    settings.reciteMode = .normal
+    settings.state100 = SelectedState100.createOf(bool: false)
+      .selectOf(number: 2)
+      .selectOf(number: 5)
+    settings.fakeMode = false
+
+    let manager = GameStateManager(
+      settings: settings,
+      store: StoreManager(),
+      strategy: NormalGameStrategy(),
+      audioPlayerFactory: MockAudioPlayerFactory()
+    )
+
+    XCTAssertEqual(manager.poemSupplier.size, 2,
+                   "fakeMode 無効時は選択札 2 首のまま")
+  }
 }

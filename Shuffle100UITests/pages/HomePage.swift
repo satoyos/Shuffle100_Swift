@@ -30,7 +30,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     }
 
     var fakeModeCell: XCUIElement {
-        app.switches[A11y.fakeMode].firstMatch
+        app.switches[A11y.fakeMode].switches.firstMatch
     }
 
     var singerCell: XCUIElement {
