@@ -7,6 +7,124 @@ devices([
   "iPad Pro 13-inch (M5)",    # 13inch - 2024 mandatory size
 ])
 
+# ============================================================
+# Snapfile monkey-patch: シミュレータ実ランタイム版を fastlane に反映
+# ------------------------------------------------------------
+# fastlane-2.233 の FastlaneCore::DeviceManager.simulators は
+# `xcrun simctl list devices` のテキストヘッダ (`-- iOS 26.4 --`)
+# だけを見て os_version を決めている。このヘッダはランタイムが
+# 26.4.1 にパッチ更新されても "26.4" のまま変わらないため、
+# fastlane は全デバイスを os_version="26.4" と認識してしまう。
+# その結果、xcodebuild には `OS=26.4` が渡るが、実ランタイムは
+# 26.4.1 のため "Unable to find a device matching the provided
+# destination specifier" でテスト実行が失敗する。
+#
+# ここでは `xcrun simctl list runtimes -j` の JSON から実バージョン
+# を取得し、simulators 返り値の os_version を上書きして辻褄を合わせる。
+#
+# 将来 fastlane の内部実装が変わり、この patch が効かなくなった場合、
+# 何もしないと以前と同じ `Unable to find...` エラーで原因不明に陥る。
+# それを避けるため、パッチ適用の失敗を検知して「どこを修正すべきか」
+# を明示して止める guardrail を同梱している。
+# ============================================================
+begin
+  require 'fastlane_core/device_manager'
+  require 'json'
+
+  raise "FastlaneCore::DeviceManager.simulators が見つかりません" \
+    unless FastlaneCore::DeviceManager.respond_to?(:simulators)
+
+  module SnapfilePatch
+    # (os_type, ヘッダ版 "26.4") → 実ランタイム版 "26.4.1"
+    def self.runtime_map
+      @runtime_map ||= begin
+        raw = `xcrun simctl list runtimes -j 2>/dev/null`
+        map = Hash.new { |h, k| h[k] = {} }
+        JSON.parse(raw).fetch("runtimes", []).each do |r|
+          next unless r["isAvailable"]
+          platform   = r["platform"]
+          header_ver = r["name"].to_s.split.last   # "iOS 26.4" → "26.4"
+          actual_ver = r["version"]                # "26.4.1"
+          map[platform][header_ver] = actual_ver if platform && header_ver && actual_ver
+        end
+        map
+      end
+    end
+
+    module SimulatorOsVersionFix
+      def simulators(requested_os_type = "")
+        devices = super
+        map = SnapfilePatch.runtime_map
+        devices.each do |d|
+          actual = map[d.os_type] && map[d.os_type][d.os_version]
+          if actual && actual != d.os_version
+            d.os_version = actual
+            d.ios_version = actual if d.respond_to?(:ios_version=)
+          end
+        end
+        devices
+      end
+    end
+  end
+
+  FastlaneCore::DeviceManager.singleton_class.prepend(SnapfilePatch::SimulatorOsVersionFix)
+
+  # Sanity check: ヘッダ版と実版が食い違っている platform について、
+  # パッチ適用後もヘッダ版のままのデバイスが残っていないか確認。
+  stale = SnapfilePatch.runtime_map.flat_map do |platform, inner|
+    inner.reject { |h, a| h == a }.map { |h, a| [platform, h, a] }
+  end
+  if stale.any?
+    sample = FastlaneCore::DeviceManager.simulators
+    uncorrected = sample.select do |d|
+      stale.any? { |pl, h, _| d.os_type == pl && d.os_version == h }
+    end
+    unless uncorrected.empty?
+      raise "パッチが適用されていません (例: #{uncorrected.take(2).map { |d| "#{d.name}=#{d.os_version}" }.join(', ')})"
+    end
+  end
+rescue SystemExit
+  raise
+rescue => e
+  snapfile_path = File.expand_path(__FILE__)
+  line_no = File.readlines(snapfile_path).index { |l| l.include?("singleton_class.prepend") }
+  line_hint = line_no ? "#{snapfile_path}:#{line_no + 1}" : snapfile_path
+  fastlane_ver = (defined?(Fastlane::VERSION) ? Fastlane::VERSION : "?")
+
+  warn <<~MSG
+    \e[31m
+    ================================================================================
+    [Snapfile] fastlane のシミュレータ OS バージョン補正 patch が適用できません
+    --------------------------------------------------------------------------------
+      原因       : #{e.class}: #{e.message}
+      fastlane   : #{fastlane_ver}
+      patch 対象 : FastlaneCore::DeviceManager.simulators
+                 (gem: fastlane_core/lib/fastlane_core/device_manager.rb)
+
+      この patch は、fastlane が `xcrun simctl list devices` のテキストヘッダ
+      ("-- iOS 26.4 --") から OS バージョンを読むため、実際のランタイム
+      (例: 26.4.1) と不一致になって xcodebuild が destination を解決できず
+      「Unable to find a device matching the provided destination specifier」で
+      テスト実行が失敗する問題を回避するためのものです。
+
+      fastlane のバージョンアップ等で対象メソッドの名前・シグネチャ・挙動が
+      変わり、patch が当たらなくなった可能性があります。
+
+      👉 修正箇所:
+         #{line_hint}
+         └─ 現行 fastlane gem のソースを確認し、patch の当て先を更新してください。
+            (fastlane 側が本問題を本体で fix 済みなら patch 自体を削除で可)
+
+      参考コマンド:
+         bundle show fastlane
+         xcrun simctl list runtimes
+         xcrun simctl list devices
+    ================================================================================
+    \e[0m
+  MSG
+  exit 1
+end
+
 #  テスト実行の時に使用する言語一覧
 languages(["ja-JP"])
 
