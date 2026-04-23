@@ -94,16 +94,6 @@
 		925475222F6E9E8700AF30EC /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254751C2F6E9E8700AF30EC /* AppRootView.swift */; };
 		925475232F6E9E8700AF30EC /* SheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254751F2F6E9E8700AF30EC /* SheetRoute.swift */; };
 		925475242F6E9E8700AF30EC /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254751D2F6E9E8700AF30EC /* AppRoute.swift */; };
-		92F4F4020000000000000001 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000001 /* GamePhase.swift */; };
-		92F4F4020000000000000002 /* GameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000002 /* GameStrategy.swift */; };
-		92F4F4020000000000000003 /* NormalGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000003 /* NormalGameStrategy.swift */; };
-		92F4F4020000000000000004 /* BeginnerGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000004 /* BeginnerGameStrategy.swift */; };
-		92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000005 /* NonstopGameStrategy.swift */; };
-		92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */; };
-		92F4F4020000000000000008 /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000008 /* GameStateManager.swift */; };
-		92F4F4020000000000000009 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000009 /* GamePlayView.swift */; };
-		92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000101 /* GameStrategyTests.swift */; };
-		92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000102 /* GameStateManagerTests.swift */; };
 		925475272F6ECAD000AF30EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925475252F6ECAD000AF30EC /* HomeView.swift */; };
 		925648B52D27DFC600688D8B /* DurationSettingViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */; };
 		9258D1BF22DA0258003A0EF8 /* exit_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258D1BE22DA0258003A0EF8 /* exit_square.png */; };
@@ -310,6 +300,16 @@
 		92F4712D2E9662870086B1BE /* RecitePoemBaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4712C2E9662870086B1BE /* RecitePoemBaseViewModelTests.swift */; };
 		92F471302E9664760086B1BE /* RecitePoemViewModelAudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4712E2E9664760086B1BE /* RecitePoemViewModelAudioTests.swift */; };
 		92F471312E9664760086B1BE /* RecitePoemViewModelEventHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4712F2E9664760086B1BE /* RecitePoemViewModelEventHandlerTests.swift */; };
+		92F4F4020000000000000001 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000001 /* GamePhase.swift */; };
+		92F4F4020000000000000002 /* GameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000002 /* GameStrategy.swift */; };
+		92F4F4020000000000000003 /* NormalGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000003 /* NormalGameStrategy.swift */; };
+		92F4F4020000000000000004 /* BeginnerGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000004 /* BeginnerGameStrategy.swift */; };
+		92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000005 /* NonstopGameStrategy.swift */; };
+		92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */; };
+		92F4F4020000000000000008 /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000008 /* GameStateManager.swift */; };
+		92F4F4020000000000000009 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000009 /* GamePlayView.swift */; };
+		92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000101 /* GameStrategyTests.swift */; };
+		92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000102 /* GameStateManagerTests.swift */; };
 		92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */; };
 		92F978BA2BCBB48400413751 /* SelectedState100ModifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */; };
 		92FB604F269337E1000C3F99 /* FudaSetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB604E269337E1000C3F99 /* FudaSetPage.swift */; };
@@ -429,16 +429,6 @@
 		9254751D2F6E9E8700AF30EC /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		9254751E2F6E9E8700AF30EC /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		9254751F2F6E9E8700AF30EC /* SheetRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRoute.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000001 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000002 /* GameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategy.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000003 /* NormalGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalGameStrategy.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000004 /* BeginnerGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerGameStrategy.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000005 /* NonstopGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopGameStrategy.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoGameStrategy.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000008 /* GameStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000009 /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayView.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000101 /* GameStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategyTests.swift; sourceTree = "<group>"; };
-		92F4F4010000000000000102 /* GameStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManagerTests.swift; sourceTree = "<group>"; };
 		925475252F6ECAD000AF30EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		925648B42D27DFBA00688D8B /* DurationSettingViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DurationSettingViewModel+Fixtures.swift"; sourceTree = "<group>"; };
 		9258D1BE22DA0258003A0EF8 /* exit_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit_square.png; sourceTree = "<group>"; };
@@ -630,6 +620,16 @@
 		92F4712C2E9662870086B1BE /* RecitePoemBaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemBaseViewModelTests.swift; sourceTree = "<group>"; };
 		92F4712E2E9664760086B1BE /* RecitePoemViewModelAudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelAudioTests.swift; sourceTree = "<group>"; };
 		92F4712F2E9664760086B1BE /* RecitePoemViewModelEventHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitePoemViewModelEventHandlerTests.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000001 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000002 /* GameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategy.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000003 /* NormalGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalGameStrategy.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000004 /* BeginnerGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerGameStrategy.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000005 /* NonstopGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopGameStrategy.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoGameStrategy.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000008 /* GameStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000009 /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayView.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000101 /* GameStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategyTests.swift; sourceTree = "<group>"; };
+		92F4F4010000000000000102 /* GameStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManagerTests.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
 		92F978B92BCBB48400413751 /* SelectedState100ModifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedState100ModifyTests.swift; sourceTree = "<group>"; };
 		92FB604E269337E1000C3F99 /* FudaSetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FudaSetPage.swift; sourceTree = "<group>"; };
@@ -971,17 +971,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		92F4F4010000000000000007 /* GameStrategies */ = {
-			isa = PBXGroup;
-			children = (
-				92F4F4010000000000000003 /* NormalGameStrategy.swift */,
-				92F4F4010000000000000004 /* BeginnerGameStrategy.swift */,
-				92F4F4010000000000000005 /* NonstopGameStrategy.swift */,
-				92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */,
-			);
-			path = GameStrategies;
-			sourceTree = "<group>";
-		};
 		925475262F6ECAD000AF30EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1053,15 +1042,6 @@
 			children = (
 			);
 			path = coodinators;
-			sourceTree = "<group>";
-		};
-		92F4F4010000000000000100 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				92F4F4010000000000000101 /* GameStrategyTests.swift */,
-				92F4F4010000000000000102 /* GameStateManagerTests.swift */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		927E4BDE222BCF9900AF48F7 /* UITestWIthMultiScreen */ = {
@@ -1348,6 +1328,26 @@
 				924E892D2827F69B00DEB4C5 /* KeyWindow.swift */,
 			);
 			path = protocols;
+			sourceTree = "<group>";
+		};
+		92F4F4010000000000000007 /* GameStrategies */ = {
+			isa = PBXGroup;
+			children = (
+				92F4F4010000000000000003 /* NormalGameStrategy.swift */,
+				92F4F4010000000000000004 /* BeginnerGameStrategy.swift */,
+				92F4F4010000000000000005 /* NonstopGameStrategy.swift */,
+				92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */,
+			);
+			path = GameStrategies;
+			sourceTree = "<group>";
+		};
+		92F4F4010000000000000100 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				92F4F4010000000000000101 /* GameStrategyTests.swift */,
+				92F4F4010000000000000102 /* GameStateManagerTests.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		92LS00022143BB0B000F5E60 /* Base.lproj */ = {
@@ -1969,14 +1969,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 97;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.1.1;
+				MARKETING_VERSION = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1990,14 +1990,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 97;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.1.1;
+				MARKETING_VERSION = 8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2165,14 +2165,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 97;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.1.1;
+				MARKETING_VERSION = 8.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
