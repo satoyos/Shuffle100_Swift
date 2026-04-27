@@ -28,17 +28,25 @@ extension MinSec {
     var minText: String {
       timeTexts.min
     }
-    
+
     var secText: String {
       timeTexts.sec
     }
-    
+
+    var isTimerScheduled: Bool {
+      timer.isScheduled
+    }
+
     func startTimer() {
       timer.start()
     }
-    
+
     func stopTimer() {
       timer.stop()
+    }
+
+    func tick() {
+      timer.tick()
     }
     
     private func buildDataFlow() {

@@ -196,22 +196,16 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
     viewModel.skipToNextScreenAction = { forwardCalled = true }
     viewModel.playerFinishedAction = { playerFinishedCalled = true }
 
-    // Trigger all inputs
+    // PassthroughSubject delivery and the bound handlers are all synchronous,
+    // so each send() lands the action callback before the next line runs.
     viewModel.input.gearButtonTapped.send()
-    viewModel.input.exitButtonTapped.send()  // This now triggers alert/sheet state
+    viewModel.input.exitButtonTapped.send()
     viewModel.input.rewindButtonTapped.send()
     viewModel.input.forwardButtonTapped.send()
     viewModel.input.audioPlayerFinished.send()
 
-    // Wait briefly for all async operations
-    let expectation = XCTestExpectation(description: "Wait for all inputs to process")
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      expectation.fulfill()
-    }
-    wait(for: [expectation], timeout: 0.5)
-
     XCTAssertTrue(gearCalled)
-    XCTAssertTrue(viewModel.output.showExitAlert)  // Exit now shows alert instead of calling action
+    XCTAssertTrue(viewModel.output.showExitAlert)
     XCTAssertTrue(rewindCalled)
     XCTAssertTrue(forwardCalled)
     XCTAssertTrue(playerFinishedCalled)

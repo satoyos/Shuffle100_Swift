@@ -15,7 +15,9 @@ class CountDownTimer: ObservableObject {
   
   private let interval: Double
   private var timer: Timer?
-  
+
+  var isScheduled: Bool { timer != nil }
+
   init(startTime remainTime: Double, interval: Double) {
     self.remainTime = remainTime
     self.interval = interval
@@ -27,18 +29,22 @@ class CountDownTimer: ObservableObject {
   }
   
   func start() {
-    timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
-      guard let self = self else { return }
-      self.remainTime -= self.interval
-      if self.isRunning == false {
-        self.isRunning = true
-      }
-      
-      if self.remainTime <= 0 {
-        self.isRunning = false
-        self.remainTime = 0.0
-        self.stopAndEraseTimer()
-      }
+    let t = Timer(timeInterval: interval, repeats: true) { [weak self] _ in
+      self?.tick()
+    }
+    RunLoop.main.add(t, forMode: .common)
+    timer = t
+  }
+
+  func tick() {
+    remainTime -= interval
+    if isRunning == false {
+      isRunning = true
+    }
+    if remainTime <= 0 {
+      isRunning = false
+      remainTime = 0.0
+      stopAndEraseTimer()
     }
   }
   

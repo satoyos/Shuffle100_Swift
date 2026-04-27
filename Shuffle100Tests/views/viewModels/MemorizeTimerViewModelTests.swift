@@ -26,22 +26,15 @@ final class MemorizeTimerViewModelTests: XCTestCase {
         let viewModel = MemorizeTimer.ViewModel(minutes: 3)
         let timerViewModel = viewModel.timeViewModel
         let buttonViewModel = viewModel.buttonViewModel
-        let expectation1 = XCTestExpectation(description: "setText, minText, button type are all changing correctly")
-      buttonViewModel.input.playButtonTapped.send()
-        timerViewModel.$timeTexts
-            .dropFirst()
-            .filter { minTexts in minTexts == ("2", "59")}
-            .delay(for: 0.01, scheduler: RunLoop.main)
-            .sink { value in
-//                XCTAssertEqual(value.sec, "59")
-//                XCTAssertEqual(value.min, "2")
-                XCTAssertEqual(buttonViewModel.output.type, .pause)
-                expectation1.fulfill()
-            }
-            .store(in: &cancellables)
+        XCTAssertEqual(buttonViewModel.output.type, .play)
+        XCTAssertFalse(timerViewModel.isTimerScheduled)
         // when
+        buttonViewModel.input.playButtonTapped.send()
         // then
-        wait(for: [expectation1], timeout: 3.0)
+        XCTAssertEqual(buttonViewModel.output.type, .pause)
+        XCTAssertTrue(timerViewModel.isTimerScheduled)
+        // cleanup: stop the running Timer so it does not leak across tests
+        timerViewModel.stopTimer()
     }
     
     func testWhenRemainTimeGetsTo2minAssingedClosureExecuted() {
@@ -49,46 +42,23 @@ final class MemorizeTimerViewModelTests: XCTestCase {
         var isCalled = false
         let givenAction = { isCalled = true }
         let viewModel = MemorizeTimer.ViewModel(totalSec: 121, action2minLeft: givenAction)
-        // then
         XCTAssertFalse(isCalled)
-        // when
-        viewModel.timeViewModel.startTimer()
+        // when: simulate one timer tick (121 -> 120 = "2:00")
+        viewModel.timeViewModel.tick()
         // then
-        let expectation = XCTestExpectation(description: "action2minLeft has been executed!")
-        viewModel.timeViewModel.$timeTexts
-            .dropFirst()
-            .filter { minTexts in minTexts == ("2", "00")}
-            .delay(for: 0.01, scheduler: RunLoop.main)
-            .sink { minSecText in
-//                XCTAssertEqual(minSecText.min, "2")
-//                XCTAssertEqual(minSecText.sec, "00")
-                XCTAssertTrue(isCalled)
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        wait(for: [expectation], timeout: 1.1)
+        XCTAssertTrue(isCalled)
     }
-    
+
     func testWhenTimeGetsOverPreparedClosureExecuted() {
         // given
         var isCalled = false
         let givenAction = { isCalled = true }
         let viewModel = MemorizeTimer.ViewModel(totalSec: 2, actionTimeOver: givenAction)
-        // then
         XCTAssertFalse(isCalled)
-        // when
-        viewModel.timeViewModel.startTimer()
+        // when: simulate timer ticks (2 -> 1, 1 -> 0 = "0:00")
+        viewModel.timeViewModel.tick()
+        viewModel.timeViewModel.tick()
         // then
-        let expectation = XCTestExpectation(description: "action for time over has been executed!")
-        viewModel.timeViewModel.$timeTexts
-            .dropFirst()
-            .filter{ $0.sec == "00" }
-            .delay(for: 0.05, scheduler: RunLoop.main)
-            .sink { minSecText in
-                XCTAssertTrue(isCalled)
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        wait(for: [expectation], timeout: 2.1)
+        XCTAssertTrue(isCalled)
     }
 }

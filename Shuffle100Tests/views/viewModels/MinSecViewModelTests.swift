@@ -23,22 +23,13 @@ final class MinSecViewModelTests: XCTestCase {
     func testWhenTimerStartsMinSecTextChanges() {
         // given
         let viewModel = MinSec.ViewModel(startTime: 60, interval: 1)
-        // then
         XCTAssertEqual(viewModel.minText, "1")
         XCTAssertEqual(viewModel.secText, "00")
-        // when
-        viewModel.startTimer()
+        // when: simulate one timer tick (60 -> 59)
+        viewModel.tick()
         // then
-        let expectation = XCTestExpectation(description: "Min and Sec text change correctly!")
-        viewModel.$timeTexts
-            .dropFirst()
-            .sink { value in
-                XCTAssertEqual(value.min, "0")
-                XCTAssertEqual(value.sec, "59")
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        wait(for: [expectation], timeout: 1.1)
+        XCTAssertEqual(viewModel.minText, "0")
+        XCTAssertEqual(viewModel.secText, "59")
     }
 
 }

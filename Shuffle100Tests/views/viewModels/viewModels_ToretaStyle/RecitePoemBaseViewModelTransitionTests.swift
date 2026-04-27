@@ -126,14 +126,11 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
       }
       .store(in: &cancellables)
 
+    // slideIntoShimo is synchronous regarding the slide animation; with
+    // screenWidth == 0 the slideAnimation send is skipped, so showingSlideCard
+    // cannot change. The async playNumberedPoem dispatch does not touch
+    // showingSlideCard. Verify directly without an arbitrary wait.
     viewModel.slideIntoShimo(number: 15, at: 2, total: 7)
-
-    // Wait briefly to ensure no animation is triggered
-    let expectation = XCTestExpectation(description: "Wait for potential changes")
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      expectation.fulfill()
-    }
-    wait(for: [expectation], timeout: 0.2)
 
     XCTAssertFalse(slideCardChanged)
   }
@@ -203,14 +200,10 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
       }
       .store(in: &cancellables)
 
+    // slideBackToKami is fully synchronous; with screenWidth == 0 the slide
+    // animation send is skipped entirely, so no further change to showingSlideCard
+    // can occur. Verify directly without an arbitrary wait.
     viewModel.slideBackToKami(number: 33, at: 4, total: 8)
-
-    // Wait briefly to ensure no animation is triggered
-    let expectation = XCTestExpectation(description: "Wait for potential changes")
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      expectation.fulfill()
-    }
-    wait(for: [expectation], timeout: 0.2)
 
     XCTAssertFalse(slideCardChanged)
   }
