@@ -73,8 +73,10 @@ class PoemPickerScreenUITest: XCTestCase {
     // when
     let pickerPage = homePage.goToPoemPickerPage()
     // then
+    // 実機では SwiftUI .searchable(...) の accessibility 反映が非同期で遅れることがあるため、
+    // 単なる .exists ではなく waitForExistence で明示的に待つ。
     let searchField = pickerPage.searchField
-    XCTAssert(searchField.exists)
+    XCTAssertTrue(searchField.waitForExistence(timeout: 5.0))
     // when
     searchField.tap()
     searchField.typeText("はる")

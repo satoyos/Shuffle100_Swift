@@ -23,19 +23,11 @@ final class VolumeSettingViewModelTests: XCTestCase {
   func testWhenButtonTappedIsButtonDisabledTurnsToTrue() {
     // given
     let viewModel = VolumeSettingViewModel.fixture()
-    // then
     XCTAssertFalse(viewModel.output.isButtonDisabled)
-    // when
+    // when: startTestRecitingRequest's sink synchronously sets isButtonDisabled = true
     viewModel.input.startTestRecitingRequest.send()
     // then
-    let expectation = XCTestExpectation(description: "'isButtonDisabled' flag turns to true")
-    viewModel.output.$isButtonDisabled
-      .sink { bool in
-        XCTAssertTrue(bool)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-    wait(for: [expectation], timeout: 0.1)
+    XCTAssertTrue(viewModel.output.isButtonDisabled)
   }
   
   func testWhenPlayerFinisedIsButtonDisabledTurnsToFalse() {

@@ -14,18 +14,24 @@ extension PoemPickerView {
     Button("全て取消") {
       viewModel.input.cancelAll.send()
     }
+    .lineLimit(1)
+    .minimumScaleFactor(0.7)
   }
 
   var selectAllButton: some View {
     Button("全て選択") {
       viewModel.input.selectAll.send()
     }
+    .lineLimit(1)
+    .minimumScaleFactor(0.7)
   }
 
   var selectByGroupButton: some View {
     Button("まとめて選ぶ") {
       viewModel.binding.showActionSheet = true
     }
+    .lineLimit(1)
+    .minimumScaleFactor(0.7)
     .actionSheet(isPresented: $viewModel.binding.showActionSheet) {
       ActionSheet(
         title: Text("どうやって選びますか？"),

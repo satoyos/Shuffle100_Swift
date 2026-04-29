@@ -87,23 +87,13 @@ final class WhatsNextViewModelTests: XCTestCase {
     // given
     let poem = createTestPoem(number: 5)
     let viewModel = WhatsNextViewModel(currentPoem: poem)
-    let expectation = XCTestExpectation(description: "Exit confirmation dialog should show")
-    // then
     XCTAssertFalse(viewModel.binding.showExitConfirmation)
 
-    viewModel.binding.$showExitConfirmation
-      .dropFirst()
-      .sink { showConfirmation in
-        XCTAssertTrue(showConfirmation)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
-    // when
+    // when: exitButtonTapped's sink synchronously sets showExitConfirmation = true
     viewModel.input.exitButtonTapped.send()
 
     // then
-    wait(for: [expectation], timeout: 0.1)
+    XCTAssertTrue(viewModel.binding.showExitConfirmation)
   }
 
   func testBackToHomeActionCalled() throws {

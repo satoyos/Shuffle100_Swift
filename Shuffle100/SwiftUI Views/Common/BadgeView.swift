@@ -20,6 +20,8 @@ extension BadgeView: View {
   var body: some View {
     Text("\(number)首")
       .font(.body)
+      .lineLimit(1)
+      .minimumScaleFactor(0.5)
       .foregroundColor(.white)
       .padding(5)
       .background(Color.red)

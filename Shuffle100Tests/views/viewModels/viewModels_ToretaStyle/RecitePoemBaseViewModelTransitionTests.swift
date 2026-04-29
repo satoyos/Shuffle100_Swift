@@ -31,88 +31,49 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
   }
 
   // MARK: - Screen Transition Tests
+  //
+  // 各遷移メソッドの観察対象（title / rotationAngle / currentViewIndex /
+  // showingSlideCard / showGameEndView / slideOffset）はすべて
+  // `recitePoemViewModel.output.title = ...` のような直接代入か、
+  // `input.flipAnimation.send()` / `input.slideAnimation.send(...)` の
+  // PassthroughSubject 経由で同期的に走る sink ハンドラで更新されるため、
+  // メソッド呼び出し直後に値を読めば検証できる。
+  // playNumberedPoem の DispatchQueue.main.asyncAfter は title など観察対象に
+  // 影響しないため待つ必要はない。
 
   func test_stepIntoNextPoem_kamiSide_updatesTitle() throws {
-    let expectation = XCTestExpectation(description: "Title should update")
-
-    viewModel.recitePoemViewModel.output.$title
-      .dropFirst()
-      .sink { title in
-        XCTAssertEqual(title, "1首め:上の句 (全10首)")
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.stepIntoNextPoem(number: 5, at: 1, total: 10, side: .kami)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, "1首め:上の句 (全10首)")
   }
 
   // 北海道モード（下の句かるた）では、side: .shimoで呼び出される
   func test_stepIntoNextPoem_shimoSideForHokkaidoMode_updatesTitle() throws {
-    let expectation = XCTestExpectation(description: "Title should update with shimo")
-
-    viewModel.recitePoemViewModel.output.$title
-      .dropFirst()
-      .sink { title in
-        XCTAssertEqual(title, "3首め:下の句 (全5首)")
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.stepIntoNextPoem(number: 25, at: 3, total: 5, side: .shimo)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, "3首め:下の句 (全5首)")
   }
 
   func test_stepIntoNextPoem_triggersFlipAnimation() throws {
     let initialAngle = viewModel.output.rotationAngle
-    let expectation = XCTestExpectation(description: "Rotation angle should increase by 180")
-
-    viewModel.output.$rotationAngle
-      .dropFirst()
-      .sink { angle in
-        XCTAssertEqual(angle, initialAngle + 180)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.stepIntoNextPoem(number: 1, at: 1, total: 10, side: .kami)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.rotationAngle, initialAngle + 180)
   }
 
   func test_slideIntoShimo_updatesTitle() throws {
-    let expectation = XCTestExpectation(description: "Title should update")
-
-    viewModel.recitePoemViewModel.output.$title
-      .dropFirst()
-      .sink { title in
-        XCTAssertEqual(title, "2首め:下の句 (全7首)")
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.slideIntoShimo(number: 15, at: 2, total: 7)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, "2首め:下の句 (全7首)")
   }
 
   func test_slideIntoShimo_triggersSlideAnimation_whenScreenWidthSet() throws {
     viewModel.screenWidth = 375.0
-    let expectation = XCTestExpectation(description: "showingSlideCard should become true")
-
-    viewModel.output.$showingSlideCard
-      .dropFirst()
-      .sink { showing in
-        XCTAssertTrue(showing)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.slideIntoShimo(number: 15, at: 2, total: 7)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.output.showingSlideCard)
   }
 
   func test_slideIntoShimo_doesNotTriggerSlideAnimation_whenScreenWidthZero() throws {
@@ -136,57 +97,38 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
   }
 
   func test_slideBackToKami_updatesTitle() throws {
-    let expectation = XCTestExpectation(description: "Title should update")
-
-    viewModel.recitePoemViewModel.output.$title
-      .dropFirst()
-      .sink { title in
-        XCTAssertEqual(title, "4首め:上の句 (全8首)")
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.slideBackToKami(number: 33, at: 4, total: 8)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, "4首め:上の句 (全8首)")
   }
 
   func test_slideBackToKami_triggersSlideAnimation_whenScreenWidthSet() throws {
     viewModel.screenWidth = 375.0
-    let expectation = XCTestExpectation(description: "showingSlideCard should become true")
-
-    viewModel.output.$showingSlideCard
-      .dropFirst()
-      .sink { showing in
-        XCTAssertTrue(showing)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.slideBackToKami(number: 33, at: 4, total: 8)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.output.showingSlideCard)
   }
 
   func test_slideBackToKami_triggersReverseSlideAnimation() throws {
     viewModel.screenWidth = 375.0
-    let expectation = XCTestExpectation(description: "slideOffset should be negative initially")
 
+    // slideAnimation の sink は同期的に走り、最初に slideOffset を -375 に設定し、
+    // 続けて withAnimation で 0 に戻す（setter は同期）。dropFirst() で初期値を
+    // 落として、最初に流れてくる -375 を捕まえる。
     var firstValue: CGFloat?
     viewModel.output.$slideOffset
       .dropFirst()
       .sink { offset in
         if firstValue == nil {
           firstValue = offset
-          XCTAssertEqual(offset, -375.0, "Initial slideOffset should be negative (left side)")
-          expectation.fulfill()
         }
       }
       .store(in: &cancellables)
 
     viewModel.slideBackToKami(number: 33, at: 4, total: 8)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(firstValue, -375.0, "Initial slideOffset should be negative (left side)")
   }
 
   func test_slideBackToKami_doesNotTriggerSlideAnimation_whenScreenWidthZero() throws {
@@ -209,118 +151,52 @@ final class RecitePoemBaseViewModelTransitionTests: XCTestCase {
   }
 
   func test_goBackToPrevPoem_updatesTitle() throws {
-    let expectation = XCTestExpectation(description: "Title should update")
-
-    viewModel.recitePoemViewModel.output.$title
-      .dropFirst()
-      .sink { title in
-        XCTAssertEqual(title, "1首め:下の句 (全3首)")
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.goBackToPrevPoem(number: 77, at: 1, total: 3)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, "1首め:下の句 (全3首)")
   }
 
   func test_goBackToPrevPoem_triggersReverseFlipAnimation() throws {
     let initialAngle = viewModel.output.rotationAngle
-    let expectation = XCTestExpectation(description: "Rotation angle should decrease by 180")
-
-    viewModel.output.$rotationAngle
-      .dropFirst()
-      .sink { angle in
-        XCTAssertEqual(angle, initialAngle - 180)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.goBackToPrevPoem(number: 77, at: 1, total: 3)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.rotationAngle, initialAngle - 180)
   }
 
   func test_goBackToPrevPoem_updatesCurrentViewIndex() throws {
     let initialIndex = viewModel.output.currentViewIndex
-    let expectation = XCTestExpectation(description: "currentViewIndex should increment")
-
-    viewModel.output.$currentViewIndex
-      .dropFirst()
-      .sink { index in
-        XCTAssertEqual(index, initialIndex + 1)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.goBackToPrevPoem(number: 77, at: 1, total: 3)
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.currentViewIndex, initialIndex + 1)
   }
 
   func test_stepIntoGameEnd_updatesTitle() throws {
-    let expectation = XCTestExpectation(description: "Title should update to game end")
-
-    viewModel.recitePoemViewModel.output.$title
-      .dropFirst()
-      .sink { title in
-        XCTAssertEqual(title, "試合終了")
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.stepIntoGameEnd()
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.recitePoemViewModel.output.title, "試合終了")
   }
 
   func test_stepIntoGameEnd_triggersFlipAnimation() throws {
     let initialAngle = viewModel.output.rotationAngle
-    let expectation = XCTestExpectation(description: "Rotation angle should increase by 180")
-
-    viewModel.output.$rotationAngle
-      .dropFirst()
-      .sink { angle in
-        XCTAssertEqual(angle, initialAngle + 180)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.stepIntoGameEnd()
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.rotationAngle, initialAngle + 180)
   }
 
   func test_stepIntoGameEnd_showsGameEndViewImmediately() throws {
-    let expectation = XCTestExpectation(description: "showGameEndView should become true immediately")
-
-    viewModel.output.$showGameEndView
-      .dropFirst()
-      .sink { showGameEndView in
-        XCTAssertTrue(showGameEndView)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
-
     viewModel.stepIntoGameEnd()
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.output.showGameEndView)
   }
 
   func test_stepIntoGameEnd_updatesCurrentViewIndex() throws {
     let initialIndex = viewModel.output.currentViewIndex
-    let expectation = XCTestExpectation(description: "currentViewIndex should increment")
-
-    viewModel.output.$currentViewIndex
-      .dropFirst()
-      .sink { index in
-        XCTAssertEqual(index, initialIndex + 1)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.stepIntoGameEnd()
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.currentViewIndex, initialIndex + 1)
   }
 }

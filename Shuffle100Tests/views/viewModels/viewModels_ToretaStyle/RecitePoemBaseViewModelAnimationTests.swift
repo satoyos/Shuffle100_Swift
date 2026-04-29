@@ -32,38 +32,23 @@ final class RecitePoemBaseViewModelAnimationTests: XCTestCase {
 
   // MARK: - Flip Animation Tests
 
+  // flipAnimation の sink は rotationAngle と currentViewIndex を同期で更新する
+  // ため、send() 直後に値を読めば検証できる。
+
   func test_flipAnimation_updatesRotationAngle() throws {
     let initialAngle = viewModel.output.rotationAngle
-    let expectation = XCTestExpectation(description: "Rotation angle should increase by 180")
-
-    viewModel.output.$rotationAngle
-      .dropFirst()
-      .sink { angle in
-        XCTAssertEqual(angle, initialAngle + 180)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.input.flipAnimation.send()
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.rotationAngle, initialAngle + 180)
   }
 
   func test_flipAnimation_updatesCurrentViewIndex() throws {
     let initialIndex = viewModel.output.currentViewIndex
-    let expectation = XCTestExpectation(description: "Current view index should increment")
-
-    viewModel.output.$currentViewIndex
-      .dropFirst()
-      .sink { index in
-        XCTAssertEqual(index, initialIndex + 1)
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
 
     viewModel.input.flipAnimation.send()
 
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertEqual(viewModel.output.currentViewIndex, initialIndex + 1)
   }
 
   func test_flipAnimation_multipleFlips() throws {

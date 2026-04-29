@@ -26,8 +26,10 @@ class GoThrough100PoemsUITest: XCTestCase {
         
         let recitePage = homePage.gotoRecitePoemPage()
         let forwordButton = recitePage.forwardButton
-        
-        XCTAssert(recitePage.jokaTitle.exists, "まず序歌へ")
+
+        // 実機では画面遷移直後の accessibility 反映に遅延があるため、
+        // 即時 .exists ではなく waitForExistence で明示的に待つ。
+        XCTAssertTrue(recitePage.jokaTitle.waitForExistence(timeout: timeOutSec), "まず序歌へ")
 
         for i in (1...100) {
             XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの上の句へ") { (activiti) in

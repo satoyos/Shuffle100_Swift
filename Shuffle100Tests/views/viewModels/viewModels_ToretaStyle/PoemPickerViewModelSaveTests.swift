@@ -195,28 +195,22 @@ class PoemPickerViewModelSaveTests: XCTestCase {
 
   func test_combinePublishers_behavesCorrectly() throws {
     // given
-    let expectation = XCTestExpectation(description: "Combine publishers work correctly")
     var receivedSelectedCounts: [Int] = []
 
     // Outputの変更を監視
     viewModel.output.$selectedCount
       .sink { count in
         receivedSelectedCounts.append(count)
-        if receivedSelectedCounts.count >= 4 {  // 初期値 + 3回の変更
-          expectation.fulfill()
-        }
       }
       .store(in: &cancellables)
 
-    // when - 複数の選択操作
-    DispatchQueue.main.async {
-      self.viewModel.input.selectPoem.send(1)   // +1
-      self.viewModel.input.selectPoem.send(2)   // +1
-      self.viewModel.input.selectPoem.send(1)   // -1 (選択解除)
-    }
+    // when - selectPoem の sink は同期的に selectedCount を更新するため、
+    // PassthroughSubject.send() を直接呼べば即座に sink へ伝搬する。
+    viewModel.input.selectPoem.send(1)   // +1
+    viewModel.input.selectPoem.send(2)   // +1
+    viewModel.input.selectPoem.send(1)   // -1 (選択解除)
 
     // then
-    wait(for: [expectation], timeout: 1.0)
     XCTAssertEqual(receivedSelectedCounts.count, 4)
     // 初期値、+1、+1、-1の順序で変更されることを確認
     XCTAssertEqual(receivedSelectedCounts[1], receivedSelectedCounts[0] + 1)
