@@ -40,7 +40,7 @@ final class FastlaneSnapshot: XCTestCase {
         app.launch()
 
         // 全テストをlandscapeで実行
-        XCUIDevice.shared.orientation = .landscapeLeft
+//        XCUIDevice.shared.orientation = .landscapeLeft
     }
 
     func test_RecitePoemScreenShot() {
