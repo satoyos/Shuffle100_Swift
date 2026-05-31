@@ -10,6 +10,34 @@
 
 import SwiftUI
 
+struct AspectRatioRootContainer<Content: View>: View {
+  private let maxWidthRatio: CGFloat = 3.0 / 4.0
+  private let content: Content
+
+  init(@ViewBuilder content: () -> Content) {
+    self.content = content()
+  }
+
+  var body: some View {
+    GeometryReader { geometry in
+      let size = geometry.size
+      let contentWidth = size.width > size.height
+        ? min(size.width, size.height * maxWidthRatio)
+        : size.width
+
+      ZStack {
+        Color.black
+          .ignoresSafeArea()
+
+        content
+          .frame(width: contentWidth, height: size.height)
+          .clipped()
+      }
+      .frame(width: size.width, height: size.height)
+    }
+  }
+}
+
 struct AppRootView: View {
   @EnvironmentObject var router: AppRouter
 

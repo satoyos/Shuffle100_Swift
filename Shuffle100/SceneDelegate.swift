@@ -19,14 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AppWindow {
     let store = StoreManager()
     let router = AppRouter(store: store)
 
-    let rootView = AppRootView()
-      .environmentObject(router)
+    let rootView = AspectRatioRootContainer {
+      AppRootView()
+        .environmentObject(router)
+    }
 
     let hostController = UIHostingController(rootView: rootView)
 
     self.window = UIWindow(windowScene: windowScene)
-    let container = AspectRatioContainerViewController(child: hostController)
-    window?.rootViewController = container
+    window?.rootViewController = hostController
     window?.makeKeyAndVisible()
 
     if CommandLine.arguments.contains("--uitesting") {

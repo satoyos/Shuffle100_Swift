@@ -205,7 +205,6 @@
 		9287B6012F0A775600779CDB /* ReciteSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B5FD2F0A775600779CDB /* ReciteSettingsRouter.swift */; };
 		9287B6032F0A777F00779CDB /* ReciteSettings.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B6022F0A777F00779CDB /* ReciteSettings.ViewModel.swift */; };
 		9287B6052F0A779F00779CDB /* ReciteSettings.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B6042F0A779F00779CDB /* ReciteSettings.ViewModelTests.swift */; };
-		9287B64A2F1CDB9600779CDB /* AspectRatioContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287B6492F1CDB9600779CDB /* AspectRatioContainerViewController.swift */; };
 		928BBC5F2E75415100E8F8F2 /* PoemPickerSaveLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */; };
 		928BBC602E75415100E8F8F2 /* PoemPickerSelectionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */; };
 		928BBC632E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928BBC622E76953F00E8F8F2 /* PoemPickerViewModelSearchTests.swift */; };
@@ -530,7 +529,6 @@
 		9287B5FE2F0A775600779CDB /* ReciteSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettingsView.swift; sourceTree = "<group>"; };
 		9287B6022F0A777F00779CDB /* ReciteSettings.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettings.ViewModel.swift; sourceTree = "<group>"; };
 		9287B6042F0A779F00779CDB /* ReciteSettings.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciteSettings.ViewModelTests.swift; sourceTree = "<group>"; };
-		9287B6492F1CDB9600779CDB /* AspectRatioContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioContainerViewController.swift; sourceTree = "<group>"; };
 		928BBC5D2E75415100E8F8F2 /* PoemPickerSaveLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSaveLogic.swift; sourceTree = "<group>"; };
 		928BBC5E2E75415100E8F8F2 /* PoemPickerSelectionLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerSelectionLogic.swift; sourceTree = "<group>"; };
 		928BBC612E76953F00E8F8F2 /* PoemPickerViewModelSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemPickerViewModelSaveTests.swift; sourceTree = "<group>"; };
@@ -1014,7 +1012,6 @@
 		925CEB51218ED4FF00876E7A /* UIKit views */ = {
 			isa = PBXGroup;
 			children = (
-				9287B6492F1CDB9600779CDB /* AspectRatioContainerViewController.swift */,
 				92E5C5552674D463009A46F5 /* protocols */,
 			);
 			path = "UIKit views";
@@ -1601,7 +1598,6 @@
 				9287B5C82F04A83F00779CDB /* KamiShimoDurationSetting.swift in Sources */,
 				9287B5C92F04A83F00779CDB /* TatamiBackground.swift in Sources */,
 				9287B5CA2F04A83F00779CDB /* RecitePoemModifiers.swift in Sources */,
-				9287B64A2F1CDB9600779CDB /* AspectRatioContainerViewController.swift in Sources */,
 				9287B5CB2F04A83F00779CDB /* DigitsButton.swift in Sources */,
 				9287B5CC2F04A83F00779CDB /* FiveColorsView.swift in Sources */,
 				9287B5CD2F04A83F00779CDB /* FudaSetsView.swift in Sources */,
