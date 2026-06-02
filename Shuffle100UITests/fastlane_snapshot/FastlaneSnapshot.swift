@@ -37,10 +37,20 @@ final class FastlaneSnapshot: XCTestCase {
         continueAfterFailure = false
         app.launchArguments.append("--uitesting")
         setupSnapshot(app)
+        applySnapshotOrientation()
         app.launch()
+        applySnapshotOrientation()
+    }
 
-        // 全テストをlandscapeで実行
-//        XCUIDevice.shared.orientation = .landscapeLeft
+    private func applySnapshotOrientation() {
+        let orientation = ProcessInfo.processInfo.environment["SNAPSHOT_ORIENTATION"]
+        if orientation == "landscape" || app.launchArguments.contains("SNAPSHOT_LANDSCAPE") {
+            XCUIDevice.shared.orientation = .landscapeLeft
+            sleep(1)
+        } else if orientation == "portrait" || app.launchArguments.contains("SNAPSHOT_PORTRAIT") {
+            XCUIDevice.shared.orientation = .portrait
+            sleep(1)
+        }
     }
 
     func test_RecitePoemScreenShot() {

@@ -19,11 +19,19 @@ struct AspectRatioRootContainer<Content: View>: View {
   }
 
   var body: some View {
+    let screenBounds = UIScreen.main.bounds
+
+    if screenBounds.width > screenBounds.height {
+      landscapeBody
+    } else {
+      content
+    }
+  }
+
+  private var landscapeBody: some View {
     GeometryReader { geometry in
       let size = geometry.size
-      let contentWidth = size.width > size.height
-        ? min(size.width, size.height * maxWidthRatio)
-        : size.width
+      let contentWidth = min(size.width, size.height * maxWidthRatio)
 
       ZStack {
         Color.black
@@ -35,6 +43,7 @@ struct AspectRatioRootContainer<Content: View>: View {
       }
       .frame(width: size.width, height: size.height)
     }
+    .ignoresSafeArea()
   }
 }
 
