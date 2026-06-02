@@ -169,7 +169,7 @@ GEM
       mutex_m
     jmespath (1.6.2)
     json (2.19.4)
-    jwt (2.10.2)
+    jwt (2.10.3)
       base64
     logger (1.7.0)
     mini_magick (4.13.2)
@@ -230,6 +230,7 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-25
+  x86_64-linux
 
 DEPENDENCIES
   fastlane
