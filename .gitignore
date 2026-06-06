@@ -12,6 +12,7 @@ screenshots/
 buildServer.json
 build.log
 docs/
+codex_notes/
 
 # Copyright-restricted audio files (do not commit to repository)
 Shuffle100/resources/audio/inaba/
