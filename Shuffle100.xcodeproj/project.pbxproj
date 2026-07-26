@@ -113,6 +113,7 @@
 		926DD6342C6B36F800516674 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926DD6332C6B36F800516674 /* Colors.xcassets */; };
 		926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */; };
 		926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */; };
+		926DD64D2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */; };
 		926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */; };
 		926DD6432C6B585D00516674 /* MinSec.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */; };
 		926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6442C6B591200516674 /* CountDownTimer.swift */; };
@@ -443,6 +444,7 @@
 		926DD6332C6B36F800516674 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButton.ViewModel.swift; sourceTree = "<group>"; };
 		926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButtonViewModelTests.swift; sourceTree = "<group>"; };
+		926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemLayoutMetricsTests.swift; sourceTree = "<group>"; };
 		926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSecViewModelTests.swift; sourceTree = "<group>"; };
 		926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSec.ViewModel.swift; sourceTree = "<group>"; };
 		926DD6442C6B591200516674 /* CountDownTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
@@ -946,6 +948,7 @@
 				9287B5F82F0A2E4400779CDB /* HelpList.ViewModelTests.swift */,
 				926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */,
 				926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */,
+				926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */,
 				926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */,
 				9254539D2EEE9EB400690ECD /* SelectModeView.ViewModelTests.swift */,
 				927927F82EF166E600831EC8 /* SelectSingerView.ViewModelTests.swift */,
@@ -1690,6 +1693,7 @@
 				922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */,
 				922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
+				926DD64D2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift in Sources */,
 				926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */,
 				92962D2E2E99F34500920CE2 /* RecitePoemBaseViewModelActionTests.swift in Sources */,
 				92962D2F2E99F34500920CE2 /* RecitePoemBaseViewModelAnimationTests.swift in Sources */,
