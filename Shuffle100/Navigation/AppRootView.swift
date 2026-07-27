@@ -10,8 +10,19 @@
 
 import SwiftUI
 
+struct AspectRatioRootLayout {
+  static let maxWidthRatio: CGFloat = 3.0 / 4.0
+
+  static func usesLandscapeContainer(for size: CGSize) -> Bool {
+    size.width > size.height
+  }
+
+  static func contentWidth(for size: CGSize) -> CGFloat {
+    min(size.width, size.height * maxWidthRatio)
+  }
+}
+
 struct AspectRatioRootContainer<Content: View>: View {
-  private let maxWidthRatio: CGFloat = 3.0 / 4.0
   private let content: Content
 
   init(@ViewBuilder content: () -> Content) {
@@ -19,30 +30,30 @@ struct AspectRatioRootContainer<Content: View>: View {
   }
 
   var body: some View {
-    let screenBounds = UIScreen.main.bounds
+    GeometryReader { geometry in
+      let size = geometry.size
 
-    if screenBounds.width > screenBounds.height {
-      landscapeBody
-    } else {
-      content
+      if AspectRatioRootLayout.usesLandscapeContainer(for: size) {
+        landscapeBody(size: size)
+      } else {
+        content
+          .frame(width: size.width, height: size.height)
+      }
     }
   }
 
-  private var landscapeBody: some View {
-    GeometryReader { geometry in
-      let size = geometry.size
-      let contentWidth = min(size.width, size.height * maxWidthRatio)
+  private func landscapeBody(size: CGSize) -> some View {
+    let contentWidth = AspectRatioRootLayout.contentWidth(for: size)
 
-      ZStack {
-        Color.black
-          .ignoresSafeArea()
+    return ZStack {
+      Color.black
+        .ignoresSafeArea()
 
-        content
-          .frame(width: contentWidth, height: size.height)
-          .clipped()
-      }
-      .frame(width: size.width, height: size.height)
+      content
+        .frame(width: contentWidth, height: size.height)
+        .clipped()
     }
+    .frame(width: size.width, height: size.height)
     .ignoresSafeArea()
   }
 }

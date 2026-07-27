@@ -114,6 +114,7 @@
 		926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */; };
 		926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */; };
 		926DD64D2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */; };
+		926DD64F2F2B7C0100516674 /* AspectRatioRootLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */; };
 		926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */; };
 		926DD6432C6B585D00516674 /* MinSec.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */; };
 		926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6442C6B591200516674 /* CountDownTimer.swift */; };
@@ -445,6 +446,7 @@
 		926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButton.ViewModel.swift; sourceTree = "<group>"; };
 		926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButtonViewModelTests.swift; sourceTree = "<group>"; };
 		926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemLayoutMetricsTests.swift; sourceTree = "<group>"; };
+		926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectRatioRootLayoutTests.swift; sourceTree = "<group>"; };
 		926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSecViewModelTests.swift; sourceTree = "<group>"; };
 		926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSec.ViewModel.swift; sourceTree = "<group>"; };
 		926DD6442C6B591200516674 /* CountDownTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
@@ -1344,6 +1346,7 @@
 		92F4F4010000000000000100 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */,
 				92F4F4010000000000000101 /* GameStrategyTests.swift */,
 				92F4F4010000000000000102 /* GameStateManagerTests.swift */,
 			);
@@ -1690,6 +1693,7 @@
 				926489192604480300CC4131 /* SettingsTest.swift in Sources */,
 				92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */,
 				92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */,
+				926DD64F2F2B7C0100516674 /* AspectRatioRootLayoutTests.swift in Sources */,
 				922B8BD82D215C3E0065D50A /* DurationSettingViewModelTests.swift in Sources */,
 				922B8BD92D215C3E0065D50A /* Sec2FViewModelTests_toreta.swift in Sources */,
 				927E4C08222E9EC700AF48F7 /* PoemsTests.swift in Sources */,
