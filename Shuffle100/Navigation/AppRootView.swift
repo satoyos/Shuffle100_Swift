@@ -34,7 +34,12 @@ struct AspectRatioRootContainer<Content: View>: View {
       let size = geometry.size
 
       if AspectRatioRootLayout.usesLandscapeContainer(for: size) {
-        landscapeBody(size: size)
+        ZStack {
+          Color.black
+            .ignoresSafeArea()
+
+          landscapeBody(size: size)
+        }
       } else {
         content
           .frame(width: size.width, height: size.height)
@@ -45,16 +50,10 @@ struct AspectRatioRootContainer<Content: View>: View {
   private func landscapeBody(size: CGSize) -> some View {
     let contentWidth = AspectRatioRootLayout.contentWidth(for: size)
 
-    return ZStack {
-      Color.black
-        .ignoresSafeArea()
-
-      content
-        .frame(width: contentWidth, height: size.height)
-        .clipped()
-    }
+    return content
+      .frame(width: contentWidth, height: size.height)
+      .clipped()
     .frame(width: size.width, height: size.height)
-    .ignoresSafeArea()
   }
 }
 

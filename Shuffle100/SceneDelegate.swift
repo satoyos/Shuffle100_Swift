@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AppWindow {
     }
 
     let hostController = UIHostingController(rootView: rootView)
+    hostController.view.backgroundColor = .black
 
     self.window = UIWindow(windowScene: windowScene)
     window?.rootViewController = hostController

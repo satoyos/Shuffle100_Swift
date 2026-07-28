@@ -113,14 +113,14 @@
 		926DD6342C6B36F800516674 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926DD6332C6B36F800516674 /* Colors.xcassets */; };
 		926DD63B2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */; };
 		926DD63D2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */; };
-		926DD64D2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */; };
-		926DD64F2F2B7C0100516674 /* AspectRatioRootLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */; };
 		926DD63F2C6B580E00516674 /* MinSecViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */; };
 		926DD6432C6B585D00516674 /* MinSec.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */; };
 		926DD6462C6B593500516674 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6442C6B591200516674 /* CountDownTimer.swift */; };
 		926DD6482C6B594100516674 /* CountDownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6472C6B594100516674 /* CountDownTimerTests.swift */; };
 		926DD64A2C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */; };
 		926DD64C2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */; };
+		926DD64D2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */; };
+		926DD64F2F2B7C0100516674 /* AspectRatioRootLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */; };
 		926E5C9426C8009E00214767 /* ConfirmPostMortemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */; };
 		926E5C9626C8BF8000214767 /* ExitGameActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */; };
 		927162A02BB93663002D6BA9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */; };
@@ -445,14 +445,14 @@
 		926DD6332C6B36F800516674 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		926DD63A2C6B3E9A00516674 /* RecitePlayButton.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButton.ViewModel.swift; sourceTree = "<group>"; };
 		926DD63C2C6B3F8600516674 /* RecitePlayButtonViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePlayButtonViewModelTests.swift; sourceTree = "<group>"; };
-		926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemLayoutMetricsTests.swift; sourceTree = "<group>"; };
-		926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectRatioRootLayoutTests.swift; sourceTree = "<group>"; };
 		926DD63E2C6B580E00516674 /* MinSecViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSecViewModelTests.swift; sourceTree = "<group>"; };
 		926DD6422C6B585D00516674 /* MinSec.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSec.ViewModel.swift; sourceTree = "<group>"; };
 		926DD6442C6B591200516674 /* CountDownTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 		926DD6472C6B594100516674 /* CountDownTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimerTests.swift; sourceTree = "<group>"; };
 		926DD6492C6B5A0B00516674 /* MemorizeTimerViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorizeTimerViewModelTests.swift; sourceTree = "<group>"; };
 		926DD64B2C6B5A2C00516674 /* MemorizeTimer.ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorizeTimer.ViewModel.swift; sourceTree = "<group>"; };
+		926DD64E2F2B6A0100516674 /* RecitePoemLayoutMetricsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecitePoemLayoutMetricsTests.swift; sourceTree = "<group>"; };
+		926DD6502F2B7C0100516674 /* AspectRatioRootLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectRatioRootLayoutTests.swift; sourceTree = "<group>"; };
 		926E5C9326C8009E00214767 /* ConfirmPostMortemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPostMortemDialog.swift; sourceTree = "<group>"; };
 		926E5C9526C8BF8000214767 /* ExitGameActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitGameActionSheet.swift; sourceTree = "<group>"; };
 		9271629F2BB8E62B002D6BA9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -1975,14 +1975,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.2.1;
+				MARKETING_VERSION = 8.2.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1996,14 +1996,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.2.1;
+				MARKETING_VERSION = 8.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2172,14 +2172,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.2.1;
+				MARKETING_VERSION = 8.2.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
