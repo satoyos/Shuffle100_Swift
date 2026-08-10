@@ -62,7 +62,6 @@ class FakeModeUITest: XCTestCase {
             // when
             selectModepage
                 .selectMode(.beginner)
-                .backToTopButton.tap()
             // then
             XCTAssert(homePage.exists)
             XCTAssert(homePage.reciteModeIs(.beginner))

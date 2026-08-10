@@ -61,7 +61,6 @@ class GoThrough100PoemsUITest: XCTestCase {
             // when
             selectModePage
                 .selectMode(.nonstop)
-                .backToTopButton.tap()
             // then
             XCTAssert(homePage.reciteModeIs(.nonstop))
         }
@@ -103,7 +102,6 @@ class GoThrough100PoemsUITest: XCTestCase {
             // when
             selectModePage
                 .selectMode(.beginner)
-                .backToTopButton.tap()
             // then
             XCTAssert(homePage.reciteModeIs(.beginner))
         }
@@ -144,7 +142,6 @@ class GoThrough100PoemsUITest: XCTestCase {
             // when
             selectModePage
                 .selectMode(.hokkaido)
-                .backToTopButton.tap()
             // then
             XCTAssert(homePage.reciteModeIs(.hokkaido))
         }

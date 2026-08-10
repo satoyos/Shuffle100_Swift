@@ -13,12 +13,14 @@ struct HomeView: View {
 
   // Toggle用にローカルStateを持つ（Settings が objectWillChange を送出しないため）
   @State private var fakeMode: Bool = false
+  @State private var selectedReciteMode: ReciteMode = .normal
+  @State private var showingReciteModeDialog = false
   @State private var showNoPoemAlert = false
 
   private var settings: Settings { router.settings }
 
   private var reciteModeName: String {
-    switch settings.reciteMode {
+    switch selectedReciteMode {
     case .normal:   return "通常"
     case .beginner: return "初心者"
     case .nonstop:  return "ノンストップ"
@@ -48,21 +50,27 @@ struct HomeView: View {
         .accessibilityIdentifier("取り札を用意する歌")
 
         // 読み上げモード
-        NavigationLink(value: AppRoute.selectMode) {
+        Button {
+          showingReciteModeDialog = true
+        } label: {
           HStack {
             Text("読み上げモード")
               .foregroundColor(.primary)
             Spacer()
             Text(reciteModeName)
               .foregroundColor(.secondary)
+            Image(systemName: "chevron.right")
+              .font(.caption.weight(.semibold))
+              .foregroundColor(.secondary)
           }
         }
         .accessibilityIdentifier("読み上げモード")
 
         // 空札を加える（初心者モード以外）
-        if settings.reciteMode != .beginner {
+        if selectedReciteMode != .beginner {
           Toggle("空札を加える", isOn: $fakeMode)
             .accessibilityIdentifier("空札を加える")
+            .transition(.opacity.combined(with: .move(edge: .top)))
             .onChange(of: fakeMode) { _, newValue in
               settings.fakeMode = newValue
               router.saveSettings()
@@ -86,7 +94,7 @@ struct HomeView: View {
       Section(header: Text("試合開始")) {
 
         // 暗記時間タイマー（通常モードのみ）
-        if settings.reciteMode == .normal {
+        if selectedReciteMode == .normal {
           Button {
             guardPoems { router.push(.memorizeTimer) }
           } label: {
@@ -100,6 +108,7 @@ struct HomeView: View {
             }
           }
           .accessibilityIdentifier("暗記時間タイマー")
+          .transition(.opacity.combined(with: .move(edge: .top)))
         }
 
         // 試合開始
@@ -158,15 +167,44 @@ struct HomeView: View {
     .toolbarBackground(.visible, for: .navigationBar)
     .onAppear {
       fakeMode = settings.fakeMode
+      selectedReciteMode = settings.reciteMode
     }
     .alert("歌を選びましょう", isPresented: $showNoPoemAlert) {
       Button("戻る", role: .cancel) {}
     } message: {
       Text("「取り札を用意する歌」で、試合に使う歌を選んでください")
     }
+    .confirmationDialog(
+      "読み上げモードを選ぶ",
+      isPresented: $showingReciteModeDialog,
+      titleVisibility: .visible
+    ) {
+      ForEach(Self.reciteModes, id: \.mode) { holder in
+        Button(holder.title) {
+          selectReciteMode(holder.mode)
+        }
+      }
+      Button("キャンセル", role: .cancel) {}
+    }
   }
 
   // MARK: - Private
+
+  private static let reciteModes: [ReciteModeHolder] = [
+    ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
+    ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
+    ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)"),
+    ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
+  ]
+
+  private func selectReciteMode(_ mode: ReciteMode) {
+    withAnimation(.easeInOut(duration: 0.2)) {
+      selectedReciteMode = mode
+      settings.reciteMode = mode
+      fakeMode = settings.fakeMode
+    }
+    router.saveSettings()
+  }
 
   /// 歌が0首の場合はアラートを表示し、それ以外はアクションを実行する
   private func guardPoems(action: () -> Void) {
@@ -180,7 +218,7 @@ struct HomeView: View {
   private func startGame() {
     AudioPlayerFactory.shared.setupAudioSession()
     let route: AppRoute
-    switch settings.reciteMode {
+    switch selectedReciteMode {
     case .normal:   route = .normalMode
     case .beginner: route = .beginnerMode
     case .nonstop:  route = .nonstopMode

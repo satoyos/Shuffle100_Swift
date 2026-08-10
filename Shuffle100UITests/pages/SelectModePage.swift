@@ -17,16 +17,17 @@ final class SelectModePage: PageObjectable {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars.staticTexts[A11y.title].firstMatch
+        return app.buttons[A11y.normalMode].firstMatch
     }
     
     var backToTopButton: XCUIElement {
         return app.navigationBars.buttons[A11y.backToTop].firstMatch
     }
     
+    @discardableResult
     func selectMode(_ mode: ReciteMode) -> Self {
         let label = labelForReciteMode(mode)
-        app.pickerWheels.firstMatch.adjust(toPickerWheelValue: label)
+        app.buttons[label].firstMatch.tap()
         return self
     }
     
@@ -46,7 +47,6 @@ final class SelectModePage: PageObjectable {
     }
     
     enum A11y {
-        static let title = "読み上げモードを選ぶ"
         static let backToTop = "トップ"
         static let beginnrMode = "初心者 (チラし取り)"
         static let normalMode = "通常 (競技かるた)"

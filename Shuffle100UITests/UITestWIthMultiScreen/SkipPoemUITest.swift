@@ -40,7 +40,6 @@ class SkipPoemUITest: XCTestCase {
         let modePage = homePage.gotoSelectModePage()
         modePage
             .selectMode(.beginner)
-            .backToTopButton.tap()
         // then
         XCTAssert(homePage.reciteModeIs(.beginner))
         // when
@@ -62,7 +61,6 @@ class SkipPoemUITest: XCTestCase {
         let modePage = homePage.gotoSelectModePage()
         modePage
             .selectMode(.nonstop)
-            .backToTopButton.tap()
         // then
         XCTAssert(homePage.reciteModeIs(.nonstop))
         // when

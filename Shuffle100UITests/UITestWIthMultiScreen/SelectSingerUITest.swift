@@ -39,7 +39,6 @@ class SelectSingerUITest: XCTestCase {
             // when
             selectModePage
                 .selectMode(.beginner)
-                .backToTopButton.tap()
             // then
             XCTAssert(homePage.reciteModeIs(.beginner))
             XCTAssertFalse(homePage.fakeModeCell.exists)

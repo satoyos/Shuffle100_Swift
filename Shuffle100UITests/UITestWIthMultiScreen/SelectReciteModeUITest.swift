@@ -32,7 +32,6 @@ class SelectReciteModeUITest: XCTestCase {
             // when
             modePage
                 .selectMode(.beginner)
-                .backToTopButton.tap()
             // then
             XCTAssert(homePage.reciteModeIs(.beginner))
             // in BeginnerMode, fake mode cell should disappear

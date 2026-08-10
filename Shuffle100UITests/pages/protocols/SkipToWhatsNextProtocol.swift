@@ -24,7 +24,6 @@ extension SkipToWhatsNext where Self: HomePage  {
         let reciteModePage = gotoSelectModePage()
         reciteModePage
             .selectMode(mode)
-            .backToTopButton.tap()
         // then
         XCTAssert(reciteModeIs(mode), "選んだモードになっている")
         // when
