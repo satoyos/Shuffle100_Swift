@@ -45,6 +45,7 @@ struct AspectRatioRootContainer<Content: View>: View {
           .frame(width: size.width, height: size.height)
       }
     }
+    .ignoresSafeArea(.keyboard)
   }
 
   private func landscapeBody(size: CGSize) -> some View {

@@ -67,7 +67,6 @@ extension PoemPickerView: View {
     }
   }
 
-
   private var badgeView: some View {
     BadgeView(number: viewModel.output.selectedCount)
   }
