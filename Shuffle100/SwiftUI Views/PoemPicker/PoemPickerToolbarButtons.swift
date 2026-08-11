@@ -21,7 +21,7 @@ extension PoemPickerView {
     .padding(.horizontal, 16)
     .padding(.vertical, 8)
     .frame(maxWidth: .infinity)
-    .background(Color(uiColor: StandardColor.barTintColor))
+    .background(Color(uiColor: StandardColor.backgroundColor))
   }
 
   var cancelAllButton: some View {
