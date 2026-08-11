@@ -49,15 +49,11 @@ extension PoemPickerView: View {
       ToolbarItem(placement: .topBarTrailing) {
         badgeView
       }
-
-      ToolbarItemGroup(placement: .bottomBar) {
-        cancelAllButton
-        Spacer()
-        selectAllButton
-        Spacer()
-        selectByGroupButton
-      }
     }
+    .safeAreaInset(edge: .bottom) {
+      bottomControlBar
+    }
+    .background(savePresentationAnchor)
     .onAppear {
       viewModel.refreshFromSettings()
     }
