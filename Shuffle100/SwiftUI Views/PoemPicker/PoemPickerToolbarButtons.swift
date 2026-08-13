@@ -10,6 +10,20 @@ import SwiftUI
 // MARK: - Toolbar Buttons
 extension PoemPickerView {
 
+  var bottomControlBar: some View {
+    HStack {
+      cancelAllButton
+      Spacer()
+      selectAllButton
+      Spacer()
+      selectByGroupButton
+    }
+    .padding(.horizontal, 16)
+    .padding(.vertical, 8)
+    .frame(maxWidth: .infinity)
+    .background(Color(uiColor: StandardColor.backgroundColor))
+  }
+
   var cancelAllButton: some View {
     Button("全て取消") {
       viewModel.input.cancelAll.send()
