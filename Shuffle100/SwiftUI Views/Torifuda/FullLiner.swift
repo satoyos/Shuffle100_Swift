@@ -35,7 +35,9 @@ extension FullLiner: View {
 }
 
 #Preview {
-  FullLiner(
-    viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]),
-    containerHeight: UIScreen.main.bounds.height)
+  GeometryReader { proxy in
+    FullLiner(
+      viewModel: .init(fullLiner: ["やすらはで", "ねなまし物を", "さよ更けて", "かたふくまでの", "月を見しかな"]),
+      containerHeight: proxy.size.height)
+  }
 }
