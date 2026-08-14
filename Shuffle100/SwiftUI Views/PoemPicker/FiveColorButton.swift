@@ -36,9 +36,11 @@ extension FiveColorButton: View {
 }
 
 #Preview {
-  FiveColorButton(
-    viewModel: .init(color: .yellow),
-    containerHeight: UIScreen.main.bounds.height) {
-    print("押されたよん")
+  GeometryReader { proxy in
+    FiveColorButton(
+      viewModel: .init(color: .yellow),
+      containerHeight: proxy.size.height) {
+      print("押されたよん")
+    }
   }
 }

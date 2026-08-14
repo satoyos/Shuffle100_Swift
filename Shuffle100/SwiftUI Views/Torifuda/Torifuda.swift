@@ -76,7 +76,9 @@ struct Torifuda: View {
 }
 
 #Preview {
-  Torifuda(
-    viewModel: .init(shimo: "かたふくまてのつきをみしかな"),
-    containerSize: UIScreen.main.bounds.size)
+  GeometryReader { proxy in
+    Torifuda(
+      viewModel: .init(shimo: "かたふくまてのつきをみしかな"),
+      containerSize: proxy.size)
+  }
 }
