@@ -59,7 +59,7 @@ struct HomeView: View {
             Spacer()
             Text(reciteModeName)
               .foregroundColor(.secondary)
-            Image(systemName: "chevron.right")
+            Image(systemName: "chevron.up.chevron.down")
               .font(.caption.weight(.semibold))
               .foregroundColor(.secondary)
           }
