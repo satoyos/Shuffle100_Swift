@@ -7,7 +7,6 @@ import Foundation
 
 enum AppRoute: Hashable {
   case selectMode
-  case selectSinger
   case poemPicker
   case ngramPicker
   case fudaSets

@@ -15,7 +15,11 @@ struct HomeView: View {
   @State private var fakeMode: Bool = false
   @State private var selectedReciteMode: ReciteMode = .normal
   @State private var showingReciteModeDialog = false
+  @State private var showingSingerDialog = false
   @State private var showNoPoemAlert = false
+  @State private var showSingerAlert = false
+  @State private var singerAlertTitle = ""
+  @State private var singerAlertMessage = ""
 
   private var settings: Settings { router.settings }
 
@@ -78,12 +82,17 @@ struct HomeView: View {
         }
 
         // 読手
-        NavigationLink(value: AppRoute.selectSinger) {
+        Button {
+          showingSingerDialog = true
+        } label: {
           HStack {
             Text("読手")
               .foregroundColor(.primary)
             Spacer()
             Text(singerName)
+              .foregroundColor(.secondary)
+            Image(systemName: "chevron.up.chevron.down")
+              .font(.caption.weight(.semibold))
               .foregroundColor(.secondary)
           }
         }
@@ -174,6 +183,11 @@ struct HomeView: View {
     } message: {
       Text("「取り札を用意する歌」で、試合に使う歌を選んでください")
     }
+    .alert(singerAlertTitle, isPresented: $showSingerAlert) {
+      Button("OK") {}
+    } message: {
+      Text(singerAlertMessage)
+    }
     .confirmationDialog(
       "読み上げモードを選ぶ",
       isPresented: $showingReciteModeDialog,
@@ -182,6 +196,18 @@ struct HomeView: View {
       ForEach(Self.reciteModes, id: \.mode) { holder in
         Button(holder.title) {
           selectReciteMode(holder.mode)
+        }
+      }
+      Button("キャンセル", role: .cancel) {}
+    }
+    .confirmationDialog(
+      "読手を選ぶ",
+      isPresented: $showingSingerDialog,
+      titleVisibility: .visible
+    ) {
+      ForEach(Singers.all, id: \.id) { singer in
+        Button(singer.name) {
+          selectSinger(singer.id)
         }
       }
       Button("キャンセル", role: .cancel) {}
@@ -202,6 +228,24 @@ struct HomeView: View {
       selectedReciteMode = mode
       settings.reciteMode = mode
       fakeMode = settings.fakeMode
+    }
+    router.saveSettings()
+  }
+
+  private func selectSinger(_ singerID: String) {
+    let viewModel = SelectSingerView.ViewModel(
+      settings: settings,
+      singers: Singers.all
+    )
+
+    switch viewModel.validateSingerSelection(singerID) {
+    case .valid:
+      settings.singerID = singerID
+    case .invalid(let title, let message):
+      settings.singerID = Singers.defaultSinger.id
+      singerAlertTitle = title
+      singerAlertMessage = message
+      showSingerAlert = true
     }
     router.saveSettings()
   }

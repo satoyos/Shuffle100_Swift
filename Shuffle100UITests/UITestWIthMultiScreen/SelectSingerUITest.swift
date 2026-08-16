@@ -22,13 +22,12 @@ class SelectSingerUITest: XCTestCase {
     func test_HomeScreenReflectsSelectedSinger() {
         let selectSingerPage = homePage.gotoSelectSingerPage()
         
-        XCTContext.runActivity(named: "「いなばくん」を選んでトップ画面に戻ると、その結果が反映されている") { (acitivity) in
+        XCTContext.runActivity(named: "「IA」を選ぶと、その結果が反映されている") { (acitivity) in
             // when
             selectSingerPage
-                .selectSingerFor(name: "いなばくん")
-                .backToTopButton.tap()
+                .selectSingerFor(name: "IA")
             // then
-            XCTAssert(homePage.singerIs(.inaba))
+            XCTAssert(homePage.singerIs(.ia))
         }
     }
 

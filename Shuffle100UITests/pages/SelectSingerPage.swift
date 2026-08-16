@@ -18,16 +18,12 @@ final class SelectSingerPage: PageObjectable {
     }
     
     var pageTitle: XCUIElement {
-        return app.navigationBars.staticTexts[A11y.title].firstMatch
-    }
-    
-    var backToTopButton: XCUIElement {
-        return app.navigationBars.buttons[A11y.backToTop].firstMatch
+        return app.staticTexts[A11y.title].firstMatch
     }
     
     func selectSingerFor(name: String) -> Self {
         if let formalName = singerNames.first(where: { $0.contains(name) }) {
-            app.pickerWheels.element.adjust(toPickerWheelValue: formalName)
+            app.buttons[formalName].firstMatch.tap()
         } else {
             XCTFail("与えられた文字列を含む毒手が見つからない！")
         }
@@ -38,6 +34,5 @@ final class SelectSingerPage: PageObjectable {
     
     enum A11y {
         static let title = "読手を選ぶ"
-        static let backToTop = "トップ"
     }
 }

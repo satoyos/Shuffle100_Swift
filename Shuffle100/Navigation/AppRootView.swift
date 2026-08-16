@@ -89,14 +89,6 @@ struct AppRootView: View {
       .onDisappear { router.saveSettings() }
       .standardToolbarBackground()
 
-    case .selectSinger:
-      SelectSingerView(viewModel: .init(
-        settings: router.settings,
-        singers: Singers.all
-      ))
-      .onDisappear { router.saveSettings() }
-      .standardToolbarBackground()
-
     case .memorizeTimer:
       MemorizeTimer(viewModel: .init(
         totalSec: 15 * 60,
