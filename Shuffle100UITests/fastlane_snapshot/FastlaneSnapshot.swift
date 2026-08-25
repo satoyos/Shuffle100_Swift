@@ -236,18 +236,14 @@ final class FastlaneSnapshot: XCTestCase {
   
   func test_SelectModeScreenShot() {
     // when
-    let selectModePage = homePage.gotoSelectModePage()
-    // then
-    XCTAssert(selectModePage.exists)
+    homePage.showReciteModeDialog()
     // take screen shot
     snapshot(FN.selectModeScreen)
   }
   
   func test_SelectSingerScreenShot() {
     // when
-    let selectSingerPage = homePage.gotoSelectSingerPage()
-    // then
-    XCTAssert(selectSingerPage.exists)
+    homePage.showSingerDialog()
     // take screenshot
     snapshot(FN.selectSingerScreen)
   }

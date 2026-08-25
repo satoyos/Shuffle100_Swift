@@ -21,9 +21,7 @@ extension SkipToWhatsNext where Self: HomePage  {
             XCTFail("Reciting mode must be .beginner or .hokkaido")
         }
         // when
-        let reciteModePage = gotoSelectModePage()
-        reciteModePage
-            .selectMode(mode)
+        selectReciteMode(mode)
         // then
         XCTAssert(reciteModeIs(mode), "選んだモードになっている")
         // when

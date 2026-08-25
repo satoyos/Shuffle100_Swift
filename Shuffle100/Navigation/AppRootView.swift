@@ -3,7 +3,7 @@
 //  Shuffle100
 //
 //  Phase 1: HomeViewを組み込み、SceneDelegateから起動する。
-//  Phase 2: SelectMode/SelectSinger/MemorizeTimerを追加。
+//  Phase 2: MemorizeTimerを追加。
 //  シート（ReciteSettings, Help）も実装済み。
 //  Push先の各destinationはPhase 2以降で順次追加する。
 //
@@ -81,14 +81,6 @@ struct AppRootView: View {
   @ViewBuilder
   private func destination(for route: AppRoute) -> some View {
     switch route {
-    case .selectMode:
-      SelectModeView(viewModel: .init(
-        settings: router.settings,
-        reciteModeHolders: Self.reciteModes
-      ))
-      .onDisappear { router.saveSettings() }
-      .standardToolbarBackground()
-
     case .memorizeTimer:
       MemorizeTimer(viewModel: .init(
         totalSec: 15 * 60,
@@ -159,13 +151,6 @@ struct AppRootView: View {
       )
     )
   }
-
-  private static let reciteModes: [ReciteModeHolder] = [
-    ReciteModeHolder(mode: .normal,   title: "通常 (競技かるた)"),
-    ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
-    ReciteModeHolder(mode: .nonstop,  title: "ノンストップ (止まらない)"),
-    ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
-  ]
 
   // MARK: - Sheet destinations
 

@@ -57,10 +57,7 @@ class GoThrough100PoemsUITest: XCTestCase {
     func test_goThoughInNonStopMode() {
         XCTContext.runActivity(named: "ノンストップモードを選択") { (activiti) in
             // given
-            let selectModePage = homePage.gotoSelectModePage()
-            // when
-            selectModePage
-                .selectMode(.nonstop)
+            homePage.selectReciteMode(.nonstop)
             // then
             XCTAssert(homePage.reciteModeIs(.nonstop))
         }
@@ -98,10 +95,7 @@ class GoThrough100PoemsUITest: XCTestCase {
     func test_goThorough100InBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in
             // given
-            let selectModePage = homePage.gotoSelectModePage()
-            // when
-            selectModePage
-                .selectMode(.beginner)
+            homePage.selectReciteMode(.beginner)
             // then
             XCTAssert(homePage.reciteModeIs(.beginner))
         }
@@ -138,10 +132,7 @@ class GoThrough100PoemsUITest: XCTestCase {
     func test_goThrough100inHokkaidoMode() {
         XCTContext.runActivity(named: "北海道モードを選択") { (activity) in
             // given
-            let selectModePage = homePage.gotoSelectModePage()
-            // when
-            selectModePage
-                .selectMode(.hokkaido)
+            homePage.selectReciteMode(.hokkaido)
             // then
             XCTAssert(homePage.reciteModeIs(.hokkaido))
         }

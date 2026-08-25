@@ -233,12 +233,7 @@ struct HomeView: View {
   }
 
   private func selectSinger(_ singerID: String) {
-    let viewModel = SelectSingerView.ViewModel(
-      settings: settings,
-      singers: Singers.all
-    )
-
-    switch viewModel.validateSingerSelection(singerID) {
+    switch Singers.validateSelection(of: singerID) {
     case .valid:
       settings.singerID = singerID
     case .invalid(let title, let message):

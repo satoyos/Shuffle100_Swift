@@ -20,12 +20,9 @@ class SelectSingerUITest: XCTestCase {
     }
 
     func test_HomeScreenReflectsSelectedSinger() {
-        let selectSingerPage = homePage.gotoSelectSingerPage()
-        
         XCTContext.runActivity(named: "「IA」を選ぶと、その結果が反映されている") { (acitivity) in
             // when
-            selectSingerPage
-                .selectSingerFor(name: "IA")
+            homePage.selectSinger(.ia)
             // then
             XCTAssert(homePage.singerIs(.ia))
         }
@@ -34,10 +31,8 @@ class SelectSingerUITest: XCTestCase {
     func test_canGoToSelectSingerScreenWhenBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードに設定すると、空札設定セルが表示されなくなる") { _ in
             // given
-            let selectModePage = homePage.gotoSelectModePage()
             // when
-            selectModePage
-                .selectMode(.beginner)
+            homePage.selectReciteMode(.beginner)
             // then
             XCTAssert(homePage.reciteModeIs(.beginner))
             XCTAssertFalse(homePage.fakeModeCell.exists)

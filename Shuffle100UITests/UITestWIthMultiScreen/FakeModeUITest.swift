@@ -56,12 +56,7 @@ class FakeModeUITest: XCTestCase {
         }
         XCTContext.runActivity(named: "読み上げモードを「初心者」に変更する") { _ in
             // when
-            let selectModepage = homePage.gotoSelectModePage()
-            // then
-            XCTAssert(selectModepage.exists)
-            // when
-            selectModepage
-                .selectMode(.beginner)
+            homePage.selectReciteMode(.beginner)
             // then
             XCTAssert(homePage.exists)
             XCTAssert(homePage.reciteModeIs(.beginner))

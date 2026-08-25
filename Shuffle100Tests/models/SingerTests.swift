@@ -48,4 +48,12 @@ class SingerTests: XCTestCase {
         XCTAssertNotNil(inaba.shortenJokaStartTime)
         XCTAssertEqual(inaba.shortenJokaStartTime, 15.5)
     }
+
+    func test_validateSelection_returnsValidForIA() {
+        XCTAssertEqual(Singers.validateSelection(of: "ia").isInvalid, false)
+    }
+
+    func test_validateSelection_returnsValidForUnknownSingerID() {
+        XCTAssertEqual(Singers.validateSelection(of: "unknown_singer").isInvalid, false)
+    }
 }

@@ -37,9 +37,7 @@ class SkipPoemUITest: XCTestCase {
     
     func test_alsoInBeginnerMode_skipButtonOn1stHalfOf1stPoemShouldWork() {
         // when
-        let modePage = homePage.gotoSelectModePage()
-        modePage
-            .selectMode(.beginner)
+        homePage.selectReciteMode(.beginner)
         // then
         XCTAssert(homePage.reciteModeIs(.beginner))
         // when
@@ -58,9 +56,7 @@ class SkipPoemUITest: XCTestCase {
     
     func test_alsoInNonStopMode_skipButtonOn1stHalfOf1stPoemShouldWork() {
         // when
-        let modePage = homePage.gotoSelectModePage()
-        modePage
-            .selectMode(.nonstop)
+        homePage.selectReciteMode(.nonstop)
         // then
         XCTAssert(homePage.reciteModeIs(.nonstop))
         // when

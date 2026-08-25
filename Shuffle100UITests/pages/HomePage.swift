@@ -98,16 +98,36 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         return RecitePoemPage(app: app)
     }
     
-    func gotoSelectModePage() -> SelectModePage {
+    @discardableResult
+    func selectReciteMode(_ mode: ReciteMode) -> Self {
         let cell = waitToHittable(for: reciteModeCell, timeout: timeOutSec)
         cell.tap()
-        return SelectModePage(app: app)
+        let option = waitToHittable(for: app.buttons[labelForReciteModeOption(mode)].firstMatch, timeout: timeOutSec)
+        option.tap()
+        return self
     }
-    
-    func gotoSelectSingerPage() -> SelectSingerPage {
+
+    @discardableResult
+    func selectSinger(_ singer: CurrentSinger) -> Self {
         let cell = waitToHittable(for: singerCell, timeout: timeOutSec)
         cell.tap()
-        return SelectSingerPage(app: app)
+        let option = waitToHittable(for: app.buttons[labelForSinger(singer)].firstMatch, timeout: timeOutSec)
+        option.tap()
+        return self
+    }
+
+    @discardableResult
+    func showReciteModeDialog() -> Self {
+        let cell = waitToHittable(for: reciteModeCell, timeout: timeOutSec)
+        cell.tap()
+        return self
+    }
+
+    @discardableResult
+    func showSingerDialog() -> Self {
+        let cell = waitToHittable(for: singerCell, timeout: timeOutSec)
+        cell.tap()
+        return self
     }
     
     func numberOfSelecttedPoems(is number: Int) -> Bool {
@@ -163,5 +183,21 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
             label = A11y.hokkaido
         }
         return label
+    }
+
+    private func labelForReciteModeOption(_ mode: ReciteMode) -> String {
+        switch mode {
+        case .normal: return "通常 (競技かるた)"
+        case .beginner: return "初心者 (チラし取り)"
+        case .nonstop: return "ノンストップ (止まらない)"
+        case .hokkaido: return "下の句かるた (北海道式)"
+        }
+    }
+
+    private func labelForSinger(_ singer: CurrentSinger) -> String {
+        switch singer {
+        case .ia: return A11y.singerIaLabel
+        case .inaba: return A11y.singerInabaLabel
+        }
     }
 }
