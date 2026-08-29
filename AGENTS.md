@@ -36,7 +36,7 @@ open Shuffle100.xcodeproj
 xcodebuild test -project Shuffle100.xcodeproj -scheme Shuffle100 -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing Shuffle100Tests
 
 # UIテスト
-xcodebuild test -project Shuffle100.xcodeproj -scheme Shuffle100UITests -destination 'platform=iOS Simulator,name=iPhone 17'
+xcodebuild test -project Shuffle100.xcodeproj -scheme Shuffle100 -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:Shuffle100UITests
 ```
 
 ### Fastlane（将来の拡張用）
