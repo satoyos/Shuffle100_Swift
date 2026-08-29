@@ -64,7 +64,7 @@ extension RecitePoemViewModel {
   }
 
   fileprivate func updateNowPlayingInfoIfNeeded(count: Int?, side: Side?) {
-    guard settings.reciteMode == .nonstop else { return }
+    guard settings.reciteMode.isNonstop else { return }
 
     var title: String!
     if let count = count {

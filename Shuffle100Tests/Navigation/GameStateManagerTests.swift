@@ -290,6 +290,36 @@ final class GameStateManagerTests: XCTestCase {
     XCTAssertEqual(manager.phase, .gameEnd)
   }
 
+  func test_nonstopShimo_skipDuringShimoGoesToNextShimo() {
+    let manager = makeManager(mode: .nonstopShimo, strategy: NonstopShimoGameStrategy())
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+
+    manager.baseViewModel.skipToNextScreenAction?()  // → .shimo(2)
+
+    guard case .shimo(_, let counter) = manager.phase else {
+      XCTFail("Expected .shimo, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 2)
+  }
+
+  func test_nonstopShimo_rewindDuringSecondShimoGoesToPreviousShimo() {
+    let manager = makeManager(mode: .nonstopShimo, strategy: NonstopShimoGameStrategy())
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(2)
+
+    manager.baseViewModel.recitePoemViewModel.backToPreviousAction?()
+
+    guard case .shimo(_, let counter) = manager.phase else {
+      XCTFail("Expected .shimo, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 1)
+    XCTAssertEqual(manager.poemSupplier.side, .shimo)
+  }
+
   // MARK: - Hokkaido Mode
 
   func test_hokkaido_afterJoka_goesDirectlyToShimo() {

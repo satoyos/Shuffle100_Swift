@@ -32,6 +32,14 @@ class GameConfigTest: XCTestCase {
         let settings = Settings(mode: modeSettings)
         XCTAssertEqual(settings.reciteMode, .nonstopShimo)
     }
+
+    func test_isNonstop_isTrueForBothNonstopModes() {
+        XCTAssertTrue(ReciteMode.nonstop.isNonstop)
+        XCTAssertTrue(ReciteMode.nonstopShimo.isNonstop)
+        XCTAssertFalse(ReciteMode.normal.isNonstop)
+        XCTAssertFalse(ReciteMode.beginner.isNonstop)
+        XCTAssertFalse(ReciteMode.hokkaido.isNonstop)
+    }
     
     func test_initWithFakeModeParameter() {
         let modeSettings = GameConfig(fakeMode: true)

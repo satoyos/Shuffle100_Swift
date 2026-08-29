@@ -14,6 +14,11 @@ enum ReciteMode: String, CaseIterable, Codable {
   case nonstop
   case nonstopShimo
   case hokkaido
+
+  /// ロック画面やバックグラウンドでも連続再生を続けるモード。
+  var isNonstop: Bool {
+    self == .nonstop || self == .nonstopShimo
+  }
 }
 
 struct ReciteModeHolder: Codable {

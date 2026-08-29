@@ -8,6 +8,7 @@
 import XCTest
 import Combine
 import AVFoundation
+import MediaPlayer
 @testable import Shuffle100
 
 final class RecitePoemViewModelAudioTests: XCTestCase {
@@ -27,6 +28,7 @@ final class RecitePoemViewModelAudioTests: XCTestCase {
   }
 
   override func tearDownWithError() throws {
+    MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
     viewModel = nil
     testSettings = nil
     mockFactory = nil
@@ -81,6 +83,15 @@ final class RecitePoemViewModelAudioTests: XCTestCase {
     XCTAssertTrue(mockFactory.preparePlayerWithNumberCalled)
     XCTAssertEqual(mockFactory.lastPreparedNumber, 10)
     XCTAssertTrue(mockFactory.lastPreparedSide == .shimo)
+  }
+
+  func test_playNumberedPoem_nonstopShimo_updatesNowPlayingTitle() throws {
+    testSettings.reciteMode = .nonstopShimo
+
+    viewModel.playNumberedPoem(number: 10, side: .shimo, count: 2)
+
+    let title = MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyTitle] as? String
+    XCTAssertEqual(title, "2首目 (下の句)")
   }
 
   func test_playNumberedPoem_hidesJokaDescLabels() throws {

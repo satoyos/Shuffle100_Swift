@@ -165,6 +165,18 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
     XCTAssertFalse(viewModel.progressTimer?.isValid ?? true)
   }
 
+  func test_handleAppWillResignActive_nonstopShimo_keepsTimerActive() throws {
+    testSettings.reciteMode = .nonstopShimo
+    let nonstopShimoViewModel = RecitePoemViewModel(settings: testSettings)
+    nonstopShimoViewModel.enableTestMode()
+    nonstopShimoViewModel.setTimerForProgressView()
+
+    nonstopShimoViewModel.handleAppWillResignActive()
+
+    XCTAssertTrue(nonstopShimoViewModel.progressTimer?.isValid ?? false)
+    nonstopShimoViewModel.progressTimer?.invalidate()
+  }
+
   // MARK: - Play Button Tapped Handler Tests
 
   // Note: Test with audio player has been removed (requires audio files in test bundle).
