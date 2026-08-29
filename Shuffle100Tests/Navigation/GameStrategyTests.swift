@@ -129,6 +129,50 @@ final class GameStrategyTests: XCTestCase {
     )
   }
 
+  // MARK: - NonstopShimoGameStrategy
+
+  func test_nonstopShimo_propertiesAreCorrect() {
+    let strategy = NonstopShimoGameStrategy()
+    XCTAssertTrue(strategy.forcesShortenedJoka)
+    XCTAssertFalse(strategy.hasKami)
+    XCTAssertTrue(strategy.autoAdvanceFromKami)
+    XCTAssertFalse(strategy.showsWhatsNext)
+  }
+
+  func test_nonstopShimo_afterJoka_goesDirectlyToShimo() {
+    let strategy = NonstopShimoGameStrategy()
+    XCTAssertEqual(
+      strategy.nextPhaseAfterJoka(firstPoemNumber: 7),
+      .shimo(number: 7, counter: 1)
+    )
+  }
+
+  func test_nonstopShimo_afterShimo_withNextPoem_goesToNextShimo() {
+    let strategy = NonstopShimoGameStrategy()
+    XCTAssertEqual(
+      strategy.nextPhaseAfterShimo(
+        number: 7,
+        counter: 1,
+        nextPoemNumber: 12,
+        nextCounter: 2
+      ),
+      .shimo(number: 12, counter: 2)
+    )
+  }
+
+  func test_nonstopShimo_afterShimo_withoutNextPoem_goesToGameEnd() {
+    let strategy = NonstopShimoGameStrategy()
+    XCTAssertEqual(
+      strategy.nextPhaseAfterShimo(
+        number: 7,
+        counter: 1,
+        nextPoemNumber: nil,
+        nextCounter: 2
+      ),
+      .gameEnd
+    )
+  }
+
   // MARK: - HokkaidoGameStrategy
 
   func test_hokkaido_propertiesAreCorrect() {

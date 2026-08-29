@@ -16,5 +16,6 @@ enum AppRoute: Hashable {
   case normalMode
   case beginnerMode
   case nonstopMode
+  case nonstopShimoMode
   case hokkaidoMode
 }

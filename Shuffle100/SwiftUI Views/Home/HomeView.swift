@@ -28,6 +28,7 @@ struct HomeView: View {
     case .normal:   return "通常"
     case .beginner: return "初心者"
     case .nonstop:  return "ノンストップ"
+    case .nonstopShimo: return "ノンストップ (下の句のみ)"
     case .hokkaido: return "下の句かるた"
     }
   }
@@ -220,6 +221,7 @@ struct HomeView: View {
     ReciteModeHolder(mode: .normal, title: "通常 (競技かるた)"),
     ReciteModeHolder(mode: .beginner, title: "初心者 (チラし取り)"),
     ReciteModeHolder(mode: .nonstop, title: "ノンストップ (止まらない)"),
+    ReciteModeHolder(mode: .nonstopShimo, title: "ノンストップ (下の句のみ)"),
     ReciteModeHolder(mode: .hokkaido, title: "下の句かるた (北海道式)")
   ]
 
@@ -261,6 +263,7 @@ struct HomeView: View {
     case .normal:   route = .normalMode
     case .beginner: route = .beginnerMode
     case .nonstop:  route = .nonstopMode
+    case .nonstopShimo: route = .nonstopShimoMode
     case .hokkaido: route = .hokkaidoMode
     }
     router.push(route)

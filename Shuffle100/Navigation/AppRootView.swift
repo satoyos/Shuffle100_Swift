@@ -134,6 +134,9 @@ struct AppRootView: View {
     case .nonstopMode:
       gamePlayView(strategy: NonstopGameStrategy())
 
+    case .nonstopShimoMode:
+      gamePlayView(strategy: NonstopShimoGameStrategy())
+
     case .hokkaidoMode:
       gamePlayView(strategy: HokkaidoGameStrategy())
     }
