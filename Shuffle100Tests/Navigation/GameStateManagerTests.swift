@@ -12,6 +12,41 @@ import XCTest
 
 final class GameStateManagerTests: XCTestCase {
 
+  /// 下の句から次の歌の下の句へ進む Strategy を、状態管理の汎用性確認に使う。
+  private struct ShimoToShimoStrategy: GameStrategy {
+    let forcesShortenedJoka = true
+    let hasKami = false
+    let autoAdvanceFromKami = true
+    let showsWhatsNext = false
+
+    func nextPhaseAfterJoka(firstPoemNumber: Int) -> GamePhase {
+      .shimo(number: firstPoemNumber, counter: 1)
+    }
+
+    func nextPhaseAfterKami(number: Int, counter: Int) -> GamePhase {
+      .shimo(number: number, counter: counter)
+    }
+
+    func nextPhaseAfterShimo(
+      number: Int,
+      counter: Int,
+      nextPoemNumber: Int?,
+      nextCounter: Int
+    ) -> GamePhase {
+      guard let nextPoemNumber else { return .gameEnd }
+      return .shimo(number: nextPoemNumber, counter: nextCounter)
+    }
+
+    func nextPhaseAfterGoNext(
+      currentNumber: Int,
+      currentCounter: Int,
+      nextPoemNumber: Int?,
+      nextCounter: Int
+    ) -> GamePhase {
+      .gameEnd
+    }
+  }
+
   // MARK: - Helpers
 
   private func makeSettings(mode: ReciteMode = .normal, poemCount: Int = 3) -> Settings {
@@ -245,6 +280,21 @@ final class GameStateManagerTests: XCTestCase {
       return
     }
     XCTAssertEqual(c2, 2)
+  }
+
+  func test_strategyDrivenPlayback_afterShimoCanGoToNextShimo() {
+    let manager = makeManager(mode: .nonstop, strategy: ShimoToShimoStrategy())
+    manager.startGame()
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(1)
+    manager.baseViewModel.playerFinishedAction?()     // → .shimo(2)
+
+    guard case .shimo(let number, let counter) = manager.phase else {
+      XCTFail("Expected .shimo, got \(manager.phase)")
+      return
+    }
+    XCTAssertEqual(counter, 2)
+    XCTAssertEqual(manager.poemSupplier.currentPoem?.number, number)
+    XCTAssertEqual(manager.poemSupplier.side, .shimo)
   }
 
   // MARK: - Hokkaido Mode

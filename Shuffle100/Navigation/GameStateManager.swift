@@ -336,21 +336,44 @@ final class GameStateManager: ObservableObject {
       return
     }
 
-    // 通常/ノンストップ: 次の歌があれば kami へ、なければゲーム終了
-    guard let nextPoem = poemSupplier.drawNextPoem() else {
+    let nextCounter = counter + 1
+    let nextPoem = poemSupplier.drawNextPoem()
+    let nextPhase = strategy.nextPhaseAfterShimo(
+      number: number,
+      counter: counter,
+      nextPoemNumber: nextPoem?.number,
+      nextCounter: nextCounter
+    )
+
+    switch nextPhase {
+    case .kami(let nextNumber, let nextCounter):
+      phase = .kami(number: nextNumber, counter: nextCounter)
+      baseViewModel.stepIntoNextPoem(
+        number: nextNumber,
+        at: nextCounter,
+        total: poemSupplier.size,
+        side: .kami
+      )
+
+    case .shimo(let nextNumber, let nextCounter):
+      poemSupplier.stepIntoShimo()
+      phase = .shimo(number: nextNumber, counter: nextCounter)
+      baseViewModel.stepIntoNextPoem(
+        number: nextNumber,
+        at: nextCounter,
+        total: poemSupplier.size,
+        side: .shimo
+      )
+
+    case .gameEnd:
       phase = .gameEnd
       baseViewModel.stepIntoGameEnd()
-      return
+
+    default:
+      // showsWhatsNext == false の Strategy が返すのは
+      // kami / shimo / gameEnd のいずれかであることを想定する。
+      break
     }
-    let nextNumber = nextPoem.number
-    let nextCounter = poemSupplier.currentIndex
-    phase = .kami(number: nextNumber, counter: nextCounter)
-    baseViewModel.stepIntoNextPoem(
-      number: nextNumber,
-      at: nextCounter,
-      total: poemSupplier.size,
-      side: .kami
-    )
   }
 
   private func advanceFromShimoRefrain() {
