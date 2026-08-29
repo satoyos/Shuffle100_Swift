@@ -10,5 +10,6 @@ enum ReciteMode: String, CaseIterable {
     case normal
     case beginner
     case nonstop
+    case nonstopShimo
     case hokkaido
 }

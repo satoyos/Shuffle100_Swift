@@ -91,6 +91,37 @@ class GoThrough100PoemsUITest: XCTestCase {
             XCTAssert(homePage.exists)
         }
     }
+
+    func test_goThroughInNonstopShimoMode() {
+        XCTContext.runActivity(named: "下の句のみのノンストップモードを選択") { _ in
+            homePage.selectReciteMode(.nonstopShimo)
+            XCTAssertTrue(homePage.reciteModeIs(.nonstopShimo))
+        }
+
+        let recitePage = homePage.gotoRecitePoemPage()
+
+        XCTContext.runActivity(named: "短縮版の序歌から開始") { _ in
+            XCTAssertTrue(
+                recitePage.shortJokaDescLabel.waitForExistence(timeout: timeOutSec),
+                "短縮版の序歌であること"
+            )
+        }
+
+        for i in 1...100 {
+            XCTContext.runActivity(named: "forwardボタンを押すと、\(i)首めの下の句へ") { _ in
+                recitePage.forwardButton.tap()
+                XCTAssertTrue(recitePage.isReciting(number: i, side: .shimo))
+            }
+        }
+
+        XCTContext.runActivity(named: "最後の下の句の後に試合終了") { _ in
+            recitePage.forwardButton.tap()
+            let endPage = AllPoemRecitedPage(app: app)
+            XCTAssertTrue(endPage.exists)
+            endPage.backToTopButton.tap()
+            XCTAssertTrue(homePage.exists)
+        }
+    }
     
     func test_goThorough100InBeginnerMode() {
         XCTContext.runActivity(named: "初心者モードを選択") { (activity) in

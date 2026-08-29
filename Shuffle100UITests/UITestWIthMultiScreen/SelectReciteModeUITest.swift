@@ -33,5 +33,14 @@ class SelectReciteModeUITest: XCTestCase {
             XCTAssertFalse(homePage.fakeModeCell.exists)
         }
     }
+
+    func test_HomeScreenReflectsSelectedNonstopShimoMode() {
+        XCTContext.runActivity(named: "下の句のみのノンストップモードを選択できる") { _ in
+            homePage.selectReciteMode(.nonstopShimo)
+
+            XCTAssertTrue(homePage.reciteModeIs(.nonstopShimo))
+            XCTAssertTrue(homePage.fakeModeCell.exists)
+        }
+    }
     
 }

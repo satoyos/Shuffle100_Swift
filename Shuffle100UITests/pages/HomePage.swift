@@ -73,6 +73,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         static let beginner = "初心者"
         static let normal = "通常"
         static let nonStop = "ノンストップ"
+        static let nonStopShimo = "ノンストップ (下の句のみ)"
         static let hokkaido = "下の句かるた"
         static let gear = "GearButton"
         static let help = "HelpButton"
@@ -179,6 +180,8 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
             label = A11y.beginner
         case .nonstop:
             label = A11y.nonStop
+        case .nonstopShimo:
+            label = A11y.nonStopShimo
         case .hokkaido:
             label = A11y.hokkaido
         }
@@ -190,6 +193,7 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
         case .normal: return "通常 (競技かるた)"
         case .beginner: return "初心者 (チラし取り)"
         case .nonstop: return "ノンストップ (止まらない)"
+        case .nonstopShimo: return "ノンストップ (下の句のみ)"
         case .hokkaido: return "下の句かるた (北海道式)"
         }
     }
