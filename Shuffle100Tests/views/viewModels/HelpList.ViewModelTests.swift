@@ -27,18 +27,26 @@ final class HelpListViewModelTests: XCTestCase {
     XCTAssertEqual(viewModel.sections[1].name, "その他")
   }
 
-  func test_usageSectionHas10Items() {
+  func test_usageSectionHas11Items() {
     let viewModel = HelpList.ViewModel()
     let usageSection = viewModel.sections[0]
-    XCTAssertEqual(usageSection.dataSources.count, 10)
+    XCTAssertEqual(usageSection.dataSources.count, 11)
   }
 
-  func test_hokkaidoModeIsAtIndex5InUsageSection() {
+  func test_nonstopShimoModeIsAtIndex5InUsageSection() {
     let viewModel = HelpList.ViewModel()
     let usageSection = viewModel.sections[0]
-    XCTAssertEqual(usageSection.dataSources[5].name, "「下の句かるたモード」とは？")
+    XCTAssertEqual(usageSection.dataSources[5].name, "「ノンストップ（下の句のみ）」とは？")
     XCTAssertEqual(usageSection.dataSources[5].type, .html)
-    XCTAssertEqual(usageSection.dataSources[5].fileName, "html/what_is_hokkaido_mode")
+    XCTAssertEqual(usageSection.dataSources[5].fileName, "html/what_is_nonstop_shimo_mode")
+  }
+
+  func test_hokkaidoModeIsAtIndex6InUsageSection() {
+    let viewModel = HelpList.ViewModel()
+    let usageSection = viewModel.sections[0]
+    XCTAssertEqual(usageSection.dataSources[6].name, "「下の句かるたモード」とは？")
+    XCTAssertEqual(usageSection.dataSources[6].type, .html)
+    XCTAssertEqual(usageSection.dataSources[6].fileName, "html/what_is_hokkaido_mode")
   }
 
   func test_otherSectionHasThreeItems() {
