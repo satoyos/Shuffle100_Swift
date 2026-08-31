@@ -54,7 +54,7 @@ final class FudaSetPage: PageObjectable {
   @discardableResult
   func swipeCellLeft(name: String) -> Self {
     // when
-    let cell = fudaSet(with: name)
+    let cell = app.cells.containing(.staticText, identifier: name).firstMatch
     // then
     XCTAssert(cell.exists)
     

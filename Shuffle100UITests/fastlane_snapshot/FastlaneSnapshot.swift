@@ -30,6 +30,14 @@ final class FastlaneSnapshot: XCTestCase {
     static let ngramPickerScreen =     "14_NgramPickerScreen"
     static let selectModeScreen =      "15_SelectModeScreen"
     static let selectSingerScreen =    "17_SelectSingerScreen"
+    static let helpSaveSetButton =     "help_save_set_button"
+    static let helpSelectByGroup =     "help_select_by_group"
+    static let helpSelectByFudaSet =   "help_select_by_fuda_set"
+    static let helpDeleteFudaSet =     "help_delete_fuda_set"
+    static let helpSelectByFiveColors = "help_select_by_five_colors"
+    static let helpMemorizeTimer =     "help_memorize_timer"
+    static let helpEnablePostMortem =  "help_enable_postmortem"
+    static let helpStartPostMortem =   "help_start_postmortem"
   }
 
     override func setUpWithError() throws {
@@ -246,5 +254,69 @@ final class FastlaneSnapshot: XCTestCase {
     homePage.showSingerDialog()
     // take screenshot
     snapshot(FN.selectSingerScreen)
+  }
+
+  // MARK: - Help screenshots
+
+  func test_HelpPoemPickerButtonsScreenShots() {
+    let pickerPage = homePage.goToPoemPickerPage()
+    XCTAssert(pickerPage.exists)
+
+    snapshot(FN.helpSaveSetButton)
+    snapshot(FN.helpSelectByGroup)
+
+    pickerPage.add2maiFudaSetAsNewOne(setName: "練習用")
+    let sheet = pickerPage.showSelectByGroupActionSheet()
+    XCTAssert(sheet.selectBySetButton.exists)
+    snapshot(FN.helpSelectByFudaSet)
+    snapshot(FN.helpSelectByFiveColors)
+  }
+
+  func test_HelpDeleteFudaSetScreenShot() {
+    let pickerPage = homePage.goToPoemPickerPage()
+    pickerPage.add2maiFudaSetAsNewOne(setName: "練習用")
+    let fudaSetPage = pickerPage.gotoFudaSetPage()
+    XCTAssert(fudaSetPage.exists)
+
+    fudaSetPage.swipeCellLeft(name: "練習用")
+    snapshot(FN.helpDeleteFudaSet)
+  }
+
+  func test_HelpMemorizeTimerScreenShot() {
+    XCTAssert(homePage.exists)
+    snapshot(FN.helpMemorizeTimer)
+  }
+
+  func test_HelpEnablePostMortemScreenShot() {
+    let settingsPage = homePage.gotoReciteSettingPage()
+    XCTAssert(settingsPage.exists)
+    if (settingsPage.posrMortemSwitch.value as? String) != "1" {
+      settingsPage.posrMortemSwitch.tap()
+    }
+    snapshot(FN.helpEnablePostMortem)
+  }
+
+  func test_HelpStartPostMortemScreenShot() {
+    let settingsPage = homePage.gotoReciteSettingPage()
+    if (settingsPage.posrMortemSwitch.value as? String) != "1" {
+      settingsPage.posrMortemSwitch.tap()
+    }
+    settingsPage.exitSettingsButton.tap()
+
+    let pickerPage = homePage.goToPoemPickerPage()
+    pickerPage.cancelAllButton.tap()
+    pickerPage.tapCellof(number: 1).backToTopPage()
+
+    let recitePage = homePage.gotoRecitePoemPage()
+    recitePage
+      .tapForwardButton()
+      .tapForwardButton()
+      .playButton.tap()
+    recitePage.tapForwardButton()
+
+    let endPage = AllPoemRecitedPage(app: app)
+    XCTAssert(endPage.exists)
+    XCTAssert(endPage.postMortemButton.exists)
+    snapshot(FN.helpStartPostMortem)
   }
 }
