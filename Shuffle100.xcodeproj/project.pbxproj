@@ -299,9 +299,9 @@
 		92F4F4020000000000000004 /* BeginnerGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000004 /* BeginnerGameStrategy.swift */; };
 		92F4F4020000000000000005 /* NonstopGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000005 /* NonstopGameStrategy.swift */; };
 		92F4F4020000000000000006 /* HokkaidoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */; };
-		92F4F402000000000000000A /* NonstopShimoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F401000000000000000A /* NonstopShimoGameStrategy.swift */; };
 		92F4F4020000000000000008 /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000008 /* GameStateManager.swift */; };
 		92F4F4020000000000000009 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000009 /* GamePlayView.swift */; };
+		92F4F402000000000000000A /* NonstopShimoGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F401000000000000000A /* NonstopShimoGameStrategy.swift */; };
 		92F4F4020000000000000101 /* GameStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000101 /* GameStrategyTests.swift */; };
 		92F4F4020000000000000102 /* GameStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4F4010000000000000102 /* GameStateManagerTests.swift */; };
 		92F5298C229AAD6500FC79E7 /* RecitingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */; };
@@ -613,9 +613,9 @@
 		92F4F4010000000000000004 /* BeginnerGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000005 /* NonstopGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000006 /* HokkaidoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokkaidoGameStrategy.swift; sourceTree = "<group>"; };
-		92F4F401000000000000000A /* NonstopShimoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopShimoGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000008 /* GameStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000009 /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayView.swift; sourceTree = "<group>"; };
+		92F4F401000000000000000A /* NonstopShimoGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonstopShimoGameStrategy.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000101 /* GameStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategyTests.swift; sourceTree = "<group>"; };
 		92F4F4010000000000000102 /* GameStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManagerTests.swift; sourceTree = "<group>"; };
 		92F5298B229AAD6500FC79E7 /* RecitingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecitingConfig.swift; sourceTree = "<group>"; };
@@ -1947,14 +1947,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 104;
+				CURRENT_PROJECT_VERSION = 106;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.3.1;
+				MARKETING_VERSION = 8.4;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1968,14 +1968,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 104;
+				CURRENT_PROJECT_VERSION = 106;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.3.1;
+				MARKETING_VERSION = 8.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2144,14 +2144,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 104;
+				CURRENT_PROJECT_VERSION = 106;
 				INFOPLIST_FILE = Shuffle100/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.3.1;
+				MARKETING_VERSION = 8.4;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sato0123.Shuffle100;
 				PRODUCT_NAME = "$(TARGET_NAME)";
