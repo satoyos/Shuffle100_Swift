@@ -93,6 +93,8 @@ extension WhatsNextView: View {
     }
     .navigationTitle("次はどうする？")
     .navigationBarTitleDisplayMode(.inline)
+    .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
+    .toolbarBackground(.visible, for: .navigationBar)
     .toolbar {
       ToolbarItem(placement: .navigationBarLeading) {
         Button(action: {
@@ -113,7 +115,7 @@ extension WhatsNextView: View {
           Image("exit_square")
             .resizable()
             .renderingMode(.template)
-            .frame(width: navBarButtonSize, height: navBarButtonSize)
+            .frame(width: navBarButtonSize * 0.85, height: navBarButtonSize * 0.85)
         }
         .accessibilityLabel("exit")
       }
