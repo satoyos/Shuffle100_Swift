@@ -52,6 +52,8 @@ struct ReciteSettingsView: View {
       .toolbarBackground(.visible, for: .navigationBar)
       .navigationDestination(for: ReciteSettingsRoute.self) { route in
         router.destination(for: route)
+          .toolbarBackground(Color(uiColor: StandardColor.barTintColor), for: .navigationBar)
+          .toolbarBackground(.visible, for: .navigationBar)
       }
       .onChange(of: router.path) { _, _ in
         // 詳細画面から戻ってきたとき値を更新
