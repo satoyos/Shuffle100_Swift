@@ -266,7 +266,7 @@ private struct WhatsNextSheetWrapper: View {
     NavigationStack {
       WhatsNextView(viewModel: viewModel)
     }
-    .onAppear {
+    .onAppear { [weak router] in
       viewModel.showTorifudaAction = {
         showingTorifuda = true
       }

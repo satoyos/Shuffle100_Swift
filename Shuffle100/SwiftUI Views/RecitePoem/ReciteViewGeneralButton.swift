@@ -16,8 +16,8 @@ struct ReciteViewGeneralButton {
   init(type: LabelType = .play, diameter: Double = 200, isPressed: Bool = false, action: (() -> Void)?) {
     self.type = type
     self.diameter = diameter
-    self.isPressed = isPressed
     self.action = action
+    self.isPressed = isPressed
   }
 }
 

@@ -10,8 +10,11 @@ import SwiftUI
 struct DurationSetting {
   @ObservedObject private var viewModel: DurationSettingViewModel
 
-  init(viewModel: DurationSettingViewModel) {
+  private let onDurationChanged: ((Double) -> Void)?
+
+  init(viewModel: DurationSettingViewModel, onDurationChanged: ((Double) -> Void)? = nil) {
     self.viewModel = viewModel
+    self.onDurationChanged = onDurationChanged
   }
 }
 
@@ -20,7 +23,13 @@ extension DurationSetting: View {
     GeometryReader { geometry in
       VStack(spacing: digitSize(for: geometry) / 4) {
         Sec2F(digitSize: 100, viewModel: viewModel.timeViewModel)
-        Slider(value: viewModel.$binding.startTime, in: 0.5 ... 2.0, step: 0.02 )
+        Slider(value: Binding(
+          get: { viewModel.binding.startTime },
+          set: { value in
+            viewModel.binding.startTime = value
+            onDurationChanged?(value)
+          }
+        ), in: 0.5 ... 2.0, step: 0.02 )
           .accessibilityIdentifier("slider")
           .padding(.horizontal)
           .disabled(viewModel.output.isUserActionDisabled)

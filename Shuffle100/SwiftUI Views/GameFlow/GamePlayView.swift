@@ -19,9 +19,9 @@ struct GamePlayView: View {
       settings: gameStateManager.settings,
       viewModel: gameStateManager.baseViewModel
     )
-    .onAppear {
+    .onAppear { [weak router] in
       // AppRouter に gameStateManager を登録 (WhatsNext シート等からの参照用)
-      router.gameStateManager = gameStateManager
+      router?.gameStateManager = gameStateManager
 
       // コールバック接続
       gameStateManager.onPresentWhatsNext = { [weak router] poem in

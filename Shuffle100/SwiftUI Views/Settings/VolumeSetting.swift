@@ -9,14 +9,17 @@ import SwiftUI
 
 struct VolumeSetting {
   let settings: Settings
+  private let onSettingsChanged: (() -> Void)?
   @ObservedObject private var viewModel: VolumeSettingViewModel
 
   // To catch event: navigation back to Parent View of SwiftUI
   @Environment(\.isPresented) private var isPresented
   
-  init(settings: Settings, volume givenVolume: Float? = nil) {
+  init(settings: Settings, volume givenVolume: Float? = nil,
+       onSettingsChanged: (() -> Void)? = nil) {
     let volume = givenVolume ?? settings.volume
     self.settings = settings
+    self.onSettingsChanged = onSettingsChanged
     self.viewModel = .init(
       volume: Double(volume),
       singer: Singers.fetchSingerFrom(settings))
@@ -43,7 +46,14 @@ extension VolumeSetting: View {
         }
         .padding()
 
-        Slider(value: viewModel.$binding.volume, in: 0.0 ... 1.0, step: 0.01)
+        Slider(value: Binding(
+          get: { viewModel.binding.volume },
+          set: { value in
+            viewModel.binding.volume = value
+            settings.volume = Float(value)
+            onSettingsChanged?()
+          }
+        ), in: 0.0 ... 1.0, step: 0.01)
           .padding(.horizontal)
 
         Button("試しに聞いてみる") {

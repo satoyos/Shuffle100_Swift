@@ -65,7 +65,7 @@ struct ReciteSettingsView: View {
   @ViewBuilder
   private func intervalSection() -> some View {
     Section(header: Text("読み上げの間隔")) {
-      ForEach(viewModel.sections[0].rows, id: \.self) { row in
+      ForEach(viewModel.sections[0].rows, id: \.route) { row in
         NavigationLink(value: row.route) {
           HStack {
             Text(row.title)
@@ -81,7 +81,7 @@ struct ReciteSettingsView: View {
   @ViewBuilder
   private func volumeSection() -> some View {
     Section(header: Text("音量")) {
-      ForEach(viewModel.sections[1].rows, id: \.self) { row in
+      ForEach(viewModel.sections[1].rows, id: \.route) { row in
         NavigationLink(value: row.route) {
           HStack {
             Text(row.title)

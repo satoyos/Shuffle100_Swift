@@ -25,7 +25,7 @@ class ReciteSettingsRouter: ObservableObject {
   func destination(for route: ReciteSettingsRoute) -> some View {
     switch route {
     case .intervalSetting:
-      let view = InterPoemDurationSetting(settings: settings)
+      let view = InterPoemDurationSetting(settings: settings, onSettingsChanged: onSettingsChanged)
       view
         .navigationTitle("歌の間隔の調整")
         .navigationBarTitleDisplayMode(.inline)
@@ -35,7 +35,7 @@ class ReciteSettingsRouter: ObservableObject {
           self?.onSettingsChanged?()
         }
     case .kamiShimoIntervalSetting:
-      let view = KamiShimoDurationSetting(settings: settings)
+      let view = KamiShimoDurationSetting(settings: settings, onSettingsChanged: onSettingsChanged)
       view
         .navigationTitle("上の句と下の句の間隔")
         .navigationBarTitleDisplayMode(.inline)
@@ -45,7 +45,7 @@ class ReciteSettingsRouter: ObservableObject {
           self?.onSettingsChanged?()
         }
     case .volumeSetting:
-      let view = VolumeSetting(settings: settings)
+      let view = VolumeSetting(settings: settings, onSettingsChanged: onSettingsChanged)
       view
         .navigationTitle("音量の調整")
         .navigationBarTitleDisplayMode(.inline)

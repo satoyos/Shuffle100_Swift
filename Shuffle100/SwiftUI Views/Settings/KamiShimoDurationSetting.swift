@@ -10,25 +10,31 @@ import SwiftUI
 
 struct KamiShimoDurationSetting {
   let settings: Settings
+  private let onSettingsChanged: (() -> Void)?
   let viewModel: DurationSettingViewModel
   
   // To catch event: navigation back to Parent View of SwiftUI
   @Environment(\.isPresented) private var isPresented
   
   init(startTime givenTime: Float? = nil,
-       settings: Settings) {
+       settings: Settings,
+       onSettingsChanged: (() -> Void)? = nil) {
     let startTime = givenTime ?? settings.kamiShimoInterval
     self.viewModel = .init(
       durationType: .kamiShimo,
       startTime: Double(startTime),
       singer: Singers.fetchSingerFrom(settings))
     self.settings = settings
+    self.onSettingsChanged = onSettingsChanged
   }
 }
 
 extension KamiShimoDurationSetting: View {
   var body: some View {
-    DurationSetting(viewModel: viewModel)
+    DurationSetting(viewModel: viewModel) { value in
+      settings.kamiShimoInterval = Float(value)
+      onSettingsChanged?()
+    }
       .onChange(of: isPresented) {
         guard !isPresented else { return }
         tasksForLeavingThisView()
