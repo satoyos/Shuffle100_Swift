@@ -2,6 +2,11 @@
 
 This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
+## Codex作業メモ
+
+- 調査過程のメモや、今後のタスクに役立つまとめなど、Codexが作成するMarkdownメモはすべて `codex_notes/` 配下に保存する。
+- ワークスペース直下にはCodexの作業メモを作成しない。
+
 ## プロジェクト概要
 
 Shuffle100は、百人一首かるたの読み上げを行うiOSアプリです。競技かるたの練習や対戦時に、人の代わりに歌を読み上げる機能を提供します。
