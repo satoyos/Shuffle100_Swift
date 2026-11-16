@@ -38,8 +38,21 @@ class MockAudioPlayerFactory: AudioPlayerFactoryProtocol {
 
   // MARK: - AudioPlayerFactoryProtocol Implementation
 
-  func setupAudioSession() {
+  func setupAudioSession() async -> Bool {
     setupAudioSessionCalled = true
+    return true
+  }
+
+  func startPlayback(_ player: AVAudioPlayer) async -> Bool {
+    await withCheckedContinuation { continuation in
+      DispatchQueue.global().async {
+        guard player.prepareToPlay() else {
+          continuation.resume(returning: false)
+          return
+        }
+        continuation.resume(returning: player.play())
+      }
+    }
   }
 
   func prepareOpeningPlayer(folder: String) -> AVAudioPlayer? {

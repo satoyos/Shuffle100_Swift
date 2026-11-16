@@ -257,7 +257,6 @@ struct HomeView: View {
   }
 
   private func startGame() {
-    AudioPlayerFactory.shared.setupAudioSession()
     let route: AppRoute
     switch selectedReciteMode {
     case .normal:   route = .normalMode
@@ -266,7 +265,11 @@ struct HomeView: View {
     case .nonstopShimo: route = .nonstopShimoMode
     case .hokkaido: route = .hokkaidoMode
     }
-    router.push(route)
+
+    Task {
+      _ = await AudioPlayerFactory.shared.setupAudioSession()
+      router.push(route)
+    }
   }
 }
 

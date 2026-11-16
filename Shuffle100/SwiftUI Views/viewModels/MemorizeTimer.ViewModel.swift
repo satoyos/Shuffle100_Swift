@@ -40,7 +40,6 @@ extension MemorizeTimer {
       super.init()
       self.action2minLeft = action2minLeft ?? announce2minutesLeft
       self.actionTimeOver = actionTimeOver ?? announceMemorizeTimeIsOver
-      AudioPlayerFactory.shared.setupAudioSession()
       buildDataFlow()
     }
     
@@ -81,8 +80,13 @@ extension MemorizeTimer {
         print("2分前アナウンス音声ファイルが見つかりません")
         return
       }
-      player2minites.currentTime = 0.0
-      player2minites.play()
+
+      Task { @MainActor [weak self, weak player2minites] in
+        guard await AudioPlayerFactory.shared.setupAudioSession() else { return }
+        guard self != nil, let player2minites else { return }
+        player2minites.currentTime = 0.0
+        _ = await AudioPlayerFactory.shared.startPlayback(player2minites)
+      }
     }
     
     private func announceMemorizeTimeIsOver() {
@@ -92,9 +96,20 @@ extension MemorizeTimer {
         actionAfterGameStartAnnounse()
         return
       }
-      playerStgartGame.currentTime = 0.0
-      playerStgartGame.delegate = self
-      playerStgartGame.play()
+
+      Task { @MainActor [weak self, weak playerStgartGame] in
+        guard await AudioPlayerFactory.shared.setupAudioSession() else {
+          self?.actionAfterGameStartAnnounse()
+          return
+        }
+        guard let self, let playerStgartGame else { return }
+        playerStgartGame.currentTime = 0.0
+        playerStgartGame.delegate = self
+        guard await AudioPlayerFactory.shared.startPlayback(playerStgartGame) else {
+          self.actionAfterGameStartAnnounse()
+          return
+        }
+      }
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

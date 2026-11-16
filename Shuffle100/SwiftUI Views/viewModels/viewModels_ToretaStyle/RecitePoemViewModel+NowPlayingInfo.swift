@@ -31,8 +31,8 @@ extension RecitePoemViewModel {
 
     // Add handler for Play Command
     commandCenter.playCommand.addTarget { [unowned self] event -> MPRemoteCommandHandlerStatus in
-      guard let currentPlayer = self.currentPlayer else { return .commandFailed}
-      currentPlayer.play()
+      guard self.currentPlayer != nil else { return .commandFailed}
+      self.playCurrentPlayer()
       return .success
     }
 

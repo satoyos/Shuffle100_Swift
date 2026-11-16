@@ -43,6 +43,7 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
   internal var currentPlayer: AVAudioPlayer?
   internal var progressTimer: Timer?
   internal var playFinished: Bool = false
+  internal var playbackTask: Task<Void, Never>?
 
   // Settings and dependencies
   internal let settings: Settings

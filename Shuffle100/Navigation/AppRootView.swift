@@ -71,9 +71,6 @@ struct AppRootView: View {
     .sheet(item: $router.sheetRoute) { route in
       sheetContent(for: route)
     }
-    .onAppear {
-      AudioPlayerFactory.shared.setupAudioSession()
-    }
   }
 
   // MARK: - Push destinations (Phase 2〜4で順次実装)

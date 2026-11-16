@@ -12,7 +12,13 @@ import AVFoundation
 /// テスト時にモックを注入可能にするためのプロトコル
 protocol AudioPlayerFactoryProtocol {
   /// オーディオセッションをセットアップ
-  func setupAudioSession()
+  /// - Returns: セッションを有効化できた場合はtrue
+  func setupAudioSession() async -> Bool
+
+  /// メインスレッドをブロックせずにプレイヤーを準備して再生する
+  /// - Parameter player: 再生するプレイヤー
+  /// - Returns: 再生を開始できた場合はtrue
+  func startPlayback(_ player: AVAudioPlayer) async -> Bool
 
   /// 序歌用のプレイヤーを準備
   /// - Parameter folder: 音声ファイルのフォルダパス

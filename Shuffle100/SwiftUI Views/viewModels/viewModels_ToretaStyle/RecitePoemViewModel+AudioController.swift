@@ -59,8 +59,7 @@ extension RecitePoemViewModel {
   internal func startPlayingCurrentPlayer(number: Int? = nil, side: Side? = nil, count: Int? = nil) {
     updateNowPlayingInfoIfNeeded(count: count, side: side)
     prepareCurrentPlayer()
-    playCurrentPlayer()
-    setTimerForProgressView()
+    playCurrentPlayer(startProgressTimer: true)
   }
 
   fileprivate func updateNowPlayingInfoIfNeeded(count: Int?, side: Side?) {
@@ -84,20 +83,51 @@ extension RecitePoemViewModel {
 
   internal func prepareCurrentPlayer() {
     guard let player = currentPlayer else { return }
-    player.prepareToPlay()
     player.volume = settings.volume
     player.delegate = self
     playFinished = false
   }
 
-  internal func playCurrentPlayer() {
+  internal func playCurrentPlayer(startProgressTimer: Bool = false) {
     guard let player = currentPlayer else { return }
-    player.play()
-    showAsWaitingForPause()
+
+    if isInTestMode {
+      let playbackStarted = DispatchSemaphore(value: 0)
+      DispatchQueue.global().async {
+        player.prepareToPlay()
+        player.play()
+        playbackStarted.signal()
+      }
+      playbackStarted.wait()
+      showAsWaitingForPause()
+      if startProgressTimer {
+        setTimerForProgressView()
+      }
+      return
+    }
+
+    playbackTask?.cancel()
+    playbackTask = Task { @MainActor [weak self, weak player] in
+      guard let self, let player else { return }
+      guard await self.audioPlayerFactory.setupAudioSession() else { return }
+      guard !Task.isCancelled else { return }
+      guard await self.audioPlayerFactory.startPlayback(player) else { return }
+      guard !Task.isCancelled, self.currentPlayer === player else {
+        player.stop()
+        return
+      }
+
+      self.showAsWaitingForPause()
+      if startProgressTimer {
+        self.setTimerForProgressView()
+      }
+    }
   }
 
   internal func pauseCurrentPlayer() {
     guard let player = currentPlayer else { return }
+    playbackTask?.cancel()
+    playbackTask = nil
     player.pause()
     showAsWaitingForPlay()
   }

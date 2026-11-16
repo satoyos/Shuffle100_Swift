@@ -12,29 +12,30 @@ import AVFoundation
 
 class AudioPlayerFactory: AudioPlayerFactoryProtocol {
   static let shared = AudioPlayerFactory()
-  
-  func setupAudioSession() {
-    UIApplication.shared.beginReceivingRemoteControlEvents()
-    
-    let session = AVAudioSession.sharedInstance()
-    do {
-      // CategoryをPlaybackにする
-      try session.setCategory(.playback, mode: .default)
-      // session有効化
-      try session.setActive(true, options: [.notifyOthersOnDeactivation])
-    } catch {
-      //  Do nothing here:
-      // 何らかの理由でうまく行かない場合もアプリを落とさない
-      //
-      // スクリーンタイムで制限されているときなどは、失敗する。
-      // しかし、何度かsetupのチャンスを用意することで、どこかで成功するはず。
-      // それでも失敗するようなら、どうしようもない。
-      //
-      //          assertionFailure("AudioSessionの初期設定時エラー: \(error)")
-      
+
+  private let audioSessionActivator = AudioSessionActivator()
+  private let playbackPreparationQueue = DispatchQueue(
+    label: "com.sato0123.Shuffle100.audio-player-preparation"
+  )
+
+  func setupAudioSession() async -> Bool {
+    await MainActor.run {
+      UIApplication.shared.beginReceivingRemoteControlEvents()
     }
-    // 初回再生時のロードによる遅延を回避するために、一度カラ準備しておく。
-    _ = AudioPlayerFactory.shared.preparePlayer(folder: "audio/misc", file: "250-milliseconds-of-silence", ofType: "mp3", title: "無音(250ms)")
+
+    return await audioSessionActivator.activate()
+  }
+
+  func startPlayback(_ player: AVAudioPlayer) async -> Bool {
+    await withCheckedContinuation { continuation in
+      playbackPreparationQueue.async {
+        guard player.prepareToPlay() else {
+          continuation.resume(returning: false)
+          return
+        }
+        continuation.resume(returning: player.play())
+      }
+    }
   }
   
   func prepareOpeningPlayer(folder: String) -> AVAudioPlayer? {
@@ -48,7 +49,6 @@ class AudioPlayerFactory: AudioPlayerFactoryProtocol {
     }
     do {
       let player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-      player.prepareToPlay()
       return player
     } catch {
       print("\(title ?? "音源")のAudioPlayer生成に失敗しました。folder => [\(folder)]\n - Error: \(error.localizedDescription)")
@@ -68,6 +68,64 @@ class AudioPlayerFactory: AudioPlayerFactoryProtocol {
       return "a"
     case .shimo:
       return "b"
+    }
+  }
+}
+
+private actor AudioSessionActivator {
+  private var activationTask: Task<Bool, Never>?
+  private let legacyActivationQueue = DispatchQueue(
+    label: "com.sato0123.Shuffle100.audio-session"
+  )
+
+  func activate() async -> Bool {
+    if let activationTask {
+      return await activationTask.value
+    }
+
+    let task = Task { [legacyActivationQueue] in
+      await Self.activateSession(legacyActivationQueue: legacyActivationQueue)
+    }
+    activationTask = task
+
+    let activated = await task.value
+    activationTask = nil
+    return activated
+  }
+
+  private static func activateSession(
+    legacyActivationQueue: DispatchQueue
+  ) async -> Bool {
+    do {
+      let session = AVAudioSession.sharedInstance()
+      try await withCheckedThrowingContinuation { continuation in
+        legacyActivationQueue.async {
+          do {
+            try session.setCategory(.playback, mode: .default)
+            continuation.resume()
+          } catch {
+            continuation.resume(throwing: error)
+          }
+        }
+      }
+
+      if #available(iOS 27.0, *) {
+        return try await session.activate()
+      }
+
+      return try await withCheckedThrowingContinuation { continuation in
+        legacyActivationQueue.async {
+          do {
+            try AVAudioSession.sharedInstance().setActive(true)
+            continuation.resume(returning: true)
+          } catch {
+            continuation.resume(throwing: error)
+          }
+        }
+      }
+    } catch {
+      print("AudioSessionの初期設定時エラー: \(error.localizedDescription)")
+      return false
     }
   }
 }

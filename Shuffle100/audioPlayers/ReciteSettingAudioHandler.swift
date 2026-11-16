@@ -13,6 +13,7 @@ final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
   let folderPath: String
   var player1FinishedAction: (() -> Void)?
   var player2FinishedAction: (() -> Void)?
+  private var pendingPlaybackIDs: [ObjectIdentifier: UUID] = [:]
   
   enum HalfPoem: String {
     case h001a
@@ -25,7 +26,6 @@ final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
     self.player2 = Self.fetchPlayer(of: halfPoem2, in: folderPath)
     self.folderPath = folderPath
     super.init()
-    AudioPlayerFactory.shared.setupAudioSession()
   }
   
   func startPlayer1() {
@@ -45,6 +45,7 @@ final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
   }
   
   func stopAllPlayers() {
+    pendingPlaybackIDs.removeAll()
     if let player1 = player1, player1.isPlaying {
       player1.stop()
     }
@@ -72,8 +73,46 @@ final class ReciteSettingAudioHandler: NSObject,  AVAudioPlayerDelegate  {
   }
   
   private func startPlaying(_ player: AVAudioPlayer) {
-    player.delegate = self
-    player.currentTime = 0.0
-    player.play()
+    let playerID = ObjectIdentifier(player)
+    let playbackID = UUID()
+    pendingPlaybackIDs[playerID] = playbackID
+
+    Task { @MainActor [weak self, weak player] in
+      guard let self, let player else { return }
+      guard await AudioPlayerFactory.shared.setupAudioSession() else {
+        self.finishPendingPlayback(player, playerID: playerID, playbackID: playbackID)
+        return
+      }
+      guard self.pendingPlaybackIDs[playerID] == playbackID else { return }
+      player.delegate = self
+      player.currentTime = 0.0
+      guard await AudioPlayerFactory.shared.startPlayback(player) else {
+        self.finishPendingPlayback(player, playerID: playerID, playbackID: playbackID)
+        return
+      }
+      guard self.pendingPlaybackIDs[playerID] == playbackID else {
+        player.stop()
+        return
+      }
+      self.pendingPlaybackIDs[playerID] = nil
+    }
+  }
+
+  private func finishPendingPlayback(
+    _ player: AVAudioPlayer,
+    playerID: ObjectIdentifier,
+    playbackID: UUID
+  ) {
+    guard pendingPlaybackIDs[playerID] == playbackID else { return }
+    pendingPlaybackIDs[playerID] = nil
+    notifyPlaybackFinished(player)
+  }
+
+  private func notifyPlaybackFinished(_ player: AVAudioPlayer) {
+    if player === player1 {
+      player1FinishedAction?()
+    } else if player === player2 {
+      player2FinishedAction?()
+    }
   }
 }
