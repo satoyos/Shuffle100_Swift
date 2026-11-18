@@ -22,7 +22,6 @@ final class WhatsNextViewModelTests: XCTestCase {
     // then
     XCTAssertNotNil(viewModel)
     XCTAssertEqual(viewModel.output.currentPoem.number, 1)
-    XCTAssertFalse(viewModel.binding.showExitConfirmation)
   }
 
   // MARK: - Button Action Tests
@@ -81,19 +80,6 @@ final class WhatsNextViewModelTests: XCTestCase {
     viewModel.input.gearButtonTapped.send()
     // then
     XCTAssertTrue(actionCalled)
-  }
-
-  func testExitButtonTappedShowsConfirmation() throws {
-    // given
-    let poem = createTestPoem(number: 5)
-    let viewModel = WhatsNextViewModel(currentPoem: poem)
-    XCTAssertFalse(viewModel.binding.showExitConfirmation)
-
-    // when: exitButtonTapped's sink synchronously sets showExitConfirmation = true
-    viewModel.input.exitButtonTapped.send()
-
-    // then
-    XCTAssertTrue(viewModel.binding.showExitConfirmation)
   }
 
   func testBackToHomeActionCalled() throws {

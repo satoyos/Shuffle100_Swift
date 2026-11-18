@@ -57,43 +57,17 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
     XCTAssertTrue(settingsActionCalled)
   }
 
-  // MARK: - Exit Button Handler Tests
+  // MARK: - Exit Confirmation Tests
 
-  func test_handleExitButtonTapped_withoutPostMortem_showsExitAlert() throws {
-    testSettings.postMortemEnabled = false
-    let viewModelWithoutPostMortem = RecitePoemViewModel(settings: testSettings)
-    viewModelWithoutPostMortem.enableTestMode()
-
-    XCTAssertFalse(viewModelWithoutPostMortem.output.showExitAlert)
-
-    viewModelWithoutPostMortem.handleExitButtonTapped()
-
-    XCTAssertTrue(viewModelWithoutPostMortem.output.showExitAlert)
-    XCTAssertFalse(viewModelWithoutPostMortem.output.showPostMortemSheet)
-  }
-
-  func test_handleExitButtonTapped_withPostMortem_showsPostMortemSheet() throws {
-    testSettings.postMortemEnabled = true
-    let viewModelWithPostMortem = RecitePoemViewModel(settings: testSettings)
-    viewModelWithPostMortem.enableTestMode()
-
-    XCTAssertFalse(viewModelWithPostMortem.output.showPostMortemSheet)
-
-    viewModelWithPostMortem.handleExitButtonTapped()
-
-    XCTAssertTrue(viewModelWithPostMortem.output.showPostMortemSheet)
-    XCTAssertFalse(viewModelWithPostMortem.output.showExitAlert)
-  }
-
-  func test_handleExitButtonTapped_whenPlaying_pausesPlayer() throws {
+  func test_pauseForExitConfirmation_whenPlaying_pausesPlayer() throws {
     testSettings.postMortemEnabled = false
     let viewModelTest = RecitePoemViewModel(settings: testSettings)
     viewModelTest.enableTestMode()
     viewModelTest.playNumberedPoem(number: 1, side: .kami)
 
-    viewModelTest.handleExitButtonTapped()
+    viewModelTest.pauseForExitConfirmation()
 
-    XCTAssertTrue(viewModelTest.output.showExitAlert)
+    XCTAssertFalse(viewModelTest.testCurrentPlayer?.isPlaying ?? true)
   }
 
   // MARK: - Rewind Button Handler Tests
@@ -211,13 +185,11 @@ final class RecitePoemViewModelEventHandlerTests: XCTestCase {
     // PassthroughSubject delivery and the bound handlers are all synchronous,
     // so each send() lands the action callback before the next line runs.
     viewModel.input.gearButtonTapped.send()
-    viewModel.input.exitButtonTapped.send()
     viewModel.input.rewindButtonTapped.send()
     viewModel.input.forwardButtonTapped.send()
     viewModel.input.audioPlayerFinished.send()
 
     XCTAssertTrue(gearCalled)
-    XCTAssertTrue(viewModel.output.showExitAlert)
     XCTAssertTrue(rewindCalled)
     XCTAssertTrue(forwardCalled)
     XCTAssertTrue(playerFinishedCalled)

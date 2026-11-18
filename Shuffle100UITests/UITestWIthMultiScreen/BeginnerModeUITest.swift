@@ -55,6 +55,13 @@ class BeginnerModeUITest: XCTestCase, OnWhatsNextScreenTest {
         let exitAlert = ExitGameDialog(app: app)
         XCTAssert(exitAlert.exists, "確認ダイアログが現れる")
         // when
+        exitAlert.cancelButton.tap()
+        // then
+        XCTAssert(whatsNextPage.exists, "終了をキャンセルすると「次はどうする？」画面に留まる")
+        XCTAssertFalse(exitAlert.exists, "確認ダイアログが閉じる")
+        // when
+        whatsNextPage.exitButton.tap()
+        XCTAssert(exitAlert.exists, "確認ダイアログを再度表示できる")
         exitAlert.confirmButton.tap()
         // then
         XCTAssert(homePage.exists, "トップ画面に戻る")

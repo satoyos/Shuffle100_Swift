@@ -7,19 +7,16 @@
 
 import SwiftUI
 
-// MARK: - View Modifiers
-extension RecitePoemView {
+// MARK: - Dialogs
+extension RecitePoemBaseView {
 
   // MARK: - Exit Alert
 
   var exitAlert: some View {
     EmptyView()
-      .alert("試合を終了しますか？", isPresented: Binding(
-        get: { viewModel.output.showExitAlert },
-        set: { viewModel.output.showExitAlert = $0 }
-      )) {
+      .alert("試合を終了しますか？", isPresented: $showExitAlert) {
         Button("終了する", role: .destructive) {
-          viewModel.backToHomeScreenAction?()
+          viewModel.recitePoemViewModel.backToHomeScreenAction?()
         }
         Button("続ける", role: .cancel) {}
       }
@@ -31,17 +28,14 @@ extension RecitePoemView {
     EmptyView()
       .confirmationDialog(
         "感想戦を始めますか？",
-        isPresented: Binding(
-          get: { viewModel.output.showPostMortemSheet },
-          set: { viewModel.output.showPostMortemSheet = $0 }
-        ),
+        isPresented: $showPostMortemDialog,
         titleVisibility: .visible
       ) {
         Button("感想戦を始める") {
-          viewModel.startPostMortemAction?()
+          viewModel.recitePoemViewModel.startPostMortemAction?()
         }
         Button("トップに戻る") {
-          viewModel.backToHomeScreenAction?()
+          viewModel.recitePoemViewModel.backToHomeScreenAction?()
         }
         Button("キャンセル", role: .cancel) {}
       } message: {

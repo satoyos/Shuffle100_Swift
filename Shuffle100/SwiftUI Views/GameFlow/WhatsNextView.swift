@@ -9,8 +9,8 @@ import SwiftUI
 
 struct WhatsNextView {
   @ObservedObject private var viewModel: WhatsNextViewModel
-  @Environment(\.isPresented) private var isPresented
   @Environment(\.dismiss) private var dismiss
+  @State private var showExitConfirmation = false
 
   init(currentPoem: Poem) {
     self.viewModel = WhatsNextViewModel(currentPoem: currentPoem)
@@ -110,7 +110,7 @@ extension WhatsNextView: View {
 
       ToolbarItem(placement: .navigationBarTrailing) {
         Button(action: {
-          viewModel.input.exitButtonTapped.send()
+          showExitConfirmation = true
         }) {
           Image("exit_square")
             .resizable()
@@ -120,7 +120,7 @@ extension WhatsNextView: View {
         .accessibilityLabel("exit")
       }
     }
-    .alert("試合を終了しますか？", isPresented: viewModel.$binding.showExitConfirmation) {
+    .alert("試合を終了しますか？", isPresented: $showExitConfirmation) {
       Button("終了する", role: .destructive) {
         dismiss()
         viewModel.backToHomeScreenAction?()

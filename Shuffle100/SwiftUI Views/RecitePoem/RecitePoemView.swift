@@ -10,17 +10,23 @@ import SwiftUI
 struct RecitePoemView {
   let settings: Settings
   @ObservedObject var viewModel: RecitePoemViewModel
-  @Environment(\.isPresented) private var isPresented
+  let exitAction: () -> Void
 
-  init(settings: Settings) {
+  init(settings: Settings, exitAction: @escaping () -> Void = {}) {
     self.settings = settings
     self.viewModel = RecitePoemViewModel(settings: settings)
+    self.exitAction = exitAction
   }
 
   // Secondary initializer for external view model
-  init(settings: Settings, viewModel: RecitePoemViewModel) {
+  init(
+    settings: Settings,
+    viewModel: RecitePoemViewModel,
+    exitAction: @escaping () -> Void
+  ) {
     self.settings = settings
     self.viewModel = viewModel
+    self.exitAction = exitAction
   }
 }
 
@@ -38,8 +44,6 @@ extension RecitePoemView: View {
     }
     .navigationBarHidden(true)
     .modifier(AppLifecycleModifier(viewModel: viewModel))
-    .background(exitAlert)
-    .background(postMortemDialog)
   }
 }
 

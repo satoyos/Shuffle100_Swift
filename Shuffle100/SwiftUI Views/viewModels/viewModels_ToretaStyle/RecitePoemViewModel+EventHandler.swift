@@ -19,13 +19,6 @@ extension RecitePoemViewModel {
       }
       .store(in: &cancellables)
 
-    // Exit button handling
-    input.exitButtonTapped
-      .sink { [weak self] in
-        self?.handleExitButtonTapped()
-      }
-      .store(in: &cancellables)
-
     // Rewind button handling
     input.rewindButtonTapped
       .sink { [weak self] in
@@ -71,14 +64,9 @@ extension RecitePoemViewModel {
     openSettingsAction?()
   }
 
-  internal func handleExitButtonTapped() {
+  func pauseForExitConfirmation() {
     if let player = currentPlayer, player.isPlaying {
       pauseCurrentPlayer()
-    }
-    if settings.postMortemEnabled {
-      output.showPostMortemSheet = true
-    } else {
-      output.showExitAlert = true
     }
   }
 

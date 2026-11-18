@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RecitePoemBaseView {
   let settings: Settings
-  @ObservedObject private var viewModel: RecitePoemBaseViewModel
+  @ObservedObject var viewModel: RecitePoemBaseViewModel
+  @State var showExitAlert = false
+  @State var showPostMortemDialog = false
 
   init(settings: Settings, viewModel: RecitePoemBaseViewModel) {
     self.settings = settings
@@ -66,7 +68,8 @@ extension RecitePoemBaseView: View {
         if viewModel.output.showingSlideCard {
           RecitePoemView(
             settings: settings,
-            viewModel: viewModel.recitePoemViewModel
+            viewModel: viewModel.recitePoemViewModel,
+            exitAction: handleExitButtonTapped
           )
           .frame(width: geometry.size.width, height: geometry.size.height)
           .offset(x: viewModel.output.slideOffset)
@@ -74,6 +77,8 @@ extension RecitePoemBaseView: View {
       }
     }
     .navigationBarHidden(true)
+    .background(exitAlert)
+    .background(postMortemDialog)
   }
 
   // MARK: - Helper Views
@@ -87,7 +92,8 @@ extension RecitePoemBaseView: View {
       // 通常のRecitePoemView
       RecitePoemView(
         settings: settings,
-        viewModel: viewModel.recitePoemViewModel
+        viewModel: viewModel.recitePoemViewModel,
+        exitAction: handleExitButtonTapped
       )
     }
   }
@@ -101,7 +107,8 @@ extension RecitePoemBaseView: View {
       // 通常のRecitePoemView
       RecitePoemView(
         settings: settings,
-        viewModel: viewModel.recitePoemViewModel
+        viewModel: viewModel.recitePoemViewModel,
+        exitAction: handleExitButtonTapped
       )
     }
   }
@@ -125,6 +132,15 @@ extension RecitePoemBaseView: View {
           viewModel.recitePoemViewModel.backToHomeScreenAction?()
         }
       )
+    }
+  }
+
+  private func handleExitButtonTapped() {
+    viewModel.recitePoemViewModel.pauseForExitConfirmation()
+    if settings.postMortemEnabled {
+      showPostMortemDialog = true
+    } else {
+      showExitAlert = true
     }
   }
 }

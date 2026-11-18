@@ -18,29 +18,18 @@ extension PoemPickerView {
       let selectAll = PassthroughSubject<Void, Never>()
       let cancelAll = PassthroughSubject<Void, Never>()
       let showDetail = PassthroughSubject<Int, Never>()
-      let saveSet = PassthroughSubject<Void, Never>()
       let selectByGroup = PassthroughSubject<Void, Never>()
     }
     
     final class Binding: BindingObject {
       @Published var searchText: String = ""
       @Published var showActionSheet: Bool = false
-      @Published var showSaveActionSheet: Bool = false
-      @Published var showNewSetNameAlert: Bool = false
-      @Published var showOverwritePickerAlert: Bool = false
-      @Published var showSuccessAlert: Bool = false
-      @Published var showEmptySetAlert: Bool = false
-      @Published var showNoNameGivenAlert: Bool = false
-      @Published var newSetName: String = ""
-      @Published var selectedOverwriteIndex: Int = 0
-      @Published var successAlertTitle: String = ""
     }
     
     final class Output: OutputObject {
       @Published var filteredPoems: [Poem] = []
       @Published var selectedCount: Int = 0
       @Published var isSearching: Bool = false
-      @Published var successMessage: String = ""
       @Published var availableOverwriteSets: [SavedFudaSet] = []
     }
     
@@ -59,7 +48,7 @@ extension PoemPickerView {
       let output = Output()
       
       self.settings = settings
-      self.saveLogic = PoemPickerView.ViewModel.SaveLogic(binding: binding)
+      self.saveLogic = PoemPickerView.ViewModel.SaveLogic()
       self.selectionLogic = PoemPickerView.ViewModel.SelectionLogic()
 
       // 初期表示：全歌をフィルター済みリストにセット
@@ -76,23 +65,6 @@ extension PoemPickerView {
         cancellables: &cancellables
       )
 
-      // 保存ボタンタップの処理
-      input.saveSet
-        .sink { _ in
-          let saveAction = PoemPickerView.ViewModel.SaveLogic.handleSaveRequest(
-            selectedCount: settings.state100.selectedNum
-          )
-
-          switch saveAction {
-          case .showActionSheet:
-            binding.showSaveActionSheet = true
-            output.availableOverwriteSets = settings.savedFudaSets
-          case .showEmptySetAlert:
-            binding.showEmptySetAlert = true
-          }
-        }
-        .store(in: &cancellables)
-      
       self.input = input
       self.binding = binding
       self.output = output
@@ -107,34 +79,21 @@ extension PoemPickerView {
     }
     
     // MARK: - Save Set Logic
-    func saveNewFudaSet() {
-      let result = saveLogic.saveNewFudaSet(name: binding.newSetName, settings: settings)
-
-      if !result.successMessage.isEmpty {
-        output.successMessage = result.successMessage
-        binding.successAlertTitle = result.alertTitle
-        binding.showSuccessAlert = true
-      }
+    func prepareSave() -> PoemPickerSaveAction {
+      output.availableOverwriteSets = settings.savedFudaSets
+      return SaveLogic.handleSaveRequest(selectedCount: settings.state100.selectedNum)
     }
 
-    func overwriteExistingFudaSet() {
-      let result = saveLogic.overwriteExistingFudaSet(
-        at: binding.selectedOverwriteIndex,
+    func saveNewFudaSet(name: String) -> PoemPickerSaveResult {
+      saveLogic.saveNewFudaSet(name: name, settings: settings)
+    }
+
+    func overwriteExistingFudaSet(at index: Int) -> PoemPickerSaveResult {
+      saveLogic.overwriteExistingFudaSet(
+        at: index,
         availableOverwriteSets: output.availableOverwriteSets,
         settings: settings
       )
-
-      output.successMessage = result.successMessage
-      binding.successAlertTitle = result.alertTitle
-      binding.showSuccessAlert = true
-    }
-
-    func prepareNewSetCreation() {
-      saveLogic.prepareNewSetCreation()
-    }
-
-    func prepareOverwriteSelection() {
-      saveLogic.prepareOverwriteSelection()
     }
   }
 }

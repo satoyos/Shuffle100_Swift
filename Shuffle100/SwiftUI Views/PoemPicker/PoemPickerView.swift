@@ -13,7 +13,14 @@ struct PoemPickerView {
   @StateObject var viewModel: PoemPickerView.ViewModel
   @EnvironmentObject var router: AppRouter
   @Environment(\.isPresented) private var isPresented
-
+  @State var showSaveActionSheet = false
+  @State var showNewSetNameAlert = false
+  @State var showOverwritePickerAlert = false
+  @State var showSuccessAlert = false
+  @State var showEmptySetAlert = false
+  @State var showNoNameGivenAlert = false
+  @State var newSetName = ""
+  @State var saveResult: PoemPickerSaveResult?
 
   init(settings: Settings) {
     self.settings = settings

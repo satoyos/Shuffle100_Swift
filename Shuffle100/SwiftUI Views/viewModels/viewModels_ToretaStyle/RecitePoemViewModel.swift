@@ -14,7 +14,6 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
 
   final class Input: InputObject {
     let gearButtonTapped = PassthroughSubject<Void, Never>()
-    let exitButtonTapped = PassthroughSubject<Void, Never>()
     let rewindButtonTapped = PassthroughSubject<Void, Never>()
     let forwardButtonTapped = PassthroughSubject<Void, Never>()
     let audioPlayerFinished = PassthroughSubject<Void, Never>()
@@ -29,8 +28,6 @@ final class RecitePoemViewModel: NSObject, ViewModelObject, AVAudioPlayerDelegat
     @Published var title: String = "To be Filled!"
     @Published var showNormalJokaDesc: Bool = false
     @Published var showShortJokaDesc: Bool = false
-    @Published var showExitAlert: Bool = false
-    @Published var showPostMortemSheet: Bool = false
   }
 
   let input: Input

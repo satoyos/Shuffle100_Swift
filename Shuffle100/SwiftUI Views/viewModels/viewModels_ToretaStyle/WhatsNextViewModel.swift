@@ -14,12 +14,9 @@ final class WhatsNextViewModel: ViewModelObject {
     let refrainButtonTapped = PassthroughSubject<Void, Never>()
     let goNextButtonTapped = PassthroughSubject<Void, Never>()
     let gearButtonTapped = PassthroughSubject<Void, Never>()
-    let exitButtonTapped = PassthroughSubject<Void, Never>()
   }
 
-  final class Binding: BindingObject {
-    @Published var showExitConfirmation = false
-  }
+  final class Binding: BindingObject {}
 
   final class Output: OutputObject {
     @Published var currentPoem: Poem
@@ -72,12 +69,6 @@ final class WhatsNextViewModel: ViewModelObject {
     input.gearButtonTapped
       .sink { [weak self] in
         self?.goSettingAction?()
-      }
-      .store(in: &cancellables)
-
-    input.exitButtonTapped
-      .sink { [weak self] in
-        self?.binding.showExitConfirmation = true
       }
       .store(in: &cancellables)
   }

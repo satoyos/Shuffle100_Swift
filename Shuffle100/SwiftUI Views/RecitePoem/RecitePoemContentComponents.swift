@@ -18,9 +18,7 @@ extension RecitePoemView {
       gearAction: {
         viewModel.input.gearButtonTapped.send()
       },
-      exitAction: {
-        viewModel.input.exitButtonTapped.send()
-      }
+      exitAction: exitAction
     )
   }
 
