@@ -172,9 +172,7 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     let alert = NameNewFudaSetAlert(app: app)
     XCTAssert(alert.exists, "新しい札セットを命名するダイアログが現れる")
     // when
-    alert.textField.tap()
-    alert.textField.typeText(name)
-    alert.confirmButton.tap()
+    alert.enterNameAndConfirm(name, timeout: timeOutSec)
     // then
     let compAlert = SaveNewSetCompletedAlert(app: app)
     XCTAssert(compAlert.exists, "保存が完了した旨のダイアログが現れる")
