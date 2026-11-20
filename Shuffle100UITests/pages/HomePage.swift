@@ -88,9 +88,20 @@ final class HomePage: PageObjectable, WaitInUITest, SkipToWhatsNext {
     
     @discardableResult
     func goToPoemPickerPage() -> PoemPickerPage {
+        let pickerPage = PoemPickerPage(app: app)
         let cell = waitToHittable(for: poemsCell, timeout: timeOutSec)
         cell.tap()
-        return PoemPickerPage(app: app)
+        if pickerPage.pageTitle.waitForExistence(timeout: timeOutSec) {
+            return pickerPage
+        }
+
+        if pageTitle.exists && poemsCell.isHittable && !pickerPage.pageTitle.exists {
+            XCTContext.runActivity(named: "トップ画面に留まっているため、歌選択画面を開き直す") { _ in
+                poemsCell.tap()
+            }
+        }
+        XCTAssertTrue(pickerPage.pageTitle.waitForExistence(timeout: timeOutSec), "「歌を選ぶ」画面に到達する")
+        return pickerPage
     }
     
     func gotoRecitePoemPage() -> RecitePoemPage {

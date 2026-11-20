@@ -28,6 +28,26 @@ final class PoemPickerPage: PageObjectable, WaitInUITest {
     app.searchFields[A11y.searchFieldPlaceHolder].firstMatch
   }
 
+  func enterSearchText(_ text: String) {
+    func enterAndWait() -> Bool {
+      waitToHittable(for: searchField, timeout: timeOutSec).tap()
+      let field = waitToHittable(for: searchField, timeout: timeOutSec)
+      field.typeText(text)
+      let predicate = NSPredicate(format: "value == %@", text)
+      let expectation = XCTNSPredicateExpectation(predicate: predicate, object: field)
+      return XCTWaiter().wait(for: [expectation], timeout: timeOutSec) == .completed
+    }
+
+    var entered = enterAndWait()
+    if !entered, searchField.isHittable, let value = searchField.value as? String,
+       value.isEmpty || value == searchField.placeholderValue {
+      entered = XCTContext.runActivity(named: "検索欄が空のため入力を再試行する") { _ in
+        enterAndWait()
+      }
+    }
+    XCTAssertTrue(entered, "検索欄に「\(text)」が入る。実際の値: \(searchField.value ?? "取得不可")")
+  }
+
   var cancelSearchButton: XCUIElement {
     let cancelBtn = app.buttons[A11y.cancel].firstMatch // Before Liquid Glass UI
     let eralseBtn = app.buttons[A11y.erase].firstMatch   // Liquid Glass UI where Xcode >= 26.1.1 (iOS 26.1)

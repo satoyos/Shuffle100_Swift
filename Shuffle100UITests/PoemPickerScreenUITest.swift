@@ -28,11 +28,11 @@ class PoemPickerScreenUITest: XCTestCase {
     XCTContext.runActivity(named: "「全て取消」ボタンを押すと、選ばれている歌が0首になる") { activity in
       // given
       let pickerPage = homePage.goToPoemPickerPage()
-      XCTAssert(pickerPage.badge(of: 100).exists)
+      XCTAssertTrue(pickerPage.badge(of: 100).waitForExistence(timeout: timeOutSec), "最初は100首選ばれている")
       // when
       pickerPage.cancelAllButton.tap()
       // then
-      XCTAssert(pickerPage.badge(of: 0).exists)
+      XCTAssertTrue(pickerPage.badge(of: 0).waitForExistence(timeout: timeOutSec), "全て取消で0首になる")
       // when
       pickerPage.backToTopPage()
       // then
@@ -43,7 +43,7 @@ class PoemPickerScreenUITest: XCTestCase {
       let pickerPage = homePage.goToPoemPickerPage()
       pickerPage.selectAllButton.tap()
       // then
-      XCTAssert(pickerPage.badge(of: 100).exists)
+      XCTAssertTrue(pickerPage.badge(of: 100).waitForExistence(timeout: timeOutSec), "全て選択で100首になる")
     }
   }
   

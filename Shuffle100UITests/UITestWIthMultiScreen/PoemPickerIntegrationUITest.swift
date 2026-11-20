@@ -51,16 +51,22 @@ final class PoemPickerIntegrationUITest: XCTestCase {
     XCTContext.runActivity(named: "検索窓に「あき」を入力すると、検索用データがそれにヒットする歌のみ表示される"){
       _ in
       // when
-      let searchField = poemPickerPage.searchField
-      searchField.tap()
-      searchField.typeText("あき")
+      poemPickerPage.enterSearchText("あき")
       // then
-      XCTAssert(poemPickerPage.cellOf(number: 1).exists)
-      XCTAssertFalse(poemPickerPage.cellOf(number: 2).exists)
-      XCTAssert(poemPickerPage.cellOf(number: 5).exists)
+      XCTAssertTrue(poemPickerPage.cellOf(number: 2).waitForNonExistence(timeout: timeOutSec), "検索結果から2番の歌が消える")
+      XCTAssertTrue(poemPickerPage.cellOf(number: 1).waitForExistence(timeout: timeOutSec), "検索結果に1番の歌が表示される")
+      XCTAssertTrue(poemPickerPage.cellOf(number: 5).waitForExistence(timeout: timeOutSec), "検索結果に5番の歌が表示される")
     }
     XCTContext.runActivity(named: "検索結果としてフィルタリングされた歌をタップしたら、選択状態を変えることができる") { _ in
       // when
+      // iPadの小さいウインドウではキーボードが検索結果に重なる。
+      let keyboard = app.keyboards.firstMatch
+      let hideKeyboard = keyboard.buttons["キーボードを非表示"].firstMatch
+      if hideKeyboard.isHittable {
+        hideKeyboard.tap()
+        XCTAssertTrue(keyboard.waitForNonExistence(timeout: timeOutSec), "検索結果を選ぶ前にキーボードが閉じる")
+      }
+
       poemPickerPage
         .tapCellof(number: 1)
         .tapCellof(number: 5)
@@ -68,7 +74,8 @@ final class PoemPickerIntegrationUITest: XCTestCase {
       // iPhoneのLiquid Glass UI では「テキストを消去」後も検索モードが残るため明示的に終了
       poemPickerPage.dismissSearchMode()
       //   back to HomeScreen
-      poemPickerPage.backToTopButton.tap()
+      XCTAssertTrue(poemPickerPage.badge(of: 98).waitForExistence(timeout: timeOutSec), "検索結果から2首の選択を解除できる")
+      poemPickerPage.backToTopPage()
       // then
       XCTAssert(homePage.numberOfSelecttedPoems(is: 98))
     }
