@@ -33,29 +33,24 @@ struct AspectRatioRootContainer<Content: View>: View {
     GeometryReader { geometry in
       let size = geometry.size
 
-      if AspectRatioRootLayout.usesLandscapeContainer(for: size) {
-        ZStack {
-          Color.black
-            .ignoresSafeArea()
+      let landscape = AspectRatioRootLayout.usesLandscapeContainer(for: size)
+      let contentWidth = landscape
+        ? AspectRatioRootLayout.contentWidth(for: size)
+        : size.width
 
-          landscapeBody(size: size)
-        }
-      } else {
+      ZStack {
+        (landscape ? Color.black : Color.clear)
+          .ignoresSafeArea()
+
         content
+          .frame(width: contentWidth, height: size.height)
+          .clipped()
           .frame(width: size.width, height: size.height)
       }
     }
     .ignoresSafeArea(.keyboard)
   }
 
-  private func landscapeBody(size: CGSize) -> some View {
-    let contentWidth = AspectRatioRootLayout.contentWidth(for: size)
-
-    return content
-      .frame(width: contentWidth, height: size.height)
-      .clipped()
-    .frame(width: size.width, height: size.height)
-  }
 }
 
 struct AppRootView: View {

@@ -22,6 +22,7 @@ final class GameStateManager: ObservableObject {
 
   /// 現在のゲーム進行状態
   @Published private(set) var phase: GamePhase = .joka
+  private(set) var hasStarted = false
 
   // MARK: - Dependencies
 
@@ -106,10 +107,16 @@ final class GameStateManager: ObservableObject {
   /// ゲーム開始: 序歌を再生する。
   /// GamePlayView の .onAppear から呼ばれる想定。
   func startGame() {
+    hasStarted = true
     phase = .joka
     baseViewModel.initView(title: "序歌")
     let shorten = strategy.forcesShortenedJoka || settings.shortenJoka
     baseViewModel.recitePoemViewModel.playJoka(shorten: shorten)
+  }
+
+  func startGameIfNeeded() {
+    guard !hasStarted else { return }
+    startGame()
   }
 
   /// 感想戦開始: PoemSupplier をリセットして再度 startGame する。

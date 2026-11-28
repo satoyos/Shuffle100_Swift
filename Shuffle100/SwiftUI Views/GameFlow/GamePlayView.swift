@@ -34,12 +34,16 @@ struct GamePlayView: View {
         router?.presentSheet(.reciteSettings)
       }
 
-      // ナビゲーション遷移アニメーション完了を待ってから序歌を開始
-      // (旧 CATransaction.setCompletionBlock の代替)
-      Task {
-        try? await Task.sleep(for: .milliseconds(400))
-        gameStateManager.startGame()
+    }
+    .task { @MainActor in
+      guard !gameStateManager.hasStarted else { return }
+      do {
+        try await Task.sleep(for: .milliseconds(400))
+      } catch {
+        return
       }
+      guard !Task.isCancelled else { return }
+      gameStateManager.startGameIfNeeded()
     }
     .onDisappear {
       router.gameStateManager = nil
